@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Fysiotherapie & Revalidatie in Eupen",
+    "description": "Uw gezondheidspartner in Eupen. Manuele therapie, sportfysiotherapie, kaakgewrichtstherapie, lymfedrainage."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "team": "Ons Team",
+    "rehabilitation": "Revalidatie",
+    "cabinet": "Onze Praktijk",
+    "blog": "Blog",
+    "jobs": "Jobs",
+    "appointment": "Afspraak maken",
+    "language": "Taal"
+  },
+  "hero": {
+    "title1": "Beweging",
+    "title2": "is leven.",
+    "subtitle": "Uw gezondheidspartner in Eupen voor actieve en gepersonaliseerde revalidatie.",
+    "cta": "Afspraak maken",
+    "ctaSecondary": "Onze diensten"
+  },
+  "stats": {
+    "therapists": "Therapeuten",
+    "experience": "Jaar ervaring",
+    "specialties": "Specialiteiten",
+    "patients": "Tevreden patiënten"
+  },
+  "services": {
+    "sectionTitle": "Onze Diensten",
+    "sectionSubtitle": "Ontdek onze gespecialiseerde therapieën.",
+    "manualTherapy": {
+      "title": "Manuele Therapie",
+      "description": "Behandeling van aandoeningen van het bewegingsapparaat.",
+      "link": "Meer info"
+    },
+    "sportPhysio": {
+      "title": "Sportfysiotherapie",
+      "description": "Revalidatie na sportblessures en prestatieverbetering.",
+      "link": "Meer info"
+    },
+    "jaw": {
+      "title": "Kaakgewrichtstherapie",
+      "description": "Therapie bij kaakklachten en craniomandibulaire dysfunctie.",
+      "link": "Meer info"
+    },
+    "lymph": {
+      "title": "Lymfedrainage",
+      "description": "Zachte massage ter vermindering van oedeem.",
+      "link": "Meer info"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Na uw operatie",
+    "sectionSubtitle": "Wij begeleiden u terug naar pijnvrije beweging.",
+    "hip": {
+      "title": "Heupprothese",
+      "description": "Versnelde revalidatie na heupprothese."
+    },
+    "knee": {
+      "title": "Knieprothese",
+      "description": "Gerichte versterking na knieprothese."
+    },
+    "acl": {
+      "title": "Kruisband",
+      "description": "Progressieve revalidatie na kruisbandoperatie."
+    },
+    "shoulder": {
+      "title": "Schouderoperatie",
+      "description": "Zacht herstel van de schouderfunctie."
+    },
+    "cta": "Afspraak na operatie",
+    "learnMore": "Meer informatie"
+  },
+  "team": {
+    "sectionTitle": "Ons Team",
+    "sectionSubtitle": "Ervaren therapeuten voor uw gezondheid.",
+    "viewProfile": "Profiel bekijken",
+    "bookAppointment": "Afspraak",
+    "philippe": {
+      "role": "Manueel Therapeut — Directeur",
+      "quote": "Fysiotherapeut sinds 2012."
+    },
+    "florence": {
+      "role": "Fysiotherapeut & Osteopathie",
+      "quote": "Het lichaam is een eenheid."
+    },
+    "felix": {
+      "role": "Fysiotherapeut & Osteopathie",
+      "quote": "Afgestudeerd in 2021."
+    },
+    "fabienne": {
+      "role": "Lymfedrainage & Kaakgewricht",
+      "quote": "Fysiotherapeut sinds 2013."
+    },
+    "thom": {
+      "role": "Sportfysiotherapeut",
+      "quote": "Fysiotherapeut sinds 2015."
+    },
+    "loic": {
+      "role": "Fysiotherapeut & Osteopathie",
+      "quote": "Recent afgestudeerd."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Onze Praktijk",
+    "sectionSubtitle": "Moderne apparatuur voor uw revalidatie.",
+    "equipment": "Manuthera 242 — Behandeltafel uit Finland.",
+    "address": "Loten 1, B-4700 Eupen, België",
+    "hours": "Ma - Vr: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Getuigenissen",
+    "sectionSubtitle": "Wat onze patiënten zeggen.",
+    "reviewCta": "Beoordeel ons op Google Maps"
+  },
+  "cta": {
+    "title": "Klaar om pijnvrij te bewegen?",
+    "subtitle": "Maak online een afspraak of neem direct contact op.",
+    "button": "Afspraak maken",
+    "phone": "Bellen",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Uw fysiotherapiepraktijk in Eupen.",
+    "quickLinks": "Snelle links",
+    "contact": "Contact",
+    "legal": "Juridisch",
+    "privacy": "Privacy",
+    "impressum": "Impressum",
+    "cookies": "Cookiebeleid",
+    "allRights": "Alle rechten voorbehouden.",
+    "followUs": "Volg ons"
+  },
+  "common": {
+    "learnMore": "Meer info",
+    "back": "Terug",
+    "close": "Sluiten",
+    "loading": "Laden...",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "address": "Adres"
+  },
+  "bring": {
+    "title": "Mee te brengen",
+    "prescription": "Medisch voorschrift",
+    "insurance": "Mutualiteitsklever",
+    "towel": "Grote handdoek",
+    "sportswear": "Sportkleding",
+    "id": "Identiteitskaart"
+  },
+  "cancellation": {
+    "title": "Annulering",
+    "text": "24 uur op voorhand. Niet-geannuleerde afspraken worden gefactureerd."
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Physiotherapie & Rehabilitation in Eupen",
+    "description": "Ihr Gesundheitspartner in Eupen. Manuelle Therapie, Sportphysiotherapie, Kiefergelenktherapie, Lymphdrainage. Rehabilitation nach Hüft- und Knieprothesen."
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "team": "Unser Team",
+    "rehabilitation": "Rehabilitation",
+    "cabinet": "Unsere Praxis",
+    "blog": "Blog",
+    "jobs": "Jobs",
+    "appointment": "Termin vereinbaren",
+    "language": "Sprache"
+  },
+  "hero": {
+    "title1": "Bewegung",
+    "title2": "ist Leben.",
+    "subtitle": "Ihr Gesundheitspartner in Eupen für aktive und individuelle Rehabilitation.",
+    "cta": "Termin vereinbaren",
+    "ctaSecondary": "Unsere Leistungen"
+  },
+  "stats": {
+    "therapists": "Therapeuten",
+    "experience": "Jahre Erfahrung",
+    "specialties": "Fachbereiche",
+    "patients": "Zufriedene Patienten"
+  },
+  "services": {
+    "sectionTitle": "Unsere Leistungen",
+    "sectionSubtitle": "Entdecken Sie unsere spezialisierten Therapien für Ihre Rehabilitation und Ihr Wohlbefinden.",
+    "manualTherapy": {
+      "title": "Manuelle Therapie",
+      "description": "Behandlung von Funktionsstörungen des Bewegungsapparates. Biopsychosozialer Ansatz für eine nachhaltige Genesung.",
+      "link": "Mehr erfahren"
+    },
+    "sportPhysio": {
+      "title": "Sport Physiotherapie",
+      "description": "Rehabilitation nach Sportverletzungen, Verletzungsprävention und Leistungssteigerung für Athleten und Hobbysportler.",
+      "link": "Mehr erfahren"
+    },
+    "jaw": {
+      "title": "Kiefergelenktherapie",
+      "description": "Therapie bei Kieferbeschwerden, Kopfschmerzen, Schwindel und Craniomandibulärer Dysfunktion (CMD).",
+      "link": "Mehr erfahren"
+    },
+    "lymph": {
+      "title": "Lymphdrainage",
+      "description": "Spezielle und sanfte Massage zur Reduktion von Ödemen nach Operationen, Tumorbehandlungen oder Sportverletzungen.",
+      "link": "Mehr erfahren"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Nach Ihrer Operation",
+    "sectionSubtitle": "Wir begleiten Sie auf Ihrem Weg zurück zu schmerzfreier Bewegung.",
+    "hip": {
+      "title": "Hüftprothese (TEP)",
+      "description": "Beschleunigte Rehabilitation nach Hüft-TEP mit individuell angepasstem Behandlungsplan."
+    },
+    "knee": {
+      "title": "Knieprothese (TEP)",
+      "description": "Gezielte Kräftigung und Mobilisation für eine optimale Genesung nach Knie-TEP."
+    },
+    "acl": {
+      "title": "Kreuzband (VKB)",
+      "description": "Stufenweise Rehabilitation nach Kreuzbandoperation bis zur Rückkehr zum Sport."
+    },
+    "shoulder": {
+      "title": "Schulteroperation",
+      "description": "Sanfte Wiederherstellung der Schulterfunktion nach operativer Versorgung."
+    },
+    "cta": "Termin nach OP vereinbaren",
+    "learnMore": "Mehr erfahren"
+  },
+  "team": {
+    "sectionTitle": "Unser Team",
+    "sectionSubtitle": "Erfahrene Therapeuten für Ihre Gesundheit.",
+    "viewProfile": "Profil ansehen",
+    "bookAppointment": "Termin buchen",
+    "philippe": {
+      "role": "Manualtherapeut — Leiter",
+      "quote": "Seit 2012 Physiotherapeut. Jeden Tag motiviert, die bestmögliche und individuellste Behandlung anzubieten."
+    },
+    "florence": {
+      "role": "Physiotherapeutin & Osteopathie",
+      "quote": "Der Körper ist eine Einheit, ein harmonisches Ganzes, bestehend aus voneinander abhängigen Teilen."
+    },
+    "felix": {
+      "role": "Physiotherapeut & Osteopathie",
+      "quote": "Frisch diplomiert 2021, habe ich immer den Wunsch gehabt, anderen zu helfen."
+    },
+    "fabienne": {
+      "role": "Lymphdrainage & Kiefergelenk",
+      "quote": "Seit 2013 Physiotherapeutin mit Leidenschaft und Köpfchen. Immer darauf bedacht, Ihnen bestmöglich zu helfen."
+    },
+    "thom": {
+      "role": "Sport Physiotherapeut",
+      "quote": "Physiotherapeut seit 2015, ich nutze jede Erfahrung, um Ihre Erwartungen bestmöglich zu erfüllen."
+    },
+    "loic": {
+      "role": "Physiotherapeut & Osteopathie",
+      "quote": "Frisch diplomiert und leidenschaftlich über den menschlichen Körper, stelle ich mein Wissen in Ihren Dienst."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Unsere Praxis",
+    "sectionSubtitle": "Modernste Ausstattung für Ihre Rehabilitation.",
+    "equipment": "Manuthera 242 — Behandlungstisch aus Finnland für maximalen Komfort.",
+    "address": "Loten 1, B-4700 Eupen, Belgien",
+    "hours": "Mo - Fr: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Patientenstimmen",
+    "sectionSubtitle": "Was unsere Patienten über uns sagen.",
+    "reviewCta": "Bewerten Sie uns auf Google Maps"
+  },
+  "cta": {
+    "title": "Bereit für schmerzfreie Bewegung?",
+    "subtitle": "Vereinbaren Sie jetzt Ihren Termin online oder kontaktieren Sie uns direkt.",
+    "button": "Termin vereinbaren",
+    "phone": "Anrufen",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Ihre Physiotherapie- und Rehabilitationspraxis in Eupen. Ein menschlicher und professioneller Ansatz für Ihre Gesundheit.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum",
+    "cookies": "Cookie-Richtlinie",
+    "allRights": "Alle Rechte vorbehalten.",
+    "followUs": "Folgen Sie uns"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "back": "Zurück",
+    "close": "Schließen",
+    "loading": "Laden...",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "address": "Adresse"
+  },
+  "bring": {
+    "title": "Mitzubringen",
+    "prescription": "Ärztliche Verschreibung",
+    "insurance": "Klebeetikette der Krankenkasse",
+    "towel": "Großes Handtuch",
+    "sportswear": "Bequeme Sportkleidung",
+    "id": "Personalausweis"
+  },
+  "cancellation": {
+    "title": "Absage",
+    "text": "24 Stunden im Voraus. Jeder Termin, der nicht rechtzeitig abgesagt wird, wird in Rechnung gestellt."
+  }
+}

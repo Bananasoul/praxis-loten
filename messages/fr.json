@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Kinésithérapie & Rééducation à Eupen",
+    "description": "Votre partenaire santé à Eupen. Thérapie manuelle, kinésithérapie sportive, articulation temporo-mandibulaire, drainage lymphatique. Rééducation après prothèse de hanche et de genou."
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Compétences",
+    "team": "Notre Équipe",
+    "rehabilitation": "Rééducation",
+    "cabinet": "Notre Cabinet",
+    "blog": "Blog",
+    "jobs": "Jobs",
+    "appointment": "Prendre rendez-vous",
+    "language": "Langue"
+  },
+  "hero": {
+    "title1": "Le mouvement,",
+    "title2": "c'est la vie.",
+    "subtitle": "Votre partenaire santé à Eupen pour une rééducation active et personnalisée.",
+    "cta": "Prendre rendez-vous",
+    "ctaSecondary": "Nos compétences"
+  },
+  "stats": {
+    "therapists": "Thérapeutes",
+    "experience": "Ans d'expérience",
+    "specialties": "Spécialités",
+    "patients": "Patients satisfaits"
+  },
+  "services": {
+    "sectionTitle": "Nos Compétences",
+    "sectionSubtitle": "Découvrez nos thérapies spécialisées pour votre rééducation et votre bien-être.",
+    "manualTherapy": {
+      "title": "Thérapie Manuelle",
+      "description": "Traitement des troubles fonctionnels de l'appareil locomoteur. Approche biopsychosociale pour une récupération durable.",
+      "link": "En savoir plus"
+    },
+    "sportPhysio": {
+      "title": "Kinésithérapie Sportive",
+      "description": "Rééducation après blessures sportives, prévention des blessures et amélioration des performances pour athlètes et amateurs.",
+      "link": "En savoir plus"
+    },
+    "jaw": {
+      "title": "Articulation Temporo-Mandibulaire",
+      "description": "Thérapie pour les troubles de la mâchoire, maux de tête, vertiges et dysfonction craniomandibulaire (DTM).",
+      "link": "En savoir plus"
+    },
+    "lymph": {
+      "title": "Drainage Lymphatique",
+      "description": "Massage spécial et doux pour la réduction des œdèmes après opérations, traitements tumoraux ou blessures sportives.",
+      "link": "En savoir plus"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Après votre opération",
+    "sectionSubtitle": "Nous vous accompagnons sur le chemin du retour à une vie sans douleur.",
+    "hip": {
+      "title": "Prothèse de Hanche (PTH)",
+      "description": "Rééducation accélérée après prothèse totale de hanche avec plan de traitement individualisé."
+    },
+    "knee": {
+      "title": "Prothèse de Genou (PTG)",
+      "description": "Renforcement ciblé et mobilisation pour une récupération optimale après prothèse de genou."
+    },
+    "acl": {
+      "title": "Ligament Croisé (LCA)",
+      "description": "Rééducation progressive après reconstruction du ligament croisé jusqu'au retour au sport."
+    },
+    "shoulder": {
+      "title": "Chirurgie de l'Épaule",
+      "description": "Restauration douce de la fonction de l'épaule après intervention chirurgicale."
+    },
+    "cta": "Rendez-vous post-opératoire",
+    "learnMore": "En savoir plus"
+  },
+  "team": {
+    "sectionTitle": "Notre Équipe",
+    "sectionSubtitle": "Des thérapeutes expérimentés pour votre santé.",
+    "viewProfile": "Voir le profil",
+    "bookAppointment": "Prendre RDV",
+    "philippe": {
+      "role": "Thérapeute Manuel — Directeur",
+      "quote": "Kinésithérapeute depuis 2012. Chaque jour, l'envie de fournir le traitement de la plus haute qualité et le plus individualisé m'anime."
+    },
+    "florence": {
+      "role": "Kinésithérapeute & Ostéopathie",
+      "quote": "Le corps est une unité, un ensemble harmonieux composé de parties dépendantes les unes des autres."
+    },
+    "felix": {
+      "role": "Kinésithérapeute & Ostéopathie",
+      "quote": "Fraîchement diplômé en 2021, j'ai toujours eu l'envie d'aider les autres et de me rendre utile."
+    },
+    "fabienne": {
+      "role": "Drainage Lymphatique & ATM",
+      "quote": "Kinésithérapeute depuis 2013, je fais mon travail avec passion et réflexion. Toujours soucieuse de vous aider au mieux."
+    },
+    "thom": {
+      "role": "Kinésithérapeute du Sport",
+      "quote": "Kinésithérapeute depuis 2015, je profite de chaque expérience pour répondre à vos attentes le plus efficacement possible."
+    },
+    "loic": {
+      "role": "Kinésithérapeute & Ostéopathie",
+      "quote": "Récemment diplômé et passionné par le corps humain, je mets mes connaissances à votre service."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Notre Cabinet",
+    "sectionSubtitle": "Un équipement de pointe pour votre rééducation.",
+    "equipment": "Manuthera 242 — Table de traitement importée de Finlande pour un confort maximal.",
+    "address": "Loten 1, B-4700 Eupen, Belgique",
+    "hours": "Lun - Ven: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Témoignages",
+    "sectionSubtitle": "Ce que nos patients disent de nous.",
+    "reviewCta": "Évaluez-nous sur Google Maps"
+  },
+  "cta": {
+    "title": "Prêt à bouger sans douleur ?",
+    "subtitle": "Prenez rendez-vous en ligne ou contactez-nous directement.",
+    "button": "Prendre rendez-vous",
+    "phone": "Appeler",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Votre cabinet de kinésithérapie et rééducation à Eupen. Une approche humaine et professionnelle pour votre santé.",
+    "quickLinks": "Liens rapides",
+    "contact": "Contact",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "impressum": "Impressum",
+    "cookies": "Politique de cookies",
+    "allRights": "Tous droits réservés.",
+    "followUs": "Suivez-nous"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "back": "Retour",
+    "close": "Fermer",
+    "loading": "Chargement...",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "address": "Adresse"
+  },
+  "bring": {
+    "title": "À apporter",
+    "prescription": "Prescription médicale",
+    "insurance": "Vignette de mutuelle",
+    "towel": "Grande serviette",
+    "sportswear": "Tenue sportive confortable",
+    "id": "Carte d'identité"
+  },
+  "cancellation": {
+    "title": "Annulation",
+    "text": "24h à l'avance. Toute séance non décommandée dans ce délai sera facturée."
+  }
+}

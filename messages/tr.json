@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Fizyoterapi & Rehabilitasyon Eupen",
+    "description": "Eupen'deki sağlık ortağınız. Manuel terapi, spor fizyoterapisi, çene eklemi tedavisi, lenf drenajı."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "team": "Ekibimiz",
+    "rehabilitation": "Rehabilitasyon",
+    "cabinet": "Kliniğimiz",
+    "blog": "Blog",
+    "jobs": "İş İlanları",
+    "appointment": "Randevu Al",
+    "language": "Dil"
+  },
+  "hero": {
+    "title1": "Hareket",
+    "title2": "hayattır.",
+    "subtitle": "Aktif ve kişiselleştirilmiş rehabilitasyon için Eupen'deki sağlık ortağınız.",
+    "cta": "Randevu Al",
+    "ctaSecondary": "Hizmetlerimiz"
+  },
+  "stats": {
+    "therapists": "Terapist",
+    "experience": "Yıl Deneyim",
+    "specialties": "Uzmanlık Alanı",
+    "patients": "Mutlu Hasta"
+  },
+  "services": {
+    "sectionTitle": "Hizmetlerimiz",
+    "sectionSubtitle": "Rehabilitasyonunuz için uzman terapilerimizi keşfedin.",
+    "manualTherapy": {
+      "title": "Manuel Terapi",
+      "description": "Kas-iskelet sistemi bozukluklarının tedavisi.",
+      "link": "Daha fazla"
+    },
+    "sportPhysio": {
+      "title": "Spor Fizyoterapisi",
+      "description": "Spor yaralanmalarından sonra rehabilitasyon.",
+      "link": "Daha fazla"
+    },
+    "jaw": {
+      "title": "Çene Eklemi Tedavisi",
+      "description": "Çene bozuklukları ve baş ağrısı tedavisi.",
+      "link": "Daha fazla"
+    },
+    "lymph": {
+      "title": "Lenf Drenajı",
+      "description": "Ödem azaltma için yumuşak masaj.",
+      "link": "Daha fazla"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Ameliyat Sonrası",
+    "sectionSubtitle": "Ağrısız harekete geri dönüşünüzde yanınızdayız.",
+    "hip": {
+      "title": "Kalça Protezi",
+      "description": "Kalça protezi sonrası hızlandırılmış rehabilitasyon."
+    },
+    "knee": {
+      "title": "Diz Protezi",
+      "description": "Diz protezi sonrası hedefli güçlendirme."
+    },
+    "acl": {
+      "title": "Çapraz Bağ",
+      "description": "Çapraz bağ ameliyatı sonrası rehabilitasyon."
+    },
+    "shoulder": {
+      "title": "Omuz Ameliyatı",
+      "description": "Omuz fonksiyonunun yumuşak restorasyonu."
+    },
+    "cta": "Ameliyat Sonrası Randevu",
+    "learnMore": "Daha fazla bilgi"
+  },
+  "team": {
+    "sectionTitle": "Ekibimiz",
+    "sectionSubtitle": "Sağlığınız için deneyimli terapistler.",
+    "viewProfile": "Profili Gör",
+    "bookAppointment": "Randevu",
+    "philippe": {
+      "role": "Manuel Terapist — Müdür",
+      "quote": "2012'den beri fizyoterapist."
+    },
+    "florence": {
+      "role": "Fizyoterapist & Osteopati",
+      "quote": "Vücut bir bütündür."
+    },
+    "felix": {
+      "role": "Fizyoterapist & Osteopati",
+      "quote": "2021 mezunu."
+    },
+    "fabienne": {
+      "role": "Lenf Drenajı & Çene",
+      "quote": "2013'ten beri fizyoterapist."
+    },
+    "thom": {
+      "role": "Spor Fizyoterapisti",
+      "quote": "2015'ten beri fizyoterapist."
+    },
+    "loic": {
+      "role": "Fizyoterapist & Osteopati",
+      "quote": "Yeni mezun."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Kliniğimiz",
+    "sectionSubtitle": "Rehabilitasyonunuz için modern ekipman.",
+    "equipment": "Manuthera 242 — Finlandiya'dan ithal tedavi masası.",
+    "address": "Loten 1, B-4700 Eupen, Belçika",
+    "hours": "Pts - Cum: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Görüşler",
+    "sectionSubtitle": "Hastalarımız ne diyor.",
+    "reviewCta": "Google Maps'te bizi değerlendirin"
+  },
+  "cta": {
+    "title": "Ağrısız hareket etmeye hazır mısınız?",
+    "subtitle": "Online randevu alın veya doğrudan bize ulaşın.",
+    "button": "Randevu Al",
+    "phone": "Ara",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Eupen'deki fizyoterapi kliniğiniz.",
+    "quickLinks": "Hızlı Linkler",
+    "contact": "İletişim",
+    "legal": "Yasal",
+    "privacy": "Gizlilik",
+    "impressum": "Künye",
+    "cookies": "Çerez Politikası",
+    "allRights": "Tüm hakları saklıdır.",
+    "followUs": "Bizi Takip Edin"
+  },
+  "common": {
+    "learnMore": "Daha fazla",
+    "back": "Geri",
+    "close": "Kapat",
+    "loading": "Yükleniyor...",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "address": "Adres"
+  },
+  "bring": {
+    "title": "Getirilecekler",
+    "prescription": "Tıbbi reçete",
+    "insurance": "Sağlık sigortası kartı",
+    "towel": "Büyük havlu",
+    "sportswear": "Rahat spor kıyafeti",
+    "id": "Kimlik kartı"
+  },
+  "cancellation": {
+    "title": "İptal",
+    "text": "24 saat önceden. Zamanında iptal edilmeyen seanslar faturalandırılır."
+  }
+}

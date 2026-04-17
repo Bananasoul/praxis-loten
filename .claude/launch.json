@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "praxis-loten",
+      "runtimeExecutable": "/Users/philippe/Documents/Praxis Loten/WEBSITE PL/CascadeProjects/windsurf-project/praxis-loten/node_modules/.bin/next",
+      "runtimeArgs": ["dev", "--cwd", "/Users/philippe/Documents/Praxis Loten/WEBSITE PL/CascadeProjects/windsurf-project/praxis-loten"],
+      "port": 3000
+    }
+  ]
+}

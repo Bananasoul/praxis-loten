@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Physiotherapy & Rehabilitation in Eupen",
+    "description": "Your health partner in Eupen. Manual therapy, sports physiotherapy, jaw therapy, lymphatic drainage. Post-operative rehabilitation."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "team": "Our Team",
+    "rehabilitation": "Rehabilitation",
+    "cabinet": "Our Practice",
+    "blog": "Blog",
+    "jobs": "Jobs",
+    "appointment": "Book Appointment",
+    "language": "Language"
+  },
+  "hero": {
+    "title1": "Movement",
+    "title2": "is life.",
+    "subtitle": "Your health partner in Eupen for active and personalized rehabilitation.",
+    "cta": "Book Appointment",
+    "ctaSecondary": "Our Services"
+  },
+  "stats": {
+    "therapists": "Therapists",
+    "experience": "Years Experience",
+    "specialties": "Specialties",
+    "patients": "Happy Patients"
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "sectionSubtitle": "Discover our specialized therapies for your rehabilitation and well-being.",
+    "manualTherapy": {
+      "title": "Manual Therapy",
+      "description": "Treatment of musculoskeletal disorders. Biopsychosocial approach for lasting recovery.",
+      "link": "Learn more"
+    },
+    "sportPhysio": {
+      "title": "Sports Physiotherapy",
+      "description": "Rehabilitation after sports injuries, injury prevention and performance enhancement.",
+      "link": "Learn more"
+    },
+    "jaw": {
+      "title": "Jaw Therapy (TMJ)",
+      "description": "Therapy for jaw disorders, headaches, dizziness and craniomandibular dysfunction.",
+      "link": "Learn more"
+    },
+    "lymph": {
+      "title": "Lymphatic Drainage",
+      "description": "Gentle massage to reduce edema after surgery, tumor treatment or sports injuries.",
+      "link": "Learn more"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "After Your Surgery",
+    "sectionSubtitle": "We guide you back to pain-free movement.",
+    "hip": {
+      "title": "Hip Replacement",
+      "description": "Accelerated rehabilitation after total hip replacement with personalized treatment plan."
+    },
+    "knee": {
+      "title": "Knee Replacement",
+      "description": "Targeted strengthening and mobilization for optimal recovery after knee replacement."
+    },
+    "acl": {
+      "title": "ACL Reconstruction",
+      "description": "Progressive rehabilitation after ACL surgery through to return to sport."
+    },
+    "shoulder": {
+      "title": "Shoulder Surgery",
+      "description": "Gentle restoration of shoulder function after surgical intervention."
+    },
+    "cta": "Post-Op Appointment",
+    "learnMore": "Learn more"
+  },
+  "team": {
+    "sectionTitle": "Our Team",
+    "sectionSubtitle": "Experienced therapists dedicated to your health.",
+    "viewProfile": "View Profile",
+    "bookAppointment": "Book Now",
+    "philippe": {
+      "role": "Manual Therapist — Director",
+      "quote": "Physiotherapist since 2012, driven every day to provide the highest quality, most individualized treatment."
+    },
+    "florence": {
+      "role": "Physiotherapist & Osteopathy",
+      "quote": "The body is a unit, a harmonious whole composed of interdependent parts."
+    },
+    "felix": {
+      "role": "Physiotherapist & Osteopathy",
+      "quote": "Freshly graduated in 2021, I've always wanted to help others."
+    },
+    "fabienne": {
+      "role": "Lymphatic Drainage & TMJ",
+      "quote": "Physiotherapist since 2013, working with passion and dedication."
+    },
+    "thom": {
+      "role": "Sports Physiotherapist",
+      "quote": "Physiotherapist since 2015, using every experience to meet your expectations."
+    },
+    "loic": {
+      "role": "Physiotherapist & Osteopathy",
+      "quote": "Recently graduated and passionate about the human body."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Our Practice",
+    "sectionSubtitle": "State-of-the-art equipment for your rehabilitation.",
+    "equipment": "Manuthera 242 — Treatment table imported from Finland for maximum comfort.",
+    "address": "Loten 1, B-4700 Eupen, Belgium",
+    "hours": "Mon - Fri: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Testimonials",
+    "sectionSubtitle": "What our patients say about us.",
+    "reviewCta": "Review us on Google Maps"
+  },
+  "cta": {
+    "title": "Ready to move pain-free?",
+    "subtitle": "Book your appointment online or contact us directly.",
+    "button": "Book Appointment",
+    "phone": "Call",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Your physiotherapy and rehabilitation practice in Eupen. A human and professional approach to your health.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy",
+    "impressum": "Imprint",
+    "cookies": "Cookie Policy",
+    "allRights": "All rights reserved.",
+    "followUs": "Follow Us"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "back": "Back",
+    "close": "Close",
+    "loading": "Loading...",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  },
+  "bring": {
+    "title": "What to bring",
+    "prescription": "Medical prescription",
+    "insurance": "Health insurance card",
+    "towel": "Large towel",
+    "sportswear": "Comfortable sportswear",
+    "id": "ID card"
+  },
+  "cancellation": {
+    "title": "Cancellation",
+    "text": "24 hours in advance. Any session not cancelled within this period will be charged."
+  }
+}

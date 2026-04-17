@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Fizjoterapia i Rehabilitacja w Eupen",
+    "description": "Twój partner zdrowotny w Eupen. Terapia manualna, fizjoterapia sportowa, leczenie stawu żuchwowego, drenaż limfatyczny."
+  },
+  "nav": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "team": "Nasz Zespół",
+    "rehabilitation": "Rehabilitacja",
+    "cabinet": "Nasza Praktyka",
+    "blog": "Blog",
+    "jobs": "Praca",
+    "appointment": "Umów wizytę",
+    "language": "Język"
+  },
+  "hero": {
+    "title1": "Ruch",
+    "title2": "to życie.",
+    "subtitle": "Twój partner zdrowotny w Eupen dla aktywnej i spersonalizowanej rehabilitacji.",
+    "cta": "Umów wizytę",
+    "ctaSecondary": "Nasze usługi"
+  },
+  "stats": {
+    "therapists": "Terapeutów",
+    "experience": "Lat doświadczenia",
+    "specialties": "Specjalizacje",
+    "patients": "Zadowolonych pacjentów"
+  },
+  "services": {
+    "sectionTitle": "Nasze Usługi",
+    "sectionSubtitle": "Odkryj nasze specjalistyczne terapie.",
+    "manualTherapy": {
+      "title": "Terapia Manualna",
+      "description": "Leczenie zaburzeń układu mięśniowo-szkieletowego.",
+      "link": "Więcej"
+    },
+    "sportPhysio": {
+      "title": "Fizjoterapia Sportowa",
+      "description": "Rehabilitacja po kontuzjach sportowych.",
+      "link": "Więcej"
+    },
+    "jaw": {
+      "title": "Leczenie Stawu Żuchwowego",
+      "description": "Terapia zaburzeń żuchwy i bólów głowy.",
+      "link": "Więcej"
+    },
+    "lymph": {
+      "title": "Drenaż Limfatyczny",
+      "description": "Delikatny masaż zmniejszający obrzęki.",
+      "link": "Więcej"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Po operacji",
+    "sectionSubtitle": "Towarzyszymy Ci w powrocie do bezbolesnego ruchu.",
+    "hip": {
+      "title": "Endoproteza biodra",
+      "description": "Przyspieszona rehabilitacja po endoprotezie biodra."
+    },
+    "knee": {
+      "title": "Endoproteza kolana",
+      "description": "Celowane wzmacnianie po endoprotezie kolana."
+    },
+    "acl": {
+      "title": "Więzadło krzyżowe",
+      "description": "Stopniowa rehabilitacja po operacji więzadła krzyżowego."
+    },
+    "shoulder": {
+      "title": "Operacja barku",
+      "description": "Delikatne przywracanie funkcji barku."
+    },
+    "cta": "Wizyta pooperacyjna",
+    "learnMore": "Dowiedz się więcej"
+  },
+  "team": {
+    "sectionTitle": "Nasz Zespół",
+    "sectionSubtitle": "Doświadczeni terapeuci dla Twojego zdrowia.",
+    "viewProfile": "Zobacz profil",
+    "bookAppointment": "Umów się",
+    "philippe": {
+      "role": "Terapeuta Manualny — Dyrektor",
+      "quote": "Fizjoterapeuta od 2012."
+    },
+    "florence": {
+      "role": "Fizjoterapeuta & Osteopatia",
+      "quote": "Ciało to jedność."
+    },
+    "felix": {
+      "role": "Fizjoterapeuta & Osteopatia",
+      "quote": "Absolwent 2021."
+    },
+    "fabienne": {
+      "role": "Drenaż Limfatyczny & Staw Żuchwowy",
+      "quote": "Fizjoterapeuta od 2013."
+    },
+    "thom": {
+      "role": "Fizjoterapeuta Sportowy",
+      "quote": "Fizjoterapeuta od 2015."
+    },
+    "loic": {
+      "role": "Fizjoterapeuta & Osteopatia",
+      "quote": "Świeży absolwent."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Nasza Praktyka",
+    "sectionSubtitle": "Nowoczesny sprzęt do rehabilitacji.",
+    "equipment": "Manuthera 242 — Stół terapeutyczny z Finlandii.",
+    "address": "Loten 1, B-4700 Eupen, Belgia",
+    "hours": "Pon - Pt: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Opinie",
+    "sectionSubtitle": "Co mówią nasi pacjenci.",
+    "reviewCta": "Oceń nas na Google Maps"
+  },
+  "cta": {
+    "title": "Gotowy na bezbolesny ruch?",
+    "subtitle": "Umów wizytę online lub skontaktuj się z nami.",
+    "button": "Umów wizytę",
+    "phone": "Zadzwoń",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Twoja praktyka fizjoterapeutyczna w Eupen.",
+    "quickLinks": "Szybkie linki",
+    "contact": "Kontakt",
+    "legal": "Informacje prawne",
+    "privacy": "Prywatność",
+    "impressum": "Impressum",
+    "cookies": "Polityka cookies",
+    "allRights": "Wszelkie prawa zastrzeżone.",
+    "followUs": "Śledź nas"
+  },
+  "common": {
+    "learnMore": "Więcej",
+    "back": "Wstecz",
+    "close": "Zamknij",
+    "loading": "Ładowanie...",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "address": "Adres"
+  },
+  "bring": {
+    "title": "Co zabrać",
+    "prescription": "Recepta lekarska",
+    "insurance": "Karta ubezpieczenia",
+    "towel": "Duży ręcznik",
+    "sportswear": "Wygodny strój sportowy",
+    "id": "Dowód osobisty"
+  },
+  "cancellation": {
+    "title": "Anulowanie",
+    "text": "24 godziny wcześniej. Nieodwołane wizyty będą fakturowane."
+  }
+}

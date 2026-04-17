@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
+@theme inline {
+  /* Primary — Vert Lime Logo (#76B82A) */
+  --color-primary-50:  #f5fce8;
+  --color-primary-100: #e8f8c8;
+  --color-primary-200: #d1f094;
+  --color-primary-300: #b2e258;
+  --color-primary-400: #93ce2a;
+  --color-primary-500: #76b82a;
+  --color-primary-600: #5c9120;
+  --color-primary-700: #456d18;
+  --color-primary-800: #315010;
+  --color-primary-900: #1e340a;
+  --color-primary-950: #0f1c04;
+
+  /* Secondary — Bleu Marine Logo (#2B3186) */
+  --color-secondary-50:  #eef0fb;
+  --color-secondary-100: #d5d9f5;
+  --color-secondary-200: #aab3eb;
+  --color-secondary-300: #7f8ddf;
+  --color-secondary-400: #5467d3;
+  --color-secondary-500: #3a4bc8;
+  --color-secondary-600: #2b3186;
+  --color-secondary-700: #1e2260;
+  --color-secondary-800: #141840;
+  --color-secondary-900: #0a0d20;
+  --color-secondary-950: #050610;
+
+  /* Accent — Orange CTA */
+  --color-accent-50:  #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+
+  /* Fond sombre hero */
+  --color-dark-bg: #0d1120;
+  --color-dark-surface: #151a2e;
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
 }
