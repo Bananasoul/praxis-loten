@@ -116,9 +116,9 @@ export function PraxisPageContent() {
                     <MapPin className="w-5 h-5 text-[#76b82a] flex-shrink-0 mt-0.5" />
                     <span className="text-sm">Loten 1<br />B-4700 Eupen<br />Belgique / Belgien</span>
                   </a>
-                  <a href="tel:+32478218186" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                  <a href="tel:+3287555670" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                     <Phone className="w-5 h-5 text-[#76b82a] flex-shrink-0" />
-                    <span className="text-sm">+32 478 21 81 86</span>
+                    <span className="text-sm">+32 (0)87 555 670</span>
                   </a>
                   <a href="mailto:praxisloten@gmail.com" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                     <Mail className="w-5 h-5 text-[#76b82a] flex-shrink-0" />
