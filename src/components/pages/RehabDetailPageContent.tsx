@@ -244,6 +244,43 @@ const SURGERY_DATA: Record<Slug, {
       ar: ["فقدان دائم لقوة عضلة الرباعية", "تقلص وتقييد الحركة", "زيادة خطر الجلطة مع قلة الحركة", "ألم مطول والاعتماد على مسكنات الألم"],
       pl: ["Trwała utrata siły czworogłowego", "Przykurcz i ograniczenie zakresu ruchu", "Zwiększone ryzyko zakrzepicy przy unieruchomieniu", "Przedłużony ból i uzależnienie od leków przeciwbólowych"],
     },
+    phases: {
+      de: [
+        { label: "Phase 1 — Woche 1–4", items: ["Kühlung & Ödemreduktion", "Passive Knieextension & -flexion", "Isometrische Quadrizepsübungen", "Gangschule"] },
+        { label: "Phase 2 — Woche 5–8", items: ["Kniebeugen (assistiert)", "Fahrradergometer (niedriger Widerstand)", "Propriozeptive Übungen", "Schwimmen erlaubt"] },
+        { label: "Phase 3 — Woche 9–14", items: ["Treppensteigen beidbeinig", "Leichtes Joggen (nach Freigabe)", "Funktionelle Sportübungen", "Volle Alltagsfähigkeit"] },
+      ],
+      fr: [
+        { label: "Phase 1 — Semaines 1–4", items: ["Cryothérapie & réduction de l'œdème", "Flexion/extension passive du genou", "Exercices isométriques du quadriceps", "Rééducation à la marche"] },
+        { label: "Phase 2 — Semaines 5–8", items: ["Demi-squats assistés", "Vélo ergomètre (faible résistance)", "Exercices proprioceptifs", "Natation autorisée"] },
+        { label: "Phase 3 — Semaines 9–14", items: ["Montée d'escaliers à deux jambes", "Jogging léger (après accord médical)", "Exercices fonctionnels sportifs", "Pleine capacité quotidienne"] },
+      ],
+      en: [
+        { label: "Phase 1 — Weeks 1–4", items: ["Cryotherapy & oedema reduction", "Passive knee flexion/extension", "Isometric quadriceps exercises", "Gait training"] },
+        { label: "Phase 2 — Weeks 5–8", items: ["Assisted squats", "Cycling ergometer (low resistance)", "Proprioceptive exercises", "Swimming allowed"] },
+        { label: "Phase 3 — Weeks 9–14", items: ["Two-legged stair climbing", "Light jogging (with medical clearance)", "Functional sport exercises", "Full daily capacity"] },
+      ],
+      nl: [
+        { label: "Fase 1 — Weken 1–4", items: ["Cryotherapie & oedeemreductie", "Passieve knie flexie/extensie", "Isometrische quadricepsoefeningen", "Looptraining"] },
+        { label: "Fase 2 — Weken 5–8", items: ["Geassisteerde squats", "Fietsergometer (lage weerstand)", "Proprioceptieve oefeningen", "Zwemmen toegestaan"] },
+        { label: "Fase 3 — Weken 9–14", items: ["Traplopen met twee benen", "Licht joggen (na medische goedkeuring)", "Functionele sportoefeningen", "Volledige dagelijkse capaciteit"] },
+      ],
+      tr: [
+        { label: "Faz 1 — Haftalar 1–4", items: ["Kriyoterapi & ödem azaltma", "Pasif diz fleksiyonu/ekstansiyonu", "İzometrik quadriseps egzersizleri", "Yürüme eğitimi"] },
+        { label: "Faz 2 — Haftalar 5–8", items: ["Yardımlı çömelme", "Bisiklet ergometresi (düşük direnç)", "Proprioseptif egzersizler", "Yüzmeye izin verilir"] },
+        { label: "Faz 3 — Haftalar 9–14", items: ["İki bacakla merdiven çıkma", "Hafif koşu (tıbbi onay ile)", "Fonksiyonel spor egzersizleri", "Tam günlük kapasite"] },
+      ],
+      ar: [
+        { label: "المرحلة 1 — الأسابيع 1–4", items: ["العلاج بالبرودة وتقليل الوذمة", "ثني/مد الركبة السلبي", "تمارين الرباعية المتساوية", "تدريب المشي"] },
+        { label: "المرحلة 2 — الأسابيع 5–8", items: ["قرفصاء مساعدة", "دراجة ارغومترية (مقاومة منخفضة)", "تمارين التحسس العميق", "السباحة مسموح بها"] },
+        { label: "المرحلة 3 — الأسابيع 9–14", items: ["صعود السلالم بساقين", "الجري الخفيف (بموافقة طبية)", "تمارين رياضية وظيفية", "القدرة اليومية الكاملة"] },
+      ],
+      pl: [
+        { label: "Faza 1 — Tygodnie 1–4", items: ["Krioterapia i redukcja obrzęku", "Bierne zginanie/prostowanie kolana", "Ćwiczenia izometryczne czworogłowego", "Trening chodu"] },
+        { label: "Faza 2 — Tygodnie 5–8", items: ["Wspomagane przysiady", "Ergometr rowerowy (niski opór)", "Ćwiczenia proprioceptywne", "Pływanie dozwolone"] },
+        { label: "Faza 3 — Tygodnie 9–14", items: ["Wchodzenie po schodach obunóż", "Lekki jogging (po zgodzie lekarskiej)", "Funkcjonalne ćwiczenia sportowe", "Pełna sprawność dzienna"] },
+      ],
+    },
   },
 
   acl: {
@@ -460,6 +497,43 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Rotator kaf yeniden yırtılması (protokol olmadan %40'a kadar)", "Aşırı immobilizasyondan donmuş omuz", "Erken yüklemeden kronik instabilite", "Günlük yaşam için baş üstü fonksiyon kaybı"],
       ar: ["إعادة تمزق كفة المدورين (حتى 40% بدون بروتوكول)", "الكتف المتجمد من التثبيت المفرط", "عدم الاستقرار المزمن من التحميل المبكر", "فقدان وظيفة الرفع فوق الرأس للحياة اليومية"],
       pl: ["Ponowne zerwanie stożka rotatorów (do 40% bez protokołu)", "Zamrożony bark od nadmiernego unieruchomienia", "Przewlekła niestabilność od przedwczesnego obciążenia", "Utrata funkcji nad głową w życiu codziennym"],
+    },
+    phases: {
+      de: [
+        { label: "Phase 1 — Woche 1–4", items: ["Immobilisation respektieren", "Pendel-Übungen (passiv)", "Fingerstreckung & -beugung", "Isometrische Übungen"] },
+        { label: "Phase 2 — Woche 5–8", items: ["Aktiv-assistierte Elevation", "Manuelle Techniken (Kapselmobilisation)", "Kräftigung Rotatorenmanschette", "Alltag wiederherstellen"] },
+        { label: "Phase 3 — Woche 9–16", items: ["Volle Beweglichkeit anstreben", "Maximale Kräftigung", "Propriozeptive Übungen", "Sport (nach Freigabe des Chirurgen)"] },
+      ],
+      fr: [
+        { label: "Phase 1 — Semaines 1–4", items: ["Respecter l'immobilisation", "Exercices de pendule (passifs)", "Extension/flexion des doigts", "Exercices isométriques"] },
+        { label: "Phase 2 — Semaines 5–8", items: ["Élévation active-assistée", "Techniques manuelles (mobilisation capsulaire)", "Renforcement coiffe des rotateurs", "Reprise des activités quotidiennes"] },
+        { label: "Phase 3 — Semaines 9–16", items: ["Viser amplitude complète", "Renforcement maximal", "Exercices proprioceptifs", "Sport (après accord du chirurgien)"] },
+      ],
+      en: [
+        { label: "Phase 1 — Weeks 1–4", items: ["Respect immobilisation protocol", "Pendulum exercises (passive)", "Finger flexion/extension", "Isometric exercises"] },
+        { label: "Phase 2 — Weeks 5–8", items: ["Active-assisted elevation", "Manual techniques (capsular mobilisation)", "Rotator cuff strengthening", "Restore daily activities"] },
+        { label: "Phase 3 — Weeks 9–16", items: ["Target full range of motion", "Maximum strengthening", "Proprioceptive exercises", "Sport (with surgeon's clearance)"] },
+      ],
+      nl: [
+        { label: "Fase 1 — Weken 1–4", items: ["Immobilisatieprotocol respecteren", "Pendeloefeningen (passief)", "Vingerbuiging/-strekking", "Isometrische oefeningen"] },
+        { label: "Fase 2 — Weken 5–8", items: ["Actief-geassisteerde elevatie", "Manuele technieken (kapsel mobilisatie)", "Rotatorenmanchet versterking", "Dagelijkse activiteiten herstellen"] },
+        { label: "Fase 3 — Weken 9–16", items: ["Volledige bewegingsvrijheid nastreven", "Maximale versterking", "Proprioceptieve oefeningen", "Sport (na goedkeuring chirurg)"] },
+      ],
+      tr: [
+        { label: "Faz 1 — Haftalar 1–4", items: ["İmmobilizasyon protokolüne uymak", "Sarkaç egzersizleri (pasif)", "Parmak fleksiyon/ekstansiyonu", "İzometrik egzersizler"] },
+        { label: "Faz 2 — Haftalar 5–8", items: ["Aktif-yardımlı elevasyon", "Manuel teknikler (kapsül mobilizasyonu)", "Rotator kaf güçlendirme", "Günlük aktiviteleri geri kazanma"] },
+        { label: "Faz 3 — Haftalar 9–16", items: ["Tam hareket açıklığını hedefleme", "Maksimum güçlendirme", "Proprioseptif egzersizler", "Spor (cerrahın onayıyla)"] },
+      ],
+      ar: [
+        { label: "المرحلة 1 — الأسابيع 1–4", items: ["احترام بروتوكول الشلل", "تمارين البندول (سلبية)", "ثني/مد الأصابع", "تمارين إيزومترية"] },
+        { label: "المرحلة 2 — الأسابيع 5–8", items: ["رفع نشط مساعد", "تقنيات يدوية (تعبئة الكبسولة)", "تقوية كفة المدورين", "استعادة الأنشطة اليومية"] },
+        { label: "المرحلة 3 — الأسابيع 9–16", items: ["استهداف مدى الحركة الكامل", "تقوية قصوى", "تمارين الإحساس العميق", "الرياضة (بموافقة الجراح)"] },
+      ],
+      pl: [
+        { label: "Faza 1 — Tygodnie 1–4", items: ["Przestrzeganie unieruchomienia", "Ćwiczenia wahadłowe (bierne)", "Zginanie/prostowanie palców", "Ćwiczenia izometryczne"] },
+        { label: "Faza 2 — Tygodnie 5–8", items: ["Aktywna-wspomagana elewacja", "Techniki manualne (mobilizacja torebki)", "Wzmacnianie stożka rotatorów", "Przywrócenie codziennych aktywności"] },
+        { label: "Faza 3 — Tygodnie 9–16", items: ["Dążenie do pełnego zakresu ruchu", "Maksymalne wzmacnianie", "Ćwiczenia proprioceptywne", "Sport (za zgodą chirurga)"] },
+      ],
     },
   },
 };
