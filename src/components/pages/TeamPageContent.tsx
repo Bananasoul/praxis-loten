@@ -139,9 +139,9 @@ const TEAM = [
     role: { de: "Sport Physiotherapie, Running Clinic, BFR", fr: "Kinésithérapie du sport, Running Clinic, BFR" },
     tags: ["Running Clinic", "BFR", "Kinesport", "Q-top"],
     languages: ["Français", "Deutsch", "English"],
-    booking: { label: "WhatsApp Business", href: "https://wa.me/32478218186" },
+    booking: { label: "WhatsApp Business", href: "https://wa.me/32471869024" },
     bookingOnline: { label: "Q-top", href: "https://www.q-top.be/Online-planner/FR/?root=kq43933" },
-    phone: "+32 478 21 81 86",
+    phone: "+32 471 86 90 24",
     bio: {
       de: "Experte für Sportphysiotherapie, spezialisiert auf Laufverletzungen (La Clinique du Coureur) und Blood Flow Restriction Training (BFR/Kinesport). Betreut Sportler in Kabinett und Klub.",
       fr: "Expert en kinésithérapie du sport, spécialisé dans les blessures de la course à pied (La Clinique du Coureur) et l'entraînement par restriction du flux sanguin (BFR/Kinesport). Prise en charge en cabinet et en club.",

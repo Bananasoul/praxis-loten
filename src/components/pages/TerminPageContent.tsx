@@ -130,9 +130,9 @@ const THERAPISTS = [
     },
     specialties: ["Sport Expert", "Running Clinic", "BFR / Kinesport"],
     languages: ["FR", "DE", "EN"],
-    phone: "+32 478 21 81 86",
+    phone: "+32 471 86 90 24",
     booking: [
-      { type: "whatsapp" as const, label: "WhatsApp Business", href: "https://wa.me/32478218186", primary: true },
+      { type: "whatsapp" as const, label: "WhatsApp Business", href: "https://wa.me/32471869024", primary: true },
       { type: "online" as const, label: "Online Booking (Q-top)", href: "https://www.q-top.be/Online-planner/FR/?root=kq43933", primary: true },
       { type: "email" as const, label: "", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=", href: "#", primary: false },
     ],

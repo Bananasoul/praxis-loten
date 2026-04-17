@@ -220,7 +220,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2019", institution: "KINESPORT", title: "Blood Flow Restriction Training (musculation avec restriction du flux sanguin)" },
       { year: "2020–2021", institution: "Formation complémentaire", title: "Kinésithérapie du sport expert" },
     ],
-    booking: { whatsapp: "https://wa.me/32478218186", qtop: "https://www.q-top.be/Online-planner/FR/?root=kq43933", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=" },
+    booking: { whatsapp: "https://wa.me/32471869024", qtop: "https://www.q-top.be/Online-planner/FR/?root=kq43933", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=" },
     quote: null,
   },
   {
