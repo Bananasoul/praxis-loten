@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { CalendarPlus, Phone, MessageCircle } from "lucide-react";
+import { CalendarPlus } from "lucide-react";
 
 export function CTASection() {
   const t = useTranslations("cta");
@@ -35,22 +35,6 @@ export function CTASection() {
               <CalendarPlus className="w-5 h-5" />
               {t("button")}
             </Link>
-            <a
-              href="tel:+32478218186"
-              className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl text-lg font-semibold transition-all border border-white/20"
-            >
-              <Phone className="w-5 h-5" />
-              {t("phone")}
-            </a>
-            <a
-              href="https://wa.me/32478218186"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 bg-[#25D366]/90 hover:bg-[#25D366] text-white rounded-2xl text-lg font-semibold transition-all"
-            >
-              <MessageCircle className="w-5 h-5" />
-              {t("whatsapp")}
-            </a>
           </div>
         </AnimatedSection>
       </div>
