@@ -55,6 +55,7 @@ export function Header() {
     { href: "/team", label: t("team") },
     { href: "/rehabilitation", label: t("rehabilitation") },
     { href: "/praxis", label: t("cabinet") },
+    { href: "/honoraires", label: t("honoraires") },
     { href: "/blog", label: t("blog") },
     { href: "/jobs", label: t("jobs") },
   ];
