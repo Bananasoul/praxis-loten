@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
-import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone } from "lucide-react";
+import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone, ArrowRight } from "lucide-react";
 
 const TEAM = [
   {
@@ -185,7 +185,7 @@ const TEAM = [
       { year: "2020–2025", title: "Université de Liège — Master Kinésithérapie & Réadaptation" },
       { year: "2025–…", title: "Formation Ostéopathie en cours" },
     ],
-    convention: null,
+    convention: "non conventionné",
     note: null,
   },
 ];
@@ -328,6 +328,15 @@ export function TeamPageContent() {
                       {member.note}
                     </div>
                   )}
+
+                  {/* View profile link */}
+                  <Link
+                    href={`/team/${member.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2b3186] hover:text-[#76b82a] transition-colors mb-4"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                    {t("viewProfile")}
+                  </Link>
 
                   {/* Booking CTAs */}
                   <div className="flex gap-2 flex-wrap">

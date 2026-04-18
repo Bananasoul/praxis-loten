@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import { CalendarPlus, Bone, Activity, Dumbbell, ArrowRight } from "lucide-react";
+import { CalendarPlus, Bone, Activity, Dumbbell, ArrowRight, Info } from "lucide-react";
 
 const rehabItems = [
   {
@@ -71,7 +71,15 @@ export function RehabSection() {
           ))}
         </StaggerContainer>
 
-        <AnimatedSection delay={0.5} className="mt-12 text-center">
+        {/* Disclaimer */}
+        <AnimatedSection delay={0.4} className="mt-10">
+          <div className="flex items-start gap-3 max-w-3xl mx-auto px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white/60 text-sm leading-relaxed">
+            <Info className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#76b82a]" />
+            <p>{t("disclaimer")}</p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.55} className="mt-8 text-center">
           <Link
             href="/termin"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] shadow-2xl shadow-[#76b82a]/30"
