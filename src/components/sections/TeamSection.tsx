@@ -9,8 +9,7 @@ import { CalendarPlus, ArrowRight } from "lucide-react";
 
 const teamMembers = [
   { key: "philippe", name: "Philippe Banaszak", initials: "PB", color: "from-primary-500 to-primary-700", href: "/team/philippe-banaszak", slug: "philippe-banaszak" },
-  { key: "florence", name: "Florence Joris", initials: "FJ", color: "from-secondary-500 to-secondary-700", href: "/team/florence-joris", slug: "florence-joris" },
-  { key: "felix", name: "Félix Esser", initials: "FE", color: "from-accent-500 to-accent-700", href: "/team/felix-esser", slug: "felix-esser" },
+{ key: "felix", name: "Félix Esser", initials: "FE", color: "from-accent-500 to-accent-700", href: "/team/felix-esser", slug: "felix-esser" },
   { key: "fabienne", name: "Fabienne Dormann", initials: "FD", color: "from-purple-500 to-purple-700", href: "/team/fabienne-dormann", slug: "fabienne-dormann" },
   { key: "thom", name: "Thom Petit", initials: "TP", color: "from-teal-500 to-teal-700", href: "/team/thom-petit", slug: "thom-petit" },
   { key: "loic", name: "Loïc Meunier", initials: "LM", color: "from-indigo-500 to-indigo-700", href: "/team/loic-meunier", slug: "loic-meunier" },

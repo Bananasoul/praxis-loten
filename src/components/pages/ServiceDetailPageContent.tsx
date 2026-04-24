@@ -130,8 +130,8 @@ const SERVICES: Record<string, ServiceDetail> = {
       ar: "30-60 دقيقة لكل جلسة، حسب النتائج",
       pl: "30–60 minut na sesję, w zależności od wyników",
     },
-    teamSlugs: ["philippe-banaszak", "thom-petit", "florence-joris", "felix-esser"],
-    teamNames: ["Philippe Banaszak", "Thom Petit", "Florence Joris", "Félix Esser"],
+    teamSlugs: ["philippe-banaszak", "thom-petit", "felix-esser"],
+    teamNames: ["Philippe Banaszak", "Thom Petit", "Félix Esser"],
     faq: [
       {
         q: { de: "Brauche ich eine ärztliche Überweisung?", fr: "Ai-je besoin d'une prescription médicale ?", en: "Do I need a medical referral?", nl: "Heb ik een medische verwijzing nodig?", tr: "Tıbbi sevk gerekli mi?", ar: "هل أحتاج إلى إحالة طبية؟", pl: "Czy potrzebuję skierowania lekarskiego?" },

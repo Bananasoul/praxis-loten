@@ -4,7 +4,6 @@ import { TherapistPageContent } from "@/components/pages/TherapistPageContent";
 
 const SLUGS = [
   "philippe-banaszak",
-  "florence-joris",
   "felix-esser",
   "fabienne-dormann",
   "thom-petit",

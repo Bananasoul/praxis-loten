@@ -39,32 +39,7 @@ const THERAPISTS = [
     ],
     convention: null,
   },
-  {
-    slug: "florence-joris",
-    name: "Florence Joris",
-    initials: "FJ",
-    color: "from-[#76b82a] to-[#95d93a]",
-    accentColor: "#76b82a",
-    role: {
-      de: "Physiotherapeutin — Osteopathie — Crochetage",
-      fr: "Kinésithérapeute — Ostéopathie — Crochetage",
-      en: "Physiotherapist — Osteopathy — Crochetage",
-      nl: "Fysiotherapeut — Osteopathie — Crochetage",
-      tr: "Fizyoterapist — Osteopati — Crochetage",
-      ar: "فيزيوتيرابيست — هشاشة عظام — Crochetage",
-      pl: "Fizjoterapeuta — Osteopatia — Crochetage",
-    },
-    specialties: ["Ostéopathie", "Crochetage", "Pilates Matwork"],
-    languages: ["FR", "DE", "EN"],
-    phone: "+32 484 39 55 94",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp Business", href: "https://wa.me/32484395594", primary: true },
-      { type: "online" as const, label: "Doctoranytime", href: "https://www.doctoranytime.be/d/kinesitherapeute/florence-joris?area=eupen", primary: true },
-      { type: "email" as const, label: "", emailEnc: "Zmtvcmlzay5raW5lQGdtYWlsLmNvbQ==", href: "#", primary: false },
-    ],
-    convention: { de: "Nicht konventioniert", fr: "Déconventionnée", en: "Non-conv.", nl: "Niet geconv.", tr: "Konv. değil", ar: "غير تقليدي", pl: "Niekonw." },
-  },
-  {
+{
     slug: "felix-esser",
     name: "Félix Esser",
     initials: "FE",

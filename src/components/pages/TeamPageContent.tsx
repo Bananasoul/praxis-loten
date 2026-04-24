@@ -41,38 +41,7 @@ const TEAM = [
     convention: null,
     note: null,
   },
-  {
-    key: "florence",
-    name: "Florence Joris",
-    slug: "florence-joris",
-    initials: "FJ",
-    color: "from-[#76b82a] to-[#5c9120]",
-    role: { de: "Allgemeine PT, Osteopathie in Ausbildung, Crochetage", fr: "PT générale, Ostéo en formation, Crochetage" },
-    tags: ["Ostéopathie", "Crochetage", "Pilates Matwork"],
-    languages: ["Français", "Deutsch", "English"],
-    booking: { label: "WhatsApp Business", href: "https://wa.me/32484395594" },
-    bookingOnline: { label: "Doctoranytime", href: "https://www.doctoranytime.be/d/kinesitherapeute/florence-joris?area=eupen" },
-    phone: "+32 484 39 55 94",
-    bio: {
-      de: "Allgemeine Physiotherapie und Osteopathie (5-jährige Ausbildung am Collège belge d'Ostéopathie Brüssel). Spezialisiert auf Crochetage (Methode Jean Burnotte D.O.) und Pilates Matwork. 5 Jahre Berufserfahrung in der Schweiz.",
-      fr: "Kinésithérapie générale et ostéopathie (master 5 ans au Collège belge d'Ostéopathie Bruxelles). Spécialisée en crochetage fascio-myo-neural (méthode Jean Burnotte D.O.) et Pilates Matwork. 5 ans d'expérience professionnelle en Suisse.",
-      en: "General physiotherapy and osteopathy (5-year programme at Collège belge d'Ostéopathie Brussels). Specialised in crochetage (J. Burnotte D.O. method) and Pilates Matwork. 5 years professional experience in Switzerland.",
-      nl: "Algemene fysiotherapie en osteopathie (5-jarige opleiding aan het Collège belge d'Ostéopathie Brussel). Gespecialiseerd in crochetage en Pilates Matwork. 5 jaar werkervaring in Zwitserland.",
-      tr: "Genel fizyoterapi ve osteopati (Brüksel Belçika Osteopati Koleji'nde 5 yıllık program). Crochetage ve Pilates Matwork uzmanı. İsviçre'de 5 yıl mesleki deneyim.",
-      ar: "علاج طبيعي عام وهشاشة العظام (برنامج 5 سنوات في كلية الهشاشة البلجيكية بروكسل). متخصصة في Crochetage وPilates Matwork. 5 سنوات خبرة مهنية في سويسرا.",
-      pl: "Fizjoterapia ogólna i osteopatia (5-letni program w Collège belge d'Ostéopathie Bruksela). Specjalizacja: Crochetage i Pilates Matwork. 5 lat doświadczenia zawodowego w Szwajcarii.",
-    },
-    parcours: [
-      { year: "2014–2018", title: "Haute École André Vésale — Master en Kinésithérapie" },
-      { year: "2018–2023", title: "Expérience professionnelle en Suisse" },
-      { year: "2022–…", title: "Collège belge d'Ostéopathie — Master Ostéopathie (5 ans)" },
-      { year: "2023–2024", title: "Crochetage Fascio-Myo-Neural Global (J. Burnotte D.O.)" },
-      { year: "2024", title: "IPPP Paris — Pilates Matwork 1" },
-    ],
-    convention: "non conventionnée",
-    note: '"Le corps est une unité, un ensemble harmonieux composé de parties dépendantes les unes des autres." — Andrew Taylor Still',
-  },
-  {
+{
     key: "felix",
     name: "Félix Esser",
     slug: "felix-esser",
@@ -206,7 +175,7 @@ export function TeamPageContent() {
         <AnimatedSection className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#76b82a]/10 rounded-full text-[#5c9120] text-sm font-semibold mb-4">
             <Star className="w-4 h-4" />
-            6 {t("sectionTitle")}
+            5 {t("sectionTitle")}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
             <span style={{ color: "#76b82a" }}>{t("sectionTitle")}</span>
