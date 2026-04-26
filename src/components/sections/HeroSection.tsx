@@ -104,12 +104,24 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-16 text-white/40 text-sm flex items-center justify-center gap-2"
+          className="mt-16 flex items-center justify-center"
         >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-          </svg>
-          Loten 1, B-4700 Eupen, Belgium
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors duration-300"
+          >
+            <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+            <span className="group-hover:underline underline-offset-2">
+              Loten 1, B-4700 Eupen, Belgium
+            </span>
+            <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </motion.div>
       </div>
 

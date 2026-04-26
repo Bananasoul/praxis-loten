@@ -64,13 +64,22 @@ export function Footer() {
               {t("contact")}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-neutral-300">
+              <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary-400 shrink-0" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-300 hover:text-primary-400 transition-colors group"
+                  title="Itinéraire vers Praxis Loten"
+                >
                   Loten 1<br />
                   B-4700 Eupen<br />
                   Belgium
-                </span>
+                  <span className="block text-xs text-primary-400/60 group-hover:text-primary-400 transition-colors mt-0.5">
+                    → {t("getDirections")}
+                  </span>
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone className="w-4 h-4 text-primary-400 shrink-0" />

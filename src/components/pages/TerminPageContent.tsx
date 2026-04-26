@@ -424,9 +424,14 @@ export function TerminPageContent() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap items-center justify-center gap-6 mb-16 text-sm text-white/50"
           >
-            <span className="flex items-center gap-2">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white/80 transition-colors"
+            >
               <MapPin className="w-4 h-4 text-[#76b82a]" /> {ui.address}
-            </span>
+            </a>
             <span className="w-px h-4 bg-white/20 hidden sm:block" />
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#76b82a]" /> {ui.hoursVal}
@@ -689,7 +694,14 @@ export function TerminPageContent() {
               <ul className="space-y-3 text-sm text-white/60">
                 <li className="flex items-start gap-2.5">
                   <MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" />
-                  Loten 1<br />B-4700 Eupen, Belgique
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Loten 1<br />B-4700 Eupen, Belgique
+                  </a>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Clock className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" />
