@@ -67,7 +67,7 @@ export function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary-400 shrink-0" />
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-300 hover:text-primary-400 transition-colors group"

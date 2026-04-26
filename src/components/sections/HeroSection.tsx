@@ -107,7 +107,7 @@ export function HeroSection() {
           className="mt-16 flex items-center justify-center"
         >
           <a
-            href="https://www.google.com/maps/dir/?api=1&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+            href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors duration-300"
