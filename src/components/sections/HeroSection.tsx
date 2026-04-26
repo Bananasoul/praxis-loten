@@ -10,11 +10,12 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-bg">
-      {/* Animated gradient background — navy blue from logo */}
+      {/* Gradient background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1f52] via-[#0d1120] to-[#0f1c04] opacity-95" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#76b82a]/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2b3186]/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+        {/* Decorative orbs — static on mobile, subtle pulse only on desktop */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-[#76b82a]/10 rounded-full blur-[60px] md:blur-[100px] md:animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#2b3186]/20 rounded-full blur-[50px] md:blur-[80px] md:animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
       {/* Grid pattern overlay */}

@@ -9,7 +9,7 @@ export function StatsSection() {
   const t = useTranslations("stats");
 
   const stats = [
-    { icon: Users, value: 6, label: t("therapists"), suffix: "" },
+    { icon: Users, value: 5, label: t("therapists"), suffix: "" },
     { icon: Award, value: 10, label: t("experience"), suffix: "+" },
     { icon: Layers, value: 4, label: t("specialties"), suffix: "" },
     { icon: Heart, value: 1000, label: t("patients"), suffix: "+" },

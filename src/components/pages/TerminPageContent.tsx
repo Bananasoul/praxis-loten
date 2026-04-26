@@ -473,7 +473,7 @@ export function TerminPageContent() {
                     {/* Avatar */}
                     <div className="rounded-2xl overflow-hidden flex-shrink-0 shadow-lg ring-1 ring-white/20" style={{ width: 96, height: 96 }}>
                       <Image
-                        src={`/avatars/${therapist.slug}.png`}
+                        src={`/avatars/${therapist.slug}.jpg`}
                         alt={therapist.name}
                         width={96}
                         height={96}
@@ -555,7 +555,7 @@ export function TerminPageContent() {
                             style={{ width: 120, height: 120 }}
                           >
                             <Image
-                              src={`/avatars/${therapist.slug}.png`}
+                              src={`/avatars/${therapist.slug}.jpg`}
                               alt={therapist.name}
                               width={120}
                               height={120}

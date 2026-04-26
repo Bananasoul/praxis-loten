@@ -200,7 +200,7 @@ export function TeamPageContent() {
         <AnimatedSection delay={0.15} className="mb-16">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/avatars/team-avatar2.png"
+              src="/avatars/team-avatar2.jpg"
               alt="Praxis Loten Team"
               width={1400}
               height={600}
@@ -233,7 +233,7 @@ export function TeamPageContent() {
                   <div className="flex items-end gap-4 w-full">
                     <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 ring-2 ring-white/30">
                       <Image
-                        src={`/avatars/${member.slug}.png`}
+                        src={`/avatars/${member.slug}.jpg`}
                         alt={member.name}
                         fill
                         sizes="80px"

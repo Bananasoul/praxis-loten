@@ -269,7 +269,7 @@ export function TherapistPageContent({ slug }: { slug: string }) {
               <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-neutral-200">
                 <div className={`aspect-square bg-gradient-to-br ${therapist.color} relative overflow-hidden`}>
                   <Image
-                    src={`/avatars/${therapist.slug}.png`}
+                    src={`/avatars/${therapist.slug}.jpg`}
                     alt={therapist.name}
                     width={400}
                     height={400}

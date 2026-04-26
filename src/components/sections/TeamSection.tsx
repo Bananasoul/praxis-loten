@@ -54,7 +54,7 @@ export function TeamSection() {
                     <div className="relative h-56 overflow-hidden">
                       <div className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-20`} />
                       <Image
-                        src={`/avatars/${member.slug}.png`}
+                        src={`/avatars/${member.slug}.jpg`}
                         alt={member.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
