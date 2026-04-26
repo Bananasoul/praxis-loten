@@ -193,7 +193,7 @@ export function TeamPageContent() {
               alt="Praxis Loten Team"
               width={1400}
               height={600}
-              className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover object-center"
+              className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover object-[center_20%]"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#2b3186]/80 via-transparent to-transparent" />
