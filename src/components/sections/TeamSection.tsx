@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
@@ -17,6 +18,16 @@ const teamMembers = [
 
 export function TeamSection() {
   const t = useTranslations("team");
+  const [members, setMembers] = useState(teamMembers);
+
+  useEffect(() => {
+    const arr = [...teamMembers];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    setMembers(arr);
+  }, []);
 
   return (
     <section className="py-24 sm:py-32 bg-neutral-50">
@@ -31,7 +42,7 @@ export function TeamSection() {
         </AnimatedSection>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.1}>
-          {teamMembers.map((member) => (
+          {members.map((member) => (
             <StaggerItem key={member.key}>
               <motion.div
                 whileHover={{ y: -6 }}

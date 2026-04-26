@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -166,6 +167,16 @@ export function TeamPageContent() {
   const t = useTranslations("team");
   const tNav = useTranslations("nav");
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const [members, setMembers] = useState(TEAM);
+
+  useEffect(() => {
+    const arr = [...TEAM];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    setMembers(arr);
+  }, []);
 
   return (
     <div className="pt-28 pb-20 bg-neutral-50 min-h-screen">
@@ -210,7 +221,7 @@ export function TeamPageContent() {
 
         {/* Team Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8" staggerDelay={0.1}>
-          {TEAM.map((member) => (
+          {members.map((member) => (
             <StaggerItem key={member.key}>
               <motion.div
                 whileHover={{ y: -4 }}

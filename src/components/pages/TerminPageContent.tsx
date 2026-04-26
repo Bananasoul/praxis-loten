@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -357,6 +357,16 @@ export function TerminPageContent() {
   const ui = UI[lang];
   const isRtl = lang === "ar";
   const [selected, setSelected] = useState<string | null>(null);
+  const [therapists, setTherapists] = useState(THERAPISTS);
+
+  useEffect(() => {
+    const arr = [...THERAPISTS];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    setTherapists(arr);
+  }, []);
 
   const selectedTherapist = THERAPISTS.find((t) => t.slug === selected);
 
@@ -442,7 +452,7 @@ export function TerminPageContent() {
 
           {/* Therapist cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-            {THERAPISTS.map((therapist, i) => (
+            {therapists.map((therapist, i) => (
               <motion.button
                 key={therapist.slug}
                 initial={{ opacity: 0, y: 30 }}
