@@ -8,6 +8,7 @@ interface CountUpProps {
   duration?: number;
   suffix?: string;
   prefix?: string;
+  decimals?: number;
   className?: string;
 }
 
@@ -16,6 +17,7 @@ export function CountUp({
   duration = 2,
   suffix = "",
   prefix = "",
+  decimals = 0,
   className,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -30,13 +32,14 @@ export function CountUp({
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * end));
+      const raw = eased * end;
+      setCount(decimals > 0 ? parseFloat(raw.toFixed(decimals)) : Math.floor(raw));
       if (progress < 1) {
         requestAnimationFrame(step);
       }
     };
     requestAnimationFrame(step);
-  }, [isInView, end, duration]);
+  }, [isInView, end, duration, decimals]);
 
   return (
     <motion.span
@@ -47,7 +50,7 @@ export function CountUp({
       transition={{ duration: 0.5 }}
     >
       {prefix}
-      {count}
+      {decimals > 0 ? count.toFixed(decimals) : count}
       {suffix}
     </motion.span>
   );

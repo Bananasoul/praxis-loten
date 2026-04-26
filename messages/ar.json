@@ -24,7 +24,11 @@
   },
   "stats": {
     "therapists": "معالج",
-    "experience": "سنوات خبرة",
+    "experience": "سنوات خبرة (مجموع)",
+    "experienceNote": "مجموع جميع المعالجين",
+    "formations": "تدريبات ما بعد التخرج",
+    "googleRating": "تقييم Google",
+    "googleReviews": "تقييمات",
     "specialties": "تخصصات",
     "patients": "مرضى سعداء"
   },

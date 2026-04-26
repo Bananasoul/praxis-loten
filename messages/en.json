@@ -25,6 +25,10 @@
   "stats": {
     "therapists": "Therapists",
     "experience": "Years Experience",
+    "experienceNote": "across all therapists",
+    "formations": "Post-grad trainings",
+    "googleRating": "Google Rating",
+    "googleReviews": "Google reviews",
     "specialties": "Specialties",
     "patients": "Happy Patients"
   },

@@ -24,7 +24,11 @@
   },
   "stats": {
     "therapists": "Therapeuten",
-    "experience": "Jahre Erfahrung",
+    "experience": "Jahre Erfahrung (kumuliert)",
+    "experienceNote": "alle Therapeuten zusammen",
+    "formations": "Weiterbildungen",
+    "googleRating": "Google-Bewertung",
+    "googleReviews": "Bewertungen",
     "specialties": "Fachbereiche",
     "patients": "Zufriedene Patienten"
   },

@@ -24,7 +24,11 @@
   },
   "stats": {
     "therapists": "Therapeuten",
-    "experience": "Jaar ervaring",
+    "experience": "Jaar ervaring (cumulatief)",
+    "experienceNote": "alle therapeuten samen",
+    "formations": "Bijscholingen",
+    "googleRating": "Google-beoordeling",
+    "googleReviews": "beoordelingen",
     "specialties": "Specialiteiten",
     "patients": "Tevreden patiënten"
   },
