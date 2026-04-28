@@ -58,7 +58,7 @@ const THERAPISTS: Therapist[] = [
     parcours: [
       { year: "2008–2012", institution: "Haute École André Vésale", title: "Master en Kinésithérapie / Physiothérapie" },
       { year: "2013–2014", institution: "SERK", title: "Thérapie Manuelle selon Sohier" },
-      { year: "2014–2015", institution: "IAO — International Academy of Osteopathy", title: "Manipulations Ostéopathiques et tissus mous" },
+      { year: "2014–2015", institution: "IAO — International Academy of Osteopathy", title: "Manipulations articulaires & tissus mous" },
       { year: "2015–2017", institution: "Université de Liège", title: "CUTM IFOMPT — QPP Kinésithérapie Manuelle Orthopédique" },
       { year: "2019", institution: "MATHERA — ECMT 9", title: "Cervico-Cephalic Complaints" },
       { year: "2023", institution: "MATHERA — ECMT 10", title: "Patient-centred care: A key to empower manual therapy" },

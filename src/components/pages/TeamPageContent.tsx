@@ -16,7 +16,7 @@ const TEAM = [
     initials: "PB",
     color: "from-[#2b3186] to-[#1e2260]",
     role: { de: "Manuelle Therapie Orthopädie", fr: "Thérapie Manuelle Orthopédique" },
-    tags: ["CUTM IFOMPT", "QPP", "Ostéo", "IFOMPT 2024"],
+    tags: ["CUTM IFOMPT", "QPP", "IFOMPT 2024"],
     languages: ["Français", "Deutsch", "English", "Polski"],
     booking: { label: "WhatsApp", href: "https://wa.me/32478218186" },
     bookingOnline: { label: "Crossuite", href: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071" },
@@ -33,7 +33,7 @@ const TEAM = [
     parcours: [
       { year: "2008–2012", title: "Haute École André Vésale — Master Kinésithérapie" },
       { year: "2013–2014", title: "SERK — Thérapie Manuelle selon Sohier" },
-      { year: "2014–2015", title: "IAO — Ostéopathie (manipulations & tissus mous)" },
+      { year: "2014–2015", title: "IAO — Manipulations articulaires & tissus mous" },
       { year: "2015–2017", title: "ULiège — CUTM IFOMPT / QPP Kinésithérapie Manuelle" },
       { year: "2019", title: "ECMT 9 — Cervico-cephalic complaints" },
       { year: "2023", title: "ECMT 10 — Patient-centred care" },
