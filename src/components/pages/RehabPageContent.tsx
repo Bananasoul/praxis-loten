@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import { CalendarPlus, CheckCircle2, Clock, ArrowRight, Activity, Bone, Zap, Shield } from "lucide-react";
+import { CalendarPlus, CheckCircle2, Clock, ArrowRight, Activity, Bone, Zap, Shield, Info } from "lucide-react";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
@@ -266,14 +266,15 @@ const REHAB_PROGRAMS = [
 const UI: Record<LangKey, {
   badge: string; title: string; subtitle: string; weeks: string;
   phases: string; cta: string; ctaSub: string; bookBtn: string;
+  note: string;
 }> = {
-  de: { badge: "Post-Op Rehabilitation", title: "Rehabilitation nach Ihrer Operation", subtitle: "Individuelle Rehabilitationsprogramme — von der Hüft-TEP bis zur Kreuzbandrekonstruktion. Unser erfahrenes Team begleitet Sie sicher zurück zu Ihrer vollen Beweglichkeit.", weeks: "Wochen", phases: "Behandlungsphasen", cta: "Bereit für Ihre Rehabilitation?", ctaSub: "Vereinbaren Sie einen Ersttermin — wir erstellen Ihr individuelles Programm.", bookBtn: "Termin vereinbaren" },
-  fr: { badge: "Rééducation Post-Op", title: "Rééducation après votre opération", subtitle: "Programmes de rééducation individualisés — de la prothèse de hanche à la reconstruction du LCA. Notre équipe expérimentée vous guide en toute sécurité vers la pleine mobilité.", weeks: "semaines", phases: "Phases de traitement", cta: "Prêt pour votre rééducation ?", ctaSub: "Prenez rendez-vous pour un bilan initial — nous créons votre programme personnalisé.", bookBtn: "Prendre rendez-vous" },
-  en: { badge: "Post-Op Rehabilitation", title: "Rehabilitation after your surgery", subtitle: "Individualised rehabilitation programmes — from hip replacement to ACL reconstruction. Our experienced team guides you safely back to full mobility.", weeks: "weeks", phases: "Treatment phases", cta: "Ready for your rehabilitation?", ctaSub: "Book an initial assessment — we create your personalised programme.", bookBtn: "Book appointment" },
-  nl: { badge: "Post-Op Revalidatie", title: "Revalidatie na uw operatie", subtitle: "Geïndividualiseerde revalidatieprogramma's — van heupprothese tot VKB-reconstructie. Ons ervaren team begeleidt u veilig naar volledige mobiliteit.", weeks: "weken", phases: "Behandelfasen", cta: "Klaar voor uw revalidatie?", ctaSub: "Maak een eerste afspraak — wij stellen uw gepersonaliseerd programma op.", bookBtn: "Afspraak maken" },
-  tr: { badge: "Ameliyat Sonrası Rehabilitasyon", title: "Ameliyat sonrası rehabilitasyon", subtitle: "Bireyselleştirilmiş rehabilitasyon programları — kalça protezinden ÖÇB rekonstrüksiyonuna kadar. Deneyimli ekibimiz sizi tam hareketliliğe güvenle rehberlik eder.", weeks: "hafta", phases: "Tedavi fazları", cta: "Rehabilitasyonunuza hazır mısınız?", ctaSub: "Başlangıç değerlendirmesi için randevu alın — kişisel programınızı oluşturuyoruz.", bookBtn: "Randevu al" },
-  ar: { badge: "تأهيل ما بعد الجراحة", title: "إعادة التأهيل بعد عمليتك", subtitle: "برامج إعادة تأهيل فردية — من بدلة الورك إلى إعادة بناء الرباط الصليبي. يرشدك فريقنا ذو الخبرة بأمان نحو التعافي الكامل.", weeks: "أسابيع", phases: "مراحل العلاج", cta: "هل أنت مستعد لإعادة التأهيل؟", ctaSub: "احجز تقييمًا أوليًا — نضع برنامجك الشخصي.", bookBtn: "حجز موعد" },
-  pl: { badge: "Rehabilitacja pooperacyjna", title: "Rehabilitacja po operacji", subtitle: "Indywidualne programy rehabilitacji — od endoprotezy biodra do rekonstrukcji ACL. Nasz doświadczony zespół bezpiecznie prowadzi Cię do pełnej sprawności.", weeks: "tygodni", phases: "Fazy leczenia", cta: "Gotowy na rehabilitację?", ctaSub: "Umów wizytę wstępną — tworzymy Twój spersonalizowany program.", bookBtn: "Umów wizytę" },
+  de: { badge: "Post-Op Rehabilitation", title: "Rehabilitation nach Ihrer Operation", subtitle: "Individuelle Rehabilitationsprogramme — von der Hüft-TEP bis zur Kreuzbandrekonstruktion. Unser erfahrenes Team begleitet Sie sicher zurück zu Ihrer vollen Beweglichkeit.", weeks: "Wochen", phases: "Behandlungsphasen", cta: "Bereit für Ihre Rehabilitation?", ctaSub: "Vereinbaren Sie einen Ersttermin — wir erstellen Ihr individuelles Programm.", bookBtn: "Termin vereinbaren", note: "Diese Programme stellen eine Auswahl aus unserem breiten Rehabilitationsangebot dar — unter vielen weiteren, die wir täglich in der Praxis betreuen. Für jede Situation, jede Operation und jeden Patienten erstellen wir ein individuelles Programm." },
+  fr: { badge: "Rééducation Post-Op", title: "Rééducation après votre opération", subtitle: "Programmes de rééducation individualisés — de la prothèse de hanche à la reconstruction du LCA. Notre équipe expérimentée vous guide en toute sécurité vers la pleine mobilité.", weeks: "semaines", phases: "Phases de traitement", cta: "Prêt pour votre rééducation ?", ctaSub: "Prenez rendez-vous pour un bilan initial — nous créons votre programme personnalisé.", bookBtn: "Prendre rendez-vous", note: "Ces programmes sont présentés à titre indicatif et constituent, entre autres, une sélection parmi les nombreuses réhabilitations que nous réalisons au cabinet. Pour chaque situation, chaque opération et chaque patient, nous élaborons un programme sur mesure." },
+  en: { badge: "Post-Op Rehabilitation", title: "Rehabilitation after your surgery", subtitle: "Individualised rehabilitation programmes — from hip replacement to ACL reconstruction. Our experienced team guides you safely back to full mobility.", weeks: "weeks", phases: "Treatment phases", cta: "Ready for your rehabilitation?", ctaSub: "Book an initial assessment — we create your personalised programme.", bookBtn: "Book appointment", note: "These programmes are presented as examples and represent, among others, a selection of the many rehabilitation treatments we carry out at the practice. For every situation, every surgery and every patient, we design a tailored programme." },
+  nl: { badge: "Post-Op Revalidatie", title: "Revalidatie na uw operatie", subtitle: "Geïndividualiseerde revalidatieprogramma's — van heupprothese tot VKB-reconstructie. Ons ervaren team begeleidt u veilig naar volledige mobiliteit.", weeks: "weken", phases: "Behandelfasen", cta: "Klaar voor uw revalidatie?", ctaSub: "Maak een eerste afspraak — wij stellen uw gepersonaliseerd programma op.", bookBtn: "Afspraak maken", note: "Deze programma's zijn indicatief en vormen, onder andere, een selectie uit de vele revalidatiebehandelingen die wij dagelijks uitvoeren. Voor elke situatie, elke ingreep en elke patiënt stellen wij een op maat gemaakt programma op." },
+  tr: { badge: "Ameliyat Sonrası Rehabilitasyon", title: "Ameliyat sonrası rehabilitasyon", subtitle: "Bireyselleştirilmiş rehabilitasyon programları — kalça protezinden ÖÇB rekonstrüksiyonuna kadar. Deneyimli ekibimiz sizi tam hareketliliğe güvenle rehberlik eder.", weeks: "hafta", phases: "Tedavi fazları", cta: "Rehabilitasyonunuza hazır mısınız?", ctaSub: "Başlangıç değerlendirmesi için randevu alın — kişisel programınızı oluşturuyoruz.", bookBtn: "Randevu al", note: "Bu programlar, kliniğimizde sunduğumuz pek çok rehabilitasyon hizmetinden bir seçkiyi temsil etmektedir. Her durum, her ameliyat ve her hasta için bireyselleştirilmiş program hazırlıyoruz." },
+  ar: { badge: "تأهيل ما بعد الجراحة", title: "إعادة التأهيل بعد عمليتك", subtitle: "برامج إعادة تأهيل فردية — من بدلة الورك إلى إعادة بناء الرباط الصليبي. يرشدك فريقنا ذو الخبرة بأمان نحو التعافي الكامل.", weeks: "أسابيع", phases: "مراحل العلاج", cta: "هل أنت مستعد لإعادة التأهيل؟", ctaSub: "احجز تقييمًا أوليًا — نضع برنامجك الشخصي.", bookBtn: "حجز موعد", note: "تُعرض هذه البرامج على سبيل المثال وتمثّل، من بين أمور أخرى، مجموعة مختارة من برامج إعادة التأهيل العديدة التي ننفّذها في العيادة. لكل حالة وكل عملية وكل مريض، نضع برنامجاً مخصصاً." },
+  pl: { badge: "Rehabilitacja pooperacyjna", title: "Rehabilitacja po operacji", subtitle: "Indywidualne programy rehabilitacji — od endoprotezy biodra do rekonstrukcji ACL. Nasz doświadczony zespół bezpiecznie prowadzi Cię do pełnej sprawności.", weeks: "tygodni", phases: "Fazy leczenia", cta: "Gotowy na rehabilitację?", ctaSub: "Umów wizytę wstępną — tworzymy Twój spersonalizowany program.", bookBtn: "Umów wizytę", note: "Prezentowane programy mają charakter przykładowy i stanowią, między innymi, wybór spośród wielu rehabilitacji, które realizujemy w przychodni. Dla każdej sytuacji, każdej operacji i każdego pacjenta tworzymy indywidualny program." },
 };
 
 export function RehabPageContent() {
@@ -374,8 +375,16 @@ export function RehabPageContent() {
           })}
         </StaggerContainer>
 
+        {/* Note — sélection parmi de nombreuses réhabilitations */}
+        <AnimatedSection delay={0.3} className="mt-10">
+          <div className="flex items-start gap-3 max-w-3xl mx-auto px-4 py-4 rounded-2xl bg-neutral-100 border border-neutral-200">
+            <Info className="w-4 h-4 text-neutral-400 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-neutral-500 italic leading-relaxed">{ui.note}</p>
+          </div>
+        </AnimatedSection>
+
         {/* CTA */}
-        <AnimatedSection delay={0.4} className="mt-16">
+        <AnimatedSection delay={0.4} className="mt-10">
           <div className="bg-gradient-to-br from-[#2b3186] to-[#0d1120] rounded-3xl p-10 text-white text-center">
             <h2 className="text-2xl font-extrabold mb-3">{ui.cta}</h2>
             <p className="text-white/70 mb-6 max-w-lg mx-auto">{ui.ctaSub}</p>
