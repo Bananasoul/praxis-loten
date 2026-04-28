@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import {
   GraduationCap, Globe2, CalendarPlus, MessageCircle,
-  ExternalLink, ArrowLeft, Star, CheckCircle2,
+  ExternalLink, ArrowLeft, Star, CheckCircle2, Phone,
 } from "lucide-react";
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
@@ -24,7 +24,7 @@ type Therapist = {
   specialties: string[];
   languages: string[];
   parcours: { year: string; institution: string; title: string }[];
-  booking: { whatsapp?: string; doctoranytime?: string; qtop?: string; crossuite?: string; emailEnc?: string };
+  booking: { phone?: string; whatsapp?: string; doctoranytime?: string; qtop?: string; crossuite?: string; emailEnc?: string };
   quote: { text: string; author: string } | null;
 };
 
@@ -67,7 +67,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2024", institution: "Rishikesh — Ganesha-trip", title: "Yoga retreat & introduction to Ayurvedic medicine (North India)" },
       { year: "Mars 2026", institution: "JTMO — Université de Reims", title: "Journées de Thérapie Manuelle Orthopédique 2026 — 1er congrès francophone de kinésithérapie musculosquelettique (OMT-France × Mathera)" },
     ],
-    booking: { whatsapp: "https://wa.me/32478218186", crossuite: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071", emailEnc: "cGJraW5lQGljbG91ZC5jb20=" },
+    booking: { phone: "+32478218186", whatsapp: "https://wa.me/32478218186", crossuite: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071", emailEnc: "cGJraW5lQGljbG91ZC5jb20=" },
     quote: null,
   },
   {
@@ -100,7 +100,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2017–2021", institution: "Université de Liège", title: "Master en Kinésithérapie et Réadaptation" },
       { year: "2021–…", institution: "Formation Ostéopathie", title: "En cours de formation" },
     ],
-    booking: { whatsapp: "https://wa.me/32493122336", emailEnc: "ZXNzZXJmZWxpeGtpbmVAZ21haWwuY29t" },
+    booking: { phone: "+32493122336", whatsapp: "https://wa.me/32493122336", emailEnc: "ZXNzZXJmZWxpeGtpbmVAZ21haWwuY29t" },
     quote: null,
   },
   {
@@ -137,7 +137,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2023", institution: "Kiné Form", title: "Articulation Temporo-Mandibulaire selon R. Giop" },
       { year: "2025", institution: "Kymo Liège", title: "Rééducation Maxillo-Faciale: Chirurgie orthognatique & apnée du sommeil (Th. Gouzland)" },
     ],
-    booking: { whatsapp: "https://wa.me/32471765683", emailEnc: "ZmFiaWVubmVkb3JtYW5uQGdtYWlsLmNvbQ==" },
+    booking: { phone: "+32471765683", whatsapp: "https://wa.me/32471765683", emailEnc: "ZmFiaWVubmVkb3JtYW5uQGdtYWlsLmNvbQ==" },
     quote: null,
   },
   {
@@ -173,7 +173,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2019", institution: "KINESPORT", title: "Blood Flow Restriction Training (musculation avec restriction du flux sanguin)" },
       { year: "2020–2021", institution: "Formation complémentaire", title: "Kinésithérapie du sport expert" },
     ],
-    booking: { whatsapp: "https://wa.me/32471869024", qtop: "https://www.q-top.be/Online-planner/FR/?root=kq43933", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=" },
+    booking: { phone: "+32471869024", whatsapp: "https://wa.me/32471869024", qtop: "https://www.q-top.be/Online-planner/FR/?root=kq43933", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=" },
     quote: null,
   },
   {
@@ -206,23 +206,23 @@ const THERAPISTS: Therapist[] = [
       { year: "2020–2025", institution: "Université de Liège", title: "Master en Kinésithérapie et Réadaptation" },
       { year: "2025–…", institution: "Formation Ostéopathie", title: "En cours de formation" },
     ],
-    booking: { whatsapp: "https://wa.me/32474296326", emailEnc: "bG1ldW5pZXIubG9pY0BnbWFpbC5jb20=" },
+    booking: { phone: "+32474296326", whatsapp: "https://wa.me/32474296326", emailEnc: "bG1ldW5pZXIubG9pY0BnbWFpbC5jb20=" },
     quote: null,
   },
 ];
 
 const UI: Record<LangKey, {
   back: string; specialties: string; parcours: string; languages: string;
-  bookTitle: string; bookWhatsApp: string; bookOnline: string; bookEmail: string;
+  bookTitle: string; bookPhone: string; bookWhatsApp: string; bookOnline: string; bookEmail: string;
   viewTeam: string; convention: string;
 }> = {
-  de: { back: "Zurück zum Team", specialties: "Spezialisierungen", parcours: "Laufbahn & Ausbildung", languages: "Sprachen", bookTitle: "Termin vereinbaren", bookWhatsApp: "WhatsApp", bookOnline: "Online Buchen", bookEmail: "E-Mail", viewTeam: "Alle Therapeuten", convention: "" },
-  fr: { back: "Retour à l'équipe", specialties: "Spécialisations", parcours: "Parcours & Formation", languages: "Langues parlées", bookTitle: "Prendre rendez-vous", bookWhatsApp: "WhatsApp", bookOnline: "Réservation en ligne", bookEmail: "E-mail", viewTeam: "Voir toute l'équipe", convention: "" },
-  en: { back: "Back to team", specialties: "Specialisations", parcours: "Background & Training", languages: "Languages spoken", bookTitle: "Book appointment", bookWhatsApp: "WhatsApp", bookOnline: "Book online", bookEmail: "Email", viewTeam: "View full team", convention: "" },
-  nl: { back: "Terug naar team", specialties: "Specialisaties", parcours: "Opleiding & Achtergrond", languages: "Gesproken talen", bookTitle: "Afspraak maken", bookWhatsApp: "WhatsApp", bookOnline: "Online boeken", bookEmail: "E-mail", viewTeam: "Volledig team", convention: "" },
-  tr: { back: "Takıma dön", specialties: "Uzmanlıklar", parcours: "Eğitim & Kariyer", languages: "Konuşulan diller", bookTitle: "Randevu al", bookWhatsApp: "WhatsApp", bookOnline: "Online rezervasyon", bookEmail: "E-posta", viewTeam: "Tüm ekibi gör", convention: "" },
-  ar: { back: "العودة إلى الفريق", specialties: "التخصصات", parcours: "المسار والتكوين", languages: "اللغات المتحدثة", bookTitle: "حجز موعد", bookWhatsApp: "واتساب", bookOnline: "حجز عبر الإنترنت", bookEmail: "البريد الإلكتروني", viewTeam: "عرض الفريق كاملاً", convention: "" },
-  pl: { back: "Powrót do zespołu", specialties: "Specjalizacje", parcours: "Wykształcenie i kariera", languages: "Języki", bookTitle: "Umów wizytę", bookWhatsApp: "WhatsApp", bookOnline: "Rezerwacja online", bookEmail: "E-mail", viewTeam: "Cały zespół", convention: "" },
+  de: { back: "Zurück zum Team", specialties: "Spezialisierungen", parcours: "Laufbahn & Ausbildung", languages: "Sprachen", bookTitle: "Termin vereinbaren", bookPhone: "Anrufen", bookWhatsApp: "WhatsApp", bookOnline: "Online Buchen", bookEmail: "E-Mail", viewTeam: "Alle Therapeuten", convention: "" },
+  fr: { back: "Retour à l'équipe", specialties: "Spécialisations", parcours: "Parcours & Formation", languages: "Langues parlées", bookTitle: "Prendre rendez-vous", bookPhone: "Appeler", bookWhatsApp: "WhatsApp", bookOnline: "Réservation en ligne", bookEmail: "E-mail", viewTeam: "Voir toute l'équipe", convention: "" },
+  en: { back: "Back to team", specialties: "Specialisations", parcours: "Background & Training", languages: "Languages spoken", bookTitle: "Book appointment", bookPhone: "Call", bookWhatsApp: "WhatsApp", bookOnline: "Book online", bookEmail: "Email", viewTeam: "View full team", convention: "" },
+  nl: { back: "Terug naar team", specialties: "Specialisaties", parcours: "Opleiding & Achtergrond", languages: "Gesproken talen", bookTitle: "Afspraak maken", bookPhone: "Bellen", bookWhatsApp: "WhatsApp", bookOnline: "Online boeken", bookEmail: "E-mail", viewTeam: "Volledig team", convention: "" },
+  tr: { back: "Takıma dön", specialties: "Uzmanlıklar", parcours: "Eğitim & Kariyer", languages: "Konuşulan diller", bookTitle: "Randevu al", bookPhone: "Ara", bookWhatsApp: "WhatsApp", bookOnline: "Online rezervasyon", bookEmail: "E-posta", viewTeam: "Tüm ekibi gör", convention: "" },
+  ar: { back: "العودة إلى الفريق", specialties: "التخصصات", parcours: "المسار والتكوين", languages: "اللغات المتحدثة", bookTitle: "حجز موعد", bookPhone: "اتصال", bookWhatsApp: "واتساب", bookOnline: "حجز عبر الإنترنت", bookEmail: "البريد الإلكتروني", viewTeam: "عرض الفريق كاملاً", convention: "" },
+  pl: { back: "Powrót do zespołu", specialties: "Specjalizacje", parcours: "Wykształcenie i kariera", languages: "Języki", bookTitle: "Umów wizytę", bookPhone: "Zadzwoń", bookWhatsApp: "WhatsApp", bookOnline: "Rezerwacja online", bookEmail: "E-mail", viewTeam: "Cały zespół", convention: "" },
 };
 
 export function TherapistPageContent({ slug }: { slug: string }) {
@@ -309,6 +309,18 @@ export function TherapistPageContent({ slug }: { slug: string }) {
                   <CalendarPlus className="w-4 h-4" /> {ui.bookTitle}
                 </h3>
                 <div className="space-y-2.5">
+                  {therapist.booking.phone && (
+                    <a
+                      href={`tel:${therapist.booking.phone}`}
+                      className="flex items-center gap-2.5 w-full px-4 py-2.5 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl text-sm font-semibold transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span>{ui.bookPhone}</span>
+                      <span className="ml-auto text-xs font-mono opacity-80 tracking-wide">
+                        {therapist.booking.phone.replace(/^(\+32)(\d{3})(\d{2})(\d{2})(\d{2})$/, "$1 $2 $3 $4 $5")}
+                      </span>
+                    </a>
+                  )}
                   {therapist.booking.whatsapp && (
                     <a
                       href={therapist.booking.whatsapp}
