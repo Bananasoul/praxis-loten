@@ -53,7 +53,7 @@ const THERAPISTS: Therapist[] = [
       ar: "فيزيوتيرابيست منذ 2012 ومتخصص في العلاج اليدوي العظمي (IFOMPT/QPP). يولي أهمية كبيرة للنهج البيوسيكوسوشيالي في العلاج. التدريب الدولي المستمر يبقي معرفته في طليعة المجال.",
       pl: "Fizjoterapeuta od 2012 roku, specjalizujący się w manualnej terapii ortopedycznej (IFOMPT/QPP). Przywiązuje dużą wagę do biopsychospołecznego podejścia terapeutycznego. Regularne szkolenia międzynarodowe utrzymują jego wiedzę na bieżącym poziomie.",
     },
-    specialties: ["Manuelle Therapie IFOMPT/QPP", "Orthopädie", "Cervico-cephalic", "Osteopathie", "Yoga & Ayurveda"],
+    specialties: ["Manuelle Therapie IFOMPT/QPP", "Orthopädie", "Cervico-cephalic", "Yoga & Ayurveda"],
     languages: ["Français", "Deutsch", "English", "Polski"],
     parcours: [
       { year: "2008–2012", institution: "Haute École André Vésale", title: "Master en Kinésithérapie / Physiothérapie" },
