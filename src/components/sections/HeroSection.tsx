@@ -42,28 +42,29 @@ export function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Main title */}
-        <div className="overflow-hidden mb-6">
+        {/* Main title — primary message */}
+        <div className="overflow-hidden mb-3">
           <motion.h1
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight"
           >
             {t("title1")}
           </motion.h1>
         </div>
+        {/* Secondary line — specialty + geo (highlighted, smaller) */}
         <div className="overflow-hidden mb-8">
-          <motion.h1
-            initial={{ y: 100 }}
+          <motion.p
+            initial={{ y: 60 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight"
           >
             <span className="bg-gradient-to-r from-[#93ce2a] via-[#76b82a] to-[#b2e258] bg-clip-text text-transparent">
               {t("title2")}
             </span>
-          </motion.h1>
+          </motion.p>
         </div>
 
         {/* Subtitle */}
