@@ -1,14 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "next-intl";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { Link } from "@/i18n/navigation";
-import { Clock, Tag, ArrowRight, BookOpen } from "lucide-react";
+import { Clock, Tag, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
 const ARTICLES = [
+  {
+    slug: "douleurs-cervicales-mobilite-eupen",
+    date: "2026-05-03",
+    readMin: 6,
+    category: {
+      de: "Nackenschmerzen", fr: "Cervicales", en: "Neck pain",
+      nl: "Nekpijn", tr: "Boyun Ağrısı", ar: "آلام الرقبة", pl: "Ból szyi",
+    },
+    color: "from-[#0e7490] to-[#155e75]",
+    title: {
+      de: "Nackenschmerzen — warum Ihr Hals weh tut und wie Sie in Eupen wieder beweglich werden",
+      fr: "Douleurs aux cervicales — pourquoi votre cou vous fait mal et comment retrouver de la mobilité à Eupen",
+      en: "Neck pain — why your neck hurts and how to regain mobility in Eupen",
+      nl: "Nekpijn — waarom uw nek pijn doet en hoe u in Eupen weer mobiel wordt",
+      tr: "Boyun ağrısı — boynunuzun neden ağrıdığı ve Eupen'de hareketliliği nasıl geri kazanacağınız",
+      ar: "آلام الرقبة — لماذا تؤلمك رقبتك وكيف تستعيد الحركة في أوبن",
+      pl: "Ból szyi — dlaczego boli Cię szyja i jak odzyskać mobilność w Eupen",
+    },
+    excerpt: {
+      de: "Steifheit am Schädelansatz oder zwischen den Schulterblättern? Die moderne Wissenschaft beruhigt: Ihr Nacken ist robust und anpassungsfähig. Wir erklären, warum Schmerz nicht gleich Schaden ist und wie Sie wieder Vertrauen in Ihre Bewegung gewinnen.",
+      fr: "Cette raideur persistante à la base du crâne ou entre les omoplates ? La science moderne nous apporte une nouvelle bien plus rassurante : votre cou est solide, résistant et capable de s'adapter. On vous explique pourquoi la douleur n'est pas synonyme de lésion.",
+      en: "That persistent stiffness at the base of the skull or between the shoulder blades? Modern science brings reassuring news: your neck is strong, resilient and adaptable. We explain why pain doesn't equal damage and how to rebuild trust in your movement.",
+      nl: "Die hardnekkige stijfheid onderaan de schedel of tussen de schouderbladen? De moderne wetenschap brengt geruststellend nieuws: uw nek is sterk en aanpasbaar. We leggen uit waarom pijn geen schade betekent.",
+      tr: "Kafatasının altında veya kürek kemikleri arasında kalıcı sertlik mi? Modern bilim güven verici haberler getiriyor: boynunuz güçlü ve uyum sağlayabilir. Ağrının neden hasar anlamına gelmediğini açıklıyoruz.",
+      ar: "هل تشعر بتيبس مستمر عند قاعدة الجمجمة أو بين الكتفين؟ يقدم لنا العلم الحديث خبرًا مطمئنًا: رقبتك قوية وقادرة على التكيف. نشرح لماذا الألم لا يعني الإصابة.",
+      pl: "Ta uporczywa sztywność u podstawy czaszki lub między łopatkami? Współczesna nauka przynosi uspokajającą wiadomość: Twoja szyja jest silna i zdolna do adaptacji. Wyjaśniamy, dlaczego ból nie oznacza uszkodzenia.",
+    },
+    tags: { de: ["Nacken", "Manuelle Therapie", "Mobilität", "Eupen"], fr: ["Cervicales", "Thérapie Manuelle", "Mobilité", "Eupen"], en: ["Neck", "Manual Therapy", "Mobility", "Eupen"], nl: ["Nek", "Manuele Therapie", "Mobiliteit", "Eupen"], tr: ["Boyun", "Manuel Terapi", "Hareket", "Eupen"], ar: ["رقبة", "علاج يدوي", "حركة", "أوبن"], pl: ["Szyja", "Terapia Manualna", "Mobilność", "Eupen"] },
+  },
   {
     slug: "manuelle-therapie-rueckenschmerzen",
     date: "2024-11-15",
@@ -185,14 +215,14 @@ const ARTICLES = [
   },
 ];
 
-const UI_BLOG: Record<LangKey, { title: string; subtitle: string; readMin: string; readMore: string }> = {
-  de: { title: "Blog & Ratgeber", subtitle: "Fachartikel unserer Therapeuten zu Physiotherapie, Rehabilitation und Gesundheit.", readMin: "min Lesezeit", readMore: "Artikel lesen" },
-  fr: { title: "Blog & Conseils", subtitle: "Articles de fond rédigés par nos thérapeutes sur la kinésithérapie, la rééducation et la santé.", readMin: "min de lecture", readMore: "Lire l'article" },
-  en: { title: "Blog & Advice", subtitle: "In-depth articles by our therapists on physiotherapy, rehabilitation and health.", readMin: "min read", readMore: "Read article" },
-  nl: { title: "Blog & Advies", subtitle: "Diepgaande artikelen van onze therapeuten over fysiotherapie, revalidatie en gezondheid.", readMin: "min leestijd", readMore: "Artikel lezen" },
-  tr: { title: "Blog & Tavsiyeler", subtitle: "Terapistlerimizin fizyoterapi, rehabilitasyon ve sağlık hakkında derinlemesine makaleleri.", readMin: "dk okuma", readMore: "Makaleyi oku" },
-  ar: { title: "المدونة والنصائح", subtitle: "مقالات متعمقة يكتبها معالجونا حول العلاج الطبيعي وإعادة التأهيل والصحة.", readMin: "دقيقة قراءة", readMore: "اقرأ المقال" },
-  pl: { title: "Blog i Porady", subtitle: "Dogłębne artykuły naszych terapeutów o fizjoterapii, rehabilitacji i zdrowiu.", readMin: "min czytania", readMore: "Przeczytaj artykuł" },
+const UI_BLOG: Record<LangKey, { title: string; subtitle: string; readMin: string; readMore: string; featured: string; all: string; filterBy: string }> = {
+  de: { title: "Blog & Ratgeber", subtitle: "Fachartikel unserer Therapeuten zu Physiotherapie, Rehabilitation und Gesundheit.", readMin: "min Lesezeit", readMore: "Artikel lesen", featured: "Neu", all: "Alle", filterBy: "Kategorie" },
+  fr: { title: "Blog & Conseils", subtitle: "Articles de fond rédigés par nos thérapeutes sur la kinésithérapie, la rééducation et la santé.", readMin: "min de lecture", readMore: "Lire l'article", featured: "Nouveau", all: "Tous", filterBy: "Catégorie" },
+  en: { title: "Blog & Advice", subtitle: "In-depth articles by our therapists on physiotherapy, rehabilitation and health.", readMin: "min read", readMore: "Read article", featured: "New", all: "All", filterBy: "Category" },
+  nl: { title: "Blog & Advies", subtitle: "Diepgaande artikelen van onze therapeuten over fysiotherapie, revalidatie en gezondheid.", readMin: "min leestijd", readMore: "Artikel lezen", featured: "Nieuw", all: "Alle", filterBy: "Categorie" },
+  tr: { title: "Blog & Tavsiyeler", subtitle: "Terapistlerimizin fizyoterapi, rehabilitasyon ve sağlık hakkında derinlemesine makaleleri.", readMin: "dk okuma", readMore: "Makaleyi oku", featured: "Yeni", all: "Tümü", filterBy: "Kategori" },
+  ar: { title: "المدونة والنصائح", subtitle: "مقالات متعمقة يكتبها معالجونا حول العلاج الطبيعي وإعادة التأهيل والصحة.", readMin: "دقيقة قراءة", readMore: "اقرأ المقال", featured: "جديد", all: "الكل", filterBy: "الفئة" },
+  pl: { title: "Blog i Porady", subtitle: "Dogłębne artykuły naszych terapeutów o fizjoterapii, rehabilitacji i zdrowiu.", readMin: "min czytania", readMore: "Przeczytaj artykuł", featured: "Nowość", all: "Wszystko", filterBy: "Kategoria" },
 };
 
 function formatDate(dateStr: string, lang: LangKey) {
@@ -207,84 +237,191 @@ export function BlogPageContent() {
   const ui = UI_BLOG[lang];
   const isRtl = lang === "ar";
 
+  // Sort by date desc
+  const sorted = useMemo(
+    () => [...ARTICLES].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    []
+  );
+
+  // Unique categories for the filter
+  const categories = useMemo(() => {
+    const seen = new Map<string, string>();
+    sorted.forEach((a) => {
+      const cat = (a.category as Record<LangKey, string>)[lang];
+      if (!seen.has(cat)) seen.set(cat, cat);
+    });
+    return Array.from(seen.values());
+  }, [sorted, lang]);
+
+  const [activeCat, setActiveCat] = useState<string | null>(null);
+
+  const visible = useMemo(() => {
+    if (!activeCat) return sorted;
+    return sorted.filter((a) => (a.category as Record<LangKey, string>)[lang] === activeCat);
+  }, [sorted, activeCat, lang]);
+
+  const featured = visible[0];
+  const rest = visible.slice(1);
+
   return (
-    <div className="pt-28 pb-20 min-h-screen bg-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
+    <div className="pt-28 pb-20 min-h-screen bg-gradient-to-b from-neutral-50 via-white to-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <AnimatedSection className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#76b82a]/10 rounded-full text-[#5c9120] text-sm font-semibold mb-4">
+        <AnimatedSection className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#76b82a]/10 rounded-full text-[#5c9120] text-sm font-semibold mb-5">
             <BookOpen className="w-4 h-4" />
             {ui.title}
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
-            <span style={{ color: "#76b82a" }}>{ui.title}</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 mb-4 tracking-tight">
+            {ui.title}
           </h1>
-          <p className="max-w-xl mx-auto text-lg text-neutral-500">{ui.subtitle}</p>
+          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed">{ui.subtitle}</p>
         </AnimatedSection>
 
+        {/* Category filter */}
+        <AnimatedSection delay={0.1} className="mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <button
+              onClick={() => setActiveCat(null)}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                activeCat === null
+                  ? "bg-[#2b3186] text-white shadow-md"
+                  : "bg-white text-neutral-600 border border-neutral-200 hover:border-[#76b82a] hover:text-[#5c9120]"
+              }`}
+            >
+              {ui.all}
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCat(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                  activeCat === cat
+                    ? "bg-[#2b3186] text-white shadow-md"
+                    : "bg-white text-neutral-600 border border-neutral-200 hover:border-[#76b82a] hover:text-[#5c9120]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        {/* Featured article */}
+        <AnimatePresence mode="wait">
+          {featured && (
+            <motion.div
+              key={`featured-${featured.slug}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="mb-12"
+            >
+              <Link href={`/blog/${featured.slug}`} className="block group">
+                <article className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white hover:shadow-2xl transition-all duration-500">
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+                    {/* Visual side */}
+                    <div className={`lg:col-span-2 relative bg-gradient-to-br ${featured.color} p-10 lg:p-14 flex flex-col justify-between min-h-[320px]`}>
+                      <div className="absolute inset-0 opacity-10" style={{
+                        backgroundImage: "radial-gradient(circle at 20% 20%, white 0%, transparent 40%), radial-gradient(circle at 80% 70%, white 0%, transparent 40%)",
+                      }} />
+                      <div className="relative">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider rounded-full mb-4">
+                          <Sparkles className="w-3.5 h-3.5" /> {ui.featured}
+                        </span>
+                        <p className="text-white/80 text-sm font-semibold uppercase tracking-wider">
+                          {(featured.category as Record<LangKey, string>)[lang]}
+                        </p>
+                      </div>
+                      <div className="relative flex items-center gap-3 text-white/80 text-xs font-medium">
+                        <Clock className="w-3.5 h-3.5" />
+                        {featured.readMin} {ui.readMin}
+                        <span className="opacity-50">•</span>
+                        <time>{formatDate(featured.date, lang)}</time>
+                      </div>
+                    </div>
+
+                    {/* Content side */}
+                    <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 mb-4 leading-tight tracking-tight group-hover:text-[#2b3186] transition-colors">
+                        {(featured.title as Record<LangKey, string>)[lang]}
+                      </h2>
+                      <p className="text-neutral-600 leading-relaxed mb-6 line-clamp-3">
+                        {(featured.excerpt as Record<LangKey, string>)[lang]}
+                      </p>
+                      <span className="inline-flex items-center gap-2 text-sm font-bold text-[#2b3186] group-hover:text-[#76b82a] transition-colors">
+                        {ui.readMore}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Articles grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.08}>
-          {ARTICLES.map((article) => {
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
+          {rest.map((article) => {
             const title = (article.title as Record<LangKey, string>)[lang] ?? article.title.de;
             const excerpt = (article.excerpt as Record<LangKey, string>)[lang] ?? article.excerpt.de;
             const category = (article.category as Record<LangKey, string>)[lang] ?? article.category.de;
 
             return (
               <StaggerItem key={article.slug}>
-                <motion.article
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.2 }}
-                  className="bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:shadow-xl hover:border-transparent transition-all duration-300 flex flex-col h-full"
-                >
-                  {/* Color banner */}
-                  <div className={`h-3 bg-gradient-to-r ${article.color}`} />
-
-                  <div className="p-6 flex flex-col flex-1">
-                    {/* Meta */}
-                    <div className="flex items-center gap-3 mb-4 flex-wrap">
-                      <span className={`text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${article.color} text-white`}>
-                        {category}
-                      </span>
-                      <span className="text-xs text-neutral-400 flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> {article.readMin} {ui.readMin}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h2 className="text-lg font-extrabold text-neutral-900 mb-3 leading-snug flex-1">
-                      {title}
-                    </h2>
-
-                    {/* Excerpt */}
-                    <p className="text-neutral-500 text-sm leading-relaxed mb-5 line-clamp-3">
-                      {excerpt}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {((article.tags as Record<LangKey, string[]>)[lang] ?? (article.tags as Record<LangKey, string[]>).de).map((tag) => (
-                        <span key={tag} className="flex items-center gap-1 text-xs px-2 py-0.5 bg-neutral-100 text-neutral-500 rounded-full">
-                          <Tag className="w-2.5 h-2.5" /> {tag}
+                <Link href={`/blog/${article.slug}`} className="block h-full group">
+                  <motion.article
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.2 }}
+                    className="bg-white rounded-2xl overflow-hidden border border-neutral-200 group-hover:shadow-xl group-hover:border-transparent transition-all duration-300 flex flex-col h-full"
+                  >
+                    {/* Visual header */}
+                    <div className={`relative h-32 bg-gradient-to-br ${article.color} overflow-hidden`}>
+                      <div className="absolute inset-0 opacity-20" style={{
+                        backgroundImage: "radial-gradient(circle at 30% 50%, white 0%, transparent 50%)",
+                      }} />
+                      <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between">
+                        <span className="text-white/95 text-xs font-bold uppercase tracking-wider">
+                          {category}
                         </span>
-                      ))}
+                        <span className="text-white/80 text-xs flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> {article.readMin}{" "}{ui.readMin}
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Footer */}
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-neutral-100">
-                      <time className="text-xs text-neutral-400">
-                        {formatDate(article.date, lang)}
-                      </time>
-                      <Link
-                        href={`/blog/${article.slug}`}
-                        className="flex items-center gap-1.5 text-sm font-semibold text-[#2b3186] hover:text-[#76b82a] transition-colors"
-                      >
-                        {ui.readMore}
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                    <div className="p-6 flex flex-col flex-1">
+                      <h2 className="text-base font-extrabold text-neutral-900 mb-3 leading-snug group-hover:text-[#2b3186] transition-colors">
+                        {title}
+                      </h2>
+
+                      <p className="text-neutral-500 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">
+                        {excerpt}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 mb-5">
+                        {((article.tags as Record<LangKey, string[]>)[lang] ?? (article.tags as Record<LangKey, string[]>).de).slice(0, 3).map((tag) => (
+                          <span key={tag} className="flex items-center gap-1 text-[11px] px-2 py-0.5 bg-neutral-100 text-neutral-500 rounded-full">
+                            <Tag className="w-2.5 h-2.5" /> {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+                        <time className="text-xs text-neutral-400">
+                          {formatDate(article.date, lang)}
+                        </time>
+                        <span className="flex items-center gap-1.5 text-sm font-semibold text-[#2b3186] group-hover:text-[#76b82a] transition-colors">
+                          {ui.readMore}
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </motion.article>
+                  </motion.article>
+                </Link>
               </StaggerItem>
             );
           })}

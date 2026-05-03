@@ -3,7 +3,8 @@
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { ArrowLeft, Clock, CalendarPlus, CheckCircle2, User } from "lucide-react";
+import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered } from "lucide-react";
+import Image from "next/image";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
@@ -22,9 +23,175 @@ interface ArticleContent {
   }[];
   keyPoints: Record<LangKey, string[]>;
   ctaText: Record<LangKey, string>;
+  bibliography?: string[];
+  disclaimer?: Record<LangKey, string>;
 }
 
 const ARTICLES: Record<string, ArticleContent> = {
+  "douleurs-cervicales-mobilite-eupen": {
+    title: {
+      de: "Nackenschmerzen — warum Ihr Hals weh tut und wie Sie in Eupen wieder beweglich werden",
+      fr: "Douleurs aux cervicales — pourquoi votre cou vous fait mal et comment retrouver de la mobilité à Eupen",
+      en: "Neck pain — why your neck hurts and how to regain mobility in Eupen",
+      nl: "Nekpijn — waarom uw nek pijn doet en hoe u in Eupen weer mobiel wordt",
+      tr: "Boyun ağrısı — boynunuzun neden ağrıdığı ve Eupen'de hareketliliği nasıl geri kazanacağınız",
+      ar: "آلام الرقبة — لماذا تؤلمك رقبتك وكيف تستعيد الحركة في أوبن",
+      pl: "Ból szyi — dlaczego boli Cię szyja i jak odzyskać mobilność w Eupen",
+    },
+    category: {
+      de: "Nackenschmerzen", fr: "Cervicales", en: "Neck pain",
+      nl: "Nekpijn", tr: "Boyun Ağrısı", ar: "آلام الرقبة", pl: "Ból szyi",
+    },
+    date: "2026-05-03",
+    readMin: 6,
+    color: "from-[#0e7490] to-[#155e75]",
+    authorSlug: "philippe-banaszak",
+    authorName: "Philippe Banaszak",
+    intro: {
+      de: "Kennen Sie diese hartnäckige Steifheit am Schädelansatz oder zwischen den Schulterblättern nach einem Arbeitstag? Während die erste Reaktion oft die Sorge um „Verschleiß\" oder eine „Blockade\" ist, bringt uns die moderne Wissenschaft eine weitaus beruhigendere Nachricht: Ihr Nacken ist solide, widerstandsfähig und anpassungsfähig.",
+      fr: "Vous arrive-t-il de ressentir cette raideur persistante à la base du crâne ou entre les omoplates après une journée de travail ? Si la première réaction est souvent de s'inquiéter d'une « usure » ou d'un « blocage », la science moderne nous apporte une nouvelle bien plus rassurante : votre cou est solide, résistant et capable de s'adapter.",
+      en: "Do you sometimes feel that persistent stiffness at the base of your skull or between your shoulder blades after a long day at work? While the first reaction is often to worry about \"wear and tear\" or a \"blockage,\" modern science brings far more reassuring news: your neck is strong, resilient and capable of adaptation.",
+      nl: "Voelt u soms die hardnekkige stijfheid onderaan de schedel of tussen de schouderbladen na een werkdag? Terwijl de eerste reactie vaak bezorgdheid om „slijtage\" of een „blokkade\" is, brengt de moderne wetenschap ons een veel geruststellender bericht: uw nek is sterk, weerbaar en in staat zich aan te passen.",
+      tr: "Bir iş gününün ardından kafatasınızın altında veya kürek kemikleriniz arasında bu kalıcı sertliği hissediyor musunuz? İlk tepki genellikle „aşınma\" veya „blokaj\" endişesi olsa da, modern bilim çok daha güven verici bir haber getiriyor: boynunuz sağlam, dayanıklı ve uyum sağlayabilen bir yapıdadır.",
+      ar: "هل تشعر أحيانًا بهذا التيبس المستمر عند قاعدة الجمجمة أو بين لوحي الكتف بعد يوم عمل؟ في حين أن رد الفعل الأول غالبًا ما يكون القلق من „تآكل\" أو „انسداد\"، يقدم لنا العلم الحديث خبرًا أكثر طمأنة: رقبتك قوية ومرنة وقادرة على التكيف.",
+      pl: "Czy zdarza Ci się odczuwać tę uporczywą sztywność u podstawy czaszki lub między łopatkami po dniu pracy? Choć pierwszą reakcją jest często obawa o „zużycie\" lub „blokadę\", współczesna nauka przynosi nam znacznie bardziej uspokajającą wiadomość: Twoja szyja jest mocna, odporna i zdolna do adaptacji.",
+    },
+    sections: [
+      {
+        heading: {
+          de: "Der Schmerz: Ein Alarm, nicht zwingend eine Verletzung",
+          fr: "La douleur cervicale : une alarme, pas forcément une lésion",
+          en: "Neck pain: an alarm, not necessarily an injury",
+          nl: "Nekpijn: een alarm, niet noodzakelijk een letsel",
+          tr: "Ağrı: bir alarm, mutlaka bir yaralanma değil",
+          ar: "الألم: إنذار، وليس بالضرورة إصابة",
+          pl: "Ból: alarm, niekoniecznie uszkodzenie",
+        },
+        body: {
+          de: "Stellen Sie sich Schmerz wie ein hochempfindliches Alarmsystem vor. Manchmal löst der Alarm aus, weil tatsächlich Rauch aufsteigt — oft jedoch klingelt er einfach, weil er zu empfindlich geworden ist. Nackenschmerzen bedeuten nicht, dass Ihre Wirbel „beschädigt\" sind. Es ist meist ein Signal Ihres Gehirns, dass die Gewebe in dieser Zone an ihrer aktuellen Toleranzgrenze angekommen sind — häufig durch fehlende Bewegungsvielfalt.",
+          fr: "Imaginez la douleur comme un système d'alarme ultra-sensible. Parfois, l'alarme se déclenche parce que la fumée monte, mais souvent, elle sonne simplement parce qu'elle est devenue trop sensible. Une douleur au cou ne signifie pas que vos vertèbres sont « abîmées ». C'est souvent un signal envoyé par votre cerveau pour vous dire que les tissus de cette zone ont atteint leur limite de tolérance actuelle, souvent par manque de variété de mouvement.",
+          en: "Think of pain as a highly sensitive alarm system. Sometimes the alarm is triggered because smoke really is rising — but often it rings simply because it has become too sensitive. Neck pain does not mean your vertebrae are \"damaged.\" It is usually a signal from your brain that the tissues in this area have reached their current tolerance limit, often through lack of movement variety.",
+          nl: "Stel u pijn voor als een uiterst gevoelig alarmsysteem. Soms gaat het alarm af omdat er echt rook opstijgt — maar vaak klinkt het simpelweg omdat het te gevoelig is geworden. Nekpijn betekent niet dat uw wervels „beschadigd\" zijn. Het is meestal een signaal van uw brein dat de weefsels hun huidige tolerantielimiet hebben bereikt, vaak door gebrek aan bewegingsvariatie.",
+          tr: "Ağrıyı son derece hassas bir alarm sistemi olarak düşünün. Bazen alarm gerçekten duman çıktığı için çalar — ama çoğu zaman aşırı hassaslaştığı için çalar. Boyun ağrısı omurlarınızın „hasar gördüğü\" anlamına gelmez. Genellikle beyninizin, bu bölgedeki dokuların mevcut tolerans sınırlarına ulaştığını söyleyen bir sinyaldir — sıklıkla hareket çeşitliliği eksikliğinden.",
+          ar: "تخيل الألم كنظام إنذار حساس للغاية. أحيانًا ينطلق الإنذار لأن الدخان يتصاعد فعلًا، لكنه غالبًا ما يرن لأنه أصبح حساسًا للغاية. ألم الرقبة لا يعني أن فقراتك „تالفة\". إنه عادةً إشارة من دماغك بأن أنسجة هذه المنطقة وصلت إلى حد تحملها الحالي، غالبًا بسبب نقص تنوع الحركة.",
+          pl: "Wyobraź sobie ból jako bardzo czuły system alarmowy. Czasem alarm uruchamia się, bo rzeczywiście unosi się dym — ale często dzwoni po prostu dlatego, że stał się zbyt czuły. Ból szyi nie oznacza, że Twoje kręgi są „uszkodzone\". To zazwyczaj sygnał z mózgu, że tkanki w tym obszarze osiągnęły aktualny limit tolerancji, często z powodu braku różnorodności ruchu.",
+        },
+      },
+      {
+        heading: {
+          de: "Der Mythos der perfekten Haltung",
+          fr: "Le mythe de la posture parfaite",
+          en: "The myth of perfect posture",
+          nl: "De mythe van de perfecte houding",
+          tr: "Mükemmel duruş miti",
+          ar: "أسطورة الوضعية المثالية",
+          pl: "Mit idealnej postawy",
+        },
+        body: {
+          de: "Man hat uns oft gesagt, „gerade zu sitzen\". Doch die Forschung in der Manuellen Therapie ist eindeutig: Es gibt keine einzige Haltung, die Schmerzen verhindern würde. Der wahre Übeltäter ist die Unbeweglichkeit. Wie das Sprichwort sagt: „Ihre beste Haltung ist die nächste.\" Regelmäßig die Position zu wechseln ist weitaus vorteilhafter, als sich den ganzen Tag lang künstlich steif zu halten.",
+          fr: "On nous a souvent répété de « se tenir droit ». Pourtant, la recherche en thérapie manuelle est claire : il n'existe pas de posture unique qui préviendrait la douleur. Le véritable coupable, c'est l'immobilité. Comme le dit l'adage : « Votre meilleure posture, c'est la prochaine ». Changer de position régulièrement est bien plus bénéfique que d'essayer de maintenir une rigidité artificielle toute la journée.",
+          en: "We've often been told to \"sit up straight.\" Yet research in manual therapy is clear: there is no single posture that prevents pain. The real culprit is immobility. As the saying goes: \"Your best posture is your next one.\" Changing position regularly is far more beneficial than trying to maintain artificial rigidity all day long.",
+          nl: "Ons is vaak gezegd „rechtop te zitten\". Toch is het onderzoek in de manuele therapie duidelijk: er bestaat geen enkele houding die pijn zou voorkomen. De echte boosdoener is onbeweeglijkheid. Zoals het gezegde luidt: „Uw beste houding is de volgende.\" Regelmatig van positie veranderen is veel gunstiger dan de hele dag kunstmatige stijfheid proberen aan te houden.",
+          tr: "Bize sık sık „dik oturun\" denildi. Ancak manuel terapi araştırması açık: ağrıyı önleyecek tek bir duruş yoktur. Gerçek suçlu hareketsizliktir. Atasözünün dediği gibi: „En iyi duruşunuz bir sonrakidir.\" Düzenli olarak pozisyon değiştirmek, gün boyu yapay bir katılığı sürdürmeye çalışmaktan çok daha faydalıdır.",
+          ar: "كثيرًا ما قيل لنا أن „نجلس باستقامة\". ومع ذلك، فإن البحث في العلاج اليدوي واضح: لا توجد وضعية واحدة تمنع الألم. الجاني الحقيقي هو الجمود. كما يقول المثل: „أفضل وضعية لديك هي التالية\". تغيير الوضعية بانتظام أكثر فائدة بكثير من محاولة الحفاظ على صلابة مصطنعة طوال اليوم.",
+          pl: "Często powtarzano nam, by „siedzieć prosto\". Jednak badania w terapii manualnej są jasne: nie istnieje jedna postawa, która zapobiegałaby bólowi. Prawdziwym winowajcą jest bezruch. Jak mówi przysłowie: „Najlepsza postawa to ta następna\". Regularna zmiana pozycji jest znacznie korzystniejsza niż próba utrzymania sztucznej sztywności przez cały dzień.",
+        },
+      },
+      {
+        heading: {
+          de: "Die Bildgebung: innere „Falten\"",
+          fr: "L'imagerie médicale : des « rides » intérieures",
+          en: "Medical imaging: inner \"wrinkles\"",
+          nl: "Medische beeldvorming: innerlijke „rimpels\"",
+          tr: "Tıbbi görüntüleme: içeriden „kırışıklıklar\"",
+          ar: "التصوير الطبي: „تجاعيد\" داخلية",
+          pl: "Obrazowanie medyczne: wewnętrzne „zmarszczki\"",
+        },
+        body: {
+          de: "Wenn Ihr Röntgenbild Arthrose oder eine leichte Bandscheibenvorwölbung erwähnt, kein Grund zur Panik! Bei einer überwältigenden Mehrheit von Menschen ohne jegliche Schmerzen finden sich genau dieselben Zeichen. Es sind keine Krankheiten, sondern normale Reifungsprozesse des Körpers, ähnlich wie Falten auf der Haut oder graue Haare. Sie sind kein Hindernis für ein aktives, schmerzfreies Leben.",
+          fr: "Si votre radio mentionne de l'arthrose ou une légère saillie discale, pas de panique ! Chez une immense majorité de personnes sans aucune douleur, on retrouve ces mêmes signes. Ce ne sont pas des maladies, mais des processus normaux de maturation du corps, semblables aux rides sur la peau ou aux cheveux blancs. Ils ne sont pas une barrière à une vie active et sans douleur.",
+          en: "If your X-ray mentions arthritis or a slight disc bulge, don't panic! In an overwhelming majority of people with no pain at all, we find these very same signs. They are not diseases, but normal maturation processes of the body, similar to wrinkles on the skin or grey hair. They are no barrier to an active, pain-free life.",
+          nl: "Als uw röntgenfoto artrose of een lichte discusbulging vermeldt, geen paniek! Bij een overgrote meerderheid van mensen zonder pijn vinden we precies dezelfde tekenen. Het zijn geen ziektes, maar normale rijpingsprocessen van het lichaam, vergelijkbaar met rimpels op de huid of grijs haar. Ze zijn geen belemmering voor een actief, pijnvrij leven.",
+          tr: "Röntgeniniz artrit veya hafif bir disk çıkıntısından bahsediyorsa, paniğe gerek yok! Hiçbir ağrısı olmayan insanların büyük çoğunluğunda da aynı işaretler bulunur. Bunlar hastalık değil, vücudun normal olgunlaşma süreçleridir — cilt kırışıkları veya gri saçlar gibi. Aktif ve ağrısız bir hayata engel değildirler.",
+          ar: "إذا ذكرت أشعتك السينية وجود التهاب مفاصل أو انتفاخ خفيف في القرص، فلا داعي للذعر! نجد نفس هذه العلامات لدى الغالبية العظمى من الأشخاص الذين لا يعانون من أي ألم. هذه ليست أمراضًا، بل عمليات نضج طبيعية للجسم، مشابهة للتجاعيد على الجلد أو الشعر الرمادي. ليست حاجزًا أمام حياة نشطة وخالية من الألم.",
+          pl: "Jeśli Twoje zdjęcie RTG wspomina o zwyrodnieniu lub niewielkiej wypuklinie dyskowej, bez paniki! U przytłaczającej większości osób bez żadnego bólu znajdujemy te same oznaki. To nie choroby, lecz normalne procesy dojrzewania ciała, podobne do zmarszczek na skórze czy siwych włosów. Nie są przeszkodą w aktywnym, bezbolesnym życiu.",
+        },
+      },
+      {
+        heading: {
+          de: "Die Kontrolle zurückgewinnen: Bewegung als Medizin",
+          fr: "Reprendre le contrôle : le mouvement comme médicament",
+          en: "Taking back control: movement as medicine",
+          nl: "De controle terugnemen: beweging als medicijn",
+          tr: "Kontrolü geri almak: ilaç olarak hareket",
+          ar: "استعادة السيطرة: الحركة كدواء",
+          pl: "Odzyskać kontrolę: ruch jako lekarstwo",
+        },
+        body: {
+          de: "Der menschliche Körper nutzt sich nur dann ab, wenn man ihn nicht benutzt. Um einen empfindlichen Nacken zu beruhigen, ist die Lösung nicht völlige Ruhe, sondern progressive und wohlwollende Bewegung. Indem Sie Ihrem Nervensystem durch angepasste Übungen Vertrauen zurückgeben, erhöhen Sie die Kapazität Ihres Körpers, mit den Belastungen des Alltags umzugehen.",
+          fr: "Le corps humain ne s'use que si l'on ne s'en sert pas. Pour apaiser un cou sensible, la solution n'est pas le repos total, mais le mouvement progressif et bienveillant. En redonnant de la confiance à votre système nerveux par des exercices adaptés, vous augmentez la capacité de votre corps à supporter les contraintes du quotidien.",
+          en: "The human body only wears out if you don't use it. To soothe a sensitive neck, the solution is not complete rest, but progressive and benevolent movement. By giving your nervous system back its confidence through adapted exercises, you increase your body's capacity to handle daily-life loads.",
+          nl: "Het menselijk lichaam slijt alleen als u het niet gebruikt. Om een gevoelige nek te kalmeren is de oplossing niet volledige rust, maar progressieve en welwillende beweging. Door uw zenuwstelsel via aangepaste oefeningen vertrouwen terug te geven, vergroot u het vermogen van uw lichaam om de dagelijkse belasting aan te kunnen.",
+          tr: "İnsan vücudu yalnızca kullanılmadığında aşınır. Hassas bir boynu yatıştırmak için çözüm tam dinlenme değil, kademeli ve nazik harekettir. Sinir sisteminize uyarlanmış egzersizlerle güveni geri kazandırarak, vücudunuzun günlük yaşam yüklerini kaldırma kapasitesini artırırsınız.",
+          ar: "الجسم البشري يبلى فقط إذا لم تستخدمه. لتهدئة رقبة حساسة، الحل ليس الراحة الكاملة، بل الحركة التدريجية والرحيمة. من خلال إعادة الثقة إلى جهازك العصبي عبر تمارين مكيّفة، تزيد من قدرة جسمك على تحمّل ضغوط الحياة اليومية.",
+          pl: "Ciało ludzkie zużywa się tylko wtedy, gdy się go nie używa. Aby uspokoić wrażliwą szyję, rozwiązaniem nie jest całkowity odpoczynek, ale stopniowy i łagodny ruch. Przywracając pewność swojemu układowi nerwowemu poprzez dostosowane ćwiczenia, zwiększasz zdolność ciała do radzenia sobie z codziennymi obciążeniami.",
+        },
+      },
+      {
+        heading: {
+          de: "Was wir in der Praxis Loten tun",
+          fr: "Ce que nous faisons au cabinet Praxis Loten",
+          en: "What we do at Praxis Loten",
+          nl: "Wat we doen bij Praxis Loten",
+          tr: "Praxis Loten'de neler yapıyoruz",
+          ar: "ما نقوم به في عيادة Praxis Loten",
+          pl: "Co robimy w gabinecie Praxis Loten",
+        },
+        body: {
+          de: "In unserer Praxis in Eupen begleiten wir Sie dabei, Ihre Sorge in Handlung zu verwandeln. Ob mit dem Inhaber, unseren Partnern oder Mitarbeitern — unser Ansatz beruht auf vier Säulen: aktivem Zuhören, um Ihren Lebenskontext und Ihre Ziele zu verstehen; Orthopädischer Manueller Therapie mit sanften Techniken zur Schmerzmodulation; Edukation in Schmerz-Neurowissenschaft, damit Sie genau verstehen, was in Ihrem Körper passiert; und personalisierter Bewegung mit einfachen, wirksamen Übungen für Ihre Routine.",
+          fr: "Au sein de notre cabinet à Eupen, nous vous accompagnons pour transformer cette appréhension en action. Que ce soit avec le gérant, nos associés ou nos collaborateurs, notre approche repose sur quatre piliers : une écoute active pour comprendre votre contexte de vie et vos objectifs ; la thérapie manuelle orthopédique avec des techniques douces pour moduler la douleur ; l'éducation aux neurosciences de la douleur, pour que vous compreniez précisément ce qui se passe dans votre corps ; et le mouvement personnalisé, avec des exercices simples et efficaces à intégrer dans votre routine pour devenir autonome.",
+          en: "At our practice in Eupen, we help you turn that apprehension into action. Whether with the manager, our partners or our collaborators, our approach rests on four pillars: active listening to understand your life context and goals; Orthopaedic Manual Therapy with gentle techniques to modulate pain; pain neuroscience education so you understand exactly what is happening in your body; and personalised movement, with simple and effective exercises to fold into your routine and become autonomous.",
+          nl: "In onze praktijk in Eupen begeleiden we u om die ongerustheid om te zetten in actie. Of het nu met de zaakvoerder, onze partners of medewerkers is — onze aanpak rust op vier pijlers: actief luisteren om uw levenscontext en doelen te begrijpen; orthopedische manuele therapie met zachte technieken om pijn te moduleren; pijnneurowetenschap-educatie zodat u precies begrijpt wat er in uw lichaam gebeurt; en gepersonaliseerde beweging met eenvoudige, effectieve oefeningen voor uw routine.",
+          tr: "Eupen'deki kliniğimizde, bu endişeyi eyleme dönüştürmenize yardımcı oluyoruz. Yöneticimizle, ortaklarımızla veya çalışanlarımızla olsun, yaklaşımımız dört temele dayanır: yaşam bağlamınızı ve hedeflerinizi anlamak için aktif dinleme; ağrıyı modüle etmek için nazik tekniklerle Ortopedik Manuel Terapi; vücudunuzda neler olduğunu tam olarak anlamanız için ağrı nörobilim eğitimi; ve rutininize entegre edebileceğiniz basit ve etkili egzersizlerle kişiselleştirilmiş hareket.",
+          ar: "في عيادتنا في أوبن، نرافقك لتحويل هذا القلق إلى عمل. سواء مع المدير أو شركائنا أو متعاوننا، يرتكز نهجنا على أربعة أركان: الإصغاء النشط لفهم سياق حياتك وأهدافك؛ العلاج اليدوي العظمي بتقنيات لطيفة لتعديل الألم؛ تثقيف علم الأعصاب للألم لتفهم بدقة ما يحدث في جسمك؛ والحركة المخصصة بتمارين بسيطة وفعّالة لدمجها في روتينك واستعادة استقلاليتك.",
+          pl: "W naszym gabinecie w Eupen pomagamy przekształcić tę obawę w działanie. Czy to z kierownikiem, naszymi partnerami czy współpracownikami, nasze podejście opiera się na czterech filarach: aktywnym słuchaniu, aby zrozumieć Twój kontekst życiowy i cele; ortopedycznej terapii manualnej z łagodnymi technikami modulującymi ból; edukacji w neuronaukach bólu, abyś dokładnie rozumiał, co dzieje się w Twoim ciele; i spersonalizowanym ruchu z prostymi, skutecznymi ćwiczeniami do Twojej rutyny.",
+        },
+      },
+    ],
+    keyPoints: {
+      de: ["Schmerz = Alarm, nicht zwingend Schaden", "Beste Haltung = die nächste (Bewegung schlägt Statik)", "Bildgebungs-Befunde wie „Falten\" sind oft normal", "Schrittweise Bewegung beruhigt das Nervensystem", "Bei Praxis Loten: Manuelle Therapie + Schmerzedukation"],
+      fr: ["Douleur = alarme, pas forcément lésion", "Meilleure posture = la prochaine (le mouvement bat la statique)", "Les signes radiologiques sont souvent comme des « rides »", "Le mouvement progressif apaise le système nerveux", "Chez Praxis Loten : thérapie manuelle + éducation à la douleur"],
+      en: ["Pain = alarm, not necessarily damage", "Best posture = the next one (movement beats static)", "Imaging findings are often like 'wrinkles' — normal", "Progressive movement soothes the nervous system", "At Praxis Loten: manual therapy + pain education"],
+      nl: ["Pijn = alarm, niet noodzakelijk schade", "Beste houding = de volgende (beweging verslaat statisch)", "Beeldvormingsbevindingen zijn vaak als „rimpels\" — normaal", "Progressieve beweging kalmeert het zenuwstelsel", "Bij Praxis Loten: manuele therapie + pijneducatie"],
+      tr: ["Ağrı = alarm, mutlaka hasar değil", "En iyi duruş = bir sonraki (hareket statiği yener)", "Görüntüleme bulguları genellikle „kırışıklıklar\" gibi normal", "Kademeli hareket sinir sistemini sakinleştirir", "Praxis Loten'de: manuel terapi + ağrı eğitimi"],
+      ar: ["الألم = إنذار، وليس بالضرورة ضررًا", "أفضل وضعية = التالية (الحركة تتفوق على السكون)", "نتائج التصوير غالبًا مثل „التجاعيد\" — طبيعية", "الحركة التدريجية تهدئ الجهاز العصبي", "في Praxis Loten: علاج يدوي + تثقيف الألم"],
+      pl: ["Ból = alarm, niekoniecznie uszkodzenie", "Najlepsza postawa = następna (ruch pokonuje bezruch)", "Wyniki obrazowania często jak „zmarszczki\" — normalne", "Stopniowy ruch uspokaja układ nerwowy", "W Praxis Loten: terapia manualna + edukacja bólu"],
+    },
+    ctaText: {
+      de: "Nackenschmerzen? Vereinbaren Sie eine Bestandsaufnahme bei uns in Eupen.",
+      fr: "Douleurs aux cervicales ? Prenez rendez-vous pour un bilan personnalisé chez nous à Eupen.",
+      en: "Neck pain? Book a personalised assessment with us in Eupen.",
+      nl: "Nekpijn? Boek een persoonlijke evaluatie bij ons in Eupen.",
+      tr: "Boyun ağrısı mı? Eupen'deki kliniğimizde kişisel bir değerlendirme için randevu alın.",
+      ar: "آلام الرقبة؟ احجز تقييمًا شخصيًا لدينا في أوبن.",
+      pl: "Ból szyi? Umów się na indywidualną ocenę u nas w Eupen.",
+    },
+    bibliography: [
+      "Foster, N. E., et al. (2018). Prevention and treatment of low back pain: evidence, challenges, and promising directions. The Lancet.",
+      "Brinjikji, W., et al. (2015). Systematic literature review of imaging features of spinal degeneration in asymptomatic populations. AJNR.",
+      "Cote, P., et al. (2016). Management of neck pain and associated disorders: A clinical practice guideline. JMPT.",
+    ],
+    disclaimer: {
+      de: "Dieser Artikel hat informativen Charakter. Für eine genaue Bestandsaufnahme Ihrer Situation zögern Sie nicht, eine Fachperson aufzusuchen.",
+      fr: "Cet article est informatif. Pour un bilan précis de votre situation, n'hésitez pas à consulter un professionnel de santé.",
+      en: "This article is informative. For an accurate assessment of your situation, please consult a healthcare professional.",
+      nl: "Dit artikel is informatief van aard. Voor een nauwkeurige beoordeling van uw situatie raadpleegt u een zorgprofessional.",
+      tr: "Bu makale bilgilendirme amaçlıdır. Durumunuzun doğru değerlendirmesi için lütfen bir sağlık uzmanına başvurun.",
+      ar: "هذه المقالة لأغراض إعلامية. للحصول على تقييم دقيق لحالتك، يرجى استشارة أخصائي رعاية صحية.",
+      pl: "Ten artykuł ma charakter informacyjny. W celu dokładnej oceny swojej sytuacji skonsultuj się ze specjalistą.",
+    },
+  },
+
   "manuelle-therapie-rueckenschmerzen": {
     title: {
       de: "Rückenschmerzen — wann hilft Manuelle Therapie?",
@@ -588,14 +755,15 @@ const ARTICLES: Record<string, ArticleContent> = {
 
 const UI: Record<LangKey, {
   backBlog: string; readMin: string; keyPoints: string; bookCta: string; authorBy: string;
+  bibliography: string; onThisPage: string;
 }> = {
-  de: { backBlog: "← Zurück zum Blog", readMin: "min Lesezeit", keyPoints: "Das Wichtigste auf einen Blick", bookCta: "Termin buchen", authorBy: "Geschrieben von" },
-  fr: { backBlog: "← Retour au blog", readMin: "min de lecture", keyPoints: "L'essentiel en un coup d'œil", bookCta: "Prendre RDV", authorBy: "Écrit par" },
-  en: { backBlog: "← Back to blog", readMin: "min read", keyPoints: "Key takeaways", bookCta: "Book appointment", authorBy: "Written by" },
-  nl: { backBlog: "← Terug naar blog", readMin: "min leestijd", keyPoints: "De belangrijkste punten", bookCta: "Afspraak boeken", authorBy: "Geschreven door" },
-  tr: { backBlog: "← Bloga dön", readMin: "dk okuma", keyPoints: "Temel çıkarımlar", bookCta: "Randevu al", authorBy: "Yazan" },
-  ar: { backBlog: "← العودة إلى المدونة", readMin: "دقيقة قراءة", keyPoints: "النقاط الرئيسية", bookCta: "احجز موعدًا", authorBy: "كتبه" },
-  pl: { backBlog: "← Powrót do bloga", readMin: "min czytania", keyPoints: "Najważniejsze punkty", bookCta: "Zarezerwuj wizytę", authorBy: "Napisane przez" },
+  de: { backBlog: "← Zurück zum Blog", readMin: "min Lesezeit", keyPoints: "Das Wichtigste auf einen Blick", bookCta: "Termin buchen", authorBy: "Geschrieben von", bibliography: "Bibliographie", onThisPage: "Auf dieser Seite" },
+  fr: { backBlog: "← Retour au blog", readMin: "min de lecture", keyPoints: "L'essentiel en un coup d'œil", bookCta: "Prendre RDV", authorBy: "Écrit par", bibliography: "Bibliographie", onThisPage: "Sur cette page" },
+  en: { backBlog: "← Back to blog", readMin: "min read", keyPoints: "Key takeaways", bookCta: "Book appointment", authorBy: "Written by", bibliography: "References", onThisPage: "On this page" },
+  nl: { backBlog: "← Terug naar blog", readMin: "min leestijd", keyPoints: "De belangrijkste punten", bookCta: "Afspraak boeken", authorBy: "Geschreven door", bibliography: "Bibliografie", onThisPage: "Op deze pagina" },
+  tr: { backBlog: "← Bloga dön", readMin: "dk okuma", keyPoints: "Temel çıkarımlar", bookCta: "Randevu al", authorBy: "Yazan", bibliography: "Kaynakça", onThisPage: "Bu sayfada" },
+  ar: { backBlog: "← العودة إلى المدونة", readMin: "دقيقة قراءة", keyPoints: "النقاط الرئيسية", bookCta: "احجز موعدًا", authorBy: "كتبه", bibliography: "المراجع", onThisPage: "في هذه الصفحة" },
+  pl: { backBlog: "← Powrót do bloga", readMin: "min czytania", keyPoints: "Najważniejsze punkty", bookCta: "Zarezerwuj wizytę", authorBy: "Napisane przez", bibliography: "Bibliografia", onThisPage: "Na tej stronie" },
 };
 
 function formatDate(dateStr: string, lang: LangKey) {
@@ -616,8 +784,8 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
   const isRtl = lang === "ar";
 
   return (
-    <div className="pt-28 pb-20 min-h-screen bg-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-28 pb-20 min-h-screen bg-gradient-to-b from-neutral-50 via-white to-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Back link */}
         <AnimatedSection className="mb-8">
@@ -628,19 +796,28 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
 
         {/* Header banner */}
         <AnimatedSection className="mb-10">
-          <div className={`bg-gradient-to-br ${article.color} rounded-3xl p-8 text-white`}>
-            <div className="text-sm font-semibold opacity-75 mb-3 uppercase tracking-wider">
-              {article.category[lang]}
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
-              {article.title[lang]}
-            </h1>
-            <div className="flex items-center gap-4 text-white/70 text-sm">
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                {article.readMin} {ui.readMin}
-              </span>
-              <span>{formatDate(article.date, lang)}</span>
+          <div className={`relative overflow-hidden bg-gradient-to-br ${article.color} rounded-3xl p-8 sm:p-12 text-white shadow-xl`}>
+            {/* Decorative orbs */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+            <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+                {article.category[lang]}
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-5 max-w-4xl">
+                {article.title[lang]}
+              </h1>
+              <div className="flex items-center gap-5 text-white/80 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4" />
+                  {article.readMin} {ui.readMin}
+                </span>
+                <span className="opacity-50">•</span>
+                <time>{formatDate(article.date, lang)}</time>
+                <span className="opacity-50">•</span>
+                <span>{article.authorName}</span>
+              </div>
             </div>
           </div>
         </AnimatedSection>
@@ -648,12 +825,12 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
           {/* Main content */}
-          <div className="lg:col-span-2 space-y-8">
+          <article className="lg:col-span-2 space-y-6">
 
-            {/* Intro */}
+            {/* Intro with drop cap */}
             <AnimatedSection>
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200">
-                <p className="text-neutral-700 leading-relaxed text-base">
+              <div className="bg-white rounded-2xl p-8 sm:p-10 border border-neutral-200 shadow-sm">
+                <p className={`text-neutral-700 leading-relaxed text-lg ${!isRtl ? "first-letter:text-6xl first-letter:font-extrabold first-letter:text-[#2b3186] first-letter:mr-2 first-letter:float-left first-letter:leading-none first-letter:mt-1" : ""}`}>
                   {article.intro[lang]}
                 </p>
               </div>
@@ -661,70 +838,144 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
 
             {/* Sections */}
             {article.sections.map((section, i) => (
-              <AnimatedSection key={i} delay={0.1 * (i + 1)}>
-                <div className="bg-white rounded-2xl p-8 border border-neutral-200">
-                  <h2 className="text-xl font-bold text-neutral-900 mb-4">
+              <AnimatedSection key={i} delay={0.05 * (i + 1)}>
+                <div id={`section-${i}`} className="bg-white rounded-2xl p-8 sm:p-10 border border-neutral-200 shadow-sm scroll-mt-32">
+                  <h2 className="text-2xl font-extrabold text-neutral-900 mb-5 leading-tight tracking-tight">
+                    <span className={`inline-block w-1 h-6 align-middle bg-gradient-to-b ${article.color} rounded-full ${isRtl ? "ml-3" : "mr-3"}`} />
                     {section.heading[lang]}
                   </h2>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-neutral-700 leading-[1.75] text-base">
                     {section.body[lang]}
                   </p>
                 </div>
               </AnimatedSection>
             ))}
-          </div>
+
+            {/* Disclaimer */}
+            {article.disclaimer && (
+              <AnimatedSection delay={0.3}>
+                <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-amber-50/70 border border-amber-200/70">
+                  <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-amber-900 leading-relaxed italic">
+                    {article.disclaimer[lang]}
+                  </p>
+                </div>
+              </AnimatedSection>
+            )}
+
+            {/* Bibliography */}
+            {article.bibliography && article.bibliography.length > 0 && (
+              <AnimatedSection delay={0.35}>
+                <div className="bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-neutral-400 mb-5 flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    {ui.bibliography}
+                  </h3>
+                  <ol className="space-y-3 list-none">
+                    {article.bibliography.map((ref, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-neutral-600 leading-relaxed">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-100 text-neutral-500 text-xs font-bold flex items-center justify-center">
+                          {i + 1}
+                        </span>
+                        <span className="flex-1 italic">{ref}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </AnimatedSection>
+            )}
+          </article>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <aside className="space-y-6">
 
-            {/* Key points */}
-            <AnimatedSection delay={0.15}>
-              <div className="bg-white rounded-2xl p-6 border border-neutral-200 sticky top-28">
-                <h3 className="font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-[#76b82a]" />
-                  {ui.keyPoints}
-                </h3>
-                <ul className="space-y-3">
-                  {article.keyPoints[lang].map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-neutral-600">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] mt-2 flex-shrink-0" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </AnimatedSection>
+            <div className="sticky top-28 space-y-6">
 
-            {/* Author + CTA */}
-            <AnimatedSection delay={0.25}>
-              <div className="bg-gradient-to-br from-[#2b3186] to-[#1e2260] rounded-2xl p-6 text-white">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                    <User className="w-5 h-5 text-white/80" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-white/60">{ui.authorBy}</p>
+              {/* Table of contents */}
+              {article.sections.length > 1 && (
+                <AnimatedSection delay={0.1}>
+                  <nav className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+                    <h3 className="font-bold text-neutral-900 mb-4 flex items-center gap-2 text-sm">
+                      <ListOrdered className="w-4 h-4 text-[#76b82a]" />
+                      {ui.onThisPage}
+                    </h3>
+                    <ul className="space-y-2.5">
+                      {article.sections.map((section, i) => (
+                        <li key={i}>
+                          <a
+                            href={`#section-${i}`}
+                            className="flex items-start gap-2 text-sm text-neutral-600 hover:text-[#2b3186] transition-colors group"
+                          >
+                            <span className="text-xs font-mono text-neutral-400 group-hover:text-[#76b82a] mt-0.5 flex-shrink-0">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="leading-snug">{section.heading[lang]}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </AnimatedSection>
+              )}
+
+              {/* Key points */}
+              <AnimatedSection delay={0.15}>
+                <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm">
+                  <h3 className="font-bold text-neutral-900 mb-4 flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-[#76b82a]" />
+                    {ui.keyPoints}
+                  </h3>
+                  <ul className="space-y-3">
+                    {article.keyPoints[lang].map((point, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-neutral-600 leading-snug">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] mt-1.5 flex-shrink-0" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+
+              {/* Author + CTA */}
+              <AnimatedSection delay={0.25}>
+                <div className="relative overflow-hidden bg-gradient-to-br from-[#2b3186] to-[#1e2260] rounded-2xl p-6 text-white shadow-lg">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#76b82a]/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative w-12 h-12 rounded-full bg-white/10 overflow-hidden flex-shrink-0 border-2 border-white/20">
+                        <Image
+                          src={`/avatars/${article.authorSlug}.jpg`}
+                          alt={article.authorName}
+                          fill
+                          sizes="48px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] text-white/60 uppercase tracking-wider font-semibold">{ui.authorBy}</p>
+                        <Link
+                          href={`/team/${article.authorSlug}`}
+                          className="text-sm font-bold text-white hover:text-[#76b82a] transition-colors"
+                        >
+                          {article.authorName}
+                        </Link>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/80 mb-5 leading-relaxed">
+                      {article.ctaText[lang]}
+                    </p>
                     <Link
-                      href={`/team/${article.authorSlug}`}
-                      className="text-sm font-semibold text-white hover:text-[#76b82a] transition-colors"
+                      href="/termin"
+                      className="flex items-center justify-center gap-2 w-full py-3 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl font-semibold transition-colors text-sm shadow-lg shadow-[#76b82a]/20"
                     >
-                      {article.authorName}
+                      <CalendarPlus className="w-4 h-4" />
+                      {ui.bookCta}
                     </Link>
                   </div>
                 </div>
-                <p className="text-sm text-white/80 mb-5 leading-relaxed">
-                  {article.ctaText[lang]}
-                </p>
-                <Link
-                  href="/termin"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl font-semibold transition-colors text-sm"
-                >
-                  <CalendarPlus className="w-4 h-4" />
-                  {ui.bookCta}
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
+              </AnimatedSection>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
