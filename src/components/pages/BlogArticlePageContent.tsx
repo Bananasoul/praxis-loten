@@ -18,10 +18,12 @@ interface ArticleContent {
   authorSlug: string;
   authorName: string;
   intro: Record<LangKey, string>;
+  heroImage?: { src: string; alt: Record<LangKey, string> };
   sections: {
     heading: Record<LangKey, string>;
     body: Record<LangKey, string>;
     infographic?: "spine" | "movement" | "reflexes";
+    image?: { src: string; alt: Record<LangKey, string>; caption?: Record<LangKey, string> };
   }[];
   keyPoints: Record<LangKey, string[]>;
   ctaText: Record<LangKey, string>;
@@ -985,6 +987,22 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
           </Link>
         </AnimatedSection>
 
+        {/* Hero image (optional, above banner) */}
+        {article.heroImage && (
+          <AnimatedSection className="mb-6">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src={article.heroImage.src}
+                alt={article.heroImage.alt[lang] ?? article.heroImage.alt.fr ?? ""}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        )}
+
         {/* Header banner */}
         <AnimatedSection className="mb-10">
           <div className={`relative overflow-hidden bg-gradient-to-br ${article.color} rounded-3xl p-8 sm:p-12 text-white shadow-xl`}>
@@ -1038,6 +1056,24 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
                   <p className="text-neutral-700 leading-[1.75] text-base whitespace-pre-line">
                     {section.body[lang]}
                   </p>
+                  {section.image && (
+                    <figure className="mt-6 -mx-2">
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
+                        <Image
+                          src={section.image.src}
+                          alt={section.image.alt[lang] ?? section.image.alt.fr ?? ""}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 768px"
+                          className="object-cover"
+                        />
+                      </div>
+                      {section.image.caption?.[lang] && (
+                        <figcaption className="mt-2 text-xs italic text-neutral-500 text-center">
+                          {section.image.caption[lang]}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
                   {section.infographic && (
                     <div className="mt-2 -mx-2">
                       <InfographicSlot kind={section.infographic} lang={lang} />
