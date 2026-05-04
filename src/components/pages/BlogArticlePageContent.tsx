@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered } from "lucide-react";
 import Image from "next/image";
+import { InfographicSlot } from "@/components/blog/Infographics";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
@@ -20,6 +21,7 @@ interface ArticleContent {
   sections: {
     heading: Record<LangKey, string>;
     body: Record<LangKey, string>;
+    infographic?: "spine" | "movement" | "reflexes";
   }[];
   keyPoints: Record<LangKey, string[]>;
   ctaText: Record<LangKey, string>;
@@ -28,6 +30,195 @@ interface ArticleContent {
 }
 
 const ARTICLES: Record<string, ArticleContent> = {
+  "position-assise-mal-de-dos": {
+    title: {
+      de: "Schadet langes Sitzen wirklich Ihrem Rücken? Was die Wissenschaft 2026 sagt",
+      fr: "La position assise abîme-t-elle vraiment votre dos ? Ce que dit la science en 2026",
+      en: "Does sitting really damage your back? What the science says in 2026",
+      nl: "Beschadigt zitten echt uw rug? Wat de wetenschap zegt in 2026",
+      tr: "Oturmak gerçekten sırtınıza zarar verir mi? 2026 bilimi ne diyor",
+      ar: "هل الجلوس يضر فعلاً بظهرك؟ ما يقوله العلم في 2026",
+      pl: "Czy siedzenie naprawdę niszczy plecy? Co mówi nauka w 2026",
+    },
+    category: {
+      de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
+      nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+    },
+    date: "2026-05-03",
+    readMin: 4,
+    color: "from-[#0e7490] to-[#155e75]",
+    authorSlug: "philippe-banaszak",
+    authorName: "Philippe Banaszak",
+    intro: {
+      de: "Sie haben es sicher schon gehört: „Sitzen ist das neue Rauchen.\" Wenn Sie stundenlang am Bildschirm arbeiten, jagt dieser Satz Angst ein. Und wenn sich Ihr Rücken langsam abnutzte, ohne dass Sie etwas täten? Gute Nachricht: Die Wissenschaft sagt etwas anderes.",
+      fr: "Vous l'avez sûrement entendu : « rester assis, c'est le nouveau tabagisme. » Si vous travaillez des heures devant un écran, cette phrase fait peur. Et si votre dos s'usait lentement, sans que vous ne fassiez rien ? Bonne nouvelle : la science dit autre chose.",
+      en: "You've probably heard it: \"sitting is the new smoking.\" If you work long hours at a screen, that phrase is scary. What if your back was slowly wearing down without you noticing? Good news: science says otherwise.",
+      nl: "U hebt het vast gehoord: „zitten is het nieuwe roken.\" Als u uren achter een scherm werkt, is die zin angstaanjagend. En als uw rug langzaam zou slijten, zonder dat u iets doet? Goed nieuws: de wetenschap zegt iets anders.",
+      tr: "Muhtemelen duymuşsunuzdur: „Oturmak yeni sigaradır.\" Saatlerce ekran başında çalışıyorsanız bu cümle korkutucudur. Ya sırtınız yavaşça aşınıyorsa, siz fark etmeden? İyi haber: bilim başka şey söylüyor.",
+      ar: "ربما سمعتها: „الجلوس هو التدخين الجديد.\" إذا كنت تعمل ساعات أمام الشاشة، فهذه العبارة مخيفة. ماذا لو كان ظهرك يتآكل ببطء دون أن تلاحظ؟ خبر جيد: العلم يقول العكس.",
+      pl: "Pewnie to słyszałeś: „Siedzenie to nowe palenie.\" Jeśli pracujesz godzinami przed ekranem, to zdanie przeraża. A gdyby Twoje plecy powoli się zużywały, a Ty byś nic nie robił? Dobra wiadomość: nauka mówi co innego.",
+    },
+    sections: [
+      {
+        heading: {
+          de: "Der Mythos zum Vergessen",
+          fr: "Le mythe à oublier",
+          en: "The myth to forget",
+          nl: "De mythe om te vergeten",
+          tr: "Unutulması gereken mit",
+          ar: "الأسطورة التي يجب نسيانها",
+          pl: "Mit do zapomnienia",
+        },
+        body: {
+          de: "Lange Zeit glaubte man, das Sitzen drücke die Bandscheiben zusammen und verursache direkt Rückenschmerzen. Diese Idee ist heute durch große aktuelle Studien stark relativiert. Das Urteil ist klar: Sitzen verursacht an sich keinen Rückenschmerz. Es kann ein vorübergehendes Unbehagen erzeugen, aber es zerstört nichts. Ihre Wirbelsäule ist robust. Ihre Bandscheiben sind intelligente Stoßdämpfer, gebaut, um die Lasten des Alltags zu absorbieren. Ein Bürotag schadet ihnen nicht.",
+          fr: "Pendant longtemps, on a cru que la position assise écrasait les disques de la colonne et causait directement le mal de dos. Cette idée est aujourd'hui largement nuancée par les grandes études récentes. Le verdict est clair : la position assise, en elle-même, ne cause pas le mal de dos. Elle peut générer un inconfort temporaire, mais elle ne « casse » rien. Votre colonne est solide. Vos disques sont des amortisseurs intelligents, conçus pour encaisser les charges du quotidien. Une journée au bureau ne les abîme pas.",
+          en: "For a long time, people believed sitting crushed the spinal discs and directly caused back pain. That idea is now heavily nuanced by large recent studies. The verdict is clear: sitting itself does not cause back pain. It can produce temporary discomfort, but it doesn't \"break\" anything. Your spine is strong. Your discs are intelligent shock absorbers, designed to handle daily loads. A day at the office doesn't damage them.",
+          nl: "Lang dacht men dat zitten de tussenwervelschijven verpletterde en rechtstreeks rugpijn veroorzaakte. Dat idee wordt vandaag sterk genuanceerd door recente grote studies. Het oordeel is duidelijk: zitten op zich veroorzaakt geen rugpijn. Het kan tijdelijk ongemak geven, maar breekt niets. Uw wervelkolom is sterk. Uw discussen zijn intelligente schokdempers.",
+          tr: "Uzun süre, oturmanın omurga disklerini ezdiği ve doğrudan sırt ağrısına neden olduğu sanıldı. Bu fikir bugün son büyük çalışmalarla büyük ölçüde nüanslanmıştır. Karar açık: oturmak başlı başına sırt ağrısına neden olmaz. Geçici rahatsızlık yaratabilir, ama hiçbir şeyi „kırmaz\". Omurganız sağlamdır. Diskleriniz akıllı amortisörlerdir.",
+          ar: "لفترة طويلة، كان يُعتقد أن الجلوس يضغط على أقراص العمود الفقري ويسبب آلام الظهر مباشرة. هذه الفكرة تم تخفيفها كثيرًا بدراسات حديثة كبيرة. الحكم واضح: الجلوس بحد ذاته لا يسبب ألم الظهر. قد يسبب انزعاجًا مؤقتًا، لكنه لا „يكسر\" شيئًا. عمودك الفقري قوي. أقراصك ممتصات صدمات ذكية.",
+          pl: "Przez długi czas wierzono, że siedzenie zgniata krążki kręgosłupa i bezpośrednio powoduje ból pleców. Ten pogląd jest dziś mocno niuansowany przez duże, niedawne badania. Werdykt jest jasny: siedzenie samo w sobie nie powoduje bólu pleców. Może wywołać chwilowy dyskomfort, ale niczego nie „łamie\". Twój kręgosłup jest mocny. Twoje krążki to inteligentne amortyzatory.",
+        },
+        infographic: "spine",
+      },
+      {
+        heading: {
+          de: "Was wirklich zählt: Bewegen",
+          fr: "Ce qui compte vraiment : bouger",
+          en: "What really matters: moving",
+          nl: "Wat echt telt: bewegen",
+          tr: "Asıl önemli olan: hareket etmek",
+          ar: "ما يهم حقًا: الحركة",
+          pl: "Co naprawdę się liczy: ruch",
+        },
+        body: {
+          de: "Das eigentliche Problem ist nicht der Stuhl, sondern die anhaltende Unbeweglichkeit. Der menschliche Körper liebt Bewegung. Er braucht sie, um das Blut zirkulieren zu lassen, die Gelenke zu mobilisieren, die Muskeln wach zu halten. Wenn man stundenlang erstarrt bleibt — sitzend, stehend, egal — protestiert er. Die Wissenschaft ist sehr beruhigend: 30 bis 60 Minuten Bewegung pro Tag reichen weitgehend, um die Stunden im Büro auszugleichen. Schnelles Gehen, Rad, Treppen, Garten, Schwimmen — alles zählt. Kein Fitnessstudio nötig.",
+          fr: "Le vrai problème n'est pas la chaise. C'est l'immobilité prolongée. Le corps humain adore le mouvement. Il en a besoin pour faire circuler le sang, mobiliser les articulations, garder les muscles éveillés. Quand on reste figé pendant des heures — assis, debout, peu importe — il proteste. La science est très rassurante sur ce point : 30 à 60 minutes de mouvement par jour suffisent largement à compenser les heures passées au bureau. Marche rapide, vélo, escaliers, jardinage, natation : tout compte. Pas besoin de salle de sport.",
+          en: "The real problem isn't the chair. It's prolonged immobility. The human body loves movement. It needs it to circulate blood, mobilise joints, keep muscles awake. When we stay frozen for hours — sitting, standing, whatever — it protests. Science is very reassuring here: 30 to 60 minutes of movement a day is largely enough to offset hours spent at the desk. Brisk walking, cycling, stairs, gardening, swimming — it all counts. No gym required.",
+          nl: "Het echte probleem is niet de stoel. Het is langdurige onbeweeglijkheid. Het lichaam houdt van beweging. Het heeft het nodig om bloed te laten circuleren, gewrichten te mobiliseren, spieren wakker te houden. Als we uren stilzitten of staan — protesteert het. De wetenschap is hier heel geruststellend: 30 tot 60 minuten beweging per dag volstaan ruimschoots om bureau-uren te compenseren.",
+          tr: "Asıl sorun sandalye değil, uzun süreli hareketsizliktir. İnsan vücudu hareketi sever. Kanın dolaşması, eklemlerin hareket etmesi, kasların uyanık kalması için ona ihtiyacı vardır. Saatlerce donmuş kaldığımızda — oturarak, ayakta, fark etmez — protesto eder. Bilim çok güven verici: günde 30-60 dakika hareket masada geçirilen saatleri telafi etmeye fazlasıyla yeter.",
+          ar: "المشكلة الحقيقية ليست الكرسي، بل الجمود المطوّل. الجسم البشري يحب الحركة. يحتاجها لتدوير الدم وتحريك المفاصل وإبقاء العضلات يقظة. عندما نبقى متجمدين لساعات — يحتج. العلم مطمئن جدًا: 30 إلى 60 دقيقة حركة يوميًا تكفي على نطاق واسع لتعويض ساعات المكتب.",
+          pl: "Prawdziwym problemem nie jest krzesło, lecz długotrwały bezruch. Ludzkie ciało kocha ruch. Potrzebuje go, by krążyła krew, by stawy się ruszały, mięśnie były aktywne. Gdy stoimy lub siedzimy bez ruchu godzinami — protestuje. Nauka uspokaja: 30 do 60 minut ruchu dziennie wystarczy z naddatkiem, by zrekompensować godziny przy biurku.",
+        },
+        infographic: "movement",
+      },
+      {
+        heading: {
+          de: "Die goldene Regel: Wechseln Sie oft die Position",
+          fr: "La règle d'or : changez de position souvent",
+          en: "The golden rule: change position often",
+          nl: "De gouden regel: verander vaak van positie",
+          tr: "Altın kural: sık sık pozisyon değiştirin",
+          ar: "القاعدة الذهبية: غيّر وضعيتك كثيرًا",
+          pl: "Złota zasada: często zmieniaj pozycję",
+        },
+        body: {
+          de: "In der modernen Physiotherapie lieben wir diesen Satz: „Die beste Haltung ist die nächste.\" Anders gesagt: Es gibt keine „perfekte\" Haltung, die man stundenlang halten müsste. Ihr Rücken braucht Vielfalt, nicht Steifheit. Lümmelnd, gerade, Beine übergeschlagen, stehend — wechseln Sie ohne Schuldgefühle. Sich alle 20-30 Minuten zu bewegen ist viel nützlicher, als die „ideale\" Haltung zu suchen.",
+          fr: "En kinésithérapie moderne, on aime cette phrase : « La meilleure posture, c'est la prochaine. » Autrement dit : il n'existe pas de position « parfaite » à maintenir pendant des heures. Votre dos a besoin de variété, pas de raideur. Avachi, droit, jambes croisées, debout — alternez sans culpabilité. Bouger toutes les 20 à 30 minutes est bien plus utile que de chercher la posture « idéale ».",
+          en: "In modern physiotherapy we love this saying: \"Your best posture is your next one.\" In other words, there is no \"perfect\" position to hold for hours. Your back needs variety, not rigidity. Slouched, upright, legs crossed, standing — alternate without guilt. Moving every 20-30 minutes is much more useful than searching for the \"ideal\" posture.",
+          nl: "In de moderne fysiotherapie houden we van deze zin: „De beste houding is de volgende.\" Met andere woorden: er bestaat geen „perfecte\" houding die u uren moet aanhouden. Uw rug heeft variatie nodig, geen stijfheid. Onderuitgezakt, rechtop, gekruist, staand — wissel zonder schuldgevoel.",
+          tr: "Modern fizyoterapide bu cümleyi seviyoruz: „En iyi duruşunuz bir sonrakidir.\" Başka deyişle: saatlerce sürdürülecek „mükemmel\" bir pozisyon yoktur. Sırtınızın çeşitliliğe ihtiyacı vardır, katılığa değil. Çökmüş, dik, bacak bacak üstüne, ayakta — suçluluk duymadan değiştirin.",
+          ar: "في العلاج الطبيعي الحديث، نحب هذه العبارة: „أفضل وضعية هي التالية.\" بكلمات أخرى: لا توجد وضعية „مثالية\" يجب الحفاظ عليها لساعات. ظهرك يحتاج إلى التنوع، لا إلى الصلابة. منحنيًا، مستقيمًا، أرجل متقاطعة، واقفًا — تناوب دون شعور بالذنب.",
+          pl: "W nowoczesnej fizjoterapii uwielbiamy to zdanie: „Najlepsza postawa to ta następna.\" Innymi słowy: nie istnieje „idealna\" pozycja, którą należy utrzymywać godzinami. Twoje plecy potrzebują różnorodności, nie sztywności. Rozwalony, wyprostowany, nogi skrzyżowane, na stojąco — zmieniaj bez wyrzutów sumienia.",
+        },
+      },
+      {
+        heading: {
+          de: "3 einfache Reflexe für Ihren Alltag",
+          fr: "3 réflexes simples pour votre quotidien",
+          en: "3 simple reflexes for your daily life",
+          nl: "3 eenvoudige reflexen voor uw dagelijks leven",
+          tr: "Günlük yaşam için 3 basit refleks",
+          ar: "3 ردود فعل بسيطة لحياتك اليومية",
+          pl: "3 proste odruchy na co dzień",
+        },
+        body: {
+          de: "1. Stehen Sie alle 30 Minuten auf. Eine Minute stehen, ein paar Schritte, ein freies Strecken. 2. Bewegen Sie sich 30 Minuten am Tag. Die Aktivität, die Ihnen gefällt, ist die beste — Regelmäßigkeit zählt mehr als Intensität. 3. Vertrauen Sie Ihrem Rücken. Er ist robuster, als man Ihnen erzählt hat.",
+          fr: "1. Levez-vous toutes les 30 minutes. Une minute debout, quelques pas, un étirement libre. 2. Bougez 30 minutes par jour. L'activité qui vous plaît, c'est la meilleure. La régularité compte plus que l'intensité. 3. Faites confiance à votre dos. Il est plus solide que ce qu'on vous a fait croire.",
+          en: "1. Stand up every 30 minutes. One minute standing, a few steps, a free stretch. 2. Move 30 minutes a day. The activity you enjoy is the best one. Consistency matters more than intensity. 3. Trust your back. It is stronger than you've been told.",
+          nl: "1. Sta elke 30 minuten op. Een minuut staan, paar stappen, vrij rekken. 2. Beweeg 30 minuten per dag. Wat u leuk vindt is het beste. Regelmaat telt meer dan intensiteit. 3. Vertrouw uw rug. Hij is sterker dan u is wijsgemaakt.",
+          tr: "1. Her 30 dakikada ayağa kalkın. Bir dakika ayakta, birkaç adım, serbest esneme. 2. Günde 30 dakika hareket edin. Hoşunuza giden aktivite en iyisidir. 3. Sırtınıza güvenin. Size söylenenden çok daha sağlam.",
+          ar: "1. انهض كل 30 دقيقة. دقيقة وقوف، بضع خطوات، تمدد حر. 2. تحرك 30 دقيقة يوميًا. النشاط الذي تحبه هو الأفضل. الانتظام أهم من الشدة. 3. ثق بظهرك. إنه أقوى مما قيل لك.",
+          pl: "1. Wstawaj co 30 minut. Minuta stania, kilka kroków, swobodne rozciągnięcie. 2. Ruszaj się 30 minut dziennie. Aktywność, którą lubisz, jest najlepsza. 3. Zaufaj swoim plecom. Są mocniejsze niż Ci powiedziano.",
+        },
+        infographic: "reflexes",
+      },
+      {
+        heading: {
+          de: "Wann sollten Sie konsultieren?",
+          fr: "Quand consulter ?",
+          en: "When should you consult?",
+          nl: "Wanneer een afspraak maken?",
+          tr: "Ne zaman başvurmalısınız?",
+          ar: "متى تستشير؟",
+          pl: "Kiedy się skonsultować?",
+        },
+        body: {
+          de: "Wenn ein Schmerz mehrere Wochen anhält, Sie in Ihren täglichen Aktivitäten stört oder von Kribbeln, Schwäche oder anderen ungewöhnlichen Zeichen begleitet wird — warten Sie nicht. Eine Bewertung durch eine ausgebildete Fachperson erlaubt, das auszuschließen, was Aufmerksamkeit verdient, und Sie schnell wieder in Bewegung zu bringen.",
+          fr: "Si une douleur dure plusieurs semaines, vous gêne dans vos activités quotidiennes, ou s'accompagne de fourmillements, faiblesses ou autres signes inhabituels — n'attendez pas. Une évaluation par un professionnel formé permet d'écarter ce qui mérite attention et de vous remettre en mouvement rapidement.",
+          en: "If pain lasts several weeks, hampers your daily activities, or comes with tingling, weakness or other unusual signs — don't wait. An assessment by a trained professional helps rule out what deserves attention and get you moving again quickly.",
+          nl: "Als pijn weken aanhoudt, uw dagelijkse activiteiten hindert of gepaard gaat met tintelingen, zwakte of andere ongewone tekenen — wacht niet. Een evaluatie door een opgeleide professional helpt uit te sluiten wat aandacht verdient en u snel weer in beweging te brengen.",
+          tr: "Bir ağrı haftalarca sürerse, günlük aktivitelerinizi engelliyorsa veya karıncalanma, halsizlik ya da diğer olağandışı belirtilerle birlikte geliyorsa — beklemeyin. Eğitimli bir uzmanın değerlendirmesi, dikkat gerektireni saf dışı bırakıp sizi hızla harekete geçirmeyi sağlar.",
+          ar: "إذا استمر الألم عدة أسابيع، أو أعاق أنشطتك اليومية، أو رافقه تنميل أو ضعف أو علامات غير عادية — لا تنتظر. تقييم من قبل أخصائي مدرب يسمح باستبعاد ما يستحق الانتباه وإعادتك إلى الحركة بسرعة.",
+          pl: "Jeśli ból trwa kilka tygodni, utrudnia codzienne czynności lub towarzyszą mu mrowienie, osłabienie lub inne nietypowe objawy — nie czekaj. Ocena przez wyszkolonego specjalistę pozwala wykluczyć to, co wymaga uwagi, i szybko przywrócić Ci ruch.",
+        },
+      },
+      {
+        heading: {
+          de: "In der Praxis Loten in Eupen",
+          fr: "Au cabinet Praxis Loten, à Eupen",
+          en: "At Praxis Loten, in Eupen",
+          nl: "Bij Praxis Loten, in Eupen",
+          tr: "Eupen'deki Praxis Loten kliniğinde",
+          ar: "في عيادة Praxis Loten بأوبن",
+          pl: "W gabinecie Praxis Loten w Eupen",
+        },
+        body: {
+          de: "Unser Team — Physiotherapeuten, Manualtherapeuten und Osteopathen — begleitet jeden Tag Patienten, die glauben, ihr Rücken sei „zerbrechlich\" oder „abgenutzt\". Unser Ansatz hält in vier Wörtern: Zuhören (Ihren Schmerz im Gesamtkontext: Schlaf, Stress, Lebensstil), Erleichtern (durch angepasste Manuelle Therapie), Stärken (durch progressive personalisierte Übungen), Erklären (wie Ihr Rücken wirklich funktioniert). Unser Ziel: dass Sie kräftiger und gelassener gehen — nicht besorgter.",
+          fr: "Notre équipe — kinésithérapeutes, thérapeutes manuels et ostéopathes — accompagne chaque jour des patients qui pensent que leur dos est « fragile » ou « usé ». Notre approche tient en quatre mots : Écouter votre douleur dans son contexte global (sommeil, stress, mode de vie). Soulager par la thérapie manuelle adaptée. Renforcer par des exercices progressifs et personnalisés. Expliquer comment fonctionne réellement votre dos. Notre objectif : que vous repartiez plus solide et plus serein — pas plus inquiet.",
+          en: "Our team — physiotherapists, manual therapists and osteopaths — supports patients every day who believe their back is \"fragile\" or \"worn out.\" Our approach holds in four words: Listen to your pain in its global context (sleep, stress, lifestyle). Relieve through adapted manual therapy. Strengthen through progressive personalised exercises. Explain how your back actually works. Our aim: that you leave stronger and calmer — not more worried.",
+          nl: "Ons team — fysiotherapeuten, manuele therapeuten en osteopaten — begeleidt dagelijks patiënten die denken dat hun rug „kwetsbaar\" of „versleten\" is. Onze aanpak vat samen in vier woorden: Luisteren naar uw pijn in globale context. Verlichten door aangepaste manuele therapie. Versterken door progressieve oefeningen. Uitleggen hoe uw rug werkelijk werkt.",
+          tr: "Ekibimiz — fizyoterapistler, manuel terapistler ve osteopatlar — sırtının „kırılgan\" veya „eski\" olduğunu düşünen hastalara her gün eşlik eder. Yaklaşımımız dört kelimede özetlenir: Dinlemek (yaşam bağlamında ağrı), Rahatlatmak (uyarlanmış manuel terapi), Güçlendirmek (kademeli kişisel egzersizler), Açıklamak (sırtın gerçekte nasıl çalıştığı).",
+          ar: "فريقنا — أخصائيو علاج طبيعي، معالجون يدويون وأخصائيو هشاشة العظام — يرافق يوميًا مرضى يعتقدون أن ظهرهم „هش\" أو „متآكل\". نهجنا يلخص في أربع كلمات: الإصغاء إلى ألمك في سياقه الشامل، التخفيف بالعلاج اليدوي المكيف، التقوية بتمارين تدريجية، الشرح كيف يعمل ظهرك حقًا.",
+          pl: "Nasz zespół — fizjoterapeuci, terapeuci manualni i osteopaci — codziennie wspiera pacjentów, którzy uważają swoje plecy za „kruche\" lub „zużyte\". Nasze podejście to cztery słowa: Słuchać (Twojego bólu w globalnym kontekście), Ulżyć (dostosowaną terapią manualną), Wzmocnić (progresywnymi ćwiczeniami), Wyjaśnić (jak naprawdę działają plecy).",
+        },
+      },
+    ],
+    keyPoints: {
+      de: ["Sitzen verursacht keinen Rückenschmerz", "Das Problem ist Unbeweglichkeit, nicht der Stuhl", "30-60 Min Bewegung/Tag gleichen das Sitzen aus", "Beste Haltung = die nächste (Vielfalt > Steifheit)", "Bei Praxis Loten: Manuelle Therapie + Edukation"],
+      fr: ["La position assise ne cause pas le mal de dos", "Le problème, c'est l'immobilité, pas la chaise", "30-60 min de mouvement/jour compensent l'assise", "Meilleure posture = la prochaine (variété > rigidité)", "Chez Praxis Loten : thérapie manuelle + éducation"],
+      en: ["Sitting does not cause back pain", "The problem is immobility, not the chair", "30-60 min of movement/day offsets sitting", "Best posture = the next one (variety > rigidity)", "At Praxis Loten: manual therapy + education"],
+      nl: ["Zitten veroorzaakt geen rugpijn", "Het probleem is onbeweeglijkheid, niet de stoel", "30-60 min beweging/dag compenseert zitten", "Beste houding = de volgende (variatie > stijfheid)", "Bij Praxis Loten: manuele therapie + educatie"],
+      tr: ["Oturmak sırt ağrısına neden olmaz", "Sorun hareketsizliktir, sandalye değil", "Günde 30-60 dk hareket oturmayı dengeler", "En iyi duruş = bir sonraki (çeşitlilik > katılık)", "Praxis Loten'de: manuel terapi + eğitim"],
+      ar: ["الجلوس لا يسبب ألم الظهر", "المشكلة هي الجمود، لا الكرسي", "30-60 دقيقة حركة/يوم تعوض الجلوس", "أفضل وضعية = التالية (تنوع > جمود)", "في Praxis Loten: علاج يدوي + تثقيف"],
+      pl: ["Siedzenie nie powoduje bólu pleców", "Problemem jest bezruch, nie krzesło", "30-60 min ruchu/dzień rekompensuje siedzenie", "Najlepsza postawa = następna (różnorodność > sztywność)", "W Praxis Loten: terapia manualna + edukacja"],
+    },
+    ctaText: {
+      de: "Anhaltender Rückenschmerz? Lassen Sie sich in Eupen umfassend untersuchen.",
+      fr: "Mal de dos qui s'installe ? Faites un bilan complet chez nous à Eupen.",
+      en: "Back pain that lingers? Get a full assessment with us in Eupen.",
+      nl: "Aanhoudende rugpijn? Maak een volledig bilan bij ons in Eupen.",
+      tr: "Geçmeyen sırt ağrısı? Eupen'deki kliniğimizde tam değerlendirme yaptırın.",
+      ar: "ألم ظهر مستمر؟ احصل على تقييم كامل لدينا في أوبن.",
+      pl: "Uporczywy ból pleców? Umów się na pełną ocenę u nas w Eupen.",
+    },
+    bibliography: [
+      "Ekelund U, et al. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? The Lancet. 2016;388:1302-1310.",
+      "Swain CTV, et al. No consensus on causality of spine postures or physical exposure and low back pain: A systematic review of systematic reviews. Scand J Med Sci Sports. 2020.",
+      "Foster NE, Anema JR, Cherkin D, et al. Prevention and treatment of low back pain: evidence, challenges, and promising directions. The Lancet. 2018;391:2368-2383.",
+      "Wilke HJ, et al. New in vivo measurements of pressures in the intervertebral disc in daily life. Spine. 1999;24:755-762.",
+      "GBD 2021 Low Back Pain Collaborators. Global burden of low back pain. Lancet Rheumatol. 2023.",
+    ],
+    disclaimer: {
+      de: "Dieser Artikel hat informativen Charakter und ersetzt keine Konsultation. Bei anhaltenden Schmerzen vereinbaren Sie einen Termin bei einem unserer Praktiker.",
+      fr: "Cet article a une vocation informative et ne remplace pas une consultation. En cas de douleur persistante, prenez rendez-vous avec l'un de nos praticiens.",
+      en: "This article is for information only and does not replace a consultation. In case of persistent pain, book an appointment with one of our practitioners.",
+      nl: "Dit artikel is informatief en vervangt geen consultatie. Bij aanhoudende pijn maakt u een afspraak met een van onze praktijkhouders.",
+      tr: "Bu makale bilgilendirme amaçlıdır ve konsültasyonun yerini tutmaz. Kalıcı ağrı durumunda uzmanlarımızdan biriyle randevu alın.",
+      ar: "هذه المقالة لأغراض إعلامية فقط ولا تحل محل الاستشارة. في حالة الألم المستمر، احجز موعدًا مع أحد ممارسينا.",
+      pl: "Ten artykuł ma charakter informacyjny i nie zastępuje konsultacji. W przypadku uporczywego bólu umów się na wizytę u jednego z naszych specjalistów.",
+    },
+  },
+
   "douleurs-cervicales-mobilite-eupen": {
     title: {
       de: "Nackenschmerzen — warum Ihr Hals weh tut und wie Sie in Eupen wieder beweglich werden",
@@ -844,9 +1035,14 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
                     <span className={`inline-block w-1 h-6 align-middle bg-gradient-to-b ${article.color} rounded-full ${isRtl ? "ml-3" : "mr-3"}`} />
                     {section.heading[lang]}
                   </h2>
-                  <p className="text-neutral-700 leading-[1.75] text-base">
+                  <p className="text-neutral-700 leading-[1.75] text-base whitespace-pre-line">
                     {section.body[lang]}
                   </p>
+                  {section.infographic && (
+                    <div className="mt-2 -mx-2">
+                      <InfographicSlot kind={section.infographic} lang={lang} />
+                    </div>
+                  )}
                 </div>
               </AnimatedSection>
             ))}

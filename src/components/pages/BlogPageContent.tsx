@@ -11,6 +11,35 @@ type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
 const ARTICLES = [
   {
+    slug: "position-assise-mal-de-dos",
+    date: "2026-05-03",
+    readMin: 4,
+    category: {
+      de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
+      nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+    },
+    color: "from-[#0e7490] to-[#155e75]",
+    title: {
+      de: "Schadet langes Sitzen wirklich Ihrem Rücken? Was die Wissenschaft 2026 sagt",
+      fr: "La position assise abîme-t-elle vraiment votre dos ? Ce que dit la science en 2026",
+      en: "Does sitting really damage your back? What the science says in 2026",
+      nl: "Beschadigt zitten echt uw rug? Wat de wetenschap zegt in 2026",
+      tr: "Oturmak gerçekten sırtınıza zarar verir mi? 2026 bilimi ne diyor",
+      ar: "هل الجلوس يضر فعلاً بظهرك؟ ما يقوله العلم في 2026",
+      pl: "Czy siedzenie naprawdę niszczy plecy? Co mówi nauka w 2026",
+    },
+    excerpt: {
+      de: "„Sitzen ist das neue Rauchen.\" Eine beängstigende Phrase — aber stimmt sie? Die Wissenschaft entlastet die Bürotätigkeit: das Problem ist nicht der Stuhl, sondern die anhaltende Unbeweglichkeit. Die EBP-Analyse von Praxis Loten.",
+      fr: "« Rester assis, c'est le nouveau tabagisme. » Une phrase qui fait peur — mais est-ce vrai ? La science dédouane la chaise de bureau : le problème n'est pas le siège, mais l'immobilité prolongée. L'analyse EBP de Praxis Loten.",
+      en: "\"Sitting is the new smoking.\" A scary phrase — but is it true? Science exonerates the office chair: the problem isn't the seat, it's prolonged immobility. The EBP analysis from Praxis Loten.",
+      nl: "„Zitten is het nieuwe roken.\" Een angstaanjagende zin — maar klopt het? De wetenschap pleit de bureaustoel vrij: het probleem is niet de stoel, maar langdurige onbeweeglijkheid.",
+      tr: "„Oturmak yeni sigaradır.\" Korkutucu bir cümle — ama doğru mu? Bilim ofis sandalyesini akl​ıyor: sorun koltuk değil, uzun süreli hareketsizlik.",
+      ar: "„الجلوس هو التدخين الجديد.\" عبارة مخيفة — لكن هل هي صحيحة؟ العلم يبرّئ كرسي المكتب: المشكلة ليست في المقعد، بل في الجمود المطوّل.",
+      pl: "„Siedzenie to nowe palenie.\" Przerażające zdanie — ale czy prawdziwe? Nauka oczyszcza krzesło biurowe: problemem nie jest siedzisko, lecz długotrwały bezruch.",
+    },
+    tags: { de: ["Lumbalgie", "Sitzen", "Sedentarität", "Eupen"], fr: ["Lombalgie", "Position assise", "Sédentarité", "Eupen"], en: ["Low back pain", "Sitting", "Sedentary", "Eupen"], nl: ["Lage rugpijn", "Zitten", "Sedentair", "Eupen"], tr: ["Bel ağrısı", "Oturma", "Hareketsizlik", "Eupen"], ar: ["ألم أسفل الظهر", "جلوس", "خمول", "أوبن"], pl: ["Ból krzyża", "Siedzenie", "Siedzący tryb", "Eupen"] },
+  },
+  {
     slug: "douleurs-cervicales-mobilite-eupen",
     date: "2026-05-03",
     readMin: 6,
