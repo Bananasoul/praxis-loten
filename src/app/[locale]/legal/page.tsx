@@ -15,7 +15,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Éditeur du site",
-        body: `Le présent site web www.praxisloten.be est édité par :\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgique\n\nTéléphone : +32 87 55 56 70\nCourriel : praxisloten@gmail.com\n\nResponsable de la publication : Philippe Banaszak, kinésithérapeute agréé INAMI.\n\nPraxis Loten est un cabinet de kinésithérapie et de thérapie manuelle, exerçant conformément à la législation belge sur les professions de santé (Loi coordonnée du 10 mai 2015 relative à l'exercice des professions des soins de santé).`,
+        body: `Le présent site web www.praxisloten.be est édité par :\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgique\n\nTéléphone : +32 87 55 56 70\nCourriel : praxisloten@gmail.com\n\nResponsable de la publication : Philippe Banaszak, kinésithérapeute agréé INAMI n° 5-39936-63-527.\n\nPraxis Loten est un cabinet de kinésithérapie et de thérapie manuelle, exerçant conformément à la législation belge sur les professions de santé (Loi coordonnée du 10 mai 2015 relative à l'exercice des professions des soins de santé).`,
       },
       {
         heading: "2. Hébergement",
@@ -45,7 +45,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Herausgeber der Website",
-        body: `Diese Website www.praxisloten.be wird herausgegeben von:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgien\n\nTelefon: +32 87 55 56 70\nE-Mail: praxisloten@gmail.com\n\nVerantwortlicher für den Inhalt: Philippe Banaszak, zugelassener Physiotherapeut (INAMI/RIZIV).\n\nDie Praxis Loten ist eine Praxis für Physiotherapie und manuelle Therapie, die gemäß den belgischen Vorschriften über Gesundheitsberufe tätig ist (Koordiniertes Gesetz vom 10. Mai 2015 über die Ausübung der Gesundheitspflegeberufe).`,
+        body: `Diese Website www.praxisloten.be wird herausgegeben von:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgien\n\nTelefon: +32 87 55 56 70\nE-Mail: praxisloten@gmail.com\n\nVerantwortlicher für den Inhalt: Philippe Banaszak, zugelassener Physiotherapeut INAMI/RIZIV Nr. 5-39936-63-527.\n\nDie Praxis Loten ist eine Praxis für Physiotherapie und manuelle Therapie, die gemäß den belgischen Vorschriften über Gesundheitsberufe tätig ist (Koordiniertes Gesetz vom 10. Mai 2015 über die Ausübung der Gesundheitspflegeberufe).`,
       },
       {
         heading: "2. Hosting",
@@ -75,7 +75,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Site Publisher",
-        body: `This website www.praxisloten.be is published by:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgium\n\nPhone: +32 87 55 56 70\nEmail: praxisloten@gmail.com\n\nEditor-in-chief: Philippe Banaszak, INAMI-registered physiotherapist.\n\nPraxis Loten is a physiotherapy and manual therapy practice operating in accordance with Belgian legislation on healthcare professions (Coordinated Law of 10 May 2015 on the practice of healthcare professions).`,
+        body: `This website www.praxisloten.be is published by:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgium\n\nPhone: +32 87 55 56 70\nEmail: praxisloten@gmail.com\n\nEditor-in-chief: Philippe Banaszak, INAMI-registered physiotherapist, n° 5-39936-63-527.\n\nPraxis Loten is a physiotherapy and manual therapy practice operating in accordance with Belgian legislation on healthcare professions (Coordinated Law of 10 May 2015 on the practice of healthcare professions).`,
       },
       {
         heading: "2. Hosting",
@@ -105,7 +105,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Uitgever van de website",
-        body: `Deze website www.praxisloten.be wordt uitgegeven door:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgië\n\nTelefoon: +32 87 55 56 70\nE-mail: praxisloten@gmail.com\n\nVerantwoordelijke voor de publicatie: Philippe Banaszak, RIZIV-erkend kinesitherapeut.\n\nPraxis Loten is een praktijk voor kinesitherapie en manuele therapie, werkzaam overeenkomstig de Belgische wetgeving op de gezondheidszorgberoepen.`,
+        body: `Deze website www.praxisloten.be wordt uitgegeven door:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgië\n\nTelefoon: +32 87 55 56 70\nE-mail: praxisloten@gmail.com\n\nVerantwoordelijke voor de publicatie: Philippe Banaszak, RIZIV-erkend kinesitherapeut, nr. 5-39936-63-527.\n\nPraxis Loten is een praktijk voor kinesitherapie en manuele therapie, werkzaam overeenkomstig de Belgische wetgeving op de gezondheidszorgberoepen.`,
       },
       {
         heading: "2. Hosting",
@@ -135,7 +135,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Web Sitesi Yayıncısı",
-        body: `Bu web sitesi www.praxisloten.be şu tarafından yayınlanmaktadır:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelçika\n\nTelefon: +32 87 55 56 70\nE-posta: praxisloten@gmail.com\n\nYayın sorumlusu: Philippe Banaszak, INAMI onaylı fizyoterapist.\n\nPraxis Loten, Belçika sağlık meslekleri mevzuatına uygun olarak faaliyet gösteren bir fizyoterapi ve manuel terapi kliniğidir.`,
+        body: `Bu web sitesi www.praxisloten.be şu tarafından yayınlanmaktadır:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelçika\n\nTelefon: +32 87 55 56 70\nE-posta: praxisloten@gmail.com\n\nYayın sorumlusu: Philippe Banaszak, INAMI onaylı fizyoterapist, n° 5-39936-63-527.\n\nPraxis Loten, Belçika sağlık meslekleri mevzuatına uygun olarak faaliyet gösteren bir fizyoterapi ve manuel terapi kliniğidir.`,
       },
       {
         heading: "2. Barındırma",
@@ -165,7 +165,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "١. ناشر الموقع الإلكتروني",
-        body: `يُنشر هذا الموقع الإلكتروني www.praxisloten.be من قِبَل:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nبلجيكا\n\nالهاتف: +32 87 55 56 70\nالبريد الإلكتروني: praxisloten@gmail.com\n\nالمسؤول عن النشر: Philippe Banaszak، معالج طبيعي معتمد لدى INAMI.\n\nبراكسيس لوتن هو عيادة للعلاج الطبيعي والعلاج اليدوي، تعمل وفقًا للتشريعات البلجيكية المتعلقة بمهن الرعاية الصحية.`,
+        body: `يُنشر هذا الموقع الإلكتروني www.praxisloten.be من قِبَل:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nبلجيكا\n\nالهاتف: +32 87 55 56 70\nالبريد الإلكتروني: praxisloten@gmail.com\n\nالمسؤول عن النشر: Philippe Banaszak، معالج طبيعي معتمد لدى INAMI رقم 5-39936-63-527.\n\nبراكسيس لوتن هو عيادة للعلاج الطبيعي والعلاج اليدوي، تعمل وفقًا للتشريعات البلجيكية المتعلقة بمهن الرعاية الصحية.`,
       },
       {
         heading: "٢. الاستضافة",
@@ -195,7 +195,7 @@ const CONTENT: Record<LangKey, LegalContent> = {
     sections: [
       {
         heading: "1. Wydawca strony",
-        body: `Niniejsza strona internetowa www.praxisloten.be jest wydawana przez:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgia\n\nTelefon: +32 87 55 56 70\nE-mail: praxisloten@gmail.com\n\nRedaktor odpowiedzialny: Philippe Banaszak, fizjoterapeuta zarejestrowany w INAMI.\n\nPraxis Loten to gabinet fizjoterapii i terapii manualnej, działający zgodnie z belgijskim prawem dotyczącym zawodów medycznych.`,
+        body: `Niniejsza strona internetowa www.praxisloten.be jest wydawana przez:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelgia\n\nTelefon: +32 87 55 56 70\nE-mail: praxisloten@gmail.com\n\nRedaktor odpowiedzialny: Philippe Banaszak, fizjoterapeuta zarejestrowany w INAMI, nr 5-39936-63-527.\n\nPraxis Loten to gabinet fizjoterapii i terapii manualnej, działający zgodnie z belgijskim prawem dotyczącym zawodów medycznych.`,
       },
       {
         heading: "2. Hosting",
