@@ -60,6 +60,18 @@ const ARTICLES: Record<string, ArticleContent> = {
       ar: "«أشعر بالألم — هل عليّ أن أتوقف أم أستمرّ في الحركة؟» ربما طرحتَ هذا السؤال على نفسك مسبقًا. لفترة طويلة، كان الجواب الطبي بسيطًا: إذا آلمك الأمر، توقّف. لقد قلب العلم هذا المفهوم رأسًا على عقب. تُظهر أبحاث العلاج الطبيعي وعلوم الألم اليوم أن الحركة — حتى مع بعض الألم — هي غالبًا أفضل علاج. شرط أن نعرف الجرعة المناسبة. في عيادة براكسيس لوتن في أوبن، نوضّح لك كيف تجد التوازن السليم بأدوات بسيطة وعملية.",
       pl: "« Boli mnie — mam przestać czy nadal się ruszać? » Pewnie zadawałeś już sobie to pytanie. Przez długi czas odpowiedź medyczna była prosta: jeśli boli, przestań. Nauka całkowicie odwróciła ten dogmat. Badania w fizjoterapii i nauce o bólu pokazują dziś, że ruch — nawet z odrobiną bólu — jest często najlepszym lekarstwem. Pod warunkiem, że znamy właściwą dawkę. W Praxis Loten w Eupen wyjaśniamy, jak znaleźć właściwą równowagę za pomocą prostych, konkretnych narzędzi.",
     },
+    heroImage: {
+      src: "/blog/doser-activite-douleur/hero.jpg",
+      alt: {
+        de: "Frau spaziert friedlich durch einen grünen Waldweg in der Natur",
+        fr: "Femme marchant paisiblement sur un sentier forestier vert dans la nature",
+        en: "Woman walking peacefully along a green forest path in nature",
+        nl: "Vrouw die vreedzaam langs een groen bospad in de natuur loopt",
+        tr: "Kadın doğada yeşil bir orman yolu boyunca huzur içinde yürüyor",
+        ar: "امرأة تمشي بسلام على طريق غابة خضراء في الطبيعة",
+        pl: "Kobieta idąca spokojnie zieloną ścieżką leśną w naturze",
+      },
+    },
     sections: [
       {
         heading: {
@@ -105,6 +117,27 @@ const ARTICLES: Record<string, ArticleContent> = {
           tr: "Hareket dozunuzun doğru olup olmadığını nasıl anlarsınız? Araştırmalarla doğrulanmış basit bir kural size yol gösterebilir:\n\n« Eforun sırasında veya hemen sonrasında bir ağrı kabul edilebilir — yeter ki 24 saat içinde alışılmış seviyesine geri dönsün. »\n\nSomut olarak: 30 dakika yürür ve biraz rahatsızlık hissederseniz, bu kötü bir işaret değildir. Ertesi sabah ağrınız bir önceki günün seviyesine (veya daha iyiye) dönmüş olmalıdır. Bu durumda, doğru bölgedesiniz — ve devam edebilirsiniz.\n\nAma ağrı ertesi gün daha şiddetliyse, birkaç gün sürüyorsa veya sizi topallatıyorsa, doz çok yüksekti. Panik yok: bir sonraki seansta biraz azaltmak (süre, yoğunluk veya direnç) ve daha yavaş ilerlemek yeterlidir. Her kişiye uyarladığımız pek çok stratejiden biri olarak, bu kural günlük yaşamda en basit ve en yararlı olanlardan biri olmaya devam ediyor.",
           ar: "كيف تعرف ما إذا كانت جرعة الحركة لديك مناسبة؟ قاعدة بسيطة، أكدّتها الأبحاث، يمكن أن ترشدك:\n\n« الألم أثناء المجهود أو بعده مباشرة مقبول، شرط أن يعود إلى مستواه المعتاد خلال 24 ساعة. »\n\nبشكل ملموس: إذا مشيتَ 30 دقيقة وشعرتَ ببعض الانزعاج، فهذا ليس علامة سيئة. في صباح اليوم التالي، يجب أن يكون ألمك قد عاد إلى ما كان عليه في اليوم السابق (أو أفضل). في هذه الحالة، أنت في المنطقة الصحيحة — ويمكنك الاستمرار.\n\nأما إذا كان الألم أشد في اليوم التالي، أو استمر عدة أيام، أو جعلك تعرج، فإن الجرعة كانت كبيرة. لا داعي للقلق: يكفي أن تُخفّض قليلًا (المدة أو الشدة أو المقاومة) في الجلسة التالية، وأن تتقدم بشكل أكثر هدوءًا. ضمن أساليب عديدة نُكيّفها مع كل شخص، تظل هذه القاعدة واحدة من أبسطها وأكثرها فائدة في الحياة اليومية.",
           pl: "Skąd wiadomo, czy Twoja dawka ruchu jest właściwa? Prosta, naukowo potwierdzona zasada może Cię prowadzić:\n\n« Ból podczas lub bezpośrednio po wysiłku jest akceptowalny — pod warunkiem, że w ciągu 24 godzin wróci do swojego zwykłego poziomu. »\n\nW praktyce: jeśli idziesz na 30-minutowy spacer i czujesz lekki dyskomfort, to nie jest zły znak. Następnego ranka Twój ból powinien wrócić do poziomu z poprzedniego dnia (lub być mniejszy). W takim razie jesteś we właściwej strefie — i możesz kontynuować.\n\nJeśli jednak następnego dnia ból jest jeszcze silniejszy, utrzymuje się przez kilka dni lub powoduje, że kulejesz, to dawka była za duża. Bez paniki: wystarczy zmniejszyć trochę (czas trwania, intensywność lub opór) podczas kolejnej sesji i postępować łagodniej. Wśród wielu strategii, które dostosowujemy do każdej osoby, ta zasada pozostaje jedną z najprostszych i najbardziej użytecznych w codziennym życiu.",
+        },
+        image: {
+          src: "/blog/doser-activite-douleur/section-3.jpg",
+          alt: {
+            de: "Frau wacht friedlich in einem hellen Schlafzimmer auf und beginnt ihren Tag mit Vitalität",
+            fr: "Femme se réveillant paisiblement dans une chambre lumineuse et commençant sa journée avec vitalité",
+            en: "Woman waking up peacefully in a bright bedroom and starting her day with vitality",
+            nl: "Vrouw die vreedzaam in een helder slaapkamer wakker wordt en met vitaliteit aan haar dag begint",
+            tr: "Kadın aydınlık bir yatak odasında huzur içinde uyanıyor ve gücü ile günü başlatıyor",
+            ar: "امرأة تستيقظ بسلام في غرفة نوم مضاءة وتبدأ يومها بحيوية",
+            pl: "Kobieta budząca się spokojnie w jasnej sypialni i rozpoczynająca dzień z witalnością",
+          },
+          caption: {
+            de: "Die 24-Stunden-Regel: Schmerzen am nächsten Morgen sollten auf ihr gewohntes Niveau zurückgekehrt sein",
+            fr: "La règle des 24 heures : les douleurs devraient être revenues à leur niveau habituel le lendemain matin",
+            en: "The 24-hour rule: pain should return to its usual level the next morning",
+            nl: "De 24-uursregel: pijn zou de volgende ochtend naar haar gewone niveau moeten zijn teruggekeerd",
+            tr: "24 saat kuralı: ertesi sabah ağrı alışılmış seviyesine dönmüş olmalıdır",
+            ar: "قاعدة الـ 24 ساعة: يجب أن تعود الآلام إلى مستواها المعتاد صباح اليوم التالي",
+            pl: "Zasada 24 godzin: ból powinien wrócić do normalnego poziomu następnego ranka",
+          },
         },
       },
       {
