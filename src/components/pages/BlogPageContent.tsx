@@ -11,6 +11,43 @@ type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
 export const ARTICLES = [
   {
+    slug: "doser-activite-douleur",
+    date: "2026-05-07",
+    readMin: 6,
+    category: {
+      de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
+      nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+    },
+    color: "from-[#0e7490] to-[#155e75]",
+    title: {
+      de: "Bewegen trotz Schmerzen — wie Sie die richtige Dosis finden",
+      fr: "Bouger malgré la douleur — comment trouver la bonne dose",
+      en: "Moving with Pain — How to Find the Right Dose",
+      nl: "Bewegen met pijn — hoe vindt u de juiste dosis?",
+      tr: "Ağrıyla hareket etmek — doğru dozu nasıl bulursunuz?",
+      ar: "الحركة مع الألم — كيف تجد الجرعة المناسبة؟",
+      pl: "Ruch mimo bólu — jak znaleźć odpowiednią dawkę?",
+    },
+    excerpt: {
+      de: "Sollte man bei jedem Schmerz aufhören oder weiterbewegen? Die Wissenschaft hat entschieden: Alles ist eine Frage der Dosis. Entdecken Sie die 24-Stunden-Regel und das Ampelsystem, um wieder selbstsicher aktiv zu werden.",
+      fr: "Faut-il s'arrêter à la moindre douleur ou continuer à bouger ? La science a tranché : tout est question de dose. Découvrez la règle des 24 heures et le système des feux tricolores pour reprendre l'activité en confiance.",
+      en: "Should you stop at the slightest pain or keep moving? Science has decided: it's all about the dose. Discover the 24-hour rule and the traffic light system to get active again with confidence.",
+      nl: "Moet u stoppen bij de minste pijn of blijven bewegen? De wetenschap heeft beslist: alles is een kwestie van dosering. Ontdek de 24-uursregel en het stoplichtsysteem om vol vertrouwen weer te bewegen.",
+      tr: "En ufak ağrıda durmalı mı yoksa hareket etmeye devam mı etmeli? Bilim karar verdi: her şey dozda. 24 saat kuralı ve trafik ışığı sistemiyle güvenle yeniden aktif olun.",
+      ar: "هل يجب أن تتوقف عند أدنى ألم أم تستمر في الحركة؟ حسم العلم الأمر: كل شيء مسألة جرعة. اكتشف قاعدة الـ 24 ساعة ونظام إشارات المرور لاستئناف النشاط بثقة.",
+      pl: "Zatrzymać się przy najmniejszym bólu czy kontynuować ruch? Nauka zdecydowała: wszystko zależy od dawki. Odkryj zasadę 24 godzin i system świateł drogowych, by z pewnością siebie wrócić do aktywności.",
+    },
+    tags: {
+      de: ["Chronischer Schmerz", "Körperliche Aktivität", "Rückenschmerz", "Tendinopathie"],
+      fr: ["Douleur chronique", "Activité physique", "Lombalgie", "Tendinopathie"],
+      en: ["Chronic pain", "Physical activity", "Low back pain", "Tendinopathy"],
+      nl: ["Chronische pijn", "Lichaamsbeweging", "Lage rugpijn", "Tendinopathie"],
+      tr: ["Kronik ağrı", "Fiziksel aktivite", "Bel ağrısı", "Tendinopati"],
+      ar: ["الألم المزمن", "النشاط البدني", "آلام الظهر", "اعتلال الأوتار"],
+      pl: ["Ból przewlekły", "Aktywność fizyczna", "Ból krzyża", "Tendinopatia"],
+    },
+  },
+  {
     slug: "position-assise-mal-de-dos",
     date: "2026-05-03",
     readMin: 4,

@@ -697,12 +697,138 @@ export function BfrZone({ lang = "fr" }: { lang?: LangKey }) {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 12. TrafficLightPain — Pain monitoring scale during exercise (NRS 0-10)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const TRAFFIC_LIGHT_TEXT: Record<LangKey, {
+  title: string; sub: string; validation: string;
+  zones: { label: string; range: string; action: string; detail: string }[];
+}> = {
+  fr: {
+    title: "Le système des feux tricolores",
+    sub: "Échelle de douleur de 0 (aucune) à 10 (la pire imaginable)",
+    validation: "Outil validé pour les tendinopathies, la lombalgie et la douleur fémoro-patellaire",
+    zones: [
+      { label: "Feu vert", range: "0 – 2 / 10", action: "Continuez sans souci", detail: "Douleur absente ou minime — vous pouvez progresser" },
+      { label: "Feu orange", range: "3 – 5 / 10", action: "Vous pouvez continuer", detail: "Douleur perceptible mais supportable — c'est même bénéfique" },
+      { label: "Feu rouge", range: "6 / 10 et +", action: "Stop et réduisez", detail: "Douleur forte, vous compensez ou boitez — réduisez la dose" },
+    ],
+  },
+  de: {
+    title: "Das Ampelsystem",
+    sub: "Schmerzskala von 0 (kein Schmerz) bis 10 (der schlimmste vorstellbare)",
+    validation: "Validiertes Werkzeug für Tendinopathien, Rückenschmerzen und Patellofemoralschmerzen",
+    zones: [
+      { label: "Grünes Licht", range: "0 – 2 / 10", action: "Unbesorgt weitermachen", detail: "Kein oder minimaler Schmerz — Sie können steigern" },
+      { label: "Gelbes Licht", range: "3 – 5 / 10", action: "Sie können fortfahren", detail: "Spürbarer aber erträglicher Schmerz — sogar förderlich" },
+      { label: "Rotes Licht", range: "6 / 10 und +", action: "Stopp und reduzieren", detail: "Starker Schmerz, Sie kompensieren oder hinken — Dosis senken" },
+    ],
+  },
+  en: {
+    title: "The traffic light system",
+    sub: "Pain scale from 0 (no pain) to 10 (worst imaginable)",
+    validation: "Validated tool for tendinopathies, low back pain and patellofemoral pain",
+    zones: [
+      { label: "Green light", range: "0 – 2 / 10", action: "Carry on without worry", detail: "No or minimal pain — you can progress" },
+      { label: "Amber light", range: "3 – 5 / 10", action: "You can keep going", detail: "Noticeable but bearable pain — even beneficial" },
+      { label: "Red light", range: "6 / 10 and +", action: "Stop and reduce", detail: "Strong pain, you compensate or limp — lower the dose" },
+    ],
+  },
+  nl: {
+    title: "Het stoplichtsysteem",
+    sub: "Pijnschaal van 0 (geen pijn) tot 10 (de ergst voorstelbare)",
+    validation: "Gevalideerd hulpmiddel voor tendinopathieën, lage rugpijn en patellofemorale pijn",
+    zones: [
+      { label: "Groen licht", range: "0 – 2 / 10", action: "Ga door zonder zorgen", detail: "Geen of minimale pijn — u kunt progressie maken" },
+      { label: "Oranje licht", range: "3 – 5 / 10", action: "U kunt doorgaan", detail: "Merkbare maar verdraagbare pijn — zelfs gunstig" },
+      { label: "Rood licht", range: "6 / 10 en +", action: "Stop en verlaag", detail: "Sterke pijn, u compenseert of hinkt — verlaag de dosis" },
+    ],
+  },
+  tr: {
+    title: "Trafik ışığı sistemi",
+    sub: "0 (ağrı yok) ile 10 (hayal edilebilecek en kötü) arası ağrı skalası",
+    validation: "Tendinopatiler, bel ağrısı ve patellofemoral ağrı için doğrulanmış araç",
+    zones: [
+      { label: "Yeşil ışık", range: "0 – 2 / 10", action: "Endişesiz devam edin", detail: "Ağrı yok veya minimal — ilerleyebilirsiniz" },
+      { label: "Sarı ışık", range: "3 – 5 / 10", action: "Devam edebilirsiniz", detail: "Hissedilebilir ama dayanılabilir — yararlı bile" },
+      { label: "Kırmızı ışık", range: "6 / 10 ve +", action: "Dur ve azalt", detail: "Güçlü ağrı, kompanze ediyor ya da topallıyorsunuz — dozu düşürün" },
+    ],
+  },
+  ar: {
+    title: "نظام إشارات المرور",
+    sub: "مقياس الألم من 0 (لا ألم) إلى 10 (الأسوأ قابل للتخيّل)",
+    validation: "أداة معتمدة لاعتلالات الأوتار وآلام أسفل الظهر وألم رضفي فخذي",
+    zones: [
+      { label: "الضوء الأخضر", range: "0 – 2 / 10", action: "تابع دون قلق", detail: "لا ألم أو خفيف جدًا — يمكنك التقدّم" },
+      { label: "الضوء البرتقالي", range: "3 – 5 / 10", action: "يمكنك الاستمرار", detail: "ألم محسوس لكن محتمل — بل هو مفيد" },
+      { label: "الضوء الأحمر", range: "6 / 10 فأكثر", action: "توقّف وخفّض", detail: "ألم قوي، تتعويض أو تعرج — خفّض الجرعة" },
+    ],
+  },
+  pl: {
+    title: "System świateł drogowych",
+    sub: "Skala bólu od 0 (brak bólu) do 10 (najgorszy wyobrażalny)",
+    validation: "Narzędzie potwierdzone dla tendinopatii, bólu krzyża i bólu rzepkowo-udowego",
+    zones: [
+      { label: "Zielone światło", range: "0 – 2 / 10", action: "Kontynuuj bez obaw", detail: "Brak bólu lub minimalny — możesz iść do przodu" },
+      { label: "Pomarańczowe światło", range: "3 – 5 / 10", action: "Możesz kontynuować", detail: "Zauważalny ale znośny — wręcz korzystny" },
+      { label: "Czerwone światło", range: "6 / 10 i +", action: "Stop i zmniejsz", detail: "Silny ból, kompensujesz lub kulejesz — zmniejsz dawkę" },
+    ],
+  },
+};
+
+export function TrafficLightPain({ lang = "fr" }: { lang?: LangKey }) {
+  const t = TRAFFIC_LIGHT_TEXT[lang] ?? TRAFFIC_LIGHT_TEXT.fr;
+  const palette = [
+    { bg: "#10b981", soft: "#d1fae5", emoji: "🟢" },
+    { bg: "#f59e0b", soft: "#fef3c7", emoji: "🟡" },
+    { bg: "#dc2626", soft: "#fee2e2", emoji: "🔴" },
+  ];
+  return (
+    <figure
+      className="my-8 rounded-2xl border bg-white p-6 md:p-8 shadow-sm"
+      style={{ borderColor: colors.border }}
+      role="img"
+      aria-label={`${t.title} — ${t.sub}`}
+    >
+      <h3 className="mb-1 text-center text-base md:text-lg font-extrabold tracking-tight" style={{ color: colors.ink }}>
+        {t.title}
+      </h3>
+      <p className="mb-6 text-center text-xs md:text-sm" style={{ color: colors.muted }}>
+        {t.sub}
+      </p>
+      <div className="flex flex-col gap-3">
+        {t.zones.map((zone, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-4 rounded-xl border-2 p-4"
+            style={{ borderColor: palette[i].bg, background: palette[i].soft }}
+          >
+            <div className="flex-shrink-0 text-3xl md:text-4xl" aria-hidden="true">{palette[i].emoji}</div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                <span className="text-base md:text-lg font-bold" style={{ color: palette[i].bg }}>{zone.label}</span>
+                <span className="text-sm font-mono font-semibold tabular-nums" style={{ color: palette[i].bg }}>{zone.range}</span>
+              </div>
+              <div className="mt-1 text-sm md:text-base font-semibold" style={{ color: colors.ink }}>{zone.action}</div>
+              <div className="mt-0.5 text-xs md:text-sm italic" style={{ color: colors.muted }}>{zone.detail}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 border-t pt-3 text-center text-xs italic" style={{ borderColor: colors.border, color: colors.muted }}>
+        {t.validation}
+      </div>
+    </figure>
+  );
+}
+
 // Slot resolver used by the article renderer
 export type InfographicKind =
   | "spine" | "movement" | "reflexes"
   | "pain-alarm" | "imaging-myth" | "manual-therapy-pillars"
   | "progression-rule" | "lymph-flow" | "cmd-checklist"
-  | "kine-vs-osteo" | "bfr-zone";
+  | "kine-vs-osteo" | "bfr-zone" | "traffic-light";
 
 export function InfographicSlot({ kind, lang }: { kind: InfographicKind; lang: LangKey }) {
   switch (kind) {
@@ -717,6 +843,7 @@ export function InfographicSlot({ kind, lang }: { kind: InfographicKind; lang: L
     case "cmd-checklist": return <CmdChecklist lang={lang} />;
     case "kine-vs-osteo": return <KineVsOsteo lang={lang} />;
     case "bfr-zone": return <BfrZone lang={lang} />;
+    case "traffic-light": return <TrafficLightPain lang={lang} />;
     default: return null;
   }
 }

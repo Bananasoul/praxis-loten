@@ -3,6 +3,7 @@ import { BlogArticlePageContent } from "@/components/pages/BlogArticlePageConten
 import { notFound } from "next/navigation";
 
 const VALID_SLUGS = [
+  "doser-activite-douleur",
   "position-assise-mal-de-dos",
   "douleurs-cervicales-mobilite-eupen",
   "manuelle-therapie-rueckenschmerzen",
