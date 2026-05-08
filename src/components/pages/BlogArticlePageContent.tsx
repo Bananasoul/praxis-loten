@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered } from "lucide-react";
 import Image from "next/image";
-import { InfographicSlot } from "@/components/blog/Infographics";
+import { InfographicSlot, type InfographicKind } from "@/components/blog/Infographics";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
@@ -22,7 +22,7 @@ interface ArticleContent {
   sections: {
     heading: Record<LangKey, string>;
     body: Record<LangKey, string>;
-    infographic?: "spine" | "movement" | "reflexes";
+    infographic?: InfographicKind;
     image?: { src: string; alt: Record<LangKey, string>; caption?: Record<LangKey, string> };
   }[];
   keyPoints: Record<LangKey, string[]>;
@@ -269,6 +269,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "تخيل الألم كنظام إنذار حساس للغاية. أحيانًا ينطلق الإنذار لأن الدخان يتصاعد فعلًا، لكنه غالبًا ما يرن لأنه أصبح حساسًا للغاية. ألم الرقبة لا يعني أن فقراتك „تالفة\". إنه عادةً إشارة من دماغك بأن أنسجة هذه المنطقة وصلت إلى حد تحملها الحالي، غالبًا بسبب نقص تنوع الحركة.",
           pl: "Wyobraź sobie ból jako bardzo czuły system alarmowy. Czasem alarm uruchamia się, bo rzeczywiście unosi się dym — ale często dzwoni po prostu dlatego, że stał się zbyt czuły. Ból szyi nie oznacza, że Twoje kręgi są „uszkodzone\". To zazwyczaj sygnał z mózgu, że tkanki w tym obszarze osiągnęły aktualny limit tolerancji, często z powodu braku różnorodności ruchu.",
         },
+        infographic: "pain-alarm",
       },
       {
         heading: {
@@ -289,6 +290,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "كثيرًا ما قيل لنا أن „نجلس باستقامة\". ومع ذلك، فإن البحث في العلاج اليدوي واضح: لا توجد وضعية واحدة تمنع الألم. الجاني الحقيقي هو الجمود. كما يقول المثل: „أفضل وضعية لديك هي التالية\". تغيير الوضعية بانتظام أكثر فائدة بكثير من محاولة الحفاظ على صلابة مصطنعة طوال اليوم.",
           pl: "Często powtarzano nam, by „siedzieć prosto\". Jednak badania w terapii manualnej są jasne: nie istnieje jedna postawa, która zapobiegałaby bólowi. Prawdziwym winowajcą jest bezruch. Jak mówi przysłowie: „Najlepsza postawa to ta następna\". Regularna zmiana pozycji jest znacznie korzystniejsza niż próba utrzymania sztucznej sztywności przez cały dzień.",
         },
+        infographic: "reflexes",
       },
       {
         heading: {
@@ -309,6 +311,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "إذا ذكرت أشعتك السينية وجود التهاب مفاصل أو انتفاخ خفيف في القرص، فلا داعي للذعر! نجد نفس هذه العلامات لدى الغالبية العظمى من الأشخاص الذين لا يعانون من أي ألم. هذه ليست أمراضًا، بل عمليات نضج طبيعية للجسم، مشابهة للتجاعيد على الجلد أو الشعر الرمادي. ليست حاجزًا أمام حياة نشطة وخالية من الألم.",
           pl: "Jeśli Twoje zdjęcie RTG wspomina o zwyrodnieniu lub niewielkiej wypuklinie dyskowej, bez paniki! U przytłaczającej większości osób bez żadnego bólu znajdujemy te same oznaki. To nie choroby, lecz normalne procesy dojrzewania ciała, podobne do zmarszczek na skórze czy siwych włosów. Nie są przeszkodą w aktywnym, bezbolesnym życiu.",
         },
+        infographic: "imaging-myth",
       },
       {
         heading: {
@@ -329,6 +332,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "الجسم البشري يبلى فقط إذا لم تستخدمه. لتهدئة رقبة حساسة، الحل ليس الراحة الكاملة، بل الحركة التدريجية والرحيمة. من خلال إعادة الثقة إلى جهازك العصبي عبر تمارين مكيّفة، تزيد من قدرة جسمك على تحمّل ضغوط الحياة اليومية.",
           pl: "Ciało ludzkie zużywa się tylko wtedy, gdy się go nie używa. Aby uspokoić wrażliwą szyję, rozwiązaniem nie jest całkowity odpoczynek, ale stopniowy i łagodny ruch. Przywracając pewność swojemu układowi nerwowemu poprzez dostosowane ćwiczenia, zwiększasz zdolność ciała do radzenia sobie z codziennymi obciążeniami.",
         },
+        infographic: "spine",
       },
       {
         heading: {
@@ -349,6 +353,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "في عيادتنا في أوبن، نرافقك لتحويل هذا القلق إلى عمل. سواء مع المدير أو شركائنا أو متعاوننا، يرتكز نهجنا على أربعة أركان: الإصغاء النشط لفهم سياق حياتك وأهدافك؛ العلاج اليدوي العظمي بتقنيات لطيفة لتعديل الألم؛ تثقيف علم الأعصاب للألم لتفهم بدقة ما يحدث في جسمك؛ والحركة المخصصة بتمارين بسيطة وفعّالة لدمجها في روتينك واستعادة استقلاليتك.",
           pl: "W naszym gabinecie w Eupen pomagamy przekształcić tę obawę w działanie. Czy to z kierownikiem, naszymi partnerami czy współpracownikami, nasze podejście opiera się na czterech filarach: aktywnym słuchaniu, aby zrozumieć Twój kontekst życiowy i cele; ortopedycznej terapii manualnej z łagodnymi technikami modulującymi ból; edukacji w neuronaukach bólu, abyś dokładnie rozumiał, co dzieje się w Twoim ciele; i spersonalizowanym ruchu z prostymi, skutecznymi ćwiczeniami do Twojej rutyny.",
         },
+        infographic: "manual-therapy-pillars",
       },
     ],
     keyPoints: {
@@ -433,6 +438,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "العلاج اليدوي (MT) هو تخصص سريري في العلاج الطبيعي يستخدم فيه المعالج يديه بشكل هادف لتشخيص وعلاج الألم والخلل الوظيفي في الجهاز العضلي الهيكلي. في Praxis Loten، تدرب معالجونا اليدويون وفق معايير IFOMPT — المعيار الذهبي المعترف به عالميًا.",
           pl: "Terapia manualna (MT) to klinична specjalizacja fizjoterapii, w której ręce terapeuty są celowo używane do diagnozowania i leczenia bólu i dysfunkcji układu mięśniowo-szkieletowego. W Praxis Loten nasi terapeuci manualni są szkoleni zgodnie ze standardami IFOMPT — uznanym na całym świecie złotym standardem.",
         },
+        infographic: "manual-therapy-pillars",
       },
       {
         heading: {
@@ -453,6 +459,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "يُظهر العلاج اليدوي نتائج جيدة بشكل خاص لـ: آلام الرقبة والظهر الحادة والمزمنة، الانزلاقات الغضروفية بدون عجز عصبي، انسدادات مفاصل الفقرات الصغيرة، مشاكل الكتف والورك، وإعادة التأهيل بعد جراحة العمود الفقري. في حالة الأعراض العصبية (خدر، شلل) يتم دائمًا إجراء تقييم طبي أولًا.",
           pl: "Terapia manualna wykazuje szczególnie dobre wyniki przy: ostrym i przewlekłym bólu szyi i pleców, przepuklinach dyskowych bez deficytów neurologicznych, blokadach małych stawów kręgosłupa, problemach z barkiem i biodrem oraz rehabilitacji pooperacyjnej po operacjach kręgosłupa. W przypadku objawów neurologicznych (drętwienie, porażenie) zawsze najpierw przeprowadzana jest ocena lekarska.",
         },
+        infographic: "imaging-myth",
       },
       {
         heading: {
@@ -473,6 +480,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "تبدأ كل جلسة بأخذ تاريخ مفصل وتقييم وظيفي. باستخدام طاولة العلاج Manuthera 242 الفنلندية المتطورة، يمكننا إجراء تقنيات تحريك ومعالجة دقيقة في الوضع الأمثل. تتضمن الجلسة النموذجية: تحريك مفصلي محدد، تقنيات عصبية عضلية، تمارين منزلية موجهة وتثقيف حول الوضعية والحمل.",
           pl: "Każda sesja zaczyna się od szczegółowego wywiadu i oceny funkcjonalnej. Dzięki naszemu stołowi Manuthera 242 — zaawansowanemu fińskiemu stołowi terapeutycznemu — możemy wykonywać precyzyjne techniki mobilizacji i manipulacji w optymalnej pozycji. Typowa sesja obejmuje: specyficzną mobilizację stawów, techniki nerwowo-mięśniowe, ukierunkowane ćwiczenia domowe oraz edukację dotyczącą postawy i obciążeń.",
         },
+        infographic: "spine",
       },
     ],
     keyPoints: {
@@ -543,6 +551,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "السبب الأكثر شيوعًا لإصابات الجري هو الزيادة السريعة جدًا في حمل التدريب. تنص قاعدة 10٪ على: لا تزيد حجمك الأسبوعي بأكثر من 10٪ أسبوعيًا. الأحذية المناسبة لنوع قدمك هي الركيزة الثانية.",
           pl: "Najczęstszą przyczyną urazów biegowych jest zbyt szybkie zwiększenie obciążeń treningowych. Zasada 10% mówi: nigdy nie zwiększaj tygodniowego wolumenu o więcej niż 10% tygodniowo. Dobrze dopasowane buty do biegania odpowiadające Twojemu typowi stopy to drugi filar.",
         },
+        infographic: "progression-rule",
       },
       {
         heading: {
@@ -563,6 +572,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "نصيحة 3: تقنية الجري. الخطوة الطويلة جدًا تزيد قوى الارتطام بشكل كبير. الهدف هو إيقاع 170-180 خطوة/دقيقة. نصيحة 4: تدريب القوة. تقوية منتظمة لمبعدات الورك والساق تقلل خطر الإصابة بنسبة 50٪. نصيحة 5: التعافي. النوم الكافي ويوم راحة كامل واحد على الأقل أسبوعيًا ضرورة.",
           pl: "Wskazówka 3: Technika biegu. Zbyt długi krok (overstriding) znacznie zwiększa siły uderzenia. Celem jest kadencja 170–180 kroków/minutę. Wskazówka 4: Trening siłowy. Regularne wzmacnianie odwodzicieli bioder i łydek zmniejsza ryzyko urazów o 50%. Wskazówka 5: Regeneracja. Wystarczający sen i co najmniej jeden pełny dzień odpoczynku tygodniowo są obowiązkowe.",
         },
+        infographic: "reflexes",
       },
     ],
     keyPoints: {
@@ -633,6 +643,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "الصرف اللمفاوي ذو قيمة خاصة لـ: المرضى الذين يعانون من وذمة لمفية أولية أو ثانوية، الأشخاص بعد عمليات سرطان الثدي مع استئصال العقد الإبطية، الوذمة بعد العملية لأطراف صناعية للركبة أو الورك، القصور الوريدي المزمن والنساء الحوامل ذوات الوذمة.",
           pl: "Drenaż limfatyczny jest szczególnie wartościowy dla: pacjentów z pierwotnym lub wtórnym obrzękiem limfatycznym, osób po operacji raka piersi z dyssekcją pachową, obrzęków pooperacyjnych po protezach kolana lub biodra, przewlekłej niewydolności żylnej i kobiet w ciąży z obrzękami nóg.",
         },
+        infographic: "lymph-flow",
       },
       {
         heading: {
@@ -723,6 +734,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "يمكن أن يتجلى CMD بطرق مختلفة جدًا: ألم أو تيبس في الفك عند المضغ أو التثاؤب، نقر أو احتكاك في المفصل، صداع (خاصة صدغي)، آلام الأذن أو طنين بدون مرض أذن، دوار وآلام الرقبة.",
           pl: "CMD może manifestować się bardzo różnie: ból lub sztywność żuchwy przy żuciu lub ziewaniu, trzaskanie lub zgrzytanie w stawie, bóle głowy (zwłaszcza skroniowe), ból ucha lub szumy uszne bez choroby ucha, zawroty głowy i ból szyi.",
         },
+        infographic: "cmd-checklist",
       },
       {
         heading: {
@@ -743,6 +755,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "العلاج متعدد الأوجه: تقنيات يدوية على مفصل الفك (نهج داخل وخارج الفم)، تقنيات الأنسجة الرخوة لعضلات المضغ، تصحيح وضعية العمود الفقري العنقي، تمارين الاسترخاء وتمارين منزلية خاصة بالمريض.",
           pl: "Leczenie jest multimodalne: techniki manualne na stawie skroniowo-żuchwowym (podejście wewnątrz- i zewnątrzustne), techniki tkanek miękkich mięśni żucia (masseter, temporalis, mięśnie skrzydłowe), korekcja postawy kręgosłupa szyjnego, ćwiczenia relaksacyjne i ćwiczenia domowe specyficzne dla pacjenta.",
         },
+        infographic: "manual-therapy-pillars",
       },
     ],
     keyPoints: {
@@ -813,6 +826,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "العلاج الطبيعي تخصص منظم طبيًا مع تركيز قوي على التقنيات القائمة على الأدلة وعلاج الحركة وإعادة التأهيل الوظيفي. تنظر هشاشة العظام إلى الجسم كوحدة وتعمل بتقنيات أكثر شمولية على المفاصل والأنسجة الرخوة واللفافة والهياكل الحشوية. في بلجيكا، هشاشة العظام ليست مهنة صحية معترف بها قانونًا (حتى عام 2024).",
           pl: "Fizjoterapia to medycznie regulowana dyscyplina z silnym naciskiem na techniki oparte na dowodach, terapię ruchem i rehabilitację funkcjonalną. Osteopatia postrzega ciało jako całość i pracuje z bardziej holistycznymi technikami na stawach, tkankach miękkich, powięziach i strukturach trzewnych. W Belgii osteopatia nie jest prawnie uznanym zawodem medycznym (stan na 2024).",
         },
+        infographic: "kine-vs-osteo",
       },
       {
         heading: {
@@ -833,6 +847,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "العلاج الطبيعي هو الخيار الأول لـ: الإصابات الحادة، إعادة التأهيل بعد العملية، الألم المزمن ذو السبب البنيوي الواضح، الحالات العصبية. تكمل تقنيات هشاشة العظام العلاج بشكل مفيد لـ: الشكاوى المنتشرة بدون تشخيص واضح، مشاكل الهضم ذات المكون العضلي الهيكلي، الصداع التوتري المزمن، خلل وظيفة قاع الحوض.",
           pl: "Fizjoterapia jest pierwszym wyborem w przypadku: ostrych urazów, rehabilitacji pooperacyjnej, przewlekłego bólu z wyraźną przyczyną strukturalną, chorób neurologicznych. Techniki osteopatyczne pożytecznie uzupełniają leczenie w przypadku: rozlanych dolegliwości bez wyraźnej diagnozy, problemów trawiennych z komponentą mięśniowo-szkieletową, przewlekłych bólów napięciowych głowy, dysfunkcji dna miednicy.",
         },
+        infographic: "manual-therapy-pillars",
       },
     ],
     keyPoints: {
@@ -903,6 +918,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "الركود الوريدي الناجم عن الكفة يخلق نقصًا موضعيًا في الأوكسجين في نسيج العضلات ويزيد من الضغط الأيضي. هذا يُنشط الخلايا الساتلية ويحفز تخليق بروتين العضلات — مشابه لتدريب القوة الثقيل، ولكن بجزء من الحمل. بالإضافة إلى ذلك، يتم إطلاق الهرمونات الابتنائية المحلية (IGF-1، HGH).",
           pl: "Zastój żylny spowodowany mankietem tworzy miejscową hipoksję w tkance mięśniowej i zwiększa stres metaboliczny. Aktywuje to komórki satelitarne i stymuluje syntezę białek mięśniowych — podobnie jak ciężki trening siłowy, ale przy ułamku obciążenia. Dodatkowo uwalniane są lokalne hormony anaboliczne (IGF-1, HGH).",
         },
+        infographic: "bfr-zone",
       },
       {
         heading: {
@@ -923,6 +939,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "BFR ذو قيمة خاصة لـ: إعادة التأهيل المبكرة بعد إعادة بناء الرباط الصليبي الأمامي، أطراف الركبة أو الورك، عندما لا يُسمح بعد بالتدريب الثقيل؛ المرضى المسنين المعرضين لخطر الضمور العضلي الذين لا يتحملون التدريب بالأثقال الثقيلة؛ الرياضيين العائدين إلى الرياضة بعد الإصابة، ولمنع هزال العضلات أثناء التثبيت.",
           pl: "BFR jest szczególnie wartościowe dla: wczesnej rehabilitacji pooperacyjnej po rekonstrukcji ACL, protezy kolana lub biodra, gdy ciężki trening nie jest jeszcze dozwolony; starszych pacjentów z ryzykiem sarkopenii, którzy nie tolerują ciężkiego treningu siłowego; sportowców powracających do sportu po urazie oraz zapobiegania zaniku mięśni podczas unieruchomienia.",
         },
+        infographic: "progression-rule",
       },
     ],
     keyPoints: {

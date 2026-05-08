@@ -9,7 +9,7 @@ import { Clock, Tag, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
-const ARTICLES = [
+export const ARTICLES = [
   {
     slug: "position-assise-mal-de-dos",
     date: "2026-05-03",
