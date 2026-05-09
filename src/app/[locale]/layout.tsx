@@ -19,7 +19,10 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t("title"),
+    title: {
+      default: t("title"),
+      template: `%s | Praxis Loten`,
+    },
     description: t("description"),
     metadataBase: new URL("https://www.praxisloten.be"),
     alternates: {

@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { PraxisPageContent } from "@/components/pages/PraxisPageContent";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = {
+    de: "Die Praxis",
+    fr: "Le cabinet",
+    en: "The Practice",
+    nl: "De praktijk",
+    tr: "Klinik",
+    ar: "العيادة",
+    pl: "Gabinet",
+  };
+  return { title: titles[locale] || titles.fr };
+}
 
 export default async function PraxisPage({
   params,

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { BlogArticlePageContent } from "@/components/pages/BlogArticlePageContent";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  return { title };
+}
 
 const VALID_SLUGS = [
   "doser-activite-douleur",

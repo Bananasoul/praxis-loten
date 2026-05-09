@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = {
+    de: "Datenschutzerklärung",
+    fr: "Politique de confidentialité",
+    en: "Privacy Policy",
+    nl: "Privacybeleid",
+    tr: "Gizlilik Politikası",
+    ar: "سياسة الخصوصية",
+    pl: "Polityka prywatności",
+  };
+  return { title: titles[locale] || titles.fr };
+}
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { ServiceDetailPageContent } from "@/components/pages/ServiceDetailPageContent";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  return { title };
+}
 
 const SLUGS = ["manuelle-therapie", "sport-kinesitherapie", "kiefergelenk", "lymphdrainage"];
 
