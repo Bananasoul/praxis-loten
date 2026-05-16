@@ -840,7 +840,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "«قاعدة 10%» القديمة (لا تزيد الحجم الأسبوعي بأكثر من 10%) يتم تدقيقها بالبيانات الحديثة. المهم ليس فقط الحجم الأسبوعي، بل بالأخص: **تجنب القفزات المفاجئة في الجريات الفردية**. جسمك يحتاج وقتًا للتكيف. الأوتار والعظام تستجيب أبطأ من العضلات — تحتاج 8 إلى 12 أسبوعًا للتكيف مع أحمال جديدة. عمليًا: زِد المدة **أو** الشدة — لا الاثنين معًا. بدّل بين أيام خفيفة وأيام مكثفة. وبعد استراحة: ابدأ بـ50% من مستواك السابق. الصبر ليس ضعفًا — إنه أفضل عامل حماية لك.",
           pl: "Stara «zasada 10%» (nigdy nie zwiększaj tygodniowego wolumenu o więcej niż 10%) jest udoskonalana przez nowe dane. Ważny jest nie tylko wolumen tygodniowy, ale przede wszystkim: **unikaj nagłych skoków w pojedynczych biegach**. Twoje ciało potrzebuje czasu na adaptację. Ścięgna i kości reagują wolniej niż mięśnie — potrzebują 8-12 tygodni na adaptację do nowych obciążeń. W praktyce: zwiększaj czas trwania **lub** intensywność — nigdy obu naraz. Zmieniaj dni lekkie i ciężkie. A po przerwie: zacznij od 50% poprzedniego poziomu. Cierpliwość to nie słabość — to Twój najlepszy czynnik ochronny.",
         },
-        infographic: "movement",
+        infographic: "progression-rule",
       },
       {
         heading: {
@@ -1215,7 +1215,7 @@ const ARTICLES: Record<string, ArticleContent> = {
           ar: "يُظهر البحث الحديث أن CMD هو **حالة متعددة العوامل**. الإجهاد وجودة النوم ووضعية الرقبة وحتى العبء العاطفي يلعبون دورًا محوريًا. فكك يتفاعل مع سياق حياتك بأكمله. من يضغط على أسنانه ليلاً غالبًا لا يفعل ذلك بسبب «مشكلة في الفك»، بل لأن الجهاز العصبي مفرط النشاط. لهذا لا نعالج المفصل بمعزل أبدًا.",
           pl: "Nowoczesne badania pokazują: CMD to **schorzenie wieloczynnikowe**. Stres, jakość snu, postawa odcinka szyjnego, a nawet obciążenie emocjonalne odgrywają centralną rolę. Twoja żuchwa reaguje na cały kontekst Twojego życia. Kto w nocy zaciska zęby, robi to często nie z powodu «problemu żuchwy», lecz dlatego, że układ nerwowy jest nadmiernie aktywny. Dlatego przy CMD nigdy nie leczymy stawu w izolacji.",
         },
-        infographic: "spine",
+        infographic: "cmd-checklist",
       },
       {
         heading: {
@@ -1426,6 +1426,21 @@ const ARTICLES: Record<string, ArticleContent> = {
       ar: "غير متأكد من العلاج المناسب؟ Félix Esser سعيد بتقديم النصيحة.",
       pl: "Nie jesteś pewien, która terapia pasuje? Félix Esser chętnie doradzi.",
     },
+    bibliography: [
+      "Franke H et al. Osteopathic manipulative treatment for nonspecific low back pain: a systematic review and meta-analysis. BMC Musculoskelet Disord. 2014;15:286.",
+      "Coulter ID et al. Manipulation and Mobilization for Treating Chronic Low Back Pain: A Systematic Review and Meta-Analysis. Spine J. 2018;18(5):866-879.",
+      "Cerritelli F et al. Effect of Visceral Osteopathic Manipulative Treatment: A Systematic Review. PLoS One. 2021;16(6):e0252539.",
+      "Rubinstein SM et al. Benefits and harms of spinal manipulative therapy for the treatment of chronic low back pain. BMJ. 2019;364:l689.",
+    ],
+    disclaimer: {
+      de: "Dieser Artikel dient ausschließlich der Information und ersetzt keine individuelle Beratung. Konsultieren Sie Ihren Therapeuten oder Arzt bei anhaltenden Beschwerden.",
+      fr: "Cet article est à visée informative uniquement et ne remplace pas une consultation individuelle. Consultez votre thérapeute ou médecin en cas de symptômes persistants.",
+      en: "This article is for informational purposes only and does not replace individual advice. Consult your therapist or doctor for persistent symptoms.",
+      nl: "Dit artikel is alleen bedoeld ter informatie. Raadpleeg uw therapeut of arts bij aanhoudende klachten.",
+      tr: "Bu makale yalnızca bilgilendirme amaçlıdır. Kalıcı belirtilerde terapistinize veya doktorunuza danışın.",
+      ar: "هذه المقالة لأغراض إعلامية فقط. استشر معالجك أو طبيبك عند استمرار الأعراض.",
+      pl: "Ten artykuł ma charakter wyłącznie informacyjny. Skonsultuj się z terapeutą lub lekarzem w przypadku utrzymujących się objawów.",
+    },
   },
 
   "bfr-training-rehabilitation": {
@@ -1517,6 +1532,21 @@ const ARTICLES: Record<string, ArticleContent> = {
       tr: "BFR antrenmanıyla ilgileniyor musunuz? Thom Petit, bunun durumunuza uygun olup olmadığını açıklayacak.",
       ar: "هل تهتم بتدريب BFR؟ ثوم بيتي يشرح لك ما إذا كان مناسبًا لوضعك.",
       pl: "Interesujesz się treningiem BFR? Thom Petit wyjaśni, czy jest odpowiedni dla Twojej sytuacji.",
+    },
+    bibliography: [
+      "Patterson SD et al. Blood Flow Restriction Exercise: Considerations of Methodology, Application, and Safety. Front Physiol. 2019;10:533.",
+      "Hughes L et al. Blood flow restriction training in clinical musculoskeletal rehabilitation: a systematic review and meta-analysis. Br J Sports Med. 2017;51(13):1003-1011.",
+      "Centner C et al. Effects of Blood Flow Restriction Training on Muscular Strength and Hypertrophy in Older Individuals: A Systematic Review and Meta-Analysis. Sports Med. 2019;49(1):95-108.",
+      "Lixandrao ME et al. Magnitude of Muscle Strength and Mass Adaptations Between High-Load Resistance Training Versus Low-Load Resistance Training Associated with Blood-Flow Restriction. Sports Med. 2018;48(2):361-378.",
+    ],
+    disclaimer: {
+      de: "Dieser Artikel dient ausschließlich der Information und ersetzt keine individuelle Beratung. BFR-Training sollte nur unter Anleitung eines ausgebildeten Therapeuten durchgeführt werden.",
+      fr: "Cet article est à visée informative uniquement. L'entraînement BFR ne doit être pratiqué que sous la supervision d'un thérapeute formé.",
+      en: "This article is for informational purposes only. BFR training should only be performed under supervision of a trained therapist.",
+      nl: "Dit artikel is alleen bedoeld ter informatie. BFR-training mag alleen onder begeleiding van een getrainde therapeut worden uitgevoerd.",
+      tr: "Bu makale yalnızca bilgilendirme amaçlıdır. BFR antrenmanı yalnızca eğitimli bir terapist gözetiminde yapılmalıdır.",
+      ar: "هذه المقالة لأغراض إعلامية فقط. يجب إجراء تدريب BFR فقط تحت إشراف معالج مدرب.",
+      pl: "Ten artykuł ma charakter wyłącznie informacyjny. Trening BFR powinien być wykonywany wyłącznie pod nadzorem wykwalifikowanego terapeuty.",
     },
   },
 };
