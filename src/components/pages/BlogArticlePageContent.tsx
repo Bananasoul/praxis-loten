@@ -1348,6 +1348,69 @@ function formatDate(dateStr: string, lang: LangKey) {
   return d.toLocaleDateString(localeMap[lang], opts);
 }
 
+/** Lightweight inline markdown renderer: **bold**, *italic*, > blockquote, \n\n paragraphs */
+function renderMarkdown(text: string): React.ReactNode {
+  const paragraphs = text.split("\n\n");
+  return paragraphs.map((para, pIdx) => {
+    const trimmed = para.trim();
+    if (!trimmed) return null;
+
+    // Blockquote: lines starting with >
+    if (trimmed.startsWith(">")) {
+      const quoteContent = trimmed
+        .split("\n")
+        .map((l) => l.replace(/^>\s?/, ""))
+        .join(" ");
+      return (
+        <blockquote
+          key={pIdx}
+          className="border-l-4 border-[#76b82a] pl-4 my-4 italic text-neutral-600"
+        >
+          {renderInline(quoteContent)}
+        </blockquote>
+      );
+    }
+
+    return (
+      <span key={pIdx} className="block mb-3 last:mb-0">
+        {renderInline(trimmed)}
+      </span>
+    );
+  });
+}
+
+/** Parse inline markdown: **bold** and *italic* */
+function renderInline(text: string): React.ReactNode {
+  // Split by **bold** and *italic* patterns
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|«(.+?)»)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before match
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    if (match[2]) {
+      // **bold**
+      parts.push(<strong key={match.index} className="font-semibold text-neutral-900">{match[2]}</strong>);
+    } else if (match[3]) {
+      // *italic*
+      parts.push(<em key={match.index}>{match[3]}</em>);
+    } else if (match[4]) {
+      // «guillemets» — render as styled quote
+      parts.push(<span key={match.index} className="text-neutral-800">« {match[4]} »</span>);
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 export function BlogArticlePageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
@@ -1421,9 +1484,9 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
             {/* Intro with drop cap */}
             <AnimatedSection>
               <div className="bg-white rounded-2xl p-8 sm:p-10 border border-neutral-200 shadow-sm">
-                <p className={`text-neutral-700 leading-relaxed text-lg ${!isRtl ? "first-letter:text-6xl first-letter:font-extrabold first-letter:text-[#2b3186] first-letter:mr-2 first-letter:float-left first-letter:leading-none first-letter:mt-1" : ""}`}>
-                  {article.intro[lang]}
-                </p>
+                <div className={`text-neutral-700 leading-relaxed text-lg ${!isRtl ? "[&>span:first-child]:first-letter:text-6xl [&>span:first-child]:first-letter:font-extrabold [&>span:first-child]:first-letter:text-[#2b3186] [&>span:first-child]:first-letter:mr-2 [&>span:first-child]:first-letter:float-left [&>span:first-child]:first-letter:leading-none [&>span:first-child]:first-letter:mt-1" : ""}`}>
+                  {renderMarkdown(article.intro[lang])}
+                </div>
               </div>
             </AnimatedSection>
 
@@ -1435,9 +1498,9 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
                     <span className={`inline-block w-1 h-6 align-middle bg-gradient-to-b ${article.color} rounded-full ${isRtl ? "ml-3" : "mr-3"}`} />
                     {section.heading[lang]}
                   </h2>
-                  <p className="text-neutral-700 leading-[1.75] text-base whitespace-pre-line">
-                    {section.body[lang]}
-                  </p>
+                  <div className="text-neutral-700 leading-[1.75] text-base">
+                    {renderMarkdown(section.body[lang])}
+                  </div>
                   {section.image && (
                     <figure className="mt-6 -mx-2">
                       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
