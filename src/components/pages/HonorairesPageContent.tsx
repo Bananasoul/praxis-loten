@@ -17,15 +17,15 @@ const UI: Record<LangKey, {
   glanceTitle: string; perSession: string; yourPart: string;
   mutuelleShare: string; totalHonoraire: string;
   convTitle: string; nonConvTitle: string;
-  normalPathLabel: string; seriousPathLabel: string;
+  normalPathLabel: string; ePathLabel: string; seriousPathLabel: string;
   bimNote: string;
-  faNote: string; fbNote: string;
+  faNote: string; eNote: string; fbNote: string;
   howTitle: string;
   step1Title: string; step1Desc: string;
   step2Title: string; step2Desc: string;
   step3Title: string; step3Desc: string;
   nonConvExplain: string; nonConvNote: string;
-  bimTitle: string; bimText: string;
+  bimTitle: string; bimText: string; bimHow: string; bimNonConv: string;
   mutuelleTitle: string; mutuelleText: string;
   prescTitle: string; prescText: string;
   checkInami: string; inamiLink: string;
@@ -44,17 +44,18 @@ const UI: Record<LangKey, {
     glanceTitle: "Das Wichtigste",
     perSession: "/ Sitzung", yourPart: "Ihr Eigenanteil", mutuelleShare: "Kassenerstattung", totalHonoraire: "Honorar gesamt",
     convTitle: "Konventionierte Therapeuten", nonConvTitle: "Nicht konventioniert — Loïc Meunier",
-    normalPathLabel: "Häufige Erkrankungen (Fa)", seriousPathLabel: "Schwere / chronische Erkrankungen (Fb + Intensiv)",
+    normalPathLabel: "Akutes Krankheitsbild (Fa)", ePathLabel: "Pathologie E (§14, 5°)", seriousPathLabel: "Chronisches Krankheitsbild (Fb)",
     bimNote: "Mit BIM-Status:",
-    faNote: "Liste Fa: akute und gutartige Erkrankungen (Verschreibung erforderlich, z.B. Rücken, Knie, Schulter). Bis zu 18 Sitzungen/Jahr.",
-    fbNote: "Liste Fb: schwere oder chronische Erkrankungen (spezifisches ärztliches Attest). Unbegrenzte Sitzungen.",
+    faNote: "Liste Fa: akute Erkrankungen (Verschreibung erforderlich, z.B. Rücken, Knie, Schulter). Bis zu 18 Sitzungen/Jahr.",
+    eNote: "Liste E: chronische Erkrankungen, die eine längerfristige Physiotherapie erfordern (ärztliches Attest erforderlich).",
+    fbNote: "Liste Fb: chronische Erkrankungen (spezifisches ärztliches Attest). Unbegrenzte Sitzungen.",
     howTitle: "Wie funktioniert die Rückerstattung?",
     step1Title: "Verschreibung holen", step1Desc: "Ihr Arzt stellt eine Physiotherapieverschreibung aus. Ohne sie — keine Erstattung.",
     step2Title: "Sitzung bezahlen", step2Desc: "Sie zahlen den Gesamtbetrag beim Therapeuten — bei jeder Sitzung.",
     step3Title: "Automatische Rückerstattung", step3Desc: "Die Kasse erstattet den INAMI-Anteil automatisch, in der Regel innerhalb weniger Tage.",
     nonConvExplain: "Loïc Meunier setzt seine Honorare frei fest. Die Kasse erstattet ca. 75 % des konventionierten INAMI-Tarifs. Der Differenzbetrag liegt zu Ihren Lasten.",
     nonConvNote: "Schätzwerte — genauen Betrag bei Ihrer Kasse erfragen.",
-    bimTitle: "BIM-Patienten (erhöhter Sozialtarif)", bimText: "BIM-Patienten zahlen nur 2,50 € pro Sitzung, unabhängig vom Gesamtbetrag. Nicht konventionierte Therapeuten dürfen keinen Aufpreis berechnen — die INAMI-Tarife gelten zwingend.",
+    bimTitle: "BIM — Was ist das?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) ist ein Vorzugstarif für Personen mit niedrigem Einkommen. Als BIM-Patient zahlen Sie deutlich weniger Eigenanteil pro Sitzung (z.B. 2,50 € statt 6,25 € bei Fa).", bimHow: "So prüfen Sie Ihren Status: Schauen Sie auf Ihren Krankenkassen-Aufkleber — der Code (CT1/CT2) endet auf 0 (z.B. 100/100) = kein BIM. Endet er auf 1 (z.B. 101/101) = BIM. Im Zweifelsfall fragen Sie Ihre Krankenkasse.", bimNonConv: "Wichtig: Auch ein nicht konventionierter Therapeut darf Ihnen keinen Aufpreis berechnen, wenn Sie BIM-Patient sind. Er ist gesetzlich verpflichtet, die offiziellen INAMI-Tarife einzuhalten — ohne Zuschlag.",
     mutuelleTitle: "Zusatzversicherung", mutuelleText: "Viele Krankenkassen übernehmen über ihre Zusatzversicherung einen weiteren Teil der Kosten. Fragen Sie Ihre Kasse.",
     prescTitle: "Ärztliche Verschreibung erforderlich", prescText: "Eine ärztliche Verschreibung ist für die Rückerstattung zwingend erforderlich. Ohne Verschreibung erfolgt keine Erstattung.",
     checkInami: "Offizielle INAMI-Tarife prüfen", inamiLink: "INAMI-Website",
@@ -74,17 +75,18 @@ const UI: Record<LangKey, {
     glanceTitle: "En résumé",
     perSession: "/ séance", yourPart: "Votre part", mutuelleShare: "Remboursement mutuelle", totalHonoraire: "Honoraire total",
     convTitle: "Thérapeutes conventionnés", nonConvTitle: "Non conventionné — Loïc Meunier",
-    normalPathLabel: "Pathologies courantes (Fa)", seriousPathLabel: "Pathologies graves / chroniques (Fb + Intensif)",
+    normalPathLabel: "Pathologie aiguë (Fa)", ePathLabel: "Pathologie E (§14, 5°)", seriousPathLabel: "Pathologie chronique (Fb)",
     bimNote: "Statut BIM :",
-    faNote: "Liste Fa : pathologies aiguës et bénignes (prescription requise, ex. lombalgie, genou, épaule). Jusqu'à 18 séances/an.",
-    fbNote: "Liste Fb : pathologies graves ou chroniques (attestation médicale spécifique). Séances illimitées.",
+    faNote: "Liste Fa : pathologies aiguës (prescription requise, ex. lombalgie, genou, épaule). Jusqu'à 18 séances/an.",
+    eNote: "Liste E : affections chroniques nécessitant un traitement de kinésithérapie prolongé (attestation médicale requise).",
+    fbNote: "Liste Fb : pathologies chroniques (attestation médicale spécifique). Séances illimitées.",
     howTitle: "Comment fonctionne le remboursement ?",
     step1Title: "Obtenez votre prescription", step1Desc: "Votre médecin vous remet une prescription de kinésithérapie. Sans elle, aucun remboursement n'est possible.",
     step2Title: "Vous payez en séance", step2Desc: "Vous réglez l'honoraire total directement à votre thérapeute, à chaque séance.",
     step3Title: "Remboursement automatique", step3Desc: "Votre mutuelle rembourse la part INAMI automatiquement, généralement en quelques jours.",
     nonConvExplain: "Loïc Meunier fixe librement ses honoraires. La mutuelle rembourse environ 75 % de la part INAMI conventionnée. La différence reste à votre charge.",
     nonConvNote: "Valeurs estimées — contactez votre mutuelle pour le montant exact.",
-    bimTitle: "Patients BIM (régime préférentiel)", bimText: "Les patients BIM ne paient que 2,50 € par séance, quel que soit l'honoraire total. Les thérapeutes non conventionnés ne peuvent pas appliquer de suppléments aux patients BIM.",
+    bimTitle: "BIM — C'est quoi ?", bimText: "Le statut BIM (Bénéficiaire de l'Intervention Majorée) est un tarif préférentiel pour les personnes à revenus modestes. En tant que patient BIM, vous payez nettement moins de ticket modérateur par séance (ex. 2,50 € au lieu de 6,25 € en Fa).", bimHow: "Comment vérifier : regardez votre vignette de mutuelle — le code titulaire (CT1/CT2) se termine par 0 (ex. 100/100) = pas BIM. S'il se termine par 1 (ex. 101/101) = vous êtes BIM. En cas de doute, contactez votre mutuelle.", bimNonConv: "Important : même un thérapeute non conventionné ne peut pas vous facturer de supplément si vous êtes BIM. Il est légalement tenu de respecter les tarifs officiels INAMI — sans aucun supplément.",
     mutuelleTitle: "Assurance complémentaire", mutuelleText: "De nombreuses mutuelles remboursent une partie supplémentaire via leur assurance complémentaire. Renseignez-vous auprès de la vôtre.",
     prescTitle: "Prescription médicale obligatoire", prescText: "Une prescription médicale est indispensable pour bénéficier du remboursement. Sans prescription, aucun remboursement n'est accordé.",
     checkInami: "Consulter les tarifs officiels INAMI", inamiLink: "Site INAMI",
@@ -104,17 +106,18 @@ const UI: Record<LangKey, {
     glanceTitle: "At a glance",
     perSession: "/ session", yourPart: "Your share", mutuelleShare: "Insurance covers", totalHonoraire: "Total fee",
     convTitle: "Conventional therapists", nonConvTitle: "Non-conventional — Loïc Meunier",
-    normalPathLabel: "Common conditions (Fa)", seriousPathLabel: "Serious / chronic conditions (Fb + Intensive)",
+    normalPathLabel: "Acute conditions (Fa)", ePathLabel: "Pathology E (§14, 5°)", seriousPathLabel: "Chronic conditions (Fb)",
     bimNote: "BIM status:",
-    faNote: "Fa list: acute and benign conditions (prescription required, e.g. back pain, knee, shoulder). Up to 18 sessions/year.",
-    fbNote: "Fb list: serious or chronic conditions (specific medical certificate). Unlimited sessions.",
+    faNote: "Fa list: acute conditions (prescription required, e.g. back pain, knee, shoulder). Up to 18 sessions/year.",
+    eNote: "E list: chronic conditions requiring long-term physiotherapy (medical certificate required).",
+    fbNote: "Fb list: chronic conditions (specific medical certificate). Unlimited sessions.",
     howTitle: "How does reimbursement work?",
     step1Title: "Get a prescription", step1Desc: "Your doctor gives you a physiotherapy prescription. Without one, no reimbursement is possible.",
     step2Title: "Pay at your session", step2Desc: "You pay the full fee directly to your therapist at each session.",
     step3Title: "Automatic reimbursement", step3Desc: "Your insurer reimburses the INAMI portion automatically, usually within a few days.",
     nonConvExplain: "Loïc Meunier sets his fees freely. Your insurer reimburses approx. 75% of the conventional INAMI rate. The difference is your responsibility.",
     nonConvNote: "Estimated values — contact your insurer for the exact amount.",
-    bimTitle: "BIM patients (preferential rate)", bimText: "BIM patients pay only €2.50 per session regardless of the total fee. Non-conventional therapists cannot charge supplements to BIM patients.",
+    bimTitle: "BIM — What is it?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) is a preferential rate for people with lower incomes. As a BIM patient, you pay significantly less per session (e.g. €2.50 instead of €6.25 for Fa conditions).", bimHow: "How to check: look at your health insurance sticker — the holder code (CT1/CT2) ends in 0 (e.g. 100/100) = not BIM. Ends in 1 (e.g. 101/101) = BIM. If in doubt, contact your insurer.", bimNonConv: "Important: even a non-conventional therapist cannot charge you supplements if you are a BIM patient. They are legally required to apply the official INAMI rates — with no surcharge.",
     mutuelleTitle: "Supplementary insurance", mutuelleText: "Many insurers reimburse an additional share through their supplementary coverage. Check with yours.",
     prescTitle: "Medical prescription required", prescText: "A medical prescription is mandatory to receive reimbursement. Without one, no reimbursement is granted.",
     checkInami: "Check official INAMI rates", inamiLink: "INAMI website",
@@ -134,17 +137,18 @@ const UI: Record<LangKey, {
     glanceTitle: "In één oogopslag",
     perSession: "/ sessie", yourPart: "Uw aandeel", mutuelleShare: "Terugbetaling mutualiteit", totalHonoraire: "Totaal honorarium",
     convTitle: "Geconventioneerde therapeuten", nonConvTitle: "Niet-geconventioneerd — Loïc Meunier",
-    normalPathLabel: "Courante aandoeningen (Fa)", seriousPathLabel: "Ernstige / chronische aandoeningen (Fb + Intensief)",
+    normalPathLabel: "Acuut ziektebeeld (Fa)", ePathLabel: "Pathologie E (§14, 5°)", seriousPathLabel: "Chronisch ziektebeeld (Fb)",
     bimNote: "BIM-statuut:",
-    faNote: "Lijst Fa: acute en goedaardige aandoeningen (voorschrift vereist, bv. rugpijn, knie, schouder). Tot 18 sessies/jaar.",
-    fbNote: "Lijst Fb: ernstige of chronische aandoeningen (specifiek medisch attest). Onbeperkte sessies.",
+    faNote: "Lijst Fa: acute aandoeningen (voorschrift vereist, bv. rugpijn, knie, schouder). Tot 18 sessies/jaar.",
+    eNote: "Lijst E: chronische aandoeningen die langdurige fysiotherapie vereisen (medisch attest vereist).",
+    fbNote: "Lijst Fb: chronische aandoeningen (specifiek medisch attest). Onbeperkte sessies.",
     howTitle: "Hoe werkt de terugbetaling?",
     step1Title: "Haal een voorschrift", step1Desc: "Uw arts geeft u een kinesitherapievoorschrift. Zonder voorschrift — geen terugbetaling.",
     step2Title: "Betalen bij de sessie", step2Desc: "U betaalt het volledige honorarium rechtstreeks aan uw therapeut, bij elke sessie.",
     step3Title: "Automatische terugbetaling", step3Desc: "Uw mutualiteit betaalt het RIZIV-aandeel automatisch terug, doorgaans binnen een paar dagen.",
     nonConvExplain: "Loïc Meunier stelt zijn honoraria vrij vast. De mutualiteit vergoedt ca. 75% van het geconventioneerde RIZIV-tarief. Het verschil is voor uw rekening.",
     nonConvNote: "Geschatte waarden — neem contact op met uw mutualiteit voor het exacte bedrag.",
-    bimTitle: "BIM-patiënten (verhoogde tegemoetkoming)", bimText: "BIM-patiënten betalen slechts €2,50 per sessie, ongeacht het totale honorarium. Niet-geconventioneerde therapeuten mogen geen supplement aanrekenen aan BIM-patiënten.",
+    bimTitle: "BIM — Wat is het?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) is een voorkeurtarief voor personen met een laag inkomen. Als BIM-patiënt betaalt u aanzienlijk minder remgeld per sessie (bv. €2,50 in plaats van €6,25 bij Fa).", bimHow: "Hoe controleren: kijk op uw mutualiteitsklever — de titulariscode (CT1/CT2) eindigt op 0 (bv. 100/100) = geen BIM. Eindigt op 1 (bv. 101/101) = BIM. Bij twijfel, contacteer uw mutualiteit.", bimNonConv: "Belangrijk: ook een niet-geconventioneerde therapeut mag u geen supplement aanrekenen als u BIM-patiënt bent. Hij is wettelijk verplicht de officiële RIZIV-tarieven toe te passen — zonder toeslag.",
     mutuelleTitle: "Aanvullende verzekering", mutuelleText: "Veel mutualiteiten vergoeden een extra deel via hun aanvullende verzekering. Informeer bij de uwe.",
     prescTitle: "Medisch voorschrift verplicht", prescText: "Een medisch voorschrift is verplicht voor terugbetaling. Zonder voorschrift wordt geen terugbetaling toegekend.",
     checkInami: "Officiële RIZIV-tarieven raadplegen", inamiLink: "RIZIV-website",
@@ -164,17 +168,18 @@ const UI: Record<LangKey, {
     glanceTitle: "Özet",
     perSession: "/ seans", yourPart: "Sizin payınız", mutuelleShare: "Sigorta karşılıyor", totalHonoraire: "Toplam ücret",
     convTitle: "Konvansiyonel terapistler", nonConvTitle: "Konvansiyonel olmayan — Loïc Meunier",
-    normalPathLabel: "Yaygın hastalıklar (Fa)", seriousPathLabel: "Ciddi / kronik hastalıklar (Fb + Yoğun)",
+    normalPathLabel: "Akut hastalıklar (Fa)", ePathLabel: "Patoloji E (§14, 5°)", seriousPathLabel: "Kronik hastalıklar (Fb)",
     bimNote: "BIM statüsü:",
-    faNote: "Fa listesi: akut ve iyi huylu hastalıklar (reçete gerekli). Yılda 18 seansa kadar.",
-    fbNote: "Fb listesi: ciddi veya kronik hastalıklar (özel tıbbi sertifika). Sınırsız seans.",
+    faNote: "Fa listesi: akut hastalıklar (reçete gerekli). Yılda 18 seansa kadar.",
+    eNote: "E listesi: uzun süreli fizyoterapi gerektiren kronik hastalıklar (tıbbi sertifika gerekli).",
+    fbNote: "Fb listesi: kronik hastalıklar (özel tıbbi sertifika). Sınırsız seans.",
     howTitle: "Geri ödeme nasıl çalışır?",
     step1Title: "Reçete alın", step1Desc: "Doktorunuz size fizyoterapi reçetesi verir. Reçete olmadan geri ödeme yapılmaz.",
     step2Title: "Seansta ödeme yapın", step2Desc: "Her seans için toplam ücreti doğrudan terapistinize ödersiniz.",
     step3Title: "Otomatik geri ödeme", step3Desc: "Sigortanız INAMI payını otomatik olarak, genellikle birkaç gün içinde geri öder.",
     nonConvExplain: "Loïc Meunier ücretlerini serbestçe belirler. Sigortanız, konvansiyonel INAMI tarifesinin yaklaşık %75'ini geri öder. Fark sizin sorumluluğunuzdadır.",
     nonConvNote: "Tahmini değerler — kesin tutar için sigortanızla iletişime geçin.",
-    bimTitle: "BIM hastaları (tercihli tarife)", bimText: "BIM hastalar toplam ücrete bakılmaksızın seans başına yalnızca 2,50 € öder. Konvansiyonel olmayan terapistler BIM hastalara ek ücret uygulayamaz.",
+    bimTitle: "BIM — Nedir?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée), düşük gelirli kişiler için tercihli bir tarifedir. BIM hastası olarak seans başına çok daha az ödersiniz (ör. Fa'da 6,25 € yerine 2,50 €).", bimHow: "Nasıl kontrol edilir: sağlık sigortası etiketinize bakın — sahip kodu (CT1/CT2) 0 ile bitiyorsa (ör. 100/100) = BIM değil. 1 ile bitiyorsa (ör. 101/101) = BIM. Şüpheniz varsa sigortanıza danışın.", bimNonConv: "Önemli: konvansiyonel olmayan bir terapist bile BIM hastasıysanız size ek ücret uygulayamaz. Yasal olarak resmi INAMI tarifelerini uygulamak zorundadır — hiçbir ek ücret olmadan.",
     mutuelleTitle: "Ek sigorta", mutuelleText: "Birçok sigorta, ek sigortaları aracılığıyla ek bir pay karşılar. Sigortanıza danışın.",
     prescTitle: "Tıbbi reçete zorunlu", prescText: "Geri ödeme için tıbbi reçete zorunludur. Reçete olmadan geri ödeme yapılmaz.",
     checkInami: "Resmi INAMI tarifelerini kontrol et", inamiLink: "INAMI web sitesi",
@@ -194,17 +199,18 @@ const UI: Record<LangKey, {
     glanceTitle: "ملخص",
     perSession: "/ جلسة", yourPart: "حصتك", mutuelleShare: "تغطية التأمين", totalHonoraire: "الأتعاب الإجمالية",
     convTitle: "المعالجون التقليديون", nonConvTitle: "غير تقليدي — Loïc Meunier",
-    normalPathLabel: "الأمراض الشائعة (Fa)", seriousPathLabel: "الأمراض الخطيرة / المزمنة (Fb + مكثف)",
+    normalPathLabel: "الأمراض الحادة (Fa)", ePathLabel: "الأمراض E (§14, 5°)", seriousPathLabel: "الأمراض المزمنة (Fb)",
     bimNote: "وضع BIM:",
-    faNote: "قائمة Fa: الحالات الحادة والحميدة (وصفة طبية مطلوبة). حتى 18 جلسة/سنة.",
-    fbNote: "قائمة Fb: الأمراض الخطيرة أو المزمنة (شهادة طبية محددة). جلسات غير محدودة.",
+    faNote: "قائمة Fa: الأمراض الحادة (وصفة طبية مطلوبة). حتى 18 جلسة/سنة.",
+    eNote: "قائمة E: الأمراض المزمنة التي تتطلب علاجاً طبيعياً طويل الأمد (شهادة طبية مطلوبة).",
+    fbNote: "قائمة Fb: الأمراض المزمنة (شهادة طبية محددة). جلسات غير محدودة.",
     howTitle: "كيف يعمل التعويض؟",
     step1Title: "احصل على وصفة طبية", step1Desc: "يمنحك طبيبك وصفة علاج طبيعي. بدونها لا يمكن الحصول على أي تعويض.",
     step2Title: "الدفع في الجلسة", step2Desc: "تدفع الأتعاب الإجمالية مباشرة لمعالجك في كل جلسة.",
     step3Title: "التعويض التلقائي", step3Desc: "يعوّض التأمين حصة INAMI تلقائياً، عادةً في غضون أيام قليلة.",
     nonConvExplain: "يحدد Loïc Meunier أتعابه بحرية. يعوّض التأمين حوالي 75٪ من تعريفة INAMI التقليدية. الفرق على عاتقك.",
     nonConvNote: "قيم تقديرية — اتصل بصندوق مرضك للحصول على المبلغ الدقيق.",
-    bimTitle: "مرضى BIM (النظام التفضيلي)", bimText: "يدفع مرضى BIM 2,50 € فقط لكل جلسة بغض النظر عن المبلغ الإجمالي. لا يمكن للمعالجين غير التقليديين تطبيق أي رسوم إضافية على مرضى BIM.",
+    bimTitle: "BIM — ما هو؟", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) هو نظام تعريفة تفضيلية للأشخاص ذوي الدخل المنخفض. كمريض BIM، تدفع أقل بكثير لكل جلسة (مثلاً 2,50 € بدلاً من 6,25 € في Fa).", bimHow: "كيف تتحقق: انظر إلى ملصق التأمين الصحي — رمز المؤمَّن (CT1/CT2) ينتهي بـ 0 (مثل 100/100) = ليس BIM. ينتهي بـ 1 (مثل 101/101) = أنت BIM. في حالة الشك، اتصل بصندوق مرضك.", bimNonConv: "مهم: حتى المعالج غير التقليدي لا يمكنه فرض رسوم إضافية إذا كنت مريض BIM. فهو ملزم قانونياً بتطبيق تعريفات INAMI الرسمية — بدون أي زيادة.",
     mutuelleTitle: "التأمين التكميلي", mutuelleText: "تغطي كثير من الصناديق جزءاً إضافياً عبر تأمينها التكميلي. استفسر من صندوقك.",
     prescTitle: "الوصفة الطبية إلزامية", prescText: "الوصفة الطبية إلزامية للحصول على التعويض. بدون وصفة لا يُمنح أي تعويض.",
     checkInami: "مراجعة تعريفات INAMI الرسمية", inamiLink: "موقع INAMI",
@@ -224,17 +230,18 @@ const UI: Record<LangKey, {
     glanceTitle: "W skrócie",
     perSession: "/ sesja", yourPart: "Twój udział", mutuelleShare: "Zwrot z kasy chorych", totalHonoraire: "Całkowite honorarium",
     convTitle: "Terapeuci konwencjonowani", nonConvTitle: "Niekonwencjonowany — Loïc Meunier",
-    normalPathLabel: "Częste schorzenia (Fa)", seriousPathLabel: "Poważne / przewlekłe schorzenia (Fb + Intensywna)",
+    normalPathLabel: "Ostre schorzenia (Fa)", ePathLabel: "Patologia E (§14, 5°)", seriousPathLabel: "Schorzenia przewlekłe (Fb)",
     bimNote: "Status BIM:",
-    faNote: "Lista Fa: ostre i łagodne schorzenia (wymagana recepta). Do 18 sesji/rok.",
-    fbNote: "Lista Fb: poważne lub przewlekłe schorzenia (specjalne zaświadczenie lekarskie). Nieograniczona liczba sesji.",
+    faNote: "Lista Fa: ostre schorzenia (wymagana recepta). Do 18 sesji/rok.",
+    eNote: "Lista E: choroby przewlekłe wymagające długotrwałej fizjoterapii (wymagane zaświadczenie lekarskie).",
+    fbNote: "Lista Fb: schorzenia przewlekłe (specjalne zaświadczenie lekarskie). Nieograniczona liczba sesji.",
     howTitle: "Jak działa zwrot kosztów?",
     step1Title: "Uzyskaj receptę", step1Desc: "Lekarz wystawia Ci receptę na fizjoterapię. Bez niej — brak zwrotu kosztów.",
     step2Title: "Płacisz podczas sesji", step2Desc: "Opłacasz całkowite honorarium bezpośrednio u terapeuty, przy każdej sesji.",
     step3Title: "Automatyczny zwrot", step3Desc: "Kasa chorych automatycznie zwraca część INAMI, zazwyczaj w ciągu kilku dni.",
     nonConvExplain: "Loïc Meunier ustala honoraria swobodnie. Kasa chorych zwraca ok. 75% konwencjonowanej stawki INAMI. Różnica jest po Twojej stronie.",
     nonConvNote: "Wartości szacunkowe — skontaktuj się z kasą chorych w celu uzyskania dokładnej kwoty.",
-    bimTitle: "Pacjenci BIM (stawki preferencyjne)", bimText: "Pacjenci BIM płacą tylko 2,50 € za sesję niezależnie od całkowitego honorarium. Terapeuci niekonwencjonowani nie mogą pobierać dopłat od pacjentów BIM.",
+    bimTitle: "BIM — Co to jest?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) to taryfa preferencyjna dla osób o niskich dochodach. Jako pacjent BIM płacisz znacznie mniej za sesję (np. 2,50 € zamiast 6,25 € przy Fa).", bimHow: "Jak sprawdzić: spójrz na naklejkę kasy chorych — kod ubezpieczonego (CT1/CT2) kończy się na 0 (np. 100/100) = nie BIM. Kończy się na 1 (np. 101/101) = BIM. W razie wątpliwości skontaktuj się z kasą chorych.", bimNonConv: "Ważne: nawet terapeuta niekonwencjonowany nie może naliczać Ci dopłat, jeśli jesteś pacjentem BIM. Jest prawnie zobowiązany do stosowania oficjalnych stawek INAMI — bez żadnych dopłat.",
     mutuelleTitle: "Ubezpieczenie uzupełniające", mutuelleText: "Wiele kas chorych pokrywa dodatkową część przez ubezpieczenie uzupełniające. Zapytaj swoją kasę.",
     prescTitle: "Recepta lekarska obowiązkowa", prescText: "Recepta lekarska jest obowiązkowa do uzyskania zwrotu. Bez recepty zwrot nie jest możliwy.",
     checkInami: "Sprawdź oficjalne stawki INAMI", inamiLink: "Strona INAMI",
@@ -256,17 +263,19 @@ function fmt(n: number): string {
 
 const CONV = {
   cabinet: [
-    { labelKey: "normalPathLabel" as const,  total: 30.80, inami: 24.55, patNonBim: 6.25, patBim: 2.50 },
-    { labelKey: "seriousPathLabel" as const, total: 38.16, inami: 31.91, patNonBim: 6.25, patBim: 2.50 },
+    { labelKey: "normalPathLabel" as const,  total: 31.64, inami: 25.39, patNonBim: 6.25, patBim: 2.50 },
+    { labelKey: "ePathLabel" as const,       total: 31.64, inami: 26.14, patNonBim: 5.50, patBim: 2.00 },
+    { labelKey: "seriousPathLabel" as const, total: 31.64, inami: 27.76, patNonBim: 3.88, patBim: 1.38 },
   ],
   home: [
-    { labelKey: "normalPathLabel" as const,  total: 33.88, inami: 27.63, patNonBim: 6.25, patBim: 2.50 },
-    { labelKey: "seriousPathLabel" as const, total: 41.24, inami: 34.99, patNonBim: 6.25, patBim: 2.50 },
+    { labelKey: "normalPathLabel" as const,  total: 34.81, inami: 28.56, patNonBim: 6.25, patBim: 2.50 },
+    { labelKey: "ePathLabel" as const,       total: 34.81, inami: 29.31, patNonBim: 5.50, patBim: 2.00 },
+    { labelKey: "seriousPathLabel" as const, total: 34.81, inami: 30.93, patNonBim: 3.88, patBim: 1.38 },
   ],
 };
 
 const NON_CONV = {
-  cabinet: { total: 35, inami: 18, patient: 17 },
+  cabinet: { total: 35, inami: 19, patient: 16 },
   home:    { total: 38, inami: 21, patient: 17 },
 };
 
@@ -396,7 +405,7 @@ export function HonorairesPageContent() {
                 </div>
                 {/* Non-conventionné */}
                 <div className="rounded-2xl p-5 text-center border-2 border-amber-200 bg-amber-50">
-                  <div className="text-4xl font-extrabold mb-1 text-amber-700">~17 €</div>
+                  <div className="text-4xl font-extrabold mb-1 text-amber-700">~16 €</div>
                   <div className="text-xs font-semibold uppercase tracking-wider mb-2 text-amber-500">{ui.perSession}</div>
                   <div className="text-xs text-neutral-600 font-medium">{ui.nonConvTitle}</div>
                   <div className="text-xs text-neutral-400 mt-1">{ui.estimateNote}</div>
@@ -477,7 +486,7 @@ export function HonorairesPageContent() {
                 </div>
 
                 {/* Session cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {CONV[convTab].map((row, i) => (
                     <FeeCard
                       key={i}
@@ -491,11 +500,15 @@ export function HonorairesPageContent() {
                   ))}
                 </div>
 
-                {/* Fa / Fb notes */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Fa / E / Fb notes */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-100 rounded-xl">
                     <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
                     <p className="text-xs text-blue-700 leading-relaxed">{ui.faNote}</p>
+                  </div>
+                  <div className="flex items-start gap-3 p-4 bg-teal-50 border border-teal-100 rounded-xl">
+                    <Info className="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-teal-700 leading-relaxed">{ui.eNote}</p>
                   </div>
                   <div className="flex items-start gap-3 p-4 bg-purple-50 border border-purple-100 rounded-xl">
                     <Info className="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" />
@@ -605,6 +618,12 @@ export function HonorairesPageContent() {
                 </div>
                 <h3 className="font-bold text-neutral-900 text-sm">{ui.bimTitle}</h3>
                 <p className="text-xs text-neutral-500 leading-relaxed">{ui.bimText}</p>
+                <div className="mt-2 p-3 bg-blue-50 border border-blue-100 rounded-xl">
+                  <p className="text-xs text-blue-700 leading-relaxed font-medium">{ui.bimHow}</p>
+                </div>
+                <div className="mt-2 p-3 bg-amber-50 border border-amber-200 rounded-xl">
+                  <p className="text-xs text-amber-800 leading-relaxed font-medium">{ui.bimNonConv}</p>
+                </div>
               </div>
               {/* Supplementary */}
               <div className="bg-white rounded-2xl border border-neutral-200 p-6 space-y-3">

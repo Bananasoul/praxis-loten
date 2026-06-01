@@ -83,9 +83,16 @@ const THERAPISTS = [
     phone: "+32 471 76 56 83",
     booking: [
       { type: "whatsapp" as const, label: "WhatsApp", href: "https://wa.me/32471765683", primary: true },
-      { type: "email" as const, label: "", emailEnc: "ZmFiaWVubmVkb3JtYW5uQGdtYWlsLmNvbQ==", href: "#", primary: false },
     ],
-    note: "Lun, Mar & Jeu : 12h30–16h",
+    note: {
+      de: "Mo, Di & Do: 12:30–16:00",
+      fr: "Lun, Mar & Jeu : 12h30–16h",
+      en: "Mon, Tue & Thu: 12:30–4:00 PM",
+      nl: "Ma, Di & Do: 12:30–16:00",
+      tr: "Pzt, Sal & Per: 12:30–16:00",
+      ar: "الإثنين، الثلاثاء والخميس: 12:30–16:00",
+      pl: "Pon, Wt & Czw: 12:30–16:00",
+    } as Record<LangKey, string>,
     convention: null,
   },
   {
@@ -609,12 +616,16 @@ export function TerminPageContent() {
                         )}
 
                         {/* Note if any */}
-                        {therapist.note && (
-                          <div className="flex items-center gap-2 mb-4 text-xs text-amber-300/80 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-2">
-                            <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                            {therapist.note}
-                          </div>
-                        )}
+                        {(() => {
+                          const n = (therapist as { note?: Record<LangKey, string> | null }).note;
+                          if (!n) return null;
+                          return (
+                            <div className="flex items-center gap-2 mb-4 text-xs text-amber-300/80 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-2">
+                              <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+                              {n[lang] ?? n.fr}
+                            </div>
+                          );
+                        })()}
 
                         {/* View profile link */}
                         <Link

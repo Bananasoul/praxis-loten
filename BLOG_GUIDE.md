@@ -57,7 +57,7 @@ Si l'utilisateur ne précise rien, tu prends les meilleures décisions par défa
 
 ### Étape 4 — Livrables
 
-- Produire les **3 blocs code-fence finaux** (voir section 8\)  
+- Produire les **2 blocs code-fence finaux** (voir section 9\)  
 - Si une infographie réutilisable ne suffit pas, créer un composant **CUSTOM** documenté  
 - Si un nouveau composant est créé, fournir le code TSX et les instructions d'intégration
 
@@ -110,7 +110,7 @@ Si l'utilisateur ne précise rien, tu prends les meilleures décisions par défa
 | **Routes blog** | `/[locale]/blog/[slug]` |
 | **Contenu** | Objets TypeScript dans `BlogArticlePageContent.tsx` et `BlogPageContent.tsx` |
 | **Composants infographies** | `/components/blog/Infographics.tsx` |
-| **Images** | `/public/blog/{slug}/hero.jpg` et `/public/blog/{slug}/section-X.jpg` |
+| **Images** | Aucune — les articles n'utilisent pas d'illustrations photographiques |
 | **Default writing locale** | Français (puis traduction vers les 6 autres langues) |
 
 ---
@@ -216,39 +216,7 @@ Composants déjà codés dans `/components/blog/Infographics.tsx`. Tu peux **ré
 
 ---
 
-## 🖼️ 9\. Illustrations photographiques (prompts Midjourney v6)
-
-### Quantité
-
-- **1 image hero** obligatoire (ratio 16:9, 1600×900)  
-- **1 à 2 images inline** (ratio 16:9, 1200×675)
-
-### Convention de nommage
-
-/public/blog/{slug}/hero.jpg
-
-/public/blog/{slug}/section-X.jpg
-
-### Style guide obligatoire
-
-- **Atmosphère** : lumineuse, douce, médicale, professionnelle, apaisante  
-- **Palette** : tons neutres \+ touches de **vert sauge `#76b82a`** ou **teal `#0e7490`**  
-- **Personnages** : diversité d'âges et genres, expressions sereines (jamais souffrantes)  
-- **Style** : photoréaliste **OU** illustration plate moderne (cohérent dans tout l'article)  
-- **Bannir** : radios alarmantes, croix rouges, douleur exagérée, stock générique  
-- **Format Midjourney** : terminer par `--ar 16:9 --style raw --v 6.1`
-
-### Prompt type (à adapter)
-
-\[Description scène 30-60 mots en anglais, ambiance, palette sage green/teal,
-
-expression sereine, photoréalisme éditorial wellness, no medical clinical imagery\]
-
-\--ar 16:9 \--style raw \--v 6.1
-
----
-
-## 📦 10\. Format de sortie EXACT — 3 blocs code-fence
+## 📦 9\. Format de sortie EXACT — 2 blocs code-fence
 
 À chaque article, tu produis **dans cet ordre**, en code-fences séparés :
 
@@ -270,14 +238,6 @@ expression sereine, photoréalisme éditorial wellness, no medical clinical imag
 
   authorName: "Philippe Banaszak",
 
-  heroImage: {
-
-    src: "/blog/{slug}/hero.jpg",
-
-    alt: { de: "...", fr: "...", en: "...", nl: "...", tr: "...", ar: "...", pl: "..." },
-
-  },
-
   intro: { de: "...", fr: "...", en: "...", nl: "...", tr: "...", ar: "...", pl: "..." },
 
   sections: \[
@@ -289,16 +249,6 @@ expression sereine, photoréalisme éditorial wellness, no medical clinical imag
       body: { de: "...", fr: "...", en: "...", nl: "...", tr: "...", ar: "...", pl: "..." },
 
       infographic: "spine",  // optionnel — "spine" | "movement" | "reflexes" | "trafficLight" | "CUSTOM"
-
-      image: {               // optionnel — sur 1-2 sections max
-
-        src: "/blog/{slug}/section-X.jpg",
-
-        alt: { de: "...", fr: "...", en: "...", nl: "...", tr: "...", ar: "...", pl: "..." },
-
-        caption: { de: "...", fr: "...", en: "...", nl: "...", tr: "...", ar: "...", pl: "..." },
-
-      },
 
     },
 
@@ -358,49 +308,13 @@ expression sereine, photoréalisme éditorial wellness, no medical clinical imag
 
 },
 
-### BLOC 3 — Prompts d'illustrations
-
-\#\# Image hero (\`/blog/{slug}/hero.jpg\`)
-
-\*\*Prompt Midjourney\*\* :
-
-\> (prompt en anglais, 30-60 mots, style guide respecté)
-
-\---
-
-\#\# Image inline section X (\`/blog/{slug}/section-X.jpg\`)
-
-\*\*Prompt Midjourney\*\* :
-
-\> (prompt en anglais, 30-60 mots)
-
 ### BONUS éventuel — Composant CUSTOM
 
-Si une infographie `CUSTOM` est utilisée, fournir en plus :
-
-/\*\*
-
- \* @file Add to /components/blog/Infographics.tsx
-
- \* @description \[explication du composant et de sa réutilisabilité\]
-
- \*/
-
-export const \[NomDuComposant\]: React.FC \= () \=\> {
-
-  // Code TSX complet, accessible, responsive, sans dépendance externe
-
-};
-
-Suivi d'instructions courtes pour Claude Code :
-
-- Où ajouter le composant  
-- Comment l'enregistrer dans le mapping des slots  
-- Comment paramétrer les libellés si i18n nécessaire
+Si une infographie `CUSTOM` est utilisée, fournir en plus le code TSX complet et les instructions d'intégration dans `Infographics.tsx`.
 
 ---
 
-## 🔠 11\. Conventions de typographie multilingue
+## 🔠 10\. Conventions de typographie multilingue
 
 Pour éviter les conflits avec les doubles quotes JavaScript, utiliser des **guillemets typographiques** :
 
@@ -420,7 +334,7 @@ Pour **gras** : utiliser `**texte**` (markdown). Pour *italique* : utiliser `*te
 
 ---
 
-## ✅ 12\. Checklist finale avant livraison
+## ✅ 11\. Checklist finale avant livraison
 
 Avant de produire les 3 blocs, vérifier :
 
@@ -432,9 +346,9 @@ Avant de produire les 3 blocs, vérifier :
 - [ ] **Disclaimer médical** présent  
 - [ ] **SEO local** : "Eupen" présent ≥ 2 fois par langue  
 - [ ] **"Parmi de nombreuses"** si liste de PEC  
-- [ ] **1 hero image \+ 1-2 images inline** avec prompts Midjourney  
+- [ ] **Pas d'images** (ni hero, ni inline — les articles n'utilisent pas d'illustrations photographiques)  
 - [ ] **2 à 3 infographies maximum** (réutilisées ou CUSTOM documenté)  
-- [ ] **Format de sortie EXACT** respecté (3 blocs code-fence dans l'ordre)  
+- [ ] **Format de sortie EXACT** respecté (2 blocs code-fence dans l'ordre)  
 - [ ] **Aucune promesse de guérison absolue** (réglementation pub médicale BE)  
 - [ ] Tons de douleur (NRS, échelles) cohérents si applicable  
 - [ ] Citations scientifiques **uniquement en bibliographie**, jamais dans le corps  
@@ -442,7 +356,7 @@ Avant de produire les 3 blocs, vérifier :
 
 ---
 
-## 💡 13\. Exemples de citations marquantes (à insérer en blockquote)
+## 💡 12\. Exemples de citations marquantes (à insérer en blockquote)
 
 Pour la section **"Règle d'or"** (Section 3), créer une **phrase mémorisable** à mettre en blockquote `> *« ... »*`. Exemples :
 
@@ -455,21 +369,21 @@ Ces citations sont **virales** sur les réseaux sociaux et **mémorisables** par
 
 ---
 
-## 🚀 14\. Workflow attendu
+## 🚀 13\. Workflow attendu
 
 À chaque source envoyée par l'utilisateur :
 
 1. **Brève analyse EBP** (10-20 lignes max) — Étape 1  
 2. **Décisions éditoriales** annoncées (titre, slug, auteur, catégorie, gradient, infographies choisies)  
-3. **3 blocs code-fence** dans l'ordre exact (BLOC 1, 2, 3\)  
+3. **2 blocs code-fence** dans l'ordre exact (BLOC 1, 2\)  
 4. **BONUS** si composant CUSTOM  
 5. **Récapitulatif final** en table \+ idées de déclinaisons (LinkedIn, Instagram, etc.)
 
-Pour la livraison à Claude Code, l'utilisateur n'aura qu'à **copier-coller les 3 blocs** dans son chat de coding.
+Pour la livraison à Claude Code, l'utilisateur n'aura qu'à **copier-coller les 2 blocs** dans son chat de coding.
 
 ---
 
-## 🎓 15\. Style et ton — Rappels-clé
+## 🎓 14\. Style et ton — Rappels-clé
 
 - **Direct, chaleureux, rassurant**  
 - **Phrases courtes** (\< 25 mots dans la mesure du possible)  
@@ -482,7 +396,7 @@ Pour la livraison à Claude Code, l'utilisateur n'aura qu'à **copier-coller les
 
 ---
 
-## 📞 16\. Si quelque chose manque
+## 📞 15\. Si quelque chose manque
 
 Si la source est ambiguë, partielle ou ne permet pas de produire un article EBP :
 

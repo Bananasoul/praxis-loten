@@ -80,7 +80,15 @@ const TEAM = [
     languages: ["Français", "Deutsch", "English"],
     booking: { label: "WhatsApp", href: "https://wa.me/32471765683" },
     phone: "+32 471 76 56 83",
-    note: "Lun, Mar & Jeu : 12h30–16h",
+    note: {
+      de: "Mo, Di & Do: 12:30–16:00",
+      fr: "Lun, Mar & Jeu : 12h30–16h",
+      en: "Mon, Tue & Thu: 12:30–4:00 PM",
+      nl: "Ma, Di & Do: 12:30–16:00",
+      tr: "Pzt, Sal & Per: 12:30–16:00",
+      ar: "الإثنين، الثلاثاء والخميس: 12:30–16:00",
+      pl: "Pon, Wt & Czw: 12:30–16:00",
+    } as Record<string, string>,
     bio: {
       de: "Spezialistin für Lymphdrainage nach O. Leduc und Kiefergelenkstherapie (CMD). Mehrere Spezialisierungen: Kiefergelenk nach L. Pitance, R. Giop, und Th. Gouzland (2025). Bachelor & Master mit Auszeichnung.",
       fr: "Spécialiste du drainage lymphatique selon O. Leduc et de la thérapie de l'articulation temporo-mandibulaire (ATM/CMD). Plusieurs spécialisations : ATM selon L. Pitance, R. Giop, et Th. Gouzland (2025). Bachelor & Master avec distinction.",
@@ -271,11 +279,15 @@ export function TeamPageContent() {
                   </p>
 
                   {/* Quote */}
-                  {member.note && (
-                    <blockquote className="border-l-2 border-[#76b82a] pl-3 mb-4">
-                      <p className="text-xs text-neutral-500 italic leading-relaxed">{member.note}</p>
-                    </blockquote>
-                  )}
+                  {(() => {
+                    const n = member.note as Record<string, string> | null;
+                    if (!n) return null;
+                    return (
+                      <blockquote className="border-l-2 border-[#76b82a] pl-3 mb-4">
+                        <p className="text-xs text-neutral-500 italic leading-relaxed">{n[lang] ?? n.fr}</p>
+                      </blockquote>
+                    );
+                  })()}
 
                   {/* Parcours */}
                   <div className="mb-5">
@@ -302,12 +314,16 @@ export function TeamPageContent() {
                   </div>
 
                   {/* Note (e.g., Fabienne's hours) */}
-                  {"note" in member && member.note && (
-                    <div className="flex items-center gap-1.5 text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5 mb-4">
-                      <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                      {member.note}
-                    </div>
-                  )}
+                  {(() => {
+                    const n = member.note as Record<string, string> | null;
+                    if (!n) return null;
+                    return (
+                      <div className="flex items-center gap-1.5 text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5 mb-4">
+                        <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+                        {n[lang] ?? n.fr}
+                      </div>
+                    );
+                  })()}
 
                   {/* View profile link */}
                   <Link

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import GA4Events from "@/components/ui/GA4Events";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +19,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Praxis Loten",
   description: "Physiotherapy & Rehabilitation in Eupen",
+  verification: {
+    google: "EOgkUmoMdDS7N1s6dK4NdxrAmvzX38HcnBkVi7ljGi8",
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +33,7 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-[#fafafa] text-neutral-900">
         {children}
+        <GA4Events />
       </body>
       <GoogleAnalytics gaId="G-T94F58H1XV" />
     </html>

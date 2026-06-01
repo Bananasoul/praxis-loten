@@ -137,7 +137,7 @@ const THERAPISTS: Therapist[] = [
       { year: "2023", institution: "Kiné Form", title: "Articulation Temporo-Mandibulaire selon R. Giop" },
       { year: "2025", institution: "Kymo Liège", title: "Rééducation Maxillo-Faciale: Chirurgie orthognatique & apnée du sommeil (Th. Gouzland)" },
     ],
-    booking: { phone: "+32471765683", whatsapp: "https://wa.me/32471765683", emailEnc: "ZmFiaWVubmVkb3JtYW5uQGdtYWlsLmNvbQ==" },
+    booking: { phone: "+32471765683", whatsapp: "https://wa.me/32471765683" },
     quote: null,
   },
   {

@@ -279,6 +279,48 @@ export const ARTICLES = [
     },
     tags: { de: ["BFR", "Sport", "Rehabilitation", "Kinesport"], fr: ["BFR", "Sport", "Rééducation", "Kinesport"], en: ["BFR", "Sport", "Rehabilitation", "Kinesport"], nl: ["BFR", "Sport", "Revalidatie", "Kinesport"], tr: ["BFR", "Spor", "Rehabilitasyon", "Kinesport"], ar: ["BFR", "رياضة", "تأهيل", "Kinesport"], pl: ["BFR", "Sport", "Rehabilitacja", "Kinesport"] },
   },
+  {
+  slug: "montre-connectee-douleur",
+  date: "2026-05-23",
+  readMin: 6,
+  category: {
+    de: "Therapie & Technologie",
+    fr: "Th\u00e9rapie & Technologie",
+    en: "Therapy & Technology",
+    nl: "Therapie & Technologie",
+    tr: "Terapi & Teknoloji",
+    ar: "\u0627\u0644\u0639\u0644\u0627\u062c \u0648\u0627\u0644\u062a\u0643\u0646\u0648\u0644\u0648\u062c\u064a\u0627",
+    pl: "Terapia & Technologia",
+  },
+  color: "from-[#0e7490] to-[#155e75]",
+  title: {
+    de: "Smartwatch und Schmerz \u2014 Was Ihre Uhr wirklich f\u00fcr Sie tun kann",
+    fr: "Montre connect\u00e9e et douleur \u2014 Ce que votre montre peut vraiment faire pour vous",
+    en: "Smartwatch and Pain \u2014 What Your Watch Can Really Do for You",
+    nl: "Smartwatch en pijn \u2014 Wat uw horloge echt voor u kan doen",
+    tr: "Ak\u0131ll\u0131 saat ve a\u011fr\u0131 \u2014 Saatiniz sizin i\u00e7in ger\u00e7ekten ne yapabilir?",
+    ar: "\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u0630\u0643\u064a\u0629 \u0648\u0627\u0644\u0623\u0644\u0645 \u2014 \u0645\u0627 \u0627\u0644\u0630\u064a \u064a\u0645\u0643\u0646 \u0623\u0646 \u062a\u0641\u0639\u0644\u0647 \u0633\u0627\u0639\u062a\u0643 \u062d\u0642\u0627\u064b \u0645\u0646 \u0623\u062c\u0644\u0643",
+    pl: "Smartwatch a b\u00f3l \u2014 Co zegarek naprawd\u0119 mo\u017ce dla Ciebie zrobi\u0107",
+  },
+  excerpt: {
+    de: "Kann Ihre Apple Watch oder Garmin bei chronischen Schmerzen helfen? Die Wissenschaft sagt: Ja \u2014 aber nicht so, wie Sie denken. Erfahren Sie, wie Sie Ihre Smartwatch-Daten richtig nutzen.",
+    fr: "Votre Apple Watch ou Garmin peut-elle aider en cas de douleurs chroniques ? La science dit : oui \u2014 mais pas comme vous le pensez. D\u00e9couvrez comment bien utiliser les donn\u00e9es de votre montre.",
+    en: "Can your Apple Watch or Garmin help with chronic pain? Science says yes \u2014 but not how you think. Learn how to properly use your smartwatch data.",
+    nl: "Kan uw Apple Watch of Garmin helpen bij chronische pijn? De wetenschap zegt: ja \u2014 maar niet zoals u denkt. Ontdek hoe u uw smartwatchgegevens goed benut.",
+    tr: "Apple Watch veya Garmin'iniz kronik a\u011fr\u0131larda yard\u0131mc\u0131 olabilir mi? Bilim evet diyor \u2014 ama d\u00fc\u015f\u00fcnd\u00fc\u011f\u00fcn\u00fcz gibi de\u011fil. Ak\u0131ll\u0131 saat verilerinizi nas\u0131l do\u011fru kullanaca\u011f\u0131n\u0131z\u0131 \u00f6\u011frenin.",
+    ar: "\u0647\u0644 \u064a\u0645\u0643\u0646 \u0644\u0633\u0627\u0639\u0629 Apple Watch \u0623\u0648 Garmin \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629 \u0641\u064a \u0627\u0644\u0623\u0644\u0645 \u0627\u0644\u0645\u0632\u0645\u0646\u061f \u0627\u0644\u0639\u0644\u0645 \u064a\u0642\u0648\u0644 \u0646\u0639\u0645 \u2014 \u0644\u0643\u0646 \u0644\u064a\u0633 \u0643\u0645\u0627 \u062a\u0638\u0646\u0648\u0646. \u0627\u0643\u062a\u0634\u0641\u0648\u0627 \u0643\u064a\u0641 \u062a\u0633\u062a\u062e\u062f\u0645\u0648\u0646 \u0628\u064a\u0627\u0646\u0627\u062a \u0633\u0627\u0639\u062a\u0643\u0645 \u0628\u0634\u0643\u0644 \u0635\u062d\u064a\u062d.",
+    pl: "Czy Apple Watch lub Garmin mo\u017ce pom\u00f3c przy b\u00f3lu przewlek\u0142ym? Nauka m\u00f3wi: tak \u2014 ale nie tak, jak my\u015blisz. Dowiedz si\u0119, jak prawid\u0142owo wykorzysta\u0107 dane ze smartwatcha.",
+  },
+  tags: {
+    de: ["Smartwatch", "Chronische Schmerzen", "Bewegung", "Rehabilitation"],
+    fr: ["Montre connect\u00e9e", "Douleurs chroniques", "Mouvement", "R\u00e9\u00e9ducation"],
+    en: ["Smartwatch", "Chronic Pain", "Movement", "Rehabilitation"],
+    nl: ["Smartwatch", "Chronische pijn", "Beweging", "Revalidatie"],
+    tr: ["Ak\u0131ll\u0131 saat", "Kronik a\u011fr\u0131", "Hareket", "Rehabilitasyon"],
+    ar: ["\u0633\u0627\u0639\u0629 \u0630\u0643\u064a\u0629", "\u0623\u0644\u0645 \u0645\u0632\u0645\u0646", "\u062d\u0631\u0643\u0629", "\u0625\u0639\u0627\u062f\u0629 \u062a\u0623\u0647\u064a\u0644"],
+    pl: ["Smartwatch", "B\u00f3l przewlek\u0142y", "Ruch", "Rehabilitacja"],
+  },
+},
 ];
 
 const UI_BLOG: Record<LangKey, { title: string; subtitle: string; readMin: string; readMore: string; featured: string; all: string; filterBy: string }> = {

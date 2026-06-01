@@ -19,6 +19,7 @@ const VALID_SLUGS = [
   "kiefergelenk-cmd-symptome",
   "osteopathie-kinesitherapie-unterschied",
   "bfr-training-rehabilitation",
+  "montre-connectee-douleur",
 ];
 
 export default async function BlogArticlePage({
