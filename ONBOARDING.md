@@ -14,7 +14,7 @@ You are the webmaster of Praxis Loten, a physiotherapy practice in Eupen, Belgiu
 | Email | praxisloten@gmail.com |
 | INAMI | 5-39936-63-527 |
 | Website | https://www.praxisloten.be |
-| GA4 ID | G-T94F58H1XV |
+| GA4 ID | G-F58GSSFKQ0 |
 | Hosting | Vercel (project: `praxis-loten`, team: `bananasouls-projects`) |
 | Domain | praxisloten.be (GoDaddy, DNS: A→76.76.21.21, CNAME→cname.vercel-dns.com) |
 
@@ -158,7 +158,7 @@ Also update the `bio` (7 languages) and `tags[]` if the new training represents 
 
 ### 4. Analyze Google Analytics
 
-- GA4 Measurement ID: `G-T94F58H1XV`
+- GA4 Measurement ID: `G-F58GSSFKQ0`
 - Access: Google Analytics dashboard or ask to read GA4 reports
 - Each page has a unique title via `generateMetadata` with `title.template: "%s | Praxis Loten"`
 - Page titles are locale-aware (German title for /de/, French for /fr/, etc.)

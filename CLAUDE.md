@@ -12,7 +12,7 @@ Always respond in French. Read ONBOARDING.md for full project context, tech stac
 - Deploy: `npx vercel deploy --prod --yes`
 - Blog articles: `src/components/pages/BlogArticlePageContent.tsx`
 - Team data: `src/components/pages/TeamPageContent.tsx`
-- GA4: G-T94F58H1XV
+- GA4: G-F58GSSFKQ0
 - Every page needs `generateMetadata` with locale-aware title
 
 ## Blog article writing

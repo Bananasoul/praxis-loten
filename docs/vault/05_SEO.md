@@ -30,7 +30,7 @@ Chaque page a un `generateMetadata` avec :
 
 | Champ | Valeur |
 |-------|--------|
-| Measurement ID | `G-T94F58H1XV` |
+| Measurement ID | `G-F58GSSFKQ0` |
 | Implementation | `@next/third-parties/google` → `<GoogleAnalytics>` dans `src/app/layout.tsx` |
 
 ## Schema.org

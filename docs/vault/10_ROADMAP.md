@@ -22,7 +22,7 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 | renderMarkdown avance | 2026-05-19 | Support listes a puces, listes numerotees, blockquotes |
 | 12 infographies reutilisables | 2025-2026 | Composants React dans Infographics.tsx |
 | Pages legales RGPD | 2025 | Legal, Privacy, Cookies — 7 langues |
-| GA4 integre | 2025 | G-T94F58H1XV via @next/third-parties |
+| GA4 integre | 2025 | G-F58GSSFKQ0 via @next/third-parties |
 | Deploiement Vercel | 2025 | DNS GoDaddy → Vercel, domaine praxisloten.be |
 | Vault Obsidian | 2026-05-20 | Memoire longitudinale du projet |
 | Sitemap.xml + robots.txt dynamiques | 2026-05 | `src/app/sitemap.ts` + `src/app/robots.ts` (next-intl, 7 langues) |
