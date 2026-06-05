@@ -108,6 +108,24 @@ function buildRedirects() {
     }
   }
 
+
+  // Legacy pre-revamp URLs (old site structure, still indexed by Google → were 404s)
+  const legacyServicePrefixes = ["/f\u00e4higkeiten-competences", "/f%C3%A4higkeiten-competences"];
+  for (const prefix of legacyServicePrefixes) {
+    for (const service of services) {
+      redirects.push({
+        source: `${prefix}/${service}`,
+        destination: `/de/leistungen/${service}`,
+        permanent: true,
+      });
+    }
+    redirects.push({
+      source: prefix,
+      destination: "/de/leistungen",
+      permanent: true,
+    });
+  }
+
   return redirects;
 }
 
