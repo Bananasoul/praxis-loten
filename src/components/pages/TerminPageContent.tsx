@@ -360,7 +360,7 @@ function BookingButton({ type, label, href, primary, emailEnc }: { type: string;
 
 export function TerminPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const isRtl = lang === "ar";
   const [selected, setSelected] = useState<string | null>(null);

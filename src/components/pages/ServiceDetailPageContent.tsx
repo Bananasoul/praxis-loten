@@ -515,7 +515,7 @@ const UI: Record<LangKey, {
 
 export function ServiceDetailPageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const service = SERVICES[slug];
 

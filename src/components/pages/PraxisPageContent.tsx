@@ -163,7 +163,7 @@ const SAT_HOURS: Record<LangKey, string> = {
 
 export function PraxisPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const isRtl = lang === "ar";
   const features = FEATURES[lang].map((f, i) => ({ ...f, Icon: FEATURE_ICONS[i] }));

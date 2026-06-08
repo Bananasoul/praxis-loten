@@ -227,7 +227,7 @@ const UI: Record<LangKey, {
 
 export function TherapistPageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
 
   const therapist = THERAPISTS.find((t) => t.slug === slug);
   const ui = UI[lang];

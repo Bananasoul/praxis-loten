@@ -23,6 +23,9 @@ const LOCALE_LABELS: Record<string, { flag: string; name: string }> = {
   tr: { flag: "🇹🇷", name: "Türkçe" },
   ar: { flag: "🇸🇦", name: "العربية" },
   pl: { flag: "🇵🇱", name: "Polski" },
+  uk: { flag: "🇺🇦", name: "Українська" },
+  es: { flag: "🇪🇸", name: "Español" },
+  ku: { flag: "☀️", name: "Kurdî" },
 };
 
 export function Header() {

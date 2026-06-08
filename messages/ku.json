@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Fizyoterapî û Rehabîlîtasyon li Eupenê",
+    "description": "Hevkarê we yê tenduristiyê li Eupenê. Terapiya destî, fizyoterapiya werzîşê, terapiya çenê, drenaja lîmfatîk. Rehabîlîtasyona piştî emeliyatê."
+  },
+  "nav": {
+    "home": "Serûpel",
+    "services": "Xizmet",
+    "team": "Tîma me",
+    "rehabilitation": "Rehabîlîtasyon",
+    "cabinet": "Kabîneya me",
+    "blog": "Blog",
+    "jobs": "Kar",
+    "honoraires": "Bihayên",
+    "appointment": "Randevû bigire",
+    "language": "Ziman"
+  },
+  "hero": {
+    "title1": "Pisporên we di Fizyoterapî",
+    "title2": "û Terapiya Destî de li Eupenê.",
+    "subtitle": "Rêbazên nûjen ên dermankirinê û lênihêrîna kesane ji bo vegera ewledar a jiyaneke rojane ya bê êş.",
+    "cta": "Randevû bigire",
+    "ctaSecondary": "Xizmetên me"
+  },
+  "stats": {
+    "therapists": "Terapîst",
+    "experience": "Sal ezmûn",
+    "experienceNote": "li seranserê tîmê",
+    "formations": "Perwerdehiyên pispor",
+    "googleRating": "Nirxandina Google",
+    "googleReviews": "nirxandinên Google",
+    "specialties": "Pisporî",
+    "patients": "Nexweşên kêfxweş"
+  },
+  "services": {
+    "sectionTitle": "Xizmetên me",
+    "sectionSubtitle": "Terapiyên me yên pispor ji bo rehabîlîtasyon û başiya we kifş bikin.",
+    "manualTherapy": {
+      "title": "Terapiya destî",
+      "description": "Dermankirina nexweşiyên masûlke û hestiyan. Nêzîkatiya biyopsîkososyal ji bo başbûneke berdewam.",
+      "link": "Bêtir fêr bibe"
+    },
+    "sportPhysio": {
+      "title": "Fizyoterapiya werzîşê",
+      "description": "Rehabîlîtasyon piştî birîndariyên werzîşê, pêşîlêgirtina birînan û baştirkirina performansê.",
+      "link": "Bêtir fêr bibe"
+    },
+    "jaw": {
+      "title": "Terapiya çenê (TMJ)",
+      "description": "Terapî ji bo aloziyên çenê, serêş, gêjbûn û disfonksiyona kranomandîbular.",
+      "link": "Bêtir fêr bibe"
+    },
+    "lymph": {
+      "title": "Drenaja lîmfatîk",
+      "description": "Masaja nerm ji bo kêmkirina werimê piştî emeliyatê, dermankirina tûmorê an birînên werzîşê.",
+      "link": "Bêtir fêr bibe"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Piştî emeliyata we",
+    "sectionSubtitle": "Em we vedigerînin tevgera bê êş.",
+    "hip": {
+      "title": "Protezê kalçê",
+      "description": "Rehabîlîtasyona bilez piştî proteza tam a kalçê bi plana dermankirinê ya kesane."
+    },
+    "knee": {
+      "title": "Protezê çokê",
+      "description": "Xurtkirin û livandina armanckirî ji bo başbûna çêtirîn piştî proteza çokê."
+    },
+    "acl": {
+      "title": "Nûavakirina ACL",
+      "description": "Rehabîlîtasyona gav bi gav piştî emeliyata ACL heta vegera werzîşê."
+    },
+    "shoulder": {
+      "title": "Emeliyata mil",
+      "description": "Vegerandina nerm a fonksiyona milî piştî destwerdana cerahî."
+    },
+    "cta": "Randevûya piştî emeliyatê",
+    "learnMore": "Bêtir fêr bibe",
+    "disclaimer": "Ev 4 yên herî gelemper in — em hemû rewşên ortopedîk ên ku fizyoterapî dixwazin derman dikin."
+  },
+  "team": {
+    "sectionTitle": "Tîma me",
+    "sectionSubtitle": "Terapîstên bi ezmûn ên ku ji bo tenduristiya we radibin.",
+    "viewProfile": "Profîlê bibîne",
+    "bookAppointment": "Randevû bigire",
+    "philippe": {
+      "role": "Terapîstê destî",
+      "quote": "Ji 2012an ve fizyoterapîst, her roj bi hêz im ku dermankirina herî bi qalîte û kesane pêşkêş bikim."
+    },
+    "felix": {
+      "role": "Fizyoterapîst û Osteopatî",
+      "quote": "Di 2021ê de mezûn bûm, min her dem xwest ku alîkariya kesên din bikim."
+    },
+    "fabienne": {
+      "role": "Drenaja lîmfatîk û TMJ",
+      "quote": "Ji 2013an ve fizyoterapîst, bi dilxwazî û dilsozî dixebitim."
+    },
+    "thom": {
+      "role": "Fizyoterapîstê werzîşê",
+      "quote": "Ji 2015an ve fizyoterapîst, her ezmûnê bi kar tînim ku bersivê bidim hêviyên we."
+    },
+    "loic": {
+      "role": "Fizyoterapîst û Osteopatî",
+      "quote": "Nû mezûn bûm û bi dil û can bi laşê mirov ve girêdayî me."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "Kabîneya me",
+    "sectionSubtitle": "Amûrên herî nûjen ji bo rehabîlîtasyona we.",
+    "equipment": "Manuthera 242 — maseya dermankirinê ya ji Fînlandayê hatî ji bo rehetiya herî zêde.",
+    "address": "Loten 1, B-4700 Eupen, Belçîka",
+    "hours": "Duş - În: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Şahidî",
+    "sectionSubtitle": "Nexweşên me çi li ser me dibêjin.",
+    "reviewCta": "Li ser Google Maps me binirxînin"
+  },
+  "cta": {
+    "title": "Amade ne ku bê êş bilivin?",
+    "subtitle": "Randevûya xwe ya serhêl bigirin an rasterast bi me re têkilî daynin.",
+    "button": "Randevû bigire",
+    "phone": "Telefon bike",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Kabîneya we ya fizyoterapî û rehabîlîtasyonê li Eupenê. Nêzîkatiyek mirovî û profesyonel ji bo tenduristiya we.",
+    "quickLinks": "Lînkên bilez",
+    "contact": "Têkilî",
+    "legal": "Agahiya qanûnî",
+    "privacy": "Polîtîkaya nepenîtiyê",
+    "impressum": "Agahiyên weşanê",
+    "cookies": "Polîtîkaya cookie",
+    "allRights": "Hemû maf parastî ne.",
+    "followUs": "Me bişopînin",
+    "getDirections": "Rê nîşan bide",
+    "hours": "Duş – În: 08:00 – 20:00\nŞem: bi randevû"
+  },
+  "common": {
+    "learnMore": "Bêtir fêr bibe",
+    "back": "Vegere",
+    "close": "Bigire",
+    "loading": "Bardibe...",
+    "email": "E-name",
+    "phone": "Telefon",
+    "address": "Navnîşan"
+  },
+  "bring": {
+    "title": "Çi bînin",
+    "prescription": "Recêteya bijîjkî",
+    "insurance": "Karta sîgorteya tenduristiyê",
+    "towel": "Destmaleke mezin",
+    "sportswear": "Cilên werzîşê yên rehet",
+    "id": "Karta nasnameyê"
+  },
+  "cancellation": {
+    "title": "Betalkirin",
+    "text": "24 saet berê. Her danişîna ku di vê demê de neyê betalkirin wê were hesibandin."
+  }
+}

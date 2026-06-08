@@ -341,7 +341,7 @@ function formatDate(dateStr: string, lang: LangKey) {
 
 export function BlogPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI_BLOG[lang];
   const isRtl = lang === "ar";
 

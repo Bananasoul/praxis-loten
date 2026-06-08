@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "title": "Praxis Loten — Fisioterapia y Rehabilitación en Eupen",
+    "description": "Su aliado de salud en Eupen. Terapia manual, fisioterapia deportiva, terapia de la mandíbula, drenaje linfático. Rehabilitación postoperatoria."
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "team": "Nuestro equipo",
+    "rehabilitation": "Rehabilitación",
+    "cabinet": "La consulta",
+    "blog": "Blog",
+    "jobs": "Empleo",
+    "honoraires": "Tarifas",
+    "appointment": "Pedir cita",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title1": "Sus expertos en Fisioterapia",
+    "title2": "y Terapia Manual en Eupen.",
+    "subtitle": "Métodos de tratamiento modernos y atención personalizada para un regreso seguro a una vida diaria sin dolor.",
+    "cta": "Pedir cita",
+    "ctaSecondary": "Nuestros servicios"
+  },
+  "stats": {
+    "therapists": "Terapeutas",
+    "experience": "Años de experiencia",
+    "experienceNote": "entre todos los terapeutas",
+    "formations": "Formaciones de posgrado",
+    "googleRating": "Valoración en Google",
+    "googleReviews": "reseñas en Google",
+    "specialties": "Especialidades",
+    "patients": "Pacientes satisfechos"
+  },
+  "services": {
+    "sectionTitle": "Nuestros servicios",
+    "sectionSubtitle": "Descubra nuestras terapias especializadas para su rehabilitación y bienestar.",
+    "manualTherapy": {
+      "title": "Terapia manual",
+      "description": "Tratamiento de trastornos musculoesqueléticos. Enfoque biopsicosocial para una recuperación duradera.",
+      "link": "Saber más"
+    },
+    "sportPhysio": {
+      "title": "Fisioterapia deportiva",
+      "description": "Rehabilitación tras lesiones deportivas, prevención de lesiones y mejora del rendimiento.",
+      "link": "Saber más"
+    },
+    "jaw": {
+      "title": "Terapia de la mandíbula (ATM)",
+      "description": "Terapia para trastornos de la mandíbula, dolores de cabeza, mareos y disfunción craneomandibular.",
+      "link": "Saber más"
+    },
+    "lymph": {
+      "title": "Drenaje linfático",
+      "description": "Masaje suave para reducir el edema tras cirugía, tratamiento oncológico o lesiones deportivas.",
+      "link": "Saber más"
+    }
+  },
+  "rehab": {
+    "sectionTitle": "Después de su operación",
+    "sectionSubtitle": "Le acompañamos de vuelta al movimiento sin dolor.",
+    "hip": {
+      "title": "Prótesis de cadera",
+      "description": "Rehabilitación acelerada tras prótesis total de cadera con plan de tratamiento personalizado."
+    },
+    "knee": {
+      "title": "Prótesis de rodilla",
+      "description": "Fortalecimiento y movilización específicos para una recuperación óptima tras la prótesis de rodilla."
+    },
+    "acl": {
+      "title": "Ligamento cruzado (LCA)",
+      "description": "Rehabilitación progresiva tras la cirugía del LCA hasta la vuelta al deporte."
+    },
+    "shoulder": {
+      "title": "Cirugía de hombro",
+      "description": "Restauración suave de la función del hombro tras la intervención quirúrgica."
+    },
+    "cta": "Cita postoperatoria",
+    "learnMore": "Saber más",
+    "disclaimer": "Estas 4 son las más frecuentes — tratamos todas las afecciones ortopédicas que requieren fisioterapia."
+  },
+  "team": {
+    "sectionTitle": "Nuestro equipo",
+    "sectionSubtitle": "Terapeutas con experiencia dedicados a su salud.",
+    "viewProfile": "Ver perfil",
+    "bookAppointment": "Reservar",
+    "philippe": {
+      "role": "Terapeuta manual",
+      "quote": "Fisioterapeuta desde 2012, motivado cada día por ofrecer el tratamiento más individualizado y de mayor calidad."
+    },
+    "felix": {
+      "role": "Fisioterapeuta y Osteopatía",
+      "quote": "Recién graduado en 2021, siempre he querido ayudar a los demás."
+    },
+    "fabienne": {
+      "role": "Drenaje linfático y ATM",
+      "quote": "Fisioterapeuta desde 2013, trabajando con pasión y dedicación."
+    },
+    "thom": {
+      "role": "Fisioterapeuta deportivo",
+      "quote": "Fisioterapeuta desde 2015, aprovechando cada experiencia para responder a sus expectativas."
+    },
+    "loic": {
+      "role": "Fisioterapeuta y Osteopatía",
+      "quote": "Recién graduado y apasionado por el cuerpo humano."
+    }
+  },
+  "cabinet": {
+    "sectionTitle": "La consulta",
+    "sectionSubtitle": "Equipamiento de última generación para su rehabilitación.",
+    "equipment": "Manuthera 242 — Camilla de tratamiento importada de Finlandia para máximo confort.",
+    "address": "Loten 1, B-4700 Eupen, Bélgica",
+    "hours": "Lun - Vie: 08:00 - 19:00"
+  },
+  "testimonials": {
+    "sectionTitle": "Testimonios",
+    "sectionSubtitle": "Lo que dicen nuestros pacientes.",
+    "reviewCta": "Valórenos en Google Maps"
+  },
+  "cta": {
+    "title": "¿Listo para moverse sin dolor?",
+    "subtitle": "Reserve su cita en línea o contáctenos directamente.",
+    "button": "Pedir cita",
+    "phone": "Llamar",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "description": "Su consulta de fisioterapia y rehabilitación en Eupen. Un enfoque humano y profesional de su salud.",
+    "quickLinks": "Enlaces rápidos",
+    "contact": "Contacto",
+    "legal": "Aviso legal",
+    "privacy": "Política de privacidad",
+    "impressum": "Información legal",
+    "cookies": "Política de cookies",
+    "allRights": "Todos los derechos reservados.",
+    "followUs": "Síganos",
+    "getDirections": "Cómo llegar",
+    "hours": "Lun – Vie: 08:00 – 20:00\nSáb: con cita previa"
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "back": "Volver",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "address": "Dirección"
+  },
+  "bring": {
+    "title": "Qué traer",
+    "prescription": "Prescripción médica",
+    "insurance": "Tarjeta de la mutua",
+    "towel": "Toalla grande",
+    "sportswear": "Ropa deportiva cómoda",
+    "id": "Documento de identidad"
+  },
+  "cancellation": {
+    "title": "Cancelación",
+    "text": "24 horas de antelación. Toda sesión no anulada en este plazo será facturada."
+  }
+}

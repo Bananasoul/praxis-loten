@@ -174,7 +174,7 @@ export function TeamPageContent() {
   const locale = useLocale() as LangKey;
   const t = useTranslations("team");
   const tNav = useTranslations("nav");
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const [members, setMembers] = useState(TEAM);
 
   useEffect(() => {

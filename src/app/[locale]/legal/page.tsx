@@ -244,7 +244,7 @@ export default async function LegalPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const lang = (Object.keys(CONTENT).includes(locale) ? locale : "fr") as LangKey;
+  const lang = (Object.keys(CONTENT).includes(locale) ? locale : "en") as LangKey;
   const c = CONTENT[lang];
   const isRtl = locale === "ar";
 

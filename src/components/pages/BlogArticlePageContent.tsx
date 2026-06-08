@@ -2050,7 +2050,7 @@ function renderInline(text: string): React.ReactNode {
 
 export function BlogArticlePageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const article = ARTICLES[slug];
 

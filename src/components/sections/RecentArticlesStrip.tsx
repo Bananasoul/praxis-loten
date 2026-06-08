@@ -20,7 +20,7 @@ const UI: Record<LangKey, { eyebrow: string; title: string; cta: string; readMin
 
 export function RecentArticlesStrip() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
 
   // Top 3 most recent articles

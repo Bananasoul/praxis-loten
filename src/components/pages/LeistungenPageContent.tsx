@@ -163,7 +163,7 @@ export function LeistungenPageContent() {
   const locale = useLocale() as LangKey;
   const t = useTranslations("services");
   const tNav = useTranslations("nav");
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
 
   const learnMore: Record<LangKey, string> = { de: "Mehr erfahren", fr: "En savoir plus", en: "Learn more", nl: "Meer info", tr: "Daha fazla", ar: "المزيد", pl: "Więcej" };
   const characteristics: Record<LangKey, string> = { de: "Merkmale", fr: "Caractéristiques", en: "Features", nl: "Kenmerken", tr: "Özellikler", ar: "المميزات", pl: "Cechy" };
