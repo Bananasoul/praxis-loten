@@ -168,13 +168,59 @@ const TEAM = [
   },
 ];
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+
+// Traductions additionnelles uk/es/ku (kurmandji à faire relire par un natif)
+const TEAM_EXTRA: Record<string, { role?: Record<string, string>; bio?: Record<string, string>; note?: Record<string, string> }> = {
+  philippe: {
+    role: { uk: "Ортопедична мануальна терапія", es: "Terapia Manual Ortopédica", ku: "Terapiya Destî ya Ortopedîk" },
+    bio: {
+      uk: "Спеціаліст з ортопедичної мануальної терапії, сертифікований IFOMPT. Випускник Haute École André Vésale (2008–2012), університетський сертифікат з мануальної терапії (CUTM) ULiège (2015–2017). Регулярне міжнародне підвищення кваліфікації (ECMT, IFOMPT Базель 2024).",
+      es: "Especialista en terapia manual ortopédica, certificado IFOMPT. Graduado en la Haute École André Vésale (2008–2012), Certificado Universitario en Terapia Manual (CUTM) ULiège (2015–2017). Formación continua internacional regular (ECMT, IFOMPT Basilea 2024).",
+      ku: "Pisporê terapiya destî ya ortopedîk, bi sertîfîkaya IFOMPT. Mezûnê Haute École André Vésale (2008–2012), Sertîfîkaya Zanîngehê ya Terapiya Destî (CUTM) ULiège (2015–2017). Perwerdehiya berdewam a navneteweyî (ECMT, IFOMPT Basel 2024)."
+    }
+  },
+  felix: {
+    role: { uk: "Загальна фізіотерапія, остеопатія (навчання)", es: "Fisioterapia general, Osteopatía (en formación)", ku: "Fizyoterapiya giştî, Osteopatî (di perwerdê de)" },
+    bio: {
+      uk: "Випускник Університету Льєжа (магістр 2021). Зараз навчається остеопатії. Загальна фізіотерапія з підходом, орієнтованим на пацієнта.",
+      es: "Graduado en la Universidad de Lieja (Máster 2021). Actualmente en formación de osteopatía. Fisioterapia general con enfoque centrado en el paciente.",
+      ku: "Mezûnê Zanîngeha Liègeê (Master 2021). Niha di perwerdeya osteopatiyê de ye. Fizyoterapiya giştî bi nêzîkatiya li ser nexweş navendî."
+    }
+  },
+  fabienne: {
+    role: { uk: "Лімфодренаж, скронево-нижньощелепний суглоб", es: "Drenaje linfático, Articulación temporomandibular", ku: "Drenaja lîmfatîk, Girêka çene-temporal" },
+    bio: {
+      uk: "Спеціалістка з лімфодренажу (метод O. Leduc) та терапії скронево-нижньощелепного суглоба (CMD). Кілька спеціалізацій: СНЩС за L. Pitance, R. Giop та Th. Gouzland (2025). Бакалавр і магістр з відзнакою.",
+      es: "Especialista en drenaje linfático (método O. Leduc) y terapia de la articulación temporomandibular (ATM/CMD). Varias especializaciones: ATM según L. Pitance, R. Giop y Th. Gouzland (2025). Grado y Máster con distinción.",
+      ku: "Pispora drenaja lîmfatîk (rêbaza O. Leduc) û terapiya girêka çenê (CMD). Çend pisporî: girêka çenê li gorî L. Pitance, R. Giop û Th. Gouzland (2025). Bachelor û Master bi cudahî."
+    },
+    note: { uk: "Пн, Вт і Чт: 12:30–16:00", es: "Lun, Mar y Jue: 12:30–16:00", ku: "Duş, Sêş & Pênc: 12:30–16:00" }
+  },
+  thom: {
+    role: { uk: "Спортивна фізіотерапія, Running Clinic, BFR", es: "Fisioterapia deportiva, Running Clinic, BFR", ku: "Fizyoterapiya werzîşê, Running Clinic, BFR" },
+    bio: {
+      uk: "Експерт зі спортивної фізіотерапії, спеціалізується на бігових травмах (La Clinique du Coureur) та тренуванні з обмеженням кровотоку (BFR/Kinesport). Працює зі спортсменами в кабінеті та клубі.",
+      es: "Experto en fisioterapia deportiva, especializado en lesiones de carrera (La Clinique du Coureur) y entrenamiento con restricción del flujo sanguíneo (BFR/Kinesport). Atiende a deportistas en consulta y en clubes.",
+      ku: "Pisporê fizyoterapiya werzîşê, di birînên bazdanê de (La Clinique du Coureur) û perwerdeya bi sînorkirina herikîna xwînê (BFR/Kinesport) pispor. Werzîşvanan li kabîneyê û li klûban derman dike."
+    }
+  },
+  loic: {
+    role: { uk: "Загальна фізіотерапія, остеопатія (навчання)", es: "Fisioterapia general, Osteopatía (en formación)", ku: "Fizyoterapiya giştî, Osteopatî (di perwerdê de)" },
+    bio: {
+      uk: "Нещодавно дипломований фізіотерапевт Університету Льєжа (магістр 2025). Зараз навчається остеопатії. Відданий і вмотивований до реабілітації, орієнтованої на пацієнта.",
+      es: "Fisioterapeuta recién titulado por la Universidad de Lieja (Máster 2025). Actualmente en formación de osteopatía. Comprometido y motivado con una rehabilitación centrada en el paciente.",
+      ku: "Fizyoterapîstê nû mezûn ê Zanîngeha Liègeê (Master 2025). Niha di perwerdeya osteopatiyê de ye. Ji bo rehabîlîtasyona li ser nexweş navendî bi dil û can e."
+    }
+  },
+};
+
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 export function TeamPageContent() {
   const locale = useLocale() as LangKey;
   const t = useTranslations("team");
   const tNav = useTranslations("nav");
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const [members, setMembers] = useState(TEAM);
 
   useEffect(() => {
@@ -251,7 +297,7 @@ export function TeamPageContent() {
                     <div className="flex-1 min-w-0">
                       <h2 className="text-xl font-extrabold text-white leading-tight">{member.name}</h2>
                       <p className="text-white/80 text-sm mt-0.5 leading-tight">
-                        {(member.role as Record<string, string>)[lang] ?? member.role.de}
+                        {TEAM_EXTRA[member.key]?.role?.[lang] ?? (member.role as Record<string, string>)[lang] ?? member.role.de}
                       </p>
                     </div>
                     {member.convention && (
@@ -275,7 +321,7 @@ export function TeamPageContent() {
 
                   {/* Bio */}
                   <p className="text-neutral-600 text-sm leading-relaxed mb-4">
-                    {(member.bio as Record<string, string>)[lang] ?? member.bio.de}
+                    {TEAM_EXTRA[member.key]?.bio?.[lang] ?? (member.bio as Record<string, string>)[lang] ?? member.bio.de}
                   </p>
 
                   {/* Quote */}
@@ -284,7 +330,7 @@ export function TeamPageContent() {
                     if (!n) return null;
                     return (
                       <blockquote className="border-l-2 border-[#76b82a] pl-3 mb-4">
-                        <p className="text-xs text-neutral-500 italic leading-relaxed">{n[lang] ?? n.fr}</p>
+                        <p className="text-xs text-neutral-500 italic leading-relaxed">{TEAM_EXTRA[member.key]?.note?.[lang] ?? n[lang] ?? n.fr}</p>
                       </blockquote>
                     );
                   })()}
@@ -293,7 +339,7 @@ export function TeamPageContent() {
                   <div className="mb-5">
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">
                       <GraduationCap className="w-3.5 h-3.5" />
-                      {({de:"Laufbahn",fr:"Parcours",en:"Background",nl:"Opleiding",tr:"Eğitim",ar:"المسار",pl:"Wykształcenie"} as Record<string,string>)[lang]}
+                      {({de:"Laufbahn",fr:"Parcours",en:"Background",nl:"Opleiding",tr:"Eğitim",ar:"المسار",pl:"Wykształcenie",uk:"Освіта",es:"Formación",ku:"Perwerde"} as Record<string,string>)[lang]}
                     </div>
                     <div className="space-y-2">
                       {member.parcours.map((p, i) => (
@@ -320,7 +366,7 @@ export function TeamPageContent() {
                     return (
                       <div className="flex items-center gap-1.5 text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-1.5 mb-4">
                         <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                        {n[lang] ?? n.fr}
+                        {TEAM_EXTRA[member.key]?.note?.[lang] ?? n[lang] ?? n.fr}
                       </div>
                     );
                   })()}
