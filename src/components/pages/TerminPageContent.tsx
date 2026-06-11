@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const THERAPISTS = [
   {
@@ -92,7 +92,7 @@ const THERAPISTS = [
       tr: "Pzt, Sal & Per: 12:30–16:00",
       ar: "الإثنين، الثلاثاء والخميس: 12:30–16:00",
       pl: "Pon, Wt & Czw: 12:30–16:00",
-    } as Record<LangKey, string>,
+    } as Record<string, string>,
     convention: null,
   },
   {
@@ -146,7 +146,7 @@ const THERAPISTS = [
   },
 ];
 
-const UI: Record<LangKey, {
+const UI: Record<string, {
   badge: string; title: string; titleAccent: string; subtitle: string;
   chooseTherapist: string; bookWith: string; viewProfile: string;
   orCall: string; address: string; hours: string; hoursVal: string;
@@ -222,6 +222,75 @@ const UI: Record<LangKey, {
     bookWhatsApp: "WhatsApp",
     bookOnline: "Book online",
     bookEmail: "Email",
+  },
+  uk: {
+    badge: "Бронювання онлайн і напряму",
+    title: "Записатися",
+    titleAccent: "на прийом",
+    subtitle: "Оберіть свого терапевта та забронюйте напряму через WhatsApp, онлайн або email — швидко, легко, безкоштовно.",
+    chooseTherapist: "Оберіть терапевта",
+    bookWith: "Запис до",
+    viewProfile: "Переглянути профіль",
+    orCall: "Або зателефонуйте:",
+    address: "Loten 1, B-4700 Ойпен",
+    hours: "Години роботи",
+    hoursVal: "Пн – Пт: 08:00 – 20:00 | Сб: за записом",
+    infoBring: "Що взяти з собою",
+    bringItems: ["Медичне направлення", "Картка медичного страхування", "Великий рушник", "Спортивний одяг", "Посвідчення особи"],
+    cancelTitle: "Правила скасування",
+    cancelText: "Будь ласка, скасовуйте запис щонайменше за 24 години. У разі нез'явлення або скасування менш ніж за 24 години ми залишаємо за собою право стягнути плату за скасування — з поваги до пацієнтів у черзі та до нашого часу.",
+    convention: "Не за конвенцією",
+    languages: "Мови",
+    specialties: "Спеціальності",
+    bookWhatsApp: "WhatsApp",
+    bookOnline: "Забронювати онлайн",
+    bookEmail: "Email",
+  },
+  es: {
+    badge: "Reserva online y directa",
+    title: "Pedir",
+    titleAccent: "cita",
+    subtitle: "Elija a su terapeuta y reserve directamente por WhatsApp, en línea o por correo — rápido, fácil y gratuito.",
+    chooseTherapist: "Elija un terapeuta",
+    bookWith: "Cita con",
+    viewProfile: "Ver perfil",
+    orCall: "O llame:",
+    address: "Loten 1, B-4700 Eupen",
+    hours: "Horario",
+    hoursVal: "Lun – Vie: 08:00 – 20:00 | Sáb: con cita previa",
+    infoBring: "Qué traer",
+    bringItems: ["Prescripción médica", "Tarjeta de la mutua", "Toalla grande", "Ropa deportiva", "Documento de identidad"],
+    cancelTitle: "Política de cancelación",
+    cancelText: "Por favor, cancele su cita con al menos 24 horas de antelación. En caso de no presentarse o de cancelar con menos de 24 horas de antelación, nos reservamos el derecho de cobrar una tarifa de cancelación — por respeto a los pacientes en lista de espera y a nuestro tiempo.",
+    convention: "No convencionado",
+    languages: "Idiomas",
+    specialties: "Especialidades",
+    bookWhatsApp: "WhatsApp",
+    bookOnline: "Reservar en línea",
+    bookEmail: "Correo",
+  },
+  ku: {
+    badge: "Online & rasterast rezervkirin",
+    title: "Randevû",
+    titleAccent: "bigire",
+    subtitle: "Terapîstê xwe hilbijêre û rasterast bi WhatsApp, online an e-nameyê rezerve bike — bilez, hêsan, belaş.",
+    chooseTherapist: "Terapîstekê hilbijêre",
+    bookWith: "Randevû bi",
+    viewProfile: "Profîlê bibîne",
+    orCall: "An telefon bike:",
+    address: "Loten 1, B-4700 Eupen",
+    hours: "Demên vekirî",
+    hoursVal: "Duş – În: 08:00 – 20:00 | Şem: bi randevû",
+    infoBring: "Çi bînin",
+    bringItems: ["Recêteya bijîjkî", "Karta sîgorteya tenduristiyê", "Destmaleke mezin", "Cilên werzîşê", "Karta nasnameyê"],
+    cancelTitle: "Polîtîkaya betalkirinê",
+    cancelText: "Ji kerema xwe randevûya xwe herî kêm 24 saet berê betal bikin. Di rewşa nehatinê an betalkirina kêmtir ji 24 saetan berê de, em mafê xwe diparêzin ku heqê betalkirinê bistînin — ji bo rêzgirtina li nexweşên di rêzê de û li dema me.",
+    convention: "Ne bi peymanê",
+    languages: "Ziman",
+    specialties: "Pisporî",
+    bookWhatsApp: "WhatsApp",
+    bookOnline: "Online rezerve bike",
+    bookEmail: "E-name",
   },
   nl: {
     badge: "Online & direct boeken",
@@ -360,8 +429,8 @@ function BookingButton({ type, label, href, primary, emailEnc }: { type: string;
 
 export function TerminPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
-  const ui = UI[lang];
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
+  const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
   const [selected, setSelected] = useState<string | null>(null);
   const [therapists, setTherapists] = useState(THERAPISTS);
@@ -497,12 +566,12 @@ export function TerminPageContent() {
                         <h3 className="font-extrabold text-white text-base leading-tight">{therapist.name}</h3>
                         {therapist.convention && (
                           <span className="text-[10px] px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full font-medium flex-shrink-0 mt-0.5">
-                            {(therapist.convention as Record<LangKey, string>)[lang]}
+                            {(therapist.convention as Record<string, string>)[lang] ?? (therapist.convention as Record<string, string>).de}
                           </span>
                         )}
                       </div>
                       <p className="text-white/50 text-xs mt-0.5 leading-snug">
-                        {(therapist.role as Record<LangKey, string>)[lang]}
+                        {(therapist.role as Record<string, string>)[lang] ?? (therapist.role as Record<string, string>).de}
                       </p>
                     </div>
                   </div>
@@ -617,7 +686,7 @@ export function TerminPageContent() {
 
                         {/* Note if any */}
                         {(() => {
-                          const n = (therapist as { note?: Record<LangKey, string> | null }).note;
+                          const n = (therapist as { note?: Record<string, string> | null }).note;
                           if (!n) return null;
                           return (
                             <div className="flex items-center gap-2 mb-4 text-xs text-amber-300/80 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-2">
