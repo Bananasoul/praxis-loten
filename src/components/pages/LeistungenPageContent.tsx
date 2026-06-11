@@ -6,7 +6,72 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { Hand, Dumbbell, Smile, Droplets, ArrowRight, CheckCircle2 } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+
+// uk/es/ku — kurmandji à faire relire par un natif
+const SERVICE_EXTRA: Record<string, { title?: Record<string,string>; description?: Record<string,string>; points?: Record<string,string[]>; indications?: Record<string,string[]> }> = {
+  "manuelle-therapie": {
+    title: { uk: "Мануальна терапія", es: "Terapia Manual", ku: "Terapiya Destî" },
+    description: {
+      uk: "Ортопедична мануальна терапія — всесвітньо визнана спеціалізація. Ми шукаємо причину вашого болю та пропонуємо індивідуально підібране лікування для тривалого відновлення.",
+      es: "Terapia manual ortopédica — una especialización reconocida mundialmente. Buscamos la causa de su dolor y ofrecemos un tratamiento personalizado para una recuperación duradera.",
+      ku: "Terapiya destî ya ortopedîk — pisporiyek li cîhanê naskirî. Em sedema êşa we digerin û dermankirineke kesane ji bo başbûneke berdewam pêşkêş dikin." },
+    points: {
+      uk: ["Поглиблена фізіотерапевтична оцінка","Біопсихосоціальний підхід","Мета: автономний пацієнт","Методики, засновані на доказах"],
+      es: ["Evaluación fisioterapéutica avanzada","Enfoque biopsicosocial","Objetivo: paciente autónomo","Técnicas basadas en la evidencia"],
+      ku: ["Nirxandina fizyoterapî ya pêşketî","Nêzîkatiya biyopsîkososyal","Armanc: nexweşê serbixwe","Teknîkên li ser bingeha delîlan"] },
+    indications: {
+      uk: ["Біль у спині / шиї","Коліно та стегно","Плече та рука","Післяопераційна реабілітація","Головний біль"],
+      es: ["Dolor de espalda / cuello","Rodilla y cadera","Hombro y brazo","Rehabilitación postoperatoria","Dolores de cabeza"],
+      ku: ["Êşa pişt / situ","Çok û kalç","Mil û bask","Rehabîlîtasyona piştî emeliyatê","Serêş"] },
+  },
+  "sport-kinesitherapie": {
+    title: { uk: "Спортивна фізіотерапія", es: "Fisioterapia Deportiva", ku: "Fizyoterapiya Werzîşê" },
+    description: {
+      uk: "Реабілітація, профілактика травм та оптимізація результатів для професійних і аматорських спортсменів. Наш досвід в анатомії та біомеханіці допоможе швидко й надовго повернути найкращу форму.",
+      es: "Rehabilitación, prevención de lesiones y optimización del rendimiento para deportistas de élite y amateurs. Nuestra experiencia en anatomía y biomecánica le ayuda a recuperar su mejor forma de forma rápida y duradera.",
+      ku: "Rehabîlîtasyon, pêşîlêgirtina birînan û başkirina performansê ji bo werzîşvanên pispor û amator. Pisporiya me di anatomî û biyomekanîkê de alîkariya we dike ku bi lez û berdewam vegerin forma xwe ya çêtirîn." },
+    points: {
+      uk: ["Running Clinic (La Clinique du Coureur)","Тренування з обмеженням кровотоку (BFR)","Спеціалізована спортивна реабілітація","Профілактика травм у клубі"],
+      es: ["Running Clinic (La Clinique du Coureur)","Entrenamiento con restricción del flujo sanguíneo (BFR)","Rehabilitación específica del deporte","Prevención de lesiones en el club"],
+      ku: ["Running Clinic (La Clinique du Coureur)","Perwerdeya bi sînorkirina herikîna xwînê (BFR)","Rehabîlîtasyona taybet a werzîşê","Pêşîlêgirtina birînan li klûbê"] },
+    indications: {
+      uk: ["Бігові травми","Розриви та розтягнення м'язів","Травми зв'язок","Спортивна реабілітація після операції","Оптимізація результатів"],
+      es: ["Lesiones de carrera","Roturas y distensiones musculares","Lesiones de ligamentos","Rehabilitación deportiva postoperatoria","Optimización del rendimiento"],
+      ku: ["Birînên bazdanê","Çirîn û dirêjbûna masûlkan","Birînên lîgaman","Rehabîlîtasyona werzîşê ya piştî emeliyatê","Başkirina performansê"] },
+  },
+  "kiefergelenk": {
+    title: { uk: "Скронево-нижньощелепний суглоб (СНЩС)", es: "Articulación Temporomandibular (ATM)", ku: "Girêka Çenê (TMJ)" },
+    description: {
+      uk: "Спеціалізована терапія краніомандибулярної дисфункції (CMD/СНЩС). Лікування болю щелепи, головного болю, запаморочення та напруження шиї за допомогою міотензивних технік.",
+      es: "Terapia especializada para la disfunción craneomandibular (DCM/ATM). Tratamiento del dolor de mandíbula, dolores de cabeza, mareos y tensión cervical mediante técnicas miotensivas.",
+      ku: "Terapiya pispor a disfonksiyona kranomandîbular (CMD/TMJ). Dermankirina êşa çenê, serêş, gêjbûn û tengezariya situ bi teknîkên miyotensîf." },
+    points: {
+      uk: ["Міотензивні техніки","Розслаблення жувальних м'язів","Лікування клацання щелепи","Координація з ортодонтом"],
+      es: ["Técnicas miotensivas","Relajación de los músculos masticadores","Tratamiento del chasquido","Coordinación con el ortodoncista"],
+      ku: ["Teknîkên miyotensîf","Rehetkirina masûlkeyên çenê","Dermankirina teqînê","Hevrêzî bi ortodontîstan re"] },
+    indications: {
+      uk: ["Біль щелепи та CMD","Головний біль / Мігрень","Запаморочення та шум у вухах","Напруження шиї/плеча","Обмежене відкривання рота"],
+      es: ["Dolor de mandíbula y DCM","Dolores de cabeza / Migraña","Mareos y tinnitus","Tensión cervical/escapular","Apertura bucal limitada"],
+      ku: ["Êşa çenê & CMD","Serêş / Mîgren","Gêjbûn & zingîna guh","Tengezariya situ/milî","Vekirina çenê ya sînorkirî"] },
+  },
+  "lymphdrainage": {
+    title: { uk: "Лімфодренаж", es: "Drenaje Linfático", ku: "Drenaja Lîmfatîk" },
+    description: {
+      uk: "Ручний лімфодренаж за визнаним методом O. Leduc. М'який спеціалізований масаж для зменшення набряків і стимуляції лімфатичної системи.",
+      es: "Drenaje linfático manual según el reconocido método de O. Leduc. Un masaje especializado y suave para reducir el edema y estimular el sistema linfático.",
+      ku: "Drenaja lîmfatîk a destî li gorî rêbaza naskirî ya O. Leduc. Masajeke nerm û pispor ji bo kêmkirina werimê û handana pergala lîmfatîk." },
+    points: {
+      uk: ["Метод O. Leduc","М'яка, неінвазивна техніка","Активація лімфатичної системи","Зменшення набряків"],
+      es: ["Método O. Leduc","Técnica suave y no invasiva","Activación del sistema linfático","Reducción de la hinchazón"],
+      ku: ["Rêbaza O. Leduc","Teknîka nerm û ne-invazîv","Handana pergala lîmfatîk","Kêmkirina werimê"] },
+    indications: {
+      uk: ["Післяопераційний набряк (коліно/стегно)","Лімфедема після онкооперації","Важкі ноги (вени/лімфа)","Спортивні травми"],
+      es: ["Edema postoperatorio (rodilla/cadera)","Linfedema tras cirugía oncológica","Piernas pesadas (venas/linfa)","Lesiones deportivas"],
+      ku: ["Werima piştî emeliyatê (çok/kalç)","Lîmfodema piştî emeliyata penceşêrê","Lingên giran (damar/lîmf)","Birînên werzîşê"] },
+  },
+};
+
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const SERVICES = [
   {
@@ -163,13 +228,13 @@ export function LeistungenPageContent() {
   const locale = useLocale() as LangKey;
   const t = useTranslations("services");
   const tNav = useTranslations("nav");
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
 
-  const learnMore: Record<LangKey, string> = { de: "Mehr erfahren", fr: "En savoir plus", en: "Learn more", nl: "Meer info", tr: "Daha fazla", ar: "المزيد", pl: "Więcej" };
-  const characteristics: Record<LangKey, string> = { de: "Merkmale", fr: "Caractéristiques", en: "Features", nl: "Kenmerken", tr: "Özellikler", ar: "المميزات", pl: "Cechy" };
-  const indications: Record<LangKey, string> = { de: "Indikationen", fr: "Indications", en: "Indications", nl: "Indicaties", tr: "Endikasyonlar", ar: "المؤشرات", pl: "Wskazania" };
-  const unsureTitle: Record<LangKey, string> = { de: "Unsicher welche Therapie passt?", fr: "Vous ne savez pas quelle thérapie choisir ?", en: "Not sure which therapy is right?", nl: "Niet zeker welke therapie past?", tr: "Hangi terapi uygun olduğundan emin değil misiniz?", ar: "هل أنت غير متأكد من أي علاج يناسبك؟", pl: "Nie wiesz, która terapia jest odpowiednia?" };
-  const unsureSub: Record<LangKey, string> = { de: "Nehmen Sie Kontakt auf — wir beraten Sie kostenlos.", fr: "Contactez-nous — nous vous conseillons gratuitement.", en: "Contact us — we advise you free of charge.", nl: "Neem contact op — wij adviseren u gratis.", tr: "Bize ulaşın — ücretsiz danışmanlık.", ar: "تواصل معنا — ننصحك مجانا.", pl: "Skontaktuj się z nami — doradzamy bezpłatnie." };
+  const learnMore: Record<LangKey, string> = { de: "Mehr erfahren", fr: "En savoir plus", en: "Learn more", nl: "Meer info", tr: "Daha fazla", ar: "المزيد", pl: "Więcej", uk: "Дізнатися більше", es: "Saber más", ku: "Bêtir fêr bibe" };
+  const characteristics: Record<LangKey, string> = { de: "Merkmale", fr: "Caractéristiques", en: "Features", nl: "Kenmerken", tr: "Özellikler", ar: "المميزات", pl: "Cechy", uk: "Особливості", es: "Características", ku: "Taybetmendî" };
+  const indications: Record<LangKey, string> = { de: "Indikationen", fr: "Indications", en: "Indications", nl: "Indicaties", tr: "Endikasyonlar", ar: "المؤشرات", pl: "Wskazania", uk: "Показання", es: "Indicaciones", ku: "Nîşan" };
+  const unsureTitle: Record<LangKey, string> = { de: "Unsicher welche Therapie passt?", fr: "Vous ne savez pas quelle thérapie choisir ?", en: "Not sure which therapy is right?", nl: "Niet zeker welke therapie past?", tr: "Hangi terapi uygun olduğundan emin değil misiniz?", ar: "هل أنت غير متأكد من أي علاج يناسبك؟", pl: "Nie wiesz, która terapia jest odpowiednia?", uk: "Не знаєте, яка терапія підходить?", es: "¿No sabe qué terapia elegir?", ku: "Ne piştrast in kîjan terapî guncan e?" };
+  const unsureSub: Record<LangKey, string> = { de: "Nehmen Sie Kontakt auf — wir beraten Sie kostenlos.", fr: "Contactez-nous — nous vous conseillons gratuitement.", en: "Contact us — we advise you free of charge.", nl: "Neem contact op — wij adviseren u gratis.", tr: "Bize ulaşın — ücretsiz danışmanlık.", ar: "تواصل معنا — ننصحك مجانا.", pl: "Skontaktuj się z nami — doradzamy bezpłatnie.", uk: "Зв\u0027яжіться з нами — консультуємо безкоштовно.", es: "Contáctenos — le asesoramos gratuitamente.", ku: "Bi me re têkilî daynin — em belaş şîretan dikin." };
 
   return (
     <div className="pt-28 pb-20 min-h-screen bg-white">
@@ -203,10 +268,10 @@ export function LeistungenPageContent() {
                       </span>
                     </div>
                     <h2 className="text-2xl font-extrabold text-neutral-900 mb-3">
-                      {(service.title as Record<string,string>)[lang] ?? service.title.de}
+                      {SERVICE_EXTRA[service.slug]?.title?.[lang] ?? (service.title as Record<string,string>)[lang] ?? service.title.de}
                     </h2>
                     <p className="text-neutral-500 leading-relaxed text-sm mb-5">
-                      {(service.description as Record<string,string>)[lang] ?? service.description.de}
+                      {SERVICE_EXTRA[service.slug]?.description?.[lang] ?? (service.description as Record<string,string>)[lang] ?? service.description.de}
                     </p>
                     <Link
                       href={`/leistungen/${service.slug}`}
@@ -223,7 +288,7 @@ export function LeistungenPageContent() {
                       {characteristics[lang]}
                     </h3>
                     <ul className="space-y-2.5">
-                      {((service.points as Record<string,string[]>)[lang] ?? service.points.de).map((pt, i) => (
+                      {(SERVICE_EXTRA[service.slug]?.points?.[lang] ?? (service.points as Record<string,string[]>)[lang] ?? service.points.de).map((pt, i) => (
                         <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-700">
                           <CheckCircle2 className="w-4 h-4 text-[#76b82a] flex-shrink-0 mt-0.5" />
                           {pt}
@@ -238,7 +303,7 @@ export function LeistungenPageContent() {
                       {indications[lang]}
                     </h3>
                     <ul className="space-y-2">
-                      {((service.indications as Record<string,string[]>)[lang] ?? service.indications.de).map((ind, i) => (
+                      {(SERVICE_EXTRA[service.slug]?.indications?.[lang] ?? (service.indications as Record<string,string[]>)[lang] ?? service.indications.de).map((ind, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-neutral-600">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] flex-shrink-0" />
                           {ind}
