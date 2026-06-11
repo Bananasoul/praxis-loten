@@ -5,23 +5,46 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { Hand, Dumbbell, Smile, Droplets, CheckCircle2, ArrowLeft, CalendarPlus, ArrowRight, Clock, Users } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+const SD_EXTRA: Record<string, { title?: Record<string,string>; subtitle?: Record<string,string>; description?: Record<string,string> }> = {
+  "manuelle-therapie": {
+    title: { uk: "Мануальна терапія", es: "Terapia Manual", ku: "Terapiya Destî" },
+    subtitle: { uk: "Ортопедична спеціалізація за стандартом IFOMPT", es: "Especialización ortopédica según el estándar IFOMPT", ku: "Pisporiya ortopedîk li gorî standarda IFOMPT" },
+    description: { uk: "Ортопедична мануальна терапія — всесвітньо визнана спеціалізація фізіотерапії. Наші терапевти шукають першопричину вашого болю та пропонують індивідуальне лікування для тривалого відновлення.", es: "La terapia manual ortopédica es una especialización de la fisioterapia reconocida mundialmente. Nuestros terapeutas buscan la causa de su dolor y ofrecen un tratamiento personalizado para una recuperación duradera.", ku: "Terapiya destî ya ortopedîk pisporiyeke fizyoterapiyê ya li cîhanê naskirî ye. Terapîstên me sedema êşa we digerin û dermankirineke kesane ji bo başbûneke berdewam pêşkêş dikin." },
+  },
+  "sport-kinesitherapie": {
+    title: { uk: "Спортивна фізіотерапія", es: "Fisioterapia Deportiva", ku: "Fizyoterapiya Werzîşê" },
+    subtitle: { uk: "Running Clinic · Тренування BFR · Kinesport", es: "Running Clinic · Entrenamiento BFR · Kinesport", ku: "Running Clinic · Perwerdeya BFR · Kinesport" },
+    description: { uk: "Реабілітація, профілактика травм та оптимізація результатів для спортсменів усіх рівнів — від Running Clinic до тренувань BFR.", es: "Rehabilitación, prevención de lesiones y optimización del rendimiento para deportistas de todos los niveles, desde la Running Clinic hasta el entrenamiento BFR.", ku: "Rehabîlîtasyon, pêşîlêgirtina birînan û başkirina performansê ji bo werzîşvanên hemû astan, ji Running Clinic heta perwerdeya BFR." },
+  },
+  "kiefergelenk": {
+    title: { uk: "Скронево-нижньощелепний суглоб (СНЩС)", es: "Articulación Temporomandibular (ATM)", ku: "Girêka Çenê (TMJ)" },
+    subtitle: { uk: "Спеціалізована терапія краніомандибулярної дисфункції (CMD)", es: "Terapia especializada para la disfunción craneomandibular (DCM)", ku: "Terapiya pispor a disfonksiyona kranomandîbular (CMD)" },
+    description: { uk: "Спеціалізована терапія краніомандибулярної дисфункції (CMD). Лікування болю щелепи, головного болю, запаморочення та напруження шиї.", es: "Terapia especializada para la disfunción craneomandibular (DCM). Tratamiento del dolor de mandíbula, dolores de cabeza, mareos y tensión cervical.", ku: "Terapiya pispor a disfonksiyona kranomandîbular (CMD). Dermankirina êşa çenê, serêş, gêjbûn û tengezariya situ." },
+  },
+  "lymphdrainage": {
+    title: { uk: "Лімфодренаж", es: "Drenaje Linfático", ku: "Drenaja Lîmfatîk" },
+    subtitle: { uk: "Ручний лімфодренаж за методом O. Leduc", es: "Drenaje linfático manual según el método O. Leduc", ku: "Drenaja lîmfatîk a destî bi rêbaza O. Leduc" },
+    description: { uk: "Ручний лімфодренаж за визнаним методом O. Leduc. М'який спеціалізований масаж для зменшення набряків і стимуляції лімфатичної системи.", es: "Drenaje linfático manual según el reconocido método de O. Leduc. Masaje especializado y suave para reducir el edema y estimular el sistema linfático.", ku: "Drenaja lîmfatîk a destî li gorî rêbaza naskirî ya O. Leduc. Masajeke nerm û pispor ji bo kêmkirina werimê û handana pergala lîmfatîk." },
+  },
+};
+
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 interface ServiceDetail {
   icon: React.ElementType;
   color: string;
   badge: string;
-  title: Record<LangKey, string>;
-  subtitle: Record<LangKey, string>;
-  description: Record<LangKey, string>;
-  longDesc: Record<LangKey, string[]>;
-  points: Record<LangKey, string[]>;
-  indications: Record<LangKey, string[]>;
-  contraindications: Record<LangKey, string[]>;
-  duration: Record<LangKey, string>;
+  title: Record<string, string>;
+  subtitle: Record<string, string>;
+  description: Record<string, string>;
+  longDesc: Record<string, string[]>;
+  points: Record<string, string[]>;
+  indications: Record<string, string[]>;
+  contraindications: Record<string, string[]>;
+  duration: Record<string, string>;
   teamSlugs: string[];
   teamNames: string[];
-  faq: { q: Record<LangKey, string>; a: Record<LangKey, string> }[];
+  faq: { q: Record<string, string>; a: Record<string, string> }[];
   relatedSlugs: string[];
 }
 
@@ -499,7 +522,7 @@ const SERVICES: Record<string, ServiceDetail> = {
   },
 };
 
-const UI: Record<LangKey, {
+const UI: Record<string, {
   back: string; indications: string; contraindications: string; duration: string;
   features: string; faq: string; team: string; bookCta: string; relatedTitle: string;
   learnMore: string; durationLabel: string;
@@ -515,8 +538,8 @@ const UI: Record<LangKey, {
 
 export function ServiceDetailPageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
-  const ui = UI[lang];
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
+  const ui = UI[lang] ?? UI.en;
   const service = SERVICES[slug];
 
   if (!service) return null;
@@ -546,11 +569,11 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
                 <span className="text-xs font-bold px-3 py-1 bg-white/20 rounded-full mb-4 inline-block">
                   {service.badge}
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">{service.title[lang]}</h1>
-                <p className="text-white/80 text-lg">{service.subtitle[lang]}</p>
+                <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">{SD_EXTRA[slug]?.title?.[lang] ?? service.title[lang] ?? service.title.en}</h1>
+                <p className="text-white/80 text-lg">{SD_EXTRA[slug]?.subtitle?.[lang] ?? service.subtitle[lang] ?? service.subtitle.en}</p>
               </div>
             </div>
-            <p className="mt-6 text-white/90 leading-relaxed max-w-3xl">{service.description[lang]}</p>
+            <p className="mt-6 text-white/90 leading-relaxed max-w-3xl">{SD_EXTRA[slug]?.description?.[lang] ?? service.description[lang] ?? service.description.en}</p>
           </div>
         </AnimatedSection>
 
@@ -562,7 +585,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
             {/* Long description paragraphs */}
             <AnimatedSection>
               <div className="bg-white rounded-2xl p-8 border border-neutral-200 space-y-4">
-                {service.longDesc[lang].map((para, i) => (
+                {(service.longDesc[lang] ?? service.longDesc.en).map((para, i) => (
                   <p key={i} className="text-neutral-600 leading-relaxed">{para}</p>
                 ))}
               </div>
@@ -573,7 +596,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
               <div className="bg-white rounded-2xl p-8 border border-neutral-200">
                 <h2 className="font-bold text-neutral-900 text-lg mb-5">{ui.indications}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {service.indications[lang].map((ind, i) => (
+                  {(service.indications[lang] ?? service.indications.en).map((ind, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-neutral-600">
                       <CheckCircle2 className="w-4 h-4 text-[#76b82a] flex-shrink-0" />
                       {ind}
@@ -590,8 +613,8 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
                 <div className="space-y-6">
                   {service.faq.map((item, i) => (
                     <div key={i}>
-                      <p className="font-semibold text-neutral-900 mb-2">{item.q[lang]}</p>
-                      <p className="text-neutral-600 text-sm leading-relaxed">{item.a[lang]}</p>
+                      <p className="font-semibold text-neutral-900 mb-2">{item.q[lang] ?? item.q.en}</p>
+                      <p className="text-neutral-600 text-sm leading-relaxed">{item.a[lang] ?? item.a.en}</p>
                       {i < service.faq.length - 1 && <div className="border-t border-neutral-100 mt-6" />}
                     </div>
                   ))}
@@ -608,7 +631,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
               <div className="bg-white rounded-2xl p-6 border border-neutral-200">
                 <h3 className="font-bold text-neutral-900 mb-4">{ui.features}</h3>
                 <ul className="space-y-3">
-                  {service.points[lang].map((pt, i) => (
+                  {(service.points[lang] ?? service.points.en).map((pt, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-neutral-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] mt-2 flex-shrink-0" />
                       {pt}
@@ -617,7 +640,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
                 </ul>
                 <div className="border-t border-neutral-100 mt-5 pt-5 flex items-start gap-2 text-sm text-neutral-500">
                   <Clock className="w-4 h-4 text-[#76b82a] flex-shrink-0 mt-0.5" />
-                  <span>{service.duration[lang]}</span>
+                  <span>{service.duration[lang] ?? service.duration.en}</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -627,7 +650,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
               <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100">
                 <h3 className="font-bold text-amber-800 mb-4 text-sm">{ui.contraindications}</h3>
                 <ul className="space-y-2">
-                  {service.contraindications[lang].map((c, i) => (
+                  {(service.contraindications[lang] ?? service.contraindications.en).map((c, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-amber-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0" />
                       {c}
@@ -678,7 +701,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
                             <RelIcon className="w-4 h-4 text-neutral-600" />
                           </div>
                           <span className="text-sm font-medium text-neutral-700 group-hover:text-[#2b3186] transition-colors">
-                            {related.title[lang]}
+                            {related.title[lang] ?? related.title.en}
                           </span>
                           <ArrowRight className="w-4 h-4 text-neutral-400 ml-auto group-hover:text-[#76b82a] transition-colors" />
                         </Link>
