@@ -11,16 +11,16 @@ import {
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 type Therapist = {
   slug: string;
   name: string;
   initials: string;
   color: string;
-  convention: { de: string; fr: string; en: string; nl: string; tr: string; ar: string; pl: string } | null;
-  role: Record<LangKey, string>;
-  description: Record<LangKey, string>;
+  convention: Record<string, string> | null;
+  role: Record<string, string>;
+  description: Record<string, string>;
   specialties: string[];
   languages: string[];
   parcours: { year: string; institution: string; title: string }[];
@@ -211,7 +211,7 @@ const THERAPISTS: Therapist[] = [
   },
 ];
 
-const UI: Record<LangKey, {
+const UI: Record<string, {
   back: string; specialties: string; parcours: string; languages: string;
   bookTitle: string; bookPhone: string; bookWhatsApp: string; bookOnline: string; bookEmail: string;
   viewTeam: string; convention: string;
@@ -223,14 +223,17 @@ const UI: Record<LangKey, {
   tr: { back: "Takıma dön", specialties: "Uzmanlıklar", parcours: "Eğitim & Kariyer", languages: "Konuşulan diller", bookTitle: "Randevu al", bookPhone: "Ara", bookWhatsApp: "WhatsApp", bookOnline: "Online rezervasyon", bookEmail: "E-posta", viewTeam: "Tüm ekibi gör", convention: "" },
   ar: { back: "العودة إلى الفريق", specialties: "التخصصات", parcours: "المسار والتكوين", languages: "اللغات المتحدثة", bookTitle: "حجز موعد", bookPhone: "اتصال", bookWhatsApp: "واتساب", bookOnline: "حجز عبر الإنترنت", bookEmail: "البريد الإلكتروني", viewTeam: "عرض الفريق كاملاً", convention: "" },
   pl: { back: "Powrót do zespołu", specialties: "Specjalizacje", parcours: "Wykształcenie i kariera", languages: "Języki", bookTitle: "Umów wizytę", bookPhone: "Zadzwoń", bookWhatsApp: "WhatsApp", bookOnline: "Rezerwacja online", bookEmail: "E-mail", viewTeam: "Cały zespół", convention: "" },
+  uk: { back: "Назад до команди", specialties: "Спеціалізації", parcours: "Освіта та досвід", languages: "Мови", bookTitle: "Записатися на прийом", bookPhone: "Подзвонити", bookWhatsApp: "WhatsApp", bookOnline: "Запис онлайн", bookEmail: "Ел. пошта", viewTeam: "Вся команда", convention: "" },
+  es: { back: "Volver al equipo", specialties: "Especializaciones", parcours: "Formación y trayectoria", languages: "Idiomas", bookTitle: "Pedir cita", bookPhone: "Llamar", bookWhatsApp: "WhatsApp", bookOnline: "Reserva en línea", bookEmail: "Correo", viewTeam: "Ver todo el equipo", convention: "" },
+  ku: { back: "Vegere tîmê", specialties: "Pisporî", parcours: "Perwerde û Ezmûn", languages: "Ziman", bookTitle: "Randevû bigire", bookPhone: "Telefon bike", bookWhatsApp: "WhatsApp", bookOnline: "Rezervasyona online", bookEmail: "E-name", viewTeam: "Hemû tîmê bibîne", convention: "" },
 };
 
 export function TherapistPageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
 
   const therapist = THERAPISTS.find((t) => t.slug === slug);
-  const ui = UI[lang];
+  const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
 
   if (!therapist) {
@@ -279,11 +282,11 @@ export function TherapistPageContent({ slug }: { slug: string }) {
                 <div className="p-6 text-center">
                   <h1 className="text-2xl font-extrabold text-neutral-900 mb-1">{therapist.name}</h1>
                   <p className="text-sm text-neutral-500 leading-snug mb-3">
-                    {therapist.role[lang]}
+                    {therapist.role[lang] ?? therapist.role.en}
                   </p>
                   {therapist.convention && (
                     <span className="inline-block text-xs px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-medium">
-                      {therapist.convention[lang]}
+                      {therapist.convention[lang] ?? therapist.convention.en}
                     </span>
                   )}
                 </div>
@@ -383,7 +386,7 @@ export function TherapistPageContent({ slug }: { slug: string }) {
             <AnimatedSection delay={0.1}>
               <div className="bg-white rounded-3xl p-8 border border-neutral-200">
                 <p className="text-neutral-700 leading-relaxed text-base">
-                  {therapist.description[lang]}
+                  {therapist.description[lang] ?? therapist.description.en}
                 </p>
                 {therapist.quote && (
                   <motion.blockquote

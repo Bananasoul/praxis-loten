@@ -9,10 +9,10 @@ import {
   CalendarPlus, ExternalLink, Users, Euro, FileText, CreditCard, RotateCcw,
 } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 /* ─── ALL UI STRINGS ──────────────────────────────────────────────────────── */
-const UI: Record<LangKey, {
+const UI: Record<string, {
   badge: string; title: string; titleAccent: string; subtitle: string;
   glanceTitle: string; perSession: string; yourPart: string;
   mutuelleShare: string; totalHonoraire: string;
@@ -129,6 +129,99 @@ const UI: Record<LangKey, {
     cabinet: "At the practice", home: "Home visit",
     bimLabel: "BIM", nonBimLabel: "Standard",
     estimateNote: "≈ estimate",
+  },
+  es: {
+    badge: "Precios transparentes",
+    title: "Lo que", titleAccent: "paga realmente",
+    subtitle: "Su parte, el reembolso del seguro y el importe total — todo claro, sin sorpresas.",
+    glanceTitle: "De un vistazo",
+    perSession: "/ sesión", yourPart: "Su parte", mutuelleShare: "Cubre el seguro", totalHonoraire: "Honorario total",
+    convTitle: "Terapeutas convencionados", nonConvTitle: "No convencionado — Loïc Meunier",
+    normalPathLabel: "Patologías agudas (Fa)", ePathLabel: "Patología E (§14, 5°)", seriousPathLabel: "Patologías crónicas (Fb)",
+    bimNote: "Estatus BIM:",
+    faNote: "Lista Fa: patologías agudas (prescripción obligatoria, p. ej. espalda, rodilla, hombro). Hasta 18 sesiones/año.",
+    eNote: "Lista E: patologías crónicas que requieren fisioterapia a largo plazo (certificado médico obligatorio).",
+    fbNote: "Lista Fb: patologías crónicas (certificado médico específico). Sesiones ilimitadas.",
+    howTitle: "¿Cómo funciona el reembolso?",
+    step1Title: "Obtenga una prescripción", step1Desc: "Su médico le entrega una prescripción de fisioterapia. Sin ella, no hay reembolso posible.",
+    step2Title: "Pague en su sesión", step2Desc: "Usted paga el importe total directamente al terapeuta en cada sesión.",
+    step3Title: "Reembolso automático", step3Desc: "Su mutua reembolsa la parte INAMI automáticamente, normalmente en pocos días.",
+    nonConvExplain: "Loïc Meunier fija libremente sus honorarios. Su mutua reembolsa aprox. el 75 % de la tarifa INAMI convencionada. La diferencia corre por su cuenta.",
+    nonConvNote: "Valores estimados — consulte el importe exacto con su mutua.",
+    bimTitle: "BIM — ¿Qué es?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) es una tarifa preferente para personas con ingresos más bajos. Como paciente BIM, paga bastante menos por sesión (p. ej. 2,50 € en lugar de 6,25 € para patologías Fa).", bimHow: "Cómo comprobarlo: mire la etiqueta de su mutua — el código del titular (CT1/CT2) termina en 0 (p. ej. 100/100) = no BIM. Termina en 1 (p. ej. 101/101) = BIM. En caso de duda, consulte a su mutua.", bimNonConv: "Importante: incluso un terapeuta no convencionado no puede cobrarle suplementos si usted es paciente BIM. Está legalmente obligado a aplicar las tarifas oficiales INAMI — sin recargo.",
+    mutuelleTitle: "Seguro complementario", mutuelleText: "Muchas mutuas reembolsan una parte adicional a través de su cobertura complementaria. Consúltelo con la suya.",
+    prescTitle: "Prescripción médica obligatoria", prescText: "Una prescripción médica es obligatoria para obtener el reembolso. Sin ella, no se concede ningún reembolso.",
+    checkInami: "Consultar las tarifas oficiales INAMI", inamiLink: "Sitio web INAMI",
+    ctaTitle: "¿Preguntas sobre nuestros honorarios?", ctaSub: "Nuestro equipo está disponible para responder a todas sus preguntas sobre costes y reembolsos.", ctaBtn: "Pedir cita",
+    whoConv: "Philippe Banaszak · Félix Esser · Fabienne Dormann · Thom Petit",
+    whoNonConv: "Loïc Meunier",
+    convListTitle: "Terapeutas convencionados:", nonConvListTitle: "No convencionado:",
+    tarifsSource: "Honorarios según la nomenclatura INAMI (en vigor desde el 01/01/2026). Sujeto a actualizaciones — importes actuales en inami.fgov.be.",
+    cabinet: "En el consultorio", home: "Visita a domicilio",
+    bimLabel: "BIM", nonBimLabel: "Estándar",
+    estimateNote: "≈ estimación",
+  },
+  uk: {
+    badge: "Прозорі ціни",
+    title: "Скільки ви", titleAccent: "дійсно платите",
+    subtitle: "Ваша частина, відшкодування від страховки та загальна сума — все ясно, без сюрпризів.",
+    glanceTitle: "Коротко",
+    perSession: "/ сеанс", yourPart: "Ваша частина", mutuelleShare: "Покриває страховка", totalHonoraire: "Загальний гонорар",
+    convTitle: "Конвенційні терапевти", nonConvTitle: "Неконвенційний — Loïc Meunier",
+    normalPathLabel: "Гострі патології (Fa)", ePathLabel: "Патологія E (§14, 5°)", seriousPathLabel: "Хронічні патології (Fb)",
+    bimNote: "Статус BIM:",
+    faNote: "Список Fa: гострі патології (потрібен рецепт, напр. спина, коліно, плече). До 18 сеансів/рік.",
+    eNote: "Список E: хронічні патології, що потребують тривалої фізіотерапії (потрібна медична довідка).",
+    fbNote: "Список Fb: хронічні патології (спеціальна медична довідка). Необмежена кількість сеансів.",
+    howTitle: "Як працює відшкодування?",
+    step1Title: "Отримайте рецепт", step1Desc: "Лікар видає вам рецепт на фізіотерапію. Без нього відшкодування неможливе.",
+    step2Title: "Оплатіть на сеансі", step2Desc: "Ви сплачуєте повну суму безпосередньо терапевту на кожному сеансі.",
+    step3Title: "Автоматичне відшкодування", step3Desc: "Ваша страхова автоматично відшкодовує частину INAMI, зазвичай протягом кількох днів.",
+    nonConvExplain: "Loïc Meunier встановлює свої гонорари вільно. Ваша страхова відшкодовує приблизно 75 % конвенційного тарифу INAMI. Різницю ви оплачуєте самі.",
+    nonConvNote: "Орієнтовні значення — точну суму уточнюйте у своїй страховій.",
+    bimTitle: "BIM — що це?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) — це пільговий тариф для осіб з нижчими доходами. Як пацієнт BIM ви платите значно менше за сеанс (напр. 2,50 € замість 6,25 € для патологій Fa).", bimHow: "Як перевірити: подивіться на наклейку вашої страхової — код власника (CT1/CT2) закінчується на 0 (напр. 100/100) = не BIM. Закінчується на 1 (напр. 101/101) = BIM. У разі сумнівів зверніться до страхової.", bimNonConv: "Важливо: навіть неконвенційний терапевт не може стягувати з вас доплати, якщо ви пацієнт BIM. За законом він зобов'язаний застосовувати офіційні тарифи INAMI — без надбавок.",
+    mutuelleTitle: "Додаткове страхування", mutuelleText: "Багато страхових відшкодовують додаткову частину через додаткове покриття. Уточніть у своєї.",
+    prescTitle: "Потрібен медичний рецепт", prescText: "Медичний рецепт є обов'язковим для отримання відшкодування. Без нього відшкодування не надається.",
+    checkInami: "Перевірити офіційні тарифи INAMI", inamiLink: "Сайт INAMI",
+    ctaTitle: "Питання щодо наших гонорарів?", ctaSub: "Наша команда готова відповісти на всі ваші запитання щодо вартості та відшкодувань.", ctaBtn: "Записатися",
+    whoConv: "Philippe Banaszak · Félix Esser · Fabienne Dormann · Thom Petit",
+    whoNonConv: "Loïc Meunier",
+    convListTitle: "Конвенційні терапевти:", nonConvListTitle: "Неконвенційний:",
+    tarifsSource: "Гонорари згідно з номенклатурою INAMI (чинні з 01/01/2026). Можливі оновлення — актуальні суми на inami.fgov.be.",
+    cabinet: "У кабінеті", home: "Візит додому",
+    bimLabel: "BIM", nonBimLabel: "Стандарт",
+    estimateNote: "≈ оцінка",
+  },
+  ku: {
+    badge: "Bihayên zelal",
+    title: "Hûn bi rastî", titleAccent: "çiqas didin",
+    subtitle: "Para we, vegerandina sîgorteyê û tevahiya heqê — her tişt zelal, bê surprîz.",
+    glanceTitle: "Bi kurtî",
+    perSession: "/ danişîn", yourPart: "Para we", mutuelleShare: "Sîgorte vedigerîne", totalHonoraire: "Heqê giştî",
+    convTitle: "Terapîstên konvansiyonel", nonConvTitle: "Ne-konvansiyonel — Loïc Meunier",
+    normalPathLabel: "Nexweşiyên akût (Fa)", ePathLabel: "Patolojiya E (§14, 5°)", seriousPathLabel: "Nexweşiyên kronîk (Fb)",
+    bimNote: "Rewşa BIM:",
+    faNote: "Lîsteya Fa: nexweşiyên akût (reçete pêwîst e, mînak pişt, çok, mil). Heta 18 danişîn/sal.",
+    eNote: "Lîsteya E: nexweşiyên kronîk ku fizyoterapiya demdirêj hewce dikin (sertîfîkaya bijîjkî pêwîst e).",
+    fbNote: "Lîsteya Fb: nexweşiyên kronîk (sertîfîkaya bijîjkî ya taybet). Danişînên bê sînor.",
+    howTitle: "Vegerandin çawa dixebite?",
+    step1Title: "Reçeteyê bistîne", step1Desc: "Bijîjkê we reçeteya fizyoterapiyê dide we. Bê wê, vegerandin ne mimkin e.",
+    step2Title: "Di danişînê de bide", step2Desc: "Hûn tevahiya heqê rasterast di her danişînê de didin terapîstê xwe.",
+    step3Title: "Vegerandina otomatîk", step3Desc: "Sîgorteya we para INAMI bi otomatîkî vedigerîne, bi gelemperî di nav çend rojan de.",
+    nonConvExplain: "Loïc Meunier heqên xwe bi serbestî diyar dike. Sîgorteya we nêzîkî 75% ya tarîfa konvansiyonel a INAMI vedigerîne. Cudahî li ser we ye.",
+    nonConvNote: "Nirxên texmînî — ji bo mîqdara rast bi sîgorteya xwe re têkilî daynin.",
+    bimTitle: "BIM — ew çi ye?", bimText: "BIM (Bénéficiaire de l'Intervention Majorée) tarîfeke taybet e ji bo kesên bi dahatê kêmtir. Wek nexweşê BIM, hûn ji bo her danişînê pir kêmtir didin (mînak 2,50 € li şûna 6,25 € ji bo nexweşiyên Fa).", bimHow: "Çawa kontrol bikin: li etîketa sîgorteya xwe binêrin — koda xwedî (CT1/CT2) bi 0 diqede (mînak 100/100) = ne BIM. Bi 1 diqede (mînak 101/101) = BIM. Heke guman hebe, bi sîgorteya xwe re têkilî daynin.", bimNonConv: "Girîng: terapîstekî ne-konvansiyonel jî nikare ji we zêdebar bigire heke hûn nexweşê BIM bin. Ew bi qanûnî mecbûr e ku tarîfên fermî yên INAMI bicîh bîne — bê zêdebar.",
+    mutuelleTitle: "Sîgorteya temamker", mutuelleText: "Gelek sîgorte bi qewareya temamker para zêde vedigerînin. Bi ya xwe re kontrol bikin.",
+    prescTitle: "Reçeteya bijîjkî pêwîst e", prescText: "Reçeteyeke bijîjkî ji bo wergirtina vegerandinê mecbûrî ye. Bê wê, ti vegerandin nayê dayîn.",
+    checkInami: "Tarîfên fermî yên INAMI kontrol bike", inamiLink: "Malpera INAMI",
+    ctaTitle: "Pirs li ser heqên me?", ctaSub: "Tîma me amade ye ku bersiva hemû pirsên we yên li ser lêçûn û vegerandinan bide.", ctaBtn: "Randevû bigire",
+    whoConv: "Philippe Banaszak · Félix Esser · Fabienne Dormann · Thom Petit",
+    whoNonConv: "Loïc Meunier",
+    convListTitle: "Terapîstên konvansiyonel:", nonConvListTitle: "Ne-konvansiyonel:",
+    tarifsSource: "Heq li gorî nomenklatura INAMI (ji 01/01/2026 ve di meriyetê de). Dibe ku nû bibe — mîqdarên niha li inami.fgov.be.",
+    cabinet: "Li kabîneyê", home: "Serdana malê",
+    bimLabel: "BIM", nonBimLabel: "Standard",
+    estimateNote: "≈ texmîn",
   },
   nl: {
     badge: "Transparante tarieven",
@@ -359,8 +452,8 @@ function FeeCard({ label, total, inami, patNonBim, patBim, ui, isApprox }: FeeCa
 /* ─── MAIN COMPONENT ───────────────────────────────────────────────────────── */
 export function HonorairesPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de","fr","en","nl","tr","ar","pl"].includes(locale) ? locale : "en") as LangKey;
-  const ui = UI[lang];
+  const lang: LangKey = (["de","fr","en","nl","tr","ar","pl","uk","es","ku"].includes(locale) ? locale : "en") as LangKey;
+  const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
 
   const [convTab, setConvTab] = useState<"cabinet" | "home">("cabinet");

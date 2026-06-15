@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import { CalendarPlus, CheckCircle2, Clock, ArrowRight, Activity, Bone, Zap, Shield, Info } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const REHAB_PROGRAMS = [
   {
@@ -263,7 +263,7 @@ const REHAB_PROGRAMS = [
   },
 ];
 
-const UI: Record<LangKey, {
+const UI: Record<string, {
   badge: string; title: string; subtitle: string; weeks: string;
   phases: string; cta: string; ctaSub: string; bookBtn: string;
   note: string;
@@ -271,6 +271,9 @@ const UI: Record<LangKey, {
   de: { badge: "Post-Op Rehabilitation", title: "Rehabilitation nach Ihrer Operation", subtitle: "Individuelle Rehabilitationsprogramme — von der Hüft-TEP bis zur Kreuzbandrekonstruktion. Unser erfahrenes Team begleitet Sie sicher zurück zu Ihrer vollen Beweglichkeit.", weeks: "Wochen", phases: "Behandlungsphasen", cta: "Bereit für Ihre Rehabilitation?", ctaSub: "Vereinbaren Sie einen Ersttermin — wir erstellen Ihr individuelles Programm.", bookBtn: "Termin vereinbaren", note: "Diese Programme stellen eine Auswahl aus unserem breiten Rehabilitationsangebot dar — unter vielen weiteren, die wir täglich in der Praxis betreuen. Für jede Situation, jede Operation und jeden Patienten erstellen wir ein individuelles Programm." },
   fr: { badge: "Rééducation Post-Op", title: "Rééducation après votre opération", subtitle: "Programmes de rééducation individualisés — de la prothèse de hanche à la reconstruction du LCA. Notre équipe expérimentée vous guide en toute sécurité vers la pleine mobilité.", weeks: "semaines", phases: "Phases de traitement", cta: "Prêt pour votre rééducation ?", ctaSub: "Prenez rendez-vous pour un bilan initial — nous créons votre programme personnalisé.", bookBtn: "Prendre rendez-vous", note: "Ces programmes sont présentés à titre indicatif et constituent, entre autres, une sélection parmi les nombreuses réhabilitations que nous réalisons au cabinet. Pour chaque situation, chaque opération et chaque patient, nous élaborons un programme sur mesure." },
   en: { badge: "Post-Op Rehabilitation", title: "Rehabilitation after your surgery", subtitle: "Individualised rehabilitation programmes — from hip replacement to ACL reconstruction. Our experienced team guides you safely back to full mobility.", weeks: "weeks", phases: "Treatment phases", cta: "Ready for your rehabilitation?", ctaSub: "Book an initial assessment — we create your personalised programme.", bookBtn: "Book appointment", note: "These programmes are presented as examples and represent, among others, a selection of the many rehabilitation treatments we carry out at the practice. For every situation, every surgery and every patient, we design a tailored programme." },
+  uk: { badge: "Реабілітація після операції", title: "Реабілітація після вашої операції", subtitle: "Індивідуальні програми реабілітації — від ендопротезу кульшового суглоба до реконструкції ПХЗ. Наша досвідчена команда безпечно повертає вас до повної рухливості.", weeks: "тижнів", phases: "Фази лікування", cta: "Готові до реабілітації?", ctaSub: "Запишіться на первинну оцінку — ми створимо вашу персональну програму.", bookBtn: "Записатися", note: "Ці програми наведені як приклади і представляють, серед інших, добірку з багатьох реабілітаційних курсів, які ми проводимо в кабінеті. Для кожної ситуації, кожної операції та кожного пацієнта ми розробляємо індивідуальну програму." },
+  es: { badge: "Rehabilitación postoperatoria", title: "Rehabilitación tras su operación", subtitle: "Programas de rehabilitación individualizados — desde la prótesis de cadera hasta la reconstrucción del LCA. Nuestro equipo experimentado le guía con seguridad de vuelta a la movilidad completa.", weeks: "semanas", phases: "Fases del tratamiento", cta: "¿Listo para su rehabilitación?", ctaSub: "Pida una evaluación inicial — creamos su programa personalizado.", bookBtn: "Pedir cita", note: "Estos programas se presentan a título de ejemplo y constituyen, entre otros, una selección de las numerosas rehabilitaciones que realizamos en el consultorio. Para cada situación, cada operación y cada paciente elaboramos un programa a medida." },
+  ku: { badge: "Rehabîlîtasyona piştî emeliyatê", title: "Rehabîlîtasyon piştî emeliyata we", subtitle: "Bernameyên rehabîlîtasyonê yên kesane — ji protezê kalç heta nûavakirina ACL. Tîma me ya bi tecrûbe we bi ewlehî vedigerîne tevgera tevahî.", weeks: "hefte", phases: "Qonaxên dermankirinê", cta: "Ji bo rehabîlîtasyona xwe amade ne?", ctaSub: "Ji bo nirxandineke destpêkê randevû bigirin — em bernameya we ya kesane çêdikin.", bookBtn: "Randevû bigire", note: "Ev bername wek mînak têne pêşkêşkirin û di nav yên din de hilbijartinek ji gelek rehabîlîtasyonên ku em li kabîneyê pêk tînin temsîl dikin. Ji bo her rewş, her emeliyat û her nexweş em bernameyeke taybet amade dikin." },
   nl: { badge: "Post-Op Revalidatie", title: "Revalidatie na uw operatie", subtitle: "Geïndividualiseerde revalidatieprogramma's — van heupprothese tot VKB-reconstructie. Ons ervaren team begeleidt u veilig naar volledige mobiliteit.", weeks: "weken", phases: "Behandelfasen", cta: "Klaar voor uw revalidatie?", ctaSub: "Maak een eerste afspraak — wij stellen uw gepersonaliseerd programma op.", bookBtn: "Afspraak maken", note: "Deze programma's zijn indicatief en vormen, onder andere, een selectie uit de vele revalidatiebehandelingen die wij dagelijks uitvoeren. Voor elke situatie, elke ingreep en elke patiënt stellen wij een op maat gemaakt programma op." },
   tr: { badge: "Ameliyat Sonrası Rehabilitasyon", title: "Ameliyat sonrası rehabilitasyon", subtitle: "Bireyselleştirilmiş rehabilitasyon programları — kalça protezinden ÖÇB rekonstrüksiyonuna kadar. Deneyimli ekibimiz sizi tam hareketliliğe güvenle rehberlik eder.", weeks: "hafta", phases: "Tedavi fazları", cta: "Rehabilitasyonunuza hazır mısınız?", ctaSub: "Başlangıç değerlendirmesi için randevu alın — kişisel programınızı oluşturuyoruz.", bookBtn: "Randevu al", note: "Bu programlar, kliniğimizde sunduğumuz pek çok rehabilitasyon hizmetinden bir seçkiyi temsil etmektedir. Her durum, her ameliyat ve her hasta için bireyselleştirilmiş program hazırlıyoruz." },
   ar: { badge: "تأهيل ما بعد الجراحة", title: "إعادة التأهيل بعد عمليتك", subtitle: "برامج إعادة تأهيل فردية — من بدلة الورك إلى إعادة بناء الرباط الصليبي. يرشدك فريقنا ذو الخبرة بأمان نحو التعافي الكامل.", weeks: "أسابيع", phases: "مراحل العلاج", cta: "هل أنت مستعد لإعادة التأهيل؟", ctaSub: "احجز تقييمًا أوليًا — نضع برنامجك الشخصي.", bookBtn: "حجز موعد", note: "تُعرض هذه البرامج على سبيل المثال وتمثّل، من بين أمور أخرى، مجموعة مختارة من برامج إعادة التأهيل العديدة التي ننفّذها في العيادة. لكل حالة وكل عملية وكل مريض، نضع برنامجاً مخصصاً." },
@@ -279,8 +282,8 @@ const UI: Record<LangKey, {
 
 export function RehabPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
-  const ui = UI[lang];
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
+  const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
 
   return (
@@ -310,9 +313,9 @@ export function RehabPageContent() {
         {/* Programs */}
         <StaggerContainer className="space-y-10" staggerDelay={0.12}>
           {REHAB_PROGRAMS.map((program) => {
-            const phases = (program.phases as Record<LangKey, typeof program.phases.de>)[lang] ?? program.phases.de;
-            const titleStr = (program.title as Record<LangKey, string>)[lang] ?? program.title.de;
-            const introStr = (program.intro as Record<LangKey, string>)[lang] ?? program.intro.de;
+            const phases = (program.phases as Record<string, typeof program.phases.de>)[lang] ?? program.phases.en ?? program.phases.de;
+            const titleStr = (program.title as Record<string, string>)[lang] ?? program.title.en ?? program.title.de;
+            const introStr = (program.intro as Record<string, string>)[lang] ?? program.intro.en ?? program.intro.de;
 
             return (
               <StaggerItem key={program.key}>
