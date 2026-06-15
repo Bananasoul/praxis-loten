@@ -20,14 +20,14 @@ const SURGERY_DATA: Record<Slug, {
   iconBg: string;
   iconColor: string;
   weeks: string;
-  title: Record<LangKey, string>;
-  subtitle: Record<LangKey, string>;
-  surgeryExplain: Record<LangKey, string>;
-  whyRehab: Record<LangKey, string[]>;
-  objectives: Record<LangKey, string[]>;
-  whatToExpect: Record<LangKey, { heading: string; text: string }[]>;
-  phases: Record<LangKey, { label: string; items: string[] }[]>;
-  risks: Record<LangKey, string[]>;
+  title: Record<string, string>;
+  subtitle: Record<string, string>;
+  surgeryExplain: Record<string, string>;
+  whyRehab: Record<string, string[]>;
+  objectives: Record<string, string[]>;
+  whatToExpect: Record<string, { heading: string; text: string }[]>;
+  phases: Record<string, { label: string; items: string[] }[]>;
+  risks: Record<string, string[]>;
 }> = {
   hip: {
     icon: Bone,
