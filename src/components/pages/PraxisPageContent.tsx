@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { MapPin, Phone, Mail, Clock, Star, Building2, Users, CalendarPlus, LucideIcon } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const UI: Record<LangKey, {
   heading: string; headingHighlight: string; subtitle: string;
@@ -48,6 +48,42 @@ const UI: Record<LangKey, {
     p2: "We offer a wide range of rehabilitation services: from orthopaedic manual therapy to specialised sports physiotherapy, jaw joint treatment and manual lymphatic drainage.",
     p3: "Our practice is equipped with the latest technology, including the Manuthera 242 — a high-end Finnish treatment table for precise and gentle treatments.",
     p4: "Thanks to our proximity to the orthopaedic hospital, we are your preferred partner for post-operative rehabilitation after hip or knee replacements and ACL reconstructions.",
+  },
+  uk: {
+    heading: "Наш", headingHighlight: "Кабінет",
+    subtitle: "Сучасна фізіотерапія в самому центрі Ойпена — для вашого здоров'я та добробуту.",
+    contactLabel: "Контакти", bookBtn: "Записатися", hoursLabel: "Години роботи",
+    hoursNote: "За попереднім записом — можливі гнучкі години.",
+    googleReview: "Оцініть нас у Google",
+    welcomeTitle: "Ласкаво просимо до Praxis Loten",
+    p1: "Praxis Loten — сучасний фізіотерапевтичний кабінет в Ойпені (Бельгія), у серці німецькомовної спільноти. Наша динамічна команда з 6 спеціалізованих фізіотерапевтів супроводжує вас на шляху до здоров'я.",
+    p2: "Ми пропонуємо широкий спектр реабілітаційних послуг: від ортопедичної мануальної терапії до спеціалізованої спортивної фізіотерапії, лікування скронево-нижньощелепного суглоба та ручного лімфодренажу.",
+    p3: "Наш кабінет оснащений найсучаснішим обладнанням, зокрема Manuthera 242 — фінською кушеткою преміумкласу для точних і дбайливих процедур.",
+    p4: "Завдяки близькості до ортопедичної лікарні ми ваш надійний партнер для післяопераційної реабілітації після ендопротезування кульшового чи колінного суглоба та реконструкції ПХЗ.",
+  },
+  es: {
+    heading: "Nuestro", headingHighlight: "Consultorio",
+    subtitle: "Fisioterapia moderna en pleno centro de Eupen — para su salud y bienestar.",
+    contactLabel: "Contacto", bookBtn: "Pedir cita", hoursLabel: "Horario de apertura",
+    hoursNote: "Con cita previa — horarios flexibles posibles.",
+    googleReview: "Valórenos en Google",
+    welcomeTitle: "Bienvenido a Praxis Loten",
+    p1: "Praxis Loten es un consultorio de fisioterapia moderno situado en Eupen, Bélgica, en el corazón de la Comunidad germanófona. Nuestro dinámico equipo de 6 fisioterapeutas especializados le acompaña en su camino hacia la salud.",
+    p2: "Ofrecemos una amplia gama de servicios de rehabilitación: desde la terapia manual ortopédica hasta la fisioterapia deportiva especializada, pasando por el tratamiento de la articulación temporomandibular y el drenaje linfático manual.",
+    p3: "Nuestro consultorio está equipado con los aparatos más modernos, entre ellos la Manuthera 242 — una camilla de tratamiento finlandesa de gama alta para tratamientos precisos y suaves.",
+    p4: "Gracias a nuestra proximidad con el hospital ortopédico, somos su socio preferente para la rehabilitación postoperatoria tras prótesis de cadera o rodilla, así como tras la reconstrucción del LCA.",
+  },
+  ku: {
+    heading: "Kabîneya", headingHighlight: "me",
+    subtitle: "Fizyoterapiya nûjen li navenda Eupenê — ji bo tenduristî û başiya we.",
+    contactLabel: "Têkilî", bookBtn: "Randevû bigire", hoursLabel: "Demên vekirî",
+    hoursNote: "Bi randevû — demên nerm mimkin in.",
+    googleReview: "Li ser Google me binirxînin",
+    welcomeTitle: "Bi xêr hatî Praxis Loten",
+    p1: "Praxis Loten kabîneyeke fizyoterapiyê ya nûjen e li Eupenê, Belçîka, li dilê Civaka Almanîaxêv. Tîma me ya dînamîk a ji 6 fizyoterapîstên pispor we di rêya tenduristiyê de digihîne.",
+    p2: "Em rêzeyeke fireh a xizmetên rehabîlîtasyonê pêşkêş dikin: ji terapiya destî ya ortopedîk heta fizyoterapiya werzîşê ya pispor, dermankirina girêka çenê û drenaja lîmfatîk a destî.",
+    p3: "Kabîneya me bi amûrên herî nûjen hatiye xemilandin, di nav wan de Manuthera 242 — maseyeke dermankirinê ya Fînlandî ya bilind ji bo dermankirinên hûr û nerm.",
+    p4: "Bi saya nêzîkbûna me ya nexweşxaneya ortopedîk, em hevkarê we yê bijare ne ji bo rehabîlîtasyona piştî emeliyatê piştî protezê kalç an çok û nûavakirina ACL.",
   },
   nl: {
     heading: "Onze", headingHighlight: "Praktijk",
@@ -120,6 +156,24 @@ const FEATURES: Record<LangKey, { title: string; desc: string }[]> = {
     { title: "Manuthera 242", desc: "High-tech Finnish treatment table — for precise manual therapy techniques." },
     { title: "Close to specialists", desc: "Near the orthopaedic hospital (hip/knee replacements, ACL reconstruction)." },
   ],
+  uk: [
+    { title: "Сучасний кабінет", desc: "Повністю обладнані приміщення, доступні цілодобово, у центрі Ойпена." },
+    { title: "6 спеціалістів", desc: "Міждисциплінарна команда з досвідом у мануальній терапії, спорті, СНЩС і лімфодренажі." },
+    { title: "Manuthera 242", desc: "Високотехнологічна фінська кушетка — для точних технік мануальної терапії." },
+    { title: "Поруч зі спеціалістами", desc: "Поблизу ортопедичної лікарні (ендопротези кульшового/колінного суглоба, реконструкція ПХЗ)." },
+  ],
+  es: [
+    { title: "Consultorio moderno", desc: "Instalaciones totalmente equipadas, accesibles 24/7, en el centro de Eupen." },
+    { title: "6 especialistas", desc: "Un equipo interdisciplinar con experiencia en terapia manual, deporte, ATM y drenaje linfático." },
+    { title: "Manuthera 242", desc: "Camilla de tratamiento finlandesa de alta tecnología — para técnicas de terapia manual precisas." },
+    { title: "Cerca de los especialistas", desc: "Cerca del hospital ortopédico (prótesis de cadera/rodilla, reconstrucción del LCA)." },
+  ],
+  ku: [
+    { title: "Kabîneya nûjen", desc: "Cihên bi tevahî xemilandî, 24/7 gihîştî, li navenda Eupenê." },
+    { title: "6 pispor", desc: "Tîmeke navdîsîplînî bi pisporî di terapiya destî, werzîş, TMJ û drenaja lîmfatîk de." },
+    { title: "Manuthera 242", desc: "Maseya dermankirinê ya Fînlandî ya teknolojiya bilind — ji bo teknîkên terapiya destî yên hûr." },
+    { title: "Nêzî pisporan", desc: "Nêzî nexweşxaneya ortopedîk (protezê kalç/çok, nûavakirina ACL)." },
+  ],
   nl: [
     { title: "Moderne praktijk", desc: "Volledig uitgeruste ruimten, 24/7 toegankelijk, centraal gelegen in Eupen." },
     { title: "6 specialisten", desc: "Een interdisciplinair team met expertise in manuele therapie, sport, TMG en lymfedrainage." },
@@ -150,6 +204,9 @@ const DAYS: Record<LangKey, string[]> = {
   de: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
   fr: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
   en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  uk: ["Понеділок", "Вівторок", "Середа", "Четвер", "П\u0027ятниця", "Субота"],
+  es: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+  ku: ["Duşem", "Sêşem", "Çarşem", "Pêncşem", "În", "Şemî"],
   nl: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
   tr: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
   ar: ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
@@ -158,12 +215,12 @@ const DAYS: Record<LangKey, string[]> = {
 
 const SAT_HOURS: Record<LangKey, string> = {
   de: "Nach Vereinbarung", fr: "Sur rendez-vous", en: "By appointment",
-  nl: "Op afspraak", tr: "Randevu ile", ar: "بالموعد", pl: "Na umówienie",
+  nl: "Op afspraak", tr: "Randevu ile", ar: "بالموعد", pl: "Na umówienie", uk: "За записом", es: "Con cita previa", ku: "Bi randevû",
 };
 
 export function PraxisPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const isRtl = lang === "ar";
   const features = FEATURES[lang].map((f, i) => ({ ...f, Icon: FEATURE_ICONS[i] }));
