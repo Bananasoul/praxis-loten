@@ -38,7 +38,7 @@ export async function generateMetadata({
       locale: locale,
       type: "website",
       siteName: "Praxis Loten",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Praxis Loten — Kinésithérapie & thérapie manuelle à Eupen" }],
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Praxis Loten — Cabinet de kinésithérapie & rééducation à Eupen" }],
     },
     twitter: {
       card: "summary_large_image",
