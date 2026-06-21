@@ -72,13 +72,13 @@ const SERVICES: Record<string, ServiceDetail> = {
       pl: "Specjalizacja ortopedyczna zgodna ze standardem IFOMPT",
     },
     description: {
-      de: "Orthopädische Manualtherapie ist eine weltweit anerkannte Spezialisierung der Physiotherapie. Unsere Therapeuten suchen die Ursache Ihrer Schmerzen und bieten eine individuell angepasste Behandlung für dauerhafte Genesung.",
-      fr: "La thérapie manuelle orthopédique est une spécialisation mondialement reconnue de la kinésithérapie. Nos thérapeutes recherchent la cause de vos douleurs et proposent un traitement personnalisé pour une guérison durable.",
-      en: "Orthopaedic manual therapy is a globally recognised specialisation of physiotherapy. Our therapists seek the root cause of your pain and provide individually tailored treatment for lasting recovery.",
-      nl: "Orthopedische manuele therapie is een wereldwijd erkende specialisatie van fysiotherapie. Onze therapeuten zoeken de oorzaak van uw pijn en bieden een op maat gemaakte behandeling voor blijvend herstel.",
-      tr: "Ortopedik manuel terapi, fizyoterapinin dünya genelinde tanınan bir uzmanlık alanıdır. Terapistlerimiz ağrınızın kökenini arar ve kalıcı iyileşme için bireysel tedavi sunar.",
-      ar: "العلاج اليدوي الجراحي العظمي هو تخصص معترف به عالميًا في العلاج الطبيعي. يبحث معالجونا عن سبب آلامك ويقدمون علاجًا مخصصًا للشفاء الدائم.",
-      pl: "Ortopedyczna terapia manualna jest uznaną na całym świecie specjalizacją fizjoterapii. Nasi terapeuci szukają przyczyny bólu i oferują indywidualnie dostosowane leczenie dla trwałego zdrowienia.",
+      de: "Orthopädische Manualtherapie ist eine weltweit anerkannte Spezialisierung der Physiotherapie (IFOMPT-Standard). Mit gezielten Handgriffen lindern wir Schmerzen und geben Beweglichkeit zurück — nicht, um etwas « einzurenken », sondern um Sie wieder sicher in Bewegung zu bringen. Ihre besten Ergebnisse erzielt die manuelle Therapie in Kombination mit aktiven Übungen, individuell auf Sie abgestimmt.",
+      fr: "La thérapie manuelle orthopédique est une spécialisation de la kinésithérapie reconnue mondialement (standard IFOMPT). Par des techniques précises, nous apaisons la douleur et redonnons de la mobilité — non pour « remettre en place », mais pour vous remettre en mouvement en confiance. Ses meilleurs résultats, la thérapie manuelle les obtient associée à des exercices actifs, adaptés à vous.",
+      en: "Orthopaedic manual therapy is a globally recognised specialisation of physiotherapy (IFOMPT standard). With precise techniques we ease pain and restore mobility — not to « put things back », but to get you moving again with confidence. Manual therapy delivers its best results combined with active exercises, tailored to you.",
+      nl: "Orthopedische manuele therapie is een wereldwijd erkende specialisatie van de kinesitherapie (IFOMPT-norm). Met precieze technieken verzachten we pijn en geven we mobiliteit terug — niet om iets « recht te zetten », maar om u weer met vertrouwen in beweging te brengen. Haar beste resultaten haalt manuele therapie in combinatie met actieve oefeningen, op u afgestemd.",
+      tr: "Ortopedik manuel terapi, fizyoterapinin dünya çapında tanınan bir uzmanlık alanıdır (IFOMPT standardı). Hassas tekniklerle ağrıyı dindirir ve hareketliliği geri veririz — bir şeyi « yerine oturtmak » için değil, sizi yeniden güvenle harekete geçirmek için. Manuel terapi en iyi sonuçlarını, size uyarlanmış aktif egzersizlerle birlikte verir.",
+      ar: "العلاج اليدوي العظمي تخصص معترف به عالميًا ضمن العلاج الطبيعي (معيار IFOMPT). بتقنيات دقيقة نخفّف الألم ونعيد الحركة — لا لـ « إعادة الأمور إلى مكانها »، بل لإعادتك إلى الحركة بثقة. ويحقّق العلاج اليدوي أفضل نتائجه مقترنًا بتمارين نشطة مصمّمة لك.",
+      pl: "Ortopedyczna terapia manualna to uznana na całym świecie specjalizacja fizjoterapii (standard IFOMPT). Precyzyjnymi technikami łagodzimy ból i przywracamy ruchomość — nie po to, by coś « nastawić », lecz by z pewnością siebie znów wprawić Cię w ruch. Najlepsze efekty terapia manualna daje w połączeniu z aktywnymi ćwiczeniami, dopasowanymi do Ciebie.",
     },
     longDesc: {
       de: [

@@ -32,6 +32,241 @@ interface ArticleContent {
 }
 
 const ARTICLES: Record<string, ArticleContent> = {
+  "therapie-manuelle-mythes-mouvement": {
+    "title": {
+        "de": "Manuelle Therapie in Eupen: Bewegung zurückgeben, nicht « einrenken »",
+        "fr": "Thérapie manuelle à Eupen : remettre du mouvement, pas « remettre en place »",
+        "en": "Manual therapy in Eupen: restoring movement, not « putting things back »",
+        "nl": "Manuele therapie in Eupen: beweging teruggeven, niet « rechtzetten »",
+        "tr": "Eupen'de manuel terapi: yerine oturtmak değil, hareketi geri vermek",
+        "ar": "العلاج اليدوي في أوبن: إعادة الحركة، لا « إعادة الأمور إلى مكانها »",
+        "pl": "Terapia manualna w Eupen: przywracanie ruchu, a nie « nastawianie »"
+    },
+    "category": {
+        "de": "Manuelle Therapie",
+        "fr": "Thérapie Manuelle",
+        "en": "Manual Therapy",
+        "nl": "Manuele Therapie",
+        "tr": "Manuel Terapi",
+        "ar": "العلاج اليدوي",
+        "pl": "Terapia Manualna"
+    },
+    "date": "2026-06-21",
+    "readMin": 6,
+    "color": "from-[#2b3186] to-[#1e2260]",
+    "authorSlug": "philippe-banaszak",
+    "authorName": "Philippe Banaszak",
+    "intro": {
+        "fr": "On vous a sûrement déjà dit qu'un kiné « remet les choses en place » d'un geste précis, dans un craquement libérateur. L'image est rassurante… mais inexacte. La thérapie manuelle moderne ne réaligne pas un os récalcitrant : elle se sert des mains pour apaiser la douleur, redonner de la mobilité et, surtout, vous remettre en mouvement. Au cabinet Praxis Loten à Eupen, c'est cette approche fondée sur les preuves et reconnue au niveau international (standard IFOMPT) que nous pratiquons. Voici ce qu'elle est vraiment — et ce qu'elle peut faire pour vous, sans promesse magique.",
+        "de": "Man hat Ihnen sicher schon gesagt, dass ein Physiotherapeut mit einem gezielten Handgriff « etwas einrenkt » — begleitet von einem befreienden Knacken. Das Bild ist beruhigend … aber unzutreffend. Die moderne manuelle Therapie richtet keinen widerspenstigen Knochen aus: Sie nutzt die Hände, um Schmerzen zu lindern, Beweglichkeit zurückzugeben und Sie vor allem wieder in Bewegung zu bringen. In der Praxis Loten in Eupen praktizieren wir genau diesen evidenzbasierten, international anerkannten Ansatz (IFOMPT-Standard). Hier erfahren Sie, was sie wirklich ist — und was sie für Sie tun kann, ganz ohne Wunderversprechen.",
+        "en": "You have probably been told that a physiotherapist « puts things back in place » with a precise move and a satisfying crack. The image is reassuring… but inaccurate. Modern manual therapy does not realign a stubborn bone: it uses the hands to ease pain, restore mobility and, above all, get you moving again. At Praxis Loten in Eupen, this is the evidence-based, internationally recognised approach (IFOMPT standard) that we practise. Here is what it really is — and what it can do for you, without any magic promise.",
+        "nl": "Men heeft u vast al verteld dat een kinesitherapeut met een precieze handeling « iets rechtzet », met een bevrijdende krak. Het beeld is geruststellend… maar onjuist. Moderne manuele therapie zet geen weerbarstig bot recht: ze gebruikt de handen om pijn te verzachten, mobiliteit terug te geven en u vooral weer in beweging te brengen. Bij Praxis Loten in Eupen passen we precies deze evidence-based, internationaal erkende aanpak toe (IFOMPT-standaard). Dit is wat ze werkelijk is — en wat ze voor u kan doen, zonder wonderbeloftes.",
+        "tr": "Bir fizyoterapistin kesin bir hareketle, ferahlatıcı bir çıtırtıyla « bir şeyi yerine oturttuğu » size mutlaka söylenmiştir. Bu imge güven verir… ama yanlıştır. Modern manuel terapi inatçı bir kemiği hizalamaz: ağrıyı dindirmek, hareketliliği geri vermek ve hepsinden önemlisi sizi yeniden harekete geçirmek için elleri kullanır. Eupen'deki Praxis Loten'de tam da bu kanıta dayalı, uluslararası kabul görmüş yaklaşımı (IFOMPT standardı) uyguluyoruz. İşte gerçekte ne olduğu — ve hiçbir mucize vaadi olmadan sizin için neler yapabileceği.",
+        "ar": "ربما قيل لك أن أخصائي العلاج الطبيعي « يعيد الأمور إلى مكانها » بحركة دقيقة مصحوبة بطقطقة مريحة. الصورة مطمئنة… لكنها غير دقيقة. لا يعيد العلاج اليدوي الحديث محاذاة عظمة عنيدة: بل يستخدم اليدين لتخفيف الألم، واستعادة الحركة، وقبل كل شيء إعادتك إلى الحركة. في عيادة براكسيس لوتن في أوبن، هذا هو النهج القائم على الأدلة والمعترف به دوليًا (معيار IFOMPT) الذي نمارسه. إليك ما هو حقًا — وما يمكنه فعله من أجلك، دون أي وعد سحري.",
+        "pl": "Pewnie nieraz słyszałeś, że fizjoterapeuta « nastawia » coś precyzyjnym ruchem, z wyzwalającym trzaskiem. Ten obraz uspokaja… ale jest nieprawdziwy. Nowoczesna terapia manualna nie nastawia opornej kości: używa rąk, by złagodzić ból, przywrócić ruchomość, a przede wszystkim znów wprawić Cię w ruch. W Praxis Loten w Eupen praktykujemy właśnie to podejście oparte na dowodach i uznane międzynarodowo (standard IFOMPT). Oto czym naprawdę jest — i co może dla Ciebie zrobić, bez żadnej cudownej obietnicy."
+    },
+    "sections": [
+        {
+            "heading": {
+                "fr": "Le mythe du « remettre en place »",
+                "de": "Der Mythos vom « Einrenken »",
+                "en": "The « putting back » myth",
+                "nl": "De mythe van het « rechtzetten »",
+                "tr": "« Yerine oturtma » miti",
+                "ar": "خرافة « الإعادة إلى المكان »",
+                "pl": "Mit « nastawiania »"
+            },
+            "body": {
+                "fr": "Le craquement n'est pas le bruit d'un os qui retrouve sa position : c'est un phénomène articulaire tout à fait normal, lié à de petites bulles de gaz dans le liquide de l'articulation, sans aucun rapport avec un réalignement. Pourtant, l'idée qu'une vertèbre serait « sortie » et qu'il faudrait la « remettre » a la vie dure. Le problème, c'est qu'elle inquiète : elle laisse croire que votre dos serait précaire et dépendrait d'une main extérieure pour tenir debout. La réalité est bien plus rassurante. Votre colonne et vos articulations sont solides, mobiles et faites pour s'adapter. Quand un mouvement devient douloureux, ce n'est presque jamais une pièce « déplacée » — c'est un système sensible, momentanément sur la défensive. Et ça, ça se retravaille.",
+                "de": "Das Knacken ist nicht das Geräusch eines Knochens, der seine Position wiederfindet: Es ist ein völlig normales Gelenkphänomen, ausgelöst durch kleine Gasbläschen in der Gelenkflüssigkeit — ohne jeden Zusammenhang mit einer Ausrichtung. Dennoch hält sich die Vorstellung hartnäckig, ein Wirbel sei « herausgesprungen » und müsse « zurückgesetzt » werden. Das Problem: Diese Idee macht Angst. Sie suggeriert, Ihr Rücken sei labil und brauche eine fremde Hand, um zu halten. Die Realität ist weit beruhigender. Ihre Wirbelsäule und Ihre Gelenke sind stabil, beweglich und dafür gemacht, sich anzupassen. Wird eine Bewegung schmerzhaft, ist fast nie ein Teil « verschoben » — es ist ein empfindliches System, das vorübergehend in Abwehrhaltung ist. Und genau das lässt sich wieder verändern.",
+                "en": "The crack is not the sound of a bone returning to its position: it is a perfectly normal joint phenomenon, caused by tiny gas bubbles in the joint fluid, with no connection to any realignment. Yet the idea that a vertebra has « come out » and needs to be « put back » dies hard. The problem is that it worries people: it suggests your back is precarious and depends on an outside hand to stay upright. The reality is far more reassuring. Your spine and joints are strong, mobile and built to adapt. When a movement becomes painful, it is almost never a « displaced » part — it is a sensitive system, temporarily on the defensive. And that can be reworked.",
+                "nl": "De krak is niet het geluid van een bot dat zijn plaats terugvindt: het is een volkomen normaal gewrichtsverschijnsel, veroorzaakt door kleine gasbelletjes in de gewrichtsvloeistof, zonder enig verband met een heruitlijning. Toch is het idee dat een wervel « eruit » zou zijn en « teruggezet » moet worden hardnekkig. Het probleem is dat het ongerust maakt: het suggereert dat uw rug wankel is en een externe hand nodig heeft om overeind te blijven. De werkelijkheid is veel geruststellender. Uw wervelkolom en gewrichten zijn sterk, mobiel en gemaakt om zich aan te passen. Wanneer een beweging pijnlijk wordt, is het bijna nooit een « verschoven » onderdeel — het is een gevoelig systeem dat tijdelijk in de verdediging staat. En dat kan opnieuw worden bijgestuurd.",
+                "tr": "Çıtırtı, bir kemiğin yerine dönmesinin sesi değildir: eklem sıvısındaki küçük gaz kabarcıklarından kaynaklanan, hizalanmayla hiçbir ilgisi olmayan, son derece normal bir eklem olayıdır. Yine de bir omurun « çıktığı » ve « yerine konması » gerektiği fikri kolay ölmüyor. Sorun şu ki bu, insanı endişelendirir: sırtınızın güvensiz olduğunu ve ayakta durmak için dışarıdan bir ele bağlı olduğunu ima eder. Gerçek çok daha güven verici. Omurganız ve eklemleriniz güçlü, hareketli ve uyum sağlamak için yapılmıştır. Bir hareket ağrılı hale geldiğinde, neredeyse hiçbir zaman « yerinden oynamış » bir parça değildir — geçici olarak savunmaya geçmiş hassas bir sistemdir. Ve bu yeniden düzenlenebilir.",
+                "ar": "الطقطقة ليست صوت عظمة تعود إلى موضعها: إنها ظاهرة مفصلية طبيعية تمامًا، ناتجة عن فقاعات غازية صغيرة في سائل المفصل، ولا علاقة لها بأي إعادة محاذاة. ومع ذلك، فإن فكرة أن فقرة قد « خرجت » ويجب « إعادتها » راسخة بعناد. المشكلة أنها تثير القلق: توحي بأن ظهرك هشّ ويعتمد على يد خارجية ليبقى منتصبًا. الواقع أكثر طمأنينة بكثير. عمودك الفقري ومفاصلك قوية ومرنة ومصممة للتكيّف. عندما تصبح حركة ما مؤلمة، نادرًا ما يكون ذلك بسبب جزء « منزاح » — بل هو نظام حسّاس في حالة دفاع مؤقتة. وهذا أمر يمكن إعادة العمل عليه.",
+                "pl": "Trzask to nie dźwięk kości wracającej na swoje miejsce: to całkowicie normalne zjawisko stawowe, spowodowane drobnymi pęcherzykami gazu w płynie stawowym, bez żadnego związku z nastawianiem. Mimo to przekonanie, że krąg « wyskoczył » i trzeba go « nastawić », trudno wykorzenić. Problem w tym, że niepokoi: sugeruje, że Twoje plecy są niestabilne i zależą od cudzej ręki, by się utrzymać. Rzeczywistość jest o wiele bardziej uspokajająca. Twój kręgosłup i stawy są mocne, ruchome i stworzone do adaptacji. Gdy ruch staje się bolesny, prawie nigdy nie chodzi o « przesunięty » element — to wrażliwy system, chwilowo w defensywie. A to można na nowo opracować."
+            }
+        },
+        {
+            "heading": {
+                "fr": "Une main qui guide le mouvement",
+                "de": "Eine Hand, die Bewegung lenkt",
+                "en": "A hand that guides movement",
+                "nl": "Een hand die beweging stuurt",
+                "tr": "Hareketi yönlendiren bir el",
+                "ar": "يدٌ توجّه الحركة",
+                "pl": "Ręka, która prowadzi ruch"
+            },
+            "body": {
+                "fr": "La thérapie manuelle regroupe un ensemble de techniques — mobilisations, manipulations, travail des tissus — appliquées par les mains du thérapeute. Leur but n'est pas de corriger une structure, mais de moduler la douleur, gagner en mobilité et créer une fenêtre de confort. Cette fenêtre a une valeur précise : elle vous permet de rebouger plus tôt et avec moins d'appréhension. Car c'est le mouvement actif qui fait le travail de fond. La science est claire là-dessus : la thérapie manuelle donne ses meilleurs résultats associée à l'exercice, pas utilisée seule. La main ouvre la porte ; vos mouvements consolident le résultat dans la durée. C'est pourquoi, à Eupen, nous combinons toujours techniques manuelles et exercices adaptés.",
+                "de": "Die manuelle Therapie umfasst verschiedene Techniken — Mobilisationen, Manipulationen, Gewebearbeit —, die mit den Händen des Therapeuten angewandt werden. Ihr Ziel ist nicht, eine Struktur zu korrigieren, sondern Schmerzen zu modulieren, Beweglichkeit zu gewinnen und ein Zeitfenster des Wohlbefindens zu schaffen. Dieses Fenster hat einen klaren Wert: Es erlaubt Ihnen, früher und mit weniger Angst wieder in Bewegung zu kommen. Denn die eigentliche Grundlagenarbeit leistet die aktive Bewegung. Die Wissenschaft ist hier eindeutig: Manuelle Therapie wirkt am besten in Kombination mit Bewegung, nicht allein. Die Hand öffnet die Tür; Ihre Bewegungen festigen das Ergebnis auf Dauer. Deshalb verbinden wir in Eupen stets manuelle Techniken mit passenden Übungen.",
+                "en": "Manual therapy brings together a set of techniques — mobilisations, manipulations, soft-tissue work — applied by the therapist's hands. Their goal is not to correct a structure, but to modulate pain, gain mobility and create a window of comfort. That window has a precise value: it lets you move again sooner and with less apprehension. Because it is active movement that does the deep work. The science is clear on this: manual therapy gives its best results combined with exercise, not used alone. The hand opens the door; your movements consolidate the result over time. That is why, in Eupen, we always combine manual techniques with tailored exercises.",
+                "nl": "Manuele therapie bundelt een geheel van technieken — mobilisaties, manipulaties, weefselwerk — toegepast door de handen van de therapeut. Hun doel is niet een structuur te corrigeren, maar pijn te moduleren, mobiliteit te winnen en een comfortvenster te creëren. Dat venster heeft een duidelijke waarde: het laat u toe vroeger en met minder schroom weer te bewegen. Want het is de actieve beweging die het grondwerk doet. De wetenschap is hierover duidelijk: manuele therapie geeft haar beste resultaten in combinatie met oefening, niet alleen gebruikt. De hand opent de deur; uw bewegingen verankeren het resultaat op termijn. Daarom combineren we in Eupen altijd manuele technieken met aangepaste oefeningen.",
+                "tr": "Manuel terapi, terapistin elleriyle uygulanan bir dizi tekniği bir araya getirir — mobilizasyonlar, manipülasyonlar, doku çalışması. Amaçları bir yapıyı düzeltmek değil, ağrıyı düzenlemek, hareketlilik kazanmak ve bir konfor penceresi yaratmaktır. Bu pencerenin net bir değeri vardır: daha erken ve daha az çekinerek yeniden hareket etmenizi sağlar. Çünkü asıl temel işi aktif hareket yapar. Bilim bu konuda nettir: manuel terapi en iyi sonuçları egzersizle birlikte verir, tek başına değil. El kapıyı açar; hareketleriniz sonucu zamanla pekiştirir. İşte bu yüzden Eupen'de manuel teknikleri her zaman uygun egzersizlerle birleştiriyoruz.",
+                "ar": "يجمع العلاج اليدوي مجموعة من التقنيات — التعبئة، والمناورات، والعمل على الأنسجة — يطبّقها المعالج بيديه. هدفها ليس تصحيح بنية، بل تعديل الألم، واكتساب الحركة، وخلق نافذة من الراحة. لهذه النافذة قيمة محددة: تتيح لك العودة إلى الحركة أبكر وبخوف أقل. لأن الحركة النشطة هي التي تقوم بالعمل العميق. العلم واضح في هذا: يعطي العلاج اليدوي أفضل نتائجه مقترنًا بالتمرين، لا مستخدمًا وحده. اليد تفتح الباب؛ وحركاتك تثبّت النتيجة على المدى الطويل. لهذا، في أوبن، نجمع دائمًا بين التقنيات اليدوية والتمارين المناسبة.",
+                "pl": "Terapia manualna łączy zestaw technik — mobilizacje, manipulacje, pracę na tkankach — wykonywanych rękami terapeuty. Ich celem nie jest korygowanie struktury, lecz modulowanie bólu, zyskanie ruchomości i stworzenie okna komfortu. To okno ma konkretną wartość: pozwala wcześniej i z mniejszą obawą znów się ruszać. Bo to ruch aktywny wykonuje zasadniczą pracę. Nauka jest w tym jasna: terapia manualna daje najlepsze wyniki w połączeniu z ćwiczeniami, a nie stosowana samodzielnie. Ręka otwiera drzwi; Twoje ruchy utrwalają efekt na dłużej. Dlatego w Eupen zawsze łączymy techniki manualne z dopasowanymi ćwiczeniami."
+            },
+            "infographic": "movement"
+        },
+        {
+            "heading": {
+                "fr": "La règle d'or de l'équipe",
+                "de": "Die goldene Regel des Teams",
+                "en": "The team's golden rule",
+                "nl": "De gouden regel van het team",
+                "tr": "Ekibin altın kuralı",
+                "ar": "القاعدة الذهبية للفريق",
+                "pl": "Złota zasada zespołu"
+            },
+            "body": {
+                "fr": "Une phrase résume notre façon de travailler : « Nos mains ne réparent pas votre corps — elles lui rappellent qu'il peut bouger sans danger. » Autrement dit, la séance ne vise pas à vous « réparer » passivement, mais à relancer une mécanique que votre corps sait déjà faire tourner. Le soulagement ressenti sur la table n'est pas une fin : c'est le point de départ d'un retour progressif au mouvement, à votre rythme.",
+                "de": "Ein Satz fasst unsere Arbeitsweise zusammen: « Unsere Hände reparieren Ihren Körper nicht — sie erinnern ihn daran, dass er sich gefahrlos bewegen kann. » Mit anderen Worten: Die Sitzung soll Sie nicht passiv « reparieren », sondern eine Mechanik wieder in Gang bringen, die Ihr Körper längst beherrscht. Die Erleichterung auf der Behandlungsliege ist kein Ziel, sondern der Ausgangspunkt für eine schrittweise Rückkehr zur Bewegung — in Ihrem Tempo.",
+                "en": "One sentence sums up how we work: « Our hands do not repair your body — they remind it that it can move safely. » In other words, the session is not about passively « fixing » you, but about restarting a mechanism your body already knows how to run. The relief felt on the table is not an end point: it is the starting point of a gradual return to movement, at your own pace.",
+                "nl": "Eén zin vat onze werkwijze samen: « Onze handen herstellen uw lichaam niet — ze herinneren het eraan dat het veilig kan bewegen. » Met andere woorden: de sessie wil u niet passief « herstellen », maar een mechaniek heropstarten die uw lichaam al beheerst. De verlichting op de behandeltafel is geen eindpunt: het is het startpunt van een geleidelijke terugkeer naar beweging, op uw eigen tempo.",
+                "tr": "Bir cümle çalışma şeklimizi özetler: « Ellerimiz bedeninizi onarmaz — ona güvenle hareket edebileceğini hatırlatır. » Başka bir deyişle, seans sizi pasif biçimde « onarmayı » değil, bedeninizin zaten nasıl çalıştıracağını bildiği bir mekanizmayı yeniden harekete geçirmeyi amaçlar. Masada hissedilen rahatlama bir son değildir: kendi temponuzda harekete kademeli dönüşün başlangıç noktasıdır.",
+                "ar": "تلخّص جملة واحدة طريقتنا في العمل: « أيدينا لا تُصلح جسدك — بل تُذكّره بأنه يستطيع الحركة بأمان. » بعبارة أخرى، لا تهدف الجلسة إلى « إصلاحك » بشكل سلبي، بل إلى إعادة تشغيل آلية يعرف جسدك أصلًا كيف يُديرها. الراحة التي تشعر بها على الطاولة ليست نهاية: إنها نقطة انطلاق لعودة تدريجية إلى الحركة، وبإيقاعك الخاص.",
+                "pl": "Jedno zdanie podsumowuje nasz sposób pracy: « Nasze ręce nie naprawiają Twojego ciała — przypominają mu, że może bezpiecznie się poruszać. » Innymi słowy, sesja nie polega na biernym « naprawianiu » Ciebie, lecz na ponownym uruchomieniu mechanizmu, który Twoje ciało już zna. Ulga odczuwana na stole to nie koniec: to punkt wyjścia do stopniowego powrotu do ruchu, we własnym tempie."
+            }
+        },
+        {
+            "heading": {
+                "fr": "Trois réflexes utiles",
+                "de": "Drei nützliche Reflexe",
+                "en": "Three useful habits",
+                "nl": "Drie nuttige reflexen",
+                "tr": "Üç yararlı alışkanlık",
+                "ar": "ثلاثة ردود فعل مفيدة",
+                "pl": "Trzy przydatne nawyki"
+            },
+            "body": {
+                "fr": "D'abord, bougez tôt et en douceur : après une douleur, la pire stratégie est l'immobilité prolongée. Ensuite, soignez le terrain : sommeil, niveau de stress et activité physique régulière influencent fortement votre douleur — elle n'est jamais purement mécanique. Enfin, ne courez pas après le craquement : un soin efficace ne se mesure pas au bruit, mais à ce que vous arrivez à refaire ensuite. Ces trois réflexes, simples, valent souvent mieux qu'un geste spectaculaire.",
+                "de": "Erstens: Bewegen Sie sich früh und sanft — nach einem Schmerz ist anhaltende Ruhe die schlechteste Strategie. Zweitens: Pflegen Sie das Umfeld — Schlaf, Stresslevel und regelmäßige Bewegung beeinflussen Ihren Schmerz stark; er ist nie rein mechanisch. Drittens: Jagen Sie nicht dem Knacken hinterher — wirksame Behandlung misst sich nicht am Geräusch, sondern daran, was Sie danach wieder tun können. Diese drei einfachen Reflexe sind oft mehr wert als ein spektakulärer Handgriff.",
+                "en": "First, move early and gently: after pain, prolonged rest is the worst strategy. Second, look after the bigger picture: sleep, stress levels and regular physical activity strongly influence your pain — it is never purely mechanical. Third, do not chase the crack: effective care is not measured by the sound, but by what you manage to do again afterwards. These three simple habits are often worth more than a spectacular move.",
+                "nl": "Ten eerste: beweeg vroeg en zacht — na pijn is langdurige rust de slechtste strategie. Ten tweede: zorg voor de bredere context — slaap, stressniveau en regelmatige lichaamsbeweging beïnvloeden uw pijn sterk; ze is nooit puur mechanisch. Ten derde: jaag niet op de krak — doeltreffende zorg meet u niet aan het geluid, maar aan wat u daarna weer kunt doen. Deze drie eenvoudige reflexen zijn vaak meer waard dan een spectaculaire handeling.",
+                "tr": "Birincisi, erken ve nazikçe hareket edin: ağrıdan sonra uzun süreli hareketsizlik en kötü stratejidir. İkincisi, zemini iyileştirin: uyku, stres düzeyi ve düzenli fiziksel aktivite ağrınızı güçlü biçimde etkiler — ağrı asla yalnızca mekanik değildir. Üçüncüsü, çıtırtının peşinden koşmayın: etkili bakım sesle değil, sonrasında yeniden yapabildiklerinizle ölçülür. Bu üç basit alışkanlık, çoğu zaman gösterişli bir hareketten daha değerlidir.",
+                "ar": "أولًا، تحرّك مبكرًا وبلطف: بعد الألم، السكون المطوّل هو أسوأ استراتيجية. ثانيًا، اعتنِ بالأرضية: النوم، ومستوى التوتر، والنشاط البدني المنتظم تؤثّر بقوة في ألمك — فهو ليس ميكانيكيًا بحتًا أبدًا. ثالثًا، لا تلهث وراء الطقطقة: لا تُقاس الرعاية الفعّالة بالصوت، بل بما تستطيع القيام به مجددًا بعدها. هذه الردود الثلاثة البسيطة كثيرًا ما تكون أثمن من حركة مذهلة.",
+                "pl": "Po pierwsze, ruszaj się wcześnie i delikatnie: po bólu długotrwały bezruch to najgorsza strategia. Po drugie, zadbaj o podłoże: sen, poziom stresu i regularna aktywność fizyczna silnie wpływają na Twój ból — nigdy nie jest on czysto mechaniczny. Po trzecie, nie goń za trzaskiem: skutecznej opieki nie mierzy się dźwiękiem, lecz tym, co potrafisz znów robić później. Te trzy proste nawyki często są warte więcej niż spektakularny ruch."
+            },
+            "infographic": "reflexes"
+        },
+        {
+            "heading": {
+                "fr": "Quand consulter ?",
+                "de": "Wann sollten Sie kommen?",
+                "en": "When should you seek help?",
+                "nl": "Wanneer raadplegen?",
+                "tr": "Ne zaman başvurmalı?",
+                "ar": "متى تستشير؟",
+                "pl": "Kiedy się zgłosić?"
+            },
+            "body": {
+                "fr": "Une douleur qui s'installe au-delà de quelques semaines, qui limite vos gestes du quotidien ou qui survient après un choc mérite un avis. Certains signaux demandent une attention plus rapide : une douleur nocturne intense et inhabituelle, une perte de force ou de sensibilité dans un membre, de la fièvre ou une perte de poids inexpliquée. Ils sont rares, mais dans ces cas, parlez-en sans tarder à votre médecin ou à votre kinésithérapeute. Dans l'immense majorité des situations, le pronostic est favorable et le mouvement reste votre meilleur allié.",
+                "de": "Ein Schmerz, der über mehrere Wochen anhält, Ihren Alltag einschränkt oder nach einem Sturz auftritt, verdient eine Abklärung. Einige Signale erfordern raschere Aufmerksamkeit: ein intensiver, ungewöhnlicher nächtlicher Schmerz, ein Kraft- oder Gefühlsverlust in einem Glied, Fieber oder ungewollter Gewichtsverlust. Sie sind selten, aber in diesen Fällen sprechen Sie umgehend mit Ihrem Arzt oder Physiotherapeuten. In der überwiegenden Mehrheit der Fälle ist die Prognose günstig — und Bewegung bleibt Ihr bester Verbündeter.",
+                "en": "Pain that settles in beyond a few weeks, limits your daily activities or follows an injury deserves an assessment. Some signals call for quicker attention: intense and unusual night pain, a loss of strength or sensation in a limb, fever or unexplained weight loss. They are rare, but in those cases, speak to your doctor or physiotherapist without delay. In the vast majority of situations, the outlook is good — and movement remains your best ally.",
+                "nl": "Pijn die langer dan enkele weken aanhoudt, uw dagelijkse handelingen beperkt of na een schok optreedt, verdient een advies. Sommige signalen vragen snellere aandacht: intense en ongewone nachtelijke pijn, krachts- of gevoelsverlies in een lidmaat, koorts of onverklaard gewichtsverlies. Ze zijn zeldzaam, maar spreek er in die gevallen onverwijld over met uw arts of kinesitherapeut. In de overgrote meerderheid van de situaties is de prognose gunstig — en blijft beweging uw beste bondgenoot.",
+                "tr": "Birkaç haftayı aşan, günlük hareketlerinizi kısıtlayan ya da bir darbeden sonra ortaya çıkan ağrı bir değerlendirmeyi hak eder. Bazı işaretler daha hızlı dikkat gerektirir: yoğun ve alışılmadık gece ağrısı, bir uzuvda güç ya da his kaybı, ateş veya açıklanamayan kilo kaybı. Bunlar nadirdir, ancak bu durumlarda gecikmeden doktorunuza veya fizyoterapistinize danışın. Durumların büyük çoğunluğunda gidişat olumludur — ve hareket en iyi müttefikiniz olmaya devam eder.",
+                "ar": "الألم الذي يستقرّ لأكثر من بضعة أسابيع، أو يحدّ من حركاتك اليومية، أو يظهر بعد صدمة، يستحق استشارة. بعض الإشارات تتطلّب انتباهًا أسرع: ألم ليلي شديد وغير معتاد، فقدان للقوة أو الإحساس في أحد الأطراف، حُمّى، أو فقدان وزن غير مبرّر. إنها نادرة، لكن في هذه الحالات تحدّث دون تأخير إلى طبيبك أو أخصائي العلاج الطبيعي. في الغالبية العظمى من الحالات يكون المآل جيدًا — وتبقى الحركة أفضل حليف لك.",
+                "pl": "Ból, który utrzymuje się ponad kilka tygodni, ogranicza codzienne czynności lub pojawia się po urazie, zasługuje na konsultację. Niektóre sygnały wymagają szybszej uwagi: intensywny i nietypowy ból nocny, utrata siły lub czucia w kończynie, gorączka albo niewyjaśniona utrata masy ciała. Są rzadkie, ale w takich przypadkach bezzwłocznie porozmawiaj z lekarzem lub fizjoterapeutą. W zdecydowanej większości sytuacji rokowanie jest dobre — a ruch pozostaje Twoim najlepszym sojusznikiem."
+            }
+        },
+        {
+            "heading": {
+                "fr": "Au cabinet Praxis Loten",
+                "de": "In der Praxis Loten",
+                "en": "At Praxis Loten",
+                "nl": "Bij Praxis Loten",
+                "tr": "Praxis Loten kliniğinde",
+                "ar": "في عيادة براكسيس لوتن",
+                "pl": "W Praxis Loten"
+            },
+            "body": {
+                "fr": "Notre prise en charge à Eupen repose sur quatre piliers : un bilan précis pour comprendre votre situation ; des techniques manuelles ciblées pour ouvrir la fenêtre de confort ; des exercices personnalisés pour ancrer le progrès ; et de l'éducation, parce que comprendre sa douleur, c'est déjà la diminuer. La thérapie manuelle n'est qu'une option parmi de nombreuses prises en charge possibles — nous l'adaptons à vous, jamais l'inverse. Notre objectif n'est pas de vous rendre dépendant de nos mains, mais de vous redonner confiance dans votre propre mouvement.",
+                "de": "Unsere Behandlung in Eupen ruht auf vier Säulen: einer genauen Untersuchung, um Ihre Situation zu verstehen; gezielten manuellen Techniken, um das Fenster des Wohlbefindens zu öffnen; individuellen Übungen, um den Fortschritt zu verankern; und Aufklärung, denn seinen Schmerz zu verstehen heißt bereits, ihn zu verringern. Die manuelle Therapie ist nur eine Option unter vielen möglichen Behandlungswegen — wir passen sie an Sie an, nie umgekehrt. Unser Ziel ist nicht, Sie von unseren Händen abhängig zu machen, sondern Ihnen das Vertrauen in Ihre eigene Bewegung zurückzugeben.",
+                "en": "Our care in Eupen rests on four pillars: a precise assessment to understand your situation; targeted manual techniques to open the window of comfort; personalised exercises to anchor progress; and education, because understanding your pain already helps reduce it. Manual therapy is only one option among many possible approaches — we adapt it to you, never the other way around. Our goal is not to make you dependent on our hands, but to give you back confidence in your own movement.",
+                "nl": "Onze zorg in Eupen rust op vier pijlers: een nauwkeurig onderzoek om uw situatie te begrijpen; gerichte manuele technieken om het comfortvenster te openen; gepersonaliseerde oefeningen om de vooruitgang te verankeren; en educatie, want uw pijn begrijpen helpt ze al te verminderen. Manuele therapie is slechts één optie tussen vele mogelijke aanpakken — we passen ze aan u aan, nooit omgekeerd. Ons doel is niet u afhankelijk te maken van onze handen, maar u het vertrouwen in uw eigen beweging terug te geven.",
+                "tr": "Eupen'deki bakımımız dört temele dayanır: durumunuzu anlamak için kesin bir değerlendirme; konfor penceresini açmak için hedefli manuel teknikler; ilerlemeyi pekiştirmek için kişiselleştirilmiş egzersizler; ve eğitim, çünkü ağrınızı anlamak onu azaltmaya başlamaktır. Manuel terapi, olası birçok yaklaşımdan yalnızca biridir — onu size uyarlarız, asla tersi olmaz. Amacımız sizi ellerimize bağımlı kılmak değil, kendi hareketinize olan güveninizi geri vermektir.",
+                "ar": "تقوم رعايتنا في أوبن على أربع ركائز: تقييم دقيق لفهم حالتك؛ وتقنيات يدوية موجّهة لفتح نافذة الراحة؛ وتمارين مخصّصة لترسيخ التقدّم؛ والتثقيف، لأن فهم ألمك هو بداية تقليله. العلاج اليدوي ليس سوى خيار واحد بين العديد من المقاربات الممكنة — نكيّفه ليناسبك، لا العكس أبدًا. هدفنا ليس جعلك معتمدًا على أيدينا، بل إعادة الثقة إليك في حركتك الخاصة.",
+                "pl": "Nasza opieka w Eupen opiera się na czterech filarach: dokładnej ocenie, by zrozumieć Twoją sytuację; ukierunkowanych technikach manualnych, by otworzyć okno komfortu; spersonalizowanych ćwiczeniach, by utrwalić postęp; oraz edukacji, bo zrozumienie bólu już pomaga go zmniejszyć. Terapia manualna to tylko jedna z wielu możliwych metod — dopasowujemy ją do Ciebie, nigdy odwrotnie. Naszym celem nie jest uzależnienie Cię od naszych rąk, lecz przywrócenie Ci zaufania do własnego ruchu."
+            },
+            "infographic": "manual-therapy-pillars"
+        }
+    ],
+    "keyPoints": {
+        "fr": [
+            "La thérapie manuelle ne « remet rien en place » : elle calme la douleur et relance le mouvement.",
+            "Son effet est maximal combinée à l'exercice actif, pas seule.",
+            "Le craquement est sans danger et sans lien avec un réalignement.",
+            "Votre colonne est solide et faite pour s'adapter.",
+            "À Eupen, une approche IFOMPT fondée sur les preuves."
+        ],
+        "de": [
+            "Manuelle Therapie « renkt nichts ein »: Sie lindert Schmerzen und bringt Bewegung zurück.",
+            "Ihre Wirkung ist am größten in Kombination mit aktiver Bewegung, nicht allein.",
+            "Das Knacken ist ungefährlich und hat nichts mit einer Ausrichtung zu tun.",
+            "Ihre Wirbelsäule ist stabil und zur Anpassung gemacht.",
+            "In Eupen ein evidenzbasierter IFOMPT-Ansatz."
+        ],
+        "en": [
+            "Manual therapy « puts nothing back »: it eases pain and restarts movement.",
+            "Its effect is greatest combined with active exercise, not alone.",
+            "The crack is harmless and unrelated to any realignment.",
+            "Your spine is strong and built to adapt.",
+            "In Eupen, an evidence-based IFOMPT approach."
+        ],
+        "nl": [
+            "Manuele therapie « zet niets recht »: ze verzacht pijn en herstart beweging.",
+            "Haar effect is het grootst in combinatie met actieve oefening, niet alleen.",
+            "De krak is ongevaarlijk en los van enige heruitlijning.",
+            "Uw wervelkolom is sterk en gemaakt om zich aan te passen.",
+            "In Eupen een evidence-based IFOMPT-aanpak."
+        ],
+        "tr": [
+            "Manuel terapi « hiçbir şeyi yerine oturtmaz »: ağrıyı dindirir ve hareketi yeniden başlatır.",
+            "Etkisi aktif egzersizle birlikte en yüksektir, tek başına değil.",
+            "Çıtırtı zararsızdır ve herhangi bir hizalanmayla ilgisi yoktur.",
+            "Omurganız güçlüdür ve uyum sağlamak için yapılmıştır.",
+            "Eupen'de kanıta dayalı bir IFOMPT yaklaşımı."
+        ],
+        "ar": [
+            "العلاج اليدوي « لا يعيد شيئًا إلى مكانه »: بل يهدّئ الألم ويعيد تشغيل الحركة.",
+            "تأثيره أقصى ما يكون مقترنًا بالتمرين النشط، لا وحده.",
+            "الطقطقة غير ضارة ولا علاقة لها بأي إعادة محاذاة.",
+            "عمودك الفقري قوي ومصمّم للتكيّف.",
+            "في أوبن، نهج قائم على الأدلة وفق معيار IFOMPT."
+        ],
+        "pl": [
+            "Terapia manualna « niczego nie nastawia »: łagodzi ból i ponownie uruchamia ruch.",
+            "Jej efekt jest największy w połączeniu z aktywnym ćwiczeniem, nie samodzielnie.",
+            "Trzask jest nieszkodliwy i niezwiązany z żadnym nastawianiem.",
+            "Twój kręgosłup jest mocny i stworzony do adaptacji.",
+            "W Eupen podejście oparte na dowodach zgodne z IFOMPT."
+        ]
+    },
+    "ctaText": {
+        "fr": "Une douleur qui traîne ou une mobilité réduite ? Prenez rendez-vous au cabinet Praxis Loten à Eupen : nous évaluons, nous vous remettons en mouvement, et nous vous expliquons chaque étape.",
+        "de": "Anhaltende Schmerzen oder eingeschränkte Beweglichkeit? Vereinbaren Sie einen Termin in der Praxis Loten in Eupen: Wir untersuchen, bringen Sie wieder in Bewegung und erklären Ihnen jeden Schritt.",
+        "en": "Lingering pain or reduced mobility? Book an appointment at Praxis Loten in Eupen: we assess, we get you moving again, and we explain every step.",
+        "nl": "Aanhoudende pijn of verminderde mobiliteit? Maak een afspraak bij Praxis Loten in Eupen: we evalueren, we brengen u weer in beweging en we leggen elke stap uit.",
+        "tr": "Geçmeyen ağrı ya da azalmış hareketlilik mi? Eupen'deki Praxis Loten'den randevu alın: değerlendiririz, sizi yeniden harekete geçiririz ve her adımı açıklarız.",
+        "ar": "ألم مستمر أو حركة محدودة؟ احجز موعدًا في عيادة براكسيس لوتن في أوبن: نقيّم، ونعيدك إلى الحركة، ونشرح لك كل خطوة.",
+        "pl": "Uporczywy ból lub ograniczona ruchomość? Umów wizytę w Praxis Loten w Eupen: oceniamy, przywracamy Ci ruch i wyjaśniamy każdy krok."
+    },
+    "bibliography": [
+        "Hayden JA et al. Exercise therapy for chronic low back pain. Cochrane Database Syst Rev. 2021;9:CD009790.",
+        "Kirker K et al. Manual therapy and exercise for adhesive capsulitis: a systematic review with meta-analysis. J Man Manip Ther. 2023;31(5):311-327.",
+        "Jiménez-Del-Barrio S et al. Effectiveness of manual therapy in carpal tunnel syndrome. Int Orthop. 2021;46(2):301-312.",
+        "Trager RJ et al. Efficacy of manual therapy for sacroiliac joint pain syndrome. J Man Manip Ther. 2024;32(6):561-572.",
+        "Gutiérrez-Espinoza H et al. Effectiveness of manual therapy in distal radius fracture. J Man Manip Ther. 2021;30(1):33-45."
+    ],
+    "disclaimer": {
+        "fr": "Cet article a une vocation informative et ne remplace pas une consultation individuelle. En cas de douleur persistante ou inquiétante, consultez votre kinésithérapeute ou votre médecin.",
+        "de": "Dieser Artikel dient der Information und ersetzt keine individuelle Beratung. Bei anhaltenden oder beunruhigenden Schmerzen wenden Sie sich an Ihren Physiotherapeuten oder Arzt.",
+        "en": "This article is for information only and does not replace an individual consultation. For persistent or worrying pain, consult your physiotherapist or doctor.",
+        "nl": "Dit artikel is louter informatief en vervangt geen individuele consultatie. Raadpleeg bij aanhoudende of verontrustende pijn uw kinesitherapeut of arts.",
+        "tr": "Bu makale yalnızca bilgilendirme amaçlıdır ve bireysel bir muayenenin yerini tutmaz. Kalıcı veya endişe verici ağrıda fizyoterapistinize veya doktorunuza danışın.",
+        "ar": "هذا المقال لأغراض إعلامية فقط ولا يُغني عن استشارة فردية. في حال الألم المستمر أو المقلق، استشر أخصائي العلاج الطبيعي أو طبيبك.",
+        "pl": "Ten artykuł ma charakter wyłącznie informacyjny i nie zastępuje indywidualnej konsultacji. W razie utrzymującego się lub niepokojącego bólu skonsultuj się z fizjoterapeutą lub lekarzem."
+    }
+},
   "doser-activite-douleur": {
     title: {
       de: "Bewegen trotz Schmerzen — wie Sie die richtige Dosis finden",
