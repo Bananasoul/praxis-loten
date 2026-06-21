@@ -38,6 +38,13 @@ export async function generateMetadata({
       locale: locale,
       type: "website",
       siteName: "Praxis Loten",
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Praxis Loten — Kinésithérapie & thérapie manuelle à Eupen" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og-image.png"],
     },
   };
 }
@@ -64,6 +71,7 @@ export default async function LocaleLayout({
     "url": "https://www.praxisloten.be",
     "telephone": "+3287555670",
     "email": "praxisloten@gmail.com",
+    "image": "https://www.praxisloten.be/og-image.png",
     "medicalSpecialty": "Physiotherapy",
     "address": {
       "@type": "PostalAddress",
