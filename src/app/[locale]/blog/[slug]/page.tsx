@@ -20,6 +20,7 @@ const VALID_SLUGS = [
   "osteopathie-kinesitherapie-unterschied",
   "bfr-training-rehabilitation",
   "montre-connectee-douleur",
+  "therapie-manuelle-mythes-mouvement",
 ];
 
 export default async function BlogArticlePage({
