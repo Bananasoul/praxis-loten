@@ -57,8 +57,50 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
+  const schemaOrg = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Praxis Loten",
+    "url": "https://www.praxisloten.be",
+    "telephone": "+3287555670",
+    "email": "praxisloten@gmail.com",
+    "medicalSpecialty": "Physiotherapy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Loten 1",
+      "postalCode": "4700",
+      "addressLocality": "Eupen",
+      "addressRegion": "Liège",
+      "addressCountry": "BE",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.6258867,
+      "longitude": 6.0304303,
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "20:30",
+      },
+    ],
+    "availableLanguage": ["de", "fr", "nl", "en"],
+    "priceRange": "€€",
+    "sameAs": [
+      "https://www.facebook.com/kineunterstadteupen",
+      "https://www.instagram.com/praxisloten",
+    ],
+  };
+
+
   return (
     <NextIntlClientProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
       <HtmlLang locale={locale} />
       <Header />
       <main className="flex-1">{children}</main>
