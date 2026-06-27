@@ -6,7 +6,7 @@ import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   MessageCircle, ExternalLink, Phone, MapPin, Clock, Mail,
-  Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check,
+  Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check, X as XIcon,
 } from "lucide-react";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 
@@ -88,6 +88,19 @@ const X: Record<string, Rec> = {
   ku: { heroTitle: "Fizyoterapîstê xwe", heroAccent: "bibîne", heroSub: "Li gorî pêwîstî, ziman an bi tesadif. Di çend saniyeyan de.", trust: "4,8 · 23 nirxandinên Google · Eupen", modeNeedT: "Pirsgirêkeke min a diyar heye", modeNeedS: "Li gorî sedem û ziman parzûn bike", modeRandT: "Ferq nake, min surprîz bike", modeRandS: "Terapîstek bi tesadif, bi dadperwerî", motifQ: "Çi we tîne?", langQ: "Bi kîjan zimanî?", allLang: "Hemû", spinBtn: "Ji bo min terapîstekê hilbijêre", spinChose: "Tesadifê hilbijart", gridTeam: "Tîma me", gridReco: "Ji bo we tê pêşniyarkirin", gridSpec: "Pisporê vê yekê", gridAll: "Hemû terapîstên me bi vê re mijûl dibin", allTakeBanner: "Hemû terapîstên me vê derman dikin — hilbijêre, an bila tesadif biryar bide.", ribReco: "Pêşniyarkirî", ribSpec: "Pispor", ribWin: "Terapîstê we", reserveWith: "Randevû bi", onlineBtn: "Online rezerve bike", profileBtn: "Profîla tevahî", callBtn: "Telefon bike", reset: "Parzûnan jê bibe", reviews: "nirxandinên Google", emptyLang: "Li vir kes bi vî zimanî napeyive. Parzûnê fireh bike an „Min surprîz bike\" biceribîne." },
 };
 
+const XC: Record<string, Rec> = {
+  fr: { chooseTitle: "Comment souhaitez-vous prendre rendez-vous ?", byPhone: "Par téléphone", byWhatsApp: "Par WhatsApp", close: "Fermer" },
+  de: { chooseTitle: "Wie möchten Sie einen Termin vereinbaren?", byPhone: "Telefonisch", byWhatsApp: "Per WhatsApp", close: "Schließen" },
+  en: { chooseTitle: "How would you like to book?", byPhone: "By phone", byWhatsApp: "Via WhatsApp", close: "Close" },
+  nl: { chooseTitle: "Hoe wilt u een afspraak maken?", byPhone: "Telefonisch", byWhatsApp: "Via WhatsApp", close: "Sluiten" },
+  tr: { chooseTitle: "Nasıl randevu almak istersiniz?", byPhone: "Telefonla", byWhatsApp: "WhatsApp ile", close: "Kapat" },
+  ar: { chooseTitle: "كيف تريد حجز موعد؟", byPhone: "عبر الهاتف", byWhatsApp: "عبر واتساب", close: "إغلاق" },
+  pl: { chooseTitle: "Jak chcesz umówić wizytę?", byPhone: "Telefonicznie", byWhatsApp: "Przez WhatsApp", close: "Zamknij" },
+  uk: { chooseTitle: "Як ви хочете записатися?", byPhone: "Телефоном", byWhatsApp: "Через WhatsApp", close: "Закрити" },
+  es: { chooseTitle: "¿Cómo desea pedir cita?", byPhone: "Por teléfono", byWhatsApp: "Por WhatsApp", close: "Cerrar" },
+  ku: { chooseTitle: "Hûn çawa dixwazin randevû bigirin?", byPhone: "Bi telefonê", byWhatsApp: "Bi WhatsApp", close: "Bigire" },
+};
+
 const UI: Record<string, { address: string; hours: string; hoursVal: string; infoBring: string; bringItems: string[]; cancelTitle: string; cancelText: string; conv: string }> = {
   de: { address: "Loten 1, B-4700 Eupen", hours: "Öffnungszeiten", hoursVal: "Mo – Fr: 08:00 – 20:00 | Sa: nach Vereinbarung", infoBring: "Mitzubringen", bringItems: ["Ärztliche Verschreibung", "Krankenkassen-Aufkleber", "Großes Handtuch", "Sportkleidung", "Personalausweis"], cancelTitle: "Absage", cancelText: "Bitte sagen Sie Ihren Termin mindestens 24 Stunden im Voraus ab. Bei Nichterscheinen oder Absage weniger als 24 Stunden vorher behalten wir uns das Recht vor, eine Ausfallgebühr in Rechnung zu stellen.", conv: "Nicht konventioniert" },
   fr: { address: "Loten 1, B-4700 Eupen", hours: "Heures d'ouverture", hoursVal: "Lun – Ven : 08:00 – 20:00 | Sam : sur RDV", infoBring: "À apporter", bringItems: ["Prescription médicale", "Vignette de mutuelle", "Grande serviette", "Tenue sportive", "Carte d'identité"], cancelTitle: "Annulation", cancelText: "Merci d'annuler votre rendez-vous au moins 24 heures à l'avance. En cas de non-présentation ou d'annulation moins de 24h avant, nous nous réservons le droit de facturer des frais d'annulation.", conv: "Déconventionnée" },
@@ -109,6 +122,7 @@ export function TerminPageContent() {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const x = X[lang] ?? X.en;
+  const xc = XC[lang] ?? XC.en;
   const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
 
@@ -119,6 +133,7 @@ export function TerminPageContent() {
   const [flash, setFlash] = useState<string | null>(null);
   const [winner, setWinner] = useState<string | null>(null);
   const [spinning, setSpinning] = useState(false);
+  const [chooseFor, setChooseFor] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -301,10 +316,10 @@ export function TerminPageContent() {
                         <div className="text-[12px] text-white/50 mb-1">{x.spinChose}</div>
                         <div className="text-2xl font-extrabold">{w.name}</div>
                         <div className="text-[13px] text-white/55 mt-1.5 mb-4">{w.plain[lang] ?? w.plain.en}</div>
-                        <a href={w.whatsapp} target="_blank" rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#25d366] text-neutral-950 hover:brightness-105 transition">
-                          <MessageCircle className="w-4 h-4" /> {x.reserveWith} {w.name.split(" ")[0]}
-                        </a>
+                        <button onClick={() => setChooseFor(w.slug)}
+                          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#76b82a] text-neutral-950 hover:brightness-105 transition">
+                          <CalendarPlus className="w-4 h-4" /> {x.reserveWith} {w.name.split(" ")[0]}
+                        </button>
                       </motion.div>
                     );
                   })()}
@@ -363,20 +378,11 @@ export function TerminPageContent() {
                       {t.conv && <span className="text-amber-400 border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 rounded">{ui.conv}</span>}
                     </div>
 
-                    <a href={t.whatsapp} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#25d366] text-neutral-950 hover:brightness-105 active:scale-[0.98] transition">
-                      <MessageCircle className="w-4 h-4" /> {x.reserveWith} {t.name.split(" ")[0]}
-                    </a>
-                    {t.online && (
-                      <a href={t.online} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full mt-2 py-2.5 rounded-xl text-[13.5px] font-semibold bg-[#2b3186] text-white hover:bg-[#1e2260] transition">
-                        <ExternalLink className="w-4 h-4" /> {x.onlineBtn}
-                      </a>
-                    )}
-                    <div className="flex items-center justify-between mt-3">
-                      <a href={`tel:${t.phone}`} className="inline-flex items-center gap-1.5 text-[12px] text-white/45 hover:text-[#76b82a] transition-colors">
-                        <Phone className="w-3.5 h-3.5" /> {fmtPhone(t.phone)}
-                      </a>
+                    <button onClick={() => setChooseFor(t.slug)}
+                      className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#76b82a] text-neutral-950 hover:brightness-105 active:scale-[0.98] transition">
+                      <CalendarPlus className="w-4 h-4" /> {x.reserveWith} {t.name.split(" ")[0]}
+                    </button>
+                    <div className="flex items-center justify-end mt-3">
                       <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-white/45 hover:text-[#76b82a] transition-colors">
                         {x.profileBtn} <ArrowRight className="w-3 h-3" />
                       </Link>
@@ -414,6 +420,41 @@ export function TerminPageContent() {
 
         </div>
       </div>
+
+      <AnimatePresence>
+        {chooseFor && (() => {
+          const t = THERAPISTS.find((th) => th.slug === chooseFor)!;
+          return (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+              onClick={() => setChooseFor(null)} dir={isRtl ? "rtl" : "ltr"}>
+              <motion.div initial={{ opacity: 0, y: 28, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 28 }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-full max-w-sm bg-neutral-900 border border-white/10 rounded-3xl p-5 shadow-2xl">
+                <div className="flex items-center justify-between mb-1.5">
+                  <h3 className="text-[16px] font-bold">{x.reserveWith} {t.name.split(" ")[0]}</h3>
+                  <button onClick={() => setChooseFor(null)} aria-label={xc.close} className="text-white/40 hover:text-white transition-colors"><XIcon className="w-5 h-5" /></button>
+                </div>
+                <p className="text-[13px] text-white/55 mb-4">{xc.chooseTitle}</p>
+                <div className="space-y-2.5">
+                  <a href={t.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25d366] text-neutral-950 font-bold text-[15px] hover:brightness-105 transition">
+                    <MessageCircle className="w-5 h-5" /> {xc.byWhatsApp}
+                  </a>
+                  <a href={`tel:${t.phone}`} className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-white/10 text-white font-semibold text-[14.5px] hover:bg-white/15 transition">
+                    <Phone className="w-5 h-5 text-[#76b82a]" /> {xc.byPhone}
+                    <span className="ms-auto text-white/50 text-[13px] font-normal" dir="ltr">{fmtPhone(t.phone)}</span>
+                  </a>
+                  {t.online && (
+                    <a href={t.online} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#2b3186] text-white font-semibold text-[14.5px] hover:bg-[#1e2260] transition">
+                      <ExternalLink className="w-5 h-5" /> {x.onlineBtn}
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })()}
+      </AnimatePresence>
     </div>
   );
 }
