@@ -1,798 +1,415 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
-  MessageCircle, ExternalLink, Mail, MapPin, Clock,
-  CalendarPlus, ChevronRight, Star, Globe2, Sparkles, ArrowRight, X, Phone,
+  MessageCircle, ExternalLink, Phone, MapPin, Clock, Mail,
+  Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check,
 } from "lucide-react";
-import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
-const THERAPISTS = [
+const GEN = ["dos", "nuque", "epaule", "genou", "sport", "postop"];
+const NICHE = ["drainage", "machoire"];
+
+type Rec = Record<string, string>;
+
+const THERAPISTS: {
+  slug: string; name: string; accent: string; langs: string[]; tags: string[];
+  specs: string[]; phone: string; whatsapp: string; online: string | null; conv: boolean;
+  role: Rec; plain: Rec;
+}[] = [
   {
-    slug: "philippe-banaszak",
-    name: "Philippe Banaszak",
-    initials: "PB",
-    color: "from-[#2b3186] to-[#4040a0]",
-    accentColor: "#2b3186",
-    role: {
-      de: "Manualtherapeut",
-      fr: "Thérapeute Manuel",
-      en: "Manual Therapist",
-      nl: "Manueel Therapeut",
-      tr: "Manuel Terapist",
-      ar: "معالج يدوي",
-      pl: "Terapeuta Manualny",
-    },
-    specialties: ["Manuelle Therapie", "IFOMPT/QPP", "Orthopädie"],
-    languages: ["FR", "DE", "EN", "PL"],
-    phone: "+32 478 21 81 86",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp", href: "https://wa.me/32478218186", primary: true },
-      { type: "online" as const, label: "Online Booking (Crossuite)", href: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071", primary: true },
-      { type: "email" as const, label: "", emailEnc: "cGJraW5lQGljbG91ZC5jb20=", href: "#", primary: false },
-    ],
-    convention: null,
-  },
-{
-    slug: "felix-esser",
-    name: "Félix Esser",
-    initials: "FE",
-    color: "from-purple-600 to-purple-400",
-    accentColor: "#9333ea",
-    role: {
-      de: "Physiotherapeut — Osteopathie in Ausbildung",
-      fr: "Kinésithérapeute — Ostéopathie en formation",
-      en: "Physiotherapist — Osteopathy (training)",
-      nl: "Fysiotherapeut — Osteopathie (opleiding)",
-      tr: "Fizyoterapist — Osteopati (eğitim)",
-      ar: "فيزيوتيرابيست — هشاشة عظام (تدريب)",
-      pl: "Fizjoterapeuta — Osteopatia (szkolenie)",
-    },
-    specialties: ["Kinésithérapie générale", "Ostéopathie", "Réadaptation"],
-    languages: ["FR", "DE", "EN"],
-    phone: "+32 493 12 23 36",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp Business", href: "https://wa.me/32493122336", primary: true },
-      { type: "email" as const, label: "", emailEnc: "ZXNzZXJmZWxpeGtpbmVAZ21haWwuY29t", href: "#", primary: false },
-    ],
-    convention: null,
+    slug: "philippe-banaszak", name: "Philippe Banaszak", accent: "#2b3186",
+    langs: ["FR", "DE", "EN", "PL"], tags: [...GEN], specs: ["Thérapie manuelle", "Orthopédie", "Dos & nuque"],
+    phone: "+32478218186", whatsapp: "https://wa.me/32478218186",
+    online: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071", conv: false,
+    role: { de: "Manualtherapeut", fr: "Thérapeute Manuel", en: "Manual Therapist", nl: "Manueel Therapeut", tr: "Manuel Terapist", ar: "معالج يدوي", pl: "Terapeuta Manualny", uk: "Мануальний терапевт", es: "Terapeuta manual", ku: "Terapîstê destî" },
+    plain: { de: "Rücken-, Nacken- und Gelenkschmerzen. Hochwertige Manualtherapie.", fr: "Douleurs de dos, nuque et articulations. Thérapie manuelle de pointe.", en: "Back, neck and joint pain. Advanced manual therapy." },
   },
   {
-    slug: "fabienne-dormann",
-    name: "Fabienne Dormann",
-    initials: "FD",
-    color: "from-teal-600 to-teal-400",
-    accentColor: "#0d9488",
-    role: {
-      de: "Lymphdrainage — Kiefergelenk / ATM",
-      fr: "Drainage Lymphatique — ATM/CMD",
-      en: "Lymphatic Drainage — TMJ/CMD",
-      nl: "Lymfedrainage — Kaakgewricht/CMD",
-      tr: "Lenf Drenajı — Çene Eklemi/CMD",
-      ar: "صرف لمفاوي — مفصل الفك/CMD",
-      pl: "Drenaż Limfatyczny — Staw Żuchwowy",
-    },
-    specialties: ["Lymphdrainage Leduc", "ATM / CMD", "Kinésithérapie Sportive"],
-    languages: ["FR", "DE", "EN"],
-    phone: "+32 471 76 56 83",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp", href: "https://wa.me/32471765683", primary: true },
-    ],
-    note: {
-      de: "Mo, Di & Do: 12:30–16:00",
-      fr: "Lun, Mar & Jeu : 12h30–16h",
-      en: "Mon, Tue & Thu: 12:30–4:00 PM",
-      nl: "Ma, Di & Do: 12:30–16:00",
-      tr: "Pzt, Sal & Per: 12:30–16:00",
-      ar: "الإثنين، الثلاثاء والخميس: 12:30–16:00",
-      pl: "Pon, Wt & Czw: 12:30–16:00",
-    } as Record<string, string>,
-    convention: null,
+    slug: "thom-petit", name: "Thom Petit", accent: "#f97316",
+    langs: ["FR", "DE", "EN"], tags: [...GEN], specs: ["Sport", "Course à pied", "BFR"],
+    phone: "+32471869024", whatsapp: "https://wa.me/32471869024",
+    online: "https://www.q-top.be/Online-planner/FR/?root=kq43933", conv: false,
+    role: { de: "Sport-Physiotherapeut — Running Clinic — BFR", fr: "Kinésithérapeute du Sport — Running Clinic — BFR", en: "Sports Physiotherapist — Running Clinic — BFR", nl: "Sportfysiotherapeut — Running Clinic — BFR", tr: "Spor Fizyoterapisti — Running Clinic — BFR", ar: "أخصائي علاج طبيعي رياضي — Running Clinic — BFR", pl: "Fizjoterapeuta Sportowy — Running Clinic — BFR", uk: "Спортивний фізіотерапевт — Running Clinic — BFR", es: "Fisioterapeuta deportivo — Running Clinic — BFR", ku: "Fizyoterapîstê werzîşê — Running Clinic — BFR" },
+    plain: { de: "Alle Beschwerden — und der Experte für Sport, Laufen & Leistung.", fr: "Toutes pathologies — et l'expert sport, course à pied & performance.", en: "All conditions — and the expert in sport, running & performance." },
   },
   {
-    slug: "thom-petit",
-    name: "Thom Petit",
-    initials: "TP",
-    color: "from-orange-500 to-amber-400",
-    accentColor: "#f97316",
-    role: {
-      de: "Sport Physiotherapeut — Running Clinic — BFR",
-      fr: "Kinésithérapeute du Sport — Running Clinic — BFR",
-      en: "Sports Physiotherapist — Running Clinic — BFR",
-      nl: "Sportfysiotherapeut — Running Clinic — BFR",
-      tr: "Spor Fizyoterapisti — Running Clinic — BFR",
-      ar: "فيزيوتيرابيست رياضي — Running Clinic — BFR",
-      pl: "Fizjoterapeuta Sportowy — Running Clinic — BFR",
-    },
-    specialties: ["Sport Expert", "Running Clinic", "BFR / Kinesport"],
-    languages: ["FR", "DE", "EN"],
-    phone: "+32 471 86 90 24",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp Business", href: "https://wa.me/32471869024", primary: true },
-      { type: "online" as const, label: "Online Booking (Q-top)", href: "https://www.q-top.be/Online-planner/FR/?root=kq43933", primary: true },
-      { type: "email" as const, label: "", emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=", href: "#", primary: false },
-    ],
-    convention: null,
+    slug: "fabienne-dormann", name: "Fabienne Dormann", accent: "#0d9488",
+    langs: ["FR", "DE", "EN"], tags: [...GEN, "drainage", "machoire"], specs: ["Drainage Leduc", "ATM / CMD", "Kiné générale"],
+    phone: "+32471765683", whatsapp: "https://wa.me/32471765683", online: null, conv: false,
+    role: { de: "Lymphdrainage — Kiefergelenk / CMD", fr: "Drainage Lymphatique — ATM/CMD", en: "Lymphatic Drainage — TMJ/CMD", nl: "Lymfedrainage — Kaakgewricht/CMD", tr: "Lenf Drenajı — Çene Eklemi/CMD", ar: "تصريف لمفاوي — مفصل الفك", pl: "Drenaż Limfatyczny — Staw Żuchwowy", uk: "Лімфодренаж — СНЩС", es: "Drenaje linfático — ATM/CMD", ku: "Drenaja lîmfatîk — TMJ" },
+    plain: { de: "Alle Beschwerden — und die Einzige für Lymphdrainage & Kiefergelenk (CMD).", fr: "Toutes pathologies — et la seule pour le drainage lymphatique & la mâchoire (ATM).", en: "All conditions — and the only one for lymphatic drainage & jaw (TMJ)." },
   },
   {
-    slug: "loic-meunier",
-    name: "Loïc Meunier",
-    initials: "LM",
-    color: "from-indigo-600 to-indigo-400",
-    accentColor: "#4f46e5",
-    role: {
-      de: "Physiotherapeut — Osteopathie in Ausbildung",
-      fr: "Kinésithérapeute — Ostéopathie en formation",
-      en: "Physiotherapist — Osteopathy (training)",
-      nl: "Fysiotherapeut — Osteopathie (opleiding)",
-      tr: "Fizyoterapist — Osteopati (eğitim)",
-      ar: "فيزيوتيرابيست — هشاشة عظام (تدريب)",
-      pl: "Fizjoterapeuta — Osteopatia (szkolenie)",
-    },
-    specialties: ["Kinésithérapie générale", "Ostéopathie", "Réadaptation"],
-    languages: ["FR", "DE", "EN"],
-    phone: "+32 474 29 63 26",
-    booking: [
-      { type: "whatsapp" as const, label: "WhatsApp", href: "https://wa.me/32474296326", primary: true },
-      { type: "email" as const, label: "", emailEnc: "bG1ldW5pZXIubG9pY0BnbWFpbC5jb20=", href: "#", primary: false },
-    ],
-    convention: { de: "Nicht konventioniert", fr: "Non conventionné", en: "Non-conv.", nl: "Niet geconv.", tr: "Konv. değil", ar: "غير تقليدي", pl: "Niekonw." },
+    slug: "felix-esser", name: "Félix Esser", accent: "#9333ea",
+    langs: ["FR", "DE", "EN"], tags: [...GEN], specs: ["Kiné générale", "Ostéopathie", "Réadaptation"],
+    phone: "+32493122336", whatsapp: "https://wa.me/32493122336", online: null, conv: false,
+    role: { de: "Physiotherapeut — Osteopathie in Ausbildung", fr: "Kinésithérapeute — Ostéopathie en formation", en: "Physiotherapist — Osteopathy (training)", nl: "Fysiotherapeut — Osteopathie (opleiding)", tr: "Fizyoterapist — Osteopati (eğitim)", ar: "أخصائي علاج طبيعي — أوستيوباثي (تدريب)", pl: "Fizjoterapeuta — Osteopatia (szkolenie)", uk: "Фізіотерапевт — остеопатія (навчання)", es: "Fisioterapeuta — Osteopatía (en formación)", ku: "Fizyoterapîst — Osteopatî (perwerde)" },
+    plain: { de: "Allgemeine Reha, nach Verletzungen, osteopathischer Ansatz.", fr: "Rééducation générale, suites de blessure, approche ostéopathique.", en: "General rehab, post-injury, osteopathic approach." },
+  },
+  {
+    slug: "loic-meunier", name: "Loïc Meunier", accent: "#4f46e5",
+    langs: ["FR", "DE", "EN"], tags: [...GEN], specs: ["Kiné générale", "Ostéopathie", "Réadaptation"],
+    phone: "+32474296326", whatsapp: "https://wa.me/32474296326", online: null, conv: true,
+    role: { de: "Physiotherapeut — Osteopathie in Ausbildung", fr: "Kinésithérapeute — Ostéopathie en formation", en: "Physiotherapist — Osteopathy (training)", nl: "Fysiotherapeut — Osteopathie (opleiding)", tr: "Fizyoterapist — Osteopati (eğitim)", ar: "أخصائي علاج طبيعي — أوستيوباثي (تدريب)", pl: "Fizjoterapeuta — Osteopatia (szkolenie)", uk: "Фізіотерапевт — остеопатія (навчання)", es: "Fisioterapeuta — Osteopatía (en formación)", ku: "Fizyoterapîst — Osteopatî (perwerde)" },
+    plain: { de: "Allgemeine Reha, nach Verletzungen, osteopathischer Ansatz.", fr: "Rééducation générale, suites de blessure, approche ostéopathique.", en: "General rehab, post-injury, osteopathic approach." },
   },
 ];
 
-const UI: Record<string, {
-  badge: string; title: string; titleAccent: string; subtitle: string;
-  chooseTherapist: string; bookWith: string; viewProfile: string;
-  orCall: string; address: string; hours: string; hoursVal: string;
-  infoBring: string; bringItems: string[]; cancelTitle: string; cancelText: string;
-  convention: string; languages: string; specialties: string;
-  bookWhatsApp: string; bookOnline: string; bookEmail: string;
-}> = {
-  de: {
-    badge: "Online & Direkt buchen",
-    title: "Termin",
-    titleAccent: "vereinbaren",
-    subtitle: "Wählen Sie Ihren Therapeuten und buchen Sie direkt per WhatsApp, Online oder E-Mail — schnell, einfach, kostenlos.",
-    chooseTherapist: "Therapeuten wählen",
-    bookWith: "Termin bei",
-    viewProfile: "Profil ansehen",
-    orCall: "Oder anrufen:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Öffnungszeiten",
-    hoursVal: "Mo – Fr: 08:00 – 20:00 | Sa: nach Vereinbarung",
-    infoBring: "Mitzubringen",
-    bringItems: ["Ärztliche Verschreibung", "Krankenkassen-Aufkleber", "Großes Handtuch", "Sportkleidung", "Personalausweis"],
-    cancelTitle: "Absage",
-    cancelText: "Bitte sagen Sie Ihren Termin mindestens 24 Stunden im Voraus ab. Bei Nichterscheinen (No-Show) oder Absage weniger als 24 Stunden vorher behalten wir uns das Recht vor, eine Ausfallgebühr in Rechnung zu stellen — aus Respekt vor wartenden Patienten und vor unserer Zeit.",
-    convention: "Nicht konventioniert",
-    languages: "Sprachen",
-    specialties: "Spezialitäten",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Online buchen",
-    bookEmail: "E-Mail",
-  },
-  fr: {
-    badge: "Réservation en ligne & directe",
-    title: "Prendre",
-    titleAccent: "rendez-vous",
-    subtitle: "Choisissez votre thérapeute et réservez directement par WhatsApp, en ligne ou par e-mail — rapide, simple, gratuit.",
-    chooseTherapist: "Choisir un thérapeute",
-    bookWith: "Rendez-vous avec",
-    viewProfile: "Voir le profil",
-    orCall: "Ou appeler :",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Heures d'ouverture",
-    hoursVal: "Lun – Ven : 08:00 – 20:00 | Sam : sur RDV",
-    infoBring: "À apporter",
-    bringItems: ["Prescription médicale", "Vignette de mutuelle", "Grande serviette", "Tenue sportive", "Carte d'identité"],
-    cancelTitle: "Annulation",
-    cancelText: "Merci d'annuler votre rendez-vous au moins 24 heures à l'avance. En cas de non-présentation (no-show) ou d'annulation moins de 24h avant le rendez-vous, nous nous réservons le droit de facturer des frais d'annulation — par respect pour les patients en liste d'attente et pour notre temps.",
-    convention: "Déconventionnée",
-    languages: "Langues",
-    specialties: "Spécialités",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Réserver en ligne",
-    bookEmail: "E-mail",
-  },
-  en: {
-    badge: "Book online & direct",
-    title: "Book an",
-    titleAccent: "appointment",
-    subtitle: "Choose your therapist and book directly via WhatsApp, online or email — fast, easy, free.",
-    chooseTherapist: "Choose a therapist",
-    bookWith: "Appointment with",
-    viewProfile: "View profile",
-    orCall: "Or call:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Opening hours",
-    hoursVal: "Mon – Fri: 08:00 – 20:00 | Sat: by appointment",
-    infoBring: "What to bring",
-    bringItems: ["Medical prescription", "Health insurance card", "Large towel", "Sportswear", "ID card"],
-    cancelTitle: "Cancellation policy",
-    cancelText: "Please cancel your appointment at least 24 hours in advance. In the event of a no-show or a cancellation less than 24 hours before the appointment, we reserve the right to charge a cancellation fee — out of respect for patients on the waiting list and for our time.",
-    convention: "Non-conventional",
-    languages: "Languages",
-    specialties: "Specialties",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Book online",
-    bookEmail: "Email",
-  },
-  uk: {
-    badge: "Бронювання онлайн і напряму",
-    title: "Записатися",
-    titleAccent: "на прийом",
-    subtitle: "Оберіть свого терапевта та забронюйте напряму через WhatsApp, онлайн або email — швидко, легко, безкоштовно.",
-    chooseTherapist: "Оберіть терапевта",
-    bookWith: "Запис до",
-    viewProfile: "Переглянути профіль",
-    orCall: "Або зателефонуйте:",
-    address: "Loten 1, B-4700 Ойпен",
-    hours: "Години роботи",
-    hoursVal: "Пн – Пт: 08:00 – 20:00 | Сб: за записом",
-    infoBring: "Що взяти з собою",
-    bringItems: ["Медичне направлення", "Картка медичного страхування", "Великий рушник", "Спортивний одяг", "Посвідчення особи"],
-    cancelTitle: "Правила скасування",
-    cancelText: "Будь ласка, скасовуйте запис щонайменше за 24 години. У разі нез'явлення або скасування менш ніж за 24 години ми залишаємо за собою право стягнути плату за скасування — з поваги до пацієнтів у черзі та до нашого часу.",
-    convention: "Не за конвенцією",
-    languages: "Мови",
-    specialties: "Спеціальності",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Забронювати онлайн",
-    bookEmail: "Email",
-  },
-  es: {
-    badge: "Reserva online y directa",
-    title: "Pedir",
-    titleAccent: "cita",
-    subtitle: "Elija a su terapeuta y reserve directamente por WhatsApp, en línea o por correo — rápido, fácil y gratuito.",
-    chooseTherapist: "Elija un terapeuta",
-    bookWith: "Cita con",
-    viewProfile: "Ver perfil",
-    orCall: "O llame:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Horario",
-    hoursVal: "Lun – Vie: 08:00 – 20:00 | Sáb: con cita previa",
-    infoBring: "Qué traer",
-    bringItems: ["Prescripción médica", "Tarjeta de la mutua", "Toalla grande", "Ropa deportiva", "Documento de identidad"],
-    cancelTitle: "Política de cancelación",
-    cancelText: "Por favor, cancele su cita con al menos 24 horas de antelación. En caso de no presentarse o de cancelar con menos de 24 horas de antelación, nos reservamos el derecho de cobrar una tarifa de cancelación — por respeto a los pacientes en lista de espera y a nuestro tiempo.",
-    convention: "No convencionado",
-    languages: "Idiomas",
-    specialties: "Especialidades",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Reservar en línea",
-    bookEmail: "Correo",
-  },
-  ku: {
-    badge: "Online & rasterast rezervkirin",
-    title: "Randevû",
-    titleAccent: "bigire",
-    subtitle: "Terapîstê xwe hilbijêre û rasterast bi WhatsApp, online an e-nameyê rezerve bike — bilez, hêsan, belaş.",
-    chooseTherapist: "Terapîstekê hilbijêre",
-    bookWith: "Randevû bi",
-    viewProfile: "Profîlê bibîne",
-    orCall: "An telefon bike:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Demên vekirî",
-    hoursVal: "Duş – În: 08:00 – 20:00 | Şem: bi randevû",
-    infoBring: "Çi bînin",
-    bringItems: ["Recêteya bijîjkî", "Karta sîgorteya tenduristiyê", "Destmaleke mezin", "Cilên werzîşê", "Karta nasnameyê"],
-    cancelTitle: "Polîtîkaya betalkirinê",
-    cancelText: "Ji kerema xwe randevûya xwe herî kêm 24 saet berê betal bikin. Di rewşa nehatinê an betalkirina kêmtir ji 24 saetan berê de, em mafê xwe diparêzin ku heqê betalkirinê bistînin — ji bo rêzgirtina li nexweşên di rêzê de û li dema me.",
-    convention: "Ne bi peymanê",
-    languages: "Ziman",
-    specialties: "Pisporî",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Online rezerve bike",
-    bookEmail: "E-name",
-  },
-  nl: {
-    badge: "Online & direct boeken",
-    title: "Afspraak",
-    titleAccent: "maken",
-    subtitle: "Kies uw therapeut en boek direct via WhatsApp, online of e-mail — snel, eenvoudig, gratis.",
-    chooseTherapist: "Kies een therapeut",
-    bookWith: "Afspraak bij",
-    viewProfile: "Profiel bekijken",
-    orCall: "Of bellen:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Openingstijden",
-    hoursVal: "Ma – Vr: 08:00 – 20:00 | Za: op afspraak",
-    infoBring: "Mee te brengen",
-    bringItems: ["Medisch voorschrift", "Mutualiteitsklever", "Grote handdoek", "Sportkleding", "Identiteitskaart"],
-    cancelTitle: "Annuleringsbeleid",
-    cancelText: "Annuleer uw afspraak minstens 24 uur op voorhand. Bij niet-verschijnen (no-show) of annulering minder dan 24u voor het afspraak, behouden wij ons het recht voor om annuleringskosten aan te rekenen — uit respect voor wachtende patiënten en voor onze tijd.",
-    convention: "Niet geconventioneerd",
-    languages: "Talen",
-    specialties: "Specialiteiten",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Online boeken",
-    bookEmail: "E-mail",
-  },
-  tr: {
-    badge: "Online & Doğrudan rezervasyon",
-    title: "Randevu",
-    titleAccent: "alın",
-    subtitle: "Terapistinizi seçin ve WhatsApp, online veya e-posta ile doğrudan rezervasyon yapın — hızlı, kolay, ücretsiz.",
-    chooseTherapist: "Terapist seçin",
-    bookWith: "Randevu:",
-    viewProfile: "Profili gör",
-    orCall: "Veya arayın:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Çalışma saatleri",
-    hoursVal: "Pzt – Cum: 08:00 – 20:00 | Cmt: randevu ile",
-    infoBring: "Getirilecekler",
-    bringItems: ["Tıbbi reçete", "Sağlık sigortası kartı", "Büyük havlu", "Spor kıyafeti", "Kimlik kartı"],
-    cancelTitle: "İptal politikası",
-    cancelText: "Lütfen randevunuzu en az 24 saat önceden iptal edin. Gelmemeniz (no-show) veya randevudan 24 saatten az önce iptal etmeniz durumunda, bekleme listesindeki hastalara ve zamanımıza saygı göstermek adına iptal ücreti talep etme hakkımızı saklı tutarız.",
-    convention: "Konvansiyonlu değil",
-    languages: "Diller",
-    specialties: "Uzmanlıklar",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Online rezervasyon",
-    bookEmail: "E-posta",
-  },
-  ar: {
-    badge: "حجز عبر الإنترنت ومباشر",
-    title: "احجز",
-    titleAccent: "موعدك",
-    subtitle: "اختر معالجك واحجز مباشرة عبر واتساب أو الإنترنت أو البريد الإلكتروني — سريع، سهل، مجاني.",
-    chooseTherapist: "اختر معالجًا",
-    bookWith: "موعد مع",
-    viewProfile: "عرض الملف",
-    orCall: "أو اتصل:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "ساعات العمل",
-    hoursVal: "الإثنين – الجمعة: 08:00 – 20:00 | السبت: بموعد",
-    infoBring: "ما يجب إحضاره",
-    bringItems: ["وصفة طبية", "بطاقة التأمين الصحي", "منشفة كبيرة", "ملابس رياضية", "بطاقة الهوية"],
-    cancelTitle: "سياسة الإلغاء",
-    cancelText: "يُرجى إلغاء موعدك قبل 24 ساعة على الأقل. في حالة عدم الحضور أو الإلغاء قبل أقل من 24 ساعة من الموعد، نحتفظ بحق تحصيل رسوم تعويضية — احترامًا للمرضى المنتظرين ولوقتنا.",
-    convention: "غير تقليدي",
-    languages: "اللغات",
-    specialties: "التخصصات",
-    bookWhatsApp: "واتساب",
-    bookOnline: "حجز عبر الإنترنت",
-    bookEmail: "البريد الإلكتروني",
-  },
-  pl: {
-    badge: "Rezerwacja online i bezpośrednia",
-    title: "Umów",
-    titleAccent: "wizytę",
-    subtitle: "Wybierz swojego terapeutę i zarezerwuj bezpośrednio przez WhatsApp, online lub e-mail — szybko, łatwo, bezpłatnie.",
-    chooseTherapist: "Wybierz terapeutę",
-    bookWith: "Wizyta u",
-    viewProfile: "Zobacz profil",
-    orCall: "Lub zadzwoń:",
-    address: "Loten 1, B-4700 Eupen",
-    hours: "Godziny otwarcia",
-    hoursVal: "Pon – Pt: 08:00 – 20:00 | Sob: na umówienie",
-    infoBring: "Co zabrać",
-    bringItems: ["Recepta lekarska", "Karta ubezpieczenia", "Duży ręcznik", "Strój sportowy", "Dowód osobisty"],
-    cancelTitle: "Polityka anulowania",
-    cancelText: "Prosimy o odwołanie wizyty co najmniej 24 godziny wcześniej. W przypadku niestawienia się (no-show) lub odwołania mniej niż 24 godziny przed wizytą, zastrzegamy sobie prawo do naliczenia opłaty za odwołanie — z szacunku dla oczekujących pacjentów i naszego czasu.",
-    convention: "Niekonwencjonalna",
-    languages: "Języki",
-    specialties: "Specjalizacje",
-    bookWhatsApp: "WhatsApp",
-    bookOnline: "Rezerwacja online",
-    bookEmail: "E-mail",
-  },
+const MOTIFS: { id: string; emoji: string; label: Rec }[] = [
+  { id: "dos", emoji: "🔙", label: { de: "Rückenschmerzen", fr: "Mal de dos", en: "Back pain", nl: "Rugpijn", tr: "Sırt ağrısı", ar: "ألم الظهر", pl: "Ból pleców", uk: "Біль у спині", es: "Dolor de espalda", ku: "Êşa piştê" } },
+  { id: "nuque", emoji: "🦒", label: { de: "Nacken", fr: "Cou / nuque", en: "Neck", nl: "Nek", tr: "Boyun", ar: "الرقبة", pl: "Kark / szyja", uk: "Шия", es: "Cuello", ku: "Stû" } },
+  { id: "epaule", emoji: "💪", label: { de: "Schulter", fr: "Épaule", en: "Shoulder", nl: "Schouder", tr: "Omuz", ar: "الكتف", pl: "Bark", uk: "Плече", es: "Hombro", ku: "Mil" } },
+  { id: "genou", emoji: "🦵", label: { de: "Knie / Bein", fr: "Genou / jambe", en: "Knee / leg", nl: "Knie / been", tr: "Diz / bacak", ar: "الركبة / الساق", pl: "Kolano / noga", uk: "Коліно / нога", es: "Rodilla / pierna", ku: "Çok / ling" } },
+  { id: "sport", emoji: "🏃", label: { de: "Sport / Laufen", fr: "Sport / course", en: "Sport / running", nl: "Sport / hardlopen", tr: "Spor / koşu", ar: "رياضة / جري", pl: "Sport / bieganie", uk: "Спорт / біг", es: "Deporte / correr", ku: "Werzîş / bezîn" } },
+  { id: "postop", emoji: "🩹", label: { de: "Nach OP", fr: "Après opération", en: "Post-surgery", nl: "Na operatie", tr: "Ameliyat sonrası", ar: "بعد العملية", pl: "Po operacji", uk: "Після операції", es: "Tras cirugía", ku: "Piştî emeliyatê" } },
+  { id: "drainage", emoji: "💧", label: { de: "Lymphdrainage", fr: "Drainage", en: "Drainage", nl: "Drainage", tr: "Drenaj", ar: "تصريف لمفاوي", pl: "Drenaż", uk: "Дренаж", es: "Drenaje", ku: "Drenaj" } },
+  { id: "machoire", emoji: "😬", label: { de: "Kiefer (CMD)", fr: "Mâchoire (ATM)", en: "Jaw (TMJ)", nl: "Kaak (CMD)", tr: "Çene (TME)", ar: "الفك", pl: "Szczęka", uk: "Щелепа (СНЩС)", es: "Mandíbula (ATM)", ku: "Çene (TMJ)" } },
+];
+
+const LANG_FLAGS: Record<string, string> = { FR: "🇫🇷", DE: "🇩🇪", EN: "🇬🇧", PL: "🇵🇱" };
+const LANG_OPTS = ["FR", "DE", "EN", "PL"];
+
+const X: Record<string, Rec> = {
+  fr: { heroTitle: "Trouvez votre", heroAccent: "kinésithérapeute", heroSub: "Selon votre besoin, votre langue, ou au hasard. En quelques secondes.", trust: "4,8 · 23 avis Google · Eupen", modeNeedT: "J'ai un besoin précis", modeNeedS: "Filtrez par motif & langue", modeRandT: "Peu importe, surprenez-moi", modeRandS: "Un kiné au hasard, équitable", motifQ: "Qu'est-ce qui vous amène ?", langQ: "Dans quelle langue ?", allLang: "Toutes", spinBtn: "Désignez-moi un kiné", spinChose: "Le hasard a choisi", gridTeam: "Notre équipe", gridReco: "Recommandé pour vous", gridSpec: "Le ou la spécialiste pour ce motif", gridAll: "Tous nos kinés s'en occupent", allTakeBanner: "Tous nos kinés prennent en charge ce motif — choisissez, ou laissez le hasard décider.", ribReco: "Recommandé", ribSpec: "Spécialiste", ribWin: "Votre kiné", reserveWith: "Réserver avec", onlineBtn: "Réservation en ligne", profileBtn: "Voir le profil complet", callBtn: "Appeler", reset: "Réinitialiser les filtres", reviews: "avis Google", emptyLang: "Personne ne parle cette langue ici. Élargissez le filtre ou essayez « Surprenez-moi »." },
+  de: { heroTitle: "Finden Sie Ihren", heroAccent: "Physiotherapeuten", heroSub: "Nach Beschwerde, Sprache oder per Zufall. In wenigen Sekunden.", trust: "4,8 · 23 Google-Bewertungen · Eupen", modeNeedT: "Ich habe ein konkretes Anliegen", modeNeedS: "Nach Beschwerde & Sprache filtern", modeRandT: "Egal, überraschen Sie mich", modeRandS: "Ein Therapeut per Zufall, fair", motifQ: "Was führt Sie zu uns?", langQ: "In welcher Sprache?", allLang: "Alle", spinBtn: "Therapeut auslosen", spinChose: "Der Zufall hat gewählt", gridTeam: "Unser Team", gridReco: "Für Sie empfohlen", gridSpec: "Spezialist/in für dieses Anliegen", gridAll: "Alle unsere Therapeuten helfen Ihnen", allTakeBanner: "Alle unsere Therapeuten behandeln dieses Anliegen — wählen Sie, oder lassen Sie den Zufall entscheiden.", ribReco: "Empfohlen", ribSpec: "Spezialist/in", ribWin: "Ihr Therapeut", reserveWith: "Termin bei", onlineBtn: "Online buchen", profileBtn: "Vollständiges Profil", callBtn: "Anrufen", reset: "Filter zurücksetzen", reviews: "Google-Bewertungen", emptyLang: "Niemand spricht diese Sprache hier. Erweitern Sie den Filter oder versuchen Sie „Überraschen Sie mich“." },
+  en: { heroTitle: "Find your", heroAccent: "physiotherapist", heroSub: "By need, by language, or at random. In seconds.", trust: "4.8 · 23 Google reviews · Eupen", modeNeedT: "I have a specific need", modeNeedS: "Filter by reason & language", modeRandT: "No preference, surprise me", modeRandS: "A therapist at random, fair", motifQ: "What brings you in?", langQ: "In which language?", allLang: "All", spinBtn: "Pick a therapist for me", spinChose: "Chance picked", gridTeam: "Our team", gridReco: "Recommended for you", gridSpec: "The specialist for this", gridAll: "All our therapists handle this", allTakeBanner: "All our therapists treat this — choose one, or let chance decide.", ribReco: "Recommended", ribSpec: "Specialist", ribWin: "Your therapist", reserveWith: "Book with", onlineBtn: "Book online", profileBtn: "View full profile", callBtn: "Call", reset: "Reset filters", reviews: "Google reviews", emptyLang: "Nobody speaks this language here. Widen the filter or try “Surprise me”." },
+  nl: { heroTitle: "Vind uw", heroAccent: "kinesist", heroSub: "Op klacht, taal of willekeurig. In enkele seconden.", trust: "4,8 · 23 Google-reviews · Eupen", modeNeedT: "Ik heb een specifieke klacht", modeNeedS: "Filter op klacht & taal", modeRandT: "Maakt niet uit, verras me", modeRandS: "Een kinesist willekeurig, eerlijk", motifQ: "Wat brengt u hier?", langQ: "In welke taal?", allLang: "Alle", spinBtn: "Kies een kinesist voor mij", spinChose: "Het toeval koos", gridTeam: "Ons team", gridReco: "Aanbevolen voor u", gridSpec: "De specialist hiervoor", gridAll: "Al onze kinesisten helpen u", allTakeBanner: "Al onze kinesisten behandelen dit — kies, of laat het toeval beslissen.", ribReco: "Aanbevolen", ribSpec: "Specialist", ribWin: "Uw kinesist", reserveWith: "Boeken bij", onlineBtn: "Online boeken", profileBtn: "Volledig profiel", callBtn: "Bellen", reset: "Filters wissen", reviews: "Google-reviews", emptyLang: "Niemand spreekt deze taal hier. Verbreed de filter of probeer “Verras me”." },
+  tr: { heroTitle: "Fizyoterapistinizi", heroAccent: "bulun", heroSub: "İhtiyaca, dile göre ya da rastgele. Saniyeler içinde.", trust: "4,8 · 23 Google değerlendirmesi · Eupen", modeNeedT: "Belirli bir şikâyetim var", modeNeedS: "Şikâyet & dile göre filtrele", modeRandT: "Fark etmez, beni şaşırt", modeRandS: "Rastgele bir terapist, adil", motifQ: "Sizi buraya ne getirdi?", langQ: "Hangi dilde?", allLang: "Tümü", spinBtn: "Benim için bir terapist seç", spinChose: "Şans seçti", gridTeam: "Ekibimiz", gridReco: "Sizin için önerilen", gridSpec: "Bu konunun uzmanı", gridAll: "Tüm terapistlerimiz ilgilenir", allTakeBanner: "Tüm terapistlerimiz bununla ilgilenir — birini seçin ya da şans karar versin.", ribReco: "Önerilen", ribSpec: "Uzman", ribWin: "Terapistiniz", reserveWith: "Randevu:", onlineBtn: "Online rezervasyon", profileBtn: "Profili gör", callBtn: "Ara", reset: "Filtreleri sıfırla", reviews: "Google değerlendirmesi", emptyLang: "Burada bu dili konuşan yok. Filtreyi genişletin veya “Beni şaşırt” deneyin." },
+  ar: { heroTitle: "اعثر على", heroAccent: "أخصائي العلاج الطبيعي", heroSub: "حسب الحاجة أو اللغة أو عشوائيًا. في ثوانٍ.", trust: "4.8 · 23 تقييم على Google · أوبن", modeNeedT: "لدي حاجة محددة", modeNeedS: "التصفية حسب السبب واللغة", modeRandT: "لا يهم، فاجئني", modeRandS: "معالج عشوائي، بإنصاف", motifQ: "ما الذي أتى بك؟", langQ: "بأي لغة؟", allLang: "الكل", spinBtn: "اختر لي معالجًا", spinChose: "اختار الحظ", gridTeam: "فريقنا", gridReco: "موصى به لك", gridSpec: "المختص بهذا", gridAll: "كل معالجينا يهتمون بهذا", allTakeBanner: "كل معالجينا يعالجون هذا — اختر، أو دع الحظ يقرر.", ribReco: "موصى به", ribSpec: "مختص", ribWin: "معالجك", reserveWith: "موعد مع", onlineBtn: "حجز عبر الإنترنت", profileBtn: "عرض الملف الكامل", callBtn: "اتصال", reset: "إعادة ضبط التصفية", reviews: "تقييم Google", emptyLang: "لا أحد يتحدث هذه اللغة هنا. وسّع التصفية أو جرّب «فاجئني»." },
+  pl: { heroTitle: "Znajdź swojego", heroAccent: "fizjoterapeutę", heroSub: "Według potrzeby, języka lub losowo. W kilka sekund.", trust: "4,8 · 23 opinie Google · Eupen", modeNeedT: "Mam konkretny problem", modeNeedS: "Filtruj wg dolegliwości i języka", modeRandT: "Wszystko jedno, zaskocz mnie", modeRandS: "Losowy fizjoterapeuta, sprawiedliwie", motifQ: "Co Cię sprowadza?", langQ: "W jakim języku?", allLang: "Wszystkie", spinBtn: "Wylosuj fizjoterapeutę", spinChose: "Los wybrał", gridTeam: "Nasz zespół", gridReco: "Polecane dla Ciebie", gridSpec: "Specjalista od tego", gridAll: "Wszyscy nasi fizjoterapeuci się tym zajmują", allTakeBanner: "Wszyscy nasi fizjoterapeuci leczą to — wybierz lub pozwól zadecydować losowi.", ribReco: "Polecany", ribSpec: "Specjalista", ribWin: "Twój fizjoterapeuta", reserveWith: "Wizyta u", onlineBtn: "Rezerwacja online", profileBtn: "Pełny profil", callBtn: "Zadzwoń", reset: "Wyczyść filtry", reviews: "opinie Google", emptyLang: "Nikt tu nie mówi w tym języku. Poszerz filtr lub spróbuj „Zaskocz mnie”." },
+  uk: { heroTitle: "Знайдіть свого", heroAccent: "фізіотерапевта", heroSub: "За потребою, мовою або випадково. За кілька секунд.", trust: "4,8 · 23 відгуки Google · Ойпен", modeNeedT: "У мене конкретна проблема", modeNeedS: "Фільтр за приводом і мовою", modeRandT: "Байдуже, здивуйте мене", modeRandS: "Терапевт випадково, чесно", motifQ: "Що вас турбує?", langQ: "Якою мовою?", allLang: "Усі", spinBtn: "Оберіть терапевта для мене", spinChose: "Випадок обрав", gridTeam: "Наша команда", gridReco: "Рекомендовано вам", gridSpec: "Спеціаліст із цього", gridAll: "Усі наші терапевти цим займаються", allTakeBanner: "Усі наші терапевти лікують це — оберіть або довіртеся випадку.", ribReco: "Рекомендовано", ribSpec: "Спеціаліст", ribWin: "Ваш терапевт", reserveWith: "Запис до", onlineBtn: "Бронювати онлайн", profileBtn: "Повний профіль", callBtn: "Подзвонити", reset: "Скинути фільтри", reviews: "відгуки Google", emptyLang: "Тут ніхто не говорить цією мовою. Розширте фільтр або спробуйте «Здивуйте мене»." },
+  es: { heroTitle: "Encuentre a su", heroAccent: "fisioterapeuta", heroSub: "Por necesidad, idioma o al azar. En segundos.", trust: "4,8 · 23 reseñas de Google · Eupen", modeNeedT: "Tengo una necesidad concreta", modeNeedS: "Filtre por motivo e idioma", modeRandT: "Me da igual, sorpréndame", modeRandS: "Un fisio al azar, equitativo", motifQ: "¿Qué le trae por aquí?", langQ: "¿En qué idioma?", allLang: "Todos", spinBtn: "Elija un fisio por mí", spinChose: "El azar eligió", gridTeam: "Nuestro equipo", gridReco: "Recomendado para usted", gridSpec: "El o la especialista en esto", gridAll: "Todos nuestros fisios se ocupan de esto", allTakeBanner: "Todos nuestros fisios tratan esto — elija, o deje que decida el azar.", ribReco: "Recomendado", ribSpec: "Especialista", ribWin: "Su fisio", reserveWith: "Cita con", onlineBtn: "Reserva en línea", profileBtn: "Ver perfil completo", callBtn: "Llamar", reset: "Restablecer filtros", reviews: "reseñas de Google", emptyLang: "Aquí nadie habla este idioma. Amplíe el filtro o pruebe «Sorpréndame»." },
+  ku: { heroTitle: "Fizyoterapîstê xwe", heroAccent: "bibîne", heroSub: "Li gorî pêwîstî, ziman an bi tesadif. Di çend saniyeyan de.", trust: "4,8 · 23 nirxandinên Google · Eupen", modeNeedT: "Pirsgirêkeke min a diyar heye", modeNeedS: "Li gorî sedem û ziman parzûn bike", modeRandT: "Ferq nake, min surprîz bike", modeRandS: "Terapîstek bi tesadif, bi dadperwerî", motifQ: "Çi we tîne?", langQ: "Bi kîjan zimanî?", allLang: "Hemû", spinBtn: "Ji bo min terapîstekê hilbijêre", spinChose: "Tesadifê hilbijart", gridTeam: "Tîma me", gridReco: "Ji bo we tê pêşniyarkirin", gridSpec: "Pisporê vê yekê", gridAll: "Hemû terapîstên me bi vê re mijûl dibin", allTakeBanner: "Hemû terapîstên me vê derman dikin — hilbijêre, an bila tesadif biryar bide.", ribReco: "Pêşniyarkirî", ribSpec: "Pispor", ribWin: "Terapîstê we", reserveWith: "Randevû bi", onlineBtn: "Online rezerve bike", profileBtn: "Profîla tevahî", callBtn: "Telefon bike", reset: "Parzûnan jê bibe", reviews: "nirxandinên Google", emptyLang: "Li vir kes bi vî zimanî napeyive. Parzûnê fireh bike an „Min surprîz bike\" biceribîne." },
 };
 
-const LANG_FLAGS: Record<string, string> = {
-  FR: "🇫🇷", DE: "🇩🇪", EN: "🇬🇧", NL: "🇳🇱", PL: "🇵🇱", TR: "🇹🇷", AR: "🇸🇦",
+const UI: Record<string, { address: string; hours: string; hoursVal: string; infoBring: string; bringItems: string[]; cancelTitle: string; cancelText: string; conv: string }> = {
+  de: { address: "Loten 1, B-4700 Eupen", hours: "Öffnungszeiten", hoursVal: "Mo – Fr: 08:00 – 20:00 | Sa: nach Vereinbarung", infoBring: "Mitzubringen", bringItems: ["Ärztliche Verschreibung", "Krankenkassen-Aufkleber", "Großes Handtuch", "Sportkleidung", "Personalausweis"], cancelTitle: "Absage", cancelText: "Bitte sagen Sie Ihren Termin mindestens 24 Stunden im Voraus ab. Bei Nichterscheinen oder Absage weniger als 24 Stunden vorher behalten wir uns das Recht vor, eine Ausfallgebühr in Rechnung zu stellen.", conv: "Nicht konventioniert" },
+  fr: { address: "Loten 1, B-4700 Eupen", hours: "Heures d'ouverture", hoursVal: "Lun – Ven : 08:00 – 20:00 | Sam : sur RDV", infoBring: "À apporter", bringItems: ["Prescription médicale", "Vignette de mutuelle", "Grande serviette", "Tenue sportive", "Carte d'identité"], cancelTitle: "Annulation", cancelText: "Merci d'annuler votre rendez-vous au moins 24 heures à l'avance. En cas de non-présentation ou d'annulation moins de 24h avant, nous nous réservons le droit de facturer des frais d'annulation.", conv: "Déconventionnée" },
+  en: { address: "Loten 1, B-4700 Eupen", hours: "Opening hours", hoursVal: "Mon – Fri: 08:00 – 20:00 | Sat: by appointment", infoBring: "What to bring", bringItems: ["Medical prescription", "Health insurance card", "Large towel", "Sportswear", "ID card"], cancelTitle: "Cancellation policy", cancelText: "Please cancel your appointment at least 24 hours in advance. In the event of a no-show or a cancellation less than 24 hours before, we reserve the right to charge a cancellation fee.", conv: "Non-conventional" },
+  nl: { address: "Loten 1, B-4700 Eupen", hours: "Openingstijden", hoursVal: "Ma – Vr: 08:00 – 20:00 | Za: op afspraak", infoBring: "Mee te brengen", bringItems: ["Medisch voorschrift", "Mutualiteitsklever", "Grote handdoek", "Sportkleding", "Identiteitskaart"], cancelTitle: "Annuleringsbeleid", cancelText: "Annuleer uw afspraak minstens 24 uur op voorhand. Bij niet-verschijnen of annulering minder dan 24u vooraf behouden wij ons het recht voor annuleringskosten aan te rekenen.", conv: "Niet geconventioneerd" },
+  tr: { address: "Loten 1, B-4700 Eupen", hours: "Çalışma saatleri", hoursVal: "Pzt – Cum: 08:00 – 20:00 | Cmt: randevu ile", infoBring: "Getirilecekler", bringItems: ["Tıbbi reçete", "Sağlık sigortası kartı", "Büyük havlu", "Spor kıyafeti", "Kimlik kartı"], cancelTitle: "İptal politikası", cancelText: "Lütfen randevunuzu en az 24 saat önceden iptal edin. Gelmemeniz veya 24 saatten az önce iptal etmeniz durumunda iptal ücreti talep etme hakkımızı saklı tutarız.", conv: "Konvansiyonlu değil" },
+  ar: { address: "Loten 1, B-4700 Eupen", hours: "ساعات العمل", hoursVal: "الإثنين – الجمعة: 08:00 – 20:00 | السبت: بموعد", infoBring: "ما يجب إحضاره", bringItems: ["وصفة طبية", "بطاقة التأمين الصحي", "منشفة كبيرة", "ملابس رياضية", "بطاقة الهوية"], cancelTitle: "سياسة الإلغاء", cancelText: "يُرجى إلغاء موعدك قبل 24 ساعة على الأقل. في حالة عدم الحضور أو الإلغاء قبل أقل من 24 ساعة، نحتفظ بحق تحصيل رسوم تعويضية.", conv: "غير تقليدي" },
+  pl: { address: "Loten 1, B-4700 Eupen", hours: "Godziny otwarcia", hoursVal: "Pon – Pt: 08:00 – 20:00 | Sob: na umówienie", infoBring: "Co zabrać", bringItems: ["Recepta lekarska", "Karta ubezpieczenia", "Duży ręcznik", "Strój sportowy", "Dowód osobisty"], cancelTitle: "Polityka anulowania", cancelText: "Prosimy o odwołanie wizyty co najmniej 24 godziny wcześniej. W przypadku niestawienia się lub odwołania mniej niż 24 godziny przed wizytą zastrzegamy sobie prawo do naliczenia opłaty.", conv: "Niekonwencjonalna" },
+  uk: { address: "Loten 1, B-4700 Ойпен", hours: "Години роботи", hoursVal: "Пн – Пт: 08:00 – 20:00 | Сб: за записом", infoBring: "Що взяти з собою", bringItems: ["Медичне направлення", "Картка медичного страхування", "Великий рушник", "Спортивний одяг", "Посвідчення особи"], cancelTitle: "Правила скасування", cancelText: "Будь ласка, скасовуйте запис щонайменше за 24 години. У разі нез'явлення або скасування менш ніж за 24 години ми залишаємо за собою право стягнути плату за скасування.", conv: "Не за конвенцією" },
+  es: { address: "Loten 1, B-4700 Eupen", hours: "Horario", hoursVal: "Lun – Vie: 08:00 – 20:00 | Sáb: con cita previa", infoBring: "Qué traer", bringItems: ["Prescripción médica", "Tarjeta de la mutua", "Toalla grande", "Ropa deportiva", "Documento de identidad"], cancelTitle: "Política de cancelación", cancelText: "Por favor, cancele su cita con al menos 24 horas de antelación. En caso de no presentarse o cancelar con menos de 24 horas, nos reservamos el derecho de cobrar una tarifa de cancelación.", conv: "No convencionado" },
+  ku: { address: "Loten 1, B-4700 Eupen", hours: "Demên vekirî", hoursVal: "Duş – În: 08:00 – 20:00 | Şem: bi randevû", infoBring: "Çi bînin", bringItems: ["Recêteya bijîjkî", "Karta sîgorteya tenduristiyê", "Destmaleke mezin", "Cilên werzîşê", "Karta nasnameyê"], cancelTitle: "Polîtîkaya betalkirinê", cancelText: "Ji kerema xwe randevûya xwe herî kêm 24 saet berê betal bikin. Di rewşa nehatinê an betalkirina kêmtir ji 24 saetan de, em mafê xwe diparêzin ku heqê betalkirinê bistînin.", conv: "Ne bi peymanê" },
 };
 
-function BookingButton({ type, label, href, primary, emailEnc }: { type: string; label: string; href: string; primary: boolean; emailEnc?: string }) {
-  if (type === "email" && emailEnc) {
-    return (
-      <SafeEmail
-        encoded={emailEnc}
-        label={label || undefined}
-        showIcon={true}
-        iconSize={16}
-        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] bg-neutral-800 hover:bg-neutral-700 text-white/80 cursor-pointer"
-      />
-    );
-  }
-
-  const icons: Record<string, React.ReactNode> = {
-    whatsapp: <MessageCircle className="w-4 h-4" />,
-    online: <ExternalLink className="w-4 h-4" />,
-    email: <Mail className="w-4 h-4" />,
-  };
-  const styles: Record<string, string> = {
-    whatsapp: "bg-[#25d366] hover:bg-[#1ebe5d] text-white shadow-lg shadow-green-500/25",
-    online: "bg-[#2b3186] hover:bg-[#1e2260] text-white shadow-lg shadow-blue-500/20",
-    email: "bg-neutral-100 hover:bg-neutral-200 text-neutral-700",
-  };
-
-  return (
-    <a
-      href={href}
-      target={type !== "email" ? "_blank" : undefined}
-      rel={type !== "email" ? "noopener noreferrer" : undefined}
-      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] ${styles[type]}`}
-    >
-      {icons[type]}
-      {label}
-    </a>
-  );
+function fmtPhone(p: string) {
+  return p.replace(/^(\+32)(\d{3})(\d{2})(\d{2})(\d{2})$/, "$1 $2 $3 $4 $5");
 }
 
 export function TerminPageContent() {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
+  const x = X[lang] ?? X.en;
   const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
-  const [selected, setSelected] = useState<string | null>(null);
-  const [therapists, setTherapists] = useState(THERAPISTS);
+
+  const [mode, setMode] = useState<"besoin" | "hasard">("besoin");
+  const [motif, setMotif] = useState<string | null>(null);
+  const [langF, setLangF] = useState<string>("");
+  const [order, setOrder] = useState<string[]>(THERAPISTS.map((t) => t.slug));
+  const [flash, setFlash] = useState<string | null>(null);
+  const [winner, setWinner] = useState<string | null>(null);
+  const [spinning, setSpinning] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    const arr = [...THERAPISTS];
-    for (let i = arr.length - 1; i > 0; i--) {
+    const a = THERAPISTS.map((t) => t.slug);
+    for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      [a[i], a[j]] = [a[j], a[i]];
     }
-    setTherapists(arr);
+    setOrder(a);
+    return () => { if (timer.current) clearTimeout(timer.current); };
   }, []);
 
-  const selectedTherapist = THERAPISTS.find((t) => t.slug === selected);
+  const ordered = order.map((s) => THERAPISTS.find((t) => t.slug === s)).filter(Boolean) as typeof THERAPISTS;
+  const langList = ordered.filter((t) => !langF || t.langs.includes(langF));
+
+  function fireConfetti() {
+    const cv = canvasRef.current;
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+    cv.width = window.innerWidth;
+    cv.height = window.innerHeight;
+    const cols = ["#76b82a", "#a8e063", "#2b3186", "#f97316", "#0d9488", "#fbbf24"];
+    const P = Array.from({ length: 130 }, (_, i) => ({
+      x: cv.width / 2, y: cv.height * 0.38, vx: (Math.random() - 0.5) * 9, vy: Math.random() * -11 - 3,
+      s: 4 + Math.random() * 5, c: cols[i % cols.length], r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.4,
+    }));
+    let t = 0;
+    const loop = () => {
+      t++;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      P.forEach((p) => {
+        p.vy += 0.32; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+        ctx.globalAlpha = Math.max(0, 1 - t / 95); ctx.fillStyle = p.c;
+        ctx.fillRect(-p.s / 2, -p.s / 2, p.s, p.s * 0.6); ctx.restore();
+      });
+      if (t < 95) requestAnimationFrame(loop);
+      else ctx.clearRect(0, 0, cv.width, cv.height);
+    };
+    loop();
+  }
+
+  function startSpin() {
+    if (spinning) return;
+    const pool = langList;
+    if (!pool.length) return;
+    setWinner(null);
+    setSpinning(true);
+    const winIdx = Math.floor(Math.random() * pool.length);
+    let i = 0;
+    const tot = 20 + Math.floor(Math.random() * 5);
+    let delay = 55;
+    const step = () => {
+      setFlash(pool[i % pool.length].slug);
+      i++;
+      if (i < tot) {
+        delay = delay < 210 ? delay * 1.12 : delay;
+        timer.current = setTimeout(step, delay);
+      } else {
+        setFlash(null);
+        setWinner(pool[winIdx].slug);
+        setSpinning(false);
+        fireConfetti();
+      }
+    };
+    step();
+  }
+
+  function pickMode(m: "besoin" | "hasard") {
+    setMode(m);
+    setWinner(null);
+    setFlash(null);
+    if (m === "hasard") setMotif(null);
+  }
+
+  function resetFilters() {
+    setMotif(null);
+    setLangF("");
+    setWinner(null);
+  }
+
+  let gridLabel = x.gridTeam;
+  let cards: { t: typeof THERAPISTS[number]; ribbon: "reco" | "spec" | null; dim: boolean }[] = [];
+  let banner: string | null = null;
+
+  if (mode === "besoin" && motif) {
+    const isNiche = NICHE.includes(motif);
+    const m = langList.filter((t) => t.tags.includes(motif));
+    const rest = langList.filter((t) => !t.tags.includes(motif));
+    if (isNiche && m.length) {
+      gridLabel = x.gridSpec;
+      cards = [
+        ...m.map((t) => ({ t, ribbon: "spec" as const, dim: false })),
+        ...rest.map((t) => ({ t, ribbon: null, dim: true })),
+      ];
+    } else if (m.length) {
+      gridLabel = x.gridAll;
+      banner = x.allTakeBanner;
+      cards = m.map((t) => ({ t, ribbon: null, dim: false }));
+    }
+  } else {
+    cards = langList.map((t) => ({ t, ribbon: null, dim: false }));
+  }
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white" dir={isRtl ? "rtl" : "ltr"}>
+      <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none z-50" aria-hidden="true" />
 
-      {/* Hero gradient */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2b3186]/40 via-neutral-950 to-[#76b82a]/20 pointer-events-none" />
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#76b82a]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-40 right-1/4 w-80 h-80 bg-[#2b3186]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2b3186]/40 via-neutral-950 to-[#76b82a]/15 pointer-events-none" />
+        <div className="absolute top-24 left-1/4 w-96 h-96 bg-[#76b82a]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-44 right-1/4 w-80 h-80 bg-[#2b3186]/20 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
 
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex justify-center mb-6"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-sm text-white/80 font-medium">
-              <Sparkles className="w-4 h-4 text-[#76b82a]" />
-              {ui.badge}
-            </div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="flex justify-center mb-5">
+            <span className="inline-flex items-center gap-2 px-5 py-2 bg-white/8 border border-white/10 rounded-full text-sm text-white/70 font-medium">
+              <Sparkles className="w-4 h-4 text-[#76b82a]" /> {x.trust}
+            </span>
           </motion.div>
 
-          {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-center tracking-tight mb-6"
-          >
-            {ui.title}{" "}
-            <span className="bg-gradient-to-r from-[#76b82a] to-[#a8e063] bg-clip-text text-transparent">
-              {ui.titleAccent}
-            </span>
+          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
+            className="text-4xl sm:text-6xl font-extrabold text-center tracking-tight mb-4">
+            {x.heroTitle}{" "}
+            <span className="bg-gradient-to-r from-[#76b82a] to-[#a8e063] bg-clip-text text-transparent">{x.heroAccent}</span>
           </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+            className="max-w-xl mx-auto text-center text-lg text-white/55 mb-8">{x.heroSub}</motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-2xl mx-auto text-center text-lg text-white/60 leading-relaxed mb-16"
-          >
-            {ui.subtitle}
-          </motion.p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-9 text-[13px] text-white/45">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white/80 transition-colors"><MapPin className="w-4 h-4 text-[#76b82a]" /> {ui.address}</a>
+            <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#76b82a]" /> {ui.hoursVal}</span>
+          </div>
 
-          {/* Info strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-6 mb-16 text-sm text-white/50"
-          >
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-white/80 transition-colors"
-            >
-              <MapPin className="w-4 h-4 text-[#76b82a]" /> {ui.address}
-            </a>
-            <span className="w-px h-4 bg-white/20 hidden sm:block" />
-            <span className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#76b82a]" /> {ui.hoursVal}
-            </span>
-            <span className="w-px h-4 bg-white/20 hidden sm:block" />
-            <span className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#76b82a]" />
-              <SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-white transition-colors" showIcon={false} />
-            </span>
-          </motion.div>
-
-          {/* Section label */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-center mb-10"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-white/30">
-              {ui.chooseTherapist}
-            </span>
-          </motion.div>
-
-          {/* Therapist cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-            {therapists.map((therapist, i) => (
-              <motion.button
-                key={therapist.slug}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * i + 0.4 }}
-                onClick={() => setSelected(selected === therapist.slug ? null : therapist.slug)}
-                className={`relative group text-left w-full rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${
-                  selected === therapist.slug
-                    ? "border-[#76b82a]/60 shadow-2xl shadow-[#76b82a]/10 scale-[1.01]"
-                    : "border-white/10 hover:border-white/25 hover:scale-[1.01]"
-                } bg-white/5 backdrop-blur-sm`}
-              >
-                {/* Top gradient bar */}
-                <div className={`h-1.5 w-full bg-gradient-to-r ${therapist.color}`} />
-
-                <div className="p-5">
-                  <div className="flex items-start gap-4 mb-4">
-                    {/* Avatar */}
-                    <div className="rounded-2xl overflow-hidden flex-shrink-0 shadow-lg ring-1 ring-white/20" style={{ width: 96, height: 96 }}>
-                      <Image
-                        src={`/avatars/${therapist.slug}.jpg`}
-                        alt={therapist.name}
-                        width={96}
-                        height={96}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2">
-                        <h3 className="font-extrabold text-white text-base leading-tight">{therapist.name}</h3>
-                        {therapist.convention && (
-                          <span className="text-[10px] px-2 py-0.5 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full font-medium flex-shrink-0 mt-0.5">
-                            {(therapist.convention as Record<string, string>)[lang] ?? (therapist.convention as Record<string, string>).de}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-white/50 text-xs mt-0.5 leading-snug">
-                        {(therapist.role as Record<string, string>)[lang] ?? (therapist.role as Record<string, string>).de}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Specialties */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {therapist.specialties.map((s) => (
-                      <span key={s} className="text-[10px] px-2 py-0.5 bg-white/8 border border-white/10 rounded-full text-white/60 font-medium">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Languages */}
-                  <div className="flex items-center gap-1.5 mb-4">
-                    <Globe2 className="w-3 h-3 text-white/30" />
-                    {therapist.languages.map((l) => (
-                      <span key={l} className="text-xs text-white/50" title={l}>
-                        {LANG_FLAGS[l]}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA row */}
-                  <div className="flex items-center justify-between">
-                    <span className={`text-xs font-semibold transition-colors ${
-                      selected === therapist.slug ? "text-[#76b82a]" : "text-white/40 group-hover:text-white/60"
-                    }`}>
-                      {selected === therapist.slug ? "✓ Sélectionné" : ui.bookWith + " →"}
-                    </span>
-                    <motion.div
-                      animate={{ rotate: selected === therapist.slug ? 90 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronRight className={`w-4 h-4 transition-colors ${
-                        selected === therapist.slug ? "text-[#76b82a]" : "text-white/30"
-                      }`} />
-                    </motion.div>
-                  </div>
-                </div>
-
-                {/* Expandable booking section inside card */}
-                <AnimatePresence>
-                  {selected === therapist.slug && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                      className="overflow-hidden border-t border-white/10"
-                      style={{
-                        background: `linear-gradient(180deg, ${therapist.accentColor}15, transparent 80%)`,
-                      }}
-                    >
-                      <div className="p-5 pt-4">
-                        {/* Header with large avatar */}
-                        <div className="flex items-start gap-4 mb-4">
-                          <Link
-                            href={`/team/${therapist.slug}`}
-                            onClick={(e) => e.stopPropagation()}
-                            className="block flex-shrink-0 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/20 hover:ring-[#76b82a]/60 transition-all hover:scale-105"
-                            style={{ width: 120, height: 120 }}
-                          >
-                            <Image
-                              src={`/avatars/${therapist.slug}.jpg`}
-                              alt={therapist.name}
-                              width={120}
-                              height={120}
-                              className="w-full h-full object-cover object-top"
-                            />
-                          </Link>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">
-                                  {ui.bookWith}
-                                </p>
-                                <p className="text-lg font-extrabold text-white leading-tight">{therapist.name}</p>
-                              </div>
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setSelected(null);
-                                }}
-                                className="text-white/30 hover:text-white/60 transition-colors p-1 rounded-full hover:bg-white/10"
-                                aria-label="Close"
-                              >
-                                <X className="w-4 h-4" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Booking buttons */}
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {therapist.booking.map((b, i) => (
-                            <BookingButton key={i} {...b} />
-                          ))}
-                        </div>
-
-                        {/* Phone call button */}
-                        {therapist.phone && (
-                          <a
-                            href={`tel:${therapist.phone.replace(/\s/g, "")}`}
-                            onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-2 px-3 py-2 mb-3 bg-white/10 hover:bg-white/20 text-white/80 rounded-xl text-sm font-medium transition-colors"
-                          >
-                            <Phone className="w-4 h-4" />
-                            {therapist.phone}
-                          </a>
-                        )}
-
-                        {/* Note if any */}
-                        {(() => {
-                          const n = (therapist as { note?: Record<string, string> | null }).note;
-                          if (!n) return null;
-                          return (
-                            <div className="flex items-center gap-2 mb-4 text-xs text-amber-300/80 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-2">
-                              <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                              {n[lang] ?? n.fr}
-                            </div>
-                          );
-                        })()}
-
-                        {/* View profile link */}
-                        <Link
-                          href={`/team/${therapist.slug}`}
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-2 text-xs font-semibold text-white/40 hover:text-[#76b82a] transition-colors mt-2"
-                        >
-                          <Star className="w-3.5 h-3.5" />
-                          {ui.viewProfile}
-                          <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Selection glow */}
-                {selected === therapist.slug && (
-                  <motion.div
-                    layoutId="selected-glow"
-                    className="absolute inset-0 rounded-2xl pointer-events-none"
-                    style={{ boxShadow: `inset 0 0 0 1.5px ${therapist.accentColor}40` }}
-                  />
-                )}
-              </motion.button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-5">
+            {([["besoin", Target, x.modeNeedT, x.modeNeedS], ["hasard", Dices, x.modeRandT, x.modeRandS]] as const).map(([id, Icon, t, s]) => (
+              <button key={id} onClick={() => pickMode(id as "besoin" | "hasard")}
+                className={`flex items-start gap-3 text-left p-4 rounded-2xl border transition-all ${mode === id ? "border-[#76b82a] bg-[#76b82a]/10" : "border-white/10 bg-white/5 hover:border-white/20"}`}>
+                <Icon className={`w-6 h-6 mt-0.5 flex-shrink-0 ${mode === id ? "text-[#76b82a]" : "text-white/50"}`} />
+                <span><span className="block font-bold text-[15px] text-white">{t}</span><span className="text-[12.5px] text-white/55">{s}</span></span>
+              </button>
             ))}
           </div>
 
-          {/* Info cards row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <AnimatePresence mode="wait">
+            {mode === "besoin" ? (
+              <motion.div key="besoin" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto">
+                <p className="text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white/35 mb-3">{x.motifQ}</p>
+                <div className="flex flex-wrap justify-center gap-2 mb-5">
+                  {MOTIFS.map((mo) => (
+                    <button key={mo.id} onClick={() => setMotif(motif === mo.id ? null : mo.id)}
+                      className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all inline-flex items-center gap-1.5 ${motif === mo.id ? "bg-[#76b82a] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>
+                      <span>{mo.emoji}</span>{mo.label[lang] ?? mo.label.en}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white/35 mb-3">{x.langQ}</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <button onClick={() => setLangF("")} className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-all ${langF === "" ? "bg-[#a8e063] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>{x.allLang}</button>
+                  {LANG_OPTS.map((l) => (
+                    <button key={l} onClick={() => setLangF(langF === l ? "" : l)}
+                      className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-all ${langF === l ? "bg-[#a8e063] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>{LANG_FLAGS[l]} {l}</button>
+                  ))}
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div key="hasard" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-md mx-auto text-center">
+                <button onClick={startSpin} disabled={spinning}
+                  className="w-full py-4 rounded-2xl font-extrabold text-[17px] text-neutral-950 bg-gradient-to-r from-[#76b82a] to-[#5c9120] hover:shadow-xl hover:shadow-[#76b82a]/25 active:scale-[0.98] transition-all inline-flex items-center justify-center gap-2.5 disabled:opacity-70">
+                  <Dices className="w-5 h-5" /> {x.spinBtn}
+                </button>
+                <AnimatePresence>
+                  {winner && (() => {
+                    const w = THERAPISTS.find((t) => t.slug === winner)!;
+                    return (
+                      <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+                        className="mt-5 p-5 rounded-2xl bg-white/5 border border-[#76b82a]/60 text-left">
+                        <div className="text-[12px] text-white/50 mb-1">{x.spinChose}</div>
+                        <div className="text-2xl font-extrabold">{w.name}</div>
+                        <div className="text-[13px] text-white/55 mt-1.5 mb-4">{w.plain[lang] ?? w.plain.en}</div>
+                        <a href={w.whatsapp} target="_blank" rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#25d366] text-neutral-950 hover:brightness-105 transition">
+                          <MessageCircle className="w-4 h-4" /> {x.reserveWith} {w.name.split(" ")[0]}
+                        </a>
+                      </motion.div>
+                    );
+                  })()}
+                </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            {/* What to bring */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
-            >
-              <h3 className="text-sm font-bold uppercase tracking-wider text-[#76b82a] mb-4 flex items-center gap-2">
-                <CalendarPlus className="w-4 h-4" /> {ui.infoBring}
-              </h3>
-              <ul className="space-y-2.5">
-                {ui.bringItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-sm text-white/60">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          <p className="text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white/30 mt-12 mb-5">{gridLabel}</p>
+          {banner && (
+            <div className="max-w-2xl mx-auto mb-5 flex items-center justify-center gap-2 text-center text-[13.5px] text-[#a8e063]">
+              <Check className="w-4 h-4 flex-shrink-0" /> {banner}
+            </div>
+          )}
 
-            {/* Cancellation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
-            >
-              <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 flex items-center gap-2">
-                <Clock className="w-4 h-4" /> {ui.cancelTitle}
-              </h3>
-              <p className="text-sm text-white/60 leading-relaxed">
-                {ui.cancelText}
-              </p>
-            </motion.div>
+          {cards.length === 0 ? (
+            <p className="text-center text-white/50 text-sm py-6">{x.emptyLang}</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              {cards.map(({ t, ribbon, dim }, i) => {
+                const isFlash = flash === t.slug;
+                const isWin = winner === t.slug;
+                return (
+                  <motion.div key={t.slug} initial={{ opacity: 0, y: 18 }} animate={{ opacity: dim ? 0.4 : 1, y: 0 }} transition={{ delay: 0.04 * i }}
+                    className={`relative rounded-2xl border p-5 bg-white/5 transition-all duration-300 ${isWin || isFlash ? "border-[#76b82a] ring-2 ring-[#76b82a]/40" : ribbon ? "border-[#76b82a]/60" : "border-white/10"} ${dim ? "saturate-50" : "hover:-translate-y-1 hover:border-white/25"}`}>
+                    {isWin && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#a8e063] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribWin} 🎉</span>}
+                    {!isWin && ribbon === "spec" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribSpec}</span>}
+                    {!isWin && ribbon === "reco" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribReco}</span>}
 
-            {/* Address & contact */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
-            >
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-4 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#76b82a]" /> Contact
-              </h3>
+                    <div className="flex items-center gap-3.5 mb-3">
+                      <div className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${t.accent}` }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={`/avatars/${t.slug}.jpg`} alt={t.name} loading="lazy" className="w-full h-full object-cover object-top" />
+                      </div>
+                      <div>
+                        <div className="text-[17px] font-bold leading-tight">{t.name}</div>
+                        <div className="text-[12px] text-white/50 mt-0.5">{t.role[lang] ?? t.role.en}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 text-[12.5px] text-white/55 mb-2.5">
+                      <span className="text-[#fbbf24] tracking-tight">★★★★★</span> 4,8 · {x.reviews}
+                    </div>
+
+                    <p className="text-[14.5px] text-white/85 mb-3 min-h-[42px]">{t.plain[lang] ?? t.plain.en}</p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {t.specs.map((s) => (
+                        <span key={s} className="text-[11.5px] px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-white/55">{s}</span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-1.5 text-[11.5px] text-white/45 mb-4">
+                      <span>🗣️</span>
+                      {t.langs.map((l) => <span key={l} className="px-1.5 py-0.5 border border-white/10 rounded">{l}</span>)}
+                      {t.conv && <span className="text-amber-400 border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 rounded">{ui.conv}</span>}
+                    </div>
+
+                    <a href={t.whatsapp} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#25d366] text-neutral-950 hover:brightness-105 active:scale-[0.98] transition">
+                      <MessageCircle className="w-4 h-4" /> {x.reserveWith} {t.name.split(" ")[0]}
+                    </a>
+                    {t.online && (
+                      <a href={t.online} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full mt-2 py-2.5 rounded-xl text-[13.5px] font-semibold bg-[#2b3186] text-white hover:bg-[#1e2260] transition">
+                        <ExternalLink className="w-4 h-4" /> {x.onlineBtn}
+                      </a>
+                    )}
+                    <div className="flex items-center justify-between mt-3">
+                      <a href={`tel:${t.phone}`} className="inline-flex items-center gap-1.5 text-[12px] text-white/45 hover:text-[#76b82a] transition-colors">
+                        <Phone className="w-3.5 h-3.5" /> {fmtPhone(t.phone)}
+                      </a>
+                      <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-white/45 hover:text-[#76b82a] transition-colors">
+                        {x.profileBtn} <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
+
+          {(motif || langF) && (
+            <button onClick={resetFilters} className="mx-auto mt-7 flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 text-[13px] text-white/55 hover:border-white/25 hover:text-white transition">
+              <RotateCcw className="w-3.5 h-3.5" /> {x.reset}
+            </button>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#76b82a] mb-4 flex items-center gap-2"><CalendarPlus className="w-4 h-4" /> {ui.infoBring}</h3>
+              <ul className="space-y-2.5">{ui.bringItems.map((it) => (<li key={it} className="flex items-center gap-2.5 text-sm text-white/60"><span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] flex-shrink-0" />{it}</li>))}</ul>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 flex items-center gap-2"><Clock className="w-4 h-4" /> {ui.cancelTitle}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">{ui.cancelText}</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-4 flex items-center gap-2"><MapPin className="w-4 h-4 text-[#76b82a]" /> Contact</h3>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" />
-                  <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
-                  >
-                    Loten 1<br />B-4700 Eupen, Belgique
-                  </a>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <Clock className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" />
-                  {ui.hoursVal}
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <Mail className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" />
-                  <SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-white transition-colors text-xs" showIcon={false} />
-                </li>
+                <li className="flex items-start gap-2.5"><MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" /><a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Loten 1<br />B-4700 Eupen</a></li>
+                <li className="flex items-center gap-2.5"><Clock className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /> {ui.hoursVal}</li>
+                <li className="flex items-center gap-2.5"><Mail className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /><SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-white transition-colors text-xs" showIcon={false} /></li>
               </ul>
-            </motion.div>
+            </div>
           </div>
 
         </div>
