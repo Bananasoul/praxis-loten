@@ -13,6 +13,7 @@ const staticPages = [
   "/honoraires",
   "/jobs",
   "/termin",
+  "/contact",
   "/legal",
   "/privacy",
   "/cookies",
