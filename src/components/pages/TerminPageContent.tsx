@@ -12,7 +12,7 @@ import { SafeEmail } from "@/components/ui/SafeEmail";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
-const GEN = ["dos", "nuque", "epaule", "genou", "sport", "postop"];
+const GEN = ["dos", "nuque", "epaule", "coude", "main", "genou", "cheville", "sport", "postop"];
 const NICHE = ["drainage", "machoire"];
 
 type Rec = Record<string, string>;
@@ -65,7 +65,10 @@ const MOTIFS: { id: string; emoji: string; label: Rec }[] = [
   { id: "dos", emoji: "🔙", label: { de: "Rückenschmerzen", fr: "Mal de dos", en: "Back pain", nl: "Rugpijn", tr: "Sırt ağrısı", ar: "ألم الظهر", pl: "Ból pleców", uk: "Біль у спині", es: "Dolor de espalda", ku: "Êşa piştê" } },
   { id: "nuque", emoji: "🦒", label: { de: "Nacken", fr: "Cou / nuque", en: "Neck", nl: "Nek", tr: "Boyun", ar: "الرقبة", pl: "Kark / szyja", uk: "Шия", es: "Cuello", ku: "Stû" } },
   { id: "epaule", emoji: "💪", label: { de: "Schulter", fr: "Épaule", en: "Shoulder", nl: "Schouder", tr: "Omuz", ar: "الكتف", pl: "Bark", uk: "Плече", es: "Hombro", ku: "Mil" } },
+  { id: "coude", emoji: "🦾", label: { de: "Ellbogen", fr: "Coude", en: "Elbow", nl: "Elleboog", tr: "Dirsek", ar: "المرفق", pl: "Łokieć", uk: "Лікоть", es: "Codo", ku: "Anîşk" } },
+  { id: "main", emoji: "🤚", label: { de: "Hand / Handgelenk", fr: "Main / poignet", en: "Hand / wrist", nl: "Hand / pols", tr: "El / bilek", ar: "اليد / الرسغ", pl: "Dłoń / nadgarstek", uk: "Кисть / зап'ясток", es: "Mano / muñeca", ku: "Dest / zend" } },
   { id: "genou", emoji: "🦵", label: { de: "Knie / Bein", fr: "Genou / jambe", en: "Knee / leg", nl: "Knie / been", tr: "Diz / bacak", ar: "الركبة / الساق", pl: "Kolano / noga", uk: "Коліно / нога", es: "Rodilla / pierna", ku: "Çok / ling" } },
+  { id: "cheville", emoji: "🦶", label: { de: "Knöchel", fr: "Cheville", en: "Ankle", nl: "Enkel", tr: "Ayak bileği", ar: "الكاحل", pl: "Kostka", uk: "Щиколотка", es: "Tobillo", ku: "Gûzek" } },
   { id: "sport", emoji: "🏃", label: { de: "Sport / Laufen", fr: "Sport / course", en: "Sport / running", nl: "Sport / hardlopen", tr: "Spor / koşu", ar: "رياضة / جري", pl: "Sport / bieganie", uk: "Спорт / біг", es: "Deporte / correr", ku: "Werzîş / bezîn" } },
   { id: "postop", emoji: "🩹", label: { de: "Nach OP", fr: "Après opération", en: "Post-surgery", nl: "Na operatie", tr: "Ameliyat sonrası", ar: "بعد العملية", pl: "Po operacji", uk: "Після операції", es: "Tras cirugía", ku: "Piştî emeliyatê" } },
   { id: "drainage", emoji: "💧", label: { de: "Lymphdrainage", fr: "Drainage", en: "Drainage", nl: "Drainage", tr: "Drenaj", ar: "تصريف لمفاوي", pl: "Drenaż", uk: "Дренаж", es: "Drenaje", ku: "Drenaj" } },
