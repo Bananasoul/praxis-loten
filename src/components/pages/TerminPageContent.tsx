@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import {
   MessageCircle, ExternalLink, Phone, MapPin, Clock, Mail,
   Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check, X as XIcon,
+  IdCard, FileText, Sticker, Waves, Shirt,
 } from "lucide-react";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 
@@ -117,6 +118,45 @@ const UI: Record<string, { address: string; hours: string; hoursVal: string; inf
   ku: { address: "Loten 1, B-4700 Eupen", hours: "Demên vekirî", hoursVal: "Duş – În: 08:00 – 20:00 | Şem: bi randevû", infoBring: "Çi bînin", bringItems: ["Recêteya bijîjkî", "Karta sîgorteya tenduristiyê", "Destmaleke mezin", "Cilên werzîşê", "Karta nasnameyê"], cancelTitle: "Polîtîkaya betalkirinê", cancelText: "Ji kerema xwe randevûya xwe herî kêm 24 saet berê betal bikin. Di rewşa nehatinê an betalkirina kêmtir ji 24 saetan de, em mafê xwe diparêzin ku heqê betalkirinê bistînin.", conv: "Ne bi peymanê" },
 };
 
+// --- Bloc "À apporter à votre première séance" (patient-facing, anti-nocebo, trilingue par item) ---
+const FV: Record<string, { title: string; sub: string }> = {
+  de: { title: "Für Ihre erste Sitzung mitbringen", sub: "Damit alles reibungslos und ohne Wartezeit abläuft." },
+  fr: { title: "À apporter à votre première séance", sub: "Pour que tout se déroule simplement, sans attente." },
+  en: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  nl: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  tr: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  ar: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  pl: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  uk: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  es: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+  ku: { title: "What to bring to your first session", sub: "So everything runs smoothly, with no waiting." },
+};
+
+type FVItem = { Icon: typeof IdCard; label: Rec; note?: Rec };
+const FV_ITEMS: FVItem[] = [
+  {
+    Icon: IdCard,
+    label: { fr: "Carte d'identité", de: "Personalausweis", en: "Identity card" },
+  },
+  {
+    Icon: FileText,
+    label: { fr: "Prescription médicale", de: "Ärztliche Verordnung", en: "Medical prescription" },
+    note: { fr: "Nécessaire pour le remboursement.", de: "Für die Erstattung erforderlich.", en: "Required for reimbursement." },
+  },
+  {
+    Icon: Sticker,
+    label: { fr: "Vignette de mutuelle", de: "Krankenkassen-Vignette", en: "Insurance sticker" },
+  },
+  {
+    Icon: Waves,
+    label: { fr: "Grande serviette", de: "Großes Handtuch", en: "Large towel" },
+  },
+  {
+    Icon: Shirt,
+    label: { fr: "Tenue souple", de: "Bequeme Kleidung", en: "Comfortable clothing" },
+  },
+];
+
 function fmtPhone(p: string) {
   return p.replace(/^(\+32)(\d{3})(\d{2})(\d{2})(\d{2})$/, "$1 $2 $3 $4 $5");
 }
@@ -127,6 +167,7 @@ export function TerminPageContent() {
   const x = X[lang] ?? X.en;
   const xc = XC[lang] ?? XC.en;
   const ui = UI[lang] ?? UI.en;
+  const fv = FV[lang] ?? FV.en;
   const isRtl = lang === "ar";
 
   const [mode, setMode] = useState<"besoin" | "hasard">("besoin");
@@ -401,6 +442,37 @@ export function TerminPageContent() {
               <RotateCcw className="w-3.5 h-3.5" /> {x.reset}
             </button>
           )}
+
+          {/* À apporter à votre première séance — bloc visible, trilingue par item */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <div className="rounded-3xl bg-[#F8FAFC] text-neutral-900 p-6 sm:p-8 border-l-4 border-[#76b82a] shadow-xl">
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <div className="w-9 h-9 rounded-xl bg-[#76b82a]/15 flex items-center justify-center flex-shrink-0">
+                  <CalendarPlus className="w-5 h-5 text-[#5c9120]" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-[#2b3186]">{fv.title}</h3>
+              </div>
+              <p className="text-[13.5px] text-neutral-500 mb-6 ms-[2.85rem]">{fv.sub}</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+                {FV_ITEMS.map(({ Icon, label, note }, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Icon className="w-5 h-5 text-[#76b82a]" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-bold text-[15px] leading-tight text-neutral-900">{label[lang] ?? label.en}</div>
+                      <div className="text-[12px] text-neutral-400 mt-0.5">
+                        {[label.de, label.fr, label.en].filter((v, idx, arr) => v && arr.indexOf(v) === idx).join(" · ")}
+                      </div>
+                      {note && (
+                        <div className="text-[12.5px] text-[#5c9120] font-medium mt-1">{note[lang] ?? note.en}</div>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
