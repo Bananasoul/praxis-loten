@@ -93,7 +93,7 @@ export function Header() {
               )}
             >
               <Image
-                src="/logos/logo-full.jpeg"
+                src="/logos/logo-full.png"
                 alt="Praxis Loten"
                 width={160}
                 height={52}
@@ -109,7 +109,7 @@ export function Header() {
               )}
             >
               <Image
-                src="/logos/logo-icon.jpeg"
+                src="/logos/logo-icon.png"
                 alt="Praxis Loten"
                 width={44}
                 height={44}

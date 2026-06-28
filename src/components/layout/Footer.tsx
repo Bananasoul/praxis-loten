@@ -18,7 +18,7 @@ export function Footer() {
             <Link href="/" className="block mb-5">
               <div className="inline-block bg-white rounded-xl px-3 py-1.5">
                 <Image
-                  src="/logos/logo-full.jpeg"
+                  src="/logos/logo-full.png"
                   alt="Praxis Loten"
                   width={160}
                   height={52}
