@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { BlogArticlePageContent } from "@/components/pages/BlogArticlePageContent";
 import { notFound } from "next/navigation";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-  return { title };
+  return { title, alternates: buildAlternates(locale, `/blog/${slug}`) };
 }
 
 const VALID_SLUGS = [

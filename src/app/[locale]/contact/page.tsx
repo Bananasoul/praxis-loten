@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { ContactPageContent } from "@/components/pages/ContactPageContent";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     es: "Contacto",
     ku: "Têkilî",
   };
-  return { title: titles[locale] ?? titles.en };
+  return { title: titles[locale] ?? titles.en, alternates: buildAlternates(locale, "/contact") };
 }
 
 export default async function ContactPage({

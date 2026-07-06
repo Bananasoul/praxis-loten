@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { buildAlternates } from "@/i18n/alternates";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import HtmlLang from "@/components/ui/HtmlLang";
@@ -26,12 +27,7 @@ export async function generateMetadata({
     },
     description: t("description"),
     metadataBase: new URL("https://www.praxisloten.be"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `/${l}`])
-      ),
-    },
+    alternates: buildAlternates(locale),
     openGraph: {
       title: t("title"),
       description: t("description"),

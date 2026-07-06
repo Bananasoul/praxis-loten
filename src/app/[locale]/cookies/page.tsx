@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "سياسة ملفات تعريف الارتباط",
     pl: "Polityka plików cookie",
   };
-  return { title: titles[locale] || titles.fr };
+  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/cookies") };
 }
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
