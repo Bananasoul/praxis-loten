@@ -11,6 +11,84 @@ type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
 export const ARTICLES = [
   {
+  "slug": "sommeil-recuperation-douleur",
+  "date": "2026-07-06",
+  "readMin": 5,
+  "category": {
+    "de": "Gesundheit & Prävention",
+    "fr": "Santé & Prévention",
+    "en": "Health & Prevention",
+    "nl": "Gezondheid & Preventie",
+    "tr": "Sağlık & Önleme",
+    "ar": "الصحة والوقاية",
+    "pl": "Zdrowie i profilaktyka"
+  },
+  "color": "from-[#4f46e5] to-[#312e81]",
+  "title": {
+    "de": "Schlaf: Ihr am meisten unterschätzter Gesundheitspartner",
+    "fr": "Le sommeil : votre allié santé le plus sous-estimé",
+    "en": "Sleep: your most underrated health ally",
+    "nl": "Slaap: uw meest onderschatte gezondheidsbondgenoot",
+    "tr": "Uyku: en çok küçümsenen sağlık müttefikiniz",
+    "ar": "النوم: حليف صحتك الأكثر استهانةً به",
+    "pl": "Sen: twój najbardziej niedoceniany sprzymierzeniec zdrowia"
+  },
+  "excerpt": {
+    "de": "Schmerz, Regeneration, Verletzungen: Schlaf wirkt auf alles. Mit Zahlen und einfachen Tipps für besseren Schlaf, von Ihrer Physiotherapie in Eupen.",
+    "fr": "Douleur, récupération, blessures : le sommeil agit sur tout. Chiffres à l'appui et petits trucs faciles pour mieux dormir, par votre kiné à Eupen.",
+    "en": "Pain, recovery, injuries: sleep affects it all. With the numbers and easy tips for better sleep, from your physio in Eupen.",
+    "nl": "Pijn, herstel, blessures: slaap beïnvloedt alles. Met cijfers en makkelijke tips voor betere slaap, van uw kinesist in Eupen.",
+    "tr": "Ağrı, toparlanma, sakatlık: uyku her şeyi etkiler. Rakamlar ve daha iyi uyku için kolay ipuçlarıyla, Eupen'deki fizyoterapistinizden.",
+    "ar": "الألم والتعافي والإصابات: النوم يؤثّر في كل شيء. مع الأرقام ونصائح سهلة لنوم أفضل، من أخصائي العلاج الطبيعي في أوبن.",
+    "pl": "Ból, regeneracja, kontuzje: sen wpływa na wszystko. Z liczbami i prostymi wskazówkami na lepszy sen, od Twojego fizjoterapeuty w Eupen."
+  },
+  "tags": {
+    "de": [
+      "Schlaf",
+      "Regeneration",
+      "Schmerz",
+      "Prävention"
+    ],
+    "fr": [
+      "Sommeil",
+      "Récupération",
+      "Douleur",
+      "Prévention"
+    ],
+    "en": [
+      "Sleep",
+      "Recovery",
+      "Pain",
+      "Prevention"
+    ],
+    "nl": [
+      "Slaap",
+      "Herstel",
+      "Pijn",
+      "Preventie"
+    ],
+    "tr": [
+      "Uyku",
+      "Toparlanma",
+      "Ağrı",
+      "Önleme"
+    ],
+    "ar": [
+      "النوم",
+      "التعافي",
+      "الألم",
+      "الوقاية"
+    ],
+    "pl": [
+      "Sen",
+      "Regeneracja",
+      "Ból",
+      "Profilaktyka"
+    ]
+  }
+},
+
+  {
     "slug": "therapie-manuelle-mythes-mouvement",
     "date": "2026-06-21",
     "readMin": 6,

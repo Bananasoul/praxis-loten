@@ -32,6 +32,212 @@ interface ArticleContent {
 }
 
 const ARTICLES: Record<string, ArticleContent> = {
+  "sommeil-recuperation-douleur": {
+  "title": {
+    "de": "Schlaf: Ihr am meisten unterschätzter Gesundheitspartner",
+    "fr": "Le sommeil : votre allié santé le plus sous-estimé",
+    "en": "Sleep: your most underrated health ally",
+    "nl": "Slaap: uw meest onderschatte gezondheidsbondgenoot",
+    "tr": "Uyku: en çok küçümsenen sağlık müttefikiniz",
+    "ar": "النوم: حليف صحتك الأكثر استهانةً به",
+    "pl": "Sen: twój najbardziej niedoceniany sprzymierzeniec zdrowia"
+  },
+  "category": {
+    "de": "Gesundheit & Prävention",
+    "fr": "Santé & Prévention",
+    "en": "Health & Prevention",
+    "nl": "Gezondheid & Preventie",
+    "tr": "Sağlık & Önleme",
+    "ar": "الصحة والوقاية",
+    "pl": "Zdrowie i profilaktyka"
+  },
+  "date": "2026-07-06",
+  "readMin": 5,
+  "color": "from-[#4f46e5] to-[#312e81]",
+  "authorSlug": "philippe-banaszak",
+  "authorName": "Philippe Banaszak",
+  "intro": {
+    "de": "Über Bewegung und Ernährung wird viel gesprochen. Doch es gibt eine dritte Säule, kostenlos und für alle zugänglich, die oft vergessen wird: den Schlaf. Die gute Nachricht — er lässt sich auch am leichtesten verbessern, Schritt für Schritt. In der Praxis Loten in Eupen betrachten wir ihn als echten Partner Ihrer Genesung.",
+    "fr": "On parle beaucoup de mouvement et d'alimentation pour rester en forme. Mais il existe un troisième pilier, gratuit et à la portée de tous, souvent négligé : le sommeil. Bonne nouvelle — c'est aussi l'un des plus faciles à améliorer, un petit pas à la fois. Au cabinet Praxis Loten à Eupen, nous le considérons comme un véritable partenaire de votre récupération.",
+    "en": "We talk a lot about movement and nutrition to stay healthy. But there is a third pillar, free and within everyone's reach, that is often overlooked: sleep. The good news — it's also one of the easiest to improve, one small step at a time. At Praxis Loten in Eupen, we see it as a genuine partner in your recovery.",
+    "nl": "We praten veel over beweging en voeding om gezond te blijven. Maar er is een derde pijler, gratis en voor iedereen bereikbaar, die vaak wordt vergeten: slaap. Het goede nieuws — het is ook een van de gemakkelijkste om te verbeteren, stap voor stap. Bij Praxis Loten in Eupen beschouwen we slaap als een echte partner in uw herstel.",
+    "tr": "Sağlıklı kalmak için hareket ve beslenmeden çok söz ederiz. Ama üçüncü bir sütun daha var; ücretsiz ve herkesin ulaşabileceği, ama çoğu zaman göz ardı edilen: uyku. İyi haber — geliştirmesi en kolay olanlardan biri, adım adım. Eupen'deki Praxis Loten'de uykuyu iyileşmenizin gerçek bir ortağı olarak görüyoruz.",
+    "ar": "نتحدث كثيرًا عن الحركة والتغذية للحفاظ على الصحة. لكن هناك ركيزة ثالثة، مجانية وفي متناول الجميع، وكثيرًا ما تُهمَل: النوم. والخبر السار أنه أيضًا من أسهل ما يمكن تحسينه، خطوة صغيرة تلو الأخرى. في عيادة براكسيس لوتن في أوبن، نعتبره شريكًا حقيقيًا في تعافيك.",
+    "pl": "Dużo mówimy o ruchu i odżywianiu, by zachować zdrowie. Istnieje jednak trzeci filar, darmowy i dostępny dla każdego, często pomijany: sen. Dobra wiadomość — jest też jednym z najłatwiejszych do poprawy, krok po kroku. W Praxis Loten w Eupen traktujemy go jako prawdziwego partnera Twojego powrotu do zdrowia."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Guter Schlaf bedeutet, weniger Schmerz zu spüren",
+        "fr": "Bien dormir, c'est ressentir moins la douleur",
+        "en": "Sleeping well means feeling less pain",
+        "nl": "Goed slapen betekent minder pijn voelen",
+        "tr": "İyi uyumak, daha az ağrı hissetmektir",
+        "ar": "النوم الجيد يعني الشعور بألم أقل",
+        "pl": "Dobry sen to mniej odczuwanego bólu"
+      },
+      "body": {
+        "de": "Schlaf und Schmerz stehen in ständigem Austausch. Bei Schlafmangel wird das Nervensystem empfindlicher: derselbe Reiz kann als schmerzhafter empfunden werden — ein Phänomen namens Hyperalgesie, das wissenschaftlich gut belegt ist.\n\nUmgekehrt hilft eine gute Nacht Ihrem Körper, den Schmerz besser zu « filtern ». Mit anderen Worten: besser schlafen heißt, Ihrem Körper eines seiner stärksten natürlichen Schmerzmittel zu schenken.",
+        "fr": "Le sommeil et la douleur se parlent en permanence. Quand on manque de sommeil, le système nerveux devient plus sensible : la même sollicitation peut être ressentie comme plus douloureuse — un phénomène appelé hyperalgésie, bien documenté dans la littérature scientifique.\n\nÀ l'inverse, une bonne nuit aide votre corps à mieux « filtrer » la douleur. Autrement dit : mieux dormir, c'est offrir à votre organisme l'un de ses antidouleurs naturels les plus puissants.",
+        "en": "Sleep and pain are in constant conversation. When you lack sleep, the nervous system becomes more sensitive: the same stimulus can be felt as more painful — a phenomenon called hyperalgesia, well documented in the scientific literature.\n\nConversely, a good night helps your body « filter » pain better. In other words: sleeping better gives your body one of its most powerful natural painkillers.",
+        "nl": "Slaap en pijn zijn voortdurend met elkaar in gesprek. Bij slaaptekort wordt het zenuwstelsel gevoeliger: dezelfde prikkel kan als pijnlijker worden ervaren — een fenomeen dat hyperalgesie heet en wetenschappelijk goed onderbouwd is.\n\nOmgekeerd helpt een goede nacht uw lichaam om pijn beter te « filteren ». Met andere woorden: beter slapen geeft uw lichaam een van zijn krachtigste natuurlijke pijnstillers.",
+        "tr": "Uyku ve ağrı sürekli birbiriyle konuşur. Uykusuz kaldığınızda sinir sistemi daha hassas hale gelir: aynı uyaran daha ağrılı hissedilebilir — bilimsel literatürde iyi belgelenmiş, hiperaljezi denen bir olay.\n\nTersine, iyi bir gece bedeninizin ağrıyı daha iyi « süzmesine » yardımcı olur. Başka bir deyişle: daha iyi uyumak, bedeninize en güçlü doğal ağrı kesicilerinden birini sunmaktır.",
+        "ar": "النوم والألم في حوار دائم. عند نقص النوم يصبح الجهاز العصبي أكثر حساسية: قد يُشعَر المنبّه نفسه بأنه أكثر إيلامًا — ظاهرة تُسمّى فرط الألم، وهي موثّقة جيدًا في الأدبيات العلمية.\n\nوعلى العكس، تساعد الليلة الجيدة جسمك على « ترشيح » الألم بشكل أفضل. بعبارة أخرى: النوم الأفضل يمنح جسمك أحد أقوى مسكّنات الألم الطبيعية لديه.",
+        "pl": "Sen i ból nieustannie ze sobą rozmawiają. Przy niedoborze snu układ nerwowy staje się bardziej wrażliwy: ten sam bodziec może być odczuwany jako bardziej bolesny — zjawisko zwane hiperalgezją, dobrze udokumentowane w literaturze naukowej.\n\nI odwrotnie, dobra noc pomaga ciału lepiej « filtrować » ból. Innymi słowy: lepszy sen daje Twojemu ciału jeden z jego najsilniejszych naturalnych środków przeciwbólowych."
+      }
+    },
+    {
+      "heading": {
+        "de": "Schneller regenerieren, sich vor Verletzungen schützen",
+        "fr": "Récupérer plus vite, se protéger des blessures",
+        "en": "Recover faster, protect yourself from injury",
+        "nl": "Sneller herstellen, uzelf beschermen tegen blessures",
+        "tr": "Daha hızlı toparlanmak, kendinizi sakatlıklardan korumak",
+        "ar": "تعافٍ أسرع ووقاية من الإصابات",
+        "pl": "Szybsza regeneracja, ochrona przed kontuzjami"
+      },
+      "body": {
+        "de": "Der Schlaf ist der Moment, in dem der Körper repariert, festigt und stärkt. Die Zahlen sind eindeutig: Bei jungen Sportlern war weniger als 8 Stunden Schlaf pro Nacht mit 1,7-mal mehr Verletzungen verbunden als bei denen mit 8 Stunden oder mehr.\n\nUmgekehrt verbesserten sich die Leistungen von Basketballspielern, als sie ihren Schlaf verlängerten: schnellere Sprints, etwa +9 % Trefferquote, bessere Reaktionszeit und Stimmung. Was für den Sport gilt, gilt auch für Ihre Genesung nach einer Verstauchung, einer Operation oder Rückenschmerzen.",
+        "fr": "Le sommeil est le moment où le corps répare, consolide et se renforce. Les chiffres sont parlants : chez de jeunes sportifs, dormir moins de 8 heures par nuit était associé à 1,7 fois plus de blessures que ceux dormant 8 heures ou plus.\n\nEt dans l'autre sens, quand des basketteurs ont allongé leur sommeil, leurs performances ont progressé : sprints plus rapides, environ +9 % de réussite aux tirs, meilleur temps de réaction et meilleure humeur. Ce qui vaut pour le sport vaut aussi pour votre récupération après une entorse, une opération ou une lombalgie.",
+        "en": "Sleep is when the body repairs, consolidates and strengthens. The figures speak for themselves: in young athletes, sleeping less than 8 hours a night was linked to 1.7 times more injuries than those sleeping 8 hours or more.\n\nAnd the other way round, when basketball players extended their sleep, their performance improved: faster sprints, about +9% shooting accuracy, better reaction time and mood. What holds for sport also holds for your recovery after a sprain, surgery or low back pain.",
+        "nl": "Slaap is het moment waarop het lichaam herstelt, consolideert en versterkt. De cijfers spreken voor zich: bij jonge sporters was minder dan 8 uur slaap per nacht gekoppeld aan 1,7 keer meer blessures dan bij wie 8 uur of meer sliep.\n\nEn omgekeerd: toen basketballers hun slaap verlengden, verbeterden hun prestaties: snellere sprints, ongeveer +9% schotnauwkeurigheid, betere reactietijd en stemming. Wat voor sport geldt, geldt ook voor uw herstel na een verstuiking, operatie of lage rugpijn.",
+        "tr": "Uyku, bedenin onardığı, pekiştirdiği ve güçlendiği andır. Rakamlar açık: genç sporcularda gecede 8 saatten az uyumak, 8 saat ve üzeri uyuyanlara göre 1,7 kat daha fazla sakatlıkla ilişkiliydi.\n\nTersine, basketbolcular uykularını uzattığında performansları arttı: daha hızlı sprintler, yaklaşık +%9 isabet, daha iyi reaksiyon süresi ve ruh hâli. Sporda geçerli olan, burkulma, ameliyat veya bel ağrısı sonrası iyileşmeniz için de geçerlidir.",
+        "ar": "النوم هو اللحظة التي يُصلِح فيها الجسم ويُرسّخ ويقوّى. الأرقام واضحة: لدى الرياضيين الصغار، ارتبط النوم أقل من 8 ساعات في الليلة بإصابات أكثر بمقدار 1٫7 مرة مقارنةً بمن ينامون 8 ساعات أو أكثر.\n\nوفي الاتجاه المعاكس، عندما أطال لاعبو كرة السلة نومهم تحسّن أداؤهم: عَدْوٌ أسرع، ونحو +9٪ دقّة في التسديد، وزمن ردّ فعل ومزاج أفضل. وما يصحّ في الرياضة يصحّ أيضًا في تعافيك بعد التواء أو عملية أو ألم في أسفل الظهر.",
+        "pl": "Sen to moment, w którym ciało się naprawia, wzmacnia i konsoliduje. Liczby mówią same za siebie: u młodych sportowców sen krótszy niż 8 godzin na dobę wiązał się z 1,7 raza większą liczbą kontuzji niż u tych, którzy spali 8 godzin lub więcej.\n\nI odwrotnie: gdy koszykarze wydłużyli sen, ich wyniki się poprawiły: szybsze sprinty, około +9% skuteczności rzutów, lepszy czas reakcji i nastrój. To, co dotyczy sportu, dotyczy też Twojego powrotu do zdrowia po skręceniu, operacji czy bólu krzyża."
+      },
+      "infographic": "sleep-stats"
+    },
+    {
+      "heading": {
+        "de": "Von wie vielen Stunden sprechen wir?",
+        "fr": "De combien d'heures parle-t-on ?",
+        "en": "How many hours are we talking about?",
+        "nl": "Over hoeveel uur hebben we het?",
+        "tr": "Kaç saatten söz ediyoruz?",
+        "ar": "عن كم ساعة نتحدث؟",
+        "pl": "O ilu godzinach mowa?"
+      },
+      "body": {
+        "de": "Für die meisten Erwachsenen liegt das Ziel zwischen 7 und 9 Stunden pro Nacht. Aber die Regelmäßigkeit zählt genauso viel wie die Dauer: zu stabilen Zeiten ins Bett gehen und aufstehen « stellt » Ihre innere Uhr.\n\nStreben Sie keine Perfektion an — es ist die Tendenz über die Woche, die den Unterschied macht, nicht eine einzelne Nacht.",
+        "fr": "Pour la plupart des adultes, la cible se situe entre 7 et 9 heures par nuit. Mais la régularité compte autant que la durée : se coucher et se lever à des heures stables « cale » votre horloge interne.\n\nInutile de viser la perfection — c'est la tendance sur la semaine qui fait la différence, pas une nuit isolée.",
+        "en": "For most adults, the target is between 7 and 9 hours a night. But regularity matters as much as duration: going to bed and getting up at steady times « sets » your internal clock.\n\nNo need to aim for perfection — it's the trend over the week that makes the difference, not a single night.",
+        "nl": "Voor de meeste volwassenen ligt het doel tussen 7 en 9 uur per nacht. Maar regelmaat telt evenveel als duur: op vaste tijden gaan slapen en opstaan « stelt » uw interne klok af.\n\nStreef niet naar perfectie — het is de trend over de week die het verschil maakt, niet één enkele nacht.",
+        "tr": "Çoğu yetişkin için hedef gecede 7 ile 9 saat arasıdır. Ama düzenlilik en az süre kadar önemlidir: sabit saatlerde yatıp kalkmak iç saatinizi « ayarlar ».\n\nMükemmeli hedeflemeye gerek yok — farkı yaratan, tek bir gece değil, hafta boyunca eğilimdir.",
+        "ar": "بالنسبة لمعظم البالغين، يتراوح الهدف بين 7 و9 ساعات في الليلة. لكن الانتظام لا يقلّ أهمية عن المدّة: النوم والاستيقاظ في أوقات ثابتة « يضبط » ساعتك الداخلية.\n\nلا داعي للسعي إلى الكمال — ما يصنع الفرق هو الاتجاه على مدار الأسبوع، لا ليلة واحدة.",
+        "pl": "Dla większości dorosłych cel to od 7 do 9 godzin na dobę. Ale regularność liczy się tak samo jak długość: kładzenie się i wstawanie o stałych porach « nastawia » Twój wewnętrzny zegar.\n\nNie trzeba dążyć do perfekcji — różnicę robi tendencja w skali tygodnia, a nie pojedyncza noc."
+      }
+    },
+    {
+      "heading": {
+        "de": "Ihre einfachen Schritte für besseren Schlaf",
+        "fr": "Vos actions faciles pour mieux dormir",
+        "en": "Your easy actions for better sleep",
+        "nl": "Uw eenvoudige acties voor betere slaap",
+        "tr": "Daha iyi uyku için kolay adımlarınız",
+        "ar": "خطواتك السهلة لنوم أفضل",
+        "pl": "Twoje proste działania na lepszy sen"
+      },
+      "body": {
+        "de": "Sie müssen nicht alles auf einmal ändern. Wählen Sie ein oder zwei dieser Maßnahmen und führen Sie sie sanft ein: regelmäßige Zeiten (auch am Wochenende — der wichtigste Hebel), Licht am Morgen, Kaffee nur vormittags, Bildschirme etwa eine Stunde vor dem Schlafengehen pausieren, ein kühles und dunkles Schlafzimmer, ein beruhigendes Ritual, Bewegung tagsüber, abends weniger Alkohol und — bei vollem Kopf — ein paar Zeilen auf Papier, um den Geist zu « entlasten ».\n\nRegelmäßige Bewegung ist übrigens eines der besten natürlichen Schlafmittel: ein Bereich, in dem Ihr Physiotherapeut Sie begleiten kann.",
+        "fr": "Pas besoin de tout changer d'un coup. Choisissez une ou deux de ces actions et installez-les en douceur : des horaires réguliers (même le week-end, c'est le levier n°1), de la lumière le matin, le café avant midi, des écrans en pause environ une heure avant le coucher, une chambre fraîche et sombre, un petit rituel qui apaise, de l'activité physique dans la journée, moins d'alcool le soir, et — si la tête est pleine — quelques lignes sur papier pour « décharger » le mental.\n\nBouger régulièrement est d'ailleurs l'un des meilleurs somnifères naturels : un domaine où votre kinésithérapeute peut vous accompagner.",
+        "en": "No need to change everything at once. Pick one or two of these actions and ease them in: regular times (even at the weekend — the number-one lever), light in the morning, coffee before noon, screens paused about an hour before bed, a cool and dark bedroom, a calming ritual, physical activity during the day, less alcohol in the evening, and — if your mind is racing — a few lines on paper to « unload » your thoughts.\n\nMoving regularly is, by the way, one of the best natural sleep aids: an area where your physiotherapist can support you.",
+        "nl": "U hoeft niet alles ineens te veranderen. Kies een of twee van deze acties en voer ze rustig in: vaste tijden (ook in het weekend — de belangrijkste hefboom), licht in de ochtend, koffie vóór de middag, schermen ongeveer een uur voor het slapengaan op pauze, een koele en donkere slaapkamer, een rustgevend ritueel, lichaamsbeweging overdag, 's avonds minder alcohol en — bij een druk hoofd — een paar regels op papier om uw gedachten te « ontladen ».\n\nRegelmatig bewegen is trouwens een van de beste natuurlijke slaapmiddelen: een gebied waarin uw kinesitherapeut u kan begeleiden.",
+        "tr": "Her şeyi bir anda değiştirmenize gerek yok. Bu adımlardan bir ya da ikisini seçin ve yavaşça yerleştirin: düzenli saatler (hafta sonu da — bir numaralı kaldıraç), sabah ışığı, öğleden önce kahve, yatmadan yaklaşık bir saat önce ekranlara ara, serin ve karanlık bir yatak odası, sakinleştirici bir ritüel, gün içinde fiziksel aktivite, akşam daha az alkol ve — zihniniz doluysa — düşüncelerinizi « boşaltmak » için kâğıda birkaç satır.\n\nDüzenli hareket ayrıca en iyi doğal uyku destekçilerinden biridir: fizyoterapistinizin size eşlik edebileceği bir alan.",
+        "ar": "لا حاجة لتغيير كل شيء دفعة واحدة. اختر واحدًا أو اثنين من هذه الإجراءات وأدخِلها بهدوء: أوقات منتظمة (حتى في عطلة نهاية الأسبوع — وهي الرافعة الأولى)، ضوء في الصباح، القهوة قبل الظهر، إيقاف الشاشات نحو ساعة قبل النوم، غرفة نوم باردة ومظلمة، طقس مُهدّئ، نشاط بدني خلال النهار، كحول أقل مساءً، و— إن كان الذهن مشغولًا — بضعة أسطر على ورق « لتفريغ » الأفكار.\n\nوالحركة المنتظمة من أفضل المنوّمات الطبيعية: مجال يمكن لأخصائي العلاج الطبيعي أن يرافقك فيه.",
+        "pl": "Nie trzeba zmieniać wszystkiego naraz. Wybierz jedno lub dwa z tych działań i wprowadzaj je łagodnie: stałe pory (także w weekend — dźwignia numer jeden), światło rano, kawa przed południem, ekrany odłożone około godziny przed snem, chłodna i ciemna sypialnia, uspokajający rytuał, aktywność fizyczna w ciągu dnia, mniej alkoholu wieczorem i — gdy głowa jest pełna — kilka linijek na papierze, by « rozładować » myśli.\n\nRegularny ruch jest zresztą jednym z najlepszych naturalnych środków nasennych: to obszar, w którym Twój fizjoterapeuta może Cię wesprzeć."
+      },
+      "infographic": "sleep-tips"
+    },
+    {
+      "heading": {
+        "de": "Wann Sie mit einer Fachperson sprechen sollten",
+        "fr": "Quand en parler à un professionnel",
+        "en": "When to talk to a professional",
+        "nl": "Wanneer een professional raadplegen",
+        "tr": "Ne zaman bir uzmana danışmalı",
+        "ar": "متى تتحدث إلى مختص",
+        "pl": "Kiedy porozmawiać ze specjalistą"
+      },
+      "body": {
+        "de": "Schlaf lässt sich trainieren, und oft genügen kleine Anpassungen. Treten jedoch starkes Schnarchen mit Atemaussetzern, anhaltende Müdigkeit trotz ausreichender Nächte oder seit mehreren Wochen bestehende Einschlafprobleme auf, sprechen Sie mit Ihrem Arzt: Das sind Situationen, die sich wirksam behandeln lassen.\n\nIn Eupen bindet unser Team diese Ratschläge gern in Ihre Betreuung ein — denn ein gut erholter Körper regeneriert besser, bewegt sich besser und schließt leichter Frieden mit dem Schmerz.",
+        "fr": "Le sommeil se travaille, et de petits ajustements suffisent souvent. Mais si des ronflements importants avec pauses respiratoires, une fatigue persistante malgré des nuits suffisantes, ou des difficultés à dormir installées depuis plusieurs semaines apparaissent, parlez-en à votre médecin : ce sont des situations qui se prennent en charge efficacement.\n\nÀ Eupen, notre équipe intègre volontiers ces conseils dans votre suivi — parce qu'un corps bien reposé récupère mieux, bouge mieux et fait plus facilement la paix avec la douleur.",
+        "en": "Sleep can be trained, and small adjustments are often enough. But if you notice heavy snoring with breathing pauses, persistent fatigue despite adequate nights, or difficulty sleeping that has lasted several weeks, talk to your doctor: these situations can be managed effectively.\n\nIn Eupen, our team is happy to weave this advice into your care — because a well-rested body recovers better, moves better and more easily makes peace with pain.",
+        "nl": "Slaap kun je trainen, en kleine aanpassingen volstaan vaak. Maar bij zwaar snurken met ademstops, aanhoudende vermoeidheid ondanks voldoende nachten, of slaapproblemen die al enkele weken duren, bespreek het met uw arts: dit zijn situaties die doeltreffend kunnen worden aangepakt.\n\nIn Eupen verweeft ons team dit advies graag in uw begeleiding — want een goed uitgerust lichaam herstelt beter, beweegt beter en sluit makkelijker vrede met pijn.",
+        "tr": "Uyku çalışılabilir ve çoğu zaman küçük ayarlamalar yeterlidir. Ama nefes duraklamalarıyla birlikte yoğun horlama, yeterli gecelere rağmen süren yorgunluk ya da birkaç haftadır süren uyku güçlüğü fark ederseniz doktorunuza danışın: bunlar etkili biçimde yönetilebilen durumlardır.\n\nEupen'de ekibimiz bu önerileri takibinize seve seve katar — çünkü iyi dinlenmiş bir beden daha iyi toparlanır, daha iyi hareket eder ve ağrıyla daha kolay barışır.",
+        "ar": "يمكن تدريب النوم، وغالبًا ما تكفي تعديلات صغيرة. لكن إذا ظهر شخير قوي مع توقّفات في التنفّس، أو تعب مستمر رغم ليالٍ كافية، أو صعوبة في النوم مستمرة منذ عدة أسابيع، فتحدّث إلى طبيبك: هذه حالات يمكن التعامل معها بفعالية.\n\nفي أوبن، يسعد فريقنا بدمج هذه النصائح في متابعتك — لأن الجسم المرتاح جيدًا يتعافى أفضل، ويتحرّك أفضل، ويصالح الألم بسهولة أكبر.",
+        "pl": "Sen można trenować, a często wystarczają drobne korekty. Ale jeśli pojawi się głośne chrapanie z przerwami w oddychaniu, uporczywe zmęczenie mimo wystarczających nocy lub trudności ze snem utrzymujące się od kilku tygodni, porozmawiaj z lekarzem: to sytuacje, które można skutecznie leczyć.\n\nW Eupen nasz zespół chętnie włącza te wskazówki do Twojej opieki — bo dobrze wypoczęte ciało lepiej się regeneruje, lepiej się porusza i łatwiej godzi się z bólem."
+      }
+    }
+  ],
+  "keyPoints": {
+    "de": [
+      "Schlafmangel erhöht die Schmerzempfindlichkeit (Hyperalgesie).",
+      "Weniger als 8 h Schlaf = 1,7× mehr Verletzungen bei jungen Sportlern.",
+      "Mehr Schlaf verbessert Regeneration und Leistung (~+9 %).",
+      "Ziel: 7-9 h mit regelmäßigen Zeiten; beginnen Sie mit 1 oder 2 kleinen Änderungen."
+    ],
+    "fr": [
+      "Le manque de sommeil augmente la sensibilité à la douleur (hyperalgésie).",
+      "Moins de 8 h de sommeil = 1,7× plus de blessures chez de jeunes sportifs.",
+      "Allonger son sommeil améliore récupération et performance (~+9 %).",
+      "Cible : 7-9 h avec des horaires réguliers ; commencez par 1 ou 2 petits changements."
+    ],
+    "en": [
+      "Lack of sleep increases pain sensitivity (hyperalgesia).",
+      "Less than 8 h of sleep = 1.7× more injuries in young athletes.",
+      "Extending sleep improves recovery and performance (~+9%).",
+      "Target: 7-9 h with regular times; start with 1 or 2 small changes."
+    ],
+    "nl": [
+      "Slaaptekort verhoogt de pijngevoeligheid (hyperalgesie).",
+      "Minder dan 8 u slaap = 1,7× meer blessures bij jonge sporters.",
+      "Meer slaap verbetert herstel en prestaties (~+9%).",
+      "Doel: 7-9 u met vaste tijden; begin met 1 of 2 kleine veranderingen."
+    ],
+    "tr": [
+      "Uyku eksikliği ağrı duyarlılığını artırır (hiperaljezi).",
+      "8 saatten az uyku = genç sporcularda 1,7× daha fazla sakatlık.",
+      "Uykuyu uzatmak toparlanmayı ve performansı iyileştirir (~+%9).",
+      "Hedef: 7-9 saat, düzenli saatlerle; 1 veya 2 küçük değişiklikle başlayın."
+    ],
+    "ar": [
+      "نقص النوم يزيد الحساسية للألم (فرط الألم).",
+      "أقل من 8 ساعات نوم = إصابات أكثر بـ1٫7 مرة لدى الرياضيين الصغار.",
+      "إطالة النوم تحسّن التعافي والأداء (~+9٪).",
+      "الهدف: 7-9 ساعات بأوقات منتظمة؛ ابدأ بتغيير أو اثنين صغيرين."
+    ],
+    "pl": [
+      "Niedobór snu zwiększa wrażliwość na ból (hiperalgezja).",
+      "Mniej niż 8 h snu = 1,7× więcej kontuzji u młodych sportowców.",
+      "Wydłużenie snu poprawia regenerację i wyniki (~+9%).",
+      "Cel: 7-9 h o stałych porach; zacznij od 1-2 małych zmian."
+    ]
+  },
+  "ctaText": {
+    "de": "Anhaltende Schmerzen oder schwierige Erholung? In der Praxis Loten in Eupen beziehen wir Schlaf und Bewegung in eine maßgeschneiderte Betreuung ein. Vereinbaren Sie einen Termin.",
+    "fr": "Douleurs persistantes ou récupération difficile ? Au cabinet Praxis Loten à Eupen, nous intégrons le sommeil et le mouvement dans un accompagnement sur mesure. Prenez rendez-vous.",
+    "en": "Persistent pain or difficult recovery? At Praxis Loten in Eupen, we bring sleep and movement into tailored care. Book an appointment.",
+    "nl": "Aanhoudende pijn of moeizaam herstel? Bij Praxis Loten in Eupen betrekken we slaap en beweging in een begeleiding op maat. Maak een afspraak.",
+    "tr": "Kalıcı ağrı ya da zor bir toparlanma mı? Eupen'deki Praxis Loten'de uyku ve hareketi size özel bir bakıma dâhil ediyoruz. Randevu alın.",
+    "ar": "ألم مستمر أو تعافٍ صعب؟ في عيادة براكسيس لوتن في أوبن، ندمج النوم والحركة في متابعة مُصمَّمة لك. احجز موعدًا.",
+    "pl": "Uporczywy ból lub trudna regeneracja? W Praxis Loten w Eupen łączymy sen i ruch w opiece dopasowanej do Ciebie. Umów wizytę."
+  },
+  "bibliography": [
+    "Karmann AJ, Kundermann B, Lautenbacher S. Schlafentzug und Schmerz [Sleep deprivation and pain: a review]. Schmerz. 2014;28(2):141-146.",
+    "Milewski MD, Skaggs DL, Bishop GA, et al. Chronic lack of sleep is associated with increased sports injuries in adolescent athletes. J Pediatr Orthop. 2014;34(2):129-133.",
+    "Mah CD, Mah KE, Kezirian EJ, Dement WC. The effects of sleep extension on the athletic performance of collegiate basketball players. Sleep. 2011;34(7):943-950."
+  ],
+  "disclaimer": {
+    "de": "Dieser Artikel dient der Information und ersetzt keine ärztliche oder therapeutische Beratung. Bei anhaltenden Schlafstörungen oder beunruhigenden Schmerzen wenden Sie sich an eine medizinische Fachperson.",
+    "fr": "Cet article a une vocation informative et ne remplace pas une consultation médicale ou paramédicale. En cas de troubles du sommeil persistants ou de douleur inquiétante, consultez un professionnel de santé.",
+    "en": "This article is for information only and does not replace a medical or paramedical consultation. For persistent sleep problems or worrying pain, consult a healthcare professional.",
+    "nl": "Dit artikel is louter informatief en vervangt geen medisch of paramedisch advies. Raadpleeg bij aanhoudende slaapproblemen of verontrustende pijn een zorgverlener.",
+    "tr": "Bu makale yalnızca bilgilendirme amaçlıdır ve tıbbi veya paramedikal bir muayenenin yerini tutmaz. Kalıcı uyku sorunları veya endişe verici ağrıda bir sağlık uzmanına danışın.",
+    "ar": "هذا المقال لأغراض إعلامية فقط ولا يُغني عن استشارة طبية أو شبه طبية. في حال اضطرابات النوم المستمرة أو الألم المقلق، استشر أخصائي رعاية صحية.",
+    "pl": "Ten artykuł ma charakter informacyjny i nie zastępuje konsultacji medycznej ani paramedycznej. Przy utrzymujących się problemach ze snem lub niepokojącym bólu skonsultuj się z pracownikiem ochrony zdrowia."
+  }
+},
+
   "therapie-manuelle-mythes-mouvement": {
     "title": {
         "de": "Manuelle Therapie in Eupen: Bewegung zurückgeben, nicht « einrenken »",

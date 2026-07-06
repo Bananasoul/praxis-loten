@@ -38,6 +38,7 @@ const leistungenSlugs = [
 const rehabSlugs = ["hip", "knee", "acl", "shoulder"];
 
 const blogSlugs = [
+  "sommeil-recuperation-douleur",
   "doser-activite-douleur",
   "position-assise-mal-de-dos",
   "douleurs-cervicales-mobilite-eupen",

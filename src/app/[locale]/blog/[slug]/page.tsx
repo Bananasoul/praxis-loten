@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const VALID_SLUGS = [
+  "sommeil-recuperation-douleur",
   "doser-activite-douleur",
   "position-assise-mal-de-dos",
   "douleurs-cervicales-mobilite-eupen",
