@@ -242,10 +242,10 @@ export function TeamPageContent() {
             <Star className="w-4 h-4" />
             5 {t("sectionTitle")}
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-balance">
             <span style={{ color: "#76b82a" }}>{t("sectionTitle")}</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed text-balance">
             {t("sectionSubtitle")}
           </p>
         </AnimatedSection>
@@ -429,7 +429,7 @@ export function TeamPageContent() {
             </p>
             <Link
               href="/termin"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
+              className="inline-flex items-center justify-center min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
             >
               <CalendarPlus className="w-5 h-5" />
               {t("bookAppointment")}

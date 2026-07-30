@@ -569,7 +569,7 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
                 <span className="text-xs font-bold px-3 py-1 bg-white/20 rounded-full mb-4 inline-block">
                   {service.badge}
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">{SD_EXTRA[slug]?.title?.[lang] ?? service.title[lang] ?? service.title.en}</h1>
+                <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-balance">{SD_EXTRA[slug]?.title?.[lang] ?? service.title[lang] ?? service.title.en}</h1>
                 <p className="text-white/80 text-lg">{SD_EXTRA[slug]?.subtitle?.[lang] ?? service.subtitle[lang] ?? service.subtitle.en}</p>
               </div>
             </div>

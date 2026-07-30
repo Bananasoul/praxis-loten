@@ -240,12 +240,12 @@ export function PraxisPageContent() {
 
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-balance">
             {ui.heading}{ui.headingHighlight ? (
               <> <span style={{ color: "#76b82a" }}>{ui.headingHighlight}</span></>
             ) : null}
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-neutral-500">
+          <p className="max-w-2xl mx-auto text-lg text-neutral-500 text-balance">
             {ui.subtitle}
           </p>
         </AnimatedSection>

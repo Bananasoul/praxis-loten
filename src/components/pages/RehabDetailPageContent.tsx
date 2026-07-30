@@ -676,7 +676,7 @@ export function RehabDetailPageContent({ slug }: { slug: string }) {
                   <data.icon className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-3xl sm:text-4xl font-extrabold">{title}</h1>
+                  <h1 className="text-3xl sm:text-4xl font-extrabold text-balance">{title}</h1>
                   <p className="text-white/70 mt-1 text-lg">{subtitle}</p>
                 </div>
               </div>
@@ -816,11 +816,11 @@ export function RehabDetailPageContent({ slug }: { slug: string }) {
         <AnimatedSection delay={0.4}>
           <div className="bg-gradient-to-br from-[#2b3186] to-[#0d1120] rounded-3xl p-10 text-white text-center">
             <h2 className="text-2xl font-extrabold mb-3">{ui.cta}</h2>
-            <p className="text-white/70 mb-6 max-w-lg mx-auto">{ui.ctaSub}</p>
+            <p className="text-white/70 mb-6 max-w-lg mx-auto text-balance">{ui.ctaSub}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/termin"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
+                className="inline-flex items-center justify-center min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
               >
                 <CalendarPlus className="w-5 h-5" />
                 {ui.bookBtn}

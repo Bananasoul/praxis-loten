@@ -242,10 +242,10 @@ export function LeistungenPageContent() {
 
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-balance">
             <span style={{ color: "#76b82a" }}>{t("sectionTitle")}</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed text-balance">
             {t("sectionSubtitle")}
           </p>
         </AnimatedSection>
@@ -323,10 +323,10 @@ export function LeistungenPageContent() {
             className="bg-gradient-to-br from-[#2b3186] to-[#0d1120] rounded-3xl p-10 text-white text-center"
           >
             <h2 className="text-2xl font-extrabold mb-3">{unsureTitle[lang]}</h2>
-            <p className="text-white/70 mb-6 max-w-lg mx-auto">{unsureSub[lang]}</p>
+            <p className="text-white/70 mb-6 max-w-lg mx-auto text-balance">{unsureSub[lang]}</p>
             <Link
               href="/termin"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
+              className="inline-flex items-center justify-center min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
             >
               {tNav("appointment")}
               <ArrowRight className="w-5 h-5" />
