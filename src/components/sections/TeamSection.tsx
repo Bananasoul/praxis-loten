@@ -33,10 +33,10 @@ export function TeamSection() {
     <section className="py-24 sm:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-balance">
             {t("sectionTitle")}
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg text-neutral-500 leading-relaxed text-balance">
             {t("sectionSubtitle")}
           </p>
         </AnimatedSection>

@@ -48,7 +48,7 @@ export function HeroSection() {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] tracking-tight text-balance"
           >
             {t("title1")}
           </motion.h1>
@@ -59,7 +59,7 @@ export function HeroSection() {
             initial={{ y: 60 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight text-balance"
           >
             <span className="bg-gradient-to-r from-[#93ce2a] via-[#76b82a] to-[#b2e258] bg-clip-text text-transparent">
               {t("title2")}
@@ -72,7 +72,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="max-w-2xl mx-auto text-lg sm:text-xl text-white/70 leading-relaxed mb-12"
+          className="max-w-2xl mx-auto text-lg sm:text-xl text-white/70 leading-relaxed mb-12 text-balance"
         >
           {t("subtitle")}
         </motion.p>
@@ -86,14 +86,14 @@ export function HeroSection() {
         >
           <Link
             href="/termin"
-            className="group flex items-center gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-2xl shadow-[#76b82a]/30"
+            className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-2xl shadow-[#76b82a]/30"
           >
             <CalendarPlus className="w-5 h-5" />
             {t("cta")}
           </Link>
           <Link
             href="/leistungen"
-            className="group flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl text-lg font-semibold transition-all duration-300 border border-white/20"
+            className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl text-lg font-semibold transition-all duration-300 border border-white/20"
           >
             {t("ctaSecondary")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -39,7 +39,7 @@ export function RecentArticlesStrip() {
               <BookOpen className="w-3.5 h-3.5" />
               <span>{ui.eyebrow}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight text-balance">
               {ui.title}
             </h2>
           </div>
