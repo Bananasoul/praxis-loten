@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CalendarPlus, ArrowRight } from "lucide-react";
@@ -30,60 +29,31 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Tagline badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8"
-        >
+        <div className="hero-rise hero-d1 inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8">
           <div className="w-2 h-2 bg-[#76b82a] rounded-full animate-pulse" />
           <span className="text-sm text-white/80 font-medium">
-            Moderne Physical Therapy & more...
+            Moderne Physical Therapy &amp; more...
           </span>
-        </motion.div>
+        </div>
 
         {/* Main title — primary message */}
-        <div className="overflow-hidden mb-3">
-          <motion.h1
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] tracking-tight text-balance"
-          >
-            {t("title1")}
-          </motion.h1>
-        </div>
+        <h1 className="hero-rise hero-d2 mb-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] tracking-tight text-balance">
+          {t("title1")}
+        </h1>
         {/* Secondary line — specialty + geo (highlighted, smaller) */}
-        <div className="overflow-hidden mb-8">
-          <motion.p
-            initial={{ y: 60 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.4, 0, 0.2, 1] }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight text-balance"
-          >
-            <span className="bg-gradient-to-r from-[#93ce2a] via-[#76b82a] to-[#b2e258] bg-clip-text text-transparent">
-              {t("title2")}
-            </span>
-          </motion.p>
-        </div>
+        <p className="hero-rise hero-d3 mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight text-balance">
+          <span className="bg-gradient-to-r from-[#93ce2a] via-[#76b82a] to-[#b2e258] bg-clip-text text-transparent">
+            {t("title2")}
+          </span>
+        </p>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="max-w-2xl mx-auto text-lg sm:text-xl text-white/70 leading-relaxed mb-12 text-balance"
-        >
+        <p className="hero-rise hero-d4 max-w-2xl mx-auto text-lg sm:text-xl text-white/70 leading-relaxed mb-12 text-balance">
           {t("subtitle")}
-        </motion.p>
+        </p>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="hero-rise hero-d5 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/termin"
             className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-2xl shadow-[#76b82a]/30"
@@ -98,15 +68,10 @@ export function HeroSection() {
             {t("ctaSecondary")}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
 
         {/* Location badge */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-16 flex items-center justify-center"
-        >
+        <div className="hero-fade hero-d6 mt-16 flex items-center justify-center">
           <a
             href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
             target="_blank"
@@ -123,24 +88,15 @@ export function HeroSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center pt-2"
-        >
-          <div className="w-1.5 h-1.5 bg-white/60 rounded-full" />
-        </motion.div>
-      </motion.div>
+      <div className="hero-fade hero-d6 absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center pt-2">
+          <div className="hero-scroll-dot w-1.5 h-1.5 bg-white/60 rounded-full" />
+        </div>
+      </div>
     </section>
   );
 }
