@@ -91,6 +91,8 @@ export default async function LocaleLayout({
       },
     ],
     "availableLanguage": ["de", "fr", "nl", "en"],
+    "areaServed": ["Eupen", "Kettenis", "Raeren", "Lontzen", "Kelmis", "Ostbelgien", "Deutschsprachige Gemeinschaft Belgiens"],
+    "knowsLanguage": ["de", "fr", "nl", "en"],
     "priceRange": "€€",
     "sameAs": [
       "https://www.facebook.com/kineunterstadteupen",
