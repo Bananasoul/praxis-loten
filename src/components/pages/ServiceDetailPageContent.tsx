@@ -547,8 +547,20 @@ export function ServiceDetailPageContent({ slug }: { slug: string }) {
   const isRtl = lang === "ar";
   const Icon = service.icon;
 
+  const pickStr = (r: Record<string, string>) => r[lang] ?? r.en ?? Object.values(r)[0] ?? "";
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faq.map((item) => ({
+      "@type": "Question",
+      "name": pickStr(item.q),
+      "acceptedAnswer": { "@type": "Answer", "text": pickStr(item.a) },
+    })),
+  };
+
   return (
     <div className="pt-28 pb-20 min-h-screen bg-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Back */}

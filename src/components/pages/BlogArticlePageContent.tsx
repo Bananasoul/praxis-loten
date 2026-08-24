@@ -2499,8 +2499,38 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
 
   const isRtl = lang === "ar";
 
+  const BASE_URL = "https://www.praxisloten.be";
+  const pickStr = (r: Record<LangKey, string>) => r[lang] ?? r.en ?? r.fr ?? "";
+  const articleUrl = `${BASE_URL}/${lang}/blog/${slug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Article", "MedicalWebPage"],
+    "headline": pickStr(article.title),
+    "description": pickStr(article.intro),
+    "inLanguage": lang,
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "url": articleUrl,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl },
+    "image": article.heroImage ? `${BASE_URL}${article.heroImage.src}` : `${BASE_URL}/og-image.png`,
+    "keywords": (article.keyPoints[lang] ?? article.keyPoints.en ?? []).join(", "),
+    "author": {
+      "@type": "Person",
+      "name": article.authorName,
+      "url": `${BASE_URL}/${lang}/team/${article.authorSlug}`,
+      "jobTitle": "Physiotherapist",
+    },
+    "publisher": {
+      "@type": "MedicalClinic",
+      "name": "Praxis Loten",
+      "url": BASE_URL,
+      "logo": { "@type": "ImageObject", "url": `${BASE_URL}/logos/logo-full.png` },
+    },
+  };
+
   return (
     <div className="pt-28 pb-20 min-h-screen bg-gradient-to-b from-neutral-50 via-white to-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Back link */}
