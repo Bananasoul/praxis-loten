@@ -21,7 +21,7 @@ type Rec = Record<string, string>;
 const THERAPISTS: {
   slug: string; name: string; accent: string; langs: string[]; tags: string[];
   specs: string[]; phone: string; whatsapp: string; online: string | null; conv: boolean;
-  role: Rec; plain: Rec;
+  role: Rec; plain: Rec; absence?: { from: string; to: string; label: Rec };
 }[] = [
   {
     slug: "philippe-banaszak", name: "Philippe Banaszak", accent: "#2b3186",
@@ -30,6 +30,18 @@ const THERAPISTS: {
     online: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071", conv: false,
     role: { de: "Manualtherapeut", fr: "Thérapeute Manuel", en: "Manual Therapist", nl: "Manueel Therapeut", tr: "Manuel Terapist", ar: "معالج يدوي", pl: "Terapeuta Manualny", uk: "Мануальний терапевт", es: "Terapeuta manual", ku: "Terapîstê destî" },
     plain: { de: "Rücken-, Nacken- und Gelenkschmerzen. Hochwertige Manualtherapie.", fr: "Douleurs de dos, nuque et articulations. Thérapie manuelle de pointe.", en: "Back, neck and joint pain. Advanced manual therapy." },
+    absence: { from: "2026-09-21", to: "2026-10-14", label: {
+      de: "Abwesend vom 21. September bis 14. Oktober — zurück am 15. Oktober",
+      fr: "Absent du 21 septembre au 14 octobre — de retour le 15 octobre",
+      en: "Away from 21 September to 14 October — back on 15 October",
+      nl: "Afwezig van 21 september tot 14 oktober — terug op 15 oktober",
+      tr: "21 Eylül – 14 Ekim arası burada değil — 15 Ekim'de döner",
+      ar: "غائب من 21 سبتمبر إلى 14 أكتوبر — العودة في 15 أكتوبر",
+      pl: "Nieobecny od 21 września do 14 października — powrót 15 października",
+      uk: "Відсутній з 21 вересня до 14 жовтня — повернення 15 жовтня",
+      es: "Ausente del 21 de septiembre al 14 de octubre — de vuelta el 15 de octubre",
+      ku: "Ji 21 îlonê heta 14 cotmehê ne li vir e — di 15 cotmehê de vedigere",
+    } },
   },
   {
     slug: "thom-petit", name: "Thom Petit", accent: "#f97316",
@@ -404,6 +416,11 @@ export function TerminPageContent() {
                       </div>
                     </div>
 
+                    {t.absence && Date.now() <= new Date(t.absence.to + "T23:59:59").getTime() && (
+                      <div className="flex items-start gap-1.5 text-[12px] font-semibold text-amber-300 bg-amber-400/10 border border-amber-400/25 rounded-lg px-2.5 py-1.5 mb-3">
+                        <span aria-hidden>🌴</span><span>{t.absence.label[lang] ?? t.absence.label.en}</span>
+                      </div>
+                    )}
                     <div className="flex items-center gap-1.5 text-[12.5px] text-white/55 mb-2.5">
                       <span className="text-[#fbbf24] tracking-tight">★★★★★</span> 4,8 · {x.reviews}
                     </div>
