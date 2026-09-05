@@ -18,10 +18,10 @@ export function CTASection() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight text-balance">
             {t("title")}
           </h2>
-          <p className="max-w-xl mx-auto text-lg text-white/70 leading-relaxed mb-10">
+          <p className="max-w-xl mx-auto text-lg text-white/70 leading-relaxed mb-10 text-balance">
             {t("subtitle")}
           </p>
         </AnimatedSection>
@@ -30,7 +30,7 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/termin"
-              className="group flex items-center gap-2 px-8 py-4 bg-white text-[#2b3186] rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-[1.03] shadow-2xl hover:shadow-white/25"
+              className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-white text-[#2b3186] rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-[1.03] shadow-2xl hover:shadow-white/25"
             >
               <CalendarPlus className="w-5 h-5" />
               {t("button")}

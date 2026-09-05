@@ -108,6 +108,33 @@ function buildRedirects() {
     }
   }
 
+
+  // Legacy pre-revamp URLs (old site structure, still indexed by Google → were 404s)
+  const legacyServicePrefixes = ["/f\u00e4higkeiten-competences", "/f%C3%A4higkeiten-competences"];
+  for (const prefix of legacyServicePrefixes) {
+    for (const service of services) {
+      redirects.push({
+        source: `${prefix}/${service}`,
+        destination: `/de/leistungen/${service}`,
+        permanent: true,
+      });
+    }
+    redirects.push({
+      source: prefix,
+      destination: "/de/leistungen",
+      permanent: true,
+    });
+  }
+
+  // Anciennes URLs SANS préfixe de langue (ancien site, encore indexées par Google → 404)
+  redirects.push(
+    { source: "/home", destination: "/de", permanent: true },
+    { source: "/termine-rendez-vous", destination: "/de/termin", permanent: true },
+    { source: "/termine-rendez-vous/:therapist", destination: "/de/termin", permanent: true },
+    { source: "/unsere-praxis-notre-cabinet", destination: "/de/praxis", permanent: true },
+    { source: "/blog/:slug", destination: "/de/blog/:slug", permanent: true },
+  );
+
   return redirects;
 }
 

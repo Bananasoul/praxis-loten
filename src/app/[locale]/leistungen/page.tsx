@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { LeistungenPageContent } from "@/components/pages/LeistungenPageContent";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "خدماتنا",
     pl: "Nasze usługi",
   };
-  return { title: titles[locale] || titles.fr };
+  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/leistungen") };
 }
 
 export default async function ServicesPage({

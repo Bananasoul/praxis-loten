@@ -57,9 +57,16 @@ function identifyTherapist(href: string): string {
   return "Non identifié";
 }
 
+const SITE_LOCALES = ["de", "fr", "en", "nl", "tr", "ar", "pl"];
+
+function pageLanguage(): string {
+  const seg = window.location.pathname.split("/")[1];
+  return SITE_LOCALES.includes(seg) ? seg : "de";
+}
+
 function sendEvent(eventName: string, params: Record<string, string>) {
   if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", eventName, params);
+    window.gtag("event", eventName, { ...params, page_language: pageLanguage() });
   }
 }
 

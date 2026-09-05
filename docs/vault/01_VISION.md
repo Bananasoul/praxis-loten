@@ -32,7 +32,7 @@ Objectif : donner confiance aux patients potentiels, informer via un blog EBP, e
 
 | Indicateur | Outil | Objectif |
 |------------|-------|----------|
-| Trafic organique | GA4 `G-T94F58H1XV` | Croissance mensuelle |
+| Trafic organique | GA4 `G-F58GSSFKQ0` | Croissance mensuelle |
 | Prises de RDV | WhatsApp / booking links | Conversion visiteur → patient |
 | Blog : temps de lecture | GA4 engagement | >2 min par article |
 | Couverture linguistique | Audit interne | 100% des contenus en 7 langues |

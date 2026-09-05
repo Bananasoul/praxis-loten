@@ -824,11 +824,296 @@ export function TrafficLightPain({ lang = "fr" }: { lang?: LangKey }) {
 }
 
 // Slot resolver used by the article renderer
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 13. SleepStats — key numbers on sleep, recovery & pain
+// ─────────────────────────────────────────────────────────────────────────────
+const SLEEP_STATS_TEXT: Record<LangKey, { headline: string; stats: { big: string; label: string }[]; source: string }> = {
+  "de": {
+    "headline": "Guter Schlaf verändert alles",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "weniger Verletzungen (Schlaf ≥ 8 h)"
+      },
+      {
+        "big": "+9 %",
+        "label": "mehr Leistung nach mehr Schlaf"
+      },
+      {
+        "big": "↓ Schmerz",
+        "label": "weniger empfundener Schmerz"
+      }
+    ],
+    "source": "Quellen: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "fr": {
+    "headline": "Bien dormir change tout",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "moins de blessures (sommeil ≥ 8 h)"
+      },
+      {
+        "big": "+9 %",
+        "label": "de performance après plus de sommeil"
+      },
+      {
+        "big": "↓ douleur",
+        "label": "moins de douleur ressentie"
+      }
+    ],
+    "source": "Sources : Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "en": {
+    "headline": "Sleeping well changes everything",
+    "stats": [
+      {
+        "big": "1.7×",
+        "label": "fewer injuries (sleep ≥ 8 h)"
+      },
+      {
+        "big": "+9%",
+        "label": "more performance after more sleep"
+      },
+      {
+        "big": "↓ pain",
+        "label": "less pain perceived"
+      }
+    ],
+    "source": "Sources: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "nl": {
+    "headline": "Goed slapen verandert alles",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "minder blessures (slaap ≥ 8 u)"
+      },
+      {
+        "big": "+9%",
+        "label": "meer prestatie na meer slaap"
+      },
+      {
+        "big": "↓ pijn",
+        "label": "minder ervaren pijn"
+      }
+    ],
+    "source": "Bronnen: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "tr": {
+    "headline": "İyi uyku her şeyi değiştirir",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "daha az sakatlık (uyku ≥ 8 s)"
+      },
+      {
+        "big": "+%9",
+        "label": "daha fazla uykuyla daha çok performans"
+      },
+      {
+        "big": "↓ ağrı",
+        "label": "daha az hissedilen ağrı"
+      }
+    ],
+    "source": "Kaynaklar: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "ar": {
+    "headline": "النوم الجيد يغيّر كل شيء",
+    "stats": [
+      {
+        "big": "1٫7×",
+        "label": "إصابات أقل (نوم ≥ 8 ساعات)"
+      },
+      {
+        "big": "+9٪",
+        "label": "أداء أعلى بعد نوم أكثر"
+      },
+      {
+        "big": "↓ ألم",
+        "label": "ألم مُدرَك أقل"
+      }
+    ],
+    "source": "المصادر: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "pl": {
+    "headline": "Dobry sen zmienia wszystko",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "mniej kontuzji (sen ≥ 8 h)"
+      },
+      {
+        "big": "+9%",
+        "label": "więcej wydajności po większej ilości snu"
+      },
+      {
+        "big": "↓ ból",
+        "label": "mniej odczuwanego bólu"
+      }
+    ],
+    "source": "Źródła: Milewski 2014 · Mah 2011 · Karmann 2014"
+  }
+};
+
+export function SleepStats({ lang = "fr" }: { lang?: LangKey }) {
+  const t = SLEEP_STATS_TEXT[lang] ?? SLEEP_STATS_TEXT.fr;
+  return (
+    <figure className="my-8" role="img" aria-label={t.headline}>
+      <div className="mb-4 text-center text-lg md:text-xl font-extrabold tracking-tight" style={{ color: colors.ink }}>{t.headline}</div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {t.stats.map((st, i) => (
+          <div key={i} className="flex flex-col items-center justify-center rounded-2xl border bg-white p-6 text-center" style={{ borderColor: colors.border }}>
+            <div className="text-3xl md:text-4xl font-extrabold" style={{ color: colors.accent }}>{st.big}</div>
+            <div className="mt-2 text-sm font-medium" style={{ color: colors.muted }}>{st.label}</div>
+          </div>
+        ))}
+      </div>
+      <figcaption className="mt-3 text-center text-xs italic" style={{ color: colors.muted }}>{t.source}</figcaption>
+    </figure>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 14. SleepTips — easy actions to sleep better
+// ─────────────────────────────────────────────────────────────────────────────
+const SLEEP_TIPS_TEXT: Record<LangKey, { headline: string; sub: string; tips: string[] }> = {
+  "de": {
+    "headline": "9 einfache Schritte für besseren Schlaf",
+    "sub": "Wählen Sie 1 oder 2 und führen Sie sie sanft ein",
+    "tips": [
+      "Regelmäßige Zeiten",
+      "Licht am Morgen",
+      "Kaffee nur vormittags",
+      "Abends Bildschirmpause",
+      "Kühles & dunkles Zimmer",
+      "Beruhigendes Ritual",
+      "Tagsüber bewegen",
+      "Abends weniger Alkohol",
+      "Gedanken aufschreiben"
+    ]
+  },
+  "fr": {
+    "headline": "9 gestes faciles pour mieux dormir",
+    "sub": "Choisissez-en 1 ou 2 et installez-les en douceur",
+    "tips": [
+      "Horaires réguliers",
+      "Lumière le matin",
+      "Café avant midi",
+      "Écrans en pause le soir",
+      "Chambre fraîche & sombre",
+      "Rituel apaisant",
+      "Bouger la journée",
+      "Moins d'alcool le soir",
+      "Noter ses pensées"
+    ]
+  },
+  "en": {
+    "headline": "9 easy actions for better sleep",
+    "sub": "Pick 1 or 2 and ease them in",
+    "tips": [
+      "Regular times",
+      "Morning light",
+      "Coffee before noon",
+      "Screens off in the evening",
+      "Cool & dark bedroom",
+      "Calming ritual",
+      "Move during the day",
+      "Less alcohol at night",
+      "Write down your thoughts"
+    ]
+  },
+  "nl": {
+    "headline": "9 eenvoudige acties voor betere slaap",
+    "sub": "Kies er 1 of 2 en voer ze rustig in",
+    "tips": [
+      "Vaste tijden",
+      "Ochtendlicht",
+      "Koffie vóór de middag",
+      "'s Avonds schermen uit",
+      "Koele & donkere kamer",
+      "Rustgevend ritueel",
+      "Overdag bewegen",
+      "'s Avonds minder alcohol",
+      "Gedachten opschrijven"
+    ]
+  },
+  "tr": {
+    "headline": "Daha iyi uyku için 9 kolay adım",
+    "sub": "1 veya 2 tanesini seçin, yavaşça yerleştirin",
+    "tips": [
+      "Düzenli saatler",
+      "Sabah ışığı",
+      "Öğleden önce kahve",
+      "Akşam ekran molası",
+      "Serin & karanlık oda",
+      "Sakinleştirici ritüel",
+      "Gün içinde hareket",
+      "Akşam daha az alkol",
+      "Düşünceleri yazmak"
+    ]
+  },
+  "ar": {
+    "headline": "9 خطوات سهلة لنوم أفضل",
+    "sub": "اختر واحدة أو اثنتين وأدخِلها بهدوء",
+    "tips": [
+      "أوقات منتظمة",
+      "ضوء الصباح",
+      "القهوة قبل الظهر",
+      "إيقاف الشاشات مساءً",
+      "غرفة باردة ومظلمة",
+      "طقس مُهدّئ",
+      "الحركة نهارًا",
+      "كحول أقل مساءً",
+      "تدوين الأفكار"
+    ]
+  },
+  "pl": {
+    "headline": "9 prostych działań na lepszy sen",
+    "sub": "Wybierz 1 lub 2 i wprowadzaj łagodnie",
+    "tips": [
+      "Stałe pory",
+      "Poranne światło",
+      "Kawa przed południem",
+      "Wieczorem bez ekranów",
+      "Chłodna i ciemna sypialnia",
+      "Uspokajający rytuał",
+      "Ruch w ciągu dnia",
+      "Mniej alkoholu wieczorem",
+      "Zapisywanie myśli"
+    ]
+  }
+};
+
+export function SleepTips({ lang = "fr" }: { lang?: LangKey }) {
+  const t = SLEEP_TIPS_TEXT[lang] ?? SLEEP_TIPS_TEXT.fr;
+  return (
+    <figure className="my-8 rounded-2xl border bg-white p-6 md:p-8 shadow-sm" style={{ borderColor: colors.border }} role="img" aria-label={t.headline}>
+      <div className="mb-5">
+        <div className="text-lg md:text-xl font-extrabold tracking-tight" style={{ color: colors.ink }}>{t.headline}</div>
+        <div className="text-sm mt-1" style={{ color: colors.muted }}>{t.sub}</div>
+      </div>
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+        {t.tips.map((tip, i) => (
+          <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl border bg-neutral-50/40" style={{ borderColor: colors.border }}>
+            <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: colors.primaryLight }}>
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke={colors.primary} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+            </div>
+            <span className="text-sm font-medium" style={{ color: colors.ink }}>{tip}</span>
+          </div>
+        ))}
+      </div>
+    </figure>
+  );
+}
+
 export type InfographicKind =
   | "spine" | "movement" | "reflexes"
   | "pain-alarm" | "imaging-myth" | "manual-therapy-pillars"
   | "progression-rule" | "lymph-flow" | "cmd-checklist"
-  | "kine-vs-osteo" | "bfr-zone" | "traffic-light";
+  | "kine-vs-osteo" | "bfr-zone" | "traffic-light"
+  | "sleep-stats" | "sleep-tips";
 
 export function InfographicSlot({ kind, lang }: { kind: InfographicKind; lang: LangKey }) {
   switch (kind) {
@@ -844,6 +1129,8 @@ export function InfographicSlot({ kind, lang }: { kind: InfographicKind; lang: L
     case "kine-vs-osteo": return <KineVsOsteo lang={lang} />;
     case "bfr-zone": return <BfrZone lang={lang} />;
     case "traffic-light": return <TrafficLightPain lang={lang} />;
+    case "sleep-stats": return <SleepStats lang={lang} />;
+    case "sleep-tips": return <SleepTips lang={lang} />;
     default: return null;
   }
 }

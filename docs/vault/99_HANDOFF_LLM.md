@@ -23,7 +23,7 @@ related: ["[[00_INDEX]]", "[[01_VISION]]", "[[02_STACK]]", "[[03_ARCHITECTURE]]"
 - **next-intl 4.9.1** pour 7 langues : `de` (defaut), `fr`, `en`, `nl`, `tr`, `ar`, `pl` → [[04_I18N]]
 - Tailwind CSS 4, Framer Motion 12, Lucide React
 - Hebergement **Vercel**, domaine GoDaddy → [[08_DEPLOYMENT]]
-- GA4 : `G-T94F58H1XV` → [[05_SEO]]
+- GA4 : `G-F58GSSFKQ0` → [[05_SEO]]
 
 ## Architecture → [[03_ARCHITECTURE]]
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { HonorairesPageContent } from "@/components/pages/HonorairesPageContent";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "الرسوم والتعريفات",
     pl: "Opłaty i cennik",
   };
-  return { title: titles[locale] || titles.fr };
+  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/honoraires") };
 }
 
 export default async function HonorairesPage({

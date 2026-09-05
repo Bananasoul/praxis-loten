@@ -1,0 +1,45 @@
+# Praxis Loten — Physiotherapy & Manual Therapy in Eupen (Belgium)
+
+> Praxis Loten is a physiotherapy and manual-therapy practice in Eupen, in the German-speaking Community of Belgium (Ostbelgien). Five therapists deliver evidence-based physiotherapy (EBP): manual therapy, sports rehabilitation, temporomandibular (jaw / CMD) therapy, manual lymphatic drainage, and structured post-operative rehabilitation. Patients are cared for in German, French, Dutch and English; the website is available in 10 languages. Address: Loten 1, 4700 Eupen, Belgium. Phone: +32 87 55 56 70. Email: praxisloten@gmail.com. Hours: Monday–Friday 07:30–20:30. Canonical URLs use a language prefix (e.g. /de, /fr, /en); replace the prefix to switch language.
+
+## About / À propos / Über uns
+- [The practice / Le cabinet / Die Praxis](https://www.praxisloten.be/de/praxis): who we are and our evidence-based, biopsychosocial approach.
+- [Contact & booking](https://www.praxisloten.be/de/contact): phone, WhatsApp and online booking, plus each therapist's direct details.
+- [Book an appointment / Prendre rendez-vous / Termin](https://www.praxisloten.be/de/termin): choose by reason (back, sport, drainage, jaw, hand/elbow/ankle…) then by contact method.
+- [Fees / Honoraires / Honorare](https://www.praxisloten.be/de/honoraires): INAMI/RIZIV conventioned tariffs.
+
+## Services / Prestations / Leistungen
+- [Manual therapy](https://www.praxisloten.be/de/leistungen/manuelle-therapie): OMT-qualified manual therapy for spine and joints.
+- [Sports physiotherapy](https://www.praxisloten.be/de/leistungen/sport-kinesitherapie): injury rehabilitation and return-to-sport.
+- [Jaw / TMJ (CMD)](https://www.praxisloten.be/de/leistungen/kiefergelenk): temporomandibular dysfunction and orofacial pain.
+- [Manual lymphatic drainage](https://www.praxisloten.be/de/leistungen/lymphdrainage): post-operative care and lymphedema.
+- [Rehabilitation](https://www.praxisloten.be/de/rehabilitation): structured programs for hip, knee, ACL and shoulder.
+
+## Team / Équipe / Team
+- [Philippe Banaszak](https://www.praxisloten.be/de/team/philippe-banaszak): physiotherapist and OMT manual therapist.
+- [Félix Esser](https://www.praxisloten.be/de/team/felix-esser): physiotherapist.
+- [Fabienne Dormann](https://www.praxisloten.be/de/team/fabienne-dormann): manual lymphatic drainage and TMJ.
+- [Thom Petit](https://www.praxisloten.be/de/team/thom-petit): physiotherapist.
+- [Loïc Meunier](https://www.praxisloten.be/de/team/loic-meunier): physiotherapist.
+
+## Patient education (evidence-based blog) / Blog EBP
+- [Sleep, recovery and pain](https://www.praxisloten.be/de/blog/sommeil-recuperation-douleur)
+- [Dosing activity when you have pain](https://www.praxisloten.be/de/blog/doser-activite-douleur)
+- [Sitting posture and back pain](https://www.praxisloten.be/de/blog/position-assise-mal-de-dos)
+- [Neck pain and mobility](https://www.praxisloten.be/de/blog/douleurs-cervicales-mobilite-eupen)
+- [Manual therapy for back pain](https://www.praxisloten.be/de/blog/manuelle-therapie-rueckenschmerzen)
+- [Running injury prevention](https://www.praxisloten.be/de/blog/laufen-verletzungspraevention)
+- [Lymphatic drainage: when and how](https://www.praxisloten.be/de/blog/lymphdrainage-wann-wie)
+- [Jaw dysfunction (CMD): symptoms](https://www.praxisloten.be/de/blog/kiefergelenk-cmd-symptome)
+- [Osteopathy vs physiotherapy](https://www.praxisloten.be/de/blog/osteopathie-kinesitherapie-unterschied)
+- [Blood-flow-restriction (BFR) training in rehab](https://www.praxisloten.be/de/blog/bfr-training-rehabilitation)
+- [Smartwatches and pain](https://www.praxisloten.be/de/blog/montre-connectee-douleur)
+
+## Key facts
+- Location: Loten 1, 4700 Eupen, Liège province, Belgium (German-speaking Community / Ostbelgien).
+- Area served: Eupen, Kettenis, Raeren, Lontzen, Kelmis/La Calamine and the wider Ostbelgien / Vesdre region.
+- Languages spoken: German, French, Dutch, English (website UI in 10 languages).
+- Phone: +32 87 55 56 70 · Email: praxisloten@gmail.com
+- Opening hours: Monday to Friday, 07:30–20:30.
+- Approach: evidence-based physiotherapy (EBP), pain neuroscience education, active rehabilitation.
+- Full XML sitemap: https://www.praxisloten.be/sitemap.xml

@@ -9,7 +9,7 @@ import {
   Activity, Bone, Zap, Shield, Target, AlertTriangle, Star, ChevronRight,
 } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 type Slug = "hip" | "knee" | "acl" | "shoulder";
 
 /* ─────────────────────────────── DATA ─────────────────────────────── */
@@ -20,14 +20,14 @@ const SURGERY_DATA: Record<Slug, {
   iconBg: string;
   iconColor: string;
   weeks: string;
-  title: Record<LangKey, string>;
-  subtitle: Record<LangKey, string>;
-  surgeryExplain: Record<LangKey, string>;
-  whyRehab: Record<LangKey, string[]>;
-  objectives: Record<LangKey, string[]>;
-  whatToExpect: Record<LangKey, { heading: string; text: string }[]>;
-  phases: Record<LangKey, { label: string; items: string[] }[]>;
-  risks: Record<LangKey, string[]>;
+  title: Record<string, string>;
+  subtitle: Record<string, string>;
+  surgeryExplain: Record<string, string>;
+  whyRehab: Record<string, string[]>;
+  objectives: Record<string, string[]>;
+  whatToExpect: Record<string, { heading: string; text: string }[]>;
+  phases: Record<string, { label: string; items: string[] }[]>;
+  risks: Record<string, string[]>;
 }> = {
   hip: {
     icon: Bone,
@@ -540,7 +540,7 @@ const SURGERY_DATA: Record<Slug, {
 
 /* ─────────────────────────────── UI STRINGS ─────────────────────────────── */
 
-const UI: Record<LangKey, {
+const UI: Record<string, {
   badge: string; backBtn: string; weeksLabel: string;
   whatIsTitle: string; whyRehabTitle: string; objectivesTitle: string;
   expectTitle: string; riskTitle: string; phasesTitle: string;
@@ -569,6 +569,30 @@ const UI: Record<LangKey, {
     riskTitle: "Risks without structured rehabilitation", phasesTitle: "Our treatment programme",
     cta: "Ready for your rehabilitation?", ctaSub: "Book an initial assessment — we create your personalised programme.",
     bookBtn: "Book appointment", allPrograms: "All rehabilitation programmes",
+  },
+  uk: {
+    badge: "Реабілітація після операції", backBtn: "Усі програми", weeksLabel: "тижнів реабілітації",
+    whatIsTitle: "Що це за операція?", whyRehabTitle: "Чому реабілітація необхідна?",
+    objectivesTitle: "Цілі лікування", expectTitle: "Чого очікувати?",
+    riskTitle: "Ризики без структурованої реабілітації", phasesTitle: "Наша програма лікування",
+    cta: "Готові до реабілітації?", ctaSub: "Запишіться на первинну оцінку — ми створимо вашу персональну програму.",
+    bookBtn: "Записатися", allPrograms: "Усі програми реабілітації",
+  },
+  es: {
+    badge: "Rehabilitación postoperatoria", backBtn: "Todos los programas", weeksLabel: "semanas de rehabilitación",
+    whatIsTitle: "¿Qué es esta operación?", whyRehabTitle: "¿Por qué es indispensable la rehabilitación?",
+    objectivesTitle: "Objetivos terapéuticos", expectTitle: "¿Qué puede esperar?",
+    riskTitle: "Riesgos sin una rehabilitación estructurada", phasesTitle: "Nuestro programa de tratamiento",
+    cta: "¿Listo para su rehabilitación?", ctaSub: "Pida una evaluación inicial — creamos su programa personalizado.",
+    bookBtn: "Pedir cita", allPrograms: "Todos los programas de rehabilitación",
+  },
+  ku: {
+    badge: "Rehabîlîtasyona piştî emeliyatê", backBtn: "Hemû bername", weeksLabel: "hefte rehabîlîtasyon",
+    whatIsTitle: "Ev emeliyat çi ye?", whyRehabTitle: "Çima rehabîlîtasyon pêwîst e?",
+    objectivesTitle: "Armancên dermankirinê", expectTitle: "Hûn li bendê çi bin?",
+    riskTitle: "Rîskên bê rehabîlîtasyona birêkûpêk", phasesTitle: "Bernameya me ya dermankirinê",
+    cta: "Ji bo rehabîlîtasyona xwe amade ne?", ctaSub: "Ji bo nirxandineke destpêkê randevû bigirin — em bernameya we ya kesane çêdikin.",
+    bookBtn: "Randevû bigire", allPrograms: "Hemû bernameyên rehabîlîtasyonê",
   },
   nl: {
     badge: "Post-Op Revalidatie", backBtn: "Alle programma's", weeksLabel: "weken revalidatie",
@@ -608,21 +632,21 @@ const UI: Record<LangKey, {
 
 export function RehabDetailPageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
-  const ui = UI[lang];
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
+  const ui = UI[lang] ?? UI.en;
   const isRtl = lang === "ar";
   const data = SURGERY_DATA[slug as Slug];
 
   if (!data) return null;
 
-  const title = (data.title as Record<LangKey, string>)[lang] ?? data.title.de;
-  const subtitle = (data.subtitle as Record<LangKey, string>)[lang] ?? data.subtitle.de;
-  const surgeryExplain = (data.surgeryExplain as Record<LangKey, string>)[lang] ?? data.surgeryExplain.de;
-  const whyRehab = (data.whyRehab as Record<LangKey, string[]>)[lang] ?? data.whyRehab.de;
-  const objectives = (data.objectives as Record<LangKey, string[]>)[lang] ?? data.objectives.de;
-  const whatToExpect = (data.whatToExpect as Record<LangKey, { heading: string; text: string }[]>)[lang] ?? data.whatToExpect.de;
-  const risks = (data.risks as Record<LangKey, string[]>)[lang] ?? data.risks.de;
-  const phases = (data.phases as Record<LangKey, { label: string; items: string[] }[]>)[lang] ?? data.phases.de;
+  const title = (data.title as Record<string, string>)[lang] ?? data.title.en ?? data.title.de;
+  const subtitle = (data.subtitle as Record<string, string>)[lang] ?? data.subtitle.en ?? data.subtitle.de;
+  const surgeryExplain = (data.surgeryExplain as Record<string, string>)[lang] ?? data.surgeryExplain.en ?? data.surgeryExplain.de;
+  const whyRehab = (data.whyRehab as Record<string, string[]>)[lang] ?? data.whyRehab.en ?? data.whyRehab.de;
+  const objectives = (data.objectives as Record<string, string[]>)[lang] ?? data.objectives.en ?? data.objectives.de;
+  const whatToExpect = (data.whatToExpect as Record<string, { heading: string; text: string }[]>)[lang] ?? data.whatToExpect.en ?? data.whatToExpect.de;
+  const risks = (data.risks as Record<string, string[]>)[lang] ?? data.risks.en ?? data.risks.de;
+  const phases = (data.phases as Record<string, { label: string; items: string[] }[]>)[lang] ?? data.phases.en ?? data.phases.de;
 
   return (
     <div className="pt-28 pb-20 min-h-screen bg-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
@@ -652,7 +676,7 @@ export function RehabDetailPageContent({ slug }: { slug: string }) {
                   <data.icon className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-3xl sm:text-4xl font-extrabold">{title}</h1>
+                  <h1 className="text-3xl sm:text-4xl font-extrabold text-balance">{title}</h1>
                   <p className="text-white/70 mt-1 text-lg">{subtitle}</p>
                 </div>
               </div>
@@ -792,11 +816,11 @@ export function RehabDetailPageContent({ slug }: { slug: string }) {
         <AnimatedSection delay={0.4}>
           <div className="bg-gradient-to-br from-[#2b3186] to-[#0d1120] rounded-3xl p-10 text-white text-center">
             <h2 className="text-2xl font-extrabold mb-3">{ui.cta}</h2>
-            <p className="text-white/70 mb-6 max-w-lg mx-auto">{ui.ctaSub}</p>
+            <p className="text-white/70 mb-6 max-w-lg mx-auto text-balance">{ui.ctaSub}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/termin"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
+                className="inline-flex items-center justify-center min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl font-bold text-lg transition-all hover:scale-[1.03]"
               >
                 <CalendarPlus className="w-5 h-5" />
                 {ui.bookBtn}

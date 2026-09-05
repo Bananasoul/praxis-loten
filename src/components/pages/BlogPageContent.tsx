@@ -11,6 +11,161 @@ type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
 export const ARTICLES = [
   {
+  "slug": "sommeil-recuperation-douleur",
+  "date": "2026-07-06",
+  "readMin": 5,
+  "category": {
+    "de": "Gesundheit & Prävention",
+    "fr": "Santé & Prévention",
+    "en": "Health & Prevention",
+    "nl": "Gezondheid & Preventie",
+    "tr": "Sağlık & Önleme",
+    "ar": "الصحة والوقاية",
+    "pl": "Zdrowie i profilaktyka"
+  },
+  "color": "from-[#4f46e5] to-[#312e81]",
+  "title": {
+    "de": "Schlaf: Ihr am meisten unterschätzter Gesundheitspartner",
+    "fr": "Le sommeil : votre allié santé le plus sous-estimé",
+    "en": "Sleep: your most underrated health ally",
+    "nl": "Slaap: uw meest onderschatte gezondheidsbondgenoot",
+    "tr": "Uyku: en çok küçümsenen sağlık müttefikiniz",
+    "ar": "النوم: حليف صحتك الأكثر استهانةً به",
+    "pl": "Sen: twój najbardziej niedoceniany sprzymierzeniec zdrowia"
+  },
+  "excerpt": {
+    "de": "Schmerz, Regeneration, Verletzungen: Schlaf wirkt auf alles. Mit Zahlen und einfachen Tipps für besseren Schlaf, von Ihrer Physiotherapie in Eupen.",
+    "fr": "Douleur, récupération, blessures : le sommeil agit sur tout. Chiffres à l'appui et petits trucs faciles pour mieux dormir, par votre kiné à Eupen.",
+    "en": "Pain, recovery, injuries: sleep affects it all. With the numbers and easy tips for better sleep, from your physio in Eupen.",
+    "nl": "Pijn, herstel, blessures: slaap beïnvloedt alles. Met cijfers en makkelijke tips voor betere slaap, van uw kinesist in Eupen.",
+    "tr": "Ağrı, toparlanma, sakatlık: uyku her şeyi etkiler. Rakamlar ve daha iyi uyku için kolay ipuçlarıyla, Eupen'deki fizyoterapistinizden.",
+    "ar": "الألم والتعافي والإصابات: النوم يؤثّر في كل شيء. مع الأرقام ونصائح سهلة لنوم أفضل، من أخصائي العلاج الطبيعي في أوبن.",
+    "pl": "Ból, regeneracja, kontuzje: sen wpływa na wszystko. Z liczbami i prostymi wskazówkami na lepszy sen, od Twojego fizjoterapeuty w Eupen."
+  },
+  "tags": {
+    "de": [
+      "Schlaf",
+      "Regeneration",
+      "Schmerz",
+      "Prävention"
+    ],
+    "fr": [
+      "Sommeil",
+      "Récupération",
+      "Douleur",
+      "Prévention"
+    ],
+    "en": [
+      "Sleep",
+      "Recovery",
+      "Pain",
+      "Prevention"
+    ],
+    "nl": [
+      "Slaap",
+      "Herstel",
+      "Pijn",
+      "Preventie"
+    ],
+    "tr": [
+      "Uyku",
+      "Toparlanma",
+      "Ağrı",
+      "Önleme"
+    ],
+    "ar": [
+      "النوم",
+      "التعافي",
+      "الألم",
+      "الوقاية"
+    ],
+    "pl": [
+      "Sen",
+      "Regeneracja",
+      "Ból",
+      "Profilaktyka"
+    ]
+  }
+},
+
+  {
+    "slug": "therapie-manuelle-mythes-mouvement",
+    "date": "2026-06-21",
+    "readMin": 6,
+    "category": {
+        "de": "Manuelle Therapie",
+        "fr": "Thérapie Manuelle",
+        "en": "Manual Therapy",
+        "nl": "Manuele Therapie",
+        "tr": "Manuel Terapi",
+        "ar": "العلاج اليدوي",
+        "pl": "Terapia Manualna"
+    },
+    "color": "from-[#2b3186] to-[#1e2260]",
+    "title": {
+        "de": "Manuelle Therapie in Eupen: Bewegung zurückgeben, nicht « einrenken »",
+        "fr": "Thérapie manuelle à Eupen : remettre du mouvement, pas « remettre en place »",
+        "en": "Manual therapy in Eupen: restoring movement, not « putting things back »",
+        "nl": "Manuele therapie in Eupen: beweging teruggeven, niet « rechtzetten »",
+        "tr": "Eupen'de manuel terapi: yerine oturtmak değil, hareketi geri vermek",
+        "ar": "العلاج اليدوي في أوبن: إعادة الحركة، لا « إعادة الأمور إلى مكانها »",
+        "pl": "Terapia manualna w Eupen: przywracanie ruchu, a nie « nastawianie »"
+    },
+    "excerpt": {
+        "fr": "« On va vous remettre en place » : et si c'était faux ? La thérapie manuelle ne réaligne rien — elle calme la douleur et vous remet en mouvement. Le point, preuves à l'appui, au cabinet de kiné à Eupen.",
+        "de": "« Wir renken das wieder ein » — und wenn das gar nicht stimmt? Manuelle Therapie richtet nichts aus, sie lindert Schmerzen und bringt Sie in Bewegung. Der Überblick, evidenzbasiert, in Eupen.",
+        "en": "« We'll put it back in place » — what if that's wrong? Manual therapy realigns nothing; it eases pain and gets you moving. The evidence-based picture, at our physio clinic in Eupen.",
+        "nl": "« We zetten het wel recht » — en als dat niet klopt? Manuele therapie zet niets recht; ze verzacht pijn en brengt u in beweging. Het overzicht, evidence-based, in Eupen.",
+        "tr": "« Yerine oturturuz » — ya bu yanlışsa? Manuel terapi hiçbir şeyi hizalamaz; ağrıyı dindirir ve sizi harekete geçirir. Kanıta dayalı genel bakış, Eupen'deki fizyoterapi kliniğinde.",
+        "ar": "« سنعيد الأمور إلى مكانها » — وماذا لو كان ذلك خطأً؟ العلاج اليدوي لا يعيد محاذاة شيء؛ بل يهدّئ الألم ويعيدك إلى الحركة. الصورة القائمة على الأدلة، في عيادتنا في أوبن.",
+        "pl": "« Nastawimy to z powrotem » — a jeśli to nieprawda? Terapia manualna niczego nie nastawia; łagodzi ból i wprawia Cię w ruch. Obraz oparty na dowodach, w naszej poradni w Eupen."
+    },
+    "tags": {
+        "fr": [
+            "Thérapie manuelle",
+            "Mouvement",
+            "Mythes",
+            "Mal de dos"
+        ],
+        "de": [
+            "Manuelle Therapie",
+            "Bewegung",
+            "Mythen",
+            "Rückenschmerz"
+        ],
+        "en": [
+            "Manual therapy",
+            "Movement",
+            "Myths",
+            "Back pain"
+        ],
+        "nl": [
+            "Manuele therapie",
+            "Beweging",
+            "Mythes",
+            "Rugpijn"
+        ],
+        "tr": [
+            "Manuel terapi",
+            "Hareket",
+            "Mitler",
+            "Bel ağrısı"
+        ],
+        "ar": [
+            "العلاج اليدوي",
+            "الحركة",
+            "الخرافات",
+            "آلام الظهر"
+        ],
+        "pl": [
+            "Terapia manualna",
+            "Ruch",
+            "Mity",
+            "Ból pleców"
+        ]
+    }
+},
+  {
     slug: "doser-activite-douleur",
     date: "2026-05-07",
     readMin: 6,
@@ -341,7 +496,7 @@ function formatDate(dateStr: string, lang: LangKey) {
 
 export function BlogPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI_BLOG[lang];
   const isRtl = lang === "ar";
 

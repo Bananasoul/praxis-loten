@@ -23,6 +23,9 @@ const LOCALE_LABELS: Record<string, { flag: string; name: string }> = {
   tr: { flag: "🇹🇷", name: "Türkçe" },
   ar: { flag: "🇸🇦", name: "العربية" },
   pl: { flag: "🇵🇱", name: "Polski" },
+  uk: { flag: "🇺🇦", name: "Українська" },
+  es: { flag: "🇪🇸", name: "Español" },
+  ku: { flag: "☀️", name: "Kurdî" },
 };
 
 export function Header() {
@@ -56,6 +59,7 @@ export function Header() {
     { href: "/rehabilitation", label: t("rehabilitation") },
     { href: "/praxis", label: t("cabinet") },
     { href: "/honoraires", label: t("honoraires") },
+    { href: "/contact", label: t("contact") },
     { href: "/blog", label: t("blog") },
     { href: "/jobs", label: t("jobs") },
   ];
@@ -89,7 +93,7 @@ export function Header() {
               )}
             >
               <Image
-                src="/logos/logo-full.jpeg"
+                src="/logos/logo-full.png"
                 alt="Praxis Loten"
                 width={160}
                 height={52}
@@ -105,7 +109,7 @@ export function Header() {
               )}
             >
               <Image
-                src="/logos/logo-icon.jpeg"
+                src="/logos/logo-icon.png"
                 alt="Praxis Loten"
                 width={44}
                 height={44}

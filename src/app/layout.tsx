@@ -35,7 +35,7 @@ export default function RootLayout({
         {children}
         <GA4Events />
       </body>
-      <GoogleAnalytics gaId="G-T94F58H1XV" />
+      <GoogleAnalytics gaId="G-F58GSSFKQ0" />
     </html>
   );
 }

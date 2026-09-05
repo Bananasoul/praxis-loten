@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "سياسة الخصوصية",
     pl: "Polityka prywatności",
   };
-  return { title: titles[locale] || titles.fr };
+  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/privacy") };
 }
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
@@ -287,7 +288,7 @@ export default async function PrivacyPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const lang = (Object.keys(CONTENT).includes(locale) ? locale : "fr") as LangKey;
+  const lang = (Object.keys(CONTENT).includes(locale) ? locale : "en") as LangKey;
   const c = CONTENT[lang];
   const isRtl = locale === "ar";
 

@@ -1,28 +1,31 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { TeamPageContent } from "@/components/pages/TeamPageContent";
+import { ContactPageContent } from "@/components/pages/ContactPageContent";
 import { buildAlternates } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    de: "Unser Team",
-    fr: "Notre équipe",
-    en: "Our Team",
-    nl: "Ons team",
-    tr: "Ekibimiz",
-    ar: "فريقنا",
-    pl: "Nasz zespół",
+    de: "Kontakt",
+    fr: "Contact",
+    en: "Contact",
+    nl: "Contact",
+    tr: "İletişim",
+    ar: "اتصل بنا",
+    pl: "Kontakt",
+    uk: "Контакти",
+    es: "Contacto",
+    ku: "Têkilî",
   };
-  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/team") };
+  return { title: titles[locale] ?? titles.en, alternates: buildAlternates(locale, "/contact") };
 }
 
-export default async function TeamPage({
+export default async function ContactPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <TeamPageContent />;
+  return <ContactPageContent />;
 }

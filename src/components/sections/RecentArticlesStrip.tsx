@@ -20,7 +20,7 @@ const UI: Record<LangKey, { eyebrow: string; title: string; cta: string; readMin
 
 export function RecentArticlesStrip() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "de") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
 
   // Top 3 most recent articles
@@ -39,7 +39,7 @@ export function RecentArticlesStrip() {
               <BookOpen className="w-3.5 h-3.5" />
               <span>{ui.eyebrow}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight text-balance">
               {ui.title}
             </h2>
           </div>

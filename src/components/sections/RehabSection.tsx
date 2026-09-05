@@ -36,10 +36,10 @@ export function RehabSection() {
     <section className="py-24 sm:py-32 text-white overflow-hidden" style={{ background: "linear-gradient(135deg, #0d1120 0%, #1a1f52 50%, #0d1120 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight text-balance">
             {t("sectionTitle")}
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-white/60 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg text-white/60 leading-relaxed text-balance">
             {t("sectionSubtitle")}
           </p>
         </AnimatedSection>
@@ -82,7 +82,7 @@ export function RehabSection() {
         <AnimatedSection delay={0.55} className="mt-8 text-center">
           <Link
             href="/termin"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] shadow-2xl shadow-[#76b82a]/30"
+            className="group inline-flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-3 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] shadow-2xl shadow-[#76b82a]/30"
           >
             <CalendarPlus className="w-5 h-5" />
             {t("cta")}
