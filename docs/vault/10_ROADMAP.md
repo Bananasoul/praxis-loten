@@ -1,7 +1,7 @@
 ---
 title: "Roadmap & Etat actuel"
 created: 2026-05-20
-last_validated: 2026-05-31
+last_validated: 2026-09-05
 status: stable
 tags: [projet/loten, type/roadmap]
 aliases: [roadmap]
@@ -10,7 +10,7 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 
 # Roadmap & Etat actuel
 
-## Etat au 2026-05-31 (revu)
+## Etat au 2026-09-05 (revu)
 
 ### ✅ Fait
 
@@ -23,6 +23,7 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 | 12 infographies reutilisables | 2025-2026 | Composants React dans Infographics.tsx |
 | Pages legales RGPD | 2025 | Legal, Privacy, Cookies — 7 langues |
 | GA4 integre | 2025 | G-F58GSSFKQ0 via @next/third-parties |
+| Cockpit acquisition GA4 + GSC + Google Business Profile | 2026-09-05 | Canvas Codex, rafraîchissement à la demande |
 | Deploiement Vercel | 2025 | DNS GoDaddy → Vercel, domaine praxisloten.be |
 | Vault Obsidian | 2026-05-20 | Memoire longitudinale du projet |
 | Sitemap.xml + robots.txt dynamiques | 2026-05 | `src/app/sitemap.ts` + `src/app/robots.ts` (next-intl, 7 langues) |
@@ -31,7 +32,9 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 
 | Priorite | Fonctionnalite | Effort estime | Bloquant ? |
 |---|---|---|---|
-| 🔴 Haute | **Schema.org / JSON-LD** | 1-2 sessions | Non, mais impact SEO important |
+| 🔴 Haute | Ajouter uk, es et ku à la dimension GA4 page_language | 0.5 session | Oui — qualité de mesure |
+| 🔴 Haute | Mettre le consentement Analytics en conformité avec les textes publiés | 1 session | Oui — conformité |
+| 🟠 Moyenne | Valider JSON-LD et canonicals/hreflang après déploiement | 0.5 session | Oui — SEO multilingue |
 | 🟡 Moyenne | **CI/CD (GitHub Actions)** | 1 session | Non — deploiement manuel fonctionne |
 | 🟡 Moyenne | **Tests automatises** | 2-3 sessions | Non — validation manuelle en place |
 | 🟡 Moyenne | **Open Graph images** | 1 session | Non — partage social sous-optimal |
@@ -41,14 +44,13 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 
 ## Schema.org — Detail
 
-Le site n'a actuellement **aucun balisage JSON-LD**. A implementer :
+Le site dispose d'un balisage JSON-LD pour :
 
-- `LocalBusiness` sur la page d'accueil (nom, adresse, telephone, horaires)
-- `MedicalBusiness` ou `Physician` pour chaque therapeute
-- `BlogPosting` pour chaque article de blog
-- `BreadcrumbList` pour la navigation
+- `MedicalClinic` pour la clinique ;
+- `Article` et `MedicalWebPage` pour les contenus editoriaux ;
+- `FAQPage` pour les pages de questions frequentes.
 
-Impact attendu : meilleure visibilite dans les resultats Google locaux (knowledge panel, rich snippets).
+La prochaine etape est de valider les donnees structurees, les canonicals et les liens `hreflang` sur le site deploye. Le sitemap expose les variantes locales et leurs `hreflang`, mais sa date `lastModified` reste calculee a la date de build.
 
 ## CI/CD — Detail
 
