@@ -245,11 +245,11 @@ export function TeamPageContent() {
         <AnimatedSection delay={0.15} className="mb-16">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/avatars/team-avatar2.jpg"
+              src="/avatars/team-avatar3.png"
               alt="Praxis Loten Team"
-              width={1400}
-              height={600}
-              className="w-full h-[300px] sm:h-[400px] lg:h-[460px] object-cover object-[center_45%]"
+              width={1912}
+              height={823}
+              className="w-full h-auto"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
