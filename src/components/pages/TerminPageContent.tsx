@@ -10,6 +10,7 @@ import {
   IdCard, FileText, Sticker, Waves, Shirt,
 } from "lucide-react";
 import { SafeEmail } from "@/components/ui/SafeEmail";
+import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
@@ -398,6 +399,7 @@ export function TerminPageContent() {
               {cards.map(({ t, ribbon, dim }, i) => {
                 const isFlash = flash === t.slug;
                 const isWin = winner === t.slug;
+                const portrait = getTherapistPortrait(t.slug, "thumbnail");
                 return (
                   <motion.div key={t.slug} initial={{ opacity: 0, y: 18 }} animate={{ opacity: dim ? 0.4 : 1, y: 0 }} transition={{ delay: 0.04 * i }}
                     className={`relative rounded-2xl border p-5 bg-white/5 transition-all duration-300 ${isWin || isFlash ? "border-[#76b82a] ring-2 ring-[#76b82a]/40" : ribbon ? "border-[#76b82a]/60" : "border-white/10"} ${dim ? "saturate-50" : "hover:-translate-y-1 hover:border-white/25"}`}>
@@ -408,7 +410,7 @@ export function TerminPageContent() {
                     <div className="flex items-center gap-3.5 mb-3">
                       <div className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${t.accent}` }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`/avatars/${t.slug}.jpg`} alt={t.name} loading="lazy" className="w-full h-full object-cover object-top" />
+                        <img src={portrait.src} alt={t.name} loading="lazy" className={`w-full h-full ${portrait.className}`} />
                       </div>
                       <div>
                         <div className="text-[17px] font-bold leading-tight">{t.name}</div>

@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
 import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone, ArrowRight } from "lucide-react";
+import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 const TEAM = [
   {
@@ -265,7 +266,9 @@ export function TeamPageContent() {
 
         {/* Team Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8" staggerDelay={0.1}>
-          {members.map((member) => (
+          {members.map((member) => {
+            const portrait = getTherapistPortrait(member.slug, "thumbnail");
+            return (
             <StaggerItem key={member.key}>
               <motion.div
                 whileHover={{ y: -4 }}
@@ -277,11 +280,11 @@ export function TeamPageContent() {
                   <div className="flex items-end gap-4 w-full">
                     <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 ring-2 ring-white/30">
                       <Image
-                        src={`/avatars/${member.slug}.jpg`}
+                        src={portrait.src}
                         alt={member.name}
                         fill
                         sizes="80px"
-                        className="object-cover object-[center_15%]"
+                        className={portrait.className}
                       />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -405,7 +408,8 @@ export function TeamPageContent() {
                 </div>
               </motion.div>
             </StaggerItem>
-          ))}
+            );
+          })}
         </StaggerContainer>
 
         {/* CTA bas de page */}

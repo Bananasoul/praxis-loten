@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
+import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
@@ -247,6 +248,8 @@ export function TherapistPageContent({ slug }: { slug: string }) {
     );
   }
 
+  const portrait = getTherapistPortrait(therapist.slug, "profile");
+
   return (
     <div className="pt-28 pb-20 min-h-screen bg-neutral-50" dir={isRtl ? "rtl" : "ltr"}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -272,11 +275,11 @@ export function TherapistPageContent({ slug }: { slug: string }) {
               <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-neutral-200">
                 <div className={`aspect-square bg-gradient-to-br ${therapist.color} relative overflow-hidden`}>
                   <Image
-                    src={`/avatars/${therapist.slug}.jpg`}
+                    src={portrait.src}
                     alt={therapist.name}
                     width={400}
                     height={400}
-                    className="w-full h-full object-contain"
+                    className={`w-full h-full ${portrait.className}`}
                   />
                 </div>
                 <div className="p-6 text-center">

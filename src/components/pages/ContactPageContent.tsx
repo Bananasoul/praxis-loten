@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import { MessageCircle, Phone, Mail, ExternalLink, MapPin, Clock, CalendarX } from "lucide-react";
 import { SafeEmail } from "@/components/ui/SafeEmail";
+import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 type Rec = Record<string, string>;
 
@@ -160,7 +161,9 @@ export function ContactPageContent() {
       {/* Therapist directory */}
       <section className="px-4 pb-12">
         <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2">
-          {THERAPISTS.map((th, i) => (
+          {THERAPISTS.map((th, i) => {
+            const portrait = getTherapistPortrait(th.slug, "thumbnail");
+            return (
             <motion.div
               key={th.slug}
               initial={{ opacity: 0, y: 20 }}
@@ -175,11 +178,11 @@ export function ContactPageContent() {
                   style={{ ["--tw-ring-color" as string]: th.accent }}
                 >
                   <Image
-                    src={`/avatars/${th.slug}.jpg`}
+                    src={portrait.src}
                     alt={th.name}
                     fill
                     sizes="64px"
-                    className="object-cover"
+                    className={portrait.className}
                   />
                 </div>
                 <div className="min-w-0">
@@ -235,7 +238,8 @@ export function ContactPageContent() {
                 )}
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

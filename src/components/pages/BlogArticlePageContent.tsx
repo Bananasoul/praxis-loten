@@ -6,6 +6,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered } from "lucide-react";
 import Image from "next/image";
 import { InfographicSlot, type InfographicKind } from "@/components/blog/Infographics";
+import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
 
@@ -2497,6 +2498,7 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
 
   if (!article) return null;
 
+  const authorPortrait = getTherapistPortrait(article.authorSlug, "thumbnail");
   const isRtl = lang === "ar";
 
   const BASE_URL = "https://www.praxisloten.be";
@@ -2729,11 +2731,11 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
                     <div className="flex items-center gap-3 mb-4">
                       <div className="relative w-12 h-12 rounded-full bg-white/10 overflow-hidden flex-shrink-0 border-2 border-white/20">
                         <Image
-                          src={`/avatars/${article.authorSlug}.jpg`}
+                          src={authorPortrait.src}
                           alt={article.authorName}
                           fill
                           sizes="48px"
-                          className="object-cover"
+                          className={authorPortrait.className}
                         />
                       </div>
                       <div className="flex-1 min-w-0">
