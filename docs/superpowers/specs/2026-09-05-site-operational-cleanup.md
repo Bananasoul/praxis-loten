@@ -17,4 +17,3 @@
 - Do not change language availability, therapist records, booking links, or GA4 runtime behavior.
 - Do not expose secret values in logs or commits.
 - Verify rendered output, lint, build, and dependency audit before publication.
-
