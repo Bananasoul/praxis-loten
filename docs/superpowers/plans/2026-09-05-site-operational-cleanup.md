@@ -102,15 +102,15 @@ Run a clean install, full audit, lint, and production build. Expect no unresolve
 ### Task 4: Retired credential and tool authentication
 
 **Files:**
-- Delete: `/Users/philippe/Documents/Claude/Projects/The Compagny/The Compagny/Dev & Produit/praxis-loten-analytics-9e84ad615ce4.json`
+- Delete: the retired local Google Analytics service-account credential file.
 
 **Interfaces:**
-- Consumes: The exact service-account identity and private-key ID from the retired JSON file, without displaying private-key material.
+- Consumes: The exact service-account identity and key identifier from the retired JSON file, without displaying private-key material.
 - Produces: A revoked Google Cloud key, no local credential file, and renewed CLI sessions where interactive authorization succeeds.
 
 - [x] **Step 1: Inspect safe credential metadata and cloud access**
 
-Read only `project_id`, `client_email`, and `private_key_id`; check whether an authenticated Google Cloud CLI can list that exact service account's keys.
+Read only the project, service-account email, and key identifier; check whether an authenticated Google Cloud CLI can list that exact service account's keys.
 
 - [ ] **Step 2: Revoke before removal**
 
