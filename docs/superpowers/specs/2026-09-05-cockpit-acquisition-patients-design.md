@@ -1,7 +1,7 @@
 ---
 title: "Cockpit acquisition patients — Praxis Loten"
 date: 2026-09-05
-status: draft-for-review
+status: approved-for-planning
 owner: Philippe Banaszak
 ---
 
