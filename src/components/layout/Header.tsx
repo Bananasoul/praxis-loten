@@ -56,6 +56,12 @@ export function Header() {
     window.addEventListener("popstate", closeMenus);
     return () => window.removeEventListener("popstate", closeMenus);
   }, [closeMenus]);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(closeMenus);
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname, closeMenus]);
+
   const isTransparent = isHomepage && !scrolled;
 
   const navLinks = [
