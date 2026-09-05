@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -41,11 +41,21 @@ export function Header() {
   const mobileOpen = mobileOpenPathname === pathname;
   const langOpen = langOpenPathname === pathname;
 
+  const closeMenus = useCallback(() => {
+    setMobileOpenPathname(null);
+    setLangOpenPathname(null);
+  }, []);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("popstate", closeMenus);
+    return () => window.removeEventListener("popstate", closeMenus);
+  }, [closeMenus]);
 
   const isTransparent = isHomepage && !scrolled;
 
@@ -63,7 +73,7 @@ export function Header() {
 
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
-    setLangOpenPathname(null);
+    closeMenus();
   };
 
   return (
@@ -81,7 +91,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" onClick={closeMenus} className="flex items-center group">
             {/* Logo on white header (scrolled) */}
             <div
               className={cn(
@@ -131,6 +141,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={closeMenus}
                 className={cn(
                   "px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                   pathname === link.href
@@ -202,6 +213,7 @@ export function Header() {
             {/* CTA */}
             <Link
               href="/termin"
+              onClick={closeMenus}
               className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#76b82a]/30"
             >
               <CalendarPlus className="w-4 h-4" />
@@ -244,6 +256,7 @@ export function Header() {
                 >
                   <Link
                     href={link.href}
+                    onClick={closeMenus}
                     className={cn(
                       "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
                       pathname === link.href
@@ -258,6 +271,7 @@ export function Header() {
               <div className="pt-3">
                 <Link
                   href="/termin"
+                  onClick={closeMenus}
                   className="flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl text-base font-semibold transition-colors"
                 >
                   <CalendarPlus className="w-5 h-5" />
