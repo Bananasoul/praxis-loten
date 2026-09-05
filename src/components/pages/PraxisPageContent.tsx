@@ -201,21 +201,21 @@ const FEATURES: Record<LangKey, { title: string; desc: string }[]> = {
 };
 
 const DAYS: Record<LangKey, string[]> = {
-  de: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
-  fr: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-  en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-  uk: ["Понеділок", "Вівторок", "Середа", "Четвер", "П\u0027ятниця", "Субота"],
-  es: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-  ku: ["Duşem", "Sêşem", "Çarşem", "Pêncşem", "În", "Şemî"],
-  nl: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
-  tr: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
-  ar: ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
-  pl: ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
+  de: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Wochenende"],
+  fr: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Week-end"],
+  en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"],
+  uk: ["Понеділок", "Вівторок", "Середа", "Четвер", "П\u0027ятниця", "Вихідні"],
+  es: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Fin de semana"],
+  ku: ["Duşem", "Sêşem", "Çarşem", "Pêncşem", "În", "Dawiya hefteyê"],
+  nl: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Weekend"],
+  tr: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Hafta sonu"],
+  ar: ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "عطلة نهاية الأسبوع"],
+  pl: ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Weekend"],
 };
 
-const SAT_HOURS: Record<LangKey, string> = {
-  de: "Nach Vereinbarung", fr: "Sur rendez-vous", en: "By appointment",
-  nl: "Op afspraak", tr: "Randevu ile", ar: "بالموعد", pl: "Na umówienie", uk: "За записом", es: "Con cita previa", ku: "Bi randevû",
+const CLOSED_HOURS: Record<LangKey, string> = {
+  de: "Geschlossen", fr: "Fermé", en: "Closed",
+  nl: "Gesloten", tr: "Kapalı", ar: "مغلق", pl: "Zamknięte", uk: "Зачинено", es: "Cerrado", ku: "Girtî",
 };
 
 export function PraxisPageContent() {
@@ -226,12 +226,12 @@ export function PraxisPageContent() {
   const features = FEATURES[lang].map((f, i) => ({ ...f, Icon: FEATURE_ICONS[i] }));
   const days = DAYS[lang];
   const hours = [
-    { day: days[0], hours: "08:00 – 20:00" },
-    { day: days[1], hours: "08:00 – 20:00" },
-    { day: days[2], hours: "08:00 – 20:00" },
-    { day: days[3], hours: "08:00 – 20:00" },
-    { day: days[4], hours: "08:00 – 20:00" },
-    { day: days[5], hours: SAT_HOURS[lang] },
+    { day: days[0], hours: "07:30 – 20:30" },
+    { day: days[1], hours: "07:30 – 20:30" },
+    { day: days[2], hours: "07:30 – 20:30" },
+    { day: days[3], hours: "07:30 – 20:30" },
+    { day: days[4], hours: "07:30 – 20:30" },
+    { day: days[5], hours: CLOSED_HOURS[lang] },
   ];
 
   return (

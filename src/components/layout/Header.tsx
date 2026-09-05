@@ -56,7 +56,6 @@ export function Header() {
     window.addEventListener("popstate", closeMenus);
     return () => window.removeEventListener("popstate", closeMenus);
   }, [closeMenus]);
-
   const isTransparent = isHomepage && !scrolled;
 
   const navLinks = [
