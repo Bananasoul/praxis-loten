@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function NotFound() {
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function NotFound() {
       <p style={{ color: "#475569", maxWidth: "32rem" }}>
         Diese Seite existiert nicht (mehr). / Cette page n&apos;existe plus.
       </p>
-      <a
+      <Link
         href="/de"
         style={{
           background: "#2A2C6D",
@@ -41,7 +42,7 @@ export default function NotFound() {
         }}
       >
         Zur Startseite / Vers l&apos;accueil
-      </a>
+      </Link>
     </main>
   );
 }

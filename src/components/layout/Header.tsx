@@ -34,21 +34,18 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
+  const [mobileOpenPath, setMobileOpenPath] = useState<string | null>(null);
+  const [langOpenPath, setLangOpenPath] = useState<string | null>(null);
 
   const isHomepage = pathname === "/";
+  const mobileOpen = mobileOpenPath === pathname;
+  const langOpen = langOpenPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setLangOpen(false);
-  }, [pathname]);
 
   const isTransparent = isHomepage && !scrolled;
 
@@ -66,7 +63,7 @@ export function Header() {
 
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
-    setLangOpen(false);
+    setLangOpenPath(null);
   };
 
   return (
@@ -155,7 +152,7 @@ export function Header() {
             {/* Language Selector */}
             <div className="relative">
               <button
-                onClick={() => setLangOpen(!langOpen)}
+                onClick={() => setLangOpenPath(langOpen ? null : pathname)}
                 className={cn(
                   "flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all",
                   isTransparent
@@ -213,7 +210,7 @@ export function Header() {
 
             {/* Mobile toggle */}
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => setMobileOpenPath(mobileOpen ? null : pathname)}
               className={cn(
                 "lg:hidden p-2 rounded-lg transition-colors",
                 isTransparent
@@ -247,6 +244,7 @@ export function Header() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setMobileOpenPath(null)}
                     className={cn(
                       "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
                       pathname === link.href
@@ -261,6 +259,7 @@ export function Header() {
               <div className="pt-3">
                 <Link
                   href="/termin"
+                  onClick={() => setMobileOpenPath(null)}
                   className="flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-xl text-base font-semibold transition-colors"
                 >
                   <CalendarPlus className="w-5 h-5" />
