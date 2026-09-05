@@ -90,6 +90,7 @@ type Finding = {
   action: string;
   impact: "Élevé" | "Moyen" | "Faible";
   confidence: "Élevée" | "Moyenne";
+  effort: "Élevé" | "Moyen" | "Faible";
   kind: "Croissance" | "Mesure" | "Conformité";
 };
 type DashboardSnapshot = {
@@ -269,37 +270,37 @@ const snapshot: DashboardSnapshot = {
       title: "Le référencement naturel reste le moteur principal",
       evidence: "68 des 86 sessions GA4 récentes viennent d'Organic Search.",
       action: "Prioriser les pages locales et les spécialités déjà visibles avant d'investir dans de nouveaux canaux.",
-      impact: "Élevé", confidence: "Élevée", kind: "Croissance",
+      impact: "Élevé", confidence: "Élevée", effort: "Moyen", kind: "Croissance",
     },
     {
       title: "Le drainage lymphatique a une demande démontrée",
       evidence: "‘lymphdrainage eupen’ génère 30 clics sur 81 impressions, tandis que ‘lymphdrainage’ génère 324 impressions mais seulement 6 clics.",
       action: "Renforcer le titre et la description de la page drainage pour capter la requête générique sans diluer le signal local.",
-      impact: "Élevé", confidence: "Élevée", kind: "Croissance",
+      impact: "Élevé", confidence: "Élevée", effort: "Moyen", kind: "Croissance",
     },
     {
       title: "La fiche Google déclenche plus que des visites web",
       evidence: "144 appels et 261 itinéraires sont mesurés directement dans la fiche sur la période affichée.",
       action: "Piloter la fiche comme un canal d'acquisition distinct et suivre chaque mois appels, itinéraires, clics et avis.",
-      impact: "Élevé", confidence: "Élevée", kind: "Croissance",
+      impact: "Élevé", confidence: "Élevée", effort: "Faible", kind: "Croissance",
     },
     {
       title: "Le marquage GA4 doit couvrir les trois nouvelles langues",
       evidence: "Le code et le vault utilisent désormais G-F58GSSFKQ0, mais la détection page_language ne liste pas uk, es et ku et les attribue donc à de.",
       action: "Ajouter uk, es et ku à SITE_LOCALES dans GA4Events avant d'analyser les performances par langue.",
-      impact: "Élevé", confidence: "Élevée", kind: "Mesure",
+      impact: "Élevé", confidence: "Élevée", effort: "Faible", kind: "Mesure",
     },
     {
       title: "Le socle SEO technique a été renforcé",
       evidence: "Le code contient maintenant MedicalClinic, Article et FAQPage en JSON-LD ainsi que des canonicals/hreflang par URL.",
       action: "Valider leur détection dans Search Console et le test des résultats enrichis après le prochain déploiement.",
-      impact: "Moyen", confidence: "Élevée", kind: "Croissance",
+      impact: "Moyen", confidence: "Élevée", effort: "Faible", kind: "Croissance",
     },
     {
       title: "Le consentement publié et le code divergent",
       evidence: "Les pages légales annoncent un consentement préalable, mais GA4 est injecté sans mécanisme de consentement visible dans le code local.",
       action: "Faire un audit RGPD ciblé puis conditionner Analytics au choix de l'utilisateur.",
-      impact: "Élevé", confidence: "Élevée", kind: "Conformité",
+      impact: "Élevé", confidence: "Élevée", effort: "Moyen", kind: "Conformité",
     },
   ],
 };
@@ -480,7 +481,7 @@ const impactRank: Record<Finding["impact"], number> = { Élevé: 0, Moyen: 1, Fa
 const orderedFindings = [...snapshot.findings].sort((a, b) => impactRank[a.impact] - impactRank[b.impact]);
 ```
 
-Render at most five growth findings first; render measurement and conformity findings below a divider in a collapsible card. Each row includes observation, action, impact and confidence.
+Render at most five growth findings first; render measurement and conformity findings below a divider in a collapsible card. Each row includes observation, action, impact, confidence and effort.
 
 - [ ] **Step 6: Re-run Canvas TypeScript validation**
 
