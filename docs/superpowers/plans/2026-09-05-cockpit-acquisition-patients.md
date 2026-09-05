@@ -36,7 +36,7 @@
 - Modify only if needed to remove reported warnings: `src/components/sections/CTASection.tsx`
 
 **Interfaces:**
-- Consumes: the latest `origin/main` delivery merged at `8f4bda2`.
+- Consumes: the webmaster delivery initially merged at `8f4bda2`, then revalidated against `origin/main` at `d9e8bb4` and merged at `bce5083`.
 - Produces: a zero-error, zero-warning ESLint baseline without changing visible content beyond deterministic team order.
 
 - [ ] **Step 1: Reproduce the exact failure before changing code**

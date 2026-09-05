@@ -26,7 +26,7 @@ related: ["[[00_INDEX]]", "[[02_STACK]]", "[[05_SEO]]", "[[08_DEPLOYMENT]]"]
 | Cockpit acquisition GA4 + GSC + Google Business Profile | 2026-09-05 | Canvas Codex, rafraîchissement à la demande |
 | Deploiement Vercel | 2025 | DNS GoDaddy → Vercel, domaine praxisloten.be |
 | Vault Obsidian | 2026-05-20 | Memoire longitudinale du projet |
-| Sitemap.xml + robots.txt dynamiques | 2026-05 | `src/app/sitemap.ts` + `src/app/robots.ts` (next-intl, 7 langues) |
+| Sitemap.xml + robots.txt dynamiques | 2026-05 | `src/app/sitemap.ts` + `src/app/robots.ts` (next-intl, 10 langues) |
 
 ### ⚠ Manquant / A faire
 
