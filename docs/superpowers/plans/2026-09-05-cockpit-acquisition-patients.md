@@ -20,7 +20,39 @@
 - Show a source and exact time range for every chart and table.
 - Omit unavailable sections rather than rendering placeholders, empty frames or fabricated zeroes.
 - Use theme tokens from `useHostTheme()` and built-in Canvas primitives; no hardcoded colors, gradients, emojis or box shadows.
-- Modify neither the production site, Google configuration nor the public Google Business Profile in this implementation.
+- Apart from Task 0 explicitly authorized by the user, modify neither the production site, Google configuration nor the public Google Business Profile in this implementation.
+
+---
+
+### Task 0: Restore a clean website baseline
+
+**Files:**
+- Modify: `src/components/layout/Header.tsx`
+- Modify: `src/components/pages/TeamPageContent.tsx`
+- Modify: `src/components/sections/TeamSection.tsx`
+- Modify: `src/app/not-found.tsx`
+- Modify only if needed to remove reported warnings: `src/components/pages/RehabPageContent.tsx`
+- Modify only if needed to remove reported warnings: `src/components/pages/ServiceDetailPageContent.tsx`
+- Modify only if needed to remove reported warnings: `src/components/sections/CTASection.tsx`
+
+**Interfaces:**
+- Consumes: the latest `origin/main` delivery merged at `8f4bda2`.
+- Produces: a zero-error, zero-warning ESLint baseline without changing visible content beyond deterministic team order.
+
+- [ ] **Step 1: Reproduce the exact failure before changing code**
+
+Run `npm run lint` and record the RED evidence: three `react-hooks/set-state-in-effect` errors, five duplicated `@next/next/no-html-link-for-pages` errors on the 404 link, and five unused-import warnings.
+
+- [ ] **Step 2: Remove the root causes with minimal changes**
+
+- In `Header.tsx`, remove the pathname effect that synchronously closes menu state. Preserve close-on-navigation by deriving open state from the pathname on which each menu was opened, or by an equally small event-driven solution that also handles browser navigation.
+- In `TeamPageContent.tsx` and `TeamSection.tsx`, remove the post-mount random shuffle and render a stable order. Random server/client ordering is not acceptable because it risks hydration mismatch.
+- In `not-found.tsx`, use the Next.js internal `Link` component for `/de`.
+- Remove only the imports or variables reported as unused; do not refactor adjacent code.
+
+- [ ] **Step 3: Verify and commit**
+
+Run `npm run lint` until the output is pristine, then run `npm run build`. Commit only the Task 0 files with message `fix: restore clean website checks`.
 
 ---
 
@@ -252,16 +284,16 @@ const snapshot: DashboardSnapshot = {
       impact: "Élevé", confidence: "Élevée", kind: "Croissance",
     },
     {
-      title: "Deux identifiants GA4 se contredisent",
-      evidence: "Le code et le vault citent G-T94F58H1XV ; la tâche opérationnelle cite G-F58GSSFKQ0.",
-      action: "Vérifier le flux Web de la propriété p539934309 avant toute modification du tracking.",
+      title: "Le marquage GA4 doit couvrir les trois nouvelles langues",
+      evidence: "Le code et le vault utilisent désormais G-F58GSSFKQ0, mais la détection page_language ne liste pas uk, es et ku et les attribue donc à de.",
+      action: "Ajouter uk, es et ku à SITE_LOCALES dans GA4Events avant d'analyser les performances par langue.",
       impact: "Élevé", confidence: "Élevée", kind: "Mesure",
     },
     {
-      title: "Le SEO technique annoncé n'est pas entièrement présent",
-      evidence: "Le code local ne contient pas de JSON-LD et les pages dynamiques utilisent des titres dérivés du slug.",
-      action: "Planifier séparément JSON-LD, métadonnées localisées et canonicals par URL.",
-      impact: "Élevé", confidence: "Élevée", kind: "Croissance",
+      title: "Le socle SEO technique a été renforcé",
+      evidence: "Le code contient maintenant MedicalClinic, Article et FAQPage en JSON-LD ainsi que des canonicals/hreflang par URL.",
+      action: "Valider leur détection dans Search Console et le test des résultats enrichis après le prochain déploiement.",
+      impact: "Moyen", confidence: "Élevée", kind: "Croissance",
     },
     {
       title: "Le consentement publié et le code divergent",
@@ -513,7 +545,7 @@ Set `last_validated: 2026-09-05` and add:
 
 Le tableau de bord Codex `praxis-loten-acquisition.canvas.tsx` réunit GA4, Search Console et Google Business Profile/Maps. Il est rafraîchi à la demande et distingue strictement utilisateurs, sessions, clics et actions de contact.
 
-Propriété GA4 de référence : `p539934309` (« Praxis Loten »). Les identifiants de mesure `G-T94F58H1XV` dans le code et `G-F58GSSFKQ0` dans les notes opérationnelles doivent être réconciliés avant toute modification du tracking.
+Propriété GA4 de référence : `p539934309` (« Praxis Loten »), identifiant de mesure `G-F58GSSFKQ0`. La détection `page_language` doit encore intégrer `uk`, `es` et `ku` avant toute analyse fiable de ces trois langues.
 ```
 
 - [ ] **Step 2: Update `docs/vault/10_ROADMAP.md`**
@@ -522,9 +554,9 @@ Set `last_validated: 2026-09-05`. Add the cockpit to completed work and these fo
 
 ```markdown
 | Cockpit acquisition GA4 + GSC + Google Business Profile | 2026-09-05 | Canvas Codex, rafraîchissement à la demande |
-| 🔴 Haute | Réconcilier l'identifiant GA4 production/documentation | 0.5 session | Oui — qualité de mesure |
+| 🔴 Haute | Ajouter uk, es et ku à la dimension GA4 page_language | 0.5 session | Oui — qualité de mesure |
 | 🔴 Haute | Mettre le consentement Analytics en conformité avec les textes publiés | 1 session | Oui — conformité |
-| 🔴 Haute | Corriger les canonicals/hreflang par URL | 1 session | Oui — SEO multilingue |
+| 🟠 Moyenne | Valider JSON-LD et canonicals/hreflang après déploiement | 0.5 session | Oui — SEO multilingue |
 ```
 
 - [ ] **Step 3: Validate repository changes**
@@ -532,12 +564,12 @@ Set `last_validated: 2026-09-05`. Add the cockpit to completed work and these fo
 Run:
 
 ```bash
-rg -n '(TBD|TODO|G-T94F58H1XV|G-F58GSSFKQ0|p539934309|Cockpit acquisition)' docs/vault/05_SEO.md docs/vault/10_ROADMAP.md
+rg -n '(TBD|TODO|G-F58GSSFKQ0|p539934309|page_language|Cockpit acquisition)' docs/vault/05_SEO.md docs/vault/10_ROADMAP.md
 git diff --check
 git status --short
 ```
 
-Expected: no whitespace errors; both IDs remain documented as unresolved; only the two vault files are modified.
+Expected: no whitespace errors; `p539934309`, `G-F58GSSFKQ0` and the three missing language codes are documented; only the two vault files are modified.
 
 - [ ] **Step 4: Commit the documentation update**
 

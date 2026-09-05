@@ -1,7 +1,7 @@
 ---
 title: "Cockpit acquisition patients — Praxis Loten"
 date: 2026-09-05
-status: approved-for-planning
+status: approved-for-implementation
 owner: Philippe Banaszak
 ---
 
@@ -40,7 +40,7 @@ Les volumes GA4 et Google Business Profile ne sont jamais additionnés pour form
 - Fenêtres standard : 7 jours pour le signal récent, 28 jours pour la décision et comparaison avec la période précédente.
 - Données : utilisateurs, sessions, canaux, sources/supports, pages, appareils, pays, langues, événements de contact, page d'origine et thérapeute lorsque disponible.
 
-Les documents locaux citent deux identifiants de mesure (`G-T94F58H1XV` et `G-F58GSSFKQ0`). Le cockpit s'appuie sur l'identité stable de la propriété GA4, affiche cette incohérence comme alerte de mesure et ne tente pas de fusionner des propriétés sans vérification.
+L'identifiant de mesure est désormais réconcilié dans le code et le vault : `G-F58GSSFKQ0`. Le cockpit s'appuie sur l'identité stable de la propriété GA4 et signale encore que la dimension `page_language` ne reconnaît pas `uk`, `es` et `ku`.
 
 ### Google Search Console
 
@@ -103,18 +103,18 @@ Si une source est indisponible, le Canvas conserve la dernière valeur vérifié
 
 Le cockpit suit aussi les problèmes qui peuvent fausser l'analyse :
 
-- identifiants GA4 contradictoires dans le code et la documentation ;
+- couverture incomplète des nouvelles langues dans la dimension GA4 `page_language` ;
 - événements ou libellés de thérapeutes incohérents ;
 - absence de distinction entre clics et rendez-vous réels ;
 - données anciennes présentées comme actuelles ;
 - absence de consentement Analytics effectif malgré les textes juridiques ;
-- absence de JSON-LD ;
+- validation post-déploiement des nouveaux JSON-LD ;
 - métadonnées génériques des pages dynamiques ;
-- canonicals/hreflang à vérifier au niveau de chaque URL ;
+- validation post-déploiement des nouveaux canonicals/hreflang par URL ;
 - dates artificiellement renouvelées à chaque génération du sitemap ;
 - absence de suivi régulier des Core Web Vitals.
 
-Le premier livrable documente ces écarts. Il ne modifie ni le site, ni GA4, ni la fiche Google.
+Le premier livrable documente ces écarts. Une correction ciblée des erreurs de contrôle du site a été autorisée avant le cockpit ; le cockpit lui-même ne modifie ni GA4, ni la fiche Google.
 
 ## Contrôles avant livraison
 
@@ -128,8 +128,8 @@ Le premier livrable documente ces écarts. Il ne modifie ni le site, ni GA4, ni 
 
 ## Hors périmètre initial
 
-- Modifier le tracking, le site ou la configuration Google.
+- Modifier le tracking ou la configuration Google.
 - Installer un système de call tracking.
 - Relier Crossuite ou un dossier patient.
 - Attribuer un rendez-vous confirmé à une source sans preuve métier.
-- Créer une automatisation périodique : les mises à jour restent déclenchées à la demande.
+- Publier automatiquement des changements sur le site ou la fiche Google.
