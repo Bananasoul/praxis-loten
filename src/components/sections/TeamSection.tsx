@@ -8,11 +8,11 @@ import Image from "next/image";
 import { CalendarPlus, ArrowRight } from "lucide-react";
 
 const teamMembers = [
-  { key: "philippe", name: "Philippe Banaszak", initials: "PB", color: "from-primary-500 to-primary-700", href: "/team/philippe-banaszak", slug: "philippe-banaszak" },
-{ key: "felix", name: "Félix Esser", initials: "FE", color: "from-accent-500 to-accent-700", href: "/team/felix-esser", slug: "felix-esser" },
-  { key: "fabienne", name: "Fabienne Dormann", initials: "FD", color: "from-purple-500 to-purple-700", href: "/team/fabienne-dormann", slug: "fabienne-dormann" },
-  { key: "thom", name: "Thom Petit", initials: "TP", color: "from-teal-500 to-teal-700", href: "/team/thom-petit", slug: "thom-petit" },
-  { key: "loic", name: "Loïc Meunier", initials: "LM", color: "from-indigo-500 to-indigo-700", href: "/team/loic-meunier", slug: "loic-meunier" },
+  { key: "philippe", name: "Philippe Banaszak", initials: "PB", color: "from-primary-500 to-primary-700", href: "/team/philippe-banaszak", slug: "philippe-banaszak", portraitSrc: "/avatars/philippe-banaszak-uniform.png", portraitClassName: "object-cover object-[center_30%] scale-[1.05]" },
+  { key: "felix", name: "Félix Esser", initials: "FE", color: "from-accent-500 to-accent-700", href: "/team/felix-esser", slug: "felix-esser", portraitSrc: "/avatars/felix-esser.jpg", portraitClassName: "object-cover object-[center_15%]" },
+  { key: "fabienne", name: "Fabienne Dormann", initials: "FD", color: "from-purple-500 to-purple-700", href: "/team/fabienne-dormann", slug: "fabienne-dormann", portraitSrc: "/avatars/fabienne-dormann.jpg", portraitClassName: "object-cover object-[center_15%]" },
+  { key: "thom", name: "Thom Petit", initials: "TP", color: "from-teal-500 to-teal-700", href: "/team/thom-petit", slug: "thom-petit", portraitSrc: "/avatars/thom-petit.jpg", portraitClassName: "object-cover object-[center_15%]" },
+  { key: "loic", name: "Loïc Meunier", initials: "LM", color: "from-indigo-500 to-indigo-700", href: "/team/loic-meunier", slug: "loic-meunier", portraitSrc: "/avatars/loic-meunier.jpg", portraitClassName: "object-cover object-[center_15%]" },
 ];
 
 export function TeamSection() {
@@ -42,11 +42,11 @@ export function TeamSection() {
                     <div className="relative h-56 overflow-hidden">
                       <div className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-20`} />
                       <Image
-                        src={`/avatars/${member.slug}.jpg`}
+                        src={member.portraitSrc}
                         alt={member.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-[center_15%]"
+                        className={member.portraitClassName}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent" />
                     </div>
