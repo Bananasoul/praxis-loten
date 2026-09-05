@@ -34,21 +34,18 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
+  const [mobileOpenPathname, setMobileOpenPathname] = useState<string | null>(null);
+  const [langOpenPathname, setLangOpenPathname] = useState<string | null>(null);
 
   const isHomepage = pathname === "/";
+  const mobileOpen = mobileOpenPathname === pathname;
+  const langOpen = langOpenPathname === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setLangOpen(false);
-  }, [pathname]);
 
   const isTransparent = isHomepage && !scrolled;
 
@@ -66,7 +63,7 @@ export function Header() {
 
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
-    setLangOpen(false);
+    setLangOpenPathname(null);
   };
 
   return (
@@ -155,7 +152,7 @@ export function Header() {
             {/* Language Selector */}
             <div className="relative">
               <button
-                onClick={() => setLangOpen(!langOpen)}
+                onClick={() => setLangOpenPathname(langOpen ? null : pathname)}
                 className={cn(
                   "flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all",
                   isTransparent
@@ -213,7 +210,7 @@ export function Header() {
 
             {/* Mobile toggle */}
             <button
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => setMobileOpenPathname(mobileOpen ? null : pathname)}
               className={cn(
                 "lg:hidden p-2 rounded-lg transition-colors",
                 isTransparent

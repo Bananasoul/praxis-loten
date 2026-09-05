@@ -2,8 +2,8 @@
 
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
-import { Hand, Dumbbell, Smile, Droplets, CheckCircle2, ArrowLeft, CalendarPlus, ArrowRight, Clock, Users } from "lucide-react";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Hand, Dumbbell, Smile, Droplets, CheckCircle2, CalendarPlus, ArrowRight, Clock, Users } from "lucide-react";
 
 const SD_EXTRA: Record<string, { title?: Record<string,string>; subtitle?: Record<string,string>; description?: Record<string,string> }> = {
   "manuelle-therapie": {
