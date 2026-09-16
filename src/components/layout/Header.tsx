@@ -79,9 +79,9 @@ export function Header() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between gap-4 h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group shrink-0">
             {/* Logo on white header (scrolled) */}
             <div
               className={cn(
@@ -132,7 +132,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                  "px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-200",
                   pathname === link.href
                     ? isTransparent
                       ? "text-white bg-white/10"
@@ -148,7 +148,7 @@ export function Header() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             {/* Language Selector */}
             <div className="relative">
               <button
