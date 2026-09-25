@@ -16,6 +16,7 @@ const SLUGS = [
   "fabienne-dormann",
   "thom-petit",
   "loic-meunier",
+  "noe-meyer",
 ];
 
 export function generateStaticParams() {
