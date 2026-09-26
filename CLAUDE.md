@@ -9,7 +9,7 @@ Always respond in French. Read ONBOARDING.md for full project context, tech stac
 
 ## Quick reminders
 - 10 locales: de (default), fr, en, nl, tr, ar, pl, uk, es, ku — ALL content must exist in all 10 languages
-- Deploy: NEVER push to `main` or run `vercel deploy --prod`. Branch → Pull Request → Vercel preview → Philippe merges (see AGENTS.md « Publication du site »)
+- Deploy: NEVER push to `main` or run `vercel deploy --prod`. Branch → Pull Request → Vercel preview → merged on Philippe's explicit go, by him or by the agent via `gh pr merge` (see AGENTS.md « Publication du site »)
 - Blog articles: `src/components/pages/BlogArticlePageContent.tsx`
 - Team data: `src/components/pages/TeamPageContent.tsx`
 - GA4: G-F58GSSFKQ0
