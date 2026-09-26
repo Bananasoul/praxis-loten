@@ -1,5 +1,5 @@
 export type Pathway = "current" | "fa" | "fb" | "e" | "unknown";
-export type Practitioner = "conventioned" | "loic";
+export type Practitioner = "conventioned" | "loic" | "noe";
 export type Location = "cabinet" | "home";
 export type ReimbursementBand = "preferred" | "reduced" | "reduced-first" | "reduced-second" | "unknown";
 
@@ -138,6 +138,13 @@ export function getPathwaySummary(pathway: Pathway, completedInput: number): Pat
   };
 }
 
+// Honoraires demandés par les thérapeutes non conventionnés (€ / séance).
+// ⚠ Noé : montants PROVISOIRES repris de Loïc — à confirmer avec Noé avant publication.
+const NON_CONV_FEES: Record<Exclude<Practitioner, "conventioned">, Record<Location, number>> = {
+  loic: { cabinet: 35, home: 38 },
+  noe: { cabinet: 35, home: 38 },
+};
+
 export function calculateFeeEstimate({
   pathway,
   completed,
@@ -155,8 +162,10 @@ export function calculateFeeEstimate({
   const row = (location === "cabinet" ? CABINET_FEES : HOME_FEES)[pathway][band];
   if (!row) return null;
 
-  const reimbursement = row.reimbursement[practitioner];
-  const chargedFee = practitioner === "loic" ? (location === "cabinet" ? 35 : 38) : row.officialFee;
+  const isNonConventioned = practitioner !== "conventioned";
+  // Le remboursement mutuelle est identique pour tout thérapeute non conventionné.
+  const reimbursement = row.reimbursement[isNonConventioned ? "loic" : "conventioned"];
+  const chargedFee = isNonConventioned ? NON_CONV_FEES[practitioner][location] : row.officialFee;
 
   return {
     officialFee: row.officialFee,
@@ -166,7 +175,7 @@ export function calculateFeeEstimate({
       standard: roundMoney(chargedFee - reimbursement.standard),
       bim: roundMoney(chargedFee - reimbursement.bim),
     },
-    isApproximate: practitioner === "loic",
+    isApproximate: isNonConventioned,
     band,
   };
 }

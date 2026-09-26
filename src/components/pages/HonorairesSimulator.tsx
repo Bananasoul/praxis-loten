@@ -489,6 +489,7 @@ export function HonorairesSimulator({ lang, isRtl }: { lang: LangKey; isRtl: boo
                 <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <ChoiceButton active={practitioner === "conventioned"} onClick={() => setPractitioner("conventioned")} title={copy.conventioned} description={copy.conventionedNames} />
                   <ChoiceButton active={practitioner === "loic"} onClick={() => setPractitioner("loic")} title={copy.loic} description={copy.loicHint} />
+                  <ChoiceButton active={practitioner === "noe"} onClick={() => setPractitioner("noe")} title="Noé Meyer" description={copy.loicHint} />
                 </div>
               </fieldset>
             </div>
