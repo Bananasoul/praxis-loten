@@ -104,6 +104,10 @@
     "loic": {
       "role": "Physiotherapeut & Osteopathie",
       "quote": "Frisch diplomiert und leidenschaftlich über den menschlichen Körper, stelle ich mein Wissen in Ihren Dienst."
+    },
+    "noe": {
+      "role": "Physiotherapeut — Hausbesuche",
+      "quote": "Für mich gehören Bewegung und Lebensqualität unmittelbar zusammen. Deshalb steht für mich das persönliche Ziel des Patienten im Vordergrund."
     }
   },
   "cabinet": {

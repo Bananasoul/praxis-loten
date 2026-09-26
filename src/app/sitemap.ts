@@ -29,6 +29,7 @@ const teamSlugs = [
   "fabienne-dormann",
   "thom-petit",
   "loic-meunier",
+  "noe-meyer",
 ];
 
 const leistungenSlugs = [

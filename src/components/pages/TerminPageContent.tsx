@@ -73,6 +73,13 @@ const THERAPISTS: {
     role: { de: "Physiotherapeut — Osteopathie in Ausbildung", fr: "Kinésithérapeute — Ostéopathie en formation", en: "Physiotherapist — Osteopathy (training)", nl: "Fysiotherapeut — Osteopathie (opleiding)", tr: "Fizyoterapist — Osteopati (eğitim)", ar: "أخصائي علاج طبيعي — أوستيوباثي (تدريب)", pl: "Fizjoterapeuta — Osteopatia (szkolenie)", uk: "Фізіотерапевт — остеопатія (навчання)", es: "Fisioterapeuta — Osteopatía (en formación)", ku: "Fizyoterapîst — Osteopatî (perwerde)" },
     plain: { de: "Allgemeine Reha, nach Verletzungen, osteopathischer Ansatz.", fr: "Rééducation générale, suites de blessure, approche ostéopathique.", en: "General rehab, post-injury, osteopathic approach." },
   },
+  {
+    slug: "noe-meyer", name: "Noé Meyer", accent: "#059669",
+    langs: ["FR", "DE", "EN"], tags: [...GEN], specs: ["Kiné générale", "Visites à domicile", "Ostéopathie"],
+    phone: "+32472387291", whatsapp: "https://wa.me/32472387291", online: null, conv: false,
+    role: { de: "Physiotherapeut — Hausbesuche", fr: "Kinésithérapeute — Visites à domicile", en: "Physiotherapist — Home visits", nl: "Kinesitherapeut — Huisbezoeken", tr: "Fizyoterapist — Ev ziyaretleri", ar: "أخصائي علاج طبيعي — زيارات منزلية", pl: "Fizjoterapeuta — Wizyty domowe", uk: "Фізіотерапевт — Візити додому", es: "Fisioterapeuta — Visitas a domicilio", ku: "Fizyoterapîst — Serdanên malê" },
+    plain: { de: "Allgemeine Reha — auch Hausbesuche in Eupen.", fr: "Rééducation générale — aussi à domicile à Eupen.", en: "General rehab — home visits in Eupen too." },
+  },
 ];
 
 const MOTIFS: { id: string; emoji: string; label: Rec }[] = [
