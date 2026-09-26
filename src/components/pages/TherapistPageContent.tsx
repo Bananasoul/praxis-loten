@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
+import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
@@ -182,7 +183,7 @@ const THERAPISTS: Therapist[] = [
     name: "Loïc Meunier",
     initials: "LM",
     color: "from-indigo-600 to-indigo-800",
-    convention: null,
+    convention: NON_CONV_LABEL,
     role: {
       de: "Physiotherapeut — Osteopathie in Ausbildung",
       fr: "Kinésithérapeute — Ostéopathie en formation",
@@ -215,7 +216,7 @@ const THERAPISTS: Therapist[] = [
     name: "Noé Meyer",
     initials: "NM",
     color: "from-emerald-600 to-emerald-800",
-    convention: null,
+    convention: NON_CONV_LABEL,
     role: {
       de: "Physiotherapeut — Hausbesuche",
       fr: "Kinésithérapeute — Visites à domicile",
@@ -327,9 +328,12 @@ export function TherapistPageContent({ slug }: { slug: string }) {
                     {therapist.role[lang] ?? therapist.role.en}
                   </p>
                   {therapist.convention && (
-                    <span className="inline-block text-xs px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full font-medium">
+                    <Link
+                      href={NON_CONV_HREF}
+                      className="inline-block text-xs px-3 py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 rounded-full font-medium hover:underline underline-offset-2 transition-colors"
+                    >
                       {therapist.convention[lang] ?? therapist.convention.en}
-                    </span>
+                    </Link>
                   )}
                 </div>
               </div>

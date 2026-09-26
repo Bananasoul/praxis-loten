@@ -7,6 +7,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/
 import Image from "next/image";
 import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone, ArrowRight } from "lucide-react";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
+import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 
 const TEAM = [
   {
@@ -190,7 +191,7 @@ const TEAM = [
       { year: "2021–2026", title: "Haute École de la Province de Liège (HEPL) — Master Kinésithérapie" },
       { year: "2026–…", title: "IAO Bruxelles — Formation Ostéopathie en cours" },
     ],
-    convention: null,
+    convention: "non conventionné",
     note: null,
   },
 ];
@@ -329,9 +330,13 @@ export function TeamPageContent() {
                       </p>
                     </div>
                     {member.convention && (
-                      <span className="text-xs bg-white/20 text-white px-2 py-1 rounded-lg font-medium flex-shrink-0">
-                        {member.convention}
-                      </span>
+                      <Link
+                        href={NON_CONV_HREF}
+                        title={NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}
+                        className="text-xs bg-white/20 hover:bg-white/35 text-white px-2 py-1 rounded-lg font-medium flex-shrink-0 underline-offset-2 hover:underline transition-colors"
+                      >
+                        {NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}
+                      </Link>
                     )}
                   </div>
                 </div>
