@@ -144,7 +144,7 @@ const UI: Record<string, {
     ctaTitle: "¿Preguntas sobre nuestros honorarios?", ctaSub: "Nuestro equipo está disponible para responder a todas sus preguntas sobre costes y reembolsos.", ctaBtn: "Pedir cita",
     whoConv: "Philippe Banaszak · Félix Esser · Fabienne Dormann · Thom Petit",
     whoNonConv: "Loïc Meunier · Noé Meyer",
-    convListTitle: "Terapeutas convencionados:", nonConvListTitle: "No convencionado:",
+    convListTitle: "Terapeutas convencionados:", nonConvListTitle: "No convencionados:",
     tarifsSource: "Tarifas INAMI vigentes desde el 01/07/2026. Sujetas a cambios — importes actuales en inami.fgov.be.",
     cabinet: "En el consultorio", home: "Visita a domicilio",
   },
