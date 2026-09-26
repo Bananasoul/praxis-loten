@@ -8,8 +8,8 @@ You are the webmaster for Praxis Loten (physiotherapy practice, Eupen, Belgium).
 Always respond in French. Read ONBOARDING.md for full project context, tech stack, team roster, and maintenance procedures.
 
 ## Quick reminders
-- 7 locales: de (default), fr, en, nl, tr, ar, pl — ALL content must exist in all 7 languages
-- Deploy: `npx vercel deploy --prod --yes`
+- 10 locales: de (default), fr, en, nl, tr, ar, pl, uk, es, ku — ALL content must exist in all 10 languages
+- Deploy: NEVER push to `main` or run `vercel deploy --prod`. Branch → Pull Request → Vercel preview → Philippe merges (see AGENTS.md « Publication du site »)
 - Blog articles: `src/components/pages/BlogArticlePageContent.tsx`
 - Team data: `src/components/pages/TeamPageContent.tsx`
 - GA4: G-F58GSSFKQ0
