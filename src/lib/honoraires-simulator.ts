@@ -179,3 +179,64 @@ export function calculateFeeEstimate({
     band,
   };
 }
+
+export interface TreatmentTotal {
+  sessions: number;
+  charged: number;
+  reimbursement: { standard: number; bim: number };
+  patientShare: { standard: number; bim: number };
+  isApproximate: boolean;
+  /** true si une partie des séances passe dans une tranche au remboursement réduit */
+  crossesBand: boolean;
+}
+
+/**
+ * Coût cumulé de N séances à partir de la prochaine (completed + 1),
+ * séance par séance : les changements de tranche (ex. après la 18e) sont pris en compte.
+ */
+export function calculateTreatmentTotal({
+  pathway,
+  completed,
+  practitioner,
+  location,
+  sessions,
+}: {
+  pathway: Pathway;
+  completed: number;
+  practitioner: Practitioner;
+  location: Location;
+  sessions: number;
+}): TreatmentTotal | null {
+  const count = Math.max(0, Math.floor(Number.isFinite(sessions) ? sessions : 0));
+  const start = normalizeCompleted(completed);
+  if (pathway === "unknown" || count === 0) return null;
+
+  let charged = 0;
+  const reimbursement = { standard: 0, bim: 0 };
+  const patientShare = { standard: 0, bim: 0 };
+  let isApproximate = false;
+  let crossesBand = false;
+  let firstBand: ReimbursementBand | null = null;
+
+  for (let i = 0; i < count; i++) {
+    const estimate = calculateFeeEstimate({ pathway, completed: start + i, practitioner, location });
+    if (!estimate) return null;
+    firstBand ??= estimate.band;
+    if (estimate.band !== firstBand) crossesBand = true;
+    charged += estimate.chargedFee;
+    reimbursement.standard += estimate.reimbursement.standard;
+    reimbursement.bim += estimate.reimbursement.bim;
+    patientShare.standard += estimate.patientShare.standard;
+    patientShare.bim += estimate.patientShare.bim;
+    isApproximate ||= estimate.isApproximate;
+  }
+
+  return {
+    sessions: count,
+    charged: roundMoney(charged),
+    reimbursement: { standard: roundMoney(reimbursement.standard), bim: roundMoney(reimbursement.bim) },
+    patientShare: { standard: roundMoney(patientShare.standard), bim: roundMoney(patientShare.bim) },
+    isApproximate,
+    crossesBand,
+  };
+}

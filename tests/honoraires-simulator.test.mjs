@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   calculateFeeEstimate,
+  calculateTreatmentTotal,
   getPathwaySummary,
 } from "../src/lib/honoraires-simulator.ts";
 
@@ -111,4 +112,27 @@ test("Noé is estimated like the other non-conventioned therapist (same insurer 
     assert.deepEqual(noe?.reimbursement, loic?.reimbursement);
     assert.equal(noe?.chargedFee, location === "cabinet" ? 35 : 38);
   }
+});
+
+test("treatment total for 1 session equals the single-session estimate", () => {
+  const one = calculateTreatmentTotal({ pathway: "current", completed: 0, practitioner: "conventioned", location: "cabinet", sessions: 1 });
+  const single = calculateFeeEstimate({ pathway: "current", completed: 0, practitioner: "conventioned", location: "cabinet" });
+  assert.equal(one?.charged, single?.chargedFee);
+  assert.deepEqual(one?.patientShare, single?.patientShare);
+  assert.equal(one?.crossesBand, false);
+});
+
+test("treatment total crosses the 18-session band for a common pathology", () => {
+  const nine = calculateTreatmentTotal({ pathway: "current", completed: 0, practitioner: "conventioned", location: "cabinet", sessions: 9 });
+  assert.equal(nine?.charged, 284.76); // 9 × 31,64
+  assert.equal(nine?.crossesBand, false);
+  const after = calculateTreatmentTotal({ pathway: "current", completed: 10, practitioner: "conventioned", location: "cabinet", sessions: 18 });
+  // 8 séances au meilleur remboursement puis 10 au remboursement réduit
+  assert.equal(after?.crossesBand, true);
+  assert.equal(after?.charged, 367.32); // 8 × 31,64 + 10 × 11,42
+});
+
+test("treatment total returns null for unknown pathway or zero sessions", () => {
+  assert.equal(calculateTreatmentTotal({ pathway: "unknown", completed: 0, practitioner: "loic", location: "home", sessions: 9 }), null);
+  assert.equal(calculateTreatmentTotal({ pathway: "fa", completed: 0, practitioner: "loic", location: "home", sessions: 0 }), null);
 });
