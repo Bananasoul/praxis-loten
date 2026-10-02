@@ -13,6 +13,7 @@ const THERAPIST_START_YEARS = [
   2013, // Fabienne Dormann
   2015, // Thom Petit
   2025, // Loïc Meunier
+  2026, // Noé Meyer
 ];
 
 function getCombinedExperience(): number {
@@ -90,7 +91,7 @@ export function StatsSection({ googleData }: StatsSectionProps) {
                 className="text-4xl sm:text-5xl font-extrabold mb-2"
                 style={{ color: "#2b3186" }}
               >
-                <CountUp end={5} duration={2} />
+                <CountUp end={THERAPIST_START_YEARS.length} duration={2} />
               </div>
               <p
                 className="text-sm font-medium uppercase tracking-wider"

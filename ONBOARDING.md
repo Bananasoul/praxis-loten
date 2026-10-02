@@ -93,6 +93,7 @@ public/
 | `fabienne` | Fabienne Dormann | Lymphatic drainage, TMJ/CMD | +32 471 76 56 83 |
 | `thom` | Thom Petit | Sports PT, Running Clinic, BFR | +32 471 86 90 24 |
 | `loic` | Loic Meunier | General PT, Osteopathy (training) | +32 474 29 63 26 |
+| `noe` | Noé Meyer | General PT, home visits, Osteopathy (training) | +32 472 38 72 91 |
 
 ## Common Maintenance Tasks
 

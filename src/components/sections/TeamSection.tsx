@@ -14,6 +14,7 @@ const teamMembers = [
   { key: "fabienne", name: "Fabienne Dormann", initials: "FD", color: "from-purple-500 to-purple-700", href: "/team/fabienne-dormann", slug: "fabienne-dormann" },
   { key: "thom", name: "Thom Petit", initials: "TP", color: "from-teal-500 to-teal-700", href: "/team/thom-petit", slug: "thom-petit" },
   { key: "loic", name: "Loïc Meunier", initials: "LM", color: "from-indigo-500 to-indigo-700", href: "/team/loic-meunier", slug: "loic-meunier" },
+  { key: "noe", name: "Noé Meyer", initials: "NM", color: "from-emerald-500 to-emerald-700", href: "/team/noe-meyer", slug: "noe-meyer" },
 ];
 
 export function TeamSection() {

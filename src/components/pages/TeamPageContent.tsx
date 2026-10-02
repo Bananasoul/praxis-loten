@@ -7,6 +7,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/
 import Image from "next/image";
 import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone, ArrowRight } from "lucide-react";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
+import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 
 const TEAM = [
   {
@@ -166,6 +167,33 @@ const TEAM = [
     convention: "non conventionné",
     note: null,
   },
+  {
+    key: "noe",
+    name: "Noé Meyer",
+    slug: "noe-meyer",
+    initials: "NM",
+    color: "from-emerald-600 to-emerald-800",
+    role: { de: "Physiotherapeut — Hausbesuche", fr: "Kinésithérapeute — Visites à domicile" },
+    tags: ["HEPL 2026", "Visites à domicile", "Ostéopathie en formation"],
+    languages: ["Français", "Deutsch", "English"],
+    booking: { label: "WhatsApp", href: "https://wa.me/32472387291" },
+    phone: "+32 472 38 72 91",
+    bio: {
+      de: "Noé ist seit 2026 Teil des Teams, frisch diplomiert an der Haute École de la Province de Liège. Er geht von dem aus, was Ihnen wichtig ist (wieder Sport treiben, schmerzfrei gehen, zu Hause selbstständig bleiben), und richtet die Behandlung auf dieses Ziel aus. Er behandelt auf Deutsch, Französisch und Englisch, in der Praxis oder bei Ihnen zu Hause in Eupen, und absolviert derzeit eine Ausbildung in Osteopathie.",
+      fr: "Noé a rejoint l'équipe en 2026, fraîchement diplômé de la Haute École de la Province de Liège. Il part de ce qui compte pour vous (reprendre le sport, marcher sans douleur, rester autonome à la maison) et construit la rééducation autour de cet objectif. Il consulte en français, en allemand et en anglais, au cabinet ou à domicile à Eupen, et poursuit une formation en ostéopathie.",
+      en: "Noé joined the team in 2026, freshly graduated from the Haute École de la Province de Liège. He starts from what matters to you (getting back to sport, walking without pain, staying independent at home) and builds your rehabilitation around that goal. He treats in French, German and English, at the practice or at your home in Eupen, and is currently training in osteopathy.",
+      nl: "Noé kwam in 2026 bij het team, pas afgestudeerd aan de Haute École de la Province de Liège. Hij vertrekt van wat voor u belangrijk is (weer sporten, pijnvrij wandelen, zelfstandig blijven thuis) en bouwt de revalidatie rond dat doel op. Hij behandelt in het Frans, Duits en Engels, in de praktijk of bij u thuis in Eupen, en volgt een opleiding osteopathie.",
+      tr: "Noé, Liège İl Yüksekokulu'ndan (HEPL) yeni mezun olarak 2026'da ekibe katıldı. Sizin için önemli olandan yola çıkar (spora dönmek, ağrısız yürümek, evde bağımsız kalmak) ve tedaviyi bu hedef etrafında kurar. Fransızca, Almanca ve İngilizce hizmet verir; muayenehanede veya Eupen'de evinizde tedavi eder ve osteopati eğitimi almaktadır.",
+      ar: "انضم نويه إلى الفريق عام 2026 بعد تخرجه حديثًا من المدرسة العليا لمقاطعة لييج. ينطلق مما يهمك (العودة إلى الرياضة، المشي دون ألم، البقاء مستقلًا في المنزل) ويبني إعادة التأهيل حول هذا الهدف. يعالج بالفرنسية والألمانية والإنجليزية، في العيادة أو في منزلك في أوبن، ويتابع تكوينًا في العلاج العظمي.",
+      pl: "Noé dołączył do zespołu w 2026 roku, świeżo po dyplomie w Haute École de la Province de Liège. Wychodzi od tego, co jest dla Ciebie ważne (powrót do sportu, chodzenie bez bólu, samodzielność w domu), i buduje rehabilitację wokół tego celu. Przyjmuje po francusku, niemiecku i angielsku, w gabinecie lub w domu pacjenta w Eupen, i kształci się w osteopatii.",
+    },
+    parcours: [
+      { year: "2021–2026", title: "Haute École de la Province de Liège (HEPL) — Master Kinésithérapie" },
+      { year: "2026–…", title: "IAO Bruxelles — Formation Ostéopathie en cours" },
+    ],
+    convention: "non conventionné",
+    note: null,
+  },
 ];
 
 
@@ -212,6 +240,14 @@ const TEAM_EXTRA: Record<string, { role?: Record<string, string>; bio?: Record<s
       ku: "Fizyoterapîstê nû mezûn ê Zanîngeha Liègeê (Master 2025). Niha di perwerdeya osteopatiyê de ye. Ji bo rehabîlîtasyona li ser nexweş navendî bi dil û can e."
     }
   },
+  noe: {
+    role: { uk: "Фізіотерапевт — Візити додому", es: "Fisioterapeuta — Visitas a domicilio", ku: "Fizyoterapîst — Serdanên malê" },
+    bio: {
+      uk: "Ное приєднався до команди у 2026 році, щойно закінчивши Вищу школу провінції Льєж. Він відштовхується від того, що важливо для вас (повернутися до спорту, ходити без болю, залишатися самостійним удома), і будує реабілітацію навколо цієї мети. Приймає французькою, німецькою та англійською, у кабінеті або вдома в Ойпені, і навчається остеопатії.",
+      es: "Noé se unió al equipo en 2026, recién titulado por la Haute École de la Province de Liège. Parte de lo que es importante para usted (volver al deporte, caminar sin dolor, seguir siendo autónomo en casa) y construye la rehabilitación en torno a ese objetivo. Atiende en francés, alemán e inglés, en la consulta o a domicilio en Eupen, y se está formando en osteopatía.",
+      ku: "Noé di 2026an de beşdarî tîmê bû, nû ji Dibistana Bilind a Parêzgeha Liègeê mezûn bûye. Ew ji tiştê ku ji bo we girîng e dest pê dike (vegera werzîşê, meşa bê êş, li malê serbixwe mayîn) û rehabîlîtasyonê li dora wê armancê ava dike. Bi fransî, almanî û îngilîzî, li kabîneyê an li mala we li Eupenê derman dike, û perwerdeya osteopatiyê dibîne."
+    }
+  },
 };
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
@@ -231,7 +267,7 @@ export function TeamPageContent() {
         <AnimatedSection className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#76b82a]/10 rounded-full text-[#5c9120] text-sm font-semibold mb-4">
             <Star className="w-4 h-4" />
-            5 {t("sectionTitle")}
+            {TEAM.length} {t("sectionTitle")}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-balance">
             <span style={{ color: "#76b82a" }}>{t("sectionTitle")}</span>
@@ -245,10 +281,10 @@ export function TeamPageContent() {
         <AnimatedSection delay={0.15} className="mb-16">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/avatars/team-avatar3.png"
+              src="/avatars/team-avatar-noe.jpg"
               alt="Praxis Loten Team"
-              width={1912}
-              height={823}
+              width={1561}
+              height={672}
               className="w-full h-auto"
               priority
             />
@@ -294,9 +330,13 @@ export function TeamPageContent() {
                       </p>
                     </div>
                     {member.convention && (
-                      <span className="text-xs bg-white/20 text-white px-2 py-1 rounded-lg font-medium flex-shrink-0">
-                        {member.convention}
-                      </span>
+                      <Link
+                        href={NON_CONV_HREF}
+                        title={NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}
+                        className="text-xs bg-white/20 hover:bg-white/35 text-white px-2 py-1 rounded-lg font-medium flex-shrink-0 underline-offset-2 hover:underline transition-colors"
+                      >
+                        {NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}
+                      </Link>
                     )}
                   </div>
                 </div>

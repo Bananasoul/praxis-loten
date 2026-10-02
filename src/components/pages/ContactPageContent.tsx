@@ -71,6 +71,16 @@ const THERAPISTS: {
     emailEnc: "bG1ldW5pZXIubG9pY0BnbWFpbC5jb20=",
     role: { de: "Physiotherapeut — Osteopathie in Ausbildung", fr: "Kinésithérapeute — Ostéopathie en formation", en: "Physiotherapist — Osteopathy (training)", nl: "Fysiotherapeut — Osteopathie (opleiding)", tr: "Fizyoterapist — Osteopati (eğitim)", ar: "أخصائي علاج طبيعي — أوستيوباثي (تدريب)", pl: "Fizjoterapeuta — Osteopatia (szkolenie)", uk: "Фізіотерапевт — остеопатія (навчання)", es: "Fisioterapeuta — Osteopatía (en formación)", ku: "Fizyoterapîst — Osteopatî (perwerde)" },
   },
+  {
+    slug: "noe-meyer",
+    name: "Noé Meyer",
+    accent: "#059669",
+    phone: "+32472387291",
+    whatsapp: "https://wa.me/32472387291",
+    online: null,
+    emailEnc: "bWV5ZXJoZWFsdGhAcG0ubWU=",
+    role: { de: "Physiotherapeut — Hausbesuche", fr: "Kinésithérapeute — Visites à domicile", en: "Physiotherapist — Home visits", nl: "Kinesitherapeut — Huisbezoeken", tr: "Fizyoterapist — Ev ziyaretleri", ar: "أخصائي علاج طبيعي — زيارات منزلية", pl: "Fizjoterapeuta — Wizyty domowe", uk: "Фізіотерапевт — Візити додому", es: "Fisioterapeuta — Visitas a domicilio", ku: "Fizyoterapîst — Serdanên malê" },
+  },
 ];
 
 const T: Record<string, Rec> = {

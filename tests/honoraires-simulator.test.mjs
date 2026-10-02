@@ -102,3 +102,13 @@ test("completed-session input is normalized to a non-negative whole number", () 
   assert.equal(getPathwaySummary("current", -3).completed, 0);
   assert.equal(getPathwaySummary("fa", 9.8).completed, 9);
 });
+
+test("Noé is estimated like the other non-conventioned therapist (same insurer refund, flagged approximate)", () => {
+  for (const location of ["cabinet", "home"]) {
+    const noe = calculateFeeEstimate({ pathway: "current", completed: 0, practitioner: "noe", location });
+    const loic = calculateFeeEstimate({ pathway: "current", completed: 0, practitioner: "loic", location });
+    assert.equal(noe?.isApproximate, true);
+    assert.deepEqual(noe?.reimbursement, loic?.reimbursement);
+    assert.equal(noe?.chargedFee, location === "cabinet" ? 35 : 38);
+  }
+});
