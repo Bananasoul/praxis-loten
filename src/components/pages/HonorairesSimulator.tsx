@@ -6,6 +6,7 @@ import { Calculator, CheckCircle2, ExternalLink, FileText, Info } from "lucide-r
 import { Link } from "@/i18n/navigation";
 import {
   calculateFeeEstimate,
+  calculateTreatmentTotal,
   getPathwaySummary,
   type Location,
   type Pathway,
@@ -351,6 +352,28 @@ const COPY: Record<LangKey, SimulatorCopy> = {
   },
 };
 
+interface TotalCopy {
+  title: string; intro: string; colSessions: string; custom: string;
+  colPaid: string; colRefund: string; colCost: string; bandNote: string;
+}
+
+// Coût total d'un traitement (1 / 9 / 18 séances + nombre exact)
+const TOTAL_COPY: Record<LangKey, TotalCopy> = {
+  fr: { title: "Combien va vous coûter votre traitement ?", intro: "Total après remboursement de la mutuelle, à partir de votre prochaine séance.", colSessions: "Séances", custom: "Nombre exact de séances", colPaid: "Payé au kiné", colRefund: "Remboursé par la mutuelle", colCost: "Coût réel pour vous", bandNote: "* Ce total inclut des séances au remboursement réduit : vous dépassez la tranche au meilleur remboursement." },
+  de: { title: "Was kostet Ihre Behandlung insgesamt?", intro: "Gesamtbetrag nach Erstattung durch die Krankenkasse, ab Ihrer nächsten Sitzung.", colSessions: "Sitzungen", custom: "Genaue Anzahl Sitzungen", colPaid: "An den Therapeuten gezahlt", colRefund: "Erstattung der Krankenkasse", colCost: "Ihre tatsächlichen Kosten", bandNote: "* Dieser Betrag enthält Sitzungen mit geringerer Erstattung: Sie überschreiten die Stufe mit der besten Erstattung." },
+  en: { title: "What will your treatment cost in total?", intro: "Total after your insurer's refund, starting from your next session.", colSessions: "Sessions", custom: "Exact number of sessions", colPaid: "Paid to the therapist", colRefund: "Refunded by your insurer", colCost: "Your real cost", bandNote: "* This total includes sessions with a reduced refund: you go beyond the best-refund band." },
+  nl: { title: "Wat kost uw behandeling in totaal?", intro: "Totaal na terugbetaling door uw ziekenfonds, vanaf uw volgende sessie.", colSessions: "Sessies", custom: "Exact aantal sessies", colPaid: "Betaald aan de kinesist", colRefund: "Terugbetaald door het ziekenfonds", colCost: "Uw werkelijke kost", bandNote: "* Dit totaal bevat sessies met een lagere terugbetaling: u overschrijdt de schijf met de beste terugbetaling." },
+  es: { title: "¿Cuánto le costará el tratamiento en total?", intro: "Total tras el reembolso de su mutua, a partir de su próxima sesión.", colSessions: "Sesiones", custom: "Número exacto de sesiones", colPaid: "Pagado al fisioterapeuta", colRefund: "Reembolsado por su mutua", colCost: "Su coste real", bandNote: "* Este total incluye sesiones con reembolso reducido: supera el tramo de mejor reembolso." },
+  pl: { title: "Ile łącznie zapłacisz za leczenie?", intro: "Suma po refundacji kasy chorych, od najbliższej sesji.", colSessions: "Sesje", custom: "Dokładna liczba sesji", colPaid: "Zapłacone fizjoterapeucie", colRefund: "Zwrot z kasy chorych", colCost: "Twój rzeczywisty koszt", bandNote: "* Ta suma obejmuje sesje z niższą refundacją: przekraczasz próg najlepszej refundacji." },
+  tr: { title: "Tedaviniz toplamda ne kadar tutacak?", intro: "Sigorta geri ödemesinden sonraki toplam, bir sonraki seansınızdan itibaren.", colSessions: "Seans", custom: "Tam seans sayısı", colPaid: "Terapiste ödenen", colRefund: "Sigortanın geri ödediği", colCost: "Gerçek maliyetiniz", bandNote: "* Bu toplam daha düşük geri ödemeli seanslar içerir: en iyi geri ödeme dilimini aşıyorsunuz." },
+  uk: { title: "Скільки коштуватиме лікування загалом?", intro: "Сума після відшкодування страхової, починаючи з наступного сеансу.", colSessions: "Сеанси", custom: "Точна кількість сеансів", colPaid: "Сплачено терапевту", colRefund: "Відшкодовує страхова", colCost: "Ваша реальна вартість", bandNote: "* Ця сума включає сеанси зі зниженим відшкодуванням: ви перевищуєте ліміт найкращого відшкодування." },
+  ar: { title: "كم سيكلفك العلاج إجمالاً؟", intro: "المجموع بعد تعويض صندوق المرض، ابتداءً من جلستك القادمة.", colSessions: "الجلسات", custom: "العدد الدقيق للجلسات", colPaid: "المدفوع للمعالج", colRefund: "تعويض صندوق المرض", colCost: "تكلفتك الفعلية", bandNote: "* يشمل هذا المجموع جلسات بتعويض أقل: أنت تتجاوز شريحة أفضل تعويض." },
+  ku: { title: "Dermankirina we bi tevahî çiqas dike?", intro: "Tevahî piştî vegerandina sîgorteyê, ji danişîna we ya din ve.", colSessions: "Danişîn", custom: "Hejmara rast a danişînan", colPaid: "Ji terapîst re hat dayîn", colRefund: "Sîgorte vedigerîne", colCost: "Lêçûna we ya rastîn", bandNote: "* Ev tevahî danişînên bi vegerandina kêmtir dihewîne: hûn asta vegerandina herî baş derbas dikin." },
+};
+
+const PRESET_SESSIONS = [1, 9, 18];
+const MAX_CUSTOM_SESSIONS = 120;
+
 function formatMoney(value: number): string {
   return value.toFixed(2).replace(".", ",") + " €";
 }
@@ -400,6 +423,8 @@ export function HonorairesSimulator({ lang, isRtl }: { lang: LangKey; isRtl: boo
   const [practitioner, setPractitioner] = useState<Practitioner>("conventioned");
   const [location, setLocation] = useState<Location>("cabinet");
   const [bimStatus, setBimStatus] = useState<BimStatus>("unknown");
+  const [customSessions, setCustomSessions] = useState(12);
+  const totalCopy = TOTAL_COPY[lang] ?? TOTAL_COPY.en;
 
   const summary = pathway ? getPathwaySummary(pathway, completed) : null;
   const estimate = pathway
@@ -565,6 +590,86 @@ export function HonorairesSimulator({ lang, isRtl }: { lang: LangKey; isRtl: boo
                 {estimate.isApproximate && <p className="mt-4 text-xs leading-relaxed text-amber-700">{copy.approximate}</p>}
               </div>
             </div>
+
+            {(() => {
+              if (!pathway || pathway === "unknown") return null;
+              const rows = [...PRESET_SESSIONS, customSessions].map((n) =>
+                calculateTreatmentTotal({ pathway, completed, practitioner, location, sessions: n }),
+              );
+              const prefix = estimate.isApproximate ? "~" : "";
+              const money = (v: number) => <span className="whitespace-nowrap">{prefix + formatMoney(v)}</span>;
+              const anyCross = rows.some((r) => r?.crossesBand);
+              const cell = (pair: { standard: number; bim: number }, strong: boolean) =>
+                bimStatus !== "unknown" ? (
+                  <span className={strong ? "text-sm font-extrabold text-[#2d7a00] sm:text-base" : "font-semibold"}>{money(pair[bimStatus])}</span>
+                ) : (
+                  <span className="flex flex-col items-end leading-tight">
+                    <span className={strong ? "text-sm font-extrabold text-[#2d7a00] sm:text-base" : "font-semibold"}>{money(pair.standard)}</span>
+                    <span className="whitespace-nowrap text-[10px] font-semibold text-blue-700 sm:text-[11px]">{copy.bim} : {money(pair.bim)}</span>
+                  </span>
+                );
+              return (
+                <div data-testid="treatment-total" className="mt-6 rounded-3xl bg-white p-3 shadow-sm ring-1 ring-neutral-200 sm:p-6">
+                  <h4 className="text-lg font-extrabold text-neutral-900">{totalCopy.title}</h4>
+                  <p className="mt-1 text-xs leading-relaxed text-neutral-500">{totalCopy.intro}</p>
+                  <div className="mt-4 overflow-x-auto">
+                    <table className="w-full text-xs sm:text-sm">
+                      <thead>
+                        <tr className="border-b border-neutral-200 text-xs text-neutral-500">
+                          <th className="py-2 pe-3 text-start font-semibold">{totalCopy.colSessions}</th>
+                          <th className="px-2 py-2 text-end font-semibold sm:px-3">{totalCopy.colPaid}</th>
+                          <th className="hidden px-3 py-2 text-end font-semibold sm:table-cell">{totalCopy.colRefund}</th>
+                          <th className="py-2 ps-2 text-end font-semibold text-[#2d7a00] sm:ps-3">{totalCopy.colCost}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {rows.map((row, i) => {
+                          const isCustom = i === PRESET_SESSIONS.length;
+                          return (
+                            <tr key={i} className={`border-b border-neutral-100 align-middle ${isCustom ? "bg-[#f7fcef]" : ""}`}>
+                              <td className="whitespace-nowrap py-3 pe-2 sm:pe-3">
+                                {isCustom ? (
+                                  <input
+                                    aria-label={totalCopy.custom}
+                                    data-testid="custom-sessions"
+                                    type="number"
+                                    min="1"
+                                    max={MAX_CUSTOM_SESSIONS}
+                                    inputMode="numeric"
+                                    value={customSessions}
+                                    onChange={(event) => setCustomSessions(Math.max(1, Math.min(MAX_CUSTOM_SESSIONS, Number(event.target.value) || 1)))}
+                                    className="h-10 w-16 rounded-xl sm:w-20 border-2 border-[#76b82a]/50 bg-white px-2 text-lg font-extrabold text-[#2b3186] outline-none focus:border-[#76b82a] focus:ring-4 focus:ring-[#76b82a]/20"
+                                  />
+                                ) : (
+                                  <span className="text-lg font-extrabold text-[#2b3186]">{PRESET_SESSIONS[i]}</span>
+                                )}
+                                {row?.crossesBand && <span className="ms-1 font-bold text-amber-600">*</span>}
+                              </td>
+                              <td className="px-2 py-3 text-end font-semibold text-neutral-700 sm:px-3">{row ? money(row.charged) : "—"}</td>
+                              <td className="hidden px-3 py-3 text-end text-[#2b3186] sm:table-cell">{row ? cell(row.reimbursement, false) : "—"}</td>
+                              <td className="py-3 ps-2 text-end sm:ps-3">{row ? cell(row.patientShare, true) : "—"}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-4">
+                    <label htmlFor="custom-sessions-range" className="text-xs font-bold text-neutral-700">{totalCopy.custom} : {customSessions}</label>
+                    <input
+                      id="custom-sessions-range"
+                      type="range"
+                      min="1"
+                      max="60"
+                      value={Math.min(customSessions, 60)}
+                      onChange={(event) => setCustomSessions(Number(event.target.value))}
+                      className="mt-2 w-full accent-[#76b82a]"
+                    />
+                  </div>
+                  {anyCross && <p className="mt-3 text-xs leading-relaxed text-amber-700">{totalCopy.bandNote}</p>}
+                </div>
+              );
+            })()}
           </div>
         )}
 
