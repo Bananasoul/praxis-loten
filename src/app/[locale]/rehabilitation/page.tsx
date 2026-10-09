@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Rehabilitasyon",
     ar: "إعادة التأهيل",
     pl: "Rehabilitacja",
+    "uk": "Реабілітація",
+    "es": "Rehabilitación",
+    "ku": "Rehabîlîtasyon",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/rehabilitation") };
 }

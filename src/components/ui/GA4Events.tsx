@@ -57,7 +57,7 @@ function identifyTherapist(href: string): string {
   return "Non identifié";
 }
 
-const SITE_LOCALES = ["de", "fr", "en", "nl", "tr", "ar", "pl"];
+const SITE_LOCALES = ["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"];
 
 function pageLanguage(): string {
   const seg = window.location.pathname.split("/")[1];

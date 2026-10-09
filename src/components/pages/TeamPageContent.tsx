@@ -30,6 +30,9 @@ const TEAM = [
       tr: "IFOMPT sertifikalı ortopedik manuel terapi uzmanı. Haute École André Vésale mezunu (2008–2012), ULiège Manuel Terapi Üniversite Sertifikası (2015–2017).",
       ar: "متخصص في العلاج اليدوي العظمي، حاصل على شهادة IFOMPT. خريج Haute École André Vésale (2008–2012)، شهادة جامعية في العلاج اليدوي من ULiège (2015–2017).",
       pl: "Specjalista terapii manualnej ortopedycznej z certyfikatem IFOMPT. Absolwent Haute École André Vésale (2008–2012), Certyfikat Uniwersytecki z Terapii Manualnej ULiège (2015–2017).",
+      "uk": "Фахівець з ортопедичної мануальної терапії, сертифікований IFOMPT. Випускник Haute École André Vésale (2008–2012), університетський сертифікат з мануальної терапії (CUTM) ULiège (2015–2017). Регулярне міжнародне підвищення кваліфікації (ECMT, IFOMPT Базель 2024).",
+      "es": "Especialista en terapia manual ortopédica con certificación IFOMPT. Titulado por la Haute École André Vésale (2008–2012), Certificado Universitario en Terapia Manual (CUTM) ULiège (2015–2017). Formación continua internacional regular (ECMT, IFOMPT Basilea 2024).",
+      "ku": "Pisporê terapiya destî ya ortopedîk, bi sertîfîkaya IFOMPT. Mezûnê Haute École André Vésale (2008–2012), Sertîfîkaya Zanîngehê ya Terapiya Destî (CUTM) ULiège (2015–2017). Perwerdeyên domdar ên navneteweyî yên birêkûpêk (ECMT, IFOMPT Basel 2024).",
     },
     parcours: [
       { year: "2008–2012", title: "Haute École André Vésale — Master Kinésithérapie" },
@@ -62,6 +65,9 @@ const TEAM = [
       tr: "Liège Üniversitesi mezunu (Master 2021). Şu anda osteopati eğitiminde. Hasta merkezli yaklaşımla genel fizyoterapi.",
       ar: "خريج جامعة لييج (ماجستير 2021). حاليًا في تدريب الهشاشة. علاج طبيعي عام بنهج يركز على المريض.",
       pl: "Absolwent Uniwersytetu w Liège (Master 2021). Aktualnie w szkoleniu osteopatycznym. Fizjoterapia ogólna z podejściem skoncentrowanym na pacjencie.",
+      "uk": "Випускник Льєзького університету (магістр, 2021). Зараз навчається остеопатії. Загальна фізіотерапія з підходом, зосередженим на пацієнті.",
+      "es": "Titulado por la Universidad de Lieja (Máster 2021). Actualmente en formación de osteopatía. Fisioterapia general con un enfoque centrado en el paciente.",
+      "ku": "Mezûnê Zanîngeha Liègeê (Master 2021). Niha perwerdeya osteopatiyê dibîne. Fizyoterapiya giştî bi nêzîkatiyeke ku nexweş di navendê de ye.",
     },
     parcours: [
       { year: "2017–2021", title: "Université de Liège — Master Kinésithérapie & Réadaptation" },
@@ -89,6 +95,9 @@ const TEAM = [
       tr: "Pzt, Sal & Per: 12:30–16:00",
       ar: "الإثنين، الثلاثاء والخميس: 12:30–16:00",
       pl: "Pon, Wt & Czw: 12:30–16:00",
+      "uk": "Пн, Вт і Чт: 12:30–16:00",
+      "es": "Lun, mar y jue: 12:30–16:00",
+      "ku": "Duşem, Sêşem û Pêncşem: 12:30–16:00",
     } as Record<string, string>,
     bio: {
       de: "Spezialistin für Lymphdrainage nach O. Leduc und Kiefergelenkstherapie (CMD). Mehrere Spezialisierungen: Kiefergelenk nach L. Pitance, R. Giop, und Th. Gouzland (2025). Bachelor & Master mit Auszeichnung.",
@@ -98,6 +107,9 @@ const TEAM = [
       tr: "Lenf drenajı (O. Leduc yöntemi) ve çene eklemi tedavisi (CMD) uzmanı. L. Pitance, R. Giop ve Th. Gouzland'a göre çene eklemi dahil birden fazla uzmanlık (2025).",
       ar: "متخصصة في الصرف اللمفاوي (طريقة O. Leduc) وعلاج مفصل الفك (CMD). تخصصات متعددة: مفصل الفك وفق L. Pitance وR. Giop وTh. Gouzland (2025).",
       pl: "Specjalistka drenażu limfatycznego (metoda O. Leduc) i terapii stawu skroniowo-żuchwowego (CMD). Wiele specjalizacji: staw żuchwowy wg L. Pitance, R. Giop i Th. Gouzland (2025).",
+      "uk": "Фахівчиня з лімфодренажу за O. Leduc і терапії скронево-нижньощелепного суглоба (СНЩС/CMD). Кілька спеціалізацій: СНЩС за L. Pitance, R. Giop і Th. Gouzland (2025). Бакалавр і магістр з відзнакою.",
+      "es": "Especialista en drenaje linfático según O. Leduc y en terapia de la articulación temporomandibular (ATM/CMD). Varias especializaciones: ATM según L. Pitance, R. Giop y Th. Gouzland (2025). Bachelor y Máster con distinción.",
+      "ku": "Pispora drenaja lîmfatîk li gorî O. Leduc û terapiya movika çenê (TMJ/CMD). Çend pisporî: TMJ li gorî L. Pitance, R. Giop û Th. Gouzland (2025). Bachelor û Master bi serfirazî.",
     },
     parcours: [
       { year: "2009–2013", title: "Haute École André Vésale — Bachelor & Master (avec distinction)" },
@@ -129,6 +141,9 @@ const TEAM = [
       tr: "Spor fizyoterapisi uzmanı, koşu yaralanmaları (La Clinique du Coureur) ve Kan Akışı Kısıtlama antrenmanı (BFR/Kinesport) konusunda uzmanlaşmış.",
       ar: "خبير في فيزيوتيرابيا الرياضة، متخصص في إصابات الجري (La Clinique du Coureur) وتدريب تقييد تدفق الدم (BFR/Kinesport).",
       pl: "Ekspert fizjoterapii sportowej, specjalizacja: urazy biegowe (La Clinique du Coureur) i trening z ograniczeniem przepływu krwi (BFR/Kinesport).",
+      "uk": "Експерт зі спортивної фізіотерапії, спеціалізується на травмах бігунів (La Clinique du Coureur) і тренуванні з обмеженням кровотоку (BFR/Kinesport). Працює зі спортсменами в кабінеті та в клубах.",
+      "es": "Experto en fisioterapia deportiva, especializado en lesiones de corredores (La Clinique du Coureur) y en entrenamiento con restricción del flujo sanguíneo (BFR/Kinesport). Atiende a deportistas en la consulta y en los clubes.",
+      "ku": "Pisporê fizyoterapiya werzîşê, taybet di birînên bezînê de (La Clinique du Coureur) û perwerdeya bi sînordarkirina herikîna xwînê (BFR/Kinesport). Werzîşvanan li klînîkê û li klûban derman dike.",
     },
     parcours: [
       { year: "2010–2015", title: "Haute École André Vésale — Master Kinésithérapie" },
@@ -159,6 +174,9 @@ const TEAM = [
       tr: "Liège Üniversitesi'nden yeni mezun fizyoterapist (Master 2025). Şu anda osteopati eğitiminde. Hasta merkezli rehabilitasyona adanmış ve motivasyonlu.",
       ar: "فيزيوتيرابيست حديث التخرج من جامعة لييج (ماجستير 2025). حاليًا في تدريب الهشاشة. ملتزم ومتحمس للتأهيل المتمحور حول المريض.",
       pl: "Świeżo dyplomowany fizjoterapeuta z Uniwersytetu w Liège (Master 2025). Aktualnie w szkoleniu osteopatycznym. Zaangażowany i zmotywowany do rehabilitacji skoncentrowanej na pacjencie.",
+      "uk": "Молодий фізіотерапевт, випускник Льєзького університету (магістр, 2025). Зараз навчається остеопатії. Відданий і вмотивований до реабілітації, зосередженої на пацієнті.",
+      "es": "Joven fisioterapeuta titulado por la Universidad de Lieja (Máster 2025). Actualmente en formación de osteopatía. Comprometido y motivado con una rehabilitación centrada en el paciente.",
+      "ku": "Fizyoterapîstekî ciwan, mezûnê Zanîngeha Liègeê (Master 2025). Niha perwerdeya osteopatiyê dibîne. Ji bo rehabîlîtasyoneke ku nexweş di navendê de ye, dilsoz û bi motîvasyon e.",
     },
     parcours: [
       { year: "2020–2025", title: "Université de Liège — Master Kinésithérapie & Réadaptation" },
@@ -186,6 +204,9 @@ const TEAM = [
       tr: "Noé, Liège İl Yüksekokulu'ndan (HEPL) yeni mezun olarak 2026'da ekibe katıldı. Sizin için önemli olandan yola çıkar (spora dönmek, ağrısız yürümek, evde bağımsız kalmak) ve tedaviyi bu hedef etrafında kurar. Fransızca, Almanca ve İngilizce hizmet verir; muayenehanede veya Eupen'de evinizde tedavi eder ve osteopati eğitimi almaktadır.",
       ar: "انضم نويه إلى الفريق عام 2026 بعد تخرجه حديثًا من المدرسة العليا لمقاطعة لييج. ينطلق مما يهمك (العودة إلى الرياضة، المشي دون ألم، البقاء مستقلًا في المنزل) ويبني إعادة التأهيل حول هذا الهدف. يعالج بالفرنسية والألمانية والإنجليزية، في العيادة أو في منزلك في أوبن، ويتابع تكوينًا في العلاج العظمي.",
       pl: "Noé dołączył do zespołu w 2026 roku, świeżo po dyplomie w Haute École de la Province de Liège. Wychodzi od tego, co jest dla Ciebie ważne (powrót do sportu, chodzenie bez bólu, samodzielność w domu), i buduje rehabilitację wokół tego celu. Przyjmuje po francusku, niemiecku i angielsku, w gabinecie lub w domu pacjenta w Eupen, i kształci się w osteopatii.",
+      "uk": "Noé приєднався до команди у 2026 році, щойно закінчивши Haute École de la Province de Liège. Він відштовхується від того, що важливо для вас (повернутися до спорту, ходити без болю, залишатися самостійним удома), і будує реабілітацію навколо цієї мети. Він приймає французькою, німецькою та англійською мовами, у кабінеті або вдома в Ойпені, і зараз навчається остеопатії.",
+      "es": "Noé se incorporó al equipo en 2026, recién titulado por la Haute École de la Province de Liège. Parte de lo que es importante para usted (volver al deporte, caminar sin dolor, seguir siendo autónomo en casa) y construye la rehabilitación en torno a ese objetivo. Atiende en francés, alemán e inglés, en la consulta o a domicilio en Eupen, y está cursando una formación en osteopatía.",
+      "ku": "Noé di 2026an de beşdarî tîmê bû, nû ji Haute École de la Province de Liège mezûn bûbû. Ew ji tiştê ku ji bo we girîng e dest pê dike (vegera werzîşê, meşa bê êş, li malê serbixwe mayîn) û rehabîlîtasyonê li dora wê armancê ava dike. Ew bi fransî, almanî û îngilîzî dermankirinê dike, li klînîkê an li mala we li Eupenê, û niha perwerdeya osteopatiyê dibîne.",
     },
     parcours: [
       { year: "2021–2026", title: "Haute École de la Province de Liège (HEPL) — Master Kinésithérapie" },

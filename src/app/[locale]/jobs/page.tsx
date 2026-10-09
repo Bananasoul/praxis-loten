@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "İş ilanları",
     ar: "عروض العمل",
     pl: "Oferty pracy",
+    "uk": "Вакансії",
+    "es": "Ofertas de empleo",
+    "ku": "Pêşniyarên kar",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/jobs") };
 }

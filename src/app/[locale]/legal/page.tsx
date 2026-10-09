@@ -12,11 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Yasal Bildirim",
     ar: "الإشعار القانوني",
     pl: "Nota prawna",
+    "uk": "Правова інформація",
+    "es": "Aviso legal",
+    "ku": "Agahiya qanûnî",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/legal") };
 }
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 interface LegalContent {
   title: string;
@@ -235,6 +238,108 @@ const CONTENT: Record<LangKey, LegalContent> = {
       },
     ],
   },
+  "uk": {
+    "title": "Правова інформація",
+    "updated": "Останнє оновлення: травень 2026",
+    "sections": [
+      {
+        "heading": "1. Видавець сайту",
+        "body": "Цей вебсайт www.praxisloten.be видає:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nБельгія\n\nТелефон: +32 87 55 56 70\nЕлектронна пошта: praxisloten@gmail.com\n\nВідповідальний за публікацію: Philippe Banaszak, фізіотерапевт, зареєстрований в INAMI, № 5-39936-63-527.\n\nPraxis Loten — кабінет фізіотерапії та мануальної терапії, що працює відповідно до бельгійського законодавства про професії у сфері охорони здоров'я (Loi coordonnée du 10 mai 2015 relative à l'exercice des professions des soins de santé — Координований закон від 10 травня 2015 року про здійснення професій у сфері охорони здоров'я)."
+      },
+      {
+        "heading": "2. Хостинг",
+        "body": "Цей сайт розміщено на хостингу:\n\nVercel Inc.\n340 Pine Street, Suite 701\nSan Francisco, CA 94104\nСША\nВебсайт: https://vercel.com\n\nТехнічні дані передаються через глобальну інфраструктуру Vercel, що регулюється стандартними договірними положеннями, які відповідають GDPR (RGPD), для передавання даних за межі ЄС."
+      },
+      {
+        "heading": "3. Інтелектуальна власність",
+        "body": "Увесь вміст цього сайту (тексти, зображення, фотографії, графіка, логотипи, іконки, звуки, програмне забезпечення тощо) є виключною власністю Praxis Loten або її партнерів і охороняється бельгійським та міжнародним законодавством про авторське право й інтелектуальну власність.\n\nБудь-яке відтворення, поширення, змінення, адаптація, повторна трансляція чи публікація цих елементів суворо заборонені без попередньої письмової згоди Praxis Loten."
+      },
+      {
+        "heading": "4. Відповідальність",
+        "body": "Інформація, опублікована на цьому сайті, має суто інформаційний характер і не є медичною порадою, діагнозом чи терапевтичним призначенням. Вона не може замінити консультацію кваліфікованого медичного фахівця.\n\nPraxis Loten докладає зусиль для підтримання інформації в актуальному стані, але не може гарантувати її точність, повноту чи актуальність. Praxis Loten не несе жодної відповідальності за прямі чи непрямі збитки, які можуть виникнути внаслідок використання цього сайту або його вмісту.\n\nГіперпосилання з цього сайту на сторонні сайти не покладають на Praxis Loten відповідальності за вміст цих сайтів."
+      },
+      {
+        "heading": "5. Персональні дані та файли cookie",
+        "body": "Обробку персональних даних, зібраних через цей сайт, описано в нашій Політиці конфіденційності.\n\nВикористання файлів cookie описано в нашій Політиці щодо файлів cookie.\n\nВідповідно до Регламенту (ЄС) 2016/679 (GDPR/RGPD) та бельгійського закону від 30 липня 2018 року про захист фізичних осіб щодо обробки персональних даних Ви маєте права щодо своїх даних (доступ, виправлення, видалення, перенесення, заперечення). Ці права реалізуються шляхом звернення до Praxis Loten за вказаною вище адресою або електронною поштою на praxisloten@gmail.com."
+      },
+      {
+        "heading": "6. Застосовне право та юрисдикція",
+        "body": "Цей сайт і ця правова інформація регулюються бельгійським правом. У разі спору, після спроби мирного врегулювання, компетентними є суди судового округу Льєжа, якщо інше не передбачено законом."
+      }
+    ]
+  },
+  "es": {
+    "title": "Aviso legal",
+    "updated": "Última actualización: mayo de 2026",
+    "sections": [
+      {
+        "heading": "1. Editor del sitio",
+        "body": "El presente sitio web www.praxisloten.be es editado por:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBélgica\n\nTeléfono: +32 87 55 56 70\nCorreo electrónico: praxisloten@gmail.com\n\nResponsable de la publicación: Philippe Banaszak, fisioterapeuta autorizado por el INAMI, n.º 5-39936-63-527.\n\nPraxis Loten es una consulta de fisioterapia y terapia manual que ejerce de conformidad con la legislación belga sobre las profesiones sanitarias (Loi coordonnée du 10 mai 2015 relative à l'exercice des professions des soins de santé — Ley coordinada de 10 de mayo de 2015 relativa al ejercicio de las profesiones sanitarias)."
+      },
+      {
+        "heading": "2. Alojamiento",
+        "body": "Este sitio está alojado por:\n\nVercel Inc.\n340 Pine Street, Suite 701\nSan Francisco, CA 94104\nEstados Unidos\nSitio web: https://vercel.com\n\nLos datos técnicos transitan por la infraestructura mundial de Vercel, regulada por cláusulas contractuales tipo conformes al RGPD para las transferencias fuera de la UE."
+      },
+      {
+        "heading": "3. Propiedad intelectual",
+        "body": "El conjunto de los contenidos presentes en este sitio (textos, imágenes, fotografías, gráficos, logotipos, iconos, sonidos, programas informáticos, etc.) es propiedad exclusiva de Praxis Loten o de sus socios y está protegido por las leyes belgas e internacionales relativas a los derechos de autor y a la propiedad intelectual.\n\nQueda estrictamente prohibida cualquier reproducción, distribución, modificación, adaptación, retransmisión o publicación de estos elementos sin el consentimiento previo por escrito de Praxis Loten."
+      },
+      {
+        "heading": "4. Responsabilidad",
+        "body": "La información publicada en este sitio tiene un carácter puramente informativo y no constituye un consejo médico, un diagnóstico ni una prescripción terapéutica. No puede sustituir una consulta con un profesional sanitario cualificado.\n\nPraxis Loten se esfuerza por mantener la información actualizada, pero no puede garantizar su exactitud, exhaustividad o actualidad. Praxis Loten declina toda responsabilidad por los daños directos o indirectos que puedan derivarse del uso de este sitio o de su contenido.\n\nLos hipervínculos presentes en este sitio hacia sitios de terceros no comprometen la responsabilidad de Praxis Loten en cuanto al contenido de dichos sitios."
+      },
+      {
+        "heading": "5. Datos personales y cookies",
+        "body": "El tratamiento de los datos personales recogidos a través de este sitio se describe en nuestra Política de privacidad.\n\nEl uso de cookies se describe en nuestra Política de cookies.\n\nDe conformidad con el Reglamento (UE) 2016/679 (RGPD) y con la ley belga de 30 de julio de 2018 relativa a la protección de las personas físicas en lo que respecta al tratamiento de datos personales, usted dispone de derechos sobre sus datos (acceso, rectificación, supresión, portabilidad, oposición). Estos derechos se ejercen contactando con Praxis Loten en la dirección indicada arriba o por correo electrónico en praxisloten@gmail.com."
+      },
+      {
+        "heading": "6. Ley aplicable y jurisdicción",
+        "body": "El presente sitio y el presente aviso legal se rigen por el derecho belga. En caso de litigio, y tras un intento de resolución amistosa, serán competentes los tribunales del distrito judicial de Lieja, salvo disposición legal en contrario."
+      }
+    ]
+  },
+  "ku": {
+    "title": "Agahiya qanûnî",
+    "updated": "Nûkirina dawî: Gulan 2026",
+    "sections": [
+      {
+        "heading": "1. Weşanerê malperê",
+        "body": "Ev malpera www.praxisloten.be ji aliyê vê saziyê ve tê weşandin:\n\nPraxis Loten\nLoten 1\nB-4700 Eupen\nBelçîka\n\nTelefon: +32 87 55 56 70\nE-name: praxisloten@gmail.com\n\nBerpirsiyarê weşanê: Philippe Banaszak, fizyoterapîstê ku ji aliyê INAMI ve hatiye pejirandin, hejmar 5-39936-63-527.\n\nPraxis Loten kabîneyeke fizyoterapî û terapiya destî ye, ku li gorî qanûnên Belçîkayê yên li ser pîşeyên tenduristiyê kar dike (Loi coordonnée du 10 mai 2015 relative à l'exercice des professions des soins de santé — Qanûna hevrêzkirî ya 10ê Gulana 2015an li ser pêkanîna pîşeyên lênêrîna tenduristiyê)."
+      },
+      {
+        "heading": "2. Mazûvanî (hosting)",
+        "body": "Ev malper ji aliyê vê saziyê ve tê mazûvankirin:\n\nVercel Inc.\n340 Pine Street, Suite 701\nSan Francisco, CA 94104\nDewletên Yekbûyî yên Amerîkayê\nMalper: https://vercel.com\n\nDaneyên teknîkî di binesaziya cîhanî ya Vercel re derbas dibin, ku ji bo veguhestinên derveyî YE bi xalên peymanê yên standard ên li gorî GDPR (RGPD) tê birêvebirin."
+      },
+      {
+        "heading": "3. Milkiyeta fikrî",
+        "body": "Hemû naveroka vê malperê (nivîs, wêne, fotograf, grafîk, logo, îkon, deng, nermalav, hwd.) milkê taybet ê Praxis Loten an hevkarên wê ye, û ji aliyê qanûnên Belçîkayê û navneteweyî yên li ser mafê nivîskar û milkiyeta fikrî ve tê parastin.\n\nHer cure dubarekirin, belavkirin, guhertin, adaptekirin, ji nû ve weşandin an weşandina van hêmanan bêyî razîbûna nivîskî ya pêşîn a Praxis Loten bi tundî qedexe ye."
+      },
+      {
+        "heading": "4. Berpirsiyarî",
+        "body": "Agahiyên ku li ser vê malperê tên weşandin tenê ji bo agahdariyê ne û ne şîreteke bijîşkî, ne teşxîs û ne jî reçeteyeke terapîk in. Ew nikarin şûna şêwirdariyeke bi pisporekî tenduristiyê yê jêhatî re bigirin.\n\nPraxis Loten hewl dide ku agahiyan rojane bihêle, lê nikare rastî, temamî an rojanebûna wan garantî bike. Praxis Loten ji bo zirarên rasterast an nerasterast ên ku dikarin ji bikaranîna vê malperê an naveroka wê derkevin, tu berpirsiyariyê qebûl nake.\n\nGirêdanên (hyperlink) li ser vê malperê ber bi malperên aliyên sêyem ve, di derbarê naveroka wan malperan de berpirsiyariya Praxis Loten çênakin."
+      },
+      {
+        "heading": "5. Daneyên kesane û cookie",
+        "body": "Pêvajoya daneyên kesane yên ku bi rêya vê malperê tên berhevkirin di Polîtîkaya me ya nepenîtiyê de tê vegotin.\n\nBikaranîna cookie di Polîtîkaya me ya cookie de tê vegotin.\n\nLi gorî Rêziknameya (YE) 2016/679 (GDPR/RGPD) û qanûna Belçîkayê ya 30ê Tîrmeha 2018an li ser parastina kesên xwezayî di derbarê pêvajoya daneyên kesane de, li ser daneyên we mafên we hene (gihîştin, rastkirin, jêbirin, veguhestin, îtîraz). Ev maf bi têkiliya bi Praxis Loten re li navnîşana li jor an bi e-nameyê li praxisloten@gmail.com tên bikaranîn."
+      },
+      {
+        "heading": "6. Qanûna derbasdar û dadgehî",
+        "body": "Ev malper û ev agahiya qanûnî girêdayî qanûna Belçîkayê ne. Di rewşa nakokiyekê de, û piştî hewldaneke çareseriya bi aştiyane, dadgehên desthilatdar ên herêma dadwerî ya Liège dê bin, heke qanûn tiştekî din ferz neke."
+      }
+    ]
+  },
+};
+
+/** Les traductions des textes legaux sont fournies pour information ; FR et DE font foi. */
+const AUTHORITATIVE_NOTICE: Partial<Record<string, string>> = {
+  en: "This translation is provided for information only. The French and German versions are authoritative.",
+  nl: "Deze vertaling wordt uitsluitend ter informatie verstrekt. De Franse en Duitse versies zijn rechtsgeldig.",
+  tr: "Bu çeviri yalnızca bilgilendirme amaçlıdır. Fransızca ve Almanca sürümler esas alınır.",
+  ar: "هذه الترجمة مقدمة لأغراض إعلامية فقط. النسختان الفرنسية والألمانية هما المرجع المعتمد.",
+  pl: "Niniejsze tłumaczenie ma charakter wyłącznie informacyjny. Wiążące są wersje francuska i niemiecka.",
+  uk: "Цей переклад надано лише для ознайомлення. Чинними є французька та німецька версії.",
+  es: "Esta traducción se facilita solo a título informativo. Las versiones francesa y alemana son las que dan fe.",
+  ku: "Ev werger tenê ji bo agahdariyê ye. Guhertoyên fransî û almanî yên fermî ne.",
 };
 
 export default async function LegalPage({
@@ -254,6 +359,9 @@ export default async function LegalPage({
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-neutral-900 mb-2">{c.title}</h1>
         <p className="text-sm text-neutral-400 mb-10">{c.updated}</p>
+        {AUTHORITATIVE_NOTICE[locale] && (
+          <p className="text-sm text-neutral-500 italic mb-8">{AUTHORITATIVE_NOTICE[locale]}</p>
+        )}
 
         <div className="space-y-10">
           {c.sections.map((section, i) => (

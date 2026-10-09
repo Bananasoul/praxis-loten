@@ -4,7 +4,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { useLocale } from "next-intl";
 import { CheckCircle2, MapPin, Clock, Users, Mail, Phone, Briefcase, Building2, Star, UserCheck, Handshake, Send } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const UI: Record<LangKey, {
   badge: string; h1a: string; h1b: string; subtitle: string;
@@ -318,11 +318,143 @@ const UI: Record<LangKey, {
     email: "praxisloten@gmail.com",
     address: "Praxis Loten, Loten 1, 4700 Eupen",
   },
+  "uk": {
+    "badge": "Приєднуйтеся до нашої команди",
+    "h1a": "Приєднуйтеся до",
+    "subtitle": "Фізіотерапевт(-ка) на самозайнятості — Ойпен, Бельгія",
+    "offerBadge": "ВАКАНСІЯ",
+    "jobTitle": "Фізіотерапевт — запрошуємо фахівців усіх спеціалізацій",
+    "location": "Ойпен, Бельгія",
+    "statusLabel": "Самозайнятість — вільна співпраця",
+    "convention": "На Ваш вибір — із конвенцією чи без",
+    "hours": "Гнучкий графік, який Ви організовуєте самі",
+    "profiles": "Від молодих випускників до досвідчених фахівців",
+    "practiceTitle": "Кабінет",
+    "practice": "Praxis Loten — це груповий кабінет у центрі Ойпена, зовсім поруч із лікарнею Saint-Nicolas. Ним спільно володіють три фізіотерапевти, і він об'єднує команду фахівців із взаємодоповнювальними компетенціями: мануальна терапія, спортивна фізіотерапія, лімфологія, дисфункції скронево-нижньощелепного суглоба, післяопераційна реабілітація. Кабінет має чотири повністю обладнані процедурні приміщення та спільну тренувальну зону для активної реабілітації.",
+    "roleTitle": "Ваша роль",
+    "role": "Ви супроводжуєте своїх пацієнтів до їхніх цілей щодо здоров'я — полегшення, функції, самостійності та повернення до активності — у межах біопсихосоціального підходу. Ви повністю самостійно ведете своїх пацієнтів, водночас користуючись підтримкою та доступністю команди. Локальна база пацієнтів уже сформована: Вам буде легше розпочати.",
+    "offerTitle": "Що ми пропонуємо",
+    "offer": [
+      "Уже сформована локальна база пацієнтів — старт без потреби будувати все з нуля.",
+      "Чотири обладнані процедурні кабінети та спільна тренувальна зона для активної реабілітації.",
+      "Відкрита й доступна команда: обговорення окремих випадків, обмін досвідом і порадами.",
+      "Гнучкий графік, який Ви організовуєте самі.",
+      "Кабінет у центрі міста, з легким доступом і зручним паркуванням.",
+      "Вільний вибір щодо конвенції INAMI: із конвенцією чи без — вирішуєте Ви.",
+      "Співпраця, розрахована на довгу перспективу."
+    ],
+    "profileTitle": "Ваш профіль",
+    "profile": [
+      "Диплом фізіотерапевта, визнаний у Бельгії (магістр фізіотерапії та реабілітаційних наук або рівноцінна міжнародна освіта, що дає змогу отримати номер INAMI).",
+      "Номер INAMI отримано або він у процесі отримання.",
+      "Статус самозайнятої особи.",
+      "Німецька: щонайменше міцна база та бажання її поглибити. Наші пацієнти в Ойпені розмовляють німецькою — володіння німецькою є великою перевагою, а з часом і справжньою необхідністю.",
+      "Французька: вільне володіння.",
+      "Запрошуємо фахівців усіх спеціалізацій."
+    ],
+    "conditionsTitle": "Умови",
+    "conditions": "Умови співпраці вигідні: ретроцесія, яку ми просимо, помітно нижча, ніж зазвичай у регіоні Льєжа. Деталі (ретроцесія чи оренда) обговорюються під час співбесіди — так зрозуміліше, і це також дає нам змогу познайомитися.",
+    "applyTitle": "Подати заявку",
+    "applyText": "Надішліть нам свою кандидатуру — резюме та мотиваційний лист — електронною поштою. Для першої неформальної розмови можна також просто зателефонувати.",
+    "h1b": "Praxis Loten",
+    "contactName": "Philippe Banaszak",
+    "phone": "+32 478 21 81 86",
+    "email": "praxisloten@gmail.com",
+    "address": "Praxis Loten, Loten 1, 4700 Eupen"
+  },
+  "es": {
+    "badge": "Únase a nuestro equipo",
+    "h1a": "Únase a",
+    "subtitle": "Fisioterapeuta autónomo/a — Eupen, Bélgica",
+    "offerBadge": "OFERTA DE EMPLEO",
+    "jobTitle": "Fisioterapeuta — todas las especializaciones son bienvenidas",
+    "location": "Eupen, Bélgica",
+    "statusLabel": "Autónomo — colaboración liberal",
+    "convention": "A libre elección — concertado o no",
+    "hours": "Flexibles, organizados libremente",
+    "profiles": "Desde recién titulados hasta profesionales con experiencia",
+    "practiceTitle": "La consulta",
+    "practice": "Praxis Loten es una consulta de grupo situada en el centro de Eupen, muy cerca del hospital Saint-Nicolas. Copropiedad de tres fisioterapeutas, reúne a un equipo de profesionales con competencias complementarias: terapia manual, fisioterapia deportiva, linfología, disfunciones de la articulación temporomandibular y rehabilitación posoperatoria. La consulta dispone de cuatro salas de tratamiento totalmente equipadas y de una zona técnica común dedicada a la rehabilitación activa.",
+    "roleTitle": "Su función",
+    "role": "Acompaña a sus pacientes hacia sus objetivos de salud — alivio, función, autonomía y vuelta a la actividad — con un enfoque biopsicosocial. Gestiona su cartera de pacientes con total autonomía, a la vez que cuenta con el apoyo y la disponibilidad de un equipo. Ya existe una base local de pacientes: su comienzo será más fácil.",
+    "offerTitle": "Lo que ofrecemos",
+    "offer": [
+      "Una base local de pacientes ya establecida — un comienzo sin tener que construirlo todo desde cero.",
+      "Cuatro salas de tratamiento equipadas y una zona técnica común para la rehabilitación activa.",
+      "Un equipo abierto y disponible: intercambios caso por caso, experiencia y consejos compartidos.",
+      "Horarios flexibles que usted mismo organiza.",
+      "Una consulta céntrica, de fácil acceso y con aparcamiento cómodo.",
+      "Libre elección de su adhesión al convenio INAMI: concertado o no concertado, usted decide.",
+      "Una colaboración pensada a largo plazo."
+    ],
+    "profileTitle": "Su perfil",
+    "profile": [
+      "Título de fisioterapia reconocido en Bélgica (máster en fisioterapia y ciencias de la rehabilitación, o formación internacional equivalente que permita obtener un número INAMI).",
+      "Número INAMI obtenido o en trámite.",
+      "Estatus de autónomo.",
+      "Alemán: al menos una base sólida, con voluntad de profundizar. Nuestros pacientes de Eupen son germanohablantes — dominar el alemán es una gran ventaja y, a medio plazo, una verdadera necesidad.",
+      "Francés: fluido.",
+      "Todas las especializaciones son bienvenidas."
+    ],
+    "conditionsTitle": "Condiciones",
+    "conditions": "Las condiciones de colaboración son ventajosas: la retrocesión solicitada es notablemente inferior a la habitual en la región de Lieja. Los detalles (retrocesión o alquiler) se tratan en una entrevista — es más claro y también nos permite conocernos.",
+    "applyTitle": "Presentar candidatura",
+    "applyText": "Envíenos su candidatura — CV y carta de motivación — por correo electrónico. Para un primer intercambio informal, una llamada telefónica también es bienvenida.",
+    "h1b": "Praxis Loten",
+    "contactName": "Philippe Banaszak",
+    "phone": "+32 478 21 81 86",
+    "email": "praxisloten@gmail.com",
+    "address": "Praxis Loten, Loten 1, 4700 Eupen"
+  },
+  "ku": {
+    "badge": "Tevlî tîma me bibin",
+    "h1a": "Tevlî",
+    "subtitle": "Fizyoterapîst (serbixwe) — Eupen, Belçîka",
+    "offerBadge": "PÊŞNIYARA KAR",
+    "jobTitle": "Fizyoterapîst — hemû pisporî bi xêr hatin",
+    "location": "Eupen, Belçîka",
+    "statusLabel": "Serbixwe — hevkariya azad",
+    "convention": "Bi bijartina azad — bi peyman an bê peyman",
+    "hours": "Nerm, bi azadî têne organîzekirin",
+    "profiles": "Ji mezûnên nû heta pratîsyenên bi ezmûn",
+    "practiceTitle": "Kabîne",
+    "practice": "Praxis Loten kabîneyeke komê ye ku li navenda Eupenê ye, rasterast li nêzî nexweşxaneya Saint-Nicolas. Sê fizyoterapîst bi hev re xwediyê wê ne, û ew tîmeke pratîsyenan bi jêhatîbûnên temamker dicivîne: terapiya destî, fizyoterapiya werzîşê, lîmfolojî, disfonksiyonên movika çenê (TMJ), rehabîlîtasyona piştî emeliyatê. Kabîne xwedî çar odeyên dermankirinê yên bi tevahî amadekirî û qadeke teknîkî ya hevpar e ku ji bo rehabîlîtasyona çalak hatiye veqetandin.",
+    "roleTitle": "Rola we",
+    "role": "Hûn nexweşên xwe ber bi armancên wan ên tenduristiyê ve dibin — sivikbûna êşê, fonksiyon, serbixwebûn û vegera çalakiyê — bi nêzîkatiyeke biyopsîkososyal. Hûn nexweşên xwe bi tevahî serbixwe birêve dibin, di heman demê de ji piştgirî û amadebûna tîmekê sûd werdigirin. Komeke nexweşên herêmî jixwe heye: destpêka we hêsantir dibe.",
+    "offerTitle": "Em çi pêşkêş dikin",
+    "offer": [
+      "Komeke nexweşên herêmî ya jixwe damezrandî — destpêkek bêyî ku hûn her tiştî ji sifirê ava bikin.",
+      "Çar odeyên dermankirinê yên amadekirî û qadeke teknîkî ya hevpar ji bo rehabîlîtasyona çalak.",
+      "Tîmeke vekirî û amade: danûstandin li ser her rewşê, parvekirina ezmûn û şîretan.",
+      "Demjimêrên nerm ku hûn bi xwe organîze dikin.",
+      "Kabîneyeke navendî, bi gihîştina hêsan û parkkirina rehet.",
+      "Bijartina azad a peymana we ya INAMI: bi peyman an bê peyman — biryar a we ye.",
+      "Hevkariyeke ji bo demeke dirêj hatî plankirin."
+    ],
+    "profileTitle": "Profîla we",
+    "profile": [
+      "Dîplomaya fizyoterapiyê ya li Belçîkayê naskirî (master di fizyoterapî û zanistên rehabîlîtasyonê de, an perwerdeyeke navneteweyî ya hevwate ku rê dide wergirtina hejmara INAMI).",
+      "Hejmara INAMI hatiye wergirtin an di pêvajoya wergirtinê de ye.",
+      "Statûya serbixwe.",
+      "Almanî: bi kêmanî bingeheke xurt, bi daxwaza pêşxistina wê. Nexweşên me yên li Eupenê bi almanî diaxivin — zanîna almanî avantajeke mezin e û, bi demê re, pêwîstiyeke rastîn e.",
+      "Fransî: bi herikbarî.",
+      "Hemû pisporî bi xêr hatin."
+    ],
+    "conditionsTitle": "Şert û merc",
+    "conditions": "Şert û mercên hevkariyê bi avantaj in: rêjeya vegerandinê (retrocession) ya tê xwestin bi berçavî ji ya ku li herêma Liège tê kirin kêmtir e. Hûrgilî (retrocession an kirê) di hevdîtinekê de têne nîqaşkirin — ev zelaltir e, û her weha dihêle ku em hevdu nas bikin.",
+    "applyTitle": "Serlêdan bikin",
+    "applyText": "Serlêdana xwe — CV û nameya motîvasyonê — bi e-nameyê ji me re bişînin. Ji bo axaftineke pêşîn a nefermî, têlefonek jî bi xêr tê.",
+    "h1b": "Praxis Loten",
+    "contactName": "Philippe Banaszak",
+    "phone": "+32 478 21 81 86",
+    "email": "praxisloten@gmail.com",
+    "address": "Praxis Loten, Loten 1, 4700 Eupen"
+  },
 };
 
 export function JobsPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const isRtl = lang === "ar";
 

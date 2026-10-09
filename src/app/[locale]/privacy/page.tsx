@@ -12,11 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Gizlilik Politikası",
     ar: "سياسة الخصوصية",
     pl: "Polityka prywatności",
+    "uk": "Політика конфіденційності",
+    "es": "Política de privacidad",
+    "ku": "Polîtîkaya nepenîtiyê",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/privacy") };
 }
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 interface PrivacyContent {
   title: string;
@@ -278,6 +281,159 @@ const CONTENT: Record<LangKey, PrivacyContent> = {
       },
     ],
   },
+  "uk": {
+    "title": "Політика конфіденційності",
+    "updated": "Останнє оновлення: травень 2026 р.",
+    "intro": "Захист Ваших персональних даних є пріоритетом для Praxis Loten. Ця політика описує, як ми збираємо, використовуємо та захищаємо Ваші дані відповідно до Регламенту (ЄС) 2016/679 (GDPR) та бельгійського закону від 30 липня 2018 року про захист персональних даних.",
+    "sections": [
+      {
+        "heading": "1. Контролер даних",
+        "body": "Praxis Loten\nLoten 1 — B-4700 Eupen — Бельгія\nТелефон: +32 87 55 56 70\nЕл. пошта: praxisloten@gmail.com\n\nКонтролер даних: Philippe Banaszak"
+      },
+      {
+        "heading": "2. Дані, які ми збираємо",
+        "body": "Ми можемо збирати такі категорії даних:\n\n• Контактні дані: прізвище, ім'я, номер телефону, адреса електронної пошти — коли Ви заповнюєте форму зворотного зв'язку або запису на прийом.\n• Дані про здоров'я (лише в контексті лікування): інформація, яку Ви повідомляєте під час лікування в кабінеті. Ці дані обробляються з максимальним рівнем захисту, якого вимагає стаття 9 GDPR.\n• Технічні дані: IP-адреса (анонімізована), тип браузера, операційна система, відвідані сторінки, тривалість відвідувань — збираються автоматично через Google Analytics 4.\n• Дані про перегляд (файли cookie): див. нашу Політику щодо файлів cookie."
+      },
+      {
+        "heading": "3. Цілі та правові підстави обробки",
+        "body": "Кожна обробка ґрунтується на правовій підставі відповідно до статті 6 GDPR:\n\n• Керування записами на прийом і стосунками з пацієнтом: виконання договору (ст. 6.1.b) — обробка, необхідна для терапевтичного супроводу.\n• Відповіді на запити: законний інтерес (ст. 6.1.f) — Ви самі звернулися до нашого кабінету.\n• Статистика відвідуваності через Google Analytics: згода (ст. 6.1.a) — під час першого відвідування Ви вільні погодитися або відмовитися.\n• Юридичні обов'язки (зберігання медичної документації): юридичний обов'язок (ст. 6.1.c) — бельгійське законодавство вимагає зберігати медичну документацію 30 років."
+      },
+      {
+        "heading": "4. Строки зберігання",
+        "body": "• Медична документація: 30 років після останньої консультації (юридичний обов'язок, кодифікований закон від 22 серпня 2002 року про права пацієнта).\n• Контактні дані та листування: 3 роки після останнього контакту.\n• Аналітичні дані (Google Analytics): 14 місяців (стандартне налаштування Google Analytics 4).\n• Дані файлів cookie: див. нашу Політику щодо файлів cookie."
+      },
+      {
+        "heading": "5. Одержувачі та обробники",
+        "body": "Ваші дані ніколи не продаються і не передаються третім особам у комерційних цілях. Ними можуть ділитися з:\n\n• Google LLC (Google Analytics 4) — анонімізоване вимірювання відвідуваності. На Google поширюються Стандартні договірні положення (SCC) щодо передавання даних до США. Політика конфіденційності Google: https://policies.google.com/privacy\n• Vercel Inc. — хостинг-провайдер вебсайту. Технічні дані проходять через сервери Vercel, що регулюється SCC відповідно до GDPR.\n• Медичні фахівці-партнери — лише для забезпечення безперервності лікування і з Вашої явної згоди.\n• Державні органи — якщо цього вимагає закон (судове рішення тощо)."
+      },
+      {
+        "heading": "6. Передавання за межі Європейського Союзу",
+        "body": "Google Analytics і Vercel обробляють дані на серверах, розташованих у США. Таке передавання регулюється Стандартними договірними положеннями, ухваленими Європейською Комісією (рішення 2021/914), які гарантують рівень захисту, рівнозначний рівню ЄС.\n\nВи можете будь-коли вимкнути Google Analytics через нашу Політику щодо файлів cookie або встановивши офіційне розширення: https://tools.google.com/dlpage/gaoptout"
+      },
+      {
+        "heading": "7. Ваші права",
+        "body": "Відповідно до статей 15–22 GDPR Ви маєте такі права:\n\n• Право на доступ (ст. 15): отримати копію своїх даних.\n• Право на виправлення (ст. 16): виправити неточні дані.\n• Право на видалення (ст. 17): вимагати видалення своїх даних (з урахуванням юридичних обов'язків щодо зберігання).\n• Право на обмеження (ст. 18): тимчасово обмежити обробку.\n• Право на перенесення (ст. 20): отримати свої дані в структурованому форматі.\n• Право на заперечення (ст. 21): заперечити проти певної обробки, що ґрунтується на законному інтересі.\n• Право відкликати згоду (ст. 7.3): будь-коли, без впливу на обробку, здійснену раніше.\n\nЩоб скористатися цими правами, напишіть нам на ел. пошту praxisloten@gmail.com або поштою на адресу Praxis Loten, Loten 1, B-4700 Eupen. Ми відповімо протягом щонайбільше 30 днів."
+      },
+      {
+        "heading": "8. Право на подання скарги",
+        "body": "Якщо Ви вважаєте, що обробка Ваших даних порушує GDPR, Ви маєте право подати скаргу до Органу із захисту даних (APD):\n\nAutorité de Protection des Données\nRue de la Presse 35 — 1000 Bruxelles\nТел.: +32 2 274 48 00\ncontact@apd-gba.be\nwww.autoriteprotectiondonnees.be"
+      },
+      {
+        "heading": "9. Безпека",
+        "body": "Praxis Loten вживає належних технічних та організаційних заходів, щоб захистити Ваші дані від втрати, несанкціонованого доступу, розголошення чи знищення. Сайт працює виключно через HTTPS (TLS 1.3)."
+      },
+      {
+        "heading": "10. Зміни",
+        "body": "Ця політика може бути оновлена в будь-який час. Чинною є версія, опублікована на цій сторінці, з датою останнього оновлення, зазначеною вгорі."
+      }
+    ]
+  },
+  "es": {
+    "title": "Política de privacidad",
+    "updated": "Última actualización: mayo de 2026",
+    "intro": "La protección de sus datos personales es una prioridad para Praxis Loten. La presente política describe cómo recogemos, utilizamos y protegemos sus datos de conformidad con el Reglamento (UE) 2016/679 (RGPD) y la ley belga de 30 de julio de 2018 relativa a la protección de datos de carácter personal.",
+    "sections": [
+      {
+        "heading": "1. Responsable del tratamiento",
+        "body": "Praxis Loten\nLoten 1 — B-4700 Eupen — Bélgica\nTeléfono: +32 87 55 56 70\nCorreo electrónico: praxisloten@gmail.com\n\nResponsable del tratamiento: Philippe Banaszak"
+      },
+      {
+        "heading": "2. Datos recogidos",
+        "body": "Podemos recoger las siguientes categorías de datos:\n\n• Datos de contacto: apellido, nombre, número de teléfono, dirección de correo electrónico, cuando rellena un formulario de contacto o de solicitud de cita.\n• Datos de salud (solo en el contexto asistencial): información comunicada durante su atención en la consulta. Estos datos se tratan con el máximo nivel de protección exigido por el artículo 9 del RGPD.\n• Datos técnicos: dirección IP (anonimizada), tipo de navegador, sistema operativo, páginas visitadas, duración de las visitas, recogidos automáticamente mediante Google Analytics 4.\n• Datos de navegación (cookies): véase nuestra Política de cookies."
+      },
+      {
+        "heading": "3. Finalidades y bases jurídicas del tratamiento",
+        "body": "Cada tratamiento se basa en una base jurídica conforme al artículo 6 del RGPD:\n\n• Gestión de las citas y de la relación con el paciente: ejecución de un contrato (art. 6.1.b), tratamiento necesario para la atención terapéutica.\n• Respuesta a las solicitudes de contacto: interés legítimo (art. 6.1.f), usted se ha dirigido a nuestra consulta.\n• Estadísticas de audiencia mediante Google Analytics: consentimiento (art. 6.1.a), usted es libre de aceptar o rechazar en su primera visita.\n• Obligaciones legales (conservación de los historiales asistenciales): obligación legal (art. 6.1.c), la ley belga impone la conservación de los historiales médicos durante 30 años."
+      },
+      {
+        "heading": "4. Plazos de conservación",
+        "body": "• Historiales asistenciales: 30 años después de la última consulta (obligación legal, ley coordinada de 22 de agosto de 2002 relativa a los derechos del paciente).\n• Datos de contacto y correspondencia: 3 años después del último contacto.\n• Datos analíticos (Google Analytics): 14 meses (parámetro por defecto de Google Analytics 4).\n• Datos de las cookies: véase nuestra Política de cookies."
+      },
+      {
+        "heading": "5. Destinatarios y encargados del tratamiento",
+        "body": "Sus datos nunca se venden ni se ceden a terceros con fines comerciales. Pueden compartirse con:\n\n• Google LLC (Google Analytics 4): medición de audiencia anonimizada. Google está sujeto a las Cláusulas Contractuales Tipo (CCT) para las transferencias a los Estados Unidos. Política de privacidad de Google: https://policies.google.com/privacy\n• Vercel Inc.: proveedor de alojamiento del sitio web. Los datos técnicos transitan por los servidores de Vercel, regulados por CCT conformes al RGPD.\n• Profesionales de la salud colaboradores: únicamente en el marco de la continuidad asistencial y con su consentimiento explícito.\n• Autoridades legales: si la ley lo exige (orden judicial, etc.)."
+      },
+      {
+        "heading": "6. Transferencias fuera de la Unión Europea",
+        "body": "Google Analytics y Vercel tratan datos en servidores situados en los Estados Unidos. Estas transferencias están reguladas por las Cláusulas Contractuales Tipo adoptadas por la Comisión Europea (Decisión 2021/914), que garantizan un nivel de protección equivalente al de la UE.\n\nPuede desactivar Google Analytics en cualquier momento a través de nuestra Política de cookies o instalando la extensión oficial: https://tools.google.com/dlpage/gaoptout"
+      },
+      {
+        "heading": "7. Sus derechos",
+        "body": "De conformidad con los artículos 15 a 22 del RGPD, usted dispone de los siguientes derechos:\n\n• Derecho de acceso (art. 15): obtener una copia de sus datos.\n• Derecho de rectificación (art. 16): corregir datos inexactos.\n• Derecho de supresión (art. 17): solicitar la eliminación de sus datos (sin perjuicio de las obligaciones legales de conservación).\n• Derecho a la limitación (art. 18): restringir temporalmente el tratamiento.\n• Derecho a la portabilidad (art. 20): recibir sus datos en un formato estructurado.\n• Derecho de oposición (art. 21): oponerse a determinados tratamientos basados en el interés legítimo.\n• Derecho a retirar su consentimiento (art. 7.3): en cualquier momento, sin que ello afecte a los tratamientos anteriores.\n\nPara ejercer estos derechos, contáctenos por correo electrónico en praxisloten@gmail.com o por correo postal a Praxis Loten, Loten 1, B-4700 Eupen. Responderemos en un plazo máximo de 30 días."
+      },
+      {
+        "heading": "8. Derecho a presentar una reclamación",
+        "body": "Si considera que el tratamiento de sus datos infringe el RGPD, tiene derecho a presentar una reclamación ante la Autoridad de Protección de Datos (APD):\n\nAutorité de Protection des Données\nRue de la Presse 35 — 1000 Bruxelles\nTel.: +32 2 274 48 00\ncontact@apd-gba.be\nwww.autoriteprotectiondonnees.be"
+      },
+      {
+        "heading": "9. Seguridad",
+        "body": "Praxis Loten aplica las medidas técnicas y organizativas adecuadas para proteger sus datos contra la pérdida, el acceso no autorizado, la divulgación o la destrucción. El sitio se sirve exclusivamente en HTTPS (TLS 1.3)."
+      },
+      {
+        "heading": "10. Modificaciones",
+        "body": "La presente política puede actualizarse en cualquier momento. La versión vigente es la publicada en esta página, con la fecha de la última actualización indicada en la parte superior."
+      }
+    ]
+  },
+  "ku": {
+    "title": "Polîtîkaya nepenîtiyê",
+    "updated": "Nûkirina dawî: Gulan 2026",
+    "intro": "Parastina daneyên we yên kesane ji bo Praxis Loten pêşîniyek e. Ev polîtîka rave dike ka em daneyên we çawa berhev dikin, bi kar tînin û diparêzin, li gorî Rêziknameya (YE) 2016/679 (GDPR) û qanûna Belçîkayê ya 30ê Tîrmeha 2018an a derbarê parastina daneyên kesane de.",
+    "sections": [
+      {
+        "heading": "1. Berpirsê pêvajoyê",
+        "body": "Praxis Loten\nLoten 1 — B-4700 Eupen — Belçîka\nTelefon: +32 87 55 56 70\nE-name: praxisloten@gmail.com\n\nBerpirsê pêvajoyê: Philippe Banaszak"
+      },
+      {
+        "heading": "2. Daneyên ku têne berhevkirin",
+        "body": "Em dikarin van kategoriyên daneyan berhev bikin:\n\n• Daneyên têkiliyê: paşnav, nav, hejmara telefonê, navnîşana e-nameyê — dema ku hûn formeke têkiliyê an girtina randevûyê tijî dikin.\n• Daneyên tenduristiyê (tenê di çarçoveya lênihêrînê de): agahiyên ku hûn di dema lênihêrîna xwe ya li kabîneyê de didin. Ev dane bi asta parastinê ya herî bilind a ku xala 9an a GDPR dixwaze têne pêvajokirin.\n• Daneyên teknîkî: navnîşana IP (bênavkirî), cureyê gerokê, pergala xebitandinê, rûpelên serdankirî, dirêjahiya serdanan — bi rêya Google Analytics 4 bixweber têne berhevkirin.\n• Daneyên gerînê (cookie): li Polîtîkaya me ya cookie binêrin."
+      },
+      {
+        "heading": "3. Armanc û bingehên qanûnî yên pêvajoyê",
+        "body": "Her pêvajo li ser bingeheke qanûnî ya li gorî xala 6an a GDPR ye:\n\n• Birêvebirina randevûyan û têkiliya bi nexweş re: cîbicîkirina peymanê (xal 6.1.b) — pêvajoya ku ji bo lênihêrîna terapîk pêwîst e.\n• Bersivdana daxwazên têkiliyê: berjewendiya rewa (xal 6.1.f) — we bi xwe serî li kabîneya me daye.\n• Statîstîkên temaşevanan bi rêya Google Analytics: razîbûn (xal 6.1.a) — di serdana xwe ya yekem de hûn azad in ku qebûl bikin an red bikin.\n• Erkên qanûnî (parastina dosyeyên lênihêrînê): erka qanûnî (xal 6.1.c) — qanûna Belçîkayê parastina dosyeyên bijîjkî 30 salan ferz dike."
+      },
+      {
+        "heading": "4. Demên parastinê",
+        "body": "• Dosyeyên lênihêrînê: 30 sal piştî şêwirdariya dawî (erka qanûnî, qanûna koordînekirî ya 22ê Tebaxa 2002an a derbarê mafên nexweş de).\n• Daneyên têkiliyê û nameyan: 3 sal piştî têkiliya dawî.\n• Daneyên analîtîk (Google Analytics): 14 meh (mîhenga standard a Google Analytics 4).\n• Daneyên cookieyan: li Polîtîkaya me ya cookie binêrin."
+      },
+      {
+        "heading": "5. Wergir û pêvajokar",
+        "body": "Daneyên we tu caran ji bo armancên bazirganî nayên firotin û nayên dayîn aliyên sêyem. Ew dikarin bi van re werin parvekirin:\n\n• Google LLC (Google Analytics 4) — pîvana temaşevanan a bênavkirî. Google ji bo veguhestinên ber bi Dewletên Yekbûyî ve bi Xalên Peymanê yên Standard (SCC) ve girêdayî ye. Polîtîkaya nepenîtiyê ya Google: https://policies.google.com/privacy\n• Vercel Inc. — mêvandarê malperê. Daneyên teknîkî di serverên Vercel re derbas dibin, ku bi SCCyên li gorî GDPR têne rêkxistin.\n• Pisporên tenduristiyê yên hevkar — tenê di çarçoveya berdewamiya lênihêrînê de û bi razîbûna we ya eşkere.\n• Desthilatdariyên qanûnî — heke qanûn wê bixwaze (fermana dadgehê, hwd.)."
+      },
+      {
+        "heading": "6. Veguhestinên derveyî Yekîtiya Ewropayê",
+        "body": "Google Analytics û Vercel daneyan li ser serverên li Dewletên Yekbûyî pêvajo dikin. Ev veguhestin bi Xalên Peymanê yên Standard ên ku Komîsyona Ewropayê pejirandine (biryara 2021/914) têne rêkxistin, ku asteke parastinê ya wekhevî ya YEyê misoger dikin.\n\nHûn dikarin Google Analytics her gav bi rêya Polîtîkaya me ya cookie an bi sazkirina pêveka fermî neçalak bikin: https://tools.google.com/dlpage/gaoptout"
+      },
+      {
+        "heading": "7. Mafên we",
+        "body": "Li gorî xalên 15 heta 22an ên GDPR, mafên we yên jêrîn hene:\n\n• Mafê gihîştinê (xal 15): kopiyeke daneyên xwe bistînin.\n• Mafê rastkirinê (xal 16): daneyên şaş rast bikin.\n• Mafê jêbirinê (xal 17): daxwaza jêbirina daneyên xwe bikin (bi şertê erkên qanûnî yên parastinê).\n• Mafê sînordarkirinê (xal 18): pêvajoyê bi awayekî demkî sînordar bikin.\n• Mafê veguhestinê (xal 20): daneyên xwe di formateke birêkxistî de bistînin.\n• Mafê îtirazê (xal 21): li hin pêvajoyên li ser bingeha berjewendiya rewa îtiraz bikin.\n• Mafê vekişandina razîbûnê (xal 7.3): her gav, bêyî ku bandorê li pêvajoyên berê bike.\n\nJi bo bikaranîna van mafan, bi e-nameyê li praxisloten@gmail.com an bi postê li Praxis Loten, Loten 1, B-4700 Eupen bi me re têkilî daynin. Em ê herî dereng di nav 30 rojan de bersiv bidin."
+      },
+      {
+        "heading": "8. Mafê giliyê",
+        "body": "Heke hûn difikirin ku pêvajokirina daneyên we GDPRê binpê dike, mafê we heye ku giliyekê pêşkêşî Desthilatdariya Parastina Daneyan (APD) bikin:\n\nAutorité de Protection des Données\nRue de la Presse 35 — 1000 Bruxelles\nTel.: +32 2 274 48 00\ncontact@apd-gba.be\nwww.autoriteprotectiondonnees.be"
+      },
+      {
+        "heading": "9. Ewlehî",
+        "body": "Praxis Loten tedbîrên teknîkî û rêxistinî yên guncav digire da ku daneyên we li hember windabûn, gihîştina bê destûr, eşkerekirin an tunekirinê biparêze. Malper tenê bi HTTPS (TLS 1.3) tê pêşkêşkirin."
+      },
+      {
+        "heading": "10. Guhertin",
+        "body": "Ev polîtîka dikare her gav were nûkirin. Guhertoya derbasdar ew e ku li ser vê rûpelê hatiye weşandin, bi dîroka nûkirina dawî ya ku li jor hatiye nîşandan."
+      }
+    ]
+  },
+};
+
+/** Les traductions des textes legaux sont fournies pour information ; FR et DE font foi. */
+const AUTHORITATIVE_NOTICE: Partial<Record<string, string>> = {
+  en: "This translation is provided for information only. The French and German versions are authoritative.",
+  nl: "Deze vertaling wordt uitsluitend ter informatie verstrekt. De Franse en Duitse versies zijn rechtsgeldig.",
+  tr: "Bu çeviri yalnızca bilgilendirme amaçlıdır. Fransızca ve Almanca sürümler esas alınır.",
+  ar: "هذه الترجمة مقدمة لأغراض إعلامية فقط. النسختان الفرنسية والألمانية هما المرجع المعتمد.",
+  pl: "Niniejsze tłumaczenie ma charakter wyłącznie informacyjny. Wiążące są wersje francuska i niemiecka.",
+  uk: "Цей переклад надано лише для ознайомлення. Чинними є французька та німецька версії.",
+  es: "Esta traducción se facilita solo a título informativo. Las versiones francesa y alemana son las que dan fe.",
+  ku: "Ev werger tenê ji bo agahdariyê ye. Guhertoyên fransî û almanî yên fermî ne.",
 };
 
 export default async function PrivacyPage({
@@ -297,6 +453,9 @@ export default async function PrivacyPage({
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-neutral-900 mb-2">{c.title}</h1>
         <p className="text-sm text-neutral-400 mb-4">{c.updated}</p>
+        {AUTHORITATIVE_NOTICE[locale] && (
+          <p className="text-sm text-neutral-500 italic mb-8">{AUTHORITATIVE_NOTICE[locale]}</p>
+        )}
         <p className="text-neutral-600 leading-relaxed mb-10 p-4 bg-blue-50 border border-blue-100 rounded-xl text-sm">
           {c.intro}
         </p>

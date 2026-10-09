@@ -24,6 +24,9 @@ const REHAB_PROGRAMS = [
       tr: "Kalça Protezi",
       ar: "بدلة الورك",
       pl: "Endoproteza biodra",
+      "uk": "Ендопротез кульшового суглоба",
+      "es": "Prótesis de cadera (PTC)",
+      "ku": "Protezê kalçê",
     },
     intro: {
       de: "Nach einer Hüfttotalendoprothese (TEP) ist eine strukturierte Rehabilitation entscheidend für eine schnelle und vollständige Genesung. Unser Team begleitet Sie von der ersten postoperativen Phase bis zur vollständigen Rückkehr zu Ihren Aktivitäten.",
@@ -33,6 +36,9 @@ const REHAB_PROGRAMS = [
       tr: "Toplam kalça protezi ameliyatından sonra, yapılandırılmış rehabilitasyon hızlı ve tam bir iyileşme için çok önemlidir. Ekibimiz sizi ameliyat sonrası erken dönemden faaliyetlere tam geri dönüşe kadar rehberlik eder.",
       ar: "بعد عملية استبدال مفصل الورك الكلي، يعد التأهيل المنظم أمرًا أساسيًا للتعافي السريع والكامل. يرافقكم فريقنا من مرحلة ما بعد العملية الفورية حتى العودة الكاملة إلى أنشطتكم.",
       pl: "Po całkowitej endoprotezie biodra ustrukturyzowana rehabilitacja jest kluczem do szybkiego i pełnego powrotu do zdrowia. Nasz zespół prowadzi Cię od wczesnej fazy pooperacyjnej do pełnego powrotu do aktywności.",
+      "uk": "Після тотального ендопротезування кульшового суглоба структурована реабілітація має вирішальне значення для швидкого й повного відновлення. Наша команда супроводжує Вас від раннього післяопераційного періоду до повного повернення до Ваших занять.",
+      "es": "Tras una prótesis total de cadera, una rehabilitación estructurada es esencial para una recuperación rápida y completa. Nuestro equipo le acompaña desde la fase postoperatoria inmediata hasta la vuelta completa a sus actividades.",
+      "ku": "Piştî proteza tam a kalçê, rehabîlîtasyoneke birêkûpêk ji bo başbûneke bilez û temam girîng e. Tîma me we ji qonaxa yekser piştî emeliyatê heta vegera we ya temam bo çalakiyên we bi rê ve dibe.",
     },
     phases: {
       de: [
@@ -70,6 +76,93 @@ const REHAB_PROGRAMS = [
         { label: "Faza 2 — Tygodnie 4–6", items: ["Wzmacnianie mięśni (odwodziciele biodra, pośladkowe)", "Koordynacja i równowaga", "Chód bez pomocy", "Wchodzenie po schodach"] },
         { label: "Faza 3 — Tygodnie 7–12", items: ["Powrót do codziennych aktywności", "Trening sportowy", "Profilaktyka upadków", "Ocena końcowa"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — Тижні 1–3",
+          "items": [
+            "Зменшення болю та дренаж набряку",
+            "Пасивна та активно-асистована мобілізація",
+            "Відновлення ходьби з допоміжними засобами",
+            "Лімфодренаж за потреби"
+          ]
+        },
+        {
+          "label": "Фаза 2 — Тижні 4–6",
+          "items": [
+            "Зміцнення м’язів (абдуктори, сідничні м’язи)",
+            "Координація та рівновага",
+            "Ходьба без допоміжних засобів",
+            "Підйом і спуск сходами"
+          ]
+        },
+        {
+          "label": "Фаза 3 — Тижні 7–12",
+          "items": [
+            "Повернення до повсякденних справ",
+            "Спеціальні спортивні тренування",
+            "Профілактика падінь",
+            "Підсумкова оцінка реабілітації"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–3",
+          "items": [
+            "Reducción del dolor y drenaje del edema",
+            "Movilización pasiva y activa asistida",
+            "Reeducación de la marcha con ayudas técnicas",
+            "Drenaje linfático si es necesario"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 4–6",
+          "items": [
+            "Fortalecimiento muscular (abductores, glúteos)",
+            "Coordinación y equilibrio",
+            "Marcha sin ayudas técnicas",
+            "Subir y bajar escaleras"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 7–12",
+          "items": [
+            "Vuelta a las actividades diarias",
+            "Entrenamiento específico para el deporte",
+            "Prevención de caídas",
+            "Valoración final de la rehabilitación"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonax 1 — Hefteyên 1–3",
+          "items": [
+            "Kêmkirina êşê û drenaja werimê",
+            "Mobîlîzasyona pasîf û çalak-alîkarî",
+            "Perwerdeya meşê bi alavên alîkariyê",
+            "Drenaja lîmfatîk eger hewce be"
+          ]
+        },
+        {
+          "label": "Qonax 2 — Hefteyên 4–6",
+          "items": [
+            "Xurtkirina masûlkeyan (abduktor, masûlkeyên qûnê)",
+            "Hevahengî û hevseng",
+            "Meş bê alavên alîkariyê",
+            "Hilkişîn û daketina derenceyan"
+          ]
+        },
+        {
+          "label": "Qonax 3 — Hefteyên 7–12",
+          "items": [
+            "Vegera bo çalakiyên rojane",
+            "Perwerdehiya taybet a werzîşê",
+            "Pêşîlêgirtina ketinê",
+            "Nirxandina dawî ya rehabîlîtasyonê"
+          ]
+        }
+      ],
     },
   },
   {
@@ -87,6 +180,9 @@ const REHAB_PROGRAMS = [
       tr: "Diz Protezi",
       ar: "بدلة الركبة",
       pl: "Endoproteza kolana",
+      "uk": "Ендопротез колінного суглоба",
+      "es": "Prótesis de rodilla (PTR)",
+      "ku": "Protezê çokê",
     },
     intro: {
       de: "Die Rehabilitation nach einer Knie-TEP erfordert konsequente Kräftigung und Mobilisation. Unser spezifisches Programm maximiert Ihre Beweglichkeit und minimiert Schmerzen für einen raschen Alltag.",
@@ -96,6 +192,9 @@ const REHAB_PROGRAMS = [
       tr: "Diz protezi rehabilitasyonu, tutarlı güçlendirme ve mobilizasyon gerektirir. Özel programımız hareket aralığınızı maksimize eder ve günlük hayata hızlı dönüş için ağrıyı en aza indirir.",
       ar: "تتطلب إعادة التأهيل بعد بدلة الركبة تقوية ومتحركة مستمرة. يعمل برنامجنا المتخصص على تعظيم مدى الحركة وتقليل الألم للعودة السريعة إلى الحياة اليومية.",
       pl: "Rehabilitacja po endoprotezie kolana wymaga konsekwentnego wzmacniania i mobilizacji. Nasz program maksymalizuje zakres ruchu i minimalizuje ból dla szybkiego powrotu do codziennego życia.",
+      "uk": "Реабілітація після ендопротезування колінного суглоба потребує постійного зміцнення та мобілізації. Наша спеціальна програма максимально збільшує обсяг рухів у суглобі та мінімізує біль для швидкого повернення до повсякдення.",
+      "es": "La rehabilitación tras una prótesis de rodilla exige un fortalecimiento y una movilización constantes. Nuestro programa específico maximiza su amplitud articular y minimiza el dolor para una vuelta rápida al día a día.",
+      "ku": "Rehabîlîtasyona piştî proteza çokê xurtkirin û mobîlîzasyoneke berdewam dixwaze. Bernameya me ya taybet qada livîna movikê herî zêde dike û êşê herî kêm dike ji bo vegereke bilez bo jiyana rojane.",
     },
     phases: {
       de: [
@@ -133,6 +232,93 @@ const REHAB_PROGRAMS = [
         { label: "Faza 2 — Tygodnie 5–8", items: ["Wspomagane przysiady", "Ergometr rowerowy (niski opór)", "Ćwiczenia proprioceptywne", "Pływanie dozwolone"] },
         { label: "Faza 3 — Tygodnie 9–14", items: ["Wchodzenie po schodach obunóż", "Lekki jogging (po zgodzie lekarskiej)", "Funkcjonalne ćwiczenia sportowe", "Pełna sprawność dzienna"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — Тижні 1–4",
+          "items": [
+            "Кріотерапія та зменшення набряку",
+            "Пасивне згинання/розгинання коліна",
+            "Ізометричні вправи для чотириголового м’яза",
+            "Відновлення ходьби"
+          ]
+        },
+        {
+          "label": "Фаза 2 — Тижні 5–8",
+          "items": [
+            "Напівприсідання з підтримкою",
+            "Велоергометр (низький опір)",
+            "Пропріоцептивні вправи",
+            "Плавання дозволено"
+          ]
+        },
+        {
+          "label": "Фаза 3 — Тижні 9–14",
+          "items": [
+            "Підйом сходами з почерговою опорою на обидві ноги",
+            "Легкий біг (після дозволу лікаря)",
+            "Функціональні спортивні вправи",
+            "Повна повсякденна працездатність"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–4",
+          "items": [
+            "Crioterapia y reducción del edema",
+            "Flexión/extensión pasiva de la rodilla",
+            "Ejercicios isométricos del cuádriceps",
+            "Reeducación de la marcha"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 5–8",
+          "items": [
+            "Medias sentadillas asistidas",
+            "Cicloergómetro (baja resistencia)",
+            "Ejercicios propioceptivos",
+            "Natación permitida"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 9–14",
+          "items": [
+            "Subir escaleras alternando ambas piernas",
+            "Trote suave (tras autorización médica)",
+            "Ejercicios funcionales deportivos",
+            "Plena capacidad en el día a día"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonax 1 — Hefteyên 1–4",
+          "items": [
+            "Krîyoterapî û kêmkirina werimê",
+            "Çemandin/dirêjkirina pasîf a çokê",
+            "Werzîşên îzometrîk ên masûlkeya çarser (quadriceps)",
+            "Perwerdeya meşê"
+          ]
+        },
+        {
+          "label": "Qonax 2 — Hefteyên 5–8",
+          "items": [
+            "Nîv-çokdanên bi alîkarî",
+            "Ergometreya duçerxeyê (berxwedana kêm)",
+            "Werzîşên propriyoseptîf",
+            "Avjenî destûr e"
+          ]
+        },
+        {
+          "label": "Qonax 3 — Hefteyên 9–14",
+          "items": [
+            "Hilkişîna derenceyan bi her du lingan",
+            "Bezîna sivik (piştî erêkirina bijîşk)",
+            "Werzîşên werzîşî yên fonksiyonel",
+            "Kapasîteya rojane ya temam"
+          ]
+        }
+      ],
     },
   },
   {
@@ -150,6 +336,9 @@ const REHAB_PROGRAMS = [
       tr: "Ön Çapraz Bağ",
       ar: "الرباط الصليبي الأمامي",
       pl: "Więzadło Krzyżowe Przednie",
+      "uk": "Передня хрестоподібна зв’язка (ПХЗ)",
+      "es": "Ligamento cruzado (LCA)",
+      "ku": "Lîgamenta xaçerê (ACL)",
     },
     intro: {
       de: "Die Kreuzbandrehabilitation ist eine der anspruchsvollsten in der Sportphysiotherapie. Unser Programm folgt einem evidenzbasierten Stufenansatz (Return-to-Sport-Kriterien) für eine sichere Rückkehr zum Sport.",
@@ -159,6 +348,9 @@ const REHAB_PROGRAMS = [
       tr: "ÖÇB rehabilitasyonu, spor fizyoterapisindeki en zorlu süreçlerden biridir. Programımız, güvenli bir spora dönüş için kanıta dayalı kademeli bir yaklaşımı (spora dönüş kriterleri) takip eder.",
       ar: "إعادة تأهيل الرباط الصليبي الأمامي هي من أكثر العمليات صعوبة في فيزيوتيرابيا الرياضة. يتبع برنامجنا نهجًا تدريجيًا قائمًا على الأدلة (معايير العودة إلى الرياضة) للعودة الآمنة.",
       pl: "Rehabilitacja ACL jest jedną z najbardziej wymagających w fizjoterapii sportowej. Nasz program podąża opartym na dowodach stopniowym podejściem (kryteria powrotu do sportu) dla bezpiecznego powrotu.",
+      "uk": "Реабілітація після реконструкції ПХЗ — одна з найвимогливіших у спортивній фізіотерапії. Наша програма дотримується поступового, науково обґрунтованого підходу (критерії повернення до спорту) для безпечного повернення.",
+      "es": "La rehabilitación tras la reconstrucción del LCA es una de las más exigentes de la fisioterapia deportiva. Nuestro programa sigue un enfoque progresivo basado en la evidencia (criterios de vuelta al deporte) para un regreso seguro.",
+      "ku": "Rehabîlîtasyona piştî nûavakirina ACL yek ji yên herî dijwar e di fizyoterapiya werzîşê de. Bernameya me nêzîkatiyeke gav bi gav a li ser bingeha delîlan (pîvanên vegera werzîşê) dişopîne ji bo vegereke ewle.",
     },
     phases: {
       de: [
@@ -196,6 +388,93 @@ const REHAB_PROGRAMS = [
         { label: "Faza 2 — Tygodnie 4–9", items: ["Wzmacnianie: przysiad, prasa nożna, step-up", "Trening nerwowo-mięśniowy i propriocepcja", "Bieg (linia prosta od tygodnia 12)", "Trening BFR"] },
         { label: "Faza 3 — Tydzień 10+", items: ["Zmiany kierunku i skoki", "Ćwiczenia sportowe", "Testy powrotu do sportu (skok jednonożny, KTS)", "Psychologiczne przygotowanie do powrotu"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — Тижні 1–3",
+          "items": [
+            "Контроль болю та набряку",
+            "Відновлення повного розгинання",
+            "Активація чотириголового м’яза (EMS за бажанням)",
+            "Ходьба без милиць"
+          ]
+        },
+        {
+          "label": "Фаза 2 — Тижні 4–9",
+          "items": [
+            "Зміцнення: присідання, жим ногами, step-up",
+            "Нервово-м’язове тренування та пропріоцепція",
+            "Біг (по прямій з 12-го тижня)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Фаза 3 — Тиждень 10+",
+          "items": [
+            "Зміни напрямку та стрибки",
+            "Спеціальні спортивні вправи",
+            "Тести повернення до спорту (стрибок на одній нозі, KTS)",
+            "Психологічна підготовка до повернення"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–3",
+          "items": [
+            "Control del dolor y del edema",
+            "Recuperación de la extensión completa",
+            "Activación del cuádriceps (EMS opcional)",
+            "Marcha sin muletas"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 4–9",
+          "items": [
+            "Fortalecimiento: sentadilla, prensa, step-up",
+            "Trabajo neuromuscular y propiocepción",
+            "Carrera (en línea recta desde la semana 12)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semana 10+",
+          "items": [
+            "Cambios de dirección y saltos",
+            "Ejercicios específicos del deporte",
+            "Pruebas de vuelta al deporte (salto monopodal, KTS)",
+            "Preparación psicológica para la vuelta"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonax 1 — Hefteyên 1–3",
+          "items": [
+            "Birêvebirina êş û werimê",
+            "Vegerandina dirêjkirina temam",
+            "Çalakkirina masûlkeya çarser (EMS bijarte)",
+            "Meş bê goçan"
+          ]
+        },
+        {
+          "label": "Qonax 2 — Hefteyên 4–9",
+          "items": [
+            "Xurtkirin: squat, presa lingan, step-up",
+            "Perwerdeya neuromasûlkeyî û propriyosepsiyon",
+            "Bezîn (xeta rast ji hefteya 12an ve)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Qonax 3 — Hefteya 10+",
+          "items": [
+            "Guhertina alî û baz",
+            "Werzîşên taybet ên werzîşê",
+            "Testên vegera werzîşê (baza li ser lingekî, KTS)",
+            "Amadekariya derûnî ji bo vegerê"
+          ]
+        }
+      ],
     },
   },
   {
@@ -213,6 +492,9 @@ const REHAB_PROGRAMS = [
       tr: "Omuz Ameliyatı",
       ar: "جراحة الكتف",
       pl: "Operacja barku",
+      "uk": "Хірургія плечового суглоба",
+      "es": "Cirugía de hombro",
+      "ku": "Emeliyata mil",
     },
     intro: {
       de: "Nach Schulteroperationen (Rotatorenmanschette, Bankart, Schulterprothese) ist eine phasengerechte Rehabilitation unerlässlich. Unsere Therapeuten sind in der postoperativen Schulterrehabilitation erfahren und arbeiten eng mit Ihrem Chirurgen zusammen.",
@@ -222,6 +504,9 @@ const REHAB_PROGRAMS = [
       tr: "Omuz ameliyatları (rotator kaf, Bankart, omuz protezi) sonrasında aşamaya uygun rehabilitasyon şarttır. Terapistlerimiz, ameliyat sonrası omuz rehabilitasyonunda deneyimlidir ve cerrahınızla yakın işbirliği yapar.",
       ar: "بعد عمليات الكتف (كفة المدورين، Bankart، بدلة الكتف)، يعد التأهيل المناسب للمرحلة أمرًا ضروريًا. يتمتع معالجونا بخبرة في إعادة التأهيل بعد جراحة الكتف ويعملون بالتنسيق مع جراحك.",
       pl: "Po operacjach barku (stożek rotatorów, Bankart, endoproteza barku) niezbędna jest rehabilitacja dostosowana do fazy. Nasi terapeuci mają doświadczenie w pooperacyjnej rehabilitacji barku i ściśle współpracują z chirurgiem.",
+      "uk": "Після операцій на плечовому суглобі (ротаторна манжета, операція Банкарта, ендопротез плеча) необхідна відповідна реабілітація. Наші терапевти мають досвід післяопераційної реабілітації плеча й тісно співпрацюють із Вашим хірургом.",
+      "es": "Tras las cirugías de hombro (manguito rotador, Bankart, prótesis de hombro), es imprescindible una rehabilitación adaptada. Nuestros terapeutas tienen experiencia en la rehabilitación postoperatoria del hombro y trabajan en estrecha colaboración con su cirujano.",
+      "ku": "Piştî emeliyatên milî (manşeta rotator, Bankart, protezê milî), rehabîlîtasyoneke guncaw pêwîst e. Terapîstên me di rehabîlîtasyona milî ya piştî emeliyatê de xwedî ezmûn in û ji nêz ve bi cerahê we re dixebitin.",
     },
     phases: {
       de: [
@@ -258,6 +543,93 @@ const REHAB_PROGRAMS = [
         { label: "Faza 1 — Tygodnie 1–4", items: ["Przestrzeganie unieruchomienia", "Ćwiczenia wahadłowe (bierne)", "Zginanie/prostowanie palców", "Ćwiczenia izometryczne"] },
         { label: "Faza 2 — Tygodnie 5–8", items: ["Aktywna-wspomagana elewacja", "Techniki manualne (mobilizacja torebki)", "Wzmacnianie stożka rotatorów", "Przywrócenie codziennych aktywności"] },
         { label: "Faza 3 — Tygodnie 9–16", items: ["Dążenie do pełnego zakresu ruchu", "Maksymalne wzmacnianie", "Ćwiczenia proprioceptywne", "Sport (za zgodą chirurga)"] },
+      ],
+      "uk": [
+        {
+          "label": "Фаза 1 — Тижні 1–4",
+          "items": [
+            "Дотримання іммобілізації",
+            "Маятникові вправи (пасивні)",
+            "Згинання/розгинання пальців",
+            "Ізометричні вправи"
+          ]
+        },
+        {
+          "label": "Фаза 2 — Тижні 5–8",
+          "items": [
+            "Активно-асистоване піднімання руки",
+            "Мануальні техніки (мобілізація капсули)",
+            "Зміцнення ротаторної манжети",
+            "Повернення до повсякденних справ"
+          ]
+        },
+        {
+          "label": "Фаза 3 — Тижні 9–16",
+          "items": [
+            "Мета — повний обсяг рухів",
+            "Максимальне зміцнення",
+            "Пропріоцептивні вправи",
+            "Спорт (після дозволу хірурга)"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–4",
+          "items": [
+            "Respetar la inmovilización",
+            "Ejercicios pendulares (pasivos)",
+            "Flexión/extensión de los dedos",
+            "Ejercicios isométricos"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 5–8",
+          "items": [
+            "Elevación activa asistida",
+            "Técnicas manuales (movilización capsular)",
+            "Fortalecimiento del manguito rotador",
+            "Vuelta a las actividades diarias"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 9–16",
+          "items": [
+            "Objetivo: amplitud completa",
+            "Fortalecimiento máximo",
+            "Ejercicios propioceptivos",
+            "Deporte (tras autorización del cirujano)"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonax 1 — Hefteyên 1–4",
+          "items": [
+            "Rêzgirtina ji bêtevgerkirinê re",
+            "Werzîşên pendulê (pasîf)",
+            "Çemandin/dirêjkirina tiliyan",
+            "Werzîşên îzometrîk"
+          ]
+        },
+        {
+          "label": "Qonax 2 — Hefteyên 5–8",
+          "items": [
+            "Bilindkirina çalak-alîkarî",
+            "Teknîkên destî (mobîlîzasyona kapsulê)",
+            "Xurtkirina manşeta rotator",
+            "Vegera bo çalakiyên rojane"
+          ]
+        },
+        {
+          "label": "Qonax 3 — Hefteyên 9–16",
+          "items": [
+            "Armanc: qada livînê ya temam",
+            "Xurtkirina herî zêde",
+            "Werzîşên propriyoseptîf",
+            "Werzîş (piştî erêkirina cerah)"
+          ]
+        }
       ],
     },
   },

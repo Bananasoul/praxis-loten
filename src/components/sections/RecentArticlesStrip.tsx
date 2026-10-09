@@ -6,7 +6,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ARTICLES } from "@/components/pages/BlogPageContent";
 import { ArrowUpRight, Clock, BookOpen } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const UI: Record<LangKey, { eyebrow: string; title: string; cta: string; readMin: string }> = {
   de: { eyebrow: "Aus dem Blog", title: "Neueste Artikel", cta: "Alle Artikel", readMin: "min" },
@@ -16,11 +16,29 @@ const UI: Record<LangKey, { eyebrow: string; title: string; cta: string; readMin
   tr: { eyebrow: "Blogdan", title: "Son makaleler", cta: "Tüm makaleler", readMin: "dk" },
   ar: { eyebrow: "من المدونة", title: "أحدث المقالات", cta: "كل المقالات", readMin: "د" },
   pl: { eyebrow: "Z bloga", title: "Najnowsze artykuły", cta: "Wszystkie artykuły", readMin: "min" },
+  "uk": {
+    "eyebrow": "З блогу",
+    "title": "Останні статті",
+    "cta": "Усі статті",
+    "readMin": "хв"
+  },
+  "es": {
+    "eyebrow": "Del blog",
+    "title": "Últimos artículos",
+    "cta": "Todos los artículos",
+    "readMin": "min"
+  },
+  "ku": {
+    "eyebrow": "Ji blogê",
+    "title": "Gotarên dawî",
+    "cta": "Hemû gotar",
+    "readMin": "deq"
+  },
 };
 
 export function RecentArticlesStrip() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
 
   // Top 3 most recent articles

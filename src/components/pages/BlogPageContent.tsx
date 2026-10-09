@@ -7,7 +7,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/
 import { Link } from "@/i18n/navigation";
 import { Clock, Tag, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 export const ARTICLES = [
   {
@@ -21,7 +21,10 @@ export const ARTICLES = [
     "nl": "Gezondheid & Preventie",
     "tr": "Sağlık & Önleme",
     "ar": "الصحة والوقاية",
-    "pl": "Zdrowie i profilaktyka"
+    "pl": "Zdrowie i profilaktyka",
+    "uk": "Здоров'я та профілактика",
+    "es": "Salud y prevención",
+    "ku": "Tenduristî û Pêşîlêgirtin"
   },
   "color": "from-[#4f46e5] to-[#312e81]",
   "title": {
@@ -31,7 +34,10 @@ export const ARTICLES = [
     "nl": "Slaap: uw meest onderschatte gezondheidsbondgenoot",
     "tr": "Uyku: en çok küçümsenen sağlık müttefikiniz",
     "ar": "النوم: حليف صحتك الأكثر استهانةً به",
-    "pl": "Sen: twój najbardziej niedoceniany sprzymierzeniec zdrowia"
+    "pl": "Sen: twój najbardziej niedoceniany sprzymierzeniec zdrowia",
+    "uk": "Сон: Ваш найбільш недооцінений союзник здоров'я",
+    "es": "El sueño: su aliado de salud más infravalorado",
+    "ku": "Xew: hevalbendê tenduristiya we yê herî kêm tê nirxandin"
   },
   "excerpt": {
     "de": "Schmerz, Regeneration, Verletzungen: Schlaf wirkt auf alles. Mit Zahlen und einfachen Tipps für besseren Schlaf, von Ihrer Physiotherapie in Eupen.",
@@ -40,7 +46,10 @@ export const ARTICLES = [
     "nl": "Pijn, herstel, blessures: slaap beïnvloedt alles. Met cijfers en makkelijke tips voor betere slaap, van uw kinesist in Eupen.",
     "tr": "Ağrı, toparlanma, sakatlık: uyku her şeyi etkiler. Rakamlar ve daha iyi uyku için kolay ipuçlarıyla, Eupen'deki fizyoterapistinizden.",
     "ar": "الألم والتعافي والإصابات: النوم يؤثّر في كل شيء. مع الأرقام ونصائح سهلة لنوم أفضل، من أخصائي العلاج الطبيعي في أوبن.",
-    "pl": "Ból, regeneracja, kontuzje: sen wpływa na wszystko. Z liczbami i prostymi wskazówkami na lepszy sen, od Twojego fizjoterapeuty w Eupen."
+    "pl": "Ból, regeneracja, kontuzje: sen wpływa na wszystko. Z liczbami i prostymi wskazówkami na lepszy sen, od Twojego fizjoterapeuty w Eupen.",
+    "uk": "Біль, відновлення, травми: сон впливає на все. Цифри та прості поради, як краще спати, від Вашого фізіотерапевта в Ойпені.",
+    "es": "Dolor, recuperación, lesiones: el sueño influye en todo. Cifras y pequeños trucos fáciles para dormir mejor, de la mano de su fisioterapeuta en Eupen.",
+    "ku": "Êş, başbûn, birîn: xew bandorê li her tiştî dike. Bi hejmaran û şîretên hêsan ji bo xeweke baştir, ji fizyoterapîstê we li Eupenê."
   },
   "tags": {
     "de": [
@@ -84,6 +93,24 @@ export const ARTICLES = [
       "Regeneracja",
       "Ból",
       "Profilaktyka"
+    ],
+    "uk": [
+      "Сон",
+      "Відновлення",
+      "Біль",
+      "Профілактика"
+    ],
+    "es": [
+      "Sueño",
+      "Recuperación",
+      "Dolor",
+      "Prevención"
+    ],
+    "ku": [
+      "Xew",
+      "Başbûn",
+      "Êş",
+      "Pêşîlêgirtin"
     ]
   }
 },
@@ -99,7 +126,10 @@ export const ARTICLES = [
         "nl": "Manuele Therapie",
         "tr": "Manuel Terapi",
         "ar": "العلاج اليدوي",
-        "pl": "Terapia Manualna"
+        "pl": "Terapia Manualna",
+        "uk": "Мануальна терапія",
+        "es": "Terapia manual",
+        "ku": "Terapiya destî"
     },
     "color": "from-[#2b3186] to-[#1e2260]",
     "title": {
@@ -109,7 +139,10 @@ export const ARTICLES = [
         "nl": "Manuele therapie in Eupen: beweging teruggeven, niet « rechtzetten »",
         "tr": "Eupen'de manuel terapi: yerine oturtmak değil, hareketi geri vermek",
         "ar": "العلاج اليدوي في أوبن: إعادة الحركة، لا « إعادة الأمور إلى مكانها »",
-        "pl": "Terapia manualna w Eupen: przywracanie ruchu, a nie « nastawianie »"
+        "pl": "Terapia manualna w Eupen: przywracanie ruchu, a nie « nastawianie »",
+        "uk": "Мануальна терапія в Ойпені: повернути рух, а не «вправити на місце»",
+        "es": "Terapia manual en Eupen: devolver el movimiento, no «volver a colocar en su sitio»",
+        "ku": "Terapiya destî li Eupenê: vegerandina tevgerê, ne «xistina cihê xwe»"
     },
     "excerpt": {
         "fr": "« On va vous remettre en place » : et si c'était faux ? La thérapie manuelle ne réaligne rien — elle calme la douleur et vous remet en mouvement. Le point, preuves à l'appui, au cabinet de kiné à Eupen.",
@@ -118,7 +151,10 @@ export const ARTICLES = [
         "nl": "« We zetten het wel recht » — en als dat niet klopt? Manuele therapie zet niets recht; ze verzacht pijn en brengt u in beweging. Het overzicht, evidence-based, in Eupen.",
         "tr": "« Yerine oturturuz » — ya bu yanlışsa? Manuel terapi hiçbir şeyi hizalamaz; ağrıyı dindirir ve sizi harekete geçirir. Kanıta dayalı genel bakış, Eupen'deki fizyoterapi kliniğinde.",
         "ar": "« سنعيد الأمور إلى مكانها » — وماذا لو كان ذلك خطأً؟ العلاج اليدوي لا يعيد محاذاة شيء؛ بل يهدّئ الألم ويعيدك إلى الحركة. الصورة القائمة على الأدلة، في عيادتنا في أوبن.",
-        "pl": "« Nastawimy to z powrotem » — a jeśli to nieprawda? Terapia manualna niczego nie nastawia; łagodzi ból i wprawia Cię w ruch. Obraz oparty na dowodach, w naszej poradni w Eupen."
+        "pl": "« Nastawimy to z powrotem » — a jeśli to nieprawda? Terapia manualna niczego nie nastawia; łagodzi ból i wprawia Cię w ruch. Obraz oparty na dowodach, w naszej poradni w Eupen.",
+        "uk": "«Ми вправимо все на місце»: а якщо це неправда? Мануальна терапія нічого не вирівнює — вона заспокоює біль і повертає Вас до руху. Науково обґрунтований огляд від кабінету фізіотерапії в Ойпені.",
+        "es": "«Le vamos a volver a colocar en su sitio»: ¿y si fuera falso? La terapia manual no realinea nada — calma el dolor y le pone de nuevo en movimiento. Un repaso basado en la evidencia, en la consulta de fisioterapia de Eupen.",
+        "ku": "«Em ê we bixin cihê we»: û heke ev ne rast be? Terapiya destî tiştekî ji nû ve rêz nake — ew êşê aram dike û we dîsa dixe tevgerê. Nirxandineke li ser delîlan, ji kabîneya fizyoterapiyê li Eupenê."
     },
     "tags": {
         "fr": [
@@ -162,6 +198,24 @@ export const ARTICLES = [
             "Ruch",
             "Mity",
             "Ból pleców"
+        ],
+        "uk": [
+          "Мануальна терапія",
+          "Рух",
+          "Міфи",
+          "Біль у спині"
+        ],
+        "es": [
+          "Terapia manual",
+          "Movimiento",
+          "Mitos",
+          "Dolor de espalda"
+        ],
+        "ku": [
+          "Terapiya destî",
+          "Tevger",
+          "Efsane",
+          "Êşa piştê"
         ]
     }
 },
@@ -172,6 +226,9 @@ export const ARTICLES = [
     category: {
       de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
       nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+      "uk": "Мануальна терапія",
+      "es": "Terapia manual",
+      "ku": "Terapiya destî",
     },
     color: "from-[#0e7490] to-[#155e75]",
     title: {
@@ -182,6 +239,9 @@ export const ARTICLES = [
       tr: "Ağrıyla hareket etmek — doğru dozu nasıl bulursunuz?",
       ar: "الحركة مع الألم — كيف تجد الجرعة المناسبة؟",
       pl: "Ruch mimo bólu — jak znaleźć odpowiednią dawkę?",
+      "uk": "Рух попри біль — як знайти правильну дозу",
+      "es": "Moverse a pesar del dolor — cómo encontrar la dosis adecuada",
+      "ku": "Tevger tevî êşê — çawa doza rast bibînin",
     },
     excerpt: {
       de: "Sollte man bei jedem Schmerz aufhören oder weiterbewegen? Die Wissenschaft hat entschieden: Alles ist eine Frage der Dosis. Entdecken Sie die 24-Stunden-Regel und das Ampelsystem, um wieder selbstsicher aktiv zu werden.",
@@ -191,6 +251,9 @@ export const ARTICLES = [
       tr: "En ufak ağrıda durmalı mı yoksa hareket etmeye devam mı etmeli? Bilim karar verdi: her şey dozda. 24 saat kuralı ve trafik ışığı sistemiyle güvenle yeniden aktif olun.",
       ar: "هل يجب أن تتوقف عند أدنى ألم أم تستمر في الحركة؟ حسم العلم الأمر: كل شيء مسألة جرعة. اكتشف قاعدة الـ 24 ساعة ونظام إشارات المرور لاستئناف النشاط بثقة.",
       pl: "Zatrzymać się przy najmniejszym bólu czy kontynuować ruch? Nauka zdecydowała: wszystko zależy od dawki. Odkryj zasadę 24 godzin i system świateł drogowych, by z pewnością siebie wrócić do aktywności.",
+      "uk": "Чи варто зупинятися при найменшому болю, чи продовжувати рухатися? Наука дала відповідь: усе залежить від дози. Дізнайтеся про правило 24 годин і систему світлофора, щоб упевнено повернутися до активності.",
+      "es": "¿Hay que parar ante el menor dolor o seguir moviéndose? La ciencia lo tiene claro: todo es cuestión de dosis. Descubra la regla de las 24 horas y el sistema del semáforo para retomar la actividad con confianza.",
+      "ku": "Ma divê hûn di êşa herî biçûk de rawestin an berdewam biliviyin? Zanist biryar daye: her tişt pirsa dozê ye. Qaîdeya 24 saetan û pergala ronahiyên trafîkê kifş bikin da ku bi bawerî vegerin çalakiyê.",
     },
     tags: {
       de: ["Chronischer Schmerz", "Körperliche Aktivität", "Rückenschmerz", "Tendinopathie"],
@@ -200,6 +263,24 @@ export const ARTICLES = [
       tr: ["Kronik ağrı", "Fiziksel aktivite", "Bel ağrısı", "Tendinopati"],
       ar: ["الألم المزمن", "النشاط البدني", "آلام الظهر", "اعتلال الأوتار"],
       pl: ["Ból przewlekły", "Aktywność fizyczna", "Ból krzyża", "Tendinopatia"],
+      "uk": [
+        "Хронічний біль",
+        "Фізична активність",
+        "Біль у попереку",
+        "Тендинопатія"
+      ],
+      "es": [
+        "Dolor crónico",
+        "Actividad física",
+        "Lumbalgia",
+        "Tendinopatía"
+      ],
+      "ku": [
+        "Êşa kronîk",
+        "Çalakiya laşî",
+        "Êşa pişta jêrîn",
+        "Tendînopatî"
+      ],
     },
   },
   {
@@ -209,6 +290,9 @@ export const ARTICLES = [
     category: {
       de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
       nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+      "uk": "Мануальна терапія",
+      "es": "Terapia manual",
+      "ku": "Terapiya destî",
     },
     color: "from-[#0e7490] to-[#155e75]",
     title: {
@@ -219,6 +303,9 @@ export const ARTICLES = [
       tr: "Oturmak gerçekten sırtınıza zarar verir mi? 2026 bilimi ne diyor",
       ar: "هل الجلوس يضر فعلاً بظهرك؟ ما يقوله العلم في 2026",
       pl: "Czy siedzenie naprawdę niszczy plecy? Co mówi nauka w 2026",
+      "uk": "Чи справді сидіння шкодить Вашій спині? Що каже наука у 2026 році",
+      "es": "¿Estar sentado daña realmente su espalda? Lo que dice la ciencia en 2026",
+      "ku": "Ma rûniştin bi rastî zirarê dide pişta we? Zanist di 2026an de çi dibêje",
     },
     excerpt: {
       de: "„Sitzen ist das neue Rauchen.\" Eine beängstigende Phrase — aber stimmt sie? Die Wissenschaft entlastet die Bürotätigkeit: das Problem ist nicht der Stuhl, sondern die anhaltende Unbeweglichkeit. Die EBP-Analyse von Praxis Loten.",
@@ -228,8 +315,29 @@ export const ARTICLES = [
       tr: "„Oturmak yeni sigaradır.\" Korkutucu bir cümle — ama doğru mu? Bilim ofis sandalyesini akl​ıyor: sorun koltuk değil, uzun süreli hareketsizlik.",
       ar: "„الجلوس هو التدخين الجديد.\" عبارة مخيفة — لكن هل هي صحيحة؟ العلم يبرّئ كرسي المكتب: المشكلة ليست في المقعد، بل في الجمود المطوّل.",
       pl: "„Siedzenie to nowe palenie.\" Przerażające zdanie — ale czy prawdziwe? Nauka oczyszcza krzesło biurowe: problemem nie jest siedzisko, lecz długotrwały bezruch.",
+      "uk": "«Сидіння — це нове куріння». Фраза, що лякає, — але чи правда це? Наука виправдовує офісне крісло: проблема не в сидінні, а в тривалій нерухомості. Аналіз EBP від Praxis Loten.",
+      "es": "«Estar sentado es el nuevo tabaquismo». Una frase que asusta — pero ¿es cierta? La ciencia absuelve a la silla de oficina: el problema no es el asiento, sino la inmovilidad prolongada. El análisis EBP de Praxis Loten.",
+      "ku": "«Rûniştin cixarekêşiya nû ye.» Hevokeke ku ditirsîne — lê ma rast e? Zanist kursiya ofîsê bêsûc dike: pirsgirêk ne kursî ye, lê bêtevgeriya dirêj e. Analîza EBP ya Praxis Loten.",
     },
-    tags: { de: ["Lumbalgie", "Sitzen", "Sedentarität", "Eupen"], fr: ["Lombalgie", "Position assise", "Sédentarité", "Eupen"], en: ["Low back pain", "Sitting", "Sedentary", "Eupen"], nl: ["Lage rugpijn", "Zitten", "Sedentair", "Eupen"], tr: ["Bel ağrısı", "Oturma", "Hareketsizlik", "Eupen"], ar: ["ألم أسفل الظهر", "جلوس", "خمول", "أوبن"], pl: ["Ból krzyża", "Siedzenie", "Siedzący tryb", "Eupen"] },
+    tags: { de: ["Lumbalgie", "Sitzen", "Sedentarität", "Eupen"], fr: ["Lombalgie", "Position assise", "Sédentarité", "Eupen"], en: ["Low back pain", "Sitting", "Sedentary", "Eupen"], nl: ["Lage rugpijn", "Zitten", "Sedentair", "Eupen"], tr: ["Bel ağrısı", "Oturma", "Hareketsizlik", "Eupen"], ar: ["ألم أسفل الظهر", "جلوس", "خمول", "أوبن"], pl: ["Ból krzyża", "Siedzenie", "Siedzący tryb", "Eupen"],
+    "uk": [
+      "Біль у попереку",
+      "Сидяче положення",
+      "Малорухливий спосіб життя",
+      "Ойпен"
+    ],
+    "es": [
+      "Lumbalgia",
+      "Posición sentada",
+      "Sedentarismo",
+      "Eupen"
+    ],
+    "ku": [
+      "Êşa pişta jêrîn",
+      "Rûniştin",
+      "Jiyana bêtevger",
+      "Eupen"
+    ] },
   },
   {
     slug: "douleurs-cervicales-mobilite-eupen",
@@ -238,6 +346,9 @@ export const ARTICLES = [
     category: {
       de: "Nackenschmerzen", fr: "Cervicales", en: "Neck pain",
       nl: "Nekpijn", tr: "Boyun Ağrısı", ar: "آلام الرقبة", pl: "Ból szyi",
+      "uk": "Біль у шиї",
+      "es": "Cervicales",
+      "ku": "Êşa stûyê",
     },
     color: "from-[#0e7490] to-[#155e75]",
     title: {
@@ -248,6 +359,9 @@ export const ARTICLES = [
       tr: "Boyun ağrısı — boynunuzun neden ağrıdığı ve Eupen'de hareketliliği nasıl geri kazanacağınız",
       ar: "آلام الرقبة — لماذا تؤلمك رقبتك وكيف تستعيد الحركة في أوبن",
       pl: "Ból szyi — dlaczego boli Cię szyja i jak odzyskać mobilność w Eupen",
+      "uk": "Біль у шиї — чому болить шия і як повернути рухливість в Ойпені",
+      "es": "Dolor cervical — por qué le duele el cuello y cómo recuperar la movilidad en Eupen",
+      "ku": "Êşa stûyê — çima stûyê we diêşe û çawa li Eupenê livînê vegerînin",
     },
     excerpt: {
       de: "Steifheit am Schädelansatz oder zwischen den Schulterblättern? Die moderne Wissenschaft beruhigt: Ihr Nacken ist robust und anpassungsfähig. Wir erklären, warum Schmerz nicht gleich Schaden ist und wie Sie wieder Vertrauen in Ihre Bewegung gewinnen.",
@@ -257,8 +371,29 @@ export const ARTICLES = [
       tr: "Kafatasının altında veya kürek kemikleri arasında kalıcı sertlik mi? Modern bilim güven verici haberler getiriyor: boynunuz güçlü ve uyum sağlayabilir. Ağrının neden hasar anlamına gelmediğini açıklıyoruz.",
       ar: "هل تشعر بتيبس مستمر عند قاعدة الجمجمة أو بين الكتفين؟ يقدم لنا العلم الحديث خبرًا مطمئنًا: رقبتك قوية وقادرة على التكيف. نشرح لماذا الألم لا يعني الإصابة.",
       pl: "Ta uporczywa sztywność u podstawy czaszki lub między łopatkami? Współczesna nauka przynosi uspokajającą wiadomość: Twoja szyja jest silna i zdolna do adaptacji. Wyjaśniamy, dlaczego ból nie oznacza uszkodzenia.",
+      "uk": "Ця стійка скутість біля основи черепа чи між лопатками? Сучасна наука приносить набагато заспокійливішу новину: Ваша шия міцна, витривала і здатна пристосовуватися. Ми пояснюємо, чому біль не означає пошкодження.",
+      "es": "¿Esa rigidez persistente en la base del cráneo o entre los omóplatos? La ciencia moderna nos trae una noticia mucho más tranquilizadora: su cuello es sólido, resistente y capaz de adaptarse. Le explicamos por qué el dolor no es sinónimo de lesión.",
+      "ku": "Ew hişkbûna domdar li binê serî an di navbera hestiyên milan de? Zanista nûjen nûçeyeke gelekî aramtir dide me: stûyê we xurt, berxwedêr û xwedî şiyana adaptebûnê ye. Em rave dikin çima êş ne wateya birînê ye.",
     },
-    tags: { de: ["Nacken", "Manuelle Therapie", "Mobilität", "Eupen"], fr: ["Cervicales", "Thérapie Manuelle", "Mobilité", "Eupen"], en: ["Neck", "Manual Therapy", "Mobility", "Eupen"], nl: ["Nek", "Manuele Therapie", "Mobiliteit", "Eupen"], tr: ["Boyun", "Manuel Terapi", "Hareket", "Eupen"], ar: ["رقبة", "علاج يدوي", "حركة", "أوبن"], pl: ["Szyja", "Terapia Manualna", "Mobilność", "Eupen"] },
+    tags: { de: ["Nacken", "Manuelle Therapie", "Mobilität", "Eupen"], fr: ["Cervicales", "Thérapie Manuelle", "Mobilité", "Eupen"], en: ["Neck", "Manual Therapy", "Mobility", "Eupen"], nl: ["Nek", "Manuele Therapie", "Mobiliteit", "Eupen"], tr: ["Boyun", "Manuel Terapi", "Hareket", "Eupen"], ar: ["رقبة", "علاج يدوي", "حركة", "أوبن"], pl: ["Szyja", "Terapia Manualna", "Mobilność", "Eupen"],
+    "uk": [
+      "Шия",
+      "Мануальна терапія",
+      "Рухливість",
+      "Ойпен"
+    ],
+    "es": [
+      "Cervicales",
+      "Terapia manual",
+      "Movilidad",
+      "Eupen"
+    ],
+    "ku": [
+      "Stû",
+      "Terapiya destî",
+      "Livîn",
+      "Eupen"
+    ] },
   },
   {
     slug: "manuelle-therapie-rueckenschmerzen",
@@ -267,6 +402,9 @@ export const ARTICLES = [
     category: {
       de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy",
       nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+      "uk": "Мануальна терапія",
+      "es": "Terapia manual",
+      "ku": "Terapiya destî",
     },
     color: "from-[#2b3186] to-[#1e2260]",
     title: {
@@ -277,6 +415,9 @@ export const ARTICLES = [
       tr: "Sırt ağrısı — manuel terapi ne zaman yardımcı olur?",
       ar: "آلام الظهر — متى تساعد العلاج اليدوي؟",
       pl: "Ból pleców — kiedy pomaga terapia manualna?",
+      "uk": "Біль у спині — коли допомагає мануальна терапія?",
+      "es": "Dolor de espalda — ¿cuándo ayuda la terapia manual?",
+      "ku": "Êşa piştê — terapiya destî kengê dibe alîkar?",
     },
     excerpt: {
       de: "Rückenschmerzen sind die häufigste Ursache für Arbeitsunfähigkeit weltweit. Doch nicht bei jedem Schmerz hilft die gleiche Therapie. Wir erklären, wann die Manuelle Therapie die richtige Wahl ist und was Sie von einer Behandlung erwarten können.",
@@ -286,8 +427,26 @@ export const ARTICLES = [
       tr: "Sırt ağrısı, dünya çapında iş göremezliğin önde gelen nedenidir. Ancak her ağrı aynı tedaviye yanıt vermez. Manuel terapinin ne zaman doğru seçim olduğunu açıklıyoruz.",
       ar: "آلام الظهر هي السبب الرئيسي للعجز عن العمل في جميع أنحاء العالم. لكن ليس كل ألم يستجيب لنفس العلاج. نشرح متى يكون العلاج اليدوي هو الخيار الصحيح.",
       pl: "Ból pleców jest główną przyczyną niepełnosprawności zawodowej na świecie. Jednak nie każdy ból reaguje na takie samo leczenie. Wyjaśniamy, kiedy terapia manualna jest właściwym wyborem.",
+      "uk": "Біль у спині — головна причина непрацездатності у світі. Але не кожен біль однаково реагує на лікування. Ми пояснюємо, коли мануальна терапія є правильним вибором і чого Ви можете очікувати від лікування.",
+      "es": "El dolor de espalda es la primera causa de incapacidad laboral en el mundo. Pero no todos los dolores responden al mismo tratamiento. Le explicamos cuándo la terapia manual es la elección adecuada y qué puede esperar del tratamiento.",
+      "ku": "Êşa piştê li cîhanê sedema yekem a nekarîna xebatê ye. Lê her êş bi heman dermankirinê bersiv nade. Em rave dikin kengê terapiya destî vebijarka rast e û hûn dikarin ji dermankirinê çi hêvî bikin.",
     },
-    tags: { de: ["Rückenschmerz", "Manuelle Therapie", "IFOMPT"], fr: ["Douleur dorsale", "Thérapie Manuelle", "IFOMPT"], en: ["Back pain", "Manual Therapy", "IFOMPT"], nl: ["Rugpijn", "Manuele Therapie", "IFOMPT"], tr: ["Sırt Ağrısı", "Manuel Terapi", "IFOMPT"], ar: ["ألم الظهر", "علاج يدوي", "IFOMPT"], pl: ["Ból pleców", "Terapia Manualna", "IFOMPT"] },
+    tags: { de: ["Rückenschmerz", "Manuelle Therapie", "IFOMPT"], fr: ["Douleur dorsale", "Thérapie Manuelle", "IFOMPT"], en: ["Back pain", "Manual Therapy", "IFOMPT"], nl: ["Rugpijn", "Manuele Therapie", "IFOMPT"], tr: ["Sırt Ağrısı", "Manuel Terapi", "IFOMPT"], ar: ["ألم الظهر", "علاج يدوي", "IFOMPT"], pl: ["Ból pleców", "Terapia Manualna", "IFOMPT"],
+    "uk": [
+      "Біль у спині",
+      "Мануальна терапія",
+      "IFOMPT"
+    ],
+    "es": [
+      "Dolor de espalda",
+      "Terapia manual",
+      "IFOMPT"
+    ],
+    "ku": [
+      "Êşa piştê",
+      "Terapiya destî",
+      "IFOMPT"
+    ] },
   },
   {
     slug: "laufen-verletzungspraevention",
@@ -296,6 +455,9 @@ export const ARTICLES = [
     category: {
       de: "Sport Physiotherapie", fr: "Kinésithérapie Sportive", en: "Sports Physio",
       nl: "Sportfysiotherapie", tr: "Spor Fizyoterapisi", ar: "فيزيوتيرابيا الرياضة", pl: "Fizjoterapia Sportowa",
+      "uk": "Спортивна фізіотерапія",
+      "es": "Fisioterapia deportiva",
+      "ku": "Fizyoterapiya werzîşê",
     },
     color: "from-[#76b82a] to-[#5c9120]",
     title: {
@@ -306,6 +468,9 @@ export const ARTICLES = [
       tr: "Ağrısız koşu — yaralanma önleme için 5 ipucu",
       ar: "الجري بدون ألم — 5 نصائح للوقاية من الإصابات",
       pl: "Bieganie bez bólu — 5 wskazówek dotyczących prewencji urazów",
+      "uk": "Біг без болю — 5 порад для профілактики травм",
+      "es": "Correr sin dolor — 5 consejos para prevenir lesiones",
+      "ku": "Bezîn bê êş — 5 şîret ji bo pêşîlêgirtina birînan",
     },
     excerpt: {
       de: "Jeder zweite Läufer verletzt sich mindestens einmal pro Jahr. Das Gute: Die meisten Laufverletzungen sind vermeidbar. Thom Petit, unser Sportphysiotherapeut und Spezialist der Running Clinic, teilt seine 5 wichtigsten Tipps zur Prävention.",
@@ -315,8 +480,29 @@ export const ARTICLES = [
       tr: "İki koşucudan biri yılda en az bir kez yaralanır. İyi haber: çoğu koşu yaralanması önlenebilir. Spor fizyoterapistimiz Thom Petit, 5 temel önleme ipucunu paylaşıyor.",
       ar: "يُصاب عداء من كل اثنين مرة واحدة على الأقل في السنة. الخبر الجيد: معظم إصابات الجري قابلة للوقاية. يشارك ثوم بيتي، أخصائي فيزيوتيرابيا الرياضة، نصائحه الخمس الأساسية.",
       pl: "Co drugi biegacz doznaje urazu przynajmniej raz w roku. Dobra wiadomość: większość urazów biegowych można zapobiec. Thom Petit dzieli się swoimi 5 najważniejszymi wskazówkami prewencyjnymi.",
+      "uk": "Кожен другий бігун травмується щонайменше раз на рік. Добра новина: більшості бігових травм можна запобігти. Thom Petit, наш спортивний фізіотерапевт і спеціаліст Running Clinic, ділиться своїми 5 головними порадами.",
+      "es": "Uno de cada dos corredores se lesiona al menos una vez al año. La buena noticia: la mayoría de las lesiones de running son evitables. Thom Petit, nuestro fisioterapeuta deportivo y especialista de la Running Clinic, comparte sus 5 consejos esenciales.",
+      "ku": "Ji her du bezvanan yek bi kêmanî salê carekê birîndar dibe. Mizgîniya baş: pêşiya piraniya birînên bezînê dikare were girtin. Thom Petit, fizyoterapîstê me yê werzîşê û pisporê Running Clinic, 5 şîretên xwe yên bingehîn parve dike.",
     },
-    tags: { de: ["Running", "Sport", "Verletzungsprävention", "Running Clinic"], fr: ["Running", "Sport", "Prévention", "Running Clinic"], en: ["Running", "Sport", "Injury Prevention", "Running Clinic"], nl: ["Running", "Sport", "Blessurepreventie", "Running Clinic"], tr: ["Koşu", "Spor", "Yaralanma Önleme", "Running Clinic"], ar: ["جري", "رياضة", "الوقاية", "Running Clinic"], pl: ["Bieganie", "Sport", "Prewencja", "Running Clinic"] },
+    tags: { de: ["Running", "Sport", "Verletzungsprävention", "Running Clinic"], fr: ["Running", "Sport", "Prévention", "Running Clinic"], en: ["Running", "Sport", "Injury Prevention", "Running Clinic"], nl: ["Running", "Sport", "Blessurepreventie", "Running Clinic"], tr: ["Koşu", "Spor", "Yaralanma Önleme", "Running Clinic"], ar: ["جري", "رياضة", "الوقاية", "Running Clinic"], pl: ["Bieganie", "Sport", "Prewencja", "Running Clinic"],
+    "uk": [
+      "Біг",
+      "Спорт",
+      "Профілактика",
+      "Running Clinic"
+    ],
+    "es": [
+      "Running",
+      "Deporte",
+      "Prevención",
+      "Running Clinic"
+    ],
+    "ku": [
+      "Bezîn",
+      "Werzîş",
+      "Pêşîlêgirtin",
+      "Running Clinic"
+    ] },
   },
   {
     slug: "lymphdrainage-wann-wie",
@@ -325,6 +511,9 @@ export const ARTICLES = [
     category: {
       de: "Lymphdrainage", fr: "Drainage Lymphatique", en: "Lymphatic Drainage",
       nl: "Lymfedrainage", tr: "Lenf Drenajı", ar: "الصرف اللمفاوي", pl: "Drenaż Limfatyczny",
+      "uk": "Лімфодренаж",
+      "es": "Drenaje linfático",
+      "ku": "Drenaja lîmfatîk",
     },
     color: "from-teal-600 to-teal-800",
     title: {
@@ -335,6 +524,9 @@ export const ARTICLES = [
       tr: "Manuel lenf drenajı — kim için ve ne zaman?",
       ar: "الصرف اللمفاوي اليدوي — لمن ومتى؟",
       pl: "Ręczny drenaż limfatyczny — dla kogo i kiedy?",
+      "uk": "Мануальний лімфодренаж — кому і коли?",
+      "es": "Drenaje linfático manual — ¿para quién y cuándo?",
+      "ku": "Drenaja lîmfatîk a destî — ji bo kê û kengê?",
     },
     excerpt: {
       de: "Die Lymphdrainage ist mehr als eine entspannende Massage. Sie ist eine medizinisch anerkannte Technik zur Behandlung von Ödemen und Lymphödemen. Fabienne Dormann erklärt, für welche Patienten die Therapie geeignet ist.",
@@ -344,8 +536,26 @@ export const ARTICLES = [
       tr: "Lenf drenajı, rahatlatıcı bir masajdan çok daha fazlasıdır. Ödem ve lenfödem tedavisinde tıbbi olarak tanınmış bir tekniktir. Fabienne Dormann, hangi hastaların en çok yararlandığını açıklıyor.",
       ar: "الصرف اللمفاوي أكثر بكثير من مجرد تدليك مريح. إنها تقنية معترف بها طبيًا لعلاج الوذمة والوذمة اللمفية. تشرح فابيان دورمان الفئات التي تستفيد أكثر من هذا العلاج.",
       pl: "Drenaż limfatyczny to znacznie więcej niż relaksujący masaż. Jest to uznana medycznie technika leczenia obrzęków i obrzęku limfatycznego. Fabienne Dormann wyjaśnia, którzy pacjenci korzystają najbardziej.",
+      "uk": "Лімфодренаж — це набагато більше, ніж розслаблювальний масаж. Це медично визнана техніка лікування набряків і лімфедем. Fabienne Dormann пояснює, яким пацієнтам підходить ця терапія.",
+      "es": "El drenaje linfático es mucho más que un masaje relajante. Es una técnica médicamente reconocida para tratar los edemas y linfedemas. Fabienne Dormann explica para qué pacientes está indicada esta terapia.",
+      "ku": "Drenaja lîmfatîk ji masajeke rehetker gelekî zêdetir e. Ew teknîkeke ji aliyê bijîjkî ve naskirî ye ji bo dermankirina werim (edema) û lîmfedemê. Fabienne Dormann rave dike ka ev terapî ji bo kîjan nexweşan guncav e.",
     },
-    tags: { de: ["Lymphdrainage", "Ödem", "Post-op"], fr: ["Drainage Lymphatique", "Œdème", "Post-op"], en: ["Lymphatic Drainage", "Oedema", "Post-op"], nl: ["Lymfedrainage", "Oedeem", "Post-op"], tr: ["Lenf Drenajı", "Ödem", "Post-op"], ar: ["صرف لمفاوي", "وذمة", "Post-op"], pl: ["Drenaż Limfatyczny", "Obrzęk", "Post-op"] },
+    tags: { de: ["Lymphdrainage", "Ödem", "Post-op"], fr: ["Drainage Lymphatique", "Œdème", "Post-op"], en: ["Lymphatic Drainage", "Oedema", "Post-op"], nl: ["Lymfedrainage", "Oedeem", "Post-op"], tr: ["Lenf Drenajı", "Ödem", "Post-op"], ar: ["صرف لمفاوي", "وذمة", "Post-op"], pl: ["Drenaż Limfatyczny", "Obrzęk", "Post-op"],
+    "uk": [
+      "Лімфодренаж",
+      "Набряк",
+      "Після операції"
+    ],
+    "es": [
+      "Drenaje linfático",
+      "Edema",
+      "Posoperatorio"
+    ],
+    "ku": [
+      "Drenaja lîmfatîk",
+      "Werim",
+      "Piştî emeliyatê"
+    ] },
   },
   {
     slug: "kiefergelenk-cmd-symptome",
@@ -354,6 +564,9 @@ export const ARTICLES = [
     category: {
       de: "Kiefergelenk / ATM", fr: "Articulation Temporo-Mandibulaire", en: "TMJ / Jaw",
       nl: "Kaakgewricht", tr: "Çene Eklemi", ar: "مفصل الفك", pl: "Staw Żuchwowy",
+      "uk": "Скронево-нижньощелепний суглоб",
+      "es": "Articulación temporomandibular",
+      "ku": "Movika çenê (TMJ)",
     },
     color: "from-purple-600 to-purple-800",
     title: {
@@ -364,6 +577,9 @@ export const ARTICLES = [
       tr: "Çene eklemi ağrısı (CMD) — belirtileri tanımak ve tedavi etmek",
       ar: "ألم مفصل الفك (CMD) — التعرف على الأعراض وعلاجها",
       pl: "Ból stawu skroniowo-żuchwowego (CMD) — rozpoznawanie i leczenie objawów",
+      "uk": "Біль у скронево-нижньощелепному суглобі (СНЩС) — як розпізнати та лікувати",
+      "es": "Dolor de la articulación temporomandibular (TTM) — reconocer y tratar",
+      "ku": "Êşa movika çenê (TMD) — naskirin û dermankirin",
     },
     excerpt: {
       de: "Kopfschmerzen, Schwindel, Kieferschmerzen oder ein Knacken beim Gähnen — all das können Zeichen einer craniomandibulären Dysfunktion (CMD) sein. Fabienne Dormann, unsere Spezialistin für Kiefergelenktherapie, klärt auf.",
@@ -373,8 +589,29 @@ export const ARTICLES = [
       tr: "Baş ağrısı, baş dönmesi, çene ağrısı veya ağız açarken klik sesi — bunların hepsi temporomandibüler disfonksiyonun (CMD) belirtisi olabilir. Çene eklemi uzmanımız Fabienne Dormann açıklıyor.",
       ar: "صداع، دوخة، آلام الفك أو صوت طقطقة عند الفتح — كل هذه يمكن أن تكون علامات على خلل مفصل الفك (CMD). تشرح متخصصتنا فابيان دورمان.",
       pl: "Bóle głowy, zawroty, ból żuchwy lub trzaskanie przy otwieraniu — to wszystko może być oznaką dysfunkcji skroniowo-żuchwowej (CMD). Wyjaśnia nasza specjalistka Fabienne Dormann.",
+      "uk": "Головний біль, запаморочення, біль у щелепі чи клацання під час відкривання рота — усе це може бути ознакою дисфункції скронево-нижньощелепного суглоба. Fabienne Dormann, наша спеціалістка з СНЩС, розповідає про головне.",
+      "es": "Dolores de cabeza, vértigos, dolor de mandíbula o chasquido al abrir la boca — todo ello puede ser señal de una disfunción temporomandibular (TTM). Fabienne Dormann, nuestra especialista en ATM, hace balance.",
+      "ku": "Serêş, gêjbûn, êşa çenê an qirç dema vekirina devê — ev hemû dikarin nîşana disfonksiyona temporomandîbular (TMD) bin. Fabienne Dormann, pispora me ya TMJ, rewşê rave dike.",
     },
-    tags: { de: ["CMD", "ATM", "Kiefergelenk", "Kopfschmerz"], fr: ["CMD", "ATM", "Mâchoire", "Maux de tête"], en: ["TMD", "TMJ", "Jaw", "Headache"], nl: ["CMD", "Kaakgewricht", "Hoofdpijn"], tr: ["CMD", "Çene Eklemi", "Baş Ağrısı"], ar: ["CMD", "مفصل الفك", "صداع"], pl: ["CMD", "Staw Żuchwowy", "Ból głowy"] },
+    tags: { de: ["CMD", "ATM", "Kiefergelenk", "Kopfschmerz"], fr: ["CMD", "ATM", "Mâchoire", "Maux de tête"], en: ["TMD", "TMJ", "Jaw", "Headache"], nl: ["CMD", "Kaakgewricht", "Hoofdpijn"], tr: ["CMD", "Çene Eklemi", "Baş Ağrısı"], ar: ["CMD", "مفصل الفك", "صداع"], pl: ["CMD", "Staw Żuchwowy", "Ból głowy"],
+    "uk": [
+      "КМД",
+      "СНЩС",
+      "Щелепа",
+      "Головний біль"
+    ],
+    "es": [
+      "DCM",
+      "ATM",
+      "Mandíbula",
+      "Dolor de cabeza"
+    ],
+    "ku": [
+      "TMD",
+      "TMJ",
+      "Çene",
+      "Serêş"
+    ] },
   },
   {
     slug: "osteopathie-kinesitherapie-unterschied",
@@ -383,6 +620,9 @@ export const ARTICLES = [
     category: {
       de: "Ostéopathie", fr: "Ostéopathie", en: "Osteopathy",
       nl: "Osteopathie", tr: "Osteopati", ar: "هشاشة العظام", pl: "Osteopatia",
+      "uk": "Остеопатія",
+      "es": "Osteopatía",
+      "ku": "Osteopatî",
     },
     color: "from-indigo-600 to-indigo-800",
     title: {
@@ -393,6 +633,9 @@ export const ARTICLES = [
       tr: "Osteopati vs. fizyoterapi — fark nedir?",
       ar: "هشاشة العظام مقابل العلاج الطبيعي — ما الفرق؟",
       pl: "Osteopatia a fizjoterapia — jaka jest różnica?",
+      "uk": "Остеопатія чи фізіотерапія — у чому різниця?",
+      "es": "Osteopatía vs. fisioterapia — ¿cuál es la diferencia?",
+      "ku": "Osteopatî û fizyoterapî — cudahî çi ye?",
     },
     excerpt: {
       de: "Was ist genau der Unterschied zwischen Physiotherapie und Osteopathie? Félix Esser, in beiden Disziplinen ausgebildet, erklärt, wie sich die beiden Ansätze ergänzen.",
@@ -402,8 +645,26 @@ export const ARTICLES = [
       tr: "Fizyoterapi ve osteopati arasındaki fark tam olarak nedir? Her iki disiplinde de eğitim alan Félix Esser, iki yaklaşımın nasıl birbirini tamamladığını açıklıyor.",
       ar: "ما الفرق بالضبط بين العلاج الطبيعي وهشاشة العظام؟ يشرح Félix Esser، المدرب في كلا التخصصين، كيف يكمل النهجان بعضهما.",
       pl: "Jaka jest dokładnie różnica między fizjoterapią a osteopatią? Félix Esser, wyszkolony w obu dyscyplinach, wyjaśnia, jak oba podejścia się uzupełniają.",
+      "uk": "У чому саме різниця між фізіотерапією та остеопатією? Félix Esser, який має освіту в обох дисциплінах, пояснює, як ці два підходи доповнюють один одного.",
+      "es": "¿Cuál es exactamente la diferencia entre la fisioterapia y la osteopatía? Félix Esser, formado en ambas disciplinas, explica cómo se complementan los dos enfoques.",
+      "ku": "Bi rastî cudahiya di navbera fizyoterapî û osteopatiyê de çi ye? Félix Esser, ku di her du dîsîplînan de perwerde bûye, rave dike ka her du nêzîkatî çawa hevdu temam dikin.",
     },
-    tags: { de: ["Osteopathie", "Physiotherapie", "Unterschied"], fr: ["Ostéopathie", "Kinésithérapie", "Différence"], en: ["Osteopathy", "Physiotherapy", "Difference"], nl: ["Osteopathie", "Fysiotherapie", "Verschil"], tr: ["Osteopati", "Fizyoterapi", "Fark"], ar: ["هشاشة العظام", "علاج طبيعي", "فرق"], pl: ["Osteopatia", "Fizjoterapia", "Różnica"] },
+    tags: { de: ["Osteopathie", "Physiotherapie", "Unterschied"], fr: ["Ostéopathie", "Kinésithérapie", "Différence"], en: ["Osteopathy", "Physiotherapy", "Difference"], nl: ["Osteopathie", "Fysiotherapie", "Verschil"], tr: ["Osteopati", "Fizyoterapi", "Fark"], ar: ["هشاشة العظام", "علاج طبيعي", "فرق"], pl: ["Osteopatia", "Fizjoterapia", "Różnica"],
+    "uk": [
+      "Остеопатія",
+      "Фізіотерапія",
+      "Різниця"
+    ],
+    "es": [
+      "Osteopatía",
+      "Fisioterapia",
+      "Diferencia"
+    ],
+    "ku": [
+      "Osteopatî",
+      "Fizyoterapî",
+      "Cudahî"
+    ] },
   },
   {
     slug: "bfr-training-rehabilitation",
@@ -412,6 +673,9 @@ export const ARTICLES = [
     category: {
       de: "Sport Physiotherapie", fr: "Kinésithérapie Sportive", en: "Sports Physio",
       nl: "Sportfysiotherapie", tr: "Spor Fizyoterapisi", ar: "فيزيوتيرابيا الرياضة", pl: "Fizjoterapia Sportowa",
+      "uk": "Спортивна фізіотерапія",
+      "es": "Fisioterapia deportiva",
+      "ku": "Fizyoterapiya werzîşê",
     },
     color: "from-orange-500 to-orange-700",
     title: {
@@ -422,6 +686,9 @@ export const ARTICLES = [
       tr: "Kan Akışı Kısıtlama (BFR) antrenmanı — rehabilitasyonda bir devrim",
       ar: "تدريب تقييد تدفق الدم (BFR) — ثورة في إعادة التأهيل",
       pl: "Trening BFR (ograniczenie przepływu krwi) — rewolucja w rehabilitacji",
+      "uk": "Blood Flow Restriction (BFR) — революція в реабілітації",
+      "es": "Blood Flow Restriction (BFR) — una revolución en la rehabilitación",
+      "ku": "Blood Flow Restriction (BFR) — şoreşek di rehabîlîtasyonê de",
     },
     excerpt: {
       de: "BFR-Training ermöglicht signifikante Muskelzuwächse bei sehr niedrigen Lasten (20–30% des Maximalgewichts). Besonders wertvoll in der frühen postoperativen Rehabilitation. Thom Petit erklärt die Wissenschaft und die Anwendung bei Praxis Loten.",
@@ -431,8 +698,29 @@ export const ARTICLES = [
       tr: "BFR antrenmanı, çok düşük yüklerde (maksimumun %20–30'u) önemli kas artışına olanak tanır. Erken ameliyat sonrası rehabilitasyonda özellikle değerlidir. Thom Petit bilimi ve uygulamayı açıklıyor.",
       ar: "يتيح تدريب BFR مكاسب عضلية كبيرة عند أحمال منخفضة جدًا (20-30٪ من الحد الأقصى). قيّم بشكل خاص في التأهيل المبكر بعد الجراحة. يشرح ثوم بيتي العلم والتطبيق.",
       pl: "Trening BFR umożliwia znaczny przyrost mięśni przy bardzo niskich obciążeniach (20–30% maksimum). Szczególnie cenny we wczesnej rehabilitacji pooperacyjnej. Thom Petit wyjaśnia naukę i zastosowanie.",
+      "uk": "Тренування BFR дає змогу досягти значного приросту м'язів із дуже легкими навантаженнями (20–30% від максимуму). Особливо цінне в ранній післяопераційній реабілітації. Thom Petit пояснює наукові засади та застосування в Praxis Loten.",
+      "es": "El entrenamiento BFR permite ganancias musculares significativas con cargas muy ligeras (20–30% del máximo). Especialmente valioso en la rehabilitación posoperatoria temprana. Thom Petit explica la ciencia y su aplicación en Praxis Loten.",
+      "ku": "Perwerdeya BFR bi barên pir sivik (20–30% ji ya herî zêde) destkeftiyên masûlkeyan ên girîng gengaz dike. Bi taybetî di rehabîlîtasyona zû ya piştî emeliyatê de hêja ye. Thom Petit zanistê û sepandina wê li Praxis Loten rave dike.",
     },
-    tags: { de: ["BFR", "Sport", "Rehabilitation", "Kinesport"], fr: ["BFR", "Sport", "Rééducation", "Kinesport"], en: ["BFR", "Sport", "Rehabilitation", "Kinesport"], nl: ["BFR", "Sport", "Revalidatie", "Kinesport"], tr: ["BFR", "Spor", "Rehabilitasyon", "Kinesport"], ar: ["BFR", "رياضة", "تأهيل", "Kinesport"], pl: ["BFR", "Sport", "Rehabilitacja", "Kinesport"] },
+    tags: { de: ["BFR", "Sport", "Rehabilitation", "Kinesport"], fr: ["BFR", "Sport", "Rééducation", "Kinesport"], en: ["BFR", "Sport", "Rehabilitation", "Kinesport"], nl: ["BFR", "Sport", "Revalidatie", "Kinesport"], tr: ["BFR", "Spor", "Rehabilitasyon", "Kinesport"], ar: ["BFR", "رياضة", "تأهيل", "Kinesport"], pl: ["BFR", "Sport", "Rehabilitacja", "Kinesport"],
+    "uk": [
+      "BFR",
+      "Спорт",
+      "Реабілітація",
+      "Kinesport"
+    ],
+    "es": [
+      "BFR",
+      "Deporte",
+      "Rehabilitación",
+      "Kinesport"
+    ],
+    "ku": [
+      "BFR",
+      "Werzîş",
+      "Rehabîlîtasyon",
+      "Kinesport"
+    ] },
   },
   {
   slug: "montre-connectee-douleur",
@@ -446,6 +734,9 @@ export const ARTICLES = [
     tr: "Terapi & Teknoloji",
     ar: "\u0627\u0644\u0639\u0644\u0627\u062c \u0648\u0627\u0644\u062a\u0643\u0646\u0648\u0644\u0648\u062c\u064a\u0627",
     pl: "Terapia & Technologia",
+    "uk": "Терапія та технології",
+    "es": "Terapia y tecnología",
+    "ku": "Terapî û Teknolojî",
   },
   color: "from-[#0e7490] to-[#155e75]",
   title: {
@@ -456,6 +747,9 @@ export const ARTICLES = [
     tr: "Ak\u0131ll\u0131 saat ve a\u011fr\u0131 \u2014 Saatiniz sizin i\u00e7in ger\u00e7ekten ne yapabilir?",
     ar: "\u0627\u0644\u0633\u0627\u0639\u0629 \u0627\u0644\u0630\u0643\u064a\u0629 \u0648\u0627\u0644\u0623\u0644\u0645 \u2014 \u0645\u0627 \u0627\u0644\u0630\u064a \u064a\u0645\u0643\u0646 \u0623\u0646 \u062a\u0641\u0639\u0644\u0647 \u0633\u0627\u0639\u062a\u0643 \u062d\u0642\u0627\u064b \u0645\u0646 \u0623\u062c\u0644\u0643",
     pl: "Smartwatch a b\u00f3l \u2014 Co zegarek naprawd\u0119 mo\u017ce dla Ciebie zrobi\u0107",
+    "uk": "Розумний годинник і біль — що Ваш годинник справді може для Вас зробити",
+    "es": "Reloj inteligente y dolor — lo que su reloj puede hacer realmente por usted",
+    "ku": "Saeta biaqil û êş — saeta we bi rastî dikare ji bo we çi bike",
   },
   excerpt: {
     de: "Kann Ihre Apple Watch oder Garmin bei chronischen Schmerzen helfen? Die Wissenschaft sagt: Ja \u2014 aber nicht so, wie Sie denken. Erfahren Sie, wie Sie Ihre Smartwatch-Daten richtig nutzen.",
@@ -465,6 +759,9 @@ export const ARTICLES = [
     tr: "Apple Watch veya Garmin'iniz kronik a\u011fr\u0131larda yard\u0131mc\u0131 olabilir mi? Bilim evet diyor \u2014 ama d\u00fc\u015f\u00fcnd\u00fc\u011f\u00fcn\u00fcz gibi de\u011fil. Ak\u0131ll\u0131 saat verilerinizi nas\u0131l do\u011fru kullanaca\u011f\u0131n\u0131z\u0131 \u00f6\u011frenin.",
     ar: "\u0647\u0644 \u064a\u0645\u0643\u0646 \u0644\u0633\u0627\u0639\u0629 Apple Watch \u0623\u0648 Garmin \u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629 \u0641\u064a \u0627\u0644\u0623\u0644\u0645 \u0627\u0644\u0645\u0632\u0645\u0646\u061f \u0627\u0644\u0639\u0644\u0645 \u064a\u0642\u0648\u0644 \u0646\u0639\u0645 \u2014 \u0644\u0643\u0646 \u0644\u064a\u0633 \u0643\u0645\u0627 \u062a\u0638\u0646\u0648\u0646. \u0627\u0643\u062a\u0634\u0641\u0648\u0627 \u0643\u064a\u0641 \u062a\u0633\u062a\u062e\u062f\u0645\u0648\u0646 \u0628\u064a\u0627\u0646\u0627\u062a \u0633\u0627\u0639\u062a\u0643\u0645 \u0628\u0634\u0643\u0644 \u0635\u062d\u064a\u062d.",
     pl: "Czy Apple Watch lub Garmin mo\u017ce pom\u00f3c przy b\u00f3lu przewlek\u0142ym? Nauka m\u00f3wi: tak \u2014 ale nie tak, jak my\u015blisz. Dowiedz si\u0119, jak prawid\u0142owo wykorzysta\u0107 dane ze smartwatcha.",
+    "uk": "Чи може Ваш Apple Watch або Garmin допомогти при хронічному болю? Наука каже: так — але не так, як Ви думаєте. Дізнайтеся, як правильно використовувати дані свого годинника.",
+    "es": "¿Puede su Apple Watch o Garmin ayudarle en caso de dolor crónico? La ciencia dice: sí — pero no como usted piensa. Descubra cómo utilizar correctamente los datos de su reloj.",
+    "ku": "Ma Apple Watch an Garmin-a we dikare di êşa kronîk de bibe alîkar? Zanist dibêje: erê — lê ne wek ku hûn difikirin. Kifş bikin ka çawa daneyên saeta xwe bi awayê rast bi kar bînin.",
   },
   tags: {
     de: ["Smartwatch", "Chronische Schmerzen", "Bewegung", "Rehabilitation"],
@@ -474,6 +771,24 @@ export const ARTICLES = [
     tr: ["Ak\u0131ll\u0131 saat", "Kronik a\u011fr\u0131", "Hareket", "Rehabilitasyon"],
     ar: ["\u0633\u0627\u0639\u0629 \u0630\u0643\u064a\u0629", "\u0623\u0644\u0645 \u0645\u0632\u0645\u0646", "\u062d\u0631\u0643\u0629", "\u0625\u0639\u0627\u062f\u0629 \u062a\u0623\u0647\u064a\u0644"],
     pl: ["Smartwatch", "B\u00f3l przewlek\u0142y", "Ruch", "Rehabilitacja"],
+    "uk": [
+      "Розумний годинник",
+      "Хронічний біль",
+      "Рух",
+      "Реабілітація"
+    ],
+    "es": [
+      "Reloj inteligente",
+      "Dolor crónico",
+      "Movimiento",
+      "Rehabilitación"
+    ],
+    "ku": [
+      "Saeta biaqil",
+      "Êşa kronîk",
+      "Tevger",
+      "Rehabîlîtasyon"
+    ],
   },
 },
 ];
@@ -486,17 +801,47 @@ const UI_BLOG: Record<LangKey, { title: string; subtitle: string; readMin: strin
   tr: { title: "Blog & Tavsiyeler", subtitle: "Terapistlerimizin fizyoterapi, rehabilitasyon ve sağlık hakkında derinlemesine makaleleri.", readMin: "dk okuma", readMore: "Makaleyi oku", featured: "Yeni", all: "Tümü", filterBy: "Kategori" },
   ar: { title: "المدونة والنصائح", subtitle: "مقالات متعمقة يكتبها معالجونا حول العلاج الطبيعي وإعادة التأهيل والصحة.", readMin: "دقيقة قراءة", readMore: "اقرأ المقال", featured: "جديد", all: "الكل", filterBy: "الفئة" },
   pl: { title: "Blog i Porady", subtitle: "Dogłębne artykuły naszych terapeutów o fizjoterapii, rehabilitacji i zdrowiu.", readMin: "min czytania", readMore: "Przeczytaj artykuł", featured: "Nowość", all: "Wszystko", filterBy: "Kategoria" },
+  "uk": {
+    "title": "Блог і поради",
+    "subtitle": "Ґрунтовні статті наших терапевтів про фізіотерапію, реабілітацію та здоров'я.",
+    "readMin": "хв читання",
+    "readMore": "Читати статтю",
+    "featured": "Нове",
+    "all": "Усі",
+    "filterBy": "Категорія"
+  },
+  "es": {
+    "title": "Blog y consejos",
+    "subtitle": "Artículos en profundidad redactados por nuestros terapeutas sobre fisioterapia, rehabilitación y salud.",
+    "readMin": "min de lectura",
+    "readMore": "Leer el artículo",
+    "featured": "Nuevo",
+    "all": "Todos",
+    "filterBy": "Categoría"
+  },
+  "ku": {
+    "title": "Blog û Şîret",
+    "subtitle": "Gotarên kûr ên ku terapîstên me li ser fizyoterapî, rehabîlîtasyon û tenduristiyê nivîsandine.",
+    "readMin": "deq xwendin",
+    "readMore": "Gotarê bixwîne",
+    "featured": "Nû",
+    "all": "Hemû",
+    "filterBy": "Kategorî"
+  },
 };
 
 function formatDate(dateStr: string, lang: LangKey) {
   const d = new Date(dateStr);
-  const locales: Record<LangKey, string> = { de: "de-DE", fr: "fr-FR", en: "en-GB", nl: "nl-NL", tr: "tr-TR", ar: "ar-SA", pl: "pl-PL" };
+  const locales: Record<LangKey, string> = { de: "de-DE", fr: "fr-FR", en: "en-GB", nl: "nl-NL", tr: "tr-TR", ar: "ar-SA", pl: "pl-PL",
+  "uk": "uk-UA",
+  "es": "es-ES",
+  "ku": "ku-TR" };
   return d.toLocaleDateString(locales[lang], { year: "numeric", month: "long", day: "numeric" });
 }
 
 export function BlogPageContent() {
   const locale = useLocale() as LangKey;
-  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl"].includes(locale) ? locale : "en") as LangKey;
+  const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI_BLOG[lang];
   const isRtl = lang === "ar";
 
