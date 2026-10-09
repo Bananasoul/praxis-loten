@@ -38,11 +38,17 @@ const SURGERY_DATA: Record<Slug, {
     title: {
       de: "Hüftprothese (TEP)", fr: "Prothèse de Hanche (PTH)", en: "Hip Replacement",
       nl: "Heupprothese", tr: "Kalça Protezi", ar: "بدلة الورك", pl: "Endoproteza biodra",
+      "uk": "Ендопротез кульшового суглоба",
+      "es": "Prótesis de cadera (PTC)",
+      "ku": "Proteza kalçê",
     },
     subtitle: {
       de: "Vollständige Genesung nach Hüfttotalendoprothese", fr: "Récupération complète après prothèse totale de hanche",
       en: "Full recovery after total hip replacement", nl: "Volledig herstel na totale heupprothese",
       tr: "Toplam kalça protezi sonrası tam iyileşme", ar: "التعافي الكامل بعد بدلة الورك الكلية", pl: "Pełny powrót do zdrowia po endoprotezie biodra",
+      "uk": "Повне відновлення після тотального ендопротезування кульшового суглоба",
+      "es": "Recuperación completa tras una prótesis total de cadera",
+      "ku": "Başbûna tam piştî proteza tam a kalçê",
     },
     surgeryExplain: {
       de: "Bei einer Hüfttotalendoprothese (TEP) wird das beschädigte Hüftgelenk durch eine künstliche Prothese aus Metall, Keramik oder Kunststoff ersetzt. Der Eingriff wird bei fortgeschrittener Arthrose, Hüftfrakturen oder anderen schwerwiegenden Gelenkerkrankungen durchgeführt. Ziel ist die Wiederherstellung der Schmerzfreiheit und der vollen Beweglichkeit. In Belgien werden jährlich über 25 000 Hüftprothesen implantiert — ein routinemäßiger, aber bedeutsamer Eingriff, der eine gezielte Nachsorge erfordert.",
@@ -52,6 +58,9 @@ const SURGERY_DATA: Record<Slug, {
       tr: "Toplam kalça protezi ameliyatında, hasarlı kalça eklemi metal, seramik veya plastikten yapılmış yapay bir protez ile değiştirilir. Prosedür, ilerlemiş artrit, kalça kırıkları veya diğer ciddi eklem hastalıkları için yapılır. Amaç, ağrısız hareketi ve tam hareketliliği yeniden kazanmaktır. Belçika'da her yıl 25.000'den fazla kalça protezi implante edilmektedir.",
       ar: "في عملية استبدال مفصل الورك الكلي، يُستبدل مفصل الورك التالف ببدلة اصطناعية مصنوعة من المعدن أو الخزف أو البلاستيك. تُجرى العملية في حالات التهاب المفاصل المتقدم أو كسور الورك أو أمراض المفاصل الخطيرة الأخرى. الهدف هو استعادة الحركة بدون ألم والتنقل الكامل. في بلجيكا، يتم زرع أكثر من 25,000 بدلة ورك سنوياً.",
       pl: "W całkowitej endoprotezie biodra uszkodzony staw biodrowy jest zastępowany sztuczną protezą wykonaną z metalu, ceramiki lub tworzywa sztucznego. Zabieg przeprowadza się w zaawansowanej artozie, złamaniach biodra lub innych poważnych schorzeniach stawowych. Celem jest przywrócenie bezbolesnego ruchu i pełnej mobilności. W Belgii rocznie implantuje się ponad 25 000 protez biodra.",
+      "uk": "Під час тотального ендопротезування кульшового суглоба пошкоджений суглоб замінюють штучним протезом із металу, кераміки або пластику. Втручання виконують у разі вираженого артрозу, переломів шийки стегна чи інших серйозних захворювань суглоба. Мета — повернути життя без болю та повну рухливість. У Бельгії щороку встановлюють понад 25 000 ендопротезів кульшового суглоба — це рутинне, але важливе втручання, яке потребує цілеспрямованого подальшого супроводу.",
+      "es": "En una prótesis total de cadera (PTC), la articulación dañada se sustituye por una prótesis artificial de metal, cerámica o plástico. La intervención se realiza en caso de artrosis avanzada, fracturas de cadera u otras afecciones articulares graves. El objetivo es recuperar la ausencia de dolor y la plena movilidad. En Bélgica se implantan cada año más de 25 000 prótesis de cadera: una intervención rutinaria pero importante, que requiere un seguimiento específico.",
+      "ku": "Di proteza tam a kalçê de, movika zirardîtî bi protezeke çêkirî ya ji metal, seramîk an plastîkê tê guhertin. Ev destwerdan di rewşên artroza pêşketî, şikestinên kalçê an nexweşiyên din ên giran ên movikê de tê kirin. Armanc ew e ku jiyana bê êş û livîna tam vegere. Li Belçîkayê her sal zêdetirî 25 000 protezên kalçê têne bicihkirin — destwerdaneke rûtîn lê girîng e, ku şopandineke armancdar dixwaze.",
     },
     whyRehab: {
       de: ["Muskelkraft nach der Immobilisierung wiederherstellen", "Sichere Gangschulung und Sturzvermeidung", "Narbenmobilisation und Ödemreduktion", "Rückkehr zu Alltag, Beruf und Sport beschleunigen", "Komplikationen (Thrombose, Luxation) vorbeugen"],
@@ -61,6 +70,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["İmmobilizasyon sonrası kas gücünü geri kazanma", "Güvenli yürüme eğitimi ve düşme önleme", "Skar mobilizasyonu ve ödem azaltma", "Günlük yaşama, işe ve spora dönüşü hızlandırma", "Komplikasyonları önleme (tromboz, luksasyon)"],
       ar: ["استعادة قوة العضلات بعد التثبيت", "تدريب المشي الآمن والوقاية من السقوط", "تعبئة الندبة وتقليل الوذمة", "تسريع العودة إلى الحياة اليومية والعمل والرياضة", "الوقاية من المضاعفات (الجلطة، الخلع)"],
       pl: ["Przywrócenie siły mięśniowej po unieruchomieniu", "Bezpieczny trening chodu i profilaktyka upadków", "Mobilizacja blizny i redukcja obrzęku", "Przyspieszenie powrotu do życia codziennego, pracy i sportu", "Zapobieganie powikłaniom (zakrzepica, zwichnięcie)"],
+      "uk": [
+        "Відновити м'язову силу після іммобілізації",
+        "Безпечне відновлення ходьби та профілактика падінь",
+        "Мобілізація рубця та зменшення набряку",
+        "Пришвидшити повернення до повсякденних справ, роботи та спорту",
+        "Запобігти ускладненням (тромбоз, вивих)"
+      ],
+      "es": [
+        "Recuperar la fuerza muscular tras la inmovilización",
+        "Reeducación segura de la marcha y prevención de caídas",
+        "Movilización de la cicatriz y reducción del edema",
+        "Acelerar la vuelta a las actividades cotidianas, laborales y deportivas",
+        "Prevenir complicaciones (trombosis, luxación)"
+      ],
+      "ku": [
+        "Vegerandina hêza masûlkan piştî bêlivkirinê",
+        "Perwerdeya meşê ya ewle û pêşîlêgirtina ketinê",
+        "Livandina şopa birînê û kêmkirina werimê",
+        "Lezkirina vegera jiyana rojane, kar û werzîşê",
+        "Pêşîlêgirtina tevliheviyan (tromboz, jicîderketina movikê)"
+      ],
     },
     objectives: {
       de: ["Vollständige Schmerzfreiheit im Alltag", "Selbstständiges Gehen ohne Gehhilfen", "Treppensteigen sicher beherrschen", "90°+ Hüftflexion für Sitzen und Autofahren", "Rückkehr zu leichten Sportarten (Schwimmen, Radfahren)"],
@@ -70,6 +100,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Günlük yaşamda tam ağrısızlık", "Yardımcı cihaz olmadan bağımsız yürüme", "Güvenli merdiven kullanımı", "Oturma ve araba kullanımı için 90°+ kalça fleksiyonu", "Hafif sporlara dönüş (yüzme, bisiklet)"],
       ar: ["حياة يومية كاملة بدون ألم", "المشي المستقل بدون مساعدات", "استخدام الدرج بأمان", "انثناء الورك 90°+ للجلوس والقيادة", "العودة للرياضات الخفيفة (السباحة، الدراجة)"],
       pl: ["Pełne bezbolesne życie codzienne", "Samodzielny chód bez pomocy ortopedycznych", "Bezpieczne używanie schodów", "Zgięcie biodra 90°+ do siedzenia i jazdy samochodem", "Powrót do lekkich sportów (pływanie, rower)"],
+      "uk": [
+        "Повна відсутність болю в повсякденному житті",
+        "Самостійна ходьба без допоміжних засобів",
+        "Безпечний підйом і спуск сходами",
+        "Згинання в кульшовому суглобі 90°+, щоб сидіти та керувати автомобілем",
+        "Повернення до легких видів спорту (плавання, велосипед)"
+      ],
+      "es": [
+        "Ausencia total de dolor en el día a día",
+        "Marcha autónoma sin ayudas técnicas",
+        "Subir y bajar escaleras con seguridad",
+        "Flexión de cadera de 90°+ para sentarse y conducir",
+        "Vuelta a deportes suaves (natación, bicicleta)"
+      ],
+      "ku": [
+        "Jiyana rojane bi tevahî bê êş",
+        "Meşa serbixwe bê alavên alîkariyê",
+        "Hilkişîn û daketina pêlekanan bi ewlehî",
+        "Xwarkirina kalçê ya 90°+ ji bo rûniştin û ajotinê",
+        "Vegera werzîşên sivik (avjenî, bisîklet)"
+      ],
     },
     whatToExpect: {
       de: [
@@ -107,6 +158,48 @@ const SURGERY_DATA: Record<Slug, {
         { heading: "Tygodnie 3–6: Rehabilitacja Ambulatoryjna", text: "Regularne sesje w naszej praktyce. Stajesz się coraz bardziej samodzielny i potrzebujesz mniej leków przeciwbólowych. Blizna się goi, obrzęk ustępuje. Wielu pacjentów chodzi bez pomocy ortopedycznych w tej fazie." },
         { heading: "Tygodnie 7–12: Powrót do Normalności", text: "Większość codziennych czynności jest znów możliwa: jazda samochodem, lekkie prace domowe, krótkie spacery. Program treningowy staje się bardziej intensywny. Pływanie i jazda na rowerze są zazwyczaj dozwolone." },
       ],
+      "uk": [
+        {
+          "heading": "Тижні 1–2: у лікарні та вдома",
+          "text": "Ви виписуєтеся з лікарні через 3–5 днів із милицями. Перші кроки болісні, але це нормально. Правил щодо положення тіла слід суворо дотримуватися (не схрещувати ноги). Фізіотерапія починається вже наступного дня після операції."
+        },
+        {
+          "heading": "Тижні 3–6: амбулаторна реабілітація",
+          "text": "Регулярні сеанси в нашому кабінеті. Ви стаєте дедалі самостійнішими й потребуєте менше знеболювальних. Рубець загоюється, набряк зменшується. Багато пацієнтів на цьому етапі вже ходять без милиць."
+        },
+        {
+          "heading": "Тижні 7–12: повернення до звичного життя",
+          "text": "Більшість повсякденних справ знову можливі: керування автомобілем, легка хатня робота, короткі прогулянки. Програма тренувань стає інтенсивнішою. Плавання та їзда на велосипеді зазвичай дозволені."
+        }
+      ],
+      "es": [
+        {
+          "heading": "Semanas 1–2: en el hospital y en casa",
+          "text": "Sale del hospital tras 3–5 días con muletas. Los primeros pasos son dolorosos, pero es normal. Las normas de posición deben respetarse estrictamente (no cruzar las piernas). La fisioterapia empieza al día siguiente de la operación."
+        },
+        {
+          "heading": "Semanas 3–6: rehabilitación ambulatoria",
+          "text": "Sesiones regulares en nuestra consulta. Usted gana cada vez más autonomía y necesita menos analgésicos. La cicatriz se cura y la hinchazón disminuye. Muchos pacientes ya caminan sin muletas en esta fase."
+        },
+        {
+          "heading": "Semanas 7–12: vuelta a la normalidad",
+          "text": "La mayoría de las actividades cotidianas vuelven a ser posibles: conducir, tareas domésticas ligeras, paseos cortos. El programa de entrenamiento se vuelve más intenso. La natación y la bicicleta suelen estar permitidas."
+        }
+      ],
+      "ku": [
+        {
+          "heading": "Hefteyên 1–2: li nexweşxaneyê û li malê",
+          "text": "Hûn piştî 3–5 rojan bi goçanan ji nexweşxaneyê derdikevin. Gavên pêşîn bi êş in, lê ev normal e. Divê qaîdeyên pozîsyona laş bi hûrgilî bên şopandin (lingan li ser hev nexin). Fizyoterapî roja piştî emeliyatê dest pê dike."
+        },
+        {
+          "heading": "Hefteyên 3–6: rehabîlîtasyona ayaxî",
+          "text": "Danişînên birêkûpêk li klînîka me. Hûn her ku diçe serbixwetir dibin û kêmtir hewcedarî dermanên êşê dibin. Şopa birînê baş dibe û werimîn kêm dibe. Gelek nexweş di vê qonaxê de jixwe bê goçan dimeşin."
+        },
+        {
+          "heading": "Hefteyên 7–12: vegera jiyana asayî",
+          "text": "Piraniya çalakiyên rojane dîsa gengaz dibin: ajotin, karên malê yên sivik, meşên kurt. Bernameya perwerdeyê dijwartir dibe. Avjenî û bisîklet bi gelemperî destûrdayî ne."
+        }
+      ],
     },
     risks: {
       de: ["Ohne Rehabilitation erhöhtes Luxationsrisiko", "Muskelschwund und Gangabweichungen", "Langanhaltende Schmerzen durch Vernarbungen", "Verzögerte Rückkehr zum Alltag (bis zu 6 Monate länger)"],
@@ -116,6 +209,24 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Rehabilitasyon olmadan artan luksasyon riski", "Kas atrofisi ve yürüyüş sapmaları", "Skar dokusundan kaynaklanan kalıcı ağrı", "Günlük aktivitelere geç dönüş (6 aya kadar daha uzun)"],
       ar: ["زيادة خطر الخلع بدون إعادة التأهيل", "ضمور العضلات وانحرافات المشي", "ألم مستمر من الأنسجة الندبية", "تأخر العودة إلى الأنشطة اليومية (حتى 6 أشهر إضافية)"],
       pl: ["Zwiększone ryzyko zwichnięcia bez rehabilitacji", "Zanik mięśni i odchylenia chodu", "Utrzymujący się ból z powodu tkanki bliznowatej", "Opóźniony powrót do codziennych czynności (do 6 miesięcy dłużej)"],
+      "uk": [
+        "Підвищений ризик вивиху без реабілітації",
+        "Атрофія м'язів і порушення ходи",
+        "Тривалий біль через рубцеву тканину",
+        "Пізніше повернення до повсякденних справ (до 6 місяців довше)"
+      ],
+      "es": [
+        "Mayor riesgo de luxación sin rehabilitación",
+        "Atrofia muscular y alteraciones de la marcha",
+        "Dolor persistente debido al tejido cicatricial",
+        "Vuelta a las actividades cotidianas retrasada (hasta 6 meses más)"
+      ],
+      "ku": [
+        "Bê rehabîlîtasyon, xetera jicîderketinê zêdetir e",
+        "Zirav bûna masûlkan û tevgera meşê ya xelet",
+        "Êşa domdar ji ber şaneyên şopa birînê",
+        "Derengketina vegera çalakiyên rojane (heta 6 mehan zêdetir)"
+      ],
     },
     phases: {
       de: [
@@ -153,6 +264,93 @@ const SURGERY_DATA: Record<Slug, {
         { label: "Faza 2 — Tygodnie 4–6", items: ["Wzmacnianie mięśni (odwodziciele biodra, pośladkowe)", "Koordynacja i równowaga", "Chód bez pomocy", "Wchodzenie po schodach"] },
         { label: "Faza 3 — Tygodnie 7–12", items: ["Powrót do codziennych aktywności", "Trening sportowy", "Profilaktyka upadków", "Ocena końcowa"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — тижні 1–3",
+          "items": [
+            "Зменшення болю та набряку",
+            "Пасивна та активно-асистована мобілізація",
+            "Відновлення ходьби з допоміжними засобами",
+            "Лімфодренаж за потреби"
+          ]
+        },
+        {
+          "label": "Фаза 2 — тижні 4–6",
+          "items": [
+            "Зміцнення м'язів (відвідні м'язи стегна, сідничні м'язи)",
+            "Координація та рівновага",
+            "Ходьба без допоміжних засобів",
+            "Підйом і спуск сходами"
+          ]
+        },
+        {
+          "label": "Фаза 3 — тижні 7–12",
+          "items": [
+            "Повернення до повсякденних справ",
+            "Спортивно-специфічні тренування",
+            "Профілактика падінь",
+            "Підсумкова оцінка реабілітації"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–3",
+          "items": [
+            "Reducción del dolor y drenaje del edema",
+            "Movilización pasiva y activa asistida",
+            "Reeducación de la marcha con ayudas técnicas",
+            "Drenaje linfático si es necesario"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 4–6",
+          "items": [
+            "Fortalecimiento muscular (abductores, glúteos)",
+            "Coordinación y equilibrio",
+            "Marcha sin ayudas técnicas",
+            "Subir y bajar escaleras"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 7–12",
+          "items": [
+            "Vuelta a las actividades cotidianas",
+            "Entrenamiento específico del deporte",
+            "Prevención de caídas",
+            "Valoración final de la rehabilitación"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonaxa 1 — Hefteyên 1–3",
+          "items": [
+            "Kêmkirina êşê û derxistina werimê",
+            "Livandina pasîf û çalak-bi-alîkarî",
+            "Perwerdeya meşê bi alavên alîkariyê",
+            "Drenaja lîmfatîk eger pêwîst be"
+          ]
+        },
+        {
+          "label": "Qonaxa 2 — Hefteyên 4–6",
+          "items": [
+            "Xurtkirina masûlkan (abduktor, masûlkeyên qûnê)",
+            "Koordînasyon û hevsengî",
+            "Meş bê alavên alîkariyê",
+            "Hilkişîn û daketina pêlekanan"
+          ]
+        },
+        {
+          "label": "Qonaxa 3 — Hefteyên 7–12",
+          "items": [
+            "Vegera çalakiyên rojane",
+            "Perwerdeya taybet a werzîşê",
+            "Pêşîlêgirtina ketinê",
+            "Nirxandina dawiya rehabîlîtasyonê"
+          ]
+        }
+      ],
     },
   },
 
@@ -165,11 +363,17 @@ const SURGERY_DATA: Record<Slug, {
     title: {
       de: "Knieprothese (TEP)", fr: "Prothèse de Genou (PTG)", en: "Knee Replacement",
       nl: "Knieprothese", tr: "Diz Protezi", ar: "بدلة الركبة", pl: "Endoproteza kolana",
+      "uk": "Ендопротез колінного суглоба",
+      "es": "Prótesis de rodilla (PTR)",
+      "ku": "Proteza çokê",
     },
     subtitle: {
       de: "Mobilität und Schmerzfreiheit nach Knie-TEP", fr: "Mobilité et absence de douleur après PTG",
       en: "Mobility and pain relief after knee replacement", nl: "Mobiliteit en pijnverlichting na knieprothese",
       tr: "Diz protezi sonrası hareketlilik ve ağrı giderme", ar: "الحركة وتخفيف الألم بعد بدلة الركبة", pl: "Mobilność i ulga w bólu po endoprotezie kolana",
+      "uk": "Рухливість і відсутність болю після ендопротезування коліна",
+      "es": "Movilidad y ausencia de dolor tras una PTR",
+      "ku": "Livîn û jiyana bê êş piştî proteza çokê",
     },
     surgeryExplain: {
       de: "Bei einer Knie-Totalendoprothese wird das abgenutzte Kniegelenk durch eine Metalllegierung und Polyethylen ersetzt, die die natürliche Gelenkfläche nachahmen. Der Eingriff dauert etwa 1–2 Stunden und wird meistens bei schwerer Gonarthrose durchgeführt. Das neue Gelenk kann bei guter Nachsorge 15–25 Jahre halten. Eine strukturierte Rehabilitation ist entscheidend: Das Kniegelenk muss nach dem Eingriff aktiv 'umprogrammiert' werden, damit Muskeln und Nervensystem wieder harmonisch zusammenarbeiten.",
@@ -179,6 +383,9 @@ const SURGERY_DATA: Record<Slug, {
       tr: "Toplam diz protezinde, aşınmış eklem, doğal eklem yüzeyini taklit eden metal alaşım ve polietilen ile değiştirilir. Prosedür yaklaşık 1–2 saat sürer ve çoğunlukla şiddetli diz artriti için yapılır. İyi bakımla yeni eklem 15–25 yıl dayanabilir. Yapılandırılmış rehabilitasyon çok önemlidir: ameliyat sonrası kas ve sinir sisteminin yeniden uyum içinde çalışması için diz aktif olarak 'yeniden programlanmalıdır'.",
       ar: "في بدلة الركبة الكلية، يُستبدل المفصل البالي بسبيكة معدنية وبولي إيثيلين تحاكي سطح المفصل الطبيعي. تستغرق العملية حوالي 1–2 ساعة وتُجرى في الغالب لالتهاب الركبة الشديد. مع الرعاية الجيدة، يمكن للمفصل الجديد أن يدوم 15–25 سنة. إعادة التأهيل المنظمة أمر بالغ الأهمية: يجب إعادة 'برمجة' الركبة بنشاط بعد الجراحة.",
       pl: "W całkowitej endoprotezie kolana zużyty staw jest zastępowany stopem metalu i polietylenem naśladującym naturalną powierzchnię stawową. Zabieg trwa około 1–2 godziny i najczęściej przeprowadzany jest przy ciężkiej gonartrozie. Przy dobrej opiece nowy staw może wytrzymać 15–25 lat. Ustrukturyzowana rehabilitacja jest kluczowa: kolano musi być aktywnie 'przeprogramowane' po zabiegu.",
+      "uk": "Під час тотального ендопротезування колінного суглоба зношений суглоб замінюють металевим сплавом і поліетиленом, які імітують природну суглобову поверхню. Втручання триває приблизно 1–2 години й найчастіше виконується при вираженому гонартрозі. За належного догляду новий суглоб може служити 15–25 років. Структурована реабілітація має вирішальне значення: після операції коліно потрібно активно «перепрограмувати», щоб м'язи та нервова система знову працювали злагоджено.",
+      "es": "En una prótesis total de rodilla, la articulación desgastada se sustituye por una aleación metálica y polietileno que imitan la superficie articular natural. La intervención dura aproximadamente 1–2 horas y se realiza con mayor frecuencia en caso de gonartrosis grave. Con unos buenos cuidados, la nueva articulación puede durar 15–25 años. Una rehabilitación estructurada es esencial: tras la intervención, la rodilla debe «reprogramarse» activamente para que los músculos y el sistema nervioso vuelvan a trabajar en armonía.",
+      "ku": "Di proteza tam a çokê de, movika xwarbûyî bi aliyajeke metalî û polîetîlenê tê guhertin, ku rûyê xwezayî yê movikê dişibînin. Destwerdan nêzîkî 1–2 saetan dajo û bi piranî di rewşa artroza çokê ya giran de tê kirin. Bi lênêrîneke baş, movika nû dikare 15–25 salan bimîne. Rehabîlîtasyoneke birêxistinkirî pir girîng e: piştî emeliyatê divê çok bi awayekî çalak «ji nû ve bê bernamekirin», da ku masûlke û pergala demarî dîsa bi ahengî bi hev re bixebitin.",
     },
     whyRehab: {
       de: ["Schnellere Wiederherstellung der Knieflexion (Ziel: 90°+)", "Quadrizeps-Atrophie verhindern und umkehren", "Schmerzkontrolle ohne exzessive Medikation", "Gangbild normalisieren", "Sturzrisiko minimieren"],
@@ -188,6 +395,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Diz fleksiyonunun daha hızlı geri kazanılması (hedef: 90°+)", "Quadriseps atrofisini önleme ve tersine çevirme", "Aşırı ilaç kullanmadan ağrı kontrolü", "Yürüyüş düzenini normalleştirme", "Düşme riskini en aza indirme"],
       ar: ["استعادة أسرع لثني الركبة (الهدف: 90°+)", "منع وعكس ضمور عضلة الرباعية", "التحكم في الألم دون أدوية مفرطة", "تطبيع نمط المشي", "تقليل خطر السقوط"],
       pl: ["Szybsze przywrócenie zgięcia kolana (cel: 90°+)", "Zapobieganie i odwracanie zaniku czworogłowego", "Kontrola bólu bez nadmiernego leczenia", "Normalizacja wzorca chodu", "Minimalizacja ryzyka upadku"],
+      "uk": [
+        "Швидше відновлення згинання коліна (мета: 90°+)",
+        "Запобігти атрофії чотириголового м'яза та відновити його",
+        "Контроль болю без надмірних ліків",
+        "Нормалізувати модель ходи",
+        "Мінімізувати ризик падіння"
+      ],
+      "es": [
+        "Recuperar más rápido la flexión de la rodilla (objetivo: 90°+)",
+        "Prevenir y revertir la atrofia del cuádriceps",
+        "Control del dolor sin medicación excesiva",
+        "Normalizar el patrón de marcha",
+        "Minimizar el riesgo de caídas"
+      ],
+      "ku": [
+        "Bi leztir vegerandina xwarkirina çokê (armanc: 90°+)",
+        "Pêşîlêgirtin û vegerandina zirav bûna masûlkeya kuadrîsepsê",
+        "Kontrola êşê bê dermanên zêde",
+        "Normalkirina şêweya meşê",
+        "Kêmkirina xetera ketinê heta herî kêm"
+      ],
     },
     objectives: {
       de: ["120°+ Knieflexion für normales Sitzen", "Vollständige Knieextension", "Schmerzfreies Gehen auf flachem Untergrund", "Treppensteigen beidbeinig", "Leichte Sportarten (Schwimmen, Aqua-Jogging, Rad)"],
@@ -197,6 +425,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Normal oturma için 120°+ diz fleksiyonu", "Tam diz ekstansiyonu", "Düz zeminde ağrısız yürüme", "İki bacakla merdiven çıkma", "Hafif spor (yüzme, aqua-jogging, bisiklet)"],
       ar: ["ثني الركبة 120°+ للجلوس الطبيعي", "امتداد الركبة الكامل", "المشي بدون ألم على أرض مستوية", "صعود السلالم بساقين", "الرياضة الخفيفة (سباحة، ركوب دراجة)"],
       pl: ["Zgięcie kolana 120°+ do normalnego siedzenia", "Pełny wyprost kolana", "Bezbolesny chód po płaskiej nawierzchni", "Wchodzenie po schodach obunóż", "Lekki sport (pływanie, aqua-jogging, rower)"],
+      "uk": [
+        "Згинання коліна 120°+, щоб нормально сидіти",
+        "Повне розгинання коліна",
+        "Ходьба без болю рівною поверхнею",
+        "Підйом сходами, ставлячи на сходинку по черзі обидві ноги",
+        "Легкі види спорту (плавання, аква-джогінг, велосипед)"
+      ],
+      "es": [
+        "Flexión de rodilla de 120°+ para sentarse con normalidad",
+        "Extensión completa de la rodilla",
+        "Caminar sin dolor en terreno llano",
+        "Subir escaleras alternando las dos piernas",
+        "Deportes suaves (natación, aquajogging, bicicleta)"
+      ],
+      "ku": [
+        "Xwarkirina çokê ya 120°+ ji bo rûniştina asayî",
+        "Vekirina tam a çokê",
+        "Meşa bê êş li ser erdê rast",
+        "Hilkişîna pêlekanan bi her du lingan, bi dorê",
+        "Werzîşên sivik (avjenî, aqua-jogging, bisîklet)"
+      ],
     },
     whatToExpect: {
       de: [
@@ -234,6 +483,48 @@ const SURGERY_DATA: Record<Slug, {
         { heading: "Tygodnie 3–8: Przywracanie Mobilności", text: "Zgięcie kolana poprawia się stopniowo. Cel: 90° do tygodnia 6. Rozpoczynają się ćwiczenia wzmacniające. Większość pacjentów chodzi z laską lub bez pomocy. Ergometr rowerowy jest dozwolony." },
         { heading: "Tygodnie 9–14: Funkcjonalna Rehabilitacja", text: "Wchodzenie po schodach, przysiady, trening sportowy. Cel: 120° zgięcia kolana. Ból jest minimalny w życiu codziennym. Pływanie i jazda na rowerze dla układu krążenia." },
       ],
+      "uk": [
+        {
+          "heading": "Тижні 1–2: раннє відновлення",
+          "text": "Біль і набряк на цьому етапі найсильніші. Згинання коліна обмежене 40–60°. Потрібні милиці. Фізіотерапія починається одразу після операції з пасивної мобілізації."
+        },
+        {
+          "heading": "Тижні 3–8: відновлення рухливості",
+          "text": "Згинання коліна поступово покращується. Мета: 90° до 6-го тижня. Починаються вправи на зміцнення. Більшість пацієнтів можуть ходити з однією палицею або без допоміжних засобів. Велоергометр дозволений."
+        },
+        {
+          "heading": "Тижні 9–14: функціональна реабілітація",
+          "text": "Сходи, напівприсідання, спортивно-специфічні тренування. Мета — згинання 120°. У повсякденному житті біль мінімальний. Плавання та велосипед для зміцнення серцево-судинної системи."
+        }
+      ],
+      "es": [
+        {
+          "heading": "Semanas 1–2: recuperación temprana",
+          "text": "El dolor y la hinchazón son más intensos en esta fase. La flexión de la rodilla está limitada a 40–60°. Se necesitan muletas. La fisioterapia comienza inmediatamente después de la operación con movilización pasiva."
+        },
+        {
+          "heading": "Semanas 3–8: recuperación de la movilidad",
+          "text": "La flexión de la rodilla mejora progresivamente. Objetivo: 90° en la semana 6. Comienzan los ejercicios de fortalecimiento. La mayoría de los pacientes puede caminar con un bastón o sin ayudas. Se permite la bicicleta estática."
+        },
+        {
+          "heading": "Semanas 9–14: rehabilitación funcional",
+          "text": "Escaleras, medias sentadillas, entrenamiento específico del deporte. El objetivo es una flexión de 120°. El dolor es mínimo en el día a día. Natación y bicicleta para fortalecer el sistema cardiovascular."
+        }
+      ],
+      "ku": [
+        {
+          "heading": "Hefteyên 1–2: başbûna destpêkê",
+          "text": "Di vê qonaxê de êş û werimîn herî zêde ne. Xwarkirina çokê bi 40–60° sînordar e. Goçan pêwîst in. Fizyoterapî yekser piştî emeliyatê bi livandina pasîf dest pê dike."
+        },
+        {
+          "heading": "Hefteyên 3–8: vegerandina livînê",
+          "text": "Xwarkirina çokê gav bi gav baştir dibe. Armanc: 90° heta hefteya 6an. Rahênanên xurtkirinê dest pê dikin. Piraniya nexweşan dikarin bi gopalekê an bê alavên alîkariyê bimeşin. Bisîkleta ergometreyê destûrdayî ye."
+        },
+        {
+          "heading": "Hefteyên 9–14: rehabîlîtasyona fonksiyonel",
+          "text": "Pêlekan, nîv-squat, perwerdeya taybet a werzîşê. Armanc xwarkirina 120° e. Di jiyana rojane de êş pir kêm e. Avjenî û bisîklet ji bo xurtkirina pergala dil û damaran."
+        }
+      ],
     },
     risks: {
       de: ["Dauerhafter Kraftverlust im Quadrizeps", "Kontraktur und Bewegungseinschränkung", "Erhöhtes Thromboserisiko bei Immobilität", "Längere Schmerzdauer und Abhängigkeit von Schmerzmitteln"],
@@ -243,6 +534,24 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Quadrisepste kalıcı güç kaybı", "Kontraktür ve hareket kısıtlılığı", "Hareketsizlikte artan tromboz riski", "Uzun süreli ağrı ve ağrı kesici bağımlılığı"],
       ar: ["فقدان دائم لقوة عضلة الرباعية", "تقلص وتقييد الحركة", "زيادة خطر الجلطة مع قلة الحركة", "ألم مطول والاعتماد على مسكنات الألم"],
       pl: ["Trwała utrata siły czworogłowego", "Przykurcz i ograniczenie zakresu ruchu", "Zwiększone ryzyko zakrzepicy przy unieruchomieniu", "Przedłużony ból i uzależnienie od leków przeciwbólowych"],
+      "uk": [
+        "Стійка втрата сили чотириголового м'яза",
+        "Контрактура та обмеження рухів",
+        "Підвищений ризик тромбозу при малорухливості",
+        "Тривалий біль і залежність від знеболювальних"
+      ],
+      "es": [
+        "Pérdida permanente de fuerza en el cuádriceps",
+        "Contractura y limitación del movimiento",
+        "Mayor riesgo de trombosis en caso de inmovilidad",
+        "Dolor prolongado y dependencia de los analgésicos"
+      ],
+      "ku": [
+        "Windakirina mayînde ya hêza kuadrîsepsê",
+        "Kontraktur û sînordarbûna tevgerê",
+        "Xetera tromboza zêdetir dema ku tevger kêm be",
+        "Êşa dirêj û girêdayîbûna bi dermanên êşê"
+      ],
     },
     phases: {
       de: [
@@ -280,6 +589,93 @@ const SURGERY_DATA: Record<Slug, {
         { label: "Faza 2 — Tygodnie 5–8", items: ["Wspomagane przysiady", "Ergometr rowerowy (niski opór)", "Ćwiczenia proprioceptywne", "Pływanie dozwolone"] },
         { label: "Faza 3 — Tygodnie 9–14", items: ["Wchodzenie po schodach obunóż", "Lekki jogging (po zgodzie lekarskiej)", "Funkcjonalne ćwiczenia sportowe", "Pełna sprawność dzienna"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — тижні 1–4",
+          "items": [
+            "Кріотерапія та зменшення набряку",
+            "Пасивне згинання/розгинання коліна",
+            "Ізометричні вправи для чотириголового м'яза",
+            "Відновлення ходьби"
+          ]
+        },
+        {
+          "label": "Фаза 2 — тижні 5–8",
+          "items": [
+            "Напівприсідання з підтримкою",
+            "Велоергометр (низький опір)",
+            "Пропріоцептивні вправи",
+            "Плавання дозволене"
+          ]
+        },
+        {
+          "label": "Фаза 3 — тижні 9–14",
+          "items": [
+            "Підйом сходами, ставлячи на сходинку по черзі обидві ноги",
+            "Легкий біг (після дозволу лікаря)",
+            "Функціональні спортивні вправи",
+            "Повна працездатність у повсякденні"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–4",
+          "items": [
+            "Crioterapia y reducción del edema",
+            "Flexión/extensión pasiva de la rodilla",
+            "Ejercicios isométricos del cuádriceps",
+            "Reeducación de la marcha"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 5–8",
+          "items": [
+            "Medias sentadillas asistidas",
+            "Bicicleta estática (baja resistencia)",
+            "Ejercicios propioceptivos",
+            "Natación permitida"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 9–14",
+          "items": [
+            "Subir escaleras alternando las dos piernas",
+            "Trote suave (con autorización médica)",
+            "Ejercicios deportivos funcionales",
+            "Plena capacidad en el día a día"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonaxa 1 — Hefteyên 1–4",
+          "items": [
+            "Krîyoterapî û kêmkirina werimê",
+            "Xwarkirin/vekirina pasîf a çokê",
+            "Rahênanên îzometrîk ên kuadrîsepsê",
+            "Perwerdeya meşê"
+          ]
+        },
+        {
+          "label": "Qonaxa 2 — Hefteyên 5–8",
+          "items": [
+            "Nîv-squatên bi alîkarî",
+            "Bisîkleta ergometreyê (berxwedana kêm)",
+            "Rahênanên propriyoseptîf",
+            "Avjenî destûrdayî ye"
+          ]
+        },
+        {
+          "label": "Qonaxa 3 — Hefteyên 9–14",
+          "items": [
+            "Hilkişîna pêlekanan bi her du lingan, bi dorê",
+            "Jogginga sivik (piştî destûra bijîşk)",
+            "Rahênanên werzîşî yên fonksiyonel",
+            "Kapasîteya tam a rojane"
+          ]
+        }
+      ],
     },
   },
 
@@ -292,11 +688,17 @@ const SURGERY_DATA: Record<Slug, {
     title: {
       de: "Kreuzband (VKB)", fr: "Ligament Croisé (LCA)", en: "ACL Reconstruction",
       nl: "Voorste Kruisband", tr: "Ön Çapraz Bağ", ar: "الرباط الصليبي الأمامي", pl: "Więzadło Krzyżowe Przednie",
+      "uk": "Хрестоподібна зв'язка (ПХЗ)",
+      "es": "Ligamento cruzado (LCA)",
+      "ku": "Lîgamenta xaçerê (ACL)",
     },
     subtitle: {
       de: "Sicherer Return-to-Sport nach VKB-Rekonstruktion", fr: "Retour au sport sécurisé après reconstruction du LCA",
       en: "Safe return to sport after ACL reconstruction", nl: "Veilige terugkeer naar sport na VKB-reconstructie",
       tr: "ÖÇB rekonstrüksiyonu sonrası güvenli spora dönüş", ar: "العودة الآمنة للرياضة بعد إعادة بناء الرباط الصليبي", pl: "Bezpieczny powrót do sportu po rekonstrukcji ACL",
+      "uk": "Безпечне повернення до спорту після реконструкції ПХЗ",
+      "es": "Vuelta segura al deporte tras la reconstrucción del LCA",
+      "ku": "Vegera ewle ya werzîşê piştî nûavakirina ACL",
     },
     surgeryExplain: {
       de: "Das vordere Kreuzband (VKB) ist eines der wichtigsten Stabilisatoren des Kniegelenks. Bei einer Ruptur — häufig bei Richtungswechseln, Sprüngen oder Kontaktsport — wird das Band operativ mit einem Transplantat (Hamstrings oder Patellasehne) rekonstruiert. Die VKB-Rekonstruktion ist ein anspruchsvoller Eingriff, der 6–9 Monate Rehabilitation erfordert. Statistisch verletzt 1 von 3 Patienten ohne adäquate Rehabilitation das andere Knie innerhalb von 5 Jahren.",
@@ -306,6 +708,9 @@ const SURGERY_DATA: Record<Slug, {
       tr: "Ön çapraz bağ (ÖÇB), dizin ana stabilizatörlerinden biridir. Yırtıldığında — genellikle yön değiştirme, sıçrama veya temaslı sporlarda — bağ, bir greft (hamstring veya patella tendonu) kullanılarak cerrahi olarak yeniden yapılandırılır. ÖÇB rekonstrüksiyonu, 6–9 ay rehabilitasyon gerektiren zorlu bir prosedürdür.",
       ar: "الرباط الصليبي الأمامي هو أحد أهم مثبتات مفصل الركبة. عند تمزقه — غالباً أثناء تغيير الاتجاه أو القفز أو الرياضات التلاملسية — يُعاد بناء الرباط جراحياً باستخدام طعم. إعادة بناء الرباط الصليبي إجراء صعب يتطلب 6–9 أشهر من إعادة التأهيل.",
       pl: "Więzadło krzyżowe przednie (ACL) jest jednym z głównych stabilizatorów stawu kolanowego. Przy zerwaniu — często podczas zmian kierunku, skoków lub sportów kontaktowych — więzadło jest chirurgicznie rekonstruowane przy użyciu przeszczepu (mięśnie kulszowo-goleniowe lub więzadło rzepki). Rekonstrukcja ACL to wymagający zabieg wymagający 6–9 miesięcy rehabilitacji.",
+      "uk": "Передня хрестоподібна зв'язка (ПХЗ) — один з головних стабілізаторів коліна. У разі розриву — часто під час зміни напрямку, стрибків або в контактних видах спорту — зв'язку відновлюють хірургічно за допомогою трансплантата (із сухожиль задньої групи м'язів стегна або власної зв'язки надколінка). Реконструкція ПХЗ — складне втручання, яке потребує 6–9 місяців реабілітації. За статистикою, 1 з 3 пацієнтів без належної реабілітації травмує інше коліно протягом 5 років.",
+      "es": "El ligamento cruzado anterior (LCA) es uno de los principales estabilizadores de la rodilla. En caso de rotura —a menudo durante cambios de dirección, saltos o deportes de contacto— el ligamento se reconstruye quirúrgicamente con un injerto (isquiotibiales o tendón rotuliano). La reconstrucción del LCA es una intervención exigente que requiere 6–9 meses de rehabilitación. Estadísticamente, 1 de cada 3 pacientes sin una rehabilitación adecuada se lesiona la otra rodilla en los 5 años siguientes.",
+      "ku": "Lîgamenta xaçerê ya pêşîn (ACL) yek ji sereketirîn aramkerên çokê ye. Dema ku diqete — bi piranî di guhertina alîyê tevgerê, bazdan an werzîşên têkiliyê de — lîgament bi emeliyatê bi greftekê (tendonên hamstringê an tendona kabokê) ji nû ve tê avakirin. Nûavakirina ACL destwerdaneke dijwar e ku 6–9 mehan rehabîlîtasyon dixwaze. Li gorî îstatîstîkan, ji 3 nexweşên bê rehabîlîtasyoneke guncaw 1 di nav 5 salan de çoka din birîndar dike.",
     },
     whyRehab: {
       de: ["Repariertes Transplantat braucht Zeit zum Einwachsen (Ligamentisierung 9–12 Monate)", "Neuromuskuläre Kontrolle und Propriozeption wiederherstellen", "Muskelungleichgewichte korrigieren (Hamstrings/Quadrizeps-Verhältnis)", "Return-to-Sport-Kriterien validieren (Kraft, Stabilität, Psychologie)", "Re-Ruptur-Risiko von 25% ohne Protokoll auf unter 5% senken"],
@@ -315,6 +720,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Onarılmış greft entegrasyon için zamana ihtiyaç duyar (ligamentizasyon 9–12 ay)", "Nöromüsküler kontrol ve propriosepsiyonu yeniden kazanma", "Kas dengesizliklerini düzeltme (hamstring/quadriseps oranı)", "Spora dönüş kriterlerini doğrulama (güç, stabilite, psikoloji)", "Protokol olmadan %25 olan yeniden yırtılma riskini %5'in altına indirme"],
       ar: ["الطعم المُرمَّم يحتاج وقتاً للتكامل (الترباط 9–12 شهراً)", "استعادة التحكم العصبي العضلي والإحساس العميق", "تصحيح الاختلالات العضلية (نسبة الوتر المأبضي/الرباعية)", "التحقق من معايير العودة للرياضة (القوة، الاستقرار، النفسية)", "تقليل خطر إعادة التمزق من 25% بدون بروتوكول إلى أقل من 5%"],
       pl: ["Naprawiony przeszczep potrzebuje czasu na integrację (ligamentyzacja 9–12 miesięcy)", "Przywrócenie kontroli nerwowo-mięśniowej i propriocepcji", "Korekcja nierównowagi mięśniowej (stosunek kulszowo-goleniowy/czworogłowy)", "Walidacja kryteriów powrotu do sportu (siła, stabilność, psychologia)", "Redukcja ryzyka ponownego zerwania z 25% bez protokołu do poniżej 5%"],
+      "uk": [
+        "Відновленому трансплантату потрібен час, щоб прижитися (лігаментизація 9–12 місяців)",
+        "Відновити нервово-м'язовий контроль і пропріоцепцію",
+        "Виправити м'язовий дисбаланс (співвідношення задньої групи м'язів стегна та чотириголового м'яза)",
+        "Підтвердити критерії повернення до спорту (сила, стабільність, психологічна готовність)",
+        "Знизити ризик повторного розриву з 25% без протоколу до менш ніж 5%"
+      ],
+      "es": [
+        "El injerto reparado necesita tiempo para integrarse (ligamentización 9–12 meses)",
+        "Recuperar el control neuromuscular y la propiocepción",
+        "Corregir los desequilibrios musculares (ratio isquiotibiales/cuádriceps)",
+        "Validar los criterios de vuelta al deporte (fuerza, estabilidad, psicología)",
+        "Reducir el riesgo de nueva rotura del 25% sin protocolo a menos del 5%"
+      ],
+      "ku": [
+        "Greftê tamîrkirî hewcedarî demê ye da ku bicih bibe (lîgamentîzasyon 9–12 meh)",
+        "Vegerandina kontrola neuromasûlkî û propriyosepsiyonê",
+        "Rastkirina nehevsengiyên masûlkan (rêjeya hamstring/kuadrîseps)",
+        "Pejirandina pîvanên vegera werzîşê (hêz, aramî, psîkolojî)",
+        "Kêmkirina xetera qetîna dubare ji 25% bê protokol bo kêmtir ji 5%"
+      ],
     },
     objectives: {
       de: ["Gleiche Muskelkraft beider Beine (>90% Symmetrie)", "Volle Kniestabilität bei Richtungswechseln", "Single-Leg-Hop-Test: >90% Symmetrie", "Schmerzfreies Laufen und Springen", "Psychologische Bereitschaft zur Sportrückkehr"],
@@ -324,6 +750,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Her iki bacakta simetrik kas gücü (>%90 simetri)", "Yön değiştirmede tam diz stabilitesi", "Tek bacak hop testi: >%90 simetri", "Ağrısız koşu ve sıçrama", "Spora dönüş için psikolojik hazırlık"],
       ar: ["قوة عضلية متماثلة في كلا الساقين (>90% تماثل)", "استقرار الركبة الكامل عند تغيير الاتجاه", "اختبار القفز بساق واحدة: >90% تماثل", "الجري والقفز بدون ألم", "الاستعداد النفسي للعودة للرياضة"],
       pl: ["Symetryczna siła mięśniowa obu nóg (>90% symetrii)", "Pełna stabilność kolana podczas zmian kierunku", "Test skoku jednonożnego: >90% symetrii", "Bezbolesny bieg i skoki", "Gotowość psychologiczna do powrotu do sportu"],
+      "uk": [
+        "Симетрична м'язова сила обох ніг (>90% симетрії)",
+        "Повна стабільність коліна під час зміни напрямку",
+        "Тест стрибка на одній нозі: >90% симетрії",
+        "Біг і стрибки без болю",
+        "Психологічна готовність до повернення в спорт"
+      ],
+      "es": [
+        "Fuerza muscular simétrica en ambas piernas (>90% de simetría)",
+        "Plena estabilidad de la rodilla en los cambios de dirección",
+        "Test de salto monopodal: >90% de simetría",
+        "Correr y saltar sin dolor",
+        "Preparación psicológica para la vuelta al deporte"
+      ],
+      "ku": [
+        "Hêza masûlkan a hevseng di her du lingan de (>90% hevsengî)",
+        "Aramiya tam a çokê di guhertina alîyê tevgerê de",
+        "Testa bazdana li ser lingekî: >90% hevsengî",
+        "Bezîn û bazdana bê êş",
+        "Amadebûna psîkolojîk ji bo vegera werzîşê"
+      ],
     },
     whatToExpect: {
       de: [
@@ -361,6 +808,48 @@ const SURGERY_DATA: Record<Slug, {
         { heading: "Tygodnie 4–12: Faza Budowania", text: "Przeszczep jest w najsłabszej fazie (proces ligamentyzacji). Wzmacnianie, propriocepcja i kontrolowane obciążenie są w centrum uwagi. Bieg jest możliwy od tygodnia 12 (proste linie). Trening BFR przyspiesza rozwój mięśni." },
         { heading: "Miesiące 4–9: Faza Powrotu do Sportu", text: "Zmiany kierunku, skoki i trening sportowy. Regularne testy (siła, hop-testy) określają dopuszczenie. Przygotowanie psychologiczne jest równie ważne jak fizyczne na tym etapie." },
       ],
+      "uk": [
+        {
+          "heading": "Тижні 1–3: запальна фаза",
+          "text": "Набряк і біль — це нормально. Мета — повне розгинання коліна (0°) та активація чотириголового м'яза. Ви ходитимете з милицями або без них залежно від протоколу хірурга. Фізіотерапія починається одразу."
+        },
+        {
+          "heading": "Тижні 4–12: фаза зміцнення",
+          "text": "Трансплантат перебуває у своїй найвразливішій фазі (процес лігаментизації). Основне — зміцнення, пропріоцепція та контрольоване навантаження. Біг можливий з 12-го тижня (по прямій). Для пришвидшення розвитку м'язів застосовують BFR-тренування."
+        },
+        {
+          "heading": "Місяці 4–9: фаза повернення до спорту",
+          "text": "Зміни напрямку, стрибки та спортивно-специфічні тренування. Регулярні тести (сила, hop-тести) визначають допуск. На цьому етапі психологічна підготовка так само важлива, як і фізична."
+        }
+      ],
+      "es": [
+        {
+          "heading": "Semanas 1–3: fase inflamatoria",
+          "text": "La hinchazón y el dolor son normales. El objetivo es la extensión completa de la rodilla (0°) y la activación del cuádriceps. Caminará con o sin muletas según el protocolo del cirujano. La fisioterapia comienza de inmediato."
+        },
+        {
+          "heading": "Semanas 4–12: fase de consolidación",
+          "text": "El injerto está en su fase más frágil (proceso de ligamentización). El fortalecimiento, la propiocepción y la carga controlada son los puntos clave. Se puede correr a partir de la semana 12 (en línea recta). Se utiliza el entrenamiento BFR para acelerar el desarrollo muscular."
+        },
+        {
+          "heading": "Meses 4–9: fase de vuelta al deporte",
+          "text": "Cambios de dirección, saltos y entrenamiento específico del deporte. Pruebas regulares (fuerza, hop tests) determinan la autorización. En esta fase, la preparación psicológica es tan importante como la física."
+        }
+      ],
+      "ku": [
+        {
+          "heading": "Hefteyên 1–3: qonaxa iltîhabê",
+          "text": "Werimîn û êş normal in. Armanc vekirina tam a çokê (0°) û çalakkirina kuadrîsepsê ye. Li gorî protokola cerah, hûn ê bi goçanan an bê goçan bimeşin. Fizyoterapî yekser dest pê dike."
+        },
+        {
+          "heading": "Hefteyên 4–12: qonaxa xurtkirinê",
+          "text": "Gref di qonaxa xwe ya herî nazik de ye (pêvajoya lîgamentîzasyonê). Xurtkirin, propriyosepsiyon û barkirina kontrolkirî xalên sereke ne. Ji hefteya 12an ve bezîn gengaz e (li ser xetên rast). Perwerdeya BFR ji bo lezkirina pêşketina masûlkan tê bikaranîn."
+        },
+        {
+          "heading": "Mehên 4–9: qonaxa vegera werzîşê",
+          "text": "Guhertina alîyê tevgerê, bazdan û perwerdeya taybet a werzîşê. Testên birêkûpêk (hêz, hop-test) destûrê diyar dikin. Di vê qonaxê de amadekirina psîkolojîk bi qasî ya fizîkî girîng e."
+        }
+      ],
     },
     risks: {
       de: ["Re-Ruptur-Risiko bis zu 25% ohne strukturiertes Protokoll", "Chronische Instabilität und frühzeitige Arthrose", "Kompensationsverletzungen am anderen Knie oder der Hüfte", "Psychologische Barrieren ('Angst vor dem Wiederspielen')"],
@@ -370,6 +859,24 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Yapılandırılmış protokol olmadan %25'e kadar yeniden yırtılma riski", "Kronik instabilite ve erken artrit", "Diğer diz veya kalçada kompansatuar yaralanmalar", "Psikolojik engeller ('yeniden sakatlanma korkusu')"],
       ar: ["خطر إعادة التمزق حتى 25% بدون بروتوكول منظم", "عدم الاستقرار المزمن والتهاب المفاصل المبكر", "إصابات تعويضية في الركبة أو الورك الأخرى", "العوائق النفسية ('الخوف من إعادة الإصابة')"],
       pl: ["Ryzyko ponownego zerwania do 25% bez ustrukturyzowanego protokołu", "Przewlekła niestabilność i wczesna artoza", "Urazy kompensacyjne w drugim kolanie lub biodrze", "Bariery psychologiczne ('strach przed ponownym urazem')"],
+      "uk": [
+        "Ризик повторного розриву до 25% без структурованого протоколу",
+        "Хронічна нестабільність і ранній артроз",
+        "Компенсаторні травми іншого коліна або кульшового суглоба",
+        "Психологічні бар'єри («fear of re-injury»)"
+      ],
+      "es": [
+        "Riesgo de nueva rotura de hasta el 25% sin un protocolo estructurado",
+        "Inestabilidad crónica y artrosis precoz",
+        "Lesiones compensatorias en la otra rodilla o la cadera",
+        "Barreras psicológicas («fear of re-injury»)"
+      ],
+      "ku": [
+        "Xetera qetîna dubare heta 25% bê protokoleke birêxistinkirî",
+        "Nearamiya kronîk û artroza zû",
+        "Birînên tazmînkar li çoka din an kalçê",
+        "Astengiyên psîkolojîk («fear of re-injury»)"
+      ],
     },
     phases: {
       de: [
@@ -407,6 +914,93 @@ const SURGERY_DATA: Record<Slug, {
         { label: "Faza 2 — Tygodnie 4–9", items: ["Wzmacnianie: przysiad, prasa nożna, step-up", "Trening nerwowo-mięśniowy i propriocepcja", "Bieg (linia prosta od tygodnia 12)", "Trening BFR"] },
         { label: "Faza 3 — Tydzień 10+", items: ["Zmiany kierunku i skoki", "Ćwiczenia sportowe", "Testy powrotu do sportu (skok jednonożny, KTS)", "Psychologiczne przygotowanie do powrotu"] },
       ],
+      "uk": [
+        {
+          "label": "Фаза 1 — тижні 1–3",
+          "items": [
+            "Контроль болю та набряку",
+            "Відновлення повного розгинання",
+            "Активація чотириголового м'яза (ЕМС за бажанням)",
+            "Ходьба без милиць"
+          ]
+        },
+        {
+          "label": "Фаза 2 — тижні 4–9",
+          "items": [
+            "Зміцнення: присідання, жим ногами, step-up",
+            "Нервово-м'язові тренування та пропріоцепція",
+            "Біг (по прямій з 12-го тижня)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Фаза 3 — тиждень 10+",
+          "items": [
+            "Зміни напрямку та стрибки",
+            "Спортивно-специфічні вправи",
+            "Тести повернення до спорту (стрибок на одній нозі, KTS)",
+            "Психологічна підготовка до повернення"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–3",
+          "items": [
+            "Control del dolor y del edema",
+            "Recuperación de la extensión completa",
+            "Activación del cuádriceps (EMS opcional)",
+            "Marcha sin muletas"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 4–9",
+          "items": [
+            "Fortalecimiento: sentadilla, prensa, step-up",
+            "Trabajo neuromuscular y propiocepción",
+            "Carrera (en línea recta desde la sem. 12)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semana 10+",
+          "items": [
+            "Cambios de dirección y saltos",
+            "Ejercicios específicos del deporte",
+            "Pruebas de vuelta al deporte (salto monopodal, KTS)",
+            "Preparación psicológica para la vuelta"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonaxa 1 — Hefteyên 1–3",
+          "items": [
+            "Birêvebirina êş û werimê",
+            "Vegerandina vekirina tam",
+            "Çalakkirina kuadrîsepsê (EMS li gorî daxwazê)",
+            "Meş bê goçan"
+          ]
+        },
+        {
+          "label": "Qonaxa 2 — Hefteyên 4–9",
+          "items": [
+            "Xurtkirin: squat, leg press, step-up",
+            "Xebata neuromasûlkî û propriyosepsiyon",
+            "Bezîn (li ser xeta rast ji hefteya 12an ve)",
+            "Blood Flow Restriction (BFR)"
+          ]
+        },
+        {
+          "label": "Qonaxa 3 — Hefteya 10+",
+          "items": [
+            "Guhertina alîyê tevgerê û bazdan",
+            "Rahênanên taybet ên werzîşê",
+            "Testên vegera werzîşê (bazdana li ser lingekî, KTS)",
+            "Amadekirina psîkolojîk ji bo vegerê"
+          ]
+        }
+      ],
     },
   },
 
@@ -419,11 +1013,17 @@ const SURGERY_DATA: Record<Slug, {
     title: {
       de: "Schulteroperation", fr: "Chirurgie de l'Épaule", en: "Shoulder Surgery",
       nl: "Schouderoperatie", tr: "Omuz Ameliyatı", ar: "جراحة الكتف", pl: "Operacja barku",
+      "uk": "Хірургія плеча",
+      "es": "Cirugía de hombro",
+      "ku": "Emeliyata milî",
     },
     subtitle: {
       de: "Volle Schulterfunktion nach Operation", fr: "Pleine fonction de l'épaule après chirurgie",
       en: "Full shoulder function after surgery", nl: "Volledige schouderfunctie na operatie",
       tr: "Ameliyat sonrası tam omuz fonksiyonu", ar: "وظيفة الكتف الكاملة بعد الجراحة", pl: "Pełna funkcja barku po operacji",
+      "uk": "Повна функція плеча після операції",
+      "es": "Plena función del hombro tras la cirugía",
+      "ku": "Fonksiyona tam a milî piştî emeliyatê",
     },
     surgeryExplain: {
       de: "Schulteroperationen umfassen verschiedene Eingriffe: die Rekonstruktion der Rotatorenmanschette (bei Rissen der Supraspinatussehne), die Bankart-Reparatur (bei Schulterinstabilität und -luxation) sowie die Schulterendoprothese (bei fortgeschrittener Arthrose oder komplexen Frakturen). Das Schultergelenk ist das beweglichste Gelenk des menschlichen Körpers, was die Rehabilitation besonders anspruchsvoll macht: Die richtige Balance zwischen Schutz und Mobilisation muss stets gewahrt werden.",
@@ -433,6 +1033,9 @@ const SURGERY_DATA: Record<Slug, {
       tr: "Omuz ameliyatları çeşitli prosedürleri kapsar: rotator kaf rekonstrüksiyonu (supraspinatus yırtıkları için), Bankart onarımı (omuz instabilitesi ve luksasyonu için) ve omuz protezi (ilerlemiş artrit veya karmaşık kırıklar için). Omuz, insan vücudunun en hareketli eklemdir; bu da rehabilitasyonu özellikle zorlu kılar.",
       ar: "تشمل عمليات الكتف إجراءات متنوعة: إعادة بناء كفة المدورين (لتمزقات فوق الشوكة)، إصلاح بانكارت (لعدم استقرار الكتف وخلعه)، وبدلة الكتف (لالتهاب المفاصل المتقدم أو الكسور المعقدة). الكتف هو المفصل الأكثر حركة في جسم الإنسان، مما يجعل إعادة التأهيل صعبة بشكل خاص.",
       pl: "Operacje barku obejmują różne zabiegi: rekonstrukcję stożka rotatorów (przy zerwaniach nadgrzebieniowego), naprawę Bankarta (przy niestabilności barku i zwichnięciach) oraz endoprotezę barku (przy zaawansowanej artozie lub złożonych złamaniach). Bark jest najbardziej ruchomym stawem w ludzkim ciele, co sprawia, że rehabilitacja jest szczególnie wymagająca.",
+      "uk": "Хірургічні втручання на плечі включають різні процедури: реконструкцію ротаторної манжети (при розривах надостного м'яза), операцію Банкарта (при нестабільності та вивиху плеча), а також ендопротезування плечового суглоба (при вираженому артрозі або складних переломах). Плече — найрухливіший суглоб людського тіла, тому реабілітація особливо вимоглива: завжди потрібно зберігати правильний баланс між захистом і мобілізацією.",
+      "es": "Las cirugías de hombro incluyen diversas intervenciones: la reconstrucción del manguito rotador (en caso de roturas del supraespinoso), la reparación de Bankart (para la inestabilidad y la luxación del hombro) y la prótesis de hombro (en caso de artrosis avanzada o fracturas complejas). El hombro es la articulación más móvil del cuerpo humano, lo que hace que la rehabilitación sea especialmente exigente: siempre hay que mantener el equilibrio adecuado entre protección y movilización.",
+      "ku": "Emeliyatên milî gelek destwerdanan dihewînin: nûavakirina manşeta rotatoran (di rewşa qetînên supraspinatusê de), tamîra Bankart (ji bo nearamî û jicîderketina milî), û proteza milî (di rewşa artroza pêşketî an şikestinên tevlihev de). Mil movika herî livok a laşê mirov e, ji ber vê yekê rehabîlîtasyon bi taybetî dijwar e: divê her dem hevsengiya rast di navbera parastin û livandinê de bê parastin.",
     },
     whyRehab: {
       de: ["Immobilisierungsphase strikt respektieren (Transplantat-Schutz)", "Schulterkapsel-Mobilisation ohne Kompromittierung der Reparatur", "Rotatorenmanschette schrittweise kräftigen", "Skapulatraining für Schulterstabilität", "Vollständige Elevation für Alltagsaktivitäten (Heben, Tragen) wiederherstellen"],
@@ -442,6 +1045,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["İmmobilizasyon fazına kesinlikle uymak (greft koruması)", "Tamiratı tehlikeye atmadan omuz kapsülü mobilizasyonu", "Rotator kafın aşamalı güçlendirilmesi", "Omuz stabilitesi için skapula eğitimi", "Günlük aktiviteler için tam elevasyonu geri kazanma (kaldırma, taşıma)"],
       ar: ["احترام مرحلة التثبيت بدقة (حماية الطعم)", "تعبئة كبسولة الكتف دون المساس بالإصلاح", "تقوية تدريجية لكفة المدورين", "تدريب لوح الكتف لاستقرار الكتف", "استعادة الرفع الكامل للأنشطة اليومية (رفع، حمل)"],
       pl: ["Ścisłe przestrzeganie fazy unieruchomienia (ochrona przeszczepu)", "Mobilizacja torebki stawowej bez naruszania naprawy", "Stopniowe wzmacnianie stożka rotatorów", "Trening łopatkowy dla stabilności barku", "Przywrócenie pełnej elewacji dla codziennych czynności (podnoszenie, noszenie)"],
+      "uk": [
+        "Суворо дотримуватися фази іммобілізації (захист трансплантата)",
+        "Мобілізація капсули без шкоди для відновленої тканини",
+        "Поступове зміцнення ротаторної манжети",
+        "Робота з лопаткою для стабільності плеча",
+        "Відновити повне підняття руки для повсякденних справ (піднімати, носити)"
+      ],
+      "es": [
+        "Respetar estrictamente la fase de inmovilización (protección del injerto)",
+        "Movilización de la cápsula sin comprometer la reparación",
+        "Fortalecimiento progresivo del manguito rotador",
+        "Trabajo escapular para la estabilidad del hombro",
+        "Recuperar la elevación completa para las actividades cotidianas (levantar, cargar)"
+      ],
+      "ku": [
+        "Bi hûrgilî rêzgirtina qonaxa bêlivkirinê (parastina greftê)",
+        "Livandina kapsûlê bêyî ku tamîr zirarê bibîne",
+        "Xurtkirina gav bi gav a manşeta rotatoran",
+        "Xebata kafika milî ji bo aramiya milî",
+        "Vegerandina bilindkirina tam a destî ji bo çalakiyên rojane (rakirin, hilgirtin)"
+      ],
     },
     objectives: {
       de: ["Volle aktive Beweglichkeit (180° Elevation)", "Kraft der Rotatorenmanschette ≥ Gegenseite", "Schmerzfreies Tragen von Gegenständen", "Autofahren und Überkopfarbeiten möglich", "Rückkehr zum Sport (nach Chirurgen-Freigabe)"],
@@ -451,6 +1075,27 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Tam aktif hareket açıklığı (180° elevasyon)", "Rotator kaf gücü ≥ karşı taraf", "Nesneleri ağrısız taşıma", "Araba kullanma ve baş üstü çalışma mümkün", "Spora dönüş (cerrah onayıyla)"],
       ar: ["مدى حركة نشط كامل (180° رفع)", "قوة كفة المدورين ≥ الجانب الآخر", "حمل الأشياء بدون ألم", "القيادة والعمل فوق الرأس ممكن", "العودة للرياضة (بموافقة الجراح)"],
       pl: ["Pełny aktywny zakres ruchu (180° elewacji)", "Siła stożka rotatorów ≥ strona przeciwna", "Noszenie przedmiotów bez bólu", "Jazda samochodem i praca nad głową możliwa", "Powrót do sportu (za zgodą chirurga)"],
+      "uk": [
+        "Повний активний обсяг рухів (підняття руки на 180°)",
+        "Сила ротаторної манжети ≥ здорової сторони",
+        "Перенесення предметів без болю",
+        "Можливість керувати автомобілем і працювати з руками над головою",
+        "Повернення до спорту (після дозволу хірурга)"
+      ],
+      "es": [
+        "Movilidad activa completa (180° de elevación)",
+        "Fuerza del manguito rotador ≥ lado sano",
+        "Cargar objetos sin dolor",
+        "Poder conducir y trabajar por encima de la cabeza",
+        "Vuelta al deporte (con autorización del cirujano)"
+      ],
+      "ku": [
+        "Livîna çalak a tam (bilindkirina 180°)",
+        "Hêza manşeta rotatoran ≥ aliyê saxlem",
+        "Hilgirtina tiştan bê êş",
+        "Ajotin û xebata li jor serî gengaz e",
+        "Vegera werzîşê (piştî destûra cerah)"
+      ],
     },
     whatToExpect: {
       de: [
@@ -488,6 +1133,48 @@ const SURGERY_DATA: Record<Slug, {
         { heading: "Tygodnie 5–8: Bierna Mobilizacja", text: "Terapeuta mobilizuje bark biernie. Stajesz się coraz bardziej aktywny. Temblak jest zazwyczaj zdejmowany po 4–6 tygodniach. Zarządzanie bólem i mobilizacja blizny są ważne." },
         { heading: "Tygodnie 9–16: Wzmacnianie i Powrót", text: "Aktywna mobilizacja i ukierunkowane wzmacnianie stożka rotatorów. Ćwiczenia specyficzne dla barku (wiosłowanie, wyciskanie z małym obciążeniem). Powrót do sportu jest indywidualny na podstawie zgody chirurga i kryteriów testowych." },
       ],
+      "uk": [
+        {
+          "heading": "Тижні 1–4: фаза іммобілізації",
+          "text": "Плече зафіксоване в підтримувальній пов'язці. Мета — лише зменшити біль і запобігти втраті м'язової маси. Можливі маятникові вправи та вправи для пальців. Терапевт працює в межах хірургічного протоколу."
+        },
+        {
+          "heading": "Тижні 5–8: пасивна мобілізація",
+          "text": "Терапевт пасивно мобілізує плече. Ви дедалі активніше долучаєтеся. Пов'язку зазвичай знімають через 4–6 тижнів. Важливі контроль болю та мобілізація рубця."
+        },
+        {
+          "heading": "Тижні 9–16: зміцнення та повернення",
+          "text": "Активна мобілізація та цілеспрямоване зміцнення ротаторної манжети. Вправи, специфічні для плеча (тяга, жим над головою з невеликою вагою). Повернення до спорту відбувається індивідуально, залежно від дозволу хірурга та результатів тестів."
+        }
+      ],
+      "es": [
+        {
+          "heading": "Semanas 1–4: fase de inmovilización",
+          "text": "El hombro se fija en un cabestrillo. El objetivo es únicamente reducir el dolor y evitar la pérdida muscular. Se pueden hacer ejercicios pendulares y ejercicios de los dedos. El terapeuta trabaja dentro del marco del protocolo quirúrgico."
+        },
+        {
+          "heading": "Semanas 5–8: movilización pasiva",
+          "text": "El terapeuta moviliza el hombro de forma pasiva. Usted participa cada vez más activamente. El cabestrillo suele retirarse después de 4–6 semanas. El control del dolor y la movilización de la cicatriz son importantes."
+        },
+        {
+          "heading": "Semanas 9–16: fortalecimiento y vuelta",
+          "text": "Movilización activa y fortalecimiento específico del manguito rotador. Ejercicios específicos para el hombro (remo, press de hombro con poca carga). La vuelta al deporte se decide de forma individual, según la autorización del cirujano y los criterios de las pruebas."
+        }
+      ],
+      "ku": [
+        {
+          "heading": "Hefteyên 1–4: qonaxa bêlivkirinê",
+          "text": "Mil di askiyekê de tê sabitkirin. Armanc tenê kêmkirina êşê û pêşîlêgirtina windakirina masûlkan e. Rahênanên pandûlê û rahênanên tiliyan gengaz in. Terapîst di çarçoveya protokola cerahiyê de dixebite."
+        },
+        {
+          "heading": "Hefteyên 5–8: livandina pasîf",
+          "text": "Terapîst milî bi awayekî pasîf dilivîne. Hûn her ku diçe bêtir bi awayekî çalak beşdar dibin. Askî bi gelemperî piştî 4–6 hefteyan tê rakirin. Birêvebirina êşê û livandina şopa birînê girîng in."
+        },
+        {
+          "heading": "Hefteyên 9–16: xurtkirin û veger",
+          "text": "Livandina çalak û xurtkirina armancdar a manşeta rotatoran. Rahênanên taybet ên milî (rowing, pêldana milî bi barekî sivik). Vegera werzîşê li gorî destûra cerah û pîvanên testan bi awayekî kesane pêk tê."
+        }
+      ],
     },
     risks: {
       de: ["Re-Ruptur der Rotatorenmanschette (bis 40% ohne Protokoll)", "Schultersteife (frozen shoulder) durch übermäßige Immobilisierung", "Chronische Instabilität bei zu früher Belastung", "Verlust der Überkopf-Funktion für den Alltag"],
@@ -497,6 +1184,24 @@ const SURGERY_DATA: Record<Slug, {
       tr: ["Rotator kaf yeniden yırtılması (protokol olmadan %40'a kadar)", "Aşırı immobilizasyondan donmuş omuz", "Erken yüklemeden kronik instabilite", "Günlük yaşam için baş üstü fonksiyon kaybı"],
       ar: ["إعادة تمزق كفة المدورين (حتى 40% بدون بروتوكول)", "الكتف المتجمد من التثبيت المفرط", "عدم الاستقرار المزمن من التحميل المبكر", "فقدان وظيفة الرفع فوق الرأس للحياة اليومية"],
       pl: ["Ponowne zerwanie stożka rotatorów (do 40% bez protokołu)", "Zamrożony bark od nadmiernego unieruchomienia", "Przewlekła niestabilność od przedwczesnego obciążenia", "Utrata funkcji nad głową w życiu codziennym"],
+      "uk": [
+        "Повторний розрив ротаторної манжети (до 40% без протоколу)",
+        "«Заморожене плече» через надмірну іммобілізацію",
+        "Хронічна нестабільність через передчасне навантаження",
+        "Втрата функції рук над головою в повсякденному житті"
+      ],
+      "es": [
+        "Nueva rotura del manguito rotador (hasta el 40% sin protocolo)",
+        "Hombro congelado por inmovilización excesiva",
+        "Inestabilidad crónica por carga prematura",
+        "Pérdida de la función por encima de la cabeza en el día a día"
+      ],
+      "ku": [
+        "Qetîna dubare ya manşeta rotatoran (heta 40% bê protokol)",
+        "Mila cemidî ji ber bêlivkirina zêde",
+        "Nearamiya kronîk ji ber barkirina zû",
+        "Windakirina fonksiyona li jor serî di jiyana rojane de"
+      ],
     },
     phases: {
       de: [
@@ -533,6 +1238,93 @@ const SURGERY_DATA: Record<Slug, {
         { label: "Faza 1 — Tygodnie 1–4", items: ["Przestrzeganie unieruchomienia", "Ćwiczenia wahadłowe (bierne)", "Zginanie/prostowanie palców", "Ćwiczenia izometryczne"] },
         { label: "Faza 2 — Tygodnie 5–8", items: ["Aktywna-wspomagana elewacja", "Techniki manualne (mobilizacja torebki)", "Wzmacnianie stożka rotatorów", "Przywrócenie codziennych aktywności"] },
         { label: "Faza 3 — Tygodnie 9–16", items: ["Dążenie do pełnego zakresu ruchu", "Maksymalne wzmacnianie", "Ćwiczenia proprioceptywne", "Sport (za zgodą chirurga)"] },
+      ],
+      "uk": [
+        {
+          "label": "Фаза 1 — тижні 1–4",
+          "items": [
+            "Дотримання іммобілізації",
+            "Маятникові вправи (пасивні)",
+            "Згинання/розгинання пальців",
+            "Ізометричні вправи"
+          ]
+        },
+        {
+          "label": "Фаза 2 — тижні 5–8",
+          "items": [
+            "Активно-асистоване підняття руки",
+            "Мануальні техніки (мобілізація капсули)",
+            "Зміцнення ротаторної манжети",
+            "Повернення до повсякденних справ"
+          ]
+        },
+        {
+          "label": "Фаза 3 — тижні 9–16",
+          "items": [
+            "Досягнення повного обсягу рухів",
+            "Максимальне зміцнення",
+            "Пропріоцептивні вправи",
+            "Спорт (після дозволу хірурга)"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "label": "Fase 1 — Semanas 1–4",
+          "items": [
+            "Respetar la inmovilización",
+            "Ejercicios pendulares (pasivos)",
+            "Flexión/extensión de los dedos",
+            "Ejercicios isométricos"
+          ]
+        },
+        {
+          "label": "Fase 2 — Semanas 5–8",
+          "items": [
+            "Elevación activa asistida",
+            "Técnicas manuales (movilización capsular)",
+            "Fortalecimiento del manguito rotador",
+            "Vuelta a las actividades cotidianas"
+          ]
+        },
+        {
+          "label": "Fase 3 — Semanas 9–16",
+          "items": [
+            "Buscar la amplitud completa",
+            "Fortalecimiento máximo",
+            "Ejercicios propioceptivos",
+            "Deporte (con autorización del cirujano)"
+          ]
+        }
+      ],
+      "ku": [
+        {
+          "label": "Qonaxa 1 — Hefteyên 1–4",
+          "items": [
+            "Rêzgirtina bêlivkirinê",
+            "Rahênanên pandûlê (pasîf)",
+            "Xwarkirin/vekirina tiliyan",
+            "Rahênanên îzometrîk"
+          ]
+        },
+        {
+          "label": "Qonaxa 2 — Hefteyên 5–8",
+          "items": [
+            "Bilindkirina çalak-bi-alîkarî",
+            "Teknîkên destî (livandina kapsûlê)",
+            "Xurtkirina manşeta rotatoran",
+            "Vegera çalakiyên rojane"
+          ]
+        },
+        {
+          "label": "Qonaxa 3 — Hefteyên 9–16",
+          "items": [
+            "Armanc: livîna tam",
+            "Xurtkirina herî zêde",
+            "Rahênanên propriyoseptîf",
+            "Werzîş (piştî destûra cerah)"
+          ]
+        }
       ],
     },
   },

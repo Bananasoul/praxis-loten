@@ -8,7 +8,7 @@
 
 import React from "react";
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const colors = {
   primary: "#0e7490",       // teal-700 — medical confidence
@@ -32,6 +32,24 @@ const SPINE_WORDS: Record<LangKey, [string, string, string, string]> = {
   tr: ["Sağlam.", "Hareketli.", "Uyumlu.", "Omurganız hareket etmek için tasarlandı."],
   ar: ["قوي.", "متحرك.", "قابل للتكيف.", "عمودك الفقري مصمم للحركة."],
   pl: ["Mocny.", "Ruchomy.", "Adaptacyjny.", "Twój kręgosłup jest stworzony do ruchu."],
+  "uk": [
+    "Міцний.",
+    "Рухливий.",
+    "Гнучкий.",
+    "Ваш хребет створений для руху."
+  ],
+  "es": [
+    "Fuerte.",
+    "Móvil.",
+    "Adaptable.",
+    "Su columna está hecha para moverse."
+  ],
+  "ku": [
+    "Bi hêz.",
+    "Livbar.",
+    "Guncawbar.",
+    "Stûna pişta we ji bo tevgerê hatiye çêkirin."
+  ],
 };
 
 export function SpineReassurance({ lang = "fr" }: { lang?: LangKey }) {
@@ -123,6 +141,42 @@ const MOVEMENT_TEXT: Record<LangKey, { headline: string; sub: string; activities
     activities: ["Spacer", "Rower", "Schody", "Ogród", "Pływanie"],
     source: "Źródło: Ekelund i in., The Lancet, 2016 (n = 1 005 791)",
   },
+  "uk": {
+    "headline": "30–60 хв на день",
+    "sub": "достатньо, щоб компенсувати день сидіння",
+    "activities": [
+      "Ходьба",
+      "Велосипед",
+      "Сходи",
+      "Садівництво",
+      "Плавання"
+    ],
+    "source": "Джерело: Ekelund et al., The Lancet, 2016 (n = 1 005 791)"
+  },
+  "es": {
+    "headline": "De 30 a 60 min/día",
+    "sub": "bastan para compensar un día sentado",
+    "activities": [
+      "Caminar",
+      "Bicicleta",
+      "Escaleras",
+      "Jardinería",
+      "Natación"
+    ],
+    "source": "Fuente: Ekelund et al., The Lancet, 2016 (n = 1 005 791)"
+  },
+  "ku": {
+    "headline": "Rojê 30 heta 60 deqe",
+    "sub": "bes e ji bo telafîkirina rojeke rûniştinê",
+    "activities": [
+      "Meşîn",
+      "Bîsîklet",
+      "Derenceyan",
+      "Baxçevanî",
+      "Avjenî"
+    ],
+    "source": "Çavkanî: Ekelund et al., The Lancet, 2016 (n = 1 005 791)"
+  },
 };
 
 const MOVEMENT_ICONS = ["🚶", "🚴", "🪜", "🌱", "🏊"];
@@ -182,6 +236,48 @@ const REFLEX_TEXT: Record<LangKey, [string, string][]> = {
   tr: [["Her 30 dk", "Ayağa kalk"], ["Günde 30 dk", "Hareket et"], ["Güvenin", "sırtınıza"]],
   ar: [["كل 30 دقيقة", "قف"], ["30 دقيقة/يوم", "تحرك"], ["ثق", "بظهرك"]],
   pl: [["Co 30 min", "Wstań"], ["30 min/dzień", "Ruszaj się"], ["Zaufaj", "swoim plecom"]],
+  "uk": [
+    [
+      "Кожні 30 хв",
+      "Вставайте"
+    ],
+    [
+      "30 хв на день",
+      "Рухайтеся"
+    ],
+    [
+      "Довіряйте",
+      "своїй спині"
+    ]
+  ],
+  "es": [
+    [
+      "Cada 30 min",
+      "Levántese"
+    ],
+    [
+      "30 min/día",
+      "Muévase"
+    ],
+    [
+      "Confíe",
+      "en su espalda"
+    ]
+  ],
+  "ku": [
+    [
+      "Her 30 deqe",
+      "Rabin ser xwe"
+    ],
+    [
+      "Rojê 30 deqe",
+      "Bilivin"
+    ],
+    [
+      "Bawerî bînin",
+      "pişta xwe"
+    ]
+  ],
 };
 
 export function ThreeReflexes({ lang = "fr" }: { lang?: LangKey }) {
@@ -231,6 +327,27 @@ const PAIN_ALARM_TEXT: Record<LangKey, { headline: string; sub: string; lo: stri
   tr: { headline: "Ağrı bir alarmdır.", sub: "Her zaman bir hasar değil.", lo: "Doku", hi: "Hassasiyet", note: "Hassas bir alarm dumansız da çalabilir." },
   ar: { headline: "الألم هو إنذار.", sub: "ليس دائمًا إصابة.", lo: "الأنسجة", hi: "الحساسية", note: "إنذار حساس قد يدق دون دخان." },
   pl: { headline: "Ból to alarm.", sub: "Nie zawsze uszkodzenie.", lo: "Tkanki", hi: "Wrażliwość", note: "Czuły alarm może zadzwonić bez dymu." },
+  "uk": {
+    "headline": "Біль — це сигналізація.",
+    "sub": "Не завжди ушкодження.",
+    "lo": "Тканини",
+    "hi": "Чутливість",
+    "note": "Чутлива сигналізація може спрацювати й тоді, коли диму немає."
+  },
+  "es": {
+    "headline": "El dolor es una alarma.",
+    "sub": "No siempre una lesión.",
+    "lo": "Tejidos",
+    "hi": "Sensibilidad",
+    "note": "Una alarma sensible puede sonar sin que haya humo."
+  },
+  "ku": {
+    "headline": "Êş alarmek e.",
+    "sub": "Ne her tim birînek e.",
+    "lo": "Tevn",
+    "hi": "Hestiyarî",
+    "note": "Alarmeke hestiyar dikare lê bide bêyî ku dû hebe."
+  },
 };
 
 export function PainAlarm({ lang = "fr" }: { lang?: LangKey }) {
@@ -290,6 +407,42 @@ const IMAGING_TEXT: Record<LangKey, { headline: string; sub: string; ages: strin
   tr: { headline: "Görüntüleme: ağrısız kişilerde ne görülür", sub: "MRG 'anormallikleri' olan ağrısız yetişkinlerin %", ages: ["20 yaş", "40 yaş", "60 yaş", "80 yaş"], finding: "Disk bombeleşmesi", source: "Brinjikji ve ark., AJNR 2015 — n = 3.110" },
   ar: { headline: "التصوير: ما يظهر لدى الأشخاص بلا ألم", sub: "% الأشخاص بلا ألم مع 'شذوذات' في الرنين", ages: ["20 سنة", "40 سنة", "60 سنة", "80 سنة"], finding: "بروز قرصي", source: "برينجيكجي وآخرون، AJNR 2015 — ن = 3,110" },
   pl: { headline: "Obrazowanie: co widać u osób bez bólu", sub: "% osób bez bólu z 'nieprawidłowościami' w MRI", ages: ["20 lat", "40 lat", "60 lat", "80 lat"], finding: "Wypuklina dysku", source: "Brinjikji i in., AJNR 2015 — n = 3 110" },
+  "uk": {
+    "headline": "Візуалізація: що знаходять у здорових людей",
+    "sub": "% людей без жодного болю з «відхиленнями» на МРТ",
+    "ages": [
+      "20 років",
+      "40 років",
+      "60 років",
+      "80 років"
+    ],
+    "finding": "Випинання диска",
+    "source": "Brinjikji et al., AJNR 2015 — n = 3 110"
+  },
+  "es": {
+    "headline": "Imagen médica: lo que se encuentra en personas sanas",
+    "sub": "% de personas sin ningún dolor con «anomalías» en la resonancia magnética",
+    "ages": [
+      "20 años",
+      "40 años",
+      "60 años",
+      "80 años"
+    ],
+    "finding": "Protrusión discal",
+    "source": "Brinjikji et al., AJNR 2015 — n = 3 110"
+  },
+  "ku": {
+    "headline": "Wênekêşana bijîjkî: tiştên ku li cem mirovên saxlem tên dîtin",
+    "sub": "% ji kesên bê tu êş ku di MRI de «anomalî» hene",
+    "ages": [
+      "20 salî",
+      "40 salî",
+      "60 salî",
+      "80 salî"
+    ],
+    "finding": "Werimîna dîskê",
+    "source": "Brinjikji et al., AJNR 2015 — n = 3 110"
+  },
 };
 
 export function ImagingMyth({ lang = "fr" }: { lang?: LangKey }) {
@@ -375,6 +528,69 @@ const MT_PILLARS: Record<LangKey, { headline: string; pillars: { title: string; 
     { title: "Wzmacniaj", desc: "Indywidualne ćwiczenia" },
     { title: "Wyjaśniaj", desc: "Zrozum swoje ciało" },
   ]},
+  "uk": {
+    "headline": "4 опори сучасної мануальної терапії",
+    "pillars": [
+      {
+        "title": "Оцінити",
+        "desc": "Точне клінічне обстеження"
+      },
+      {
+        "title": "Мобілізувати",
+        "desc": "М'які мануальні техніки"
+      },
+      {
+        "title": "Зміцнити",
+        "desc": "Персоналізовані вправи"
+      },
+      {
+        "title": "Пояснити",
+        "desc": "Розуміти своє тіло"
+      }
+    ]
+  },
+  "es": {
+    "headline": "Los 4 pilares de la terapia manual moderna",
+    "pillars": [
+      {
+        "title": "Evaluar",
+        "desc": "Valoración clínica precisa"
+      },
+      {
+        "title": "Movilizar",
+        "desc": "Técnicas manuales suaves"
+      },
+      {
+        "title": "Fortalecer",
+        "desc": "Ejercicios personalizados"
+      },
+      {
+        "title": "Explicar",
+        "desc": "Comprender su cuerpo"
+      }
+    ]
+  },
+  "ku": {
+    "headline": "4 stûnên terapiya destî ya nûjen",
+    "pillars": [
+      {
+        "title": "Nirxandin",
+        "desc": "Muayeneya klînîkî ya hûr"
+      },
+      {
+        "title": "Livandin",
+        "desc": "Teknîkên destî yên nerm"
+      },
+      {
+        "title": "Xurtkirin",
+        "desc": "Werzîşên kesane"
+      },
+      {
+        "title": "Ravekirin",
+        "desc": "Fêmkirina laşê xwe"
+      }
+    ]
+  },
 };
 
 export function ManualTherapyPillars({ lang = "fr" }: { lang?: LangKey }) {
@@ -415,6 +631,30 @@ const PROGRESSION_TEXT: Record<LangKey, { headline: string; sub: string; week: s
   tr: { headline: "%10 kuralı", sub: "Haftalık yükünüzü en fazla %10 artırın", week: "Hafta", safe: "Güvenli bölge", risk: "Riskli bölge", note: "Vücut, ani sıçramalardan çok yumuşak ilerlemelere daha iyi uyum sağlar." },
   ar: { headline: "قاعدة 10%", sub: "زيادة الحمل الأسبوعي بحد أقصى 10%", week: "الأسبوع", safe: "منطقة آمنة", risk: "منطقة خطر", note: "يتكيف الجسم بشكل أفضل مع التدرجات اللطيفة." },
   pl: { headline: "Reguła 10%", sub: "Zwiększaj tygodniowe obciążenie maks. o 10%", week: "Tydzień", safe: "Strefa bezpieczna", risk: "Strefa ryzyka", note: "Ciało lepiej adaptuje się do łagodnych progresji niż nagłych skoków." },
+  "uk": {
+    "headline": "Правило 10 %",
+    "sub": "Збільшуйте тижневе навантаження максимум на 10 %",
+    "week": "Тиждень",
+    "safe": "Безпечна зона",
+    "risk": "Зона ризику",
+    "note": "Тіло краще пристосовується до поступового прогресу, ніж до різких стрибків."
+  },
+  "es": {
+    "headline": "Regla del 10 %",
+    "sub": "Aumente su carga semanal un 10 % como máximo",
+    "week": "Semana",
+    "safe": "Zona segura",
+    "risk": "Zona de riesgo",
+    "note": "El cuerpo se adapta mejor a progresiones suaves que a saltos bruscos."
+  },
+  "ku": {
+    "headline": "Qaîdeya 10 %",
+    "sub": "Barê xwe yê heftane herî zêde 10 % zêde bikin",
+    "week": "Hefte",
+    "safe": "Herêma ewle",
+    "risk": "Herêma xeterê",
+    "note": "Laş bi pêşketinên nerm çêtir xwe diguncîne ji bazdanên ji nişka ve."
+  },
 };
 
 export function ProgressionRule({ lang = "fr" }: { lang?: LangKey }) {
@@ -479,6 +719,27 @@ const LYMPH_TEXT: Record<LangKey, { headline: string; sub: string; nodes: string
   tr: { headline: "Lenf drenajı: akıllı bir sistem", sub: "Lenf düğümlerine doğru yavaşça akan bir ağ", nodes: "Lenf düğümleri", direction: "Drenaj yönü", gentle: "Yumuşak, yavaş, ritmik basınç" },
   ar: { headline: "الصرف اللمفاوي: نظام ذكي", sub: "شبكة تتدفق ببطء نحو الغدد", nodes: "الغدد اللمفاوية", direction: "اتجاه الصرف", gentle: "ضغط ناعم وبطيء وإيقاعي" },
   pl: { headline: "Drenaż limfatyczny: inteligentny system", sub: "Sieć, która powoli płynie do węzłów chłonnych", nodes: "Węzły chłonne", direction: "Kierunek drenażu", gentle: "Delikatny, wolny, rytmiczny nacisk" },
+  "uk": {
+    "headline": "Лімфодренаж: розумна система",
+    "sub": "Мережа, яка повільно циркулює до лімфатичних вузлів",
+    "nodes": "Лімфатичні вузли",
+    "direction": "Напрямок дренажу",
+    "gentle": "М'який, повільний, ритмічний тиск"
+  },
+  "es": {
+    "headline": "Drenaje linfático: un sistema inteligente",
+    "sub": "Una red que circula lentamente hacia los ganglios",
+    "nodes": "Ganglios",
+    "direction": "Sentido del drenaje",
+    "gentle": "Presión suave, lenta y rítmica"
+  },
+  "ku": {
+    "headline": "Drenaja lîmfatîk: pergaleke jîr",
+    "sub": "Torek ku hêdî hêdî ber bi girêkên lîmfê ve diherike",
+    "nodes": "Girêkên lîmfê",
+    "direction": "Rêya drenajê",
+    "gentle": "Zexta nerm, hêdî û bi rîtm"
+  },
 };
 
 export function LymphFlow({ lang = "fr" }: { lang?: LangKey }) {
@@ -540,6 +801,42 @@ const CMD_TEXT: Record<LangKey, { headline: string; sub: string; symptoms: strin
   tr: { headline: "Çene eklemi rahatsızlıklarını tanımak (CMD)", sub: "Göz ardı edilmemesi gereken 5 yaygın işaret", symptoms: ["Açarken klik / çatırtı", "Sabah baş ağrıları", "Çiğnerken ağrı", "Boyunda gerginlik", "Sınırlı ağız açıklığı"], note: "Birden fazla işaret bir arada? Değerlendirme gerekli." },
   ar: { headline: "التعرف على اضطرابات مفصل الفك (CMD)", sub: "5 علامات شائعة لا تتجاهلها", symptoms: ["طقطقة عند الفتح", "صداع صباحي", "ألم عند المضغ", "توتر في الرقبة", "تقييد فتح الفم"], note: "عدة علامات معًا؟ التقييم ضروري." },
   pl: { headline: "Rozpoznawanie zaburzeń stawu skroniowo-żuchwowego (CMD)", sub: "5 częstych objawów, których nie należy lekceważyć", symptoms: ["Klikanie / trzaski przy otwieraniu", "Poranne bóle głowy", "Ból przy żuciu", "Napięcie w karku", "Ograniczone otwieranie ust"], note: "Kilka objawów jednocześnie? Wskazana ocena." },
+  "uk": {
+    "headline": "Як розпізнати розлад СНЩС (КМД)",
+    "sub": "5 поширених ознак, якими не варто нехтувати",
+    "symptoms": [
+      "Клацання / хрускіт під час відкривання рота",
+      "Головний біль після пробудження",
+      "Біль під час жування",
+      "Напруження в шийному відділі",
+      "Обмежене відкривання рота"
+    ],
+    "note": "Кілька ознак одночасно? Варто пройти обстеження."
+  },
+  "es": {
+    "headline": "Reconocer un trastorno de la ATM (DCM)",
+    "sub": "5 signos frecuentes que no hay que pasar por alto",
+    "symptoms": [
+      "Chasquidos / crujidos al abrir la boca",
+      "Dolor de cabeza al despertar",
+      "Dolor al masticar",
+      "Tensión en las cervicales",
+      "Apertura de la boca limitada"
+    ],
+    "note": "¿Varios signos a la vez? Conviene una evaluación."
+  },
+  "ku": {
+    "headline": "Naskirina aloziya TMJ (CMD)",
+    "sub": "5 nîşanên gelemper ên ku divê neyên paşguhkirin",
+    "symptoms": [
+      "Teqteq / qirçqirç dema vekirina devê",
+      "Serêş dema şiyarbûnê",
+      "Êş dema cûtinê",
+      "Girjbûn di stûyê de",
+      "Sînordarbûna vekirina devê"
+    ],
+    "note": "Çend nîşan bi hev re? Nirxandinek pêwîst e."
+  },
 };
 
 export function CmdChecklist({ lang = "fr" }: { lang?: LangKey }) {
@@ -619,6 +916,72 @@ const KO_TEXT: Record<LangKey, { headline: string; kine: { title: string; items:
     osteo: { title: "Osteopatia", items: ["Holistyczne podejście", "Bez skierowania", "Techniki manualne", "Sesje punktowe"] },
     together: "Często łączone w gabinecie — każda wnosi swoją siłę.",
   },
+  "uk": {
+    "headline": "Фізіотерапія та остеопатія: доповнюють одна одну",
+    "kine": {
+      "title": "Фізіотерапія",
+      "items": [
+        "Відшкодовується (INAMI)",
+        "Медичне направлення",
+        "Вправи та реабілітація",
+        "Тривалий супровід"
+      ]
+    },
+    "osteo": {
+      "title": "Остеопатія",
+      "items": [
+        "Цілісний підхід",
+        "Без направлення",
+        "Мануальні техніки",
+        "Окремі сеанси"
+      ]
+    },
+    "together": "У кабінеті їх часто поєднують — кожна має свою сильну сторону."
+  },
+  "es": {
+    "headline": "Fisioterapia y osteopatía: complementarias",
+    "kine": {
+      "title": "Fisioterapia",
+      "items": [
+        "Reembolsada (INAMI)",
+        "Prescripción médica",
+        "Ejercicios y rehabilitación",
+        "Seguimiento a largo plazo"
+      ]
+    },
+    "osteo": {
+      "title": "Osteopatía",
+      "items": [
+        "Enfoque global",
+        "Sin prescripción",
+        "Técnicas manuales",
+        "Sesiones puntuales"
+      ]
+    },
+    "together": "A menudo se combinan en la consulta: cada una aporta su fuerza."
+  },
+  "ku": {
+    "headline": "Fizyoterapî û osteopatî: temamkerên hev",
+    "kine": {
+      "title": "Fizyoterapî",
+      "items": [
+        "Tê vegerandin (INAMI)",
+        "Recêteya bijîjkî",
+        "Werzîş û rehabîlîtasyon",
+        "Şopandina demdirêj"
+      ]
+    },
+    "osteo": {
+      "title": "Osteopatî",
+      "items": [
+        "Nêzîkatiya giştî",
+        "Bêyî recêteyê",
+        "Teknîkên destî",
+        "Danişînên carcarî"
+      ]
+    },
+    "together": "Pir caran li kabîneyê bi hev re tên bikaranîn — her yek hêza xwe tîne."
+  },
 };
 
 export function KineVsOsteo({ lang = "fr" }: { lang?: LangKey }) {
@@ -667,6 +1030,30 @@ const BFR_TEXT: Record<LangKey, { headline: string; sub: string; light: string; 
   tr: { headline: "BFR: ideal basınç bölgesi", sub: "% arteryel oklüzyon", light: "Çok hafif", sweet: "Optimal bölge", high: "Çok yüksek", note: "%40-80 oklüzyonda hafif yüklerle kas büyümesi tetiklenir." },
   ar: { headline: "BFR: منطقة الضغط المثالية", sub: "% انسداد شرياني", light: "خفيف جدًا", sweet: "المنطقة المثلى", high: "مرتفع جدًا", note: "عند 40-80% انسداد، يُحفَّز نمو العضلات بأحمال خفيفة." },
   pl: { headline: "BFR: optymalna strefa nacisku", sub: "% okluzji tętniczej", light: "Za mało", sweet: "Optymalna strefa", high: "Za dużo", note: "Przy 40-80% okluzji wyzwalasz wzrost mięśni przy lekkich obciążeniach." },
+  "uk": {
+    "headline": "BFR: ідеальна зона тиску",
+    "sub": "% артеріальної оклюзії",
+    "light": "Надто слабко",
+    "sweet": "Оптимальна зона",
+    "high": "Надто високо",
+    "note": "При 40-80 % оклюзії ріст м'язів стимулюється легкими навантаженнями."
+  },
+  "es": {
+    "headline": "BFR: la zona de presión ideal",
+    "sub": "% de oclusión arterial",
+    "light": "Demasiado baja",
+    "sweet": "Zona óptima",
+    "high": "Demasiado alta",
+    "note": "Con un 40-80 % de oclusión se estimula el crecimiento muscular con cargas ligeras."
+  },
+  "ku": {
+    "headline": "BFR: herêma zextê ya îdeal",
+    "sub": "% ji girtina arteran",
+    "light": "Pir sivik",
+    "sweet": "Herêma çêtirîn",
+    "high": "Pir bilind",
+    "note": "Bi 40-80 % girtinê, mezinbûna masûlkeyan bi barên sivik tê teşwîqkirin."
+  },
 };
 
 export function BfrZone({ lang = "fr" }: { lang?: LangKey }) {
@@ -774,6 +1161,81 @@ const TRAFFIC_LIGHT_TEXT: Record<LangKey, {
       { label: "Pomarańczowe światło", range: "3 – 5 / 10", action: "Możesz kontynuować", detail: "Zauważalny ale znośny — wręcz korzystny" },
       { label: "Czerwone światło", range: "6 / 10 i +", action: "Stop i zmniejsz", detail: "Silny ból, kompensujesz lub kulejesz — zmniejsz dawkę" },
     ],
+  },
+  "uk": {
+    "title": "Система світлофора",
+    "sub": "Шкала болю від 0 (немає) до 10 (найсильніший, який можна уявити)",
+    "validation": "Інструмент підтверджений для тендинопатій, болю в попереку та пателофеморального болю",
+    "zones": [
+      {
+        "label": "Зелене світло",
+        "range": "0 – 2 / 10",
+        "action": "Продовжуйте без побоювань",
+        "detail": "Болю немає або він мінімальний — можна прогресувати"
+      },
+      {
+        "label": "Жовте світло",
+        "range": "3 – 5 / 10",
+        "action": "Можна продовжувати",
+        "detail": "Біль відчутний, але терпимий — це навіть корисно"
+      },
+      {
+        "label": "Червоне світло",
+        "range": "6 / 10 і більше",
+        "action": "Стоп і зменште",
+        "detail": "Сильний біль, Ви компенсуєте рухи або кульгаєте — зменште дозу"
+      }
+    ]
+  },
+  "es": {
+    "title": "El sistema del semáforo",
+    "sub": "Escala de dolor de 0 (ninguno) a 10 (el peor imaginable)",
+    "validation": "Herramienta validada para tendinopatías, lumbalgia y dolor femoropatelar",
+    "zones": [
+      {
+        "label": "Luz verde",
+        "range": "0 – 2 / 10",
+        "action": "Continúe sin preocupaciones",
+        "detail": "Dolor ausente o mínimo: puede progresar"
+      },
+      {
+        "label": "Luz ámbar",
+        "range": "3 – 5 / 10",
+        "action": "Puede continuar",
+        "detail": "Dolor perceptible pero soportable: incluso es beneficioso"
+      },
+      {
+        "label": "Luz roja",
+        "range": "6 / 10 o más",
+        "action": "Pare y reduzca",
+        "detail": "Dolor fuerte, compensa o cojea: reduzca la dosis"
+      }
+    ]
+  },
+  "ku": {
+    "title": "Pergala ronahiyên trafîkê",
+    "sub": "Pîvana êşê ji 0 (tune) heta 10 (ya herî xirab a ku meriv dikare xeyal bike)",
+    "validation": "Amûreke pejirandî ji bo tendînopatî, êşa pişta jêrîn û êşa patelofemoral",
+    "zones": [
+      {
+        "label": "Ronahiya kesk",
+        "range": "0 – 2 / 10",
+        "action": "Bê xem bidomînin",
+        "detail": "Êş tune ye an pir kêm e — hûn dikarin pêş ve biçin"
+      },
+      {
+        "label": "Ronahiya porteqalî",
+        "range": "3 – 5 / 10",
+        "action": "Hûn dikarin bidomînin",
+        "detail": "Êş tê hîskirin lê tê ragirtin — ev heta bi kêr tê"
+      },
+      {
+        "label": "Ronahiya sor",
+        "range": "6 / 10 û zêdetir",
+        "action": "Rawestin û kêm bikin",
+        "detail": "Êşa xurt, hûn telafî dikin an dilengin — dozê kêm bikin"
+      }
+    ]
   },
 };
 
@@ -954,6 +1416,60 @@ const SLEEP_STATS_TEXT: Record<LangKey, { headline: string; stats: { big: string
       }
     ],
     "source": "Źródła: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "uk": {
+    "headline": "Добрий сон змінює все",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "менше травм (сон ≥ 8 год)"
+      },
+      {
+        "big": "+9 %",
+        "label": "результативності після довшого сну"
+      },
+      {
+        "big": "↓ біль",
+        "label": "менше відчуття болю"
+      }
+    ],
+    "source": "Джерела: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "es": {
+    "headline": "Dormir bien lo cambia todo",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "menos lesiones (sueño ≥ 8 h)"
+      },
+      {
+        "big": "+9 %",
+        "label": "de rendimiento tras dormir más"
+      },
+      {
+        "big": "↓ dolor",
+        "label": "menos dolor percibido"
+      }
+    ],
+    "source": "Fuentes: Milewski 2014 · Mah 2011 · Karmann 2014"
+  },
+  "ku": {
+    "headline": "Xewa baş her tiştî diguherîne",
+    "stats": [
+      {
+        "big": "1,7×",
+        "label": "birînên kêmtir (xew ≥ 8 saet)"
+      },
+      {
+        "big": "+9 %",
+        "label": "performans piştî xewa zêdetir"
+      },
+      {
+        "big": "↓ êş",
+        "label": "êşa kêmtir tê hîskirin"
+      }
+    ],
+    "source": "Çavkanî: Milewski 2014 · Mah 2011 · Karmann 2014"
   }
 };
 
@@ -1082,6 +1598,51 @@ const SLEEP_TIPS_TEXT: Record<LangKey, { headline: string; sub: string; tips: st
       "Ruch w ciągu dnia",
       "Mniej alkoholu wieczorem",
       "Zapisywanie myśli"
+    ]
+  },
+  "uk": {
+    "headline": "9 простих кроків для кращого сну",
+    "sub": "Оберіть 1 або 2 і запроваджуйте їх поступово",
+    "tips": [
+      "Регулярний розпорядок",
+      "Світло вранці",
+      "Кава до полудня",
+      "Увечері — пауза від екранів",
+      "Прохолодна й темна спальня",
+      "Заспокійливий ритуал",
+      "Рухатися протягом дня",
+      "Менше алкоголю ввечері",
+      "Записувати свої думки"
+    ]
+  },
+  "es": {
+    "headline": "9 gestos sencillos para dormir mejor",
+    "sub": "Elija 1 o 2 e incorpórelos poco a poco",
+    "tips": [
+      "Horarios regulares",
+      "Luz por la mañana",
+      "Café antes del mediodía",
+      "Pantallas en pausa por la noche",
+      "Dormitorio fresco y oscuro",
+      "Ritual relajante",
+      "Moverse durante el día",
+      "Menos alcohol por la noche",
+      "Anotar sus pensamientos"
+    ]
+  },
+  "ku": {
+    "headline": "9 gavên hêsan ji bo xewa çêtir",
+    "sub": "1 an 2 hilbijêrin û hêdî hêdî bi cih bikin",
+    "tips": [
+      "Demjimêrên birêkûpêk",
+      "Ronahî di sibehê de",
+      "Qehwe berî nîvro",
+      "Êvarê bêhnvedana ji ekranan",
+      "Odeya razanê ya hênik û tarî",
+      "Rêûresmeke aramker",
+      "Di nav rojê de tevger",
+      "Êvarê alkola kêmtir",
+      "Ramanên xwe binivîsin"
     ]
   }
 };

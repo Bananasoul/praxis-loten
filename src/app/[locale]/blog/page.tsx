@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Blog",
     ar: "المدونة",
     pl: "Blog",
+    "uk": "Блог",
+    "es": "Blog",
+    "ku": "Blog",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/blog") };
 }

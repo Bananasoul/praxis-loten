@@ -12,11 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Çerez Politikası",
     ar: "سياسة ملفات تعريف الارتباط",
     pl: "Polityka plików cookie",
+    "uk": "Політика щодо файлів cookie",
+    "es": "Política de cookies",
+    "ku": "Polîtîkaya cookie",
   };
   return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/cookies") };
 }
 
-type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";
+type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 interface CookieContent {
   title: string;
@@ -466,6 +469,195 @@ const CONTENT: Record<LangKey, CookieContent> = {
     browserSettings: "Możesz również skonfigurować przeglądarkę, aby blokować lub usuwać pliki cookie:",
     moreInfo: "Pytania? Skontaktuj się z nami: praxisloten@gmail.com. Organ nadzorczy: www.autoriteprotectiondonnees.be",
   },
+  "uk": {
+    "title": "Політика щодо файлів cookie",
+    "updated": "Останнє оновлення: травень 2026 р.",
+    "intro": "Цей сайт використовує файли cookie та подібні технології. Ця політика інформує Вас про файли cookie, які ми використовуємо, їхнє призначення та Ваші права відповідно до Регламенту (ЄС) 2016/679 (GDPR) і Директиви ePrivacy, імплементованої в бельгійське право законом від 13 червня 2005 року про електронні комунікації.",
+    "whatAreCookies": {
+      "heading": "Що таке файл cookie?",
+      "body": "Файл cookie — це невеликий текстовий файл, який зберігається у Вашому браузері або на Вашому пристрої під час відвідування вебсайту. Він дозволяє сайту запам'ятовувати певну інформацію (обрану мову, налаштування, статистику відвідувань), щоб покращити Ваш досвід.\n\nДеякі файли cookie суворо необхідні для роботи сайту й не потребують Вашої згоди. Інші (аналітичні, маркетингові) потребують Вашої попередньої згоди."
+    },
+    "tableHeading": "Файли cookie, що використовуються на цьому сайті",
+    "tableHeaders": [
+      "Назва",
+      "Постачальник",
+      "Призначення",
+      "Тривалість",
+      "Категорія"
+    ],
+    "cookies": [
+      {
+        "name": "NEXT_LOCALE",
+        "provider": "praxisloten.be",
+        "purpose": "Запам'ятовує Вашу мовну перевагу, щоб персоналізувати відображення сайту",
+        "duration": "Сеанс (видаляється після закриття браузера)",
+        "category": "Суворо необхідний"
+      },
+      {
+        "name": "_ga",
+        "provider": "Google LLC",
+        "purpose": "Розрізняє унікальних користувачів, присвоюючи анонімний ідентифікатор. Використовується Google Analytics 4 для статистики відвідуваності",
+        "duration": "13 місяців",
+        "category": "Аналітичний"
+      },
+      {
+        "name": "_ga_T94F58H1XV",
+        "provider": "Google LLC",
+        "purpose": "Зберігає стан сеансу вимірювання Google Analytics 4 саме для цього сайту",
+        "duration": "13 місяців",
+        "category": "Аналітичний"
+      },
+      {
+        "name": "_gid",
+        "provider": "Google LLC",
+        "purpose": "Розрізняє користувачів протягом 24 годин (Google Analytics)",
+        "duration": "24 години",
+        "category": "Аналітичний"
+      }
+    ],
+    "categoriesHeading": "Категорії файлів cookie",
+    "categories": [
+      {
+        "name": "🟢 Суворо необхідні",
+        "description": "Потрібні для роботи сайту (відображення мови). Вони не збирають персональних даних для маркетингових цілей. Згода не потрібна."
+      },
+      {
+        "name": "📊 Аналітичні",
+        "description": "Дозволяють нам вимірювати кількість відвідувачів і аналізувати, як Ви користуєтеся сайтом, щоб покращувати наш контент. Ці файли cookie встановлюються лише з Вашої згоди. Дані анонімізуються й обробляються Google Analytics 4."
+      }
+    ],
+    "managementHeading": "Керування Вашими налаштуваннями",
+    "management": "Під час першого відвідування Ви можете прийняти або відхилити аналітичні файли cookie. Ви можете змінити свій вибір у будь-який час.",
+    "gaOptout": "Щоб вимкнути Google Analytics на всіх сайтах, встановіть офіційне розширення Google Analytics Opt-out, доступне за адресою https://tools.google.com/dlpage/gaoptout",
+    "browserSettings": "Ви також можете налаштувати свій браузер так, щоб блокувати або видаляти файли cookie:",
+    "moreInfo": "З будь-яких питань щодо файлів cookie чи захисту Ваших даних пишіть нам на praxisloten@gmail.com. Більше інформації про GDPR і Ваші права — у нашій Політиці конфіденційності або на сайті Органу із захисту даних: www.autoriteprotectiondonnees.be"
+  },
+  "es": {
+    "title": "Política de cookies",
+    "updated": "Última actualización: mayo de 2026",
+    "intro": "Este sitio utiliza cookies y tecnologías similares. La presente política le informa sobre las cookies que utilizamos, su finalidad y sus derechos, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Directiva ePrivacy, transpuesta al Derecho belga por la ley de 13 de junio de 2005 relativa a las comunicaciones electrónicas.",
+    "whatAreCookies": {
+      "heading": "¿Qué es una cookie?",
+      "body": "Una cookie es un pequeño archivo de texto que se almacena en su navegador o en su dispositivo cuando visita un sitio web. Permite al sitio recordar determinada información (idioma elegido, preferencias, estadísticas de visita) con el fin de mejorar su experiencia.\n\nAlgunas cookies son estrictamente necesarias para el funcionamiento del sitio y no requieren su consentimiento. Otras (analíticas, de marketing) requieren su consentimiento previo."
+    },
+    "tableHeading": "Cookies utilizadas en este sitio",
+    "tableHeaders": [
+      "Nombre",
+      "Proveedor",
+      "Finalidad",
+      "Duración",
+      "Categoría"
+    ],
+    "cookies": [
+      {
+        "name": "NEXT_LOCALE",
+        "provider": "praxisloten.be",
+        "purpose": "Recuerda su preferencia de idioma para personalizar la visualización del sitio",
+        "duration": "Sesión (se elimina al cerrar el navegador)",
+        "category": "Estrictamente necesaria"
+      },
+      {
+        "name": "_ga",
+        "provider": "Google LLC",
+        "purpose": "Distingue a los usuarios únicos asignándoles un identificador anónimo. Utilizada por Google Analytics 4 para las estadísticas de audiencia",
+        "duration": "13 meses",
+        "category": "Analítica"
+      },
+      {
+        "name": "_ga_T94F58H1XV",
+        "provider": "Google LLC",
+        "purpose": "Mantiene el estado de la sesión de medición de Google Analytics 4 específica de este sitio",
+        "duration": "13 meses",
+        "category": "Analítica"
+      },
+      {
+        "name": "_gid",
+        "provider": "Google LLC",
+        "purpose": "Distingue a los usuarios durante un período de 24 horas (Google Analytics)",
+        "duration": "24 horas",
+        "category": "Analítica"
+      }
+    ],
+    "categoriesHeading": "Categorías de cookies",
+    "categories": [
+      {
+        "name": "🟢 Estrictamente necesarias",
+        "description": "Imprescindibles para el funcionamiento del sitio (visualización del idioma). No recogen datos personales con fines de marketing. No requieren consentimiento."
+      },
+      {
+        "name": "📊 Analíticas",
+        "description": "Nos permiten medir el número de visitantes y analizar cómo navega por el sitio, con el fin de mejorar nuestros contenidos. Estas cookies solo se instalan con su consentimiento. Los datos se anonimizan y son tratados por Google Analytics 4."
+      }
+    ],
+    "managementHeading": "Gestionar sus preferencias",
+    "management": "En su primera visita, puede aceptar o rechazar las cookies analíticas. Puede modificar su elección en cualquier momento.",
+    "gaOptout": "Para desactivar Google Analytics en todos los sitios: instale la extensión oficial Google Analytics Opt-out, disponible en https://tools.google.com/dlpage/gaoptout",
+    "browserSettings": "También puede configurar su navegador para bloquear o eliminar las cookies:",
+    "moreInfo": "Para cualquier pregunta relativa a las cookies o a la protección de sus datos, contáctenos en praxisloten@gmail.com. Para más información sobre el RGPD y sus derechos, consulte nuestra Política de privacidad o el sitio web de la Autoridad de Protección de Datos: www.autoriteprotectiondonnees.be"
+  },
+  "ku": {
+    "title": "Polîtîkaya cookie",
+    "updated": "Nûkirina dawî: Gulan 2026",
+    "intro": "Ev malper cookie û teknolojiyên wekhev bi kar tîne. Ev polîtîka we li ser cookieyên ku em bi kar tînin, armanca wan û mafên we agahdar dike, li gorî Rêziknameya (YE) 2016/679 (GDPR) û Rêwerziya ePrivacy ya ku bi qanûna 13ê Hezîrana 2005an a derbarê ragihandina elektronîk de ketiye hiqûqa Belçîkayê.",
+    "whatAreCookies": {
+      "heading": "Cookie çi ye?",
+      "body": "Cookie pelekî nivîsê yê biçûk e ku dema serdana malperekê li gerok an amûra we tê danîn. Ew dihêle ku malper hin agahiyan (zimanê hilbijartî, tercîh, statîstîkên serdanê) bi bîr bîne da ku ezmûna we baştir bike.\n\nHin cookie ji bo xebitandina malperê bi tevahî pêwîst in û razîbûna we naxwazin. Yên din (analîtîk, marketing) razîbûna we ya pêşwext dixwazin."
+    },
+    "tableHeading": "Cookieyên ku li ser vê malperê têne bikaranîn",
+    "tableHeaders": [
+      "Nav",
+      "Peydakar",
+      "Armanc",
+      "Dem",
+      "Kategorî"
+    ],
+    "cookies": [
+      {
+        "name": "NEXT_LOCALE",
+        "provider": "praxisloten.be",
+        "purpose": "Tercîha we ya zimên bi bîr tîne da ku nîşandana malperê kesane bike",
+        "duration": "Danişîn (bi girtina gerokê tê jêbirin)",
+        "category": "Bi tevahî pêwîst"
+      },
+      {
+        "name": "_ga",
+        "provider": "Google LLC",
+        "purpose": "Bi dayîna nasnameyeke bênav bikarhênerên yekane ji hev cuda dike. Ji hêla Google Analytics 4 ve ji bo statîstîkên temaşevanan tê bikaranîn",
+        "duration": "13 meh",
+        "category": "Analîtîk"
+      },
+      {
+        "name": "_ga_T94F58H1XV",
+        "provider": "Google LLC",
+        "purpose": "Rewşa danişîna pîvanê ya Google Analytics 4 a taybet bi vê malperê diparêze",
+        "duration": "13 meh",
+        "category": "Analîtîk"
+      },
+      {
+        "name": "_gid",
+        "provider": "Google LLC",
+        "purpose": "Bikarhêneran di navbera 24 saetan de ji hev cuda dike (Google Analytics)",
+        "duration": "24 saet",
+        "category": "Analîtîk"
+      }
+    ],
+    "categoriesHeading": "Kategoriyên cookieyan",
+    "categories": [
+      {
+        "name": "🟢 Bi tevahî pêwîst",
+        "description": "Ji bo xebitandina malperê (nîşandana zimên) pêwîst in. Ew ji bo armancên marketingê daneyên kesane berhev nakin. Razîbûn ne pêwîst e."
+      },
+      {
+        "name": "📊 Analîtîk",
+        "description": "Dihêlin ku em hejmara serdanvanan bipîvin û analîz bikin ka hûn çawa li malperê digerin, da ku naveroka xwe baştir bikin. Ev cookie tenê bi razîbûna we têne danîn. Dane têne bênavkirin û ji hêla Google Analytics 4 ve têne pêvajokirin."
+      }
+    ],
+    "managementHeading": "Tercîhên xwe birêve bibin",
+    "management": "Di serdana xwe ya yekem de, hûn dikarin cookieyên analîtîk qebûl bikin an red bikin. Hûn dikarin hilbijartina xwe her gav biguherînin.",
+    "gaOptout": "Ji bo neçalakkirina Google Analytics li ser hemû malperan: pêveka fermî Google Analytics Opt-out saz bikin, ku li https://tools.google.com/dlpage/gaoptout heye",
+    "browserSettings": "Hûn dikarin gerokê xwe jî mîheng bikin da ku cookieyan asteng bike an jê bibe:",
+    "moreInfo": "Ji bo her pirseke derbarê cookieyan an parastina daneyên we de, li praxisloten@gmail.com bi me re têkilî daynin. Ji bo bêtir agahî li ser GDPR û mafên xwe, li Polîtîkaya me ya nepenîtiyê an li malpera Desthilatdariya Parastina Daneyan binêrin: www.autoriteprotectiondonnees.be"
+  },
 };
 
 const BROWSER_LINKS = [
@@ -474,6 +666,18 @@ const BROWSER_LINKS = [
   { name: "Safari", url: "https://support.apple.com/fr-be/guide/safari/sfri11471/mac" },
   { name: "Microsoft Edge", url: "https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" },
 ];
+
+/** Les traductions des textes legaux sont fournies pour information ; FR et DE font foi. */
+const AUTHORITATIVE_NOTICE: Partial<Record<string, string>> = {
+  en: "This translation is provided for information only. The French and German versions are authoritative.",
+  nl: "Deze vertaling wordt uitsluitend ter informatie verstrekt. De Franse en Duitse versies zijn rechtsgeldig.",
+  tr: "Bu çeviri yalnızca bilgilendirme amaçlıdır. Fransızca ve Almanca sürümler esas alınır.",
+  ar: "هذه الترجمة مقدمة لأغراض إعلامية فقط. النسختان الفرنسية والألمانية هما المرجع المعتمد.",
+  pl: "Niniejsze tłumaczenie ma charakter wyłącznie informacyjny. Wiążące są wersje francuska i niemiecka.",
+  uk: "Цей переклад надано лише для ознайомлення. Чинними є французька та німецька версії.",
+  es: "Esta traducción se facilita solo a título informativo. Las versiones francesa y alemana son las que dan fe.",
+  ku: "Ev werger tenê ji bo agahdariyê ye. Guhertoyên fransî û almanî yên fermî ne.",
+};
 
 export default async function CookiesPage({
   params,
@@ -492,6 +696,9 @@ export default async function CookiesPage({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-neutral-900 mb-2">{c.title}</h1>
         <p className="text-sm text-neutral-400 mb-4">{c.updated}</p>
+        {AUTHORITATIVE_NOTICE[locale] && (
+          <p className="text-sm text-neutral-500 italic mb-8">{AUTHORITATIVE_NOTICE[locale]}</p>
+        )}
         <p className="text-neutral-600 leading-relaxed mb-10 p-4 bg-amber-50 border border-amber-100 rounded-xl text-sm">
           {c.intro}
         </p>

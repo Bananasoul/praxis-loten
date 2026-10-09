@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { routing } from "./routing";
 
 /**
- * Langues dont seules les pages principales sont traduites (constat du 09/10/2026) :
+ * Langues dont seules les pages principales sont traduites. Vide depuis la traduction
+ * complete de es/uk/ku (09/10/2026) ; constat d'origine :
  * detail des services, reeducation, blog, emploi et pages legales y retombent en
  * FR/EN. Ces pages-la sont exclues des hreflang et du sitemap, et marquees noindex,
  * pour ne pas etre vues par Google comme des doublons (Search Console, 07/10).
  * Retirer une langue de cette liste des que ses pages sont reellement traduites.
  */
-export const PARTIAL_LOCALES: readonly string[] = ["es", "uk", "ku"];
+export const PARTIAL_LOCALES: readonly string[] = [];
 
 /** Chemins (sans prefixe de langue) non traduits dans PARTIAL_LOCALES. */
 const UNTRANSLATED_IN_PARTIAL = [

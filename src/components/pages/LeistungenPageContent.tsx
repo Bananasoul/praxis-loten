@@ -81,7 +81,10 @@ const SERVICES = [
     iconBg: "bg-[#2b3186]/10",
     iconColor: "text-[#2b3186]",
     borderHover: "hover:border-[#2b3186]/30",
-    title: { de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy", nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna" },
+    title: { de: "Manuelle Therapie", fr: "Thérapie Manuelle", en: "Manual Therapy", nl: "Manuele Therapie", tr: "Manuel Terapi", ar: "العلاج اليدوي", pl: "Terapia Manualna",
+    "uk": "Мануальна терапія",
+    "es": "Terapia manual",
+    "ku": "Terapiya destî" },
     badge: "CUTM IFOMPT · QPP",
     description: {
       de: "Orthopädische Manualtherapie — weltweit anerkannte Spezialisierung. Wir suchen die Ursache Ihrer Schmerzen und bieten eine individuell angepasste Behandlung für dauerhafte Genesung.",
@@ -91,6 +94,9 @@ const SERVICES = [
       tr: "Ortopedik manuel terapi — dünya çapında tanınan bir uzmanlık. Ağrınızın kaynağını araştırıyor ve kalıcı iyileşme için bireysel bir tedavi sunuyoruz.",
       ar: "العلاج اليدوي التقويمي — تخصص معترف به عالميًا. نبحث عن سبب آلامك ونقدم علاجًا مخصصًا للتعافي الدائم.",
       pl: "Ortopedyczna terapia manualna — specjalizacja uznana na całym świecie. Szukamy przyczyny Twojego bólu i oferujemy indywidualnie dopasowane leczenie dla trwałego wyzdrowienia.",
+      "uk": "Ортопедична мануальна терапія — спеціалізація, визнана в усьому світі. Ми шукаємо причину Вашого болю та пропонуємо індивідуальне лікування для тривалого одужання.",
+      "es": "Terapia manual ortopédica: una especialización reconocida en todo el mundo. Buscamos la causa de sus dolores y le proponemos un tratamiento personalizado para una curación duradera.",
+      "ku": "Terapiya destî ya ortopedîk — pisporiyeke ku li seranserê cîhanê tê naskirin. Em li sedema êşên we digerin û dermankirineke kesane pêşniyar dikin ji bo başbûneke berdewam.",
     },
     points: {
       de: ["Erweiterte physiotherapeutische Anamnese", "Biopsychosozialer Ansatz", "Ziel: Autonomer Patient", "Wissenschaftlich fundierte Techniken"],
@@ -100,6 +106,24 @@ const SERVICES = [
       tr: ["Gelişmiş fizyoterapi değerlendirmesi", "Biopsikososyal yaklaşım", "Hedef: bağımsız hasta", "Kanıta dayalı teknikler"],
       ar: ["تقييم فيزيوتيرابيا متقدم", "نهج بيو-نفسي-اجتماعي", "الهدف: مريض مستقل", "تقنيات قائمة على الأدلة"],
       pl: ["Zaawansowany wywiad fizjoterapeutyczny", "Podejście biopsychospołeczne", "Cel: autonomiczny pacjent", "Techniki oparte na dowodach"],
+      "uk": [
+        "Поглиблений фізіотерапевтичний анамнез",
+        "Біопсихосоціальний підхід",
+        "Мета: самостійний пацієнт",
+        "Науково обґрунтовані техніки"
+      ],
+      "es": [
+        "Anamnesis fisioterapéutica avanzada",
+        "Enfoque biopsicosocial",
+        "Objetivo: paciente autónomo",
+        "Técnicas validadas científicamente"
+      ],
+      "ku": [
+        "Anamneza fizyoterapiyê ya pêşketî",
+        "Nêzîkatiya biyopsîkososyal",
+        "Armanc: nexweşê serbixwe",
+        "Teknîkên bi zanistî pejirandî"
+      ],
     },
     indications: {
       de: ["Rückenschmerzen / Nacken", "Knie & Hüfte", "Schulter & Arm", "Post-operative Rehabilitation", "Kopfschmerzen"],
@@ -109,6 +133,27 @@ const SERVICES = [
       tr: ["Sırt ağrısı / boyun ağrısı", "Diz & kalça", "Omuz & kol", "Ameliyat sonrası rehabilitasyon", "Baş ağrısı"],
       ar: ["آلام الظهر / الرقبة", "الركبة والورك", "الكتف والذراع", "إعادة التأهيل بعد الجراحة", "الصداع"],
       pl: ["Ból pleców / karku", "Kolano i biodro", "Bark i ramię", "Rehabilitacja pooperacyjna", "Bóle głowy"],
+      "uk": [
+        "Біль у попереку / шиї",
+        "Коліно та кульшовий суглоб",
+        "Плече та рука",
+        "Післяопераційна реабілітація",
+        "Головний біль"
+      ],
+      "es": [
+        "Dolor lumbar / cervical",
+        "Rodilla y cadera",
+        "Hombro y brazo",
+        "Rehabilitación postoperatoria",
+        "Dolores de cabeza"
+      ],
+      "ku": [
+        "Êşa pişta jêrîn / stûyê",
+        "Çok û kalçe",
+        "Mil û çeng",
+        "Rehabîlîtasyona piştî emeliyatê",
+        "Serêş"
+      ],
     },
   },
   {
@@ -118,7 +163,10 @@ const SERVICES = [
     iconBg: "bg-[#76b82a]/10",
     iconColor: "text-[#76b82a]",
     borderHover: "hover:border-[#76b82a]/30",
-    title: { de: "Sport Physiotherapie", fr: "Kinésithérapie du Sport", en: "Sports Physiotherapy", nl: "Sportfysiotherapie", tr: "Spor Fizyoterapisi", ar: "العلاج الطبيعي الرياضي", pl: "Fizjoterapia Sportowa" },
+    title: { de: "Sport Physiotherapie", fr: "Kinésithérapie du Sport", en: "Sports Physiotherapy", nl: "Sportfysiotherapie", tr: "Spor Fizyoterapisi", ar: "العلاج الطبيعي الرياضي", pl: "Fizjoterapia Sportowa",
+    "uk": "Спортивна фізіотерапія",
+    "es": "Fisioterapia deportiva",
+    "ku": "Fizyoterapiya werzîşê" },
     badge: "Running Clinic · BFR · Kinesport",
     description: {
       de: "Rehabilitation, Verletzungsprävention und Leistungssteigerung für Athleten und Hobbysportler. Unsere Kenntnisse in Anatomie und Biomechanik helfen Ihnen, schnell und dauerhaft in Topform zu kommen.",
@@ -128,6 +176,9 @@ const SERVICES = [
       tr: "Elit ve amatör sporcular için rehabilitasyon, sakatlık önleme ve performans optimizasyonu. Anatomi ve biyomekanik alanındaki uzmanlığımız, hızlı ve kalıcı biçimde en iyi forma ulaşmanıza yardımcı olur.",
       ar: "إعادة التأهيل والوقاية من الإصابات وتحسين الأداء للرياضيين المحترفين والهواة. تساعدك خبرتنا في التشريح وعلم الحركة على العودة لأفضل حالاتك بسرعة ودوام.",
       pl: "Rehabilitacja, profilaktyka urazów i optymalizacja wydajności dla sportowców wyczynowych i rekreacyjnych. Nasza wiedza z zakresu anatomii i biomechaniki pomaga szybko i trwale wrócić do formy.",
+      "uk": "Реабілітація, профілактика травм і підвищення результатів для професійних спортсменів та аматорів. Наші знання анатомії та біомеханіки допоможуть Вам повернути найкращу форму.",
+      "es": "Rehabilitación, prevención de lesiones y optimización del rendimiento para deportistas de alto nivel y aficionados. Nuestra experiencia en anatomía y biomecánica le ayuda a recuperar su mejor forma.",
+      "ku": "Rehabîlîtasyon, pêşîlêgirtina birînan û baştirkirina performansê ji bo werzîşvanên asta bilind û amator. Pisporiya me di anatomî û biyomekanîkê de alîkariya we dike ku hûn forma xwe ya herî baş ji nû ve bi dest bixin.",
     },
     points: {
       de: ["Running Clinic (La Clinique du Coureur)", "Blood Flow Restriction Training (BFR)", "Sportspezifische Rehabilitation", "Verletzungsprävention im Verein"],
@@ -137,6 +188,24 @@ const SERVICES = [
       tr: ["Running Clinic (La Clinique du Coureur)", "Kan Akışı Kısıtlama Antrenmanı (BFR)", "Spora özgü rehabilitasyon", "Kulüplerde sakatlık önleme"],
       ar: ["Running Clinic (La Clinique du Coureur)", "تدريب BFR (تقييد تدفق الدم)", "إعادة التأهيل الرياضي المتخصص", "الوقاية من الإصابات في النوادي"],
       pl: ["Running Clinic (La Clinique du Coureur)", "Blood Flow Restriction Training (BFR)", "Rehabilitacja sportowa", "Profilaktyka urazów w klubach"],
+      "uk": [
+        "Running Clinic (La Clinique du Coureur)",
+        "Blood Flow Restriction Training (BFR)",
+        "Спеціальна спортивна реабілітація",
+        "Профілактика травм у клубі"
+      ],
+      "es": [
+        "Running Clinic (La Clinique du Coureur)",
+        "Blood Flow Restriction Training (BFR)",
+        "Rehabilitación específica del deporte",
+        "Prevención de lesiones en el club"
+      ],
+      "ku": [
+        "Running Clinic (La Clinique du Coureur)",
+        "Blood Flow Restriction Training (BFR)",
+        "Rehabîlîtasyona taybet a werzîşê",
+        "Pêşîlêgirtina birînan di klûbê de"
+      ],
     },
     indications: {
       de: ["Laufsportverletzungen", "Muskelrisse & Zerrungen", "Bandverletzungen", "Post-op Sportrehabilitation", "Leistungsoptimierung"],
@@ -146,6 +215,27 @@ const SERVICES = [
       tr: ["Koşu sakatlıkları", "Kas yırtıkları & burkulmalar", "Bağ sakatlıkları", "Ameliyat sonrası spor rehabilitasyonu", "Performans optimizasyonu"],
       ar: ["إصابات الجري", "تمزقات وشدود العضلات", "إصابات الأربطة", "إعادة التأهيل الرياضي بعد الجراحة", "تحسين الأداء"],
       pl: ["Urazy biegowe", "Naderwania i naciągnięcia mięśni", "Urazy więzadeł", "Sportowa rehabilitacja pooperacyjna", "Optymalizacja wyników"],
+      "uk": [
+        "Травми бігунів",
+        "Розриви та розтягнення",
+        "Ушкодження зв'язок",
+        "Спортивна післяопераційна реабілітація",
+        "Підвищення результатів"
+      ],
+      "es": [
+        "Lesiones del corredor",
+        "Roturas y distensiones",
+        "Lesiones de ligamentos",
+        "Rehabilitación postoperatoria deportiva",
+        "Optimización del rendimiento"
+      ],
+      "ku": [
+        "Birînên bazdanê",
+        "Çirîn û kişandina masûlkeyan",
+        "Birînên girêkan (lîgamentan)",
+        "Rehabîlîtasyona werzîşê ya piştî emeliyatê",
+        "Baştirkirina performansê"
+      ],
     },
   },
   {
@@ -155,7 +245,10 @@ const SERVICES = [
     iconBg: "bg-purple-50",
     iconColor: "text-purple-600",
     borderHover: "hover:border-purple-200",
-    title: { de: "Kiefergelenk / ATM", fr: "Articulation Temporo-Mandibulaire", en: "Jaw Joint / TMJ", nl: "Kaakgewricht / ATM", tr: "Çene Eklemi / ATM", ar: "المفصل الصدغي الفكي", pl: "Staw Skroniowo-Żuchwowy" },
+    title: { de: "Kiefergelenk / ATM", fr: "Articulation Temporo-Mandibulaire", en: "Jaw Joint / TMJ", nl: "Kaakgewricht / ATM", tr: "Çene Eklemi / ATM", ar: "المفصل الصدغي الفكي", pl: "Staw Skroniowo-Żuchwowy",
+    "uk": "Скронево-нижньощелепний суглоб",
+    "es": "Articulación temporomandibular",
+    "ku": "Movika çenê (TMJ)" },
     badge: "Pitance · Giop · Gouzland 2025",
     description: {
       de: "Spezialisierte Therapie bei craniomandibulärer Dysfunktion (CMD). Behandlung von Kieferschmerzen, Kopfschmerzen, Schwindel und Nackenverspannungen durch myotensive Techniken.",
@@ -165,6 +258,9 @@ const SERVICES = [
       tr: "Kraniyomandibüler disfonksiyon (KMD/ATM) için uzmanlaşmış terapi. Miyotensif tekniklerle çene ağrısı, baş ağrısı, baş dönmesi ve boyun gerginliğinin tedavisi.",
       ar: "علاج متخصص للخلل الوظيفي الصدغي الفكي (ATM). معالجة آلام الفك والصداع والدوخة وتوتر الرقبة بتقنيات عضلية.",
       pl: "Specjalistyczna terapia dysfunkcji czaszkowo-żuchwowej (CMD/TMJ). Leczenie bólu szczęki, bólów głowy, zawrotów i napięcia szyi technikami miotensywnymi.",
+      "uk": "Спеціалізована терапія краніомандибулярних дисфункцій (КМД/СНЩС). Лікування болю в щелепі, головного болю, запаморочення та напруження в шиї за допомогою міотензивних і суглобових технік.",
+      "es": "Terapia especializada de las disfunciones craneomandibulares (DCM/ATM). Tratamiento del dolor de mandíbula, dolores de cabeza, mareos y tensiones cervicales mediante técnicas miotensivas y articulares.",
+      "ku": "Terapiya pispor a disfonksiyonên kranomandîbular (CMD/TMJ). Dermankirina êşa çenê, serêş, gêjbûn û girjbûna stûyê bi teknîkên mîotensîf û yên movikan.",
     },
     points: {
       de: ["Myotensive Techniken", "Entspannung der Kiefermuskeln", "Behandlung des Knackens", "Koordination mit Kieferorthopäden"],
@@ -174,6 +270,24 @@ const SERVICES = [
       tr: ["Miyotensif teknikler", "Çene kaslarının gevşetilmesi", "Klik sesinin tedavisi", "Ortodontistlerle koordinasyon"],
       ar: ["تقنيات عضلية", "إرخاء عضلات الفك", "علاج الطقطقة", "التنسيق مع طبيب التقويم"],
       pl: ["Techniki miotensywne", "Rozluźnienie mięśni żuchwy", "Leczenie trzaskania stawu", "Koordynacja z ortodontą"],
+      "uk": [
+        "Міотензивні техніки",
+        "Розслаблення жувальних м'язів",
+        "Лікування клацання",
+        "Співпраця з ортодонтом"
+      ],
+      "es": [
+        "Técnicas miotensivas",
+        "Relajación de los músculos masticadores",
+        "Tratamiento del chasquido",
+        "Coordinación con el ortodoncista"
+      ],
+      "ku": [
+        "Teknîkên mîotensîf",
+        "Sistkirina masûlkeyên cûtinê",
+        "Dermankirina teqteqê",
+        "Hevrêzî bi ortodontîst re"
+      ],
     },
     indications: {
       de: ["Kieferschmerzen & CMD", "Kopfschmerzen / Migräne", "Schwindel & Tinnitus", "Nacken-/Schulterverspannung", "Kieferöffnungseinschränkung"],
@@ -183,6 +297,27 @@ const SERVICES = [
       tr: ["Çene ağrısı & KMD", "Baş ağrısı / Migren", "Baş dönmesi & kulak çınlaması", "Boyun/omuz gerginliği", "Sınırlı çene açılımı"],
       ar: ["آلام الفك وATM", "الصداع / الشقيقة", "الدوخة وطنين الأذن", "توتر الرقبة/الكتف", "تقييد فتح الفم"],
       pl: ["Ból szczęki i CMD", "Bóle głowy / Migrena", "Zawroty głowy i szumy uszne", "Napięcie karku/barku", "Ograniczone otwieranie ust"],
+      "uk": [
+        "Біль у щелепі та КМД",
+        "Головний біль / мігрень",
+        "Запаморочення та шум у вухах",
+        "Напруження в ділянці шиї та лопаток",
+        "Обмежене відкривання рота"
+      ],
+      "es": [
+        "Dolor de mandíbula y DCM",
+        "Dolor de cabeza / migraña",
+        "Mareos y acúfenos",
+        "Tensiones cervicoescapulares",
+        "Apertura bucal limitada"
+      ],
+      "ku": [
+        "Êşa çenê û CMD",
+        "Serêş / Mîgren",
+        "Gêjbûn û zingînî di guh de",
+        "Girjbûna stû û milan",
+        "Sînordarbûna vekirina devê"
+      ],
     },
   },
   {
@@ -192,7 +327,10 @@ const SERVICES = [
     iconBg: "bg-teal-50",
     iconColor: "text-teal-600",
     borderHover: "hover:border-teal-200",
-    title: { de: "Lymphdrainage", fr: "Drainage Lymphatique", en: "Lymphatic Drainage", nl: "Lymfedrainage", tr: "Lenf Drenajı", ar: "التصريف اللمفاوي", pl: "Drenaż Limfatyczny" },
+    title: { de: "Lymphdrainage", fr: "Drainage Lymphatique", en: "Lymphatic Drainage", nl: "Lymfedrainage", tr: "Lenf Drenajı", ar: "التصريف اللمفاوي", pl: "Drenaż Limfatyczny",
+    "uk": "Лімфодренаж",
+    "es": "Drenaje linfático",
+    "ku": "Drenaja lîmfatîk" },
     badge: "Méthode O. Leduc",
     description: {
       de: "Manuelle Lymphdrainage nach der anerkannten Methode von O. Leduc. Sanfte Spezialmassage zur Reduzierung von Ödemen und Stimulation des Lymphsystems.",
@@ -202,6 +340,9 @@ const SERVICES = [
       tr: "Tanınan O. Leduc yöntemiyle manuel lenf drenajı. Ödem azaltmak ve lenf sistemini uyarmak için nazik bir uzman masajı.",
       ar: "تصريف لمفاوي يدوي بحسب طريقة O. Leduc المعترف بها. تدليك متخصص لطيف لتقليل الوذمة وتحفيز الجهاز اللمفاوي.",
       pl: "Manualny drenaż limfatyczny metodą O. Leduca. Delikatny specjalistyczny masaż redukujący obrzęki i stymulujący układ limfatyczny.",
+      "uk": "Мануальний лімфодренаж за визнаним методом O. Leduc. Спеціальний і м'який масаж для зменшення набряків і стимуляції лімфатичної системи.",
+      "es": "Drenaje linfático manual según el reconocido método de O. Leduc. Masaje especial y suave para reducir los edemas y estimular el sistema linfático.",
+      "ku": "Drenaja lîmfatîk a destî li gorî rêbaza naskirî ya O. Leduc. Masajeke taybet û nerm ji bo kêmkirina werimê û teşwîqkirina pergala lîmfatîk.",
     },
     points: {
       de: ["Methode nach O. Leduc", "Sanfte, schonende Technik", "Aktivierung des Lymphsystems", "Reduzierung von Schwellungen"],
@@ -211,6 +352,24 @@ const SERVICES = [
       tr: ["O. Leduc yöntemi", "Nazik, invazif olmayan teknik", "Lenf sistemi aktivasyonu", "Şişliğin azaltılması"],
       ar: ["طريقة O. Leduc", "تقنية لطيفة وغير جراحية", "تنشيط الجهاز اللمفاوي", "تقليل الانتفاخ"],
       pl: ["Metoda O. Leduca", "Delikatna, nieinwazyjna technika", "Aktywacja układu limfatycznego", "Redukcja obrzęków"],
+      "uk": [
+        "Метод за O. Leduc",
+        "М'яка та неінвазивна техніка",
+        "Активація лімфатичної системи",
+        "Зменшення набряків"
+      ],
+      "es": [
+        "Método según O. Leduc",
+        "Técnica suave y no invasiva",
+        "Activación del sistema linfático",
+        "Reducción de los edemas"
+      ],
+      "ku": [
+        "Rêbaz li gorî O. Leduc",
+        "Teknîkeke nerm û ne-învazîv",
+        "Çalakkirina pergala lîmfatîk",
+        "Kêmkirina werimê"
+      ],
     },
     indications: {
       de: ["Post-operative Ödeme (Knie/Hüfte)", "Lymphödem nach Tumoroperation", "Schwere Beine (Venen/Lymphe)", "Sportverletzungen"],
@@ -220,6 +379,24 @@ const SERVICES = [
       tr: ["Ameliyat sonrası ödem (diz/kalça)", "Kanser ameliyatı sonrası lenfödem", "Ağır bacaklar (damarlar/lenf)", "Spor sakatlıkları"],
       ar: ["وذمة ما بعد الجراحة (الركبة/الورك)", "وذمة لمفاوية بعد جراحة السرطان", "ثقل الساقين (الأوردة/اللمف)", "إصابات رياضية"],
       pl: ["Obrzęk pooperacyjny (kolano/biodro)", "Obrzęk limfatyczny po operacji onkologicznej", "Ciężkie nogi (żylne/limfatyczne)", "Urazy sportowe"],
+      "uk": [
+        "Післяопераційні набряки (коліно/кульшовий суглоб)",
+        "Лімфедема після раку",
+        "Важкість у ногах (вени/лімфа)",
+        "Спортивні травми"
+      ],
+      "es": [
+        "Edemas postoperatorios (rodilla/cadera)",
+        "Linfedema tras un cáncer",
+        "Piernas pesadas (venas/linfa)",
+        "Lesiones deportivas"
+      ],
+      "ku": [
+        "Werimên piştî emeliyatê (çok/kalçe)",
+        "Lîmfodema piştî penceşêrê",
+        "Lingên giran (damar/lîmf)",
+        "Birînên werzîşê"
+      ],
     },
   },
 ];
