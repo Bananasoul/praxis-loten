@@ -4,13 +4,7 @@ import { BlogArticlePageContent } from "@/components/pages/BlogArticlePageConten
 import { notFound } from "next/navigation";
 import { pageSeo } from "@/i18n/alternates";
 import { ARTICLES, type LangKey } from "@/content/blogArticles";
-
-/** Résumé pour la balise description : intro sans markdown, coupée à ~155 caractères sur un mot. */
-function describe(intro: string): string {
-  const plain = intro.replace(/\*\*|__|[*_`#>]/g, "").replace(/\s+/g, " ").trim();
-  if (plain.length <= 155) return plain;
-  return plain.slice(0, plain.lastIndexOf(" ", 152)).replace(/[.,;:!?]+$/, "") + "…";
-}
+import { metaDescription } from "@/lib/metaDescription";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
@@ -18,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!article) return pageSeo(locale, `/blog/${slug}`);
   const lang = (locale in article.title ? locale : "en") as LangKey;
   const title = article.title[lang];
-  const description = describe(article.intro[lang]);
+  const description = metaDescription(article.intro[lang]);
   return {
     title,
     description,
