@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Ücretler ve tarifeler",
     ar: "الرسوم والتعريفات",
     pl: "Opłaty i cennik",
+    uk: "Ціни",
+    es: "Tarifas",
+    ku: "Bihayên",
   };
   return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/honoraires") };
 }

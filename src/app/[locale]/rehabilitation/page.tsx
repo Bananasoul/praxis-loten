@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { RehabPageContent } from "@/components/pages/RehabPageContent";
-import { buildAlternates } from "@/i18n/alternates";
+import { pageSeo } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "إعادة التأهيل",
     pl: "Rehabilitacja",
   };
-  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/rehabilitation") };
+  return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/rehabilitation") };
 }
 
 export default async function RehabPage({

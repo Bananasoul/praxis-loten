@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
+import { isTranslated } from "@/i18n/alternates";
 
 const BASE_URL = "https://www.praxisloten.be";
 const locales = routing.locales;
@@ -59,7 +60,7 @@ const blogSlugs = [
 // Balises hreflang : chaque URL localisée déclare toutes ses variantes + x-default.
 function alternates(path: string): { languages: Record<string, string> } {
   const languages: Record<string, string> = {};
-  for (const l of locales) languages[l] = `${BASE_URL}/${l}${path}`;
+  for (const l of locales) if (isTranslated(l, path)) languages[l] = `${BASE_URL}/${l}${path}`;
   languages["x-default"] = `${BASE_URL}/${defaultLocale}${path}`;
   return { languages };
 }
@@ -70,6 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const add = (path: string, changeFrequency: ChangeFreq, priority: number) => {
     for (const locale of locales) {
+      if (!isTranslated(locale, path)) continue;
       entries.push({
         url: `${BASE_URL}/${locale}${path}`,
         lastModified: now,

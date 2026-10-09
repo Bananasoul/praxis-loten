@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Ekibimiz",
     ar: "فريقنا",
     pl: "Nasz zespół",
+    uk: "Наша команда",
+    es: "Nuestro equipo",
+    ku: "Tîma me",
   };
   return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/team") };
 }
