@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Hizmetlerimiz",
     ar: "خدماتنا",
     pl: "Nasze usługi",
+    uk: "Послуги",
+    es: "Servicios",
+    ku: "Xizmet",
   };
   return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/leistungen") };
 }

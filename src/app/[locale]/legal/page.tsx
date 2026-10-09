@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
-import { buildAlternates } from "@/i18n/alternates";
+import { pageSeo } from "@/i18n/alternates";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ar: "الإشعار القانوني",
     pl: "Nota prawna",
   };
-  return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/legal") };
+  return { title: titles[locale] || titles.fr, ...pageSeo(locale, "/legal") };
 }
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl";

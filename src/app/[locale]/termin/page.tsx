@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     tr: "Randevu almak",
     ar: "حجز موعد",
     pl: "Umów wizytę",
+    uk: "Записатися",
+    es: "Pedir cita",
+    ku: "Randevû bigire",
   };
   return { title: titles[locale] || titles.fr, alternates: buildAlternates(locale, "/termin") };
 }
