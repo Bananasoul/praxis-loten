@@ -72,7 +72,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analytique",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Maintient l'état de la session de mesure Google Analytics 4 spécifique à ce site",
         duration: "13 mois",
@@ -136,7 +136,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analyse",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Hält den Google Analytics 4-Messsitzungsstatus für diese Website aufrecht",
         duration: "13 Monate",
@@ -200,7 +200,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analytics",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Maintains the Google Analytics 4 measurement session state for this site",
         duration: "13 months",
@@ -264,7 +264,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analytisch",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Houdt de Google Analytics 4-sessiestatus bij voor deze site",
         duration: "13 maanden",
@@ -322,7 +322,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analitik",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Bu siteye özgü Google Analytics 4 oturum durumunu korur",
         duration: "13 ay",
@@ -380,7 +380,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "تحليلي",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "يحافظ على حالة جلسة قياس Google Analytics 4 الخاصة بهذا الموقع",
         duration: "13 شهرًا",
@@ -438,7 +438,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         category: "Analityczny",
       },
       {
-        name: "_ga_T94F58H1XV",
+        name: "_ga_F58GSSFKQ0",
         provider: "Google LLC",
         purpose: "Utrzymuje stan sesji pomiarowej Google Analytics 4 dla tej strony",
         duration: "13 miesięcy",
@@ -501,7 +501,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         "category": "Аналітичний"
       },
       {
-        "name": "_ga_T94F58H1XV",
+        "name": "_ga_F58GSSFKQ0",
         "provider": "Google LLC",
         "purpose": "Зберігає стан сеансу вимірювання Google Analytics 4 саме для цього сайту",
         "duration": "13 місяців",
@@ -564,7 +564,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         "category": "Analítica"
       },
       {
-        "name": "_ga_T94F58H1XV",
+        "name": "_ga_F58GSSFKQ0",
         "provider": "Google LLC",
         "purpose": "Mantiene el estado de la sesión de medición de Google Analytics 4 específica de este sitio",
         "duration": "13 meses",
@@ -627,7 +627,7 @@ const CONTENT: Record<LangKey, CookieContent> = {
         "category": "Analîtîk"
       },
       {
-        "name": "_ga_T94F58H1XV",
+        "name": "_ga_F58GSSFKQ0",
         "provider": "Google LLC",
         "purpose": "Rewşa danişîna pîvanê ya Google Analytics 4 a taybet bi vê malperê diparêze",
         "duration": "13 meh",

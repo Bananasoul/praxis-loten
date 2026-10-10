@@ -33,6 +33,8 @@ const PHONE_TO_THERAPIST: Record<string, string> = {
   "32471765683": "Fabienne Dormann",
   "32471869024": "Thom Petit",
   "32474296326": "Loic Meunier",
+  "+32472387291": "Noé Meyer",
+  "32472387291": "Noé Meyer",
 };
 
 /* ── Booking URL to therapist ── */
@@ -64,6 +66,8 @@ function pageLanguage(): string {
   return SITE_LOCALES.includes(seg) ? seg : "de";
 }
 
+// page_location n'est pas passé : gtag le renseigne avec l'URL complète. Le remplacer par le
+// seul chemin vidait hostName et pagePath sur tous les événements de contact (constat du 09/10/2026).
 function sendEvent(eventName: string, params: Record<string, string>) {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", eventName, { ...params, page_language: pageLanguage() });
@@ -77,7 +81,6 @@ export default function GA4Events() {
       if (!anchor) return;
 
       const href = anchor.getAttribute("href") || "";
-      const page = window.location.pathname;
 
       // Phone call
       if (href.startsWith("tel:")) {
@@ -85,7 +88,6 @@ export default function GA4Events() {
         sendEvent("phone_call", {
           therapist,
           phone_number: href.replace("tel:", ""),
-          page_location: page,
           contact_method: "phone",
         });
         return;
@@ -97,7 +99,6 @@ export default function GA4Events() {
         sendEvent("whatsapp_click", {
           therapist,
           whatsapp_url: href,
-          page_location: page,
           contact_method: "whatsapp",
         });
         return;
@@ -108,7 +109,6 @@ export default function GA4Events() {
         sendEvent("email_click", {
           therapist: "Cabinet (général)",
           email_target: href.replace("mailto:", "").split("?")[0],
-          page_location: page,
           contact_method: "email",
         });
         return;
@@ -130,7 +130,6 @@ export default function GA4Events() {
           therapist,
           booking_platform: platform,
           booking_url: href,
-          page_location: page,
           contact_method: "online_booking",
         });
         return;
@@ -139,7 +138,6 @@ export default function GA4Events() {
       // Termin page navigation (= "Prendre rendez-vous" button)
       if (href.includes("/termin")) {
         sendEvent("termin_page", {
-          page_location: page,
           contact_method: "termin_button",
         });
         return;
@@ -149,7 +147,6 @@ export default function GA4Events() {
       if (href.includes("/blog/") && !href.endsWith("/blog")) {
         sendEvent("blog_read", {
           article_url: href,
-          page_location: page,
         });
       }
     }

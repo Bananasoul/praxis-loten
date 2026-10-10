@@ -16,6 +16,10 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+/** Pas de GA sur les aperçus Vercel ni en développement local (ils polluaient les statistiques).
+ *  Si VERCEL_ENV est absent, GA reste actif : mieux vaut trop mesurer que plus du tout. */
+const IS_PRODUCTION = process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview";
+
 export const metadata: Metadata = {
   title: "Praxis Loten",
   description: "Physiotherapy & Rehabilitation in Eupen",
@@ -33,9 +37,9 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-[#fafafa] text-neutral-900">
         {children}
-        <GA4Events />
+        {IS_PRODUCTION && <GA4Events />}
       </body>
-      <GoogleAnalytics gaId="G-F58GSSFKQ0" />
+      {IS_PRODUCTION && <GoogleAnalytics gaId="G-F58GSSFKQ0" />}
     </html>
   );
 }
