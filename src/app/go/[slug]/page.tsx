@@ -9,7 +9,9 @@ import BookingRelay from "@/components/ui/BookingRelay";
  */
 const RELAYS: Record<string, { to: string; therapist: string; platform: string }> = {
   philippe: {
-    to: "https://agenda.crossuite.com/PB/fr_BE",
+    // Même lien que la fiche équipe du site (TeamPageContent). L'ancien
+    // agenda.crossuite.com/PB/fr_BE renvoie « Author does not exist! » (constat 09/10/2026).
+    to: "https://bookings.crossuite.app/50ffa29e-e6ec-496c-95f6-0b41eb3d2071",
     therapist: "Philippe Banaszak",
     platform: "crossuite",
   },
