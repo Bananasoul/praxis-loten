@@ -37,7 +37,8 @@ const THERAPISTS: {
     accent: "#f97316",
     phone: "+32471869024",
     whatsapp: "https://wa.me/32471869024",
-    online: "https://www.q-top.be/Online-planner/FR/?root=kq43933",
+    // Q-top de Thom masqué le 09/10/2026 : « configuration pas encore terminée par le thérapeute ». À remettre une fois configuré : online: "https://www.q-top.be/Online-planner/FR/?root=kq43933"
+    online: null,
     emailEnc: "dGhvbS5wZXRpdEBtZS5jb20=",
     role: { de: "Sport-Physiotherapeut — Running Clinic — BFR", fr: "Kinésithérapeute du Sport — Running Clinic — BFR", en: "Sports Physiotherapist — Running Clinic — BFR", nl: "Sportfysiotherapeut — Running Clinic — BFR", tr: "Spor Fizyoterapisti — Running Clinic — BFR", ar: "أخصائي علاج طبيعي رياضي — Running Clinic — BFR", pl: "Fizjoterapeuta Sportowy — Running Clinic — BFR", uk: "Спортивний фізіотерапевт — Running Clinic — BFR", es: "Fisioterapeuta deportivo — Running Clinic — BFR", ku: "Fizyoterapîstê werzîşê — Running Clinic — BFR" },
   },
