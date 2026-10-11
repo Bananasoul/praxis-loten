@@ -1,14 +1,28 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered } from "lucide-react";
+import { Clock, CalendarPlus, CheckCircle2, BookOpen, Info, ListOrdered, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { InfographicSlot } from "@/components/blog/Infographics";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
 import { ARTICLES, type LangKey } from "@/content/blogArticles";
+
+/** Service lié à chaque article : lien interne article → page de soin (clé messages services.*). */
+const RELATED_SERVICE: Record<string, { slug: string; key: "manualTherapy" | "sportPhysio" | "jaw" | "lymph" }> = {
+  "therapie-manuelle-mythes-mouvement": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "doser-activite-douleur": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "position-assise-mal-de-dos": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "douleurs-cervicales-mobilite-eupen": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "manuelle-therapie-rueckenschmerzen": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "osteopathie-kinesitherapie-unterschied": { slug: "manuelle-therapie", key: "manualTherapy" },
+  "laufen-verletzungspraevention": { slug: "sport-kinesitherapie", key: "sportPhysio" },
+  "bfr-training-rehabilitation": { slug: "sport-kinesitherapie", key: "sportPhysio" },
+  "lymphdrainage-wann-wie": { slug: "lymphdrainage", key: "lymph" },
+  "kiefergelenk-cmd-symptome": { slug: "kiefergelenk", key: "jaw" },
+};
 
 const UI: Record<LangKey, {
   backBlog: string; readMin: string; keyPoints: string; bookCta: string; authorBy: string;
@@ -194,7 +208,9 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
+  const tServices = useTranslations("services");
   const article = ARTICLES[slug];
+  const related = RELATED_SERVICE[slug];
 
   if (!article) return null;
 
@@ -422,6 +438,22 @@ export function BlogArticlePageContent({ slug }: { slug: string }) {
                   </ul>
                 </div>
               </AnimatedSection>
+
+              {/* Service lié */}
+              {related && (
+                <AnimatedSection delay={0.2}>
+                  <Link
+                    href={`/leistungen/${related.slug}`}
+                    className="group block bg-white rounded-2xl p-5 border border-neutral-200 hover:border-[#2b3186]/40 shadow-sm transition-colors"
+                  >
+                    <p className="text-sm font-bold text-[#2b3186] mb-1">{tServices(`${related.key}.title`)}</p>
+                    <p className="text-xs text-neutral-600 leading-relaxed mb-3">{tServices(`${related.key}.description`)}</p>
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#76b82a] group-hover:gap-2 transition-all">
+                      {tServices(`${related.key}.link`)} <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                </AnimatedSection>
+              )}
 
               {/* Author + CTA */}
               <AnimatedSection delay={0.25}>
