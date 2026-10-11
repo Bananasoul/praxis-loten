@@ -8,6 +8,16 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import HtmlLang from "@/components/ui/HtmlLang";
 
+/** Thérapeutes publiés sur le site (même liste que sitemap.ts → teamSlugs). */
+const THERAPISTS: [slug: string, name: string][] = [
+  ["philippe-banaszak", "Philippe Banaszak"],
+  ["felix-esser", "Félix Esser"],
+  ["fabienne-dormann", "Fabienne Dormann"],
+  ["thom-petit", "Thom Petit"],
+  ["loic-meunier", "Loïc Meunier"],
+  ["noe-meyer", "Noé Meyer"],
+];
+
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -90,14 +100,23 @@ export default async function LocaleLayout({
         "closes": "20:30",
       },
     ],
-    "availableLanguage": ["de", "fr", "nl", "en"],
+    // Langues parlées par l'équipe (TerminPageContent) : FR/DE/EN pour tous, PL pour Philippe.
+    "availableLanguage": ["de", "fr", "en", "pl"],
     "areaServed": ["Eupen", "Kettenis", "Raeren", "Lontzen", "Kelmis", "Ostbelgien", "Deutschsprachige Gemeinschaft Belgiens"],
-    "knowsLanguage": ["de", "fr", "nl", "en"],
+    "knowsLanguage": ["de", "fr", "en", "pl"],
     "priceRange": "€€",
     "sameAs": [
       "https://www.facebook.com/kineunterstadteupen",
       "https://www.instagram.com/praxisloten",
     ],
+    // Équipe : relie chaque thérapeute (et sa fiche Google éventuelle) au cabinet.
+    "employee": THERAPISTS.map(([slug, name]) => ({
+      "@type": "Person",
+      "name": name,
+      "jobTitle": "Physiotherapist",
+      "url": `https://www.praxisloten.be/${locale}/team/${slug}`,
+      "worksFor": { "@type": "MedicalClinic", "name": "Praxis Loten" },
+    })),
   };
 
 
