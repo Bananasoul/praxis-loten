@@ -8,7 +8,7 @@ import Image from "next/image";
 import { InfographicSlot } from "@/components/blog/Infographics";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 
-import { ARTICLES, type LangKey } from "@/content/blogArticles";
+import type { ArticleContent, LangKey } from "@/content/blogArticles";
 
 /** Service lié à chaque article : lien interne article → page de soin (clé messages services.*). */
 const RELATED_SERVICE: Record<string, { slug: string; key: "manualTherapy" | "sportPhysio" | "jaw" | "lymph" }> = {
@@ -204,12 +204,12 @@ function renderInline(text: string): React.ReactNode {
   return parts.length > 0 ? parts : text;
 }
 
-export function BlogArticlePageContent({ slug }: { slug: string }) {
+/** L'article est passé par la page serveur : seul l'article affiché part dans le JS client (avant : les 12). */
+export function BlogArticlePageContent({ slug, article }: { slug: string; article: ArticleContent }) {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const ui = UI[lang];
   const tServices = useTranslations("services");
-  const article = ARTICLES[slug];
   const related = RELATED_SERVICE[slug];
 
   if (!article) return null;

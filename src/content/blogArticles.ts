@@ -3190,3 +3190,22 @@ export const ARTICLES: Record<string, ArticleContent> = {
   },
 },
 };
+
+const LANG_KEYS: readonly string[] = ["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"];
+
+/**
+ * Garde uniquement la langue demandée dans chaque objet { de, fr, … } (récursif) :
+ * la page n'envoie au navigateur que le texte affiché (≈ 1/10 du volume).
+ */
+export function articleFor(article: ArticleContent, lang: LangKey): ArticleContent {
+  const prune = (v: unknown): unknown => {
+    if (Array.isArray(v)) return v.map(prune);
+    if (v && typeof v === "object") {
+      const o = v as Record<string, unknown>;
+      if (LANG_KEYS.every((k) => k in o)) return { [lang]: prune(o[lang]) };
+      return Object.fromEntries(Object.entries(o).map(([k, x]) => [k, prune(x)]));
+    }
+    return v;
+  };
+  return prune(article) as ArticleContent;
+}
