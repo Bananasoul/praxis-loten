@@ -4,7 +4,9 @@ import { routing } from './i18n/routing';
 export default createMiddleware(routing);
 
 export const config = {
-  // '/termin' sans langue : lien du bouton « Réserver » de la fiche Google. next-intl le
-  // redirige vers /<langue du navigateur>/termin en gardant les paramètres UTM.
-  matcher: ['/', '/termin', '/(de|fr|en|nl|tr|ar|pl|uk|es|ku)/:path*'],
+  // Toute adresse sans langue (/termin, /praxis, /team/…) est redirigée par next-intl vers
+  // /<langue du visiteur>/… en gardant les paramètres (UTM). Search Console relevait 15 pages
+  // en 404 de ce type (11/10/2026). Exclus : API, fichiers Next/Vercel, page relais /go/…,
+  // et tout chemin avec un point (sitemap.xml, robots.txt, images).
+  matcher: ['/((?!api|_next|_vercel|go/|.*\\..*).*)'],
 };
