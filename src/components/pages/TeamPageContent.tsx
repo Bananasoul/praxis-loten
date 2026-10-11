@@ -131,7 +131,7 @@ const TEAM = [
     tags: ["Running Clinic", "BFR", "Kinesport", "Q-top"],
     languages: ["Français", "Deutsch", "English"],
     booking: { label: "WhatsApp Business", href: "https://wa.me/32471869024" },
-    bookingOnline: { label: "Q-top", href: "https://www.q-top.be/Online-planner/FR/?root=kq43933" },
+    // Q-top de Thom masqué le 09/10/2026 : « configuration pas encore terminée par le thérapeute ». À remettre une fois configuré : bookingOnline: { label: "Q-top", href: "https://www.q-top.be/Online-planner/FR/?root=kq43933" },
     phone: "+32 471 86 90 24",
     bio: {
       de: "Experte für Sportphysiotherapie, spezialisiert auf Laufverletzungen (La Clinique du Coureur) und Blood Flow Restriction Training (BFR/Kinesport). Betreut Sportler in Kabinett und Klub.",
