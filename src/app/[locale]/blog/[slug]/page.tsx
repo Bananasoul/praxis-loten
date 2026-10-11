@@ -3,7 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { BlogArticlePageContent } from "@/components/pages/BlogArticlePageContent";
 import { notFound } from "next/navigation";
 import { pageSeo } from "@/i18n/alternates";
-import { ARTICLES, type LangKey } from "@/content/blogArticles";
+import { ARTICLES, articleFor, type LangKey } from "@/content/blogArticles";
 import { metaDescription } from "@/lib/metaDescription";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
@@ -53,5 +53,6 @@ export default async function BlogArticlePage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   if (!VALID_SLUGS.includes(slug)) notFound();
-  return <BlogArticlePageContent slug={slug} />;
+  const lang = (locale in ARTICLES[slug].title ? locale : "en") as LangKey;
+  return <BlogArticlePageContent slug={slug} article={articleFor(ARTICLES[slug], lang)} />;
 }

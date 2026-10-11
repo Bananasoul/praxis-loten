@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { MapPin, Mail, Phone, Clock, ExternalLink } from "lucide-react";
+import { CookieSettingsLink } from "@/components/ui/ConsentBanner";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -142,6 +143,7 @@ export function Footer() {
               >
                 {t("cookies")}
               </Link>
+              <CookieSettingsLink className="block text-left text-neutral-400 hover:text-neutral-300 text-xs transition-colors" />
             </div>
           </div>
         </div>

@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { TherapistPageContent } from "@/components/pages/TherapistPageContent";
 import { buildAlternates } from "@/i18n/alternates";
+import { THERAPISTS } from "@/content/team";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-  return { title, alternates: buildAlternates(locale, `/team/${slug}`) };
+  const member = THERAPISTS.find((m) => m.slug === slug);
+  if (!member) return { alternates: buildAlternates(locale, `/team/${slug}`) };
+  const t = await getTranslations({ locale, namespace: "team" });
+  const role = t(`${member.key}.role`);
+  return {
+    title: `${member.name} — ${role}`,
+    description: `${member.name}, ${role}, Praxis Loten (Eupen). ${t(`${member.key}.quote`)}`.slice(0, 160),
+    alternates: buildAlternates(locale, `/team/${slug}`),
+  };
 }
 
 const SLUGS = [

@@ -4,19 +4,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { buildAlternates } from "@/i18n/alternates";
+import { THERAPISTS } from "@/content/team";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import HtmlLang from "@/components/ui/HtmlLang";
-
-/** Thérapeutes publiés sur le site (même liste que sitemap.ts → teamSlugs). */
-const THERAPISTS: [slug: string, name: string][] = [
-  ["philippe-banaszak", "Philippe Banaszak"],
-  ["felix-esser", "Félix Esser"],
-  ["fabienne-dormann", "Fabienne Dormann"],
-  ["thom-petit", "Thom Petit"],
-  ["loic-meunier", "Loïc Meunier"],
-  ["noe-meyer", "Noé Meyer"],
-];
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -110,7 +101,7 @@ export default async function LocaleLayout({
       "https://www.instagram.com/praxisloten",
     ],
     // Équipe : relie chaque thérapeute (et sa fiche Google éventuelle) au cabinet.
-    "employee": THERAPISTS.map(([slug, name]) => ({
+    "employee": THERAPISTS.map(({ slug, name }) => ({
       "@type": "Person",
       "name": name,
       "jobTitle": "Physiotherapist",
