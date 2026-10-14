@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 interface CountUpProps {
   end: number;
@@ -22,10 +22,13 @@ export function CountUp({
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
+  const reduceMotion = useReducedMotion();
+  // Valeur finale dès le rendu serveur : Google, les assistants IA et les lecteurs sans JS
+  // lisaient « 0 » (14/10/2026). L'animation repart de 0 seulement à l'entrée dans l'écran.
+  const [count, setCount] = useState(end);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || reduceMotion) return;
 
     let startTime: number | null = null;
     const step = (timestamp: number) => {
@@ -39,7 +42,7 @@ export function CountUp({
       }
     };
     requestAnimationFrame(step);
-  }, [isInView, end, duration, decimals]);
+  }, [isInView, reduceMotion, end, duration, decimals]);
 
   return (
     <motion.span
