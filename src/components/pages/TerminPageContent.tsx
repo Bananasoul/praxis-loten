@@ -12,6 +12,7 @@ import {
 import { SafeEmail } from "@/components/ui/SafeEmail";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
+import { WeekHours } from "@/components/ui/WeekHours";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
@@ -425,6 +426,10 @@ export function TerminPageContent() {
                       {t.conv && <Link href={NON_CONV_HREF} className="text-amber-800 border border-amber-200 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded hover:underline underline-offset-2 transition-colors">{NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}</Link>}
                     </div>
 
+                    <div className="rounded-xl bg-[#f4f6fc] px-3 py-2.5 mb-4">
+                      <WeekHours slug={t.slug} />
+                    </div>
+
                     <ContactButtons t={t} x={x} />
                     <div className="flex items-center justify-end mt-3">
                       <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-neutral-500 hover:text-[#5c9120] transition-colors">
@@ -477,7 +482,6 @@ export function TerminPageContent() {
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#2b3186] mb-4 flex items-center gap-2"><MapPin className="w-4 h-4 text-[#76b82a]" /> Contact</h3>
               <ul className="space-y-3 text-sm text-neutral-600">
                 <li className="flex items-start gap-2.5"><MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" /><a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="hover:text-[#2b3186] transition-colors">Loten 1, B-4700 Eupen</a></li>
-                <li className="flex items-center gap-2.5"><Phone className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /><a href="tel:+3287555670" dir="ltr" className="hover:text-[#2b3186] transition-colors">087 55 56 70</a></li>
                 <li className="flex items-center gap-2.5"><Clock className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /> {ui.hoursVal}</li>
                 <li className="flex items-center gap-2.5"><Mail className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /><SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-[#2b3186] transition-colors text-xs" showIcon={false} /></li>
               </ul>

@@ -123,7 +123,10 @@
     },
     "filterAll": "Hemû",
     "filterHome": "Serdana malê",
-    "speaks": "Ziman"
+    "speaks": "Ziman",
+    "hoursTitle": "Li kabîneyê",
+    "hoursNote": "Demên texmînî, ji bilî betlaneyan.",
+    "hoursOnRequest": "Dem li ser daxwazê"
   },
   "cabinet": {
     "sectionTitle": "Kabîneya me",

@@ -9,6 +9,7 @@ import Image from "next/image";
 import { CalendarPlus, ArrowRight, Home, Languages } from "lucide-react";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { THERAPISTS } from "@/content/team";
+import { WeekHours } from "@/components/ui/WeekHours";
 
 const LANG_FILTERS = ["DE", "FR", "EN", "PL"];
 type Filter = "" | "HOME" | (typeof LANG_FILTERS)[number];
@@ -97,6 +98,10 @@ export function TeamSection() {
                             {t("filterHome")}
                           </span>
                         )}
+                      </div>
+
+                      <div className="mb-4">
+                        <WeekHours slug={member.slug} compact />
                       </div>
 
                       <p className="text-sm text-neutral-500 leading-relaxed italic mb-4">

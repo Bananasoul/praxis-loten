@@ -123,7 +123,10 @@
     },
     "filterAll": "Усі",
     "filterHome": "Візити додому",
-    "speaks": "Мови"
+    "speaks": "Мови",
+    "hoursTitle": "Присутність у кабінеті",
+    "hoursNote": "Орієнтовні години, крім відпусток.",
+    "hoursOnRequest": "Години за запитом"
   },
   "cabinet": {
     "sectionTitle": "Наш кабінет",

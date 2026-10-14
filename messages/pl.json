@@ -123,7 +123,10 @@
     },
     "filterAll": "Wszyscy",
     "filterHome": "Wizyty domowe",
-    "speaks": "Języki"
+    "speaks": "Języki",
+    "hoursTitle": "Obecność w gabinecie",
+    "hoursNote": "Godziny orientacyjne, poza urlopami.",
+    "hoursOnRequest": "Godziny na zapytanie"
   },
   "cabinet": {
     "sectionTitle": "Nasza Praktyka",

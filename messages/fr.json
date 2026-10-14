@@ -123,7 +123,10 @@
     },
     "filterAll": "Tous",
     "filterHome": "À domicile",
-    "speaks": "Langues"
+    "speaks": "Langues",
+    "hoursTitle": "Présence au cabinet",
+    "hoursNote": "Horaires indicatifs, hors congés.",
+    "hoursOnRequest": "Horaires sur demande"
   },
   "cabinet": {
     "sectionTitle": "Notre Cabinet",

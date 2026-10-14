@@ -123,7 +123,10 @@
     },
     "filterAll": "الكل",
     "filterHome": "زيارات منزلية",
-    "speaks": "اللغات"
+    "speaks": "اللغات",
+    "hoursTitle": "التواجد في العيادة",
+    "hoursNote": "ساعات تقريبية، باستثناء العطل.",
+    "hoursOnRequest": "المواعيد عند الطلب"
   },
   "cabinet": {
     "sectionTitle": "عيادتنا",

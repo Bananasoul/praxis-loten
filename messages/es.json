@@ -123,7 +123,10 @@
     },
     "filterAll": "Todos",
     "filterHome": "A domicilio",
-    "speaks": "Idiomas"
+    "speaks": "Idiomas",
+    "hoursTitle": "Presencia en la consulta",
+    "hoursNote": "Horario orientativo, salvo vacaciones.",
+    "hoursOnRequest": "Horario a consultar"
   },
   "cabinet": {
     "sectionTitle": "La consulta",

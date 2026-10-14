@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   CalendarPlus,
-  Phone,
+  Users,
   MapPin,
   Clock,
   Languages,
@@ -16,8 +16,6 @@ import {
 import type { GooglePlaceData } from "@/lib/googlePlaces";
 import { SERVICE_KEYS } from "@/content/team";
 
-const PHONE_DISPLAY = "087 55 56 70";
-const PHONE_HREF = "tel:+3287555670";
 const MAPS_DIRECTIONS =
   "https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI";
 const GOOGLE_REVIEWS = "https://search.google.com/local/reviews?placeid=ChIJwVa0rTSEwEcRJC82kAPG_CI";
@@ -32,6 +30,7 @@ export function HeroSection({ googleData }: { googleData?: GooglePlaceData | nul
   const tc = useTranslations("hero.card");
   const ts = useTranslations("services");
   const tr = useTranslations("rehab");
+  const tn = useTranslations("nav");
 
   const chips = [
     ...Object.entries(SERVICE_KEYS).map(([slug, key]) => ({
@@ -68,13 +67,13 @@ export function HeroSection({ googleData }: { googleData?: GooglePlaceData | nul
               <CalendarPlus className="w-5 h-5" />
               {t("cta")}
             </Link>
-            <a
-              href={PHONE_HREF}
+            <Link
+              href="/team"
               className="flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-lg font-semibold text-[#2b3186] border border-[#2b3186]/25 hover:bg-[#2b3186]/5 transition-colors"
             >
-              <Phone className="w-5 h-5" />
-              <span dir="ltr">{PHONE_DISPLAY}</span>
-            </a>
+              <Users className="w-5 h-5" />
+              {tn("team")}
+            </Link>
           </div>
 
           <ul className="hero-fade hero-d5 mt-8 flex flex-wrap gap-2">
@@ -147,14 +146,15 @@ export function HeroSection({ googleData }: { googleData?: GooglePlaceData | nul
             </li>
           </ul>
 
-          <div className="mt-6 grid grid-cols-2 gap-2">
-            <a
-              href={PHONE_HREF}
-              className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#2b3186]/[0.06] text-[#2b3186] hover:bg-[#2b3186]/[0.12] transition-colors"
+          {/* Pas d'appel au numéro du cabinet : on oriente vers le choix du thérapeute (14/10/2026) */}
+          <div className="mt-6 grid gap-2">
+            <Link
+              href="/termin"
+              className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#76b82a] text-white hover:bg-[#5c9120] transition-colors"
             >
-              <Phone className="w-4 h-4" />
-              {tc("call")}
-            </a>
+              {tc("chooseTherapist")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
               href={MAPS_DIRECTIONS}
               target="_blank"
@@ -164,13 +164,6 @@ export function HeroSection({ googleData }: { googleData?: GooglePlaceData | nul
               <Navigation className="w-4 h-4" />
               {tc("directions")}
             </a>
-            <Link
-              href="/team"
-              className="col-span-2 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#76b82a]/10 text-[#3f6b12] hover:bg-[#76b82a]/20 transition-colors"
-            >
-              {tc("chooseTherapist")}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </aside>
       </div>

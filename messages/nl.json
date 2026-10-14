@@ -123,7 +123,10 @@
     },
     "filterAll": "Alle",
     "filterHome": "Huisbezoek",
-    "speaks": "Talen"
+    "speaks": "Talen",
+    "hoursTitle": "Aanwezig in de praktijk",
+    "hoursNote": "Indicatieve uren, behalve verlof.",
+    "hoursOnRequest": "Uren op aanvraag"
   },
   "cabinet": {
     "sectionTitle": "Onze Praktijk",
