@@ -7,6 +7,7 @@ import { buildAlternates } from "@/i18n/alternates";
 import { THERAPISTS } from "@/content/team";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import HtmlLang from "@/components/ui/HtmlLang";
 
 export async function generateStaticParams() {
@@ -121,6 +122,7 @@ export default async function LocaleLayout({
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <MobileActionBar />
     </NextIntlClientProvider>
   );
 }
