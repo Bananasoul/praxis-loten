@@ -6,17 +6,19 @@ import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   MessageCircle, ExternalLink, Phone, MapPin, Clock, Mail,
-  Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check, X as XIcon,
+  Sparkles, ArrowRight, RotateCcw, Dices, Target, CalendarPlus, Check,
   IdCard, FileText, Sticker, Waves, Shirt,
 } from "lucide-react";
 import { SafeEmail } from "@/components/ui/SafeEmail";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
+import { WeekHours } from "@/components/ui/WeekHours";
+import { NOT_BOOKING } from "@/content/team";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
 const GEN = ["dos", "nuque", "epaule", "coude", "main", "genou", "cheville", "sport", "postop"];
-const NICHE = ["drainage", "machoire"];
+const NICHE = ["drainage", "machoire", "domicile"];
 
 type Rec = Record<string, string>;
 
@@ -77,7 +79,7 @@ const THERAPISTS: {
   },
   {
     slug: "noe-meyer", name: "Noé Meyer", accent: "#059669",
-    langs: ["FR", "DE", "EN"], tags: [...GEN], specs: ["Kiné générale", "Visites à domicile", "Ostéopathie"],
+    langs: ["FR", "DE", "EN"], tags: [...GEN, "domicile"], specs: ["Kiné générale", "Visites à domicile", "Ostéopathie"],
     phone: "+32472387291", whatsapp: "https://wa.me/32472387291", online: null, conv: true,
     role: { de: "Physiotherapeut — Hausbesuche", fr: "Kinésithérapeute — Visites à domicile", en: "Physiotherapist — Home visits", nl: "Kinesitherapeut — Huisbezoeken", tr: "Fizyoterapist — Ev ziyaretleri", ar: "أخصائي علاج طبيعي — زيارات منزلية", pl: "Fizjoterapeuta — Wizyty domowe", uk: "Фізіотерапевт — Візити додому", es: "Fisioterapeuta — Visitas a domicilio", ku: "Fizyoterapîst — Serdanên malê" },
     plain: { de: "Allgemeine Reha — auch Hausbesuche in Eupen.", fr: "Rééducation générale — aussi à domicile à Eupen.", en: "General rehab — home visits in Eupen too." },
@@ -95,6 +97,7 @@ const MOTIFS: { id: string; emoji: string; label: Rec }[] = [
   { id: "sport", emoji: "🏃", label: { de: "Sport / Laufen", fr: "Sport / course", en: "Sport / running", nl: "Sport / hardlopen", tr: "Spor / koşu", ar: "رياضة / جري", pl: "Sport / bieganie", uk: "Спорт / біг", es: "Deporte / correr", ku: "Werzîş / bezîn" } },
   { id: "postop", emoji: "🩹", label: { de: "Nach OP", fr: "Après opération", en: "Post-surgery", nl: "Na operatie", tr: "Ameliyat sonrası", ar: "بعد العملية", pl: "Po operacji", uk: "Після операції", es: "Tras cirugía", ku: "Piştî emeliyatê" } },
   { id: "drainage", emoji: "💧", label: { de: "Lymphdrainage", fr: "Drainage", en: "Drainage", nl: "Drainage", tr: "Drenaj", ar: "تصريف لمفاوي", pl: "Drenaż", uk: "Дренаж", es: "Drenaje", ku: "Drenaj" } },
+  { id: "domicile", emoji: "🏠", label: { de: "Hausbesuch", fr: "À domicile", en: "Home visit", nl: "Huisbezoek", tr: "Ev ziyareti", ar: "زيارة منزلية", pl: "Wizyta domowa", uk: "Візит додому", es: "A domicilio", ku: "Serdana malê" } },
   { id: "machoire", emoji: "😬", label: { de: "Kiefer (CMD)", fr: "Mâchoire (ATM)", en: "Jaw (TMJ)", nl: "Kaak (CMD)", tr: "Çene (TME)", ar: "الفك", pl: "Szczęka", uk: "Щелепа (СНЩС)", es: "Mandíbula (ATM)", ku: "Çene (TMJ)" } },
 ];
 
@@ -102,29 +105,16 @@ const LANG_FLAGS: Record<string, string> = { FR: "🇫🇷", DE: "🇩🇪", EN:
 const LANG_OPTS = ["FR", "DE", "EN", "PL"];
 
 const X: Record<string, Rec> = {
-  fr: { heroTitle: "Trouvez votre", heroAccent: "kinésithérapeute", heroSub: "Selon votre besoin, votre langue, ou au hasard. En quelques secondes.", trust: "4,8 · 23 avis Google · Eupen", modeNeedT: "J'ai un besoin précis", modeNeedS: "Filtrez par motif & langue", modeRandT: "Peu importe, surprenez-moi", modeRandS: "Un kiné au hasard, équitable", motifQ: "Qu'est-ce qui vous amène ?", langQ: "Dans quelle langue ?", allLang: "Toutes", spinBtn: "Désignez-moi un kiné", spinChose: "Le hasard a choisi", gridTeam: "Notre équipe", gridReco: "Recommandé pour vous", gridSpec: "Le ou la spécialiste pour ce motif", gridAll: "Tous nos kinés s'en occupent", allTakeBanner: "Tous nos kinés prennent en charge ce motif — choisissez, ou laissez le hasard décider.", ribReco: "Recommandé", ribSpec: "Spécialiste", ribWin: "Votre kiné", reserveWith: "Réserver avec", onlineBtn: "Réservation en ligne", profileBtn: "Voir le profil complet", callBtn: "Appeler", reset: "Réinitialiser les filtres", reviews: "avis Google", emptyLang: "Personne ne parle cette langue ici. Élargissez le filtre ou essayez « Surprenez-moi »." },
-  de: { heroTitle: "Finden Sie Ihren", heroAccent: "Physiotherapeuten", heroSub: "Nach Beschwerde, Sprache oder per Zufall. In wenigen Sekunden.", trust: "4,8 · 23 Google-Bewertungen · Eupen", modeNeedT: "Ich habe ein konkretes Anliegen", modeNeedS: "Nach Beschwerde & Sprache filtern", modeRandT: "Egal, überraschen Sie mich", modeRandS: "Ein Therapeut per Zufall, fair", motifQ: "Was führt Sie zu uns?", langQ: "In welcher Sprache?", allLang: "Alle", spinBtn: "Therapeut auslosen", spinChose: "Der Zufall hat gewählt", gridTeam: "Unser Team", gridReco: "Für Sie empfohlen", gridSpec: "Spezialist/in für dieses Anliegen", gridAll: "Alle unsere Therapeuten helfen Ihnen", allTakeBanner: "Alle unsere Therapeuten behandeln dieses Anliegen — wählen Sie, oder lassen Sie den Zufall entscheiden.", ribReco: "Empfohlen", ribSpec: "Spezialist/in", ribWin: "Ihr Therapeut", reserveWith: "Termin bei", onlineBtn: "Online buchen", profileBtn: "Vollständiges Profil", callBtn: "Anrufen", reset: "Filter zurücksetzen", reviews: "Google-Bewertungen", emptyLang: "Niemand spricht diese Sprache hier. Erweitern Sie den Filter oder versuchen Sie „Überraschen Sie mich“." },
-  en: { heroTitle: "Find your", heroAccent: "physiotherapist", heroSub: "By need, by language, or at random. In seconds.", trust: "4.8 · 23 Google reviews · Eupen", modeNeedT: "I have a specific need", modeNeedS: "Filter by reason & language", modeRandT: "No preference, surprise me", modeRandS: "A therapist at random, fair", motifQ: "What brings you in?", langQ: "In which language?", allLang: "All", spinBtn: "Pick a therapist for me", spinChose: "Chance picked", gridTeam: "Our team", gridReco: "Recommended for you", gridSpec: "The specialist for this", gridAll: "All our therapists handle this", allTakeBanner: "All our therapists treat this — choose one, or let chance decide.", ribReco: "Recommended", ribSpec: "Specialist", ribWin: "Your therapist", reserveWith: "Book with", onlineBtn: "Book online", profileBtn: "View full profile", callBtn: "Call", reset: "Reset filters", reviews: "Google reviews", emptyLang: "Nobody speaks this language here. Widen the filter or try “Surprise me”." },
-  nl: { heroTitle: "Vind uw", heroAccent: "kinesist", heroSub: "Op klacht, taal of willekeurig. In enkele seconden.", trust: "4,8 · 23 Google-reviews · Eupen", modeNeedT: "Ik heb een specifieke klacht", modeNeedS: "Filter op klacht & taal", modeRandT: "Maakt niet uit, verras me", modeRandS: "Een kinesist willekeurig, eerlijk", motifQ: "Wat brengt u hier?", langQ: "In welke taal?", allLang: "Alle", spinBtn: "Kies een kinesist voor mij", spinChose: "Het toeval koos", gridTeam: "Ons team", gridReco: "Aanbevolen voor u", gridSpec: "De specialist hiervoor", gridAll: "Al onze kinesisten helpen u", allTakeBanner: "Al onze kinesisten behandelen dit — kies, of laat het toeval beslissen.", ribReco: "Aanbevolen", ribSpec: "Specialist", ribWin: "Uw kinesist", reserveWith: "Boeken bij", onlineBtn: "Online boeken", profileBtn: "Volledig profiel", callBtn: "Bellen", reset: "Filters wissen", reviews: "Google-reviews", emptyLang: "Niemand spreekt deze taal hier. Verbreed de filter of probeer “Verras me”." },
-  tr: { heroTitle: "Fizyoterapistinizi", heroAccent: "bulun", heroSub: "İhtiyaca, dile göre ya da rastgele. Saniyeler içinde.", trust: "4,8 · 23 Google değerlendirmesi · Eupen", modeNeedT: "Belirli bir şikâyetim var", modeNeedS: "Şikâyet & dile göre filtrele", modeRandT: "Fark etmez, beni şaşırt", modeRandS: "Rastgele bir terapist, adil", motifQ: "Sizi buraya ne getirdi?", langQ: "Hangi dilde?", allLang: "Tümü", spinBtn: "Benim için bir terapist seç", spinChose: "Şans seçti", gridTeam: "Ekibimiz", gridReco: "Sizin için önerilen", gridSpec: "Bu konunun uzmanı", gridAll: "Tüm terapistlerimiz ilgilenir", allTakeBanner: "Tüm terapistlerimiz bununla ilgilenir — birini seçin ya da şans karar versin.", ribReco: "Önerilen", ribSpec: "Uzman", ribWin: "Terapistiniz", reserveWith: "Randevu:", onlineBtn: "Online rezervasyon", profileBtn: "Profili gör", callBtn: "Ara", reset: "Filtreleri sıfırla", reviews: "Google değerlendirmesi", emptyLang: "Burada bu dili konuşan yok. Filtreyi genişletin veya “Beni şaşırt” deneyin." },
-  ar: { heroTitle: "اعثر على", heroAccent: "أخصائي العلاج الطبيعي", heroSub: "حسب الحاجة أو اللغة أو عشوائيًا. في ثوانٍ.", trust: "4.8 · 23 تقييم على Google · أوبن", modeNeedT: "لدي حاجة محددة", modeNeedS: "التصفية حسب السبب واللغة", modeRandT: "لا يهم، فاجئني", modeRandS: "معالج عشوائي، بإنصاف", motifQ: "ما الذي أتى بك؟", langQ: "بأي لغة؟", allLang: "الكل", spinBtn: "اختر لي معالجًا", spinChose: "اختار الحظ", gridTeam: "فريقنا", gridReco: "موصى به لك", gridSpec: "المختص بهذا", gridAll: "كل معالجينا يهتمون بهذا", allTakeBanner: "كل معالجينا يعالجون هذا — اختر، أو دع الحظ يقرر.", ribReco: "موصى به", ribSpec: "مختص", ribWin: "معالجك", reserveWith: "موعد مع", onlineBtn: "حجز عبر الإنترنت", profileBtn: "عرض الملف الكامل", callBtn: "اتصال", reset: "إعادة ضبط التصفية", reviews: "تقييم Google", emptyLang: "لا أحد يتحدث هذه اللغة هنا. وسّع التصفية أو جرّب «فاجئني»." },
-  pl: { heroTitle: "Znajdź swojego", heroAccent: "fizjoterapeutę", heroSub: "Według potrzeby, języka lub losowo. W kilka sekund.", trust: "4,8 · 23 opinie Google · Eupen", modeNeedT: "Mam konkretny problem", modeNeedS: "Filtruj wg dolegliwości i języka", modeRandT: "Wszystko jedno, zaskocz mnie", modeRandS: "Losowy fizjoterapeuta, sprawiedliwie", motifQ: "Co Cię sprowadza?", langQ: "W jakim języku?", allLang: "Wszystkie", spinBtn: "Wylosuj fizjoterapeutę", spinChose: "Los wybrał", gridTeam: "Nasz zespół", gridReco: "Polecane dla Ciebie", gridSpec: "Specjalista od tego", gridAll: "Wszyscy nasi fizjoterapeuci się tym zajmują", allTakeBanner: "Wszyscy nasi fizjoterapeuci leczą to — wybierz lub pozwól zadecydować losowi.", ribReco: "Polecany", ribSpec: "Specjalista", ribWin: "Twój fizjoterapeuta", reserveWith: "Wizyta u", onlineBtn: "Rezerwacja online", profileBtn: "Pełny profil", callBtn: "Zadzwoń", reset: "Wyczyść filtry", reviews: "opinie Google", emptyLang: "Nikt tu nie mówi w tym języku. Poszerz filtr lub spróbuj „Zaskocz mnie”." },
-  uk: { heroTitle: "Знайдіть свого", heroAccent: "фізіотерапевта", heroSub: "За потребою, мовою або випадково. За кілька секунд.", trust: "4,8 · 23 відгуки Google · Ойпен", modeNeedT: "У мене конкретна проблема", modeNeedS: "Фільтр за приводом і мовою", modeRandT: "Байдуже, здивуйте мене", modeRandS: "Терапевт випадково, чесно", motifQ: "Що вас турбує?", langQ: "Якою мовою?", allLang: "Усі", spinBtn: "Оберіть терапевта для мене", spinChose: "Випадок обрав", gridTeam: "Наша команда", gridReco: "Рекомендовано вам", gridSpec: "Спеціаліст із цього", gridAll: "Усі наші терапевти цим займаються", allTakeBanner: "Усі наші терапевти лікують це — оберіть або довіртеся випадку.", ribReco: "Рекомендовано", ribSpec: "Спеціаліст", ribWin: "Ваш терапевт", reserveWith: "Запис до", onlineBtn: "Бронювати онлайн", profileBtn: "Повний профіль", callBtn: "Подзвонити", reset: "Скинути фільтри", reviews: "відгуки Google", emptyLang: "Тут ніхто не говорить цією мовою. Розширте фільтр або спробуйте «Здивуйте мене»." },
-  es: { heroTitle: "Encuentre a su", heroAccent: "fisioterapeuta", heroSub: "Por necesidad, idioma o al azar. En segundos.", trust: "4,8 · 23 reseñas de Google · Eupen", modeNeedT: "Tengo una necesidad concreta", modeNeedS: "Filtre por motivo e idioma", modeRandT: "Me da igual, sorpréndame", modeRandS: "Un fisio al azar, equitativo", motifQ: "¿Qué le trae por aquí?", langQ: "¿En qué idioma?", allLang: "Todos", spinBtn: "Elija un fisio por mí", spinChose: "El azar eligió", gridTeam: "Nuestro equipo", gridReco: "Recomendado para usted", gridSpec: "El o la especialista en esto", gridAll: "Todos nuestros fisios se ocupan de esto", allTakeBanner: "Todos nuestros fisios tratan esto — elija, o deje que decida el azar.", ribReco: "Recomendado", ribSpec: "Especialista", ribWin: "Su fisio", reserveWith: "Cita con", onlineBtn: "Reserva en línea", profileBtn: "Ver perfil completo", callBtn: "Llamar", reset: "Restablecer filtros", reviews: "reseñas de Google", emptyLang: "Aquí nadie habla este idioma. Amplíe el filtro o pruebe «Sorpréndame»." },
-  ku: { heroTitle: "Fizyoterapîstê xwe", heroAccent: "bibîne", heroSub: "Li gorî pêwîstî, ziman an bi tesadif. Di çend saniyeyan de.", trust: "4,8 · 23 nirxandinên Google · Eupen", modeNeedT: "Pirsgirêkeke min a diyar heye", modeNeedS: "Li gorî sedem û ziman parzûn bike", modeRandT: "Ferq nake, min surprîz bike", modeRandS: "Terapîstek bi tesadif, bi dadperwerî", motifQ: "Çi we tîne?", langQ: "Bi kîjan zimanî?", allLang: "Hemû", spinBtn: "Ji bo min terapîstekê hilbijêre", spinChose: "Tesadifê hilbijart", gridTeam: "Tîma me", gridReco: "Ji bo we tê pêşniyarkirin", gridSpec: "Pisporê vê yekê", gridAll: "Hemû terapîstên me bi vê re mijûl dibin", allTakeBanner: "Hemû terapîstên me vê derman dikin — hilbijêre, an bila tesadif biryar bide.", ribReco: "Pêşniyarkirî", ribSpec: "Pispor", ribWin: "Terapîstê we", reserveWith: "Randevû bi", onlineBtn: "Online rezerve bike", profileBtn: "Profîla tevahî", callBtn: "Telefon bike", reset: "Parzûnan jê bibe", reviews: "nirxandinên Google", emptyLang: "Li vir kes bi vî zimanî napeyive. Parzûnê fireh bike an „Min surprîz bike\" biceribîne." },
-};
-
-const XC: Record<string, Rec> = {
-  fr: { chooseTitle: "Comment souhaitez-vous prendre rendez-vous ?", byPhone: "Par téléphone", byWhatsApp: "Par WhatsApp", close: "Fermer" },
-  de: { chooseTitle: "Wie möchten Sie einen Termin vereinbaren?", byPhone: "Telefonisch", byWhatsApp: "Per WhatsApp", close: "Schließen" },
-  en: { chooseTitle: "How would you like to book?", byPhone: "By phone", byWhatsApp: "Via WhatsApp", close: "Close" },
-  nl: { chooseTitle: "Hoe wilt u een afspraak maken?", byPhone: "Telefonisch", byWhatsApp: "Via WhatsApp", close: "Sluiten" },
-  tr: { chooseTitle: "Nasıl randevu almak istersiniz?", byPhone: "Telefonla", byWhatsApp: "WhatsApp ile", close: "Kapat" },
-  ar: { chooseTitle: "كيف تريد حجز موعد؟", byPhone: "عبر الهاتف", byWhatsApp: "عبر واتساب", close: "إغلاق" },
-  pl: { chooseTitle: "Jak chcesz umówić wizytę?", byPhone: "Telefonicznie", byWhatsApp: "Przez WhatsApp", close: "Zamknij" },
-  uk: { chooseTitle: "Як ви хочете записатися?", byPhone: "Телефоном", byWhatsApp: "Через WhatsApp", close: "Закрити" },
-  es: { chooseTitle: "¿Cómo desea pedir cita?", byPhone: "Por teléfono", byWhatsApp: "Por WhatsApp", close: "Cerrar" },
-  ku: { chooseTitle: "Hûn çawa dixwazin randevû bigirin?", byPhone: "Bi telefonê", byWhatsApp: "Bi WhatsApp", close: "Bigire" },
+  fr: { heroTitle: "Trouvez votre", heroAccent: "kinésithérapeute", heroSub: "Selon votre besoin, votre langue, ou au hasard. En quelques secondes.", trust: "4,8 ★ Google · Eupen", modeNeedT: "J'ai un besoin précis", modeNeedS: "Filtrez par motif & langue", modeRandT: "Peu importe, surprenez-moi", modeRandS: "Un kiné au hasard, équitable", motifQ: "Qu'est-ce qui vous amène ?", langQ: "Dans quelle langue ?", allLang: "Toutes", spinBtn: "Désignez-moi un kiné", spinChose: "Le hasard a choisi", gridTeam: "Notre équipe", gridReco: "Recommandé pour vous", gridSpec: "Le ou la spécialiste pour ce motif", gridAll: "Tous nos kinés s'en occupent", allTakeBanner: "Tous nos kinés prennent en charge ce motif — choisissez, ou laissez le hasard décider.", ribReco: "Recommandé", ribSpec: "Spécialiste", ribWin: "Votre kiné", reserveWith: "Réserver avec", onlineBtn: "Réservation en ligne", profileBtn: "Voir le profil complet", callBtn: "Appeler", reset: "Réinitialiser les filtres", reviews: "avis Google", emptyLang: "Personne ne parle cette langue ici. Élargissez le filtre ou essayez « Surprenez-moi »." },
+  de: { heroTitle: "Finden Sie Ihren", heroAccent: "Physiotherapeuten", heroSub: "Nach Beschwerde, Sprache oder per Zufall. In wenigen Sekunden.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Ich habe ein konkretes Anliegen", modeNeedS: "Nach Beschwerde & Sprache filtern", modeRandT: "Egal, überraschen Sie mich", modeRandS: "Ein Therapeut per Zufall, fair", motifQ: "Was führt Sie zu uns?", langQ: "In welcher Sprache?", allLang: "Alle", spinBtn: "Therapeut auslosen", spinChose: "Der Zufall hat gewählt", gridTeam: "Unser Team", gridReco: "Für Sie empfohlen", gridSpec: "Spezialist/in für dieses Anliegen", gridAll: "Alle unsere Therapeuten helfen Ihnen", allTakeBanner: "Alle unsere Therapeuten behandeln dieses Anliegen — wählen Sie, oder lassen Sie den Zufall entscheiden.", ribReco: "Empfohlen", ribSpec: "Spezialist/in", ribWin: "Ihr Therapeut", reserveWith: "Termin bei", onlineBtn: "Online buchen", profileBtn: "Vollständiges Profil", callBtn: "Anrufen", reset: "Filter zurücksetzen", reviews: "Google-Bewertungen", emptyLang: "Niemand spricht diese Sprache hier. Erweitern Sie den Filter oder versuchen Sie „Überraschen Sie mich“." },
+  en: { heroTitle: "Find your", heroAccent: "physiotherapist", heroSub: "By need, by language, or at random. In seconds.", trust: "4,8 ★ Google · Eupen", modeNeedT: "I have a specific need", modeNeedS: "Filter by reason & language", modeRandT: "No preference, surprise me", modeRandS: "A therapist at random, fair", motifQ: "What brings you in?", langQ: "In which language?", allLang: "All", spinBtn: "Pick a therapist for me", spinChose: "Chance picked", gridTeam: "Our team", gridReco: "Recommended for you", gridSpec: "The specialist for this", gridAll: "All our therapists handle this", allTakeBanner: "All our therapists treat this — choose one, or let chance decide.", ribReco: "Recommended", ribSpec: "Specialist", ribWin: "Your therapist", reserveWith: "Book with", onlineBtn: "Book online", profileBtn: "View full profile", callBtn: "Call", reset: "Reset filters", reviews: "Google reviews", emptyLang: "Nobody speaks this language here. Widen the filter or try “Surprise me”." },
+  nl: { heroTitle: "Vind uw", heroAccent: "kinesist", heroSub: "Op klacht, taal of willekeurig. In enkele seconden.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Ik heb een specifieke klacht", modeNeedS: "Filter op klacht & taal", modeRandT: "Maakt niet uit, verras me", modeRandS: "Een kinesist willekeurig, eerlijk", motifQ: "Wat brengt u hier?", langQ: "In welke taal?", allLang: "Alle", spinBtn: "Kies een kinesist voor mij", spinChose: "Het toeval koos", gridTeam: "Ons team", gridReco: "Aanbevolen voor u", gridSpec: "De specialist hiervoor", gridAll: "Al onze kinesisten helpen u", allTakeBanner: "Al onze kinesisten behandelen dit — kies, of laat het toeval beslissen.", ribReco: "Aanbevolen", ribSpec: "Specialist", ribWin: "Uw kinesist", reserveWith: "Boeken bij", onlineBtn: "Online boeken", profileBtn: "Volledig profiel", callBtn: "Bellen", reset: "Filters wissen", reviews: "Google-reviews", emptyLang: "Niemand spreekt deze taal hier. Verbreed de filter of probeer “Verras me”." },
+  tr: { heroTitle: "Fizyoterapistinizi", heroAccent: "bulun", heroSub: "İhtiyaca, dile göre ya da rastgele. Saniyeler içinde.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Belirli bir şikâyetim var", modeNeedS: "Şikâyet & dile göre filtrele", modeRandT: "Fark etmez, beni şaşırt", modeRandS: "Rastgele bir terapist, adil", motifQ: "Sizi buraya ne getirdi?", langQ: "Hangi dilde?", allLang: "Tümü", spinBtn: "Benim için bir terapist seç", spinChose: "Şans seçti", gridTeam: "Ekibimiz", gridReco: "Sizin için önerilen", gridSpec: "Bu konunun uzmanı", gridAll: "Tüm terapistlerimiz ilgilenir", allTakeBanner: "Tüm terapistlerimiz bununla ilgilenir — birini seçin ya da şans karar versin.", ribReco: "Önerilen", ribSpec: "Uzman", ribWin: "Terapistiniz", reserveWith: "Randevu:", onlineBtn: "Online rezervasyon", profileBtn: "Profili gör", callBtn: "Ara", reset: "Filtreleri sıfırla", reviews: "Google değerlendirmesi", emptyLang: "Burada bu dili konuşan yok. Filtreyi genişletin veya “Beni şaşırt” deneyin." },
+  ar: { heroTitle: "اعثر على", heroAccent: "أخصائي العلاج الطبيعي", heroSub: "حسب الحاجة أو اللغة أو عشوائيًا. في ثوانٍ.", trust: "4,8 ★ Google · أوبن", modeNeedT: "لدي حاجة محددة", modeNeedS: "التصفية حسب السبب واللغة", modeRandT: "لا يهم، فاجئني", modeRandS: "معالج عشوائي، بإنصاف", motifQ: "ما الذي أتى بك؟", langQ: "بأي لغة؟", allLang: "الكل", spinBtn: "اختر لي معالجًا", spinChose: "اختار الحظ", gridTeam: "فريقنا", gridReco: "موصى به لك", gridSpec: "المختص بهذا", gridAll: "كل معالجينا يهتمون بهذا", allTakeBanner: "كل معالجينا يعالجون هذا — اختر، أو دع الحظ يقرر.", ribReco: "موصى به", ribSpec: "مختص", ribWin: "معالجك", reserveWith: "موعد مع", onlineBtn: "حجز عبر الإنترنت", profileBtn: "عرض الملف الكامل", callBtn: "اتصال", reset: "إعادة ضبط التصفية", reviews: "تقييم Google", emptyLang: "لا أحد يتحدث هذه اللغة هنا. وسّع التصفية أو جرّب «فاجئني»." },
+  pl: { heroTitle: "Znajdź swojego", heroAccent: "fizjoterapeutę", heroSub: "Według potrzeby, języka lub losowo. W kilka sekund.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Mam konkretny problem", modeNeedS: "Filtruj wg dolegliwości i języka", modeRandT: "Wszystko jedno, zaskocz mnie", modeRandS: "Losowy fizjoterapeuta, sprawiedliwie", motifQ: "Co Cię sprowadza?", langQ: "W jakim języku?", allLang: "Wszystkie", spinBtn: "Wylosuj fizjoterapeutę", spinChose: "Los wybrał", gridTeam: "Nasz zespół", gridReco: "Polecane dla Ciebie", gridSpec: "Specjalista od tego", gridAll: "Wszyscy nasi fizjoterapeuci się tym zajmują", allTakeBanner: "Wszyscy nasi fizjoterapeuci leczą to — wybierz lub pozwól zadecydować losowi.", ribReco: "Polecany", ribSpec: "Specjalista", ribWin: "Twój fizjoterapeuta", reserveWith: "Wizyta u", onlineBtn: "Rezerwacja online", profileBtn: "Pełny profil", callBtn: "Zadzwoń", reset: "Wyczyść filtry", reviews: "opinie Google", emptyLang: "Nikt tu nie mówi w tym języku. Poszerz filtr lub spróbuj „Zaskocz mnie”." },
+  uk: { heroTitle: "Знайдіть свого", heroAccent: "фізіотерапевта", heroSub: "За потребою, мовою або випадково. За кілька секунд.", trust: "4,8 ★ Google · Ойпен", modeNeedT: "У мене конкретна проблема", modeNeedS: "Фільтр за приводом і мовою", modeRandT: "Байдуже, здивуйте мене", modeRandS: "Терапевт випадково, чесно", motifQ: "Що вас турбує?", langQ: "Якою мовою?", allLang: "Усі", spinBtn: "Оберіть терапевта для мене", spinChose: "Випадок обрав", gridTeam: "Наша команда", gridReco: "Рекомендовано вам", gridSpec: "Спеціаліст із цього", gridAll: "Усі наші терапевти цим займаються", allTakeBanner: "Усі наші терапевти лікують це — оберіть або довіртеся випадку.", ribReco: "Рекомендовано", ribSpec: "Спеціаліст", ribWin: "Ваш терапевт", reserveWith: "Запис до", onlineBtn: "Бронювати онлайн", profileBtn: "Повний профіль", callBtn: "Подзвонити", reset: "Скинути фільтри", reviews: "відгуки Google", emptyLang: "Тут ніхто не говорить цією мовою. Розширте фільтр або спробуйте «Здивуйте мене»." },
+  es: { heroTitle: "Encuentre a su", heroAccent: "fisioterapeuta", heroSub: "Por necesidad, idioma o al azar. En segundos.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Tengo una necesidad concreta", modeNeedS: "Filtre por motivo e idioma", modeRandT: "Me da igual, sorpréndame", modeRandS: "Un fisio al azar, equitativo", motifQ: "¿Qué le trae por aquí?", langQ: "¿En qué idioma?", allLang: "Todos", spinBtn: "Elija un fisio por mí", spinChose: "El azar eligió", gridTeam: "Nuestro equipo", gridReco: "Recomendado para usted", gridSpec: "El o la especialista en esto", gridAll: "Todos nuestros fisios se ocupan de esto", allTakeBanner: "Todos nuestros fisios tratan esto — elija, o deje que decida el azar.", ribReco: "Recomendado", ribSpec: "Especialista", ribWin: "Su fisio", reserveWith: "Cita con", onlineBtn: "Reserva en línea", profileBtn: "Ver perfil completo", callBtn: "Llamar", reset: "Restablecer filtros", reviews: "reseñas de Google", emptyLang: "Aquí nadie habla este idioma. Amplíe el filtro o pruebe «Sorpréndame»." },
+  ku: { heroTitle: "Fizyoterapîstê xwe", heroAccent: "bibîne", heroSub: "Li gorî pêwîstî, ziman an bi tesadif. Di çend saniyeyan de.", trust: "4,8 ★ Google · Eupen", modeNeedT: "Pirsgirêkeke min a diyar heye", modeNeedS: "Li gorî sedem û ziman parzûn bike", modeRandT: "Ferq nake, min surprîz bike", modeRandS: "Terapîstek bi tesadif, bi dadperwerî", motifQ: "Çi we tîne?", langQ: "Bi kîjan zimanî?", allLang: "Hemû", spinBtn: "Ji bo min terapîstekê hilbijêre", spinChose: "Tesadifê hilbijart", gridTeam: "Tîma me", gridReco: "Ji bo we tê pêşniyarkirin", gridSpec: "Pisporê vê yekê", gridAll: "Hemû terapîstên me bi vê re mijûl dibin", allTakeBanner: "Hemû terapîstên me vê derman dikin — hilbijêre, an bila tesadif biryar bide.", ribReco: "Pêşniyarkirî", ribSpec: "Pispor", ribWin: "Terapîstê we", reserveWith: "Randevû bi", onlineBtn: "Online rezerve bike", profileBtn: "Profîla tevahî", callBtn: "Telefon bike", reset: "Parzûnan jê bibe", reviews: "nirxandinên Google", emptyLang: "Li vir kes bi vî zimanî napeyive. Parzûnê fireh bike an „Min surprîz bike\" biceribîne." },
 };
 
 const UI: Record<string, { address: string; hours: string; hoursVal: string; infoBring: string; bringItems: string[]; cancelTitle: string; cancelText: string; conv: string }> = {
@@ -179,15 +169,10 @@ const FV_ITEMS: FVItem[] = [
   },
 ];
 
-function fmtPhone(p: string) {
-  return p.replace(/^(\+32)(\d{3})(\d{2})(\d{2})(\d{2})$/, "$1 $2 $3 $4 $5");
-}
-
 export function TerminPageContent() {
   const locale = useLocale() as LangKey;
   const lang: LangKey = (["de", "fr", "en", "nl", "tr", "ar", "pl", "uk", "es", "ku"].includes(locale) ? locale : "en") as LangKey;
   const x = X[lang] ?? X.en;
-  const xc = XC[lang] ?? XC.en;
   const ui = UI[lang] ?? UI.en;
   const fv = FV[lang] ?? FV.en;
   const isRtl = lang === "ar";
@@ -199,7 +184,6 @@ export function TerminPageContent() {
   const [flash, setFlash] = useState<string | null>(null);
   const [winner, setWinner] = useState<string | null>(null);
   const [spinning, setSpinning] = useState(false);
-  const [chooseFor, setChooseFor] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -213,7 +197,8 @@ export function TerminPageContent() {
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, []);
 
-  const ordered = order.map((s) => THERAPISTS.find((t) => t.slug === s)).filter(Boolean) as typeof THERAPISTS;
+  const ordered = (order.map((s) => THERAPISTS.find((t) => t.slug === s)).filter(Boolean) as typeof THERAPISTS)
+    .sort((a, b) => Number(NOT_BOOKING.has(a.slug)) - Number(NOT_BOOKING.has(b.slug)));
   const langList = ordered.filter((t) => !langF || t.langs.includes(langF));
 
   function fireConfetti() {
@@ -246,7 +231,7 @@ export function TerminPageContent() {
 
   function startSpin() {
     if (spinning) return;
-    const pool = langList;
+    const pool = langList.filter((t) => !NOT_BOOKING.has(t.slug));
     if (!pool.length) return;
     setWinner(null);
     setSpinning(true);
@@ -306,103 +291,105 @@ export function TerminPageContent() {
     cards = langList.map((t) => ({ t, ribbon: null, dim: false }));
   }
 
+  const chipCls = (active: boolean) =>
+    `px-4 py-2.5 rounded-full text-sm font-medium transition-all inline-flex items-center gap-1.5 ${active ? "bg-[#2b3186] text-white" : "bg-white border border-neutral-200 text-neutral-700 hover:border-[#2b3186]/40"}`;
+
   return (
-    <div className="min-h-screen bg-neutral-950 text-white" dir={isRtl ? "rtl" : "ltr"}>
+    <div className="min-h-screen bg-white text-neutral-900" dir={isRtl ? "rtl" : "ltr"}>
       <canvas ref={canvasRef} className="fixed inset-0 w-full h-full pointer-events-none z-50" aria-hidden="true" />
 
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2b3186]/40 via-neutral-950 to-[#76b82a]/15 pointer-events-none" />
-        <div className="absolute top-24 left-1/4 w-96 h-96 bg-[#76b82a]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-44 right-1/4 w-80 h-80 bg-[#2b3186]/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+      <div className="bg-gradient-to-b from-[#f4f6fc] via-[#f8faf4] to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="flex justify-center mb-5">
-            <span className="inline-flex items-center gap-2 px-5 py-2 bg-white/8 border border-white/10 rounded-full text-sm text-white/70 font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-neutral-200 rounded-full text-sm text-neutral-600 font-medium">
               <Sparkles className="w-4 h-4 text-[#76b82a]" /> {x.trust}
             </span>
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}
-            className="text-4xl sm:text-6xl font-extrabold text-center tracking-tight mb-4">
+            className="text-4xl sm:text-6xl font-extrabold text-center tracking-tight mb-4 text-[#1c2060]">
             {x.heroTitle}{" "}
-            <span className="bg-gradient-to-r from-[#76b82a] to-[#a8e063] bg-clip-text text-transparent">{x.heroAccent}</span>
+            <span className="text-[#76b82a]">{x.heroAccent}</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="max-w-xl mx-auto text-center text-lg text-white/55 mb-8">{x.heroSub}</motion.p>
+            className="max-w-xl mx-auto text-center text-lg text-neutral-600 mb-6">{x.heroSub}</motion.p>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-9 text-[13px] text-white/45">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white/80 transition-colors"><MapPin className="w-4 h-4 text-[#76b82a]" /> {ui.address}</a>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-10 text-[13px] text-neutral-500">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#2b3186] transition-colors"><MapPin className="w-4 h-4 text-[#76b82a]" /> {ui.address}</a>
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#76b82a]" /> {ui.hoursVal}</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-5">
-            {([["besoin", Target, x.modeNeedT, x.modeNeedS], ["hasard", Dices, x.modeRandT, x.modeRandS]] as const).map(([id, Icon, t, s]) => (
-              <button key={id} onClick={() => pickMode(id as "besoin" | "hasard")}
-                className={`flex items-start gap-3 text-left p-4 rounded-2xl border transition-all ${mode === id ? "border-[#76b82a] bg-[#76b82a]/10" : "border-white/10 bg-white/5 hover:border-white/20"}`}>
-                <Icon className={`w-6 h-6 mt-0.5 flex-shrink-0 ${mode === id ? "text-[#76b82a]" : "text-white/50"}`} />
-                <span><span className="block font-bold text-[15px] text-white">{t}</span><span className="text-[12.5px] text-white/55">{s}</span></span>
-              </button>
-            ))}
-          </div>
-
+          {/* Étape 1 : le motif (inspiration 21st.dev « Appointment Intake Match ») */}
           <AnimatePresence mode="wait">
             {mode === "besoin" ? (
-              <motion.div key="besoin" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto">
-                <p className="text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white/35 mb-3">{x.motifQ}</p>
-                <div className="flex flex-wrap justify-center gap-2 mb-5">
+              <motion.div key="besoin" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                className="max-w-3xl mx-auto rounded-3xl bg-white border border-neutral-200 shadow-xl shadow-[#2b3186]/5 p-6 sm:p-8">
+                <p className="flex items-center justify-center gap-2 text-sm font-bold text-[#1c2060] mb-4">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#2b3186] text-white text-xs">1</span>{x.motifQ}
+                </p>
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
                   {MOTIFS.map((mo) => (
-                    <button key={mo.id} onClick={() => setMotif(motif === mo.id ? null : mo.id)}
-                      className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all inline-flex items-center gap-1.5 ${motif === mo.id ? "bg-[#76b82a] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>
-                      <span>{mo.emoji}</span>{mo.label[lang] ?? mo.label.en}
+                    <button key={mo.id} type="button" aria-pressed={motif === mo.id} onClick={() => setMotif(motif === mo.id ? null : mo.id)} className={chipCls(motif === mo.id)}>
+                      <span aria-hidden="true">{mo.emoji}</span>{mo.label[lang] ?? mo.label.en}
                     </button>
                   ))}
                 </div>
-                <p className="text-center text-[11px] font-bold uppercase tracking-[0.16em] text-white/35 mb-3">{x.langQ}</p>
+                <p className="text-center text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">{x.langQ}</p>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <button onClick={() => setLangF("")} className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-all ${langF === "" ? "bg-[#a8e063] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>{x.allLang}</button>
+                  <button type="button" aria-pressed={langF === ""} onClick={() => setLangF("")} className={chipCls(langF === "")}>{x.allLang}</button>
                   {LANG_OPTS.map((l) => (
-                    <button key={l} onClick={() => setLangF(langF === l ? "" : l)}
-                      className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-all ${langF === l ? "bg-[#a8e063] text-neutral-950 font-bold" : "bg-white/5 border border-white/10 text-white hover:border-white/25"}`}>{LANG_FLAGS[l]} {l}</button>
+                    <button key={l} type="button" aria-pressed={langF === l} onClick={() => setLangF(langF === l ? "" : l)} className={chipCls(langF === l)}>{LANG_FLAGS[l]} {l}</button>
                   ))}
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-[13px]">
+                  <button type="button" onClick={() => pickMode("hasard")} className="inline-flex items-center gap-1.5 text-neutral-500 hover:text-[#2b3186] transition-colors">
+                    <Dices className="w-4 h-4" /> {x.modeRandT}
+                  </button>
+                  {(motif || langF) && (
+                    <button type="button" onClick={resetFilters} className="inline-flex items-center gap-1.5 text-neutral-500 hover:text-[#2b3186] transition-colors">
+                      <RotateCcw className="w-3.5 h-3.5" /> {x.reset}
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ) : (
               <motion.div key="hasard" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-md mx-auto text-center">
-                <button onClick={startSpin} disabled={spinning}
-                  className="w-full py-4 rounded-2xl font-extrabold text-[17px] text-neutral-950 bg-gradient-to-r from-[#76b82a] to-[#5c9120] hover:shadow-xl hover:shadow-[#76b82a]/25 active:scale-[0.98] transition-all inline-flex items-center justify-center gap-2.5 disabled:opacity-70">
+                <button type="button" onClick={startSpin} disabled={spinning}
+                  className="w-full py-4 rounded-2xl font-extrabold text-[17px] text-white bg-[#76b82a] hover:bg-[#5c9120] active:scale-[0.98] transition-all inline-flex items-center justify-center gap-2.5 disabled:opacity-70">
                   <Dices className="w-5 h-5" /> {x.spinBtn}
                 </button>
-                <AnimatePresence>
-                  {winner && (() => {
-                    const w = THERAPISTS.find((t) => t.slug === winner)!;
-                    return (
-                      <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
-                        className="mt-5 p-5 rounded-2xl bg-white/5 border border-[#76b82a]/60 text-left">
-                        <div className="text-[12px] text-white/50 mb-1">{x.spinChose}</div>
-                        <div className="text-2xl font-extrabold">{w.name}</div>
-                        <div className="text-[13px] text-white/55 mt-1.5 mb-4">{w.plain[lang] ?? w.plain.en}</div>
-                        <button onClick={() => setChooseFor(w.slug)}
-                          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#76b82a] text-neutral-950 hover:brightness-105 transition">
-                          <CalendarPlus className="w-4 h-4" /> {x.reserveWith} {w.name.split(" ")[0]}
-                        </button>
-                      </motion.div>
-                    );
-                  })()}
-                </AnimatePresence>
+                <button type="button" onClick={() => pickMode("besoin")} className="mt-3 inline-flex items-center gap-1.5 text-[13px] text-neutral-500 hover:text-[#2b3186] transition-colors">
+                  <Target className="w-4 h-4" /> {x.modeNeedT}
+                </button>
+                {winner && (() => {
+                  const w = THERAPISTS.find((t) => t.slug === winner)!;
+                  return (
+                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+                      className="mt-5 p-5 rounded-2xl bg-white border-2 border-[#76b82a] text-start">
+                      <div className="text-[12px] text-neutral-500 mb-1">{x.spinChose}</div>
+                      <div className="text-2xl font-extrabold text-[#1c2060]">{w.name}</div>
+                      <div className="text-[13px] text-neutral-600 mt-1.5 mb-4">{w.plain[lang] ?? w.plain.en}</div>
+                      <ContactButtons t={w} x={x} />
+                    </motion.div>
+                  );
+                })()}
               </motion.div>
             )}
           </AnimatePresence>
 
-          <p className="text-center text-[11px] font-bold uppercase tracking-[0.18em] text-white/30 mt-12 mb-5">{gridLabel}</p>
+          {/* Étape 2 : le ou les thérapeutes, avec les moyens de contact directement sur la carte */}
+          <p className="flex items-center justify-center gap-2 text-sm font-bold text-[#1c2060] mt-14 mb-5">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#2b3186] text-white text-xs">2</span>{gridLabel}
+          </p>
           {banner && (
-            <div className="max-w-2xl mx-auto mb-5 flex items-center justify-center gap-2 text-center text-[13.5px] text-[#a8e063]">
+            <div className="max-w-2xl mx-auto mb-5 flex items-center justify-center gap-2 text-center text-[13.5px] text-[#3f6b12]">
               <Check className="w-4 h-4 flex-shrink-0" /> {banner}
             </div>
           )}
 
           {cards.length === 0 ? (
-            <p className="text-center text-white/50 text-sm py-6">{x.emptyLang}</p>
+            <p className="text-center text-neutral-500 text-sm py-6">{x.emptyLang}</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {cards.map(({ t, ribbon, dim }, i) => {
@@ -410,11 +397,11 @@ export function TerminPageContent() {
                 const isWin = winner === t.slug;
                 const portrait = getTherapistPortrait(t.slug, "thumbnail");
                 return (
-                  <motion.div key={t.slug} initial={{ opacity: 0, y: 18 }} animate={{ opacity: dim ? 0.4 : 1, y: 0 }} transition={{ delay: 0.04 * i }}
-                    className={`relative rounded-2xl border p-5 bg-white/5 transition-all duration-300 ${isWin || isFlash ? "border-[#76b82a] ring-2 ring-[#76b82a]/40" : ribbon ? "border-[#76b82a]/60" : "border-white/10"} ${dim ? "saturate-50" : "hover:-translate-y-1 hover:border-white/25"}`}>
-                    {isWin && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#a8e063] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribWin} 🎉</span>}
-                    {!isWin && ribbon === "spec" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribSpec}</span>}
-                    {!isWin && ribbon === "reco" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-neutral-950 text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribReco}</span>}
+                  <motion.div key={t.slug} initial={{ opacity: 0, y: 18 }} animate={{ opacity: dim ? 0.45 : 1, y: 0 }} transition={{ delay: 0.04 * i }}
+                    className={`relative rounded-2xl border p-5 bg-white transition-all duration-300 ${isWin || isFlash ? "border-[#76b82a] ring-2 ring-[#76b82a]/40" : ribbon ? "border-[#76b82a]" : "border-neutral-200"} ${dim ? "saturate-50" : "hover:-translate-y-1 hover:shadow-lg"}`}>
+                    {isWin && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-white text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribWin} 🎉</span>}
+                    {!isWin && ribbon === "spec" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-white text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribSpec}</span>}
+                    {!isWin && ribbon === "reco" && <span className="absolute top-3 ltr:right-0 rtl:left-0 bg-[#76b82a] text-white text-[11px] font-extrabold px-3 py-1 rounded-s-lg">{x.ribReco}</span>}
 
                     <div className="flex items-center gap-3.5 mb-3">
                       <div className="w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${t.accent}` }}>
@@ -422,40 +409,32 @@ export function TerminPageContent() {
                         <img src={portrait.src} alt={t.name} loading="lazy" className={`w-full h-full ${portrait.className}`} />
                       </div>
                       <div>
-                        <div className="text-[17px] font-bold leading-tight">{t.name}</div>
-                        <div className="text-[12px] text-white/50 mt-0.5">{t.role[lang] ?? t.role.en}</div>
+                        <div className="text-[17px] font-bold leading-tight text-[#1c2060]">{t.name}</div>
+                        <div className="text-[12px] text-neutral-500 mt-0.5">{t.role[lang] ?? t.role.en}</div>
                       </div>
                     </div>
 
                     {t.absence && Date.now() <= new Date(t.absence.to + "T23:59:59").getTime() && (
-                      <div className="flex items-start gap-1.5 text-[12px] font-semibold text-amber-300 bg-amber-400/10 border border-amber-400/25 rounded-lg px-2.5 py-1.5 mb-3">
+                      <div className="flex items-start gap-1.5 text-[12px] font-semibold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 mb-3">
                         <span aria-hidden>🌴</span><span>{t.absence.label[lang] ?? t.absence.label.en}</span>
                       </div>
                     )}
-                    <div className="flex items-center gap-1.5 text-[12.5px] text-white/55 mb-2.5">
-                      <span className="text-[#fbbf24] tracking-tight">★★★★★</span> 4,8 · {x.reviews}
+
+                    <p className="text-[14.5px] text-neutral-700 mb-3 min-h-[42px]">{t.plain[lang] ?? t.plain.en}</p>
+
+                    <div className="flex flex-wrap items-center gap-1.5 text-[11.5px] text-neutral-500 mb-4">
+                      <span aria-hidden="true">🗣️</span>
+                      {t.langs.map((l) => <span key={l} className="px-1.5 py-0.5 rounded bg-[#2b3186]/[0.06] text-[#2b3186] font-semibold">{l}</span>)}
+                      {t.conv && <Link href={NON_CONV_HREF} className="text-amber-800 border border-amber-200 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded hover:underline underline-offset-2 transition-colors">{NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}</Link>}
                     </div>
 
-                    <p className="text-[14.5px] text-white/85 mb-3 min-h-[42px]">{t.plain[lang] ?? t.plain.en}</p>
-
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {t.specs.map((s) => (
-                        <span key={s} className="text-[11.5px] px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-white/55">{s}</span>
-                      ))}
+                    <div className="rounded-xl bg-[#f4f6fc] px-3 py-2.5 mb-4">
+                      <WeekHours slug={t.slug} />
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-1.5 text-[11.5px] text-white/45 mb-4">
-                      <span>🗣️</span>
-                      {t.langs.map((l) => <span key={l} className="px-1.5 py-0.5 border border-white/10 rounded">{l}</span>)}
-                      {t.conv && <Link href={NON_CONV_HREF} className="text-amber-400 border border-amber-400/40 bg-amber-400/10 hover:bg-amber-400/20 px-2 py-0.5 rounded hover:underline underline-offset-2 transition-colors">{NON_CONV_LABEL[lang] ?? NON_CONV_LABEL.fr}</Link>}
-                    </div>
-
-                    <button onClick={() => setChooseFor(t.slug)}
-                      className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[15px] font-bold bg-[#76b82a] text-neutral-950 hover:brightness-105 active:scale-[0.98] transition">
-                      <CalendarPlus className="w-4 h-4" /> {x.reserveWith} {t.name.split(" ")[0]}
-                    </button>
+                    {!NOT_BOOKING.has(t.slug) && <ContactButtons t={t} x={x} />}
                     <div className="flex items-center justify-end mt-3">
-                      <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-white/45 hover:text-[#76b82a] transition-colors">
+                      <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-neutral-500 hover:text-[#5c9120] transition-colors">
                         {x.profileBtn} <ArrowRight className="w-3 h-3" />
                       </Link>
                     </div>
@@ -465,15 +444,9 @@ export function TerminPageContent() {
             </div>
           )}
 
-          {(motif || langF) && (
-            <button onClick={resetFilters} className="mx-auto mt-7 flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 text-[13px] text-white/55 hover:border-white/25 hover:text-white transition">
-              <RotateCcw className="w-3.5 h-3.5" /> {x.reset}
-            </button>
-          )}
-
-          {/* À apporter à votre première séance — bloc visible, trilingue par item */}
+          {/* À apporter à votre première séance */}
           <div className="max-w-4xl mx-auto mt-16">
-            <div className="rounded-3xl bg-[#F8FAFC] text-neutral-900 p-6 sm:p-8 border-l-4 border-[#76b82a] shadow-xl">
+            <div className="rounded-3xl bg-[#f4f6fc] p-6 sm:p-8 border border-neutral-200">
               <div className="flex items-center gap-2.5 mb-1.5">
                 <div className="w-9 h-9 rounded-xl bg-[#76b82a]/15 flex items-center justify-center flex-shrink-0">
                   <CalendarPlus className="w-5 h-5 text-[#5c9120]" />
@@ -484,7 +457,7 @@ export function TerminPageContent() {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                 {FV_ITEMS.map(({ Icon, label, note }, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-5 h-5 text-[#76b82a]" />
                     </div>
                     <div className="min-w-0">
@@ -502,62 +475,45 @@ export function TerminPageContent() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-[#76b82a] mb-4 flex items-center gap-2"><CalendarPlus className="w-4 h-4" /> {ui.infoBring}</h3>
-              <ul className="space-y-2.5">{ui.bringItems.map((it) => (<li key={it} className="flex items-center gap-2.5 text-sm text-white/60"><span className="w-1.5 h-1.5 rounded-full bg-[#76b82a] flex-shrink-0" />{it}</li>))}</ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8 max-w-4xl mx-auto">
+            <div className="bg-white border border-neutral-200 rounded-2xl p-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-amber-700 mb-4 flex items-center gap-2"><Clock className="w-4 h-4" /> {ui.cancelTitle}</h3>
+              <p className="text-sm text-neutral-600 leading-relaxed">{ui.cancelText}</p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 flex items-center gap-2"><Clock className="w-4 h-4" /> {ui.cancelTitle}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{ui.cancelText}</p>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-4 flex items-center gap-2"><MapPin className="w-4 h-4 text-[#76b82a]" /> Contact</h3>
-              <ul className="space-y-3 text-sm text-white/60">
-                <li className="flex items-start gap-2.5"><MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" /><a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Loten 1<br />B-4700 Eupen</a></li>
+            <div className="bg-white border border-neutral-200 rounded-2xl p-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#2b3186] mb-4 flex items-center gap-2"><MapPin className="w-4 h-4 text-[#76b82a]" /> Contact</h3>
+              <ul className="space-y-3 text-sm text-neutral-600">
+                <li className="flex items-start gap-2.5"><MapPin className="w-3.5 h-3.5 text-[#76b82a] mt-0.5 flex-shrink-0" /><a href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI" target="_blank" rel="noopener noreferrer" className="hover:text-[#2b3186] transition-colors">Loten 1, B-4700 Eupen</a></li>
                 <li className="flex items-center gap-2.5"><Clock className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /> {ui.hoursVal}</li>
-                <li className="flex items-center gap-2.5"><Mail className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /><SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-white transition-colors text-xs" showIcon={false} /></li>
+                <li className="flex items-center gap-2.5"><Mail className="w-3.5 h-3.5 text-[#76b82a] flex-shrink-0" /><SafeEmail encoded="cHJheGlzbG90ZW5AZ21haWwuY29t" className="hover:text-[#2b3186] transition-colors text-xs" showIcon={false} /></li>
               </ul>
             </div>
           </div>
 
         </div>
       </div>
+    </div>
+  );
+}
 
-      <AnimatePresence>
-        {chooseFor && (() => {
-          const t = THERAPISTS.find((th) => th.slug === chooseFor)!;
-          return (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-              onClick={() => setChooseFor(null)} dir={isRtl ? "rtl" : "ltr"}>
-              <motion.div initial={{ opacity: 0, y: 28, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 28 }}
-                onClick={(e) => e.stopPropagation()}
-                className="w-full max-w-sm bg-neutral-900 border border-white/10 rounded-3xl p-5 shadow-2xl">
-                <div className="flex items-center justify-between mb-1.5">
-                  <h3 className="text-[16px] font-bold">{x.reserveWith} {t.name.split(" ")[0]}</h3>
-                  <button onClick={() => setChooseFor(null)} aria-label={xc.close} className="text-white/40 hover:text-white transition-colors"><XIcon className="w-5 h-5" /></button>
-                </div>
-                <p className="text-[13px] text-white/55 mb-4">{xc.chooseTitle}</p>
-                <div className="space-y-2.5">
-                  <a href={t.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25d366] text-neutral-950 font-bold text-[15px] hover:brightness-105 transition">
-                    <MessageCircle className="w-5 h-5" /> {xc.byWhatsApp}
-                  </a>
-                  <a href={`tel:${t.phone}`} className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-white/10 text-white font-semibold text-[14.5px] hover:bg-white/15 transition">
-                    <Phone className="w-5 h-5 text-[#76b82a]" /> {xc.byPhone}
-                    <span className="ms-auto text-white/50 text-[13px] font-normal" dir="ltr">{fmtPhone(t.phone)}</span>
-                  </a>
-                  {t.online && (
-                    <a href={t.online} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#2b3186] text-white font-semibold text-[14.5px] hover:bg-[#1e2260] transition">
-                      <ExternalLink className="w-5 h-5" /> {x.onlineBtn}
-                    </a>
-                  )}
-                </div>
-              </motion.div>
-            </motion.div>
-          );
-        })()}
-      </AnimatePresence>
+/** WhatsApp, appel et réservation en ligne directement sur la carte : un clic de moins qu'avant (14/10/2026). */
+function ContactButtons({ t, x }: { t: (typeof THERAPISTS)[number]; x: Rec }) {
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      <a href={t.whatsapp} target="_blank" rel="noopener noreferrer"
+        className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[14px] font-bold bg-[#25d366] text-neutral-950 hover:brightness-105 transition">
+        <MessageCircle className="w-4 h-4" /> WhatsApp
+      </a>
+      <a href={`tel:${t.phone}`}
+        className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[14px] font-semibold border border-[#2b3186]/25 text-[#2b3186] hover:bg-[#2b3186]/5 transition">
+        <Phone className="w-4 h-4" /> {x.callBtn}
+      </a>
+      {t.online && (
+        <a href={t.online} target="_blank" rel="noopener noreferrer"
+          className="col-span-2 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-[14px] font-semibold bg-[#2b3186] text-white hover:bg-[#1e2260] transition">
+          <ExternalLink className="w-4 h-4" /> {x.onlineBtn}
+        </a>
+      )}
     </div>
   );
 }

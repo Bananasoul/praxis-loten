@@ -21,7 +21,19 @@
     "title2": "i Terapii Manualnej w Eupen.",
     "subtitle": "Nowoczesne metody leczenia i indywidualna opieka dla bezpiecznego powrotu do codzienności bez bólu.",
     "cta": "Umów wizytę",
-    "ctaSecondary": "Nasze usługi"
+    "ctaSecondary": "Nasze usługi",
+    "card": {
+      "infoTitle": "Informacje praktyczne",
+      "hours": "Pn–pt 07:30–20:30 · weekend nieczynne",
+      "languages": "Mówimy po",
+      "homeVisits": "Wizyty domowe możliwe",
+      "googleReviews": "opinii Google",
+      "reviewsLink": "Zobacz opinie w Google",
+      "call": "Zadzwoń",
+      "directions": "Dojazd",
+      "chooseTherapist": "Wybierz terapeutę",
+      "eyebrow": "Fizjoterapia w Eupen"
+    }
   },
   "stats": {
     "therapists": "Terapeutów",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Fizjoterapeuta — Wizyty domowe",
       "quote": "Dla mnie ruch i jakość życia są ze sobą ściśle związane. Dlatego osobiste cele każdego pacjenta są w centrum mojej pracy."
-    }
+    },
+    "filterAll": "Wszyscy",
+    "filterHome": "Wizyty domowe",
+    "speaks": "Języki",
+    "hoursTitle": "Obecność w gabinecie",
+    "hoursNote": "Godziny orientacyjne, poza urlopami.",
+    "hoursOnRequest": "Godziny na zapytanie",
+    "notBooking": "Obecnie nie przyjmuje wizyt.",
+    "seeColleagues": "Wybierz innego terapeutę"
   },
   "cabinet": {
     "sectionTitle": "Nasza Praktyka",
@@ -140,7 +160,8 @@
     "allRights": "Wszelkie prawa zastrzeżone.",
     "followUs": "Śledź nas",
     "getDirections": "Wyznacz trasę",
-    "hours": "Pon – Pt: 07:30 – 20:30\nWeekend: zamknięte"
+    "hours": "Pon – Pt: 07:30 – 20:30\nWeekend: zamknięte",
+    "siteLanguages": "Języki strony"
   },
   "common": {
     "learnMore": "Więcej",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "Anulowanie",
     "text": "24 godziny wcześniej. Nieodwołane wizyty będą fakturowane."
+  },
+  "journey": {
+    "title": "Jak to wygląda?",
+    "subtitle": "Od skierowania do samodzielności, w czterech krokach.",
+    "s1t": "Skierowanie",
+    "s1d": "Lekarz przepisuje Ci fizjoterapię. Dzięki temu skierowaniu kasa chorych zwraca część kosztów sesji.",
+    "s2t": "Pierwsza wizyta",
+    "s2d": "Poświęcamy czas, by Cię wysłuchać i zbadać, a potem razem ustalamy cele.",
+    "s3t": "Sesje",
+    "s3d": "Terapia manualna i dopasowane ćwiczenia, korygowane na każdej sesji według postępów.",
+    "s4t": "Samodzielność",
+    "s4d": "Wychodzisz z ćwiczeniami do domu, aby efekty utrzymały się na dłużej."
   }
 }

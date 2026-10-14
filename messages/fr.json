@@ -21,7 +21,19 @@
     "title2": "et Thérapie Manuelle à Eupen.",
     "subtitle": "Des méthodes de traitement modernes et une prise en charge sur mesure pour un retour sécurisé à un quotidien sans douleur.",
     "cta": "Prendre rendez-vous",
-    "ctaSecondary": "Nos compétences"
+    "ctaSecondary": "Nos compétences",
+    "card": {
+      "infoTitle": "Infos pratiques",
+      "hours": "Lun–ven 07:30–20:30 · week-end fermé",
+      "languages": "Nous parlons",
+      "homeVisits": "Visites à domicile possibles",
+      "googleReviews": "avis Google",
+      "reviewsLink": "Voir les avis sur Google",
+      "call": "Appeler",
+      "directions": "Itinéraire",
+      "chooseTherapist": "Choisir son thérapeute",
+      "eyebrow": "Kinésithérapie à Eupen"
+    }
   },
   "stats": {
     "therapists": "Thérapeutes",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Kinésithérapeute — Visites à domicile",
       "quote": "Pour moi, le mouvement et la qualité de vie sont étroitement liés. C'est pourquoi les objectifs personnels de chaque patient sont au cœur de ma pratique."
-    }
+    },
+    "filterAll": "Tous",
+    "filterHome": "À domicile",
+    "speaks": "Langues",
+    "hoursTitle": "Présence au cabinet",
+    "hoursNote": "Horaires indicatifs, hors congés.",
+    "hoursOnRequest": "Horaires sur demande",
+    "notBooking": "Ne prend pas de rendez-vous pour le moment.",
+    "seeColleagues": "Choisir un collègue"
   },
   "cabinet": {
     "sectionTitle": "Notre Cabinet",
@@ -140,7 +160,8 @@
     "allRights": "Tous droits réservés.",
     "followUs": "Suivez-nous",
     "getDirections": "Obtenir l'itinéraire",
-    "hours": "Lun – Ven : 07:30 – 20:30\nWeek-end fermé"
+    "hours": "Lun – Ven : 07:30 – 20:30\nWeek-end fermé",
+    "siteLanguages": "Langues du site"
   },
   "common": {
     "learnMore": "En savoir plus",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "Annulation",
     "text": "24h à l'avance. Toute séance non décommandée dans ce délai sera facturée."
+  },
+  "journey": {
+    "title": "Comment ça se passe ?",
+    "subtitle": "De la prescription à l'autonomie, en quatre étapes.",
+    "s1t": "Prescription",
+    "s1d": "Votre médecin vous prescrit des séances de kinésithérapie. Avec cette prescription, elles sont en partie remboursées par votre mutuelle.",
+    "s2t": "Premier rendez-vous",
+    "s2d": "Nous prenons le temps de vous écouter et de vous examiner, puis nous fixons ensemble vos objectifs.",
+    "s3t": "Séances",
+    "s3d": "Traitement manuel et exercices adaptés, ajustés à chaque séance selon vos progrès.",
+    "s4t": "Autonomie",
+    "s4d": "Vous repartez avec des exercices à faire chez vous, pour garder les bénéfices dans la durée."
   }
 }

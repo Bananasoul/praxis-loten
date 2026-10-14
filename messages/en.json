@@ -21,7 +21,19 @@
     "title2": "and Manual Therapy in Eupen.",
     "subtitle": "Modern treatment methods and personalised care for a safe return to a pain-free daily life.",
     "cta": "Book Appointment",
-    "ctaSecondary": "Our Services"
+    "ctaSecondary": "Our Services",
+    "card": {
+      "infoTitle": "Practical info",
+      "hours": "Mon–Fri 07:30–20:30 · closed weekends",
+      "languages": "We speak",
+      "homeVisits": "Home visits available",
+      "googleReviews": "Google reviews",
+      "reviewsLink": "See reviews on Google",
+      "call": "Call",
+      "directions": "Directions",
+      "chooseTherapist": "Choose a therapist",
+      "eyebrow": "Physiotherapy in Eupen"
+    }
   },
   "stats": {
     "therapists": "Therapists",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Physiotherapist — Home visits",
       "quote": "For me, movement and quality of life go hand in hand. That is why each patient's personal goals are at the heart of my practice."
-    }
+    },
+    "filterAll": "All",
+    "filterHome": "Home visits",
+    "speaks": "Languages",
+    "hoursTitle": "At the practice",
+    "hoursNote": "Indicative hours, excluding holidays.",
+    "hoursOnRequest": "Hours on request",
+    "notBooking": "Not taking appointments at the moment.",
+    "seeColleagues": "Choose a colleague"
   },
   "cabinet": {
     "sectionTitle": "Our Practice",
@@ -140,7 +160,8 @@
     "allRights": "All rights reserved.",
     "followUs": "Follow Us",
     "getDirections": "Get directions",
-    "hours": "Mon – Fri: 07:30 – 20:30\nWeekend closed"
+    "hours": "Mon – Fri: 07:30 – 20:30\nWeekend closed",
+    "siteLanguages": "Site languages"
   },
   "common": {
     "learnMore": "Learn more",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "Cancellation",
     "text": "24 hours in advance. Any session not cancelled within this period will be charged."
+  },
+  "journey": {
+    "title": "How does it work?",
+    "subtitle": "From prescription to independence, in four steps.",
+    "s1t": "Prescription",
+    "s1d": "Your doctor prescribes physiotherapy sessions. With this prescription, they are partly reimbursed by your health insurance.",
+    "s2t": "First appointment",
+    "s2d": "We take the time to listen and examine you, then we set your goals together.",
+    "s3t": "Sessions",
+    "s3d": "Manual treatment and tailored exercises, adjusted at each session to your progress.",
+    "s4t": "Independence",
+    "s4d": "You leave with exercises to do at home, so the benefits last."
   }
 }

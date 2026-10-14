@@ -21,7 +21,19 @@
     "title2": "und Manuelle Therapie in Eupen.",
     "subtitle": "Moderne Behandlungsmethoden und individuelle Betreuung für eine sichere Rückkehr in einen schmerzfreien Alltag.",
     "cta": "Termin vereinbaren",
-    "ctaSecondary": "Unsere Leistungen"
+    "ctaSecondary": "Unsere Leistungen",
+    "card": {
+      "infoTitle": "Praktische Infos",
+      "hours": "Mo–Fr 07:30–20:30 · Wochenende geschlossen",
+      "languages": "Wir sprechen",
+      "homeVisits": "Hausbesuche möglich",
+      "googleReviews": "Google-Bewertungen",
+      "reviewsLink": "Bewertungen auf Google ansehen",
+      "call": "Anrufen",
+      "directions": "Route",
+      "chooseTherapist": "Therapeut wählen",
+      "eyebrow": "Physiotherapie in Eupen"
+    }
   },
   "stats": {
     "therapists": "Therapeuten",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Physiotherapeut — Hausbesuche",
       "quote": "Für mich gehören Bewegung und Lebensqualität unmittelbar zusammen. Deshalb steht für mich das persönliche Ziel des Patienten im Vordergrund."
-    }
+    },
+    "filterAll": "Alle",
+    "filterHome": "Hausbesuche",
+    "speaks": "Sprachen",
+    "hoursTitle": "In der Praxis",
+    "hoursNote": "Richtzeiten, außer Urlaub.",
+    "hoursOnRequest": "Zeiten auf Anfrage",
+    "notBooking": "Nimmt derzeit keine Termine an.",
+    "seeColleagues": "Andere Therapeuten ansehen"
   },
   "cabinet": {
     "sectionTitle": "Unsere Praxis",
@@ -140,7 +160,8 @@
     "allRights": "Alle Rechte vorbehalten.",
     "followUs": "Folgen Sie uns",
     "getDirections": "Route berechnen",
-    "hours": "Mo – Fr: 07:30 – 20:30\nWochenende geschlossen"
+    "hours": "Mo – Fr: 07:30 – 20:30\nWochenende geschlossen",
+    "siteLanguages": "Sprachen der Website"
   },
   "common": {
     "learnMore": "Mehr erfahren",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "Absage",
     "text": "24 Stunden im Voraus. Jeder Termin, der nicht rechtzeitig abgesagt wird, wird in Rechnung gestellt."
+  },
+  "journey": {
+    "title": "Wie läuft es ab?",
+    "subtitle": "Von der Verordnung bis zur Selbstständigkeit, in vier Schritten.",
+    "s1t": "Verordnung",
+    "s1d": "Ihr Arzt verordnet Ihnen Physiotherapie. Mit dieser Verordnung erstattet Ihre Krankenkasse einen Teil der Sitzungen.",
+    "s2t": "Erster Termin",
+    "s2d": "Wir nehmen uns Zeit, Ihnen zuzuhören und Sie zu untersuchen, und legen gemeinsam Ihre Ziele fest.",
+    "s3t": "Sitzungen",
+    "s3d": "Manuelle Behandlung und passende Übungen, bei jeder Sitzung an Ihre Fortschritte angepasst.",
+    "s4t": "Selbstständigkeit",
+    "s4d": "Sie gehen mit Übungen für zu Hause, damit die Wirkung langfristig erhalten bleibt."
   }
 }

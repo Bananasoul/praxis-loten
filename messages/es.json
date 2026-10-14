@@ -21,7 +21,19 @@
     "title2": "y Terapia Manual en Eupen.",
     "subtitle": "Métodos de tratamiento modernos y atención personalizada para un regreso seguro a una vida diaria sin dolor.",
     "cta": "Pedir cita",
-    "ctaSecondary": "Nuestros servicios"
+    "ctaSecondary": "Nuestros servicios",
+    "card": {
+      "infoTitle": "Información práctica",
+      "hours": "Lun–vie 07:30–20:30 · fines de semana cerrado",
+      "languages": "Hablamos",
+      "homeVisits": "Visitas a domicilio posibles",
+      "googleReviews": "reseñas de Google",
+      "reviewsLink": "Ver las reseñas en Google",
+      "call": "Llamar",
+      "directions": "Cómo llegar",
+      "chooseTherapist": "Elegir terapeuta",
+      "eyebrow": "Fisioterapia en Eupen"
+    }
   },
   "stats": {
     "therapists": "Terapeutas",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Fisioterapeuta — Visitas a domicilio",
       "quote": "Para mí, el movimiento y la calidad de vida van de la mano. Por eso, los objetivos personales de cada paciente están en el centro de mi práctica."
-    }
+    },
+    "filterAll": "Todos",
+    "filterHome": "A domicilio",
+    "speaks": "Idiomas",
+    "hoursTitle": "Presencia en la consulta",
+    "hoursNote": "Horario orientativo, salvo vacaciones.",
+    "hoursOnRequest": "Horario a consultar",
+    "notBooking": "No acepta citas por el momento.",
+    "seeColleagues": "Elegir a un colega"
   },
   "cabinet": {
     "sectionTitle": "La consulta",
@@ -140,7 +160,8 @@
     "allRights": "Todos los derechos reservados.",
     "followUs": "Síganos",
     "getDirections": "Cómo llegar",
-    "hours": "Lun – Vie: 07:30 – 20:30\nCerrado el fin de semana"
+    "hours": "Lun – Vie: 07:30 – 20:30\nCerrado el fin de semana",
+    "siteLanguages": "Idiomas del sitio"
   },
   "common": {
     "learnMore": "Saber más",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "Cancelación",
     "text": "24 horas de antelación. Toda sesión no anulada en este plazo será facturada."
+  },
+  "journey": {
+    "title": "¿Cómo funciona?",
+    "subtitle": "De la prescripción a la autonomía, en cuatro pasos.",
+    "s1t": "Prescripción",
+    "s1d": "Su médico le prescribe sesiones de fisioterapia. Con esta prescripción, su mutua reembolsa una parte.",
+    "s2t": "Primera cita",
+    "s2d": "Nos tomamos el tiempo de escucharle y examinarle, y fijamos juntos sus objetivos.",
+    "s3t": "Sesiones",
+    "s3d": "Tratamiento manual y ejercicios adaptados, ajustados en cada sesión según su progreso.",
+    "s4t": "Autonomía",
+    "s4d": "Se va con ejercicios para hacer en casa, para mantener los beneficios."
   }
 }

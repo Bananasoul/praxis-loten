@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
 import { CalendarPlus, ExternalLink, GraduationCap, Star, Globe2, Clock, Phone, ArrowRight } from "lucide-react";
+import { NOT_BOOKING } from "@/content/team";
+import { NotBookingNotice } from "@/components/ui/NotBookingNotice";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 
@@ -435,6 +437,9 @@ export function TeamPageContent() {
                   </Link>
 
                   {/* Booking CTAs */}
+                  {NOT_BOOKING.has(member.slug) ? (
+                    <NotBookingNotice />
+                  ) : (
                   <div className="flex gap-2 flex-wrap">
                     <a
                       href={member.booking.href}
@@ -466,6 +471,7 @@ export function TeamPageContent() {
                       </a>
                     )}
                   </div>
+                  )}
                 </div>
               </motion.div>
             </StaggerItem>

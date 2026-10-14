@@ -21,7 +21,19 @@
     "title2": "Eupen'deki uzmanlarınız.",
     "subtitle": "Ağrısız bir günlük yaşama güvenli dönüş için modern tedavi yöntemleri ve kişiye özel bakım.",
     "cta": "Randevu Al",
-    "ctaSecondary": "Hizmetlerimiz"
+    "ctaSecondary": "Hizmetlerimiz",
+    "card": {
+      "infoTitle": "Pratik bilgiler",
+      "hours": "Pzt–Cum 07:30–20:30 · hafta sonu kapalı",
+      "languages": "Konuştuğumuz diller",
+      "homeVisits": "Ev ziyareti mümkün",
+      "googleReviews": "Google yorumu",
+      "reviewsLink": "Google'daki yorumları görün",
+      "call": "Ara",
+      "directions": "Yol tarifi",
+      "chooseTherapist": "Terapist seçin",
+      "eyebrow": "Eupen'de fizyoterapi"
+    }
   },
   "stats": {
     "therapists": "Terapist",
@@ -108,7 +120,15 @@
     "noe": {
       "role": "Fizyoterapist — Ev ziyaretleri",
       "quote": "Benim için hareket ve yaşam kalitesi birbirine sıkı sıkıya bağlıdır. Bu yüzden her hastanın kişisel hedefleri çalışmamın merkezindedir."
-    }
+    },
+    "filterAll": "Tümü",
+    "filterHome": "Ev ziyareti",
+    "speaks": "Diller",
+    "hoursTitle": "Muayenehanede",
+    "hoursNote": "Tatiller hariç, yaklaşık saatler.",
+    "hoursOnRequest": "Saatler talep üzerine",
+    "notBooking": "Şu anda randevu almıyor.",
+    "seeColleagues": "Bir meslektaş seçin"
   },
   "cabinet": {
     "sectionTitle": "Kliniğimiz",
@@ -140,7 +160,8 @@
     "allRights": "Tüm hakları saklıdır.",
     "followUs": "Bizi Takip Edin",
     "getDirections": "Yol tarifi al",
-    "hours": "Pzt – Cum: 07:30 – 20:30\nHafta sonu kapalı"
+    "hours": "Pzt – Cum: 07:30 – 20:30\nHafta sonu kapalı",
+    "siteLanguages": "Site dilleri"
   },
   "common": {
     "learnMore": "Daha fazla",
@@ -162,5 +183,17 @@
   "cancellation": {
     "title": "İptal",
     "text": "24 saat önceden. Zamanında iptal edilmeyen seanslar faturalandırılır."
+  },
+  "journey": {
+    "title": "Süreç nasıl işler?",
+    "subtitle": "Reçeteden bağımsızlığa, dört adımda.",
+    "s1t": "Reçete",
+    "s1d": "Doktorunuz fizyoterapi seansları yazar. Bu reçeteyle seansların bir kısmı sağlık sigortanız tarafından karşılanır.",
+    "s2t": "İlk randevu",
+    "s2d": "Sizi dinlemek ve muayene etmek için zaman ayırır, hedeflerinizi birlikte belirleriz.",
+    "s3t": "Seanslar",
+    "s3d": "Manuel tedavi ve size uygun egzersizler, her seansta ilerlemenize göre ayarlanır.",
+    "s4t": "Bağımsızlık",
+    "s4d": "Kazanımları korumak için evde yapacağınız egzersizlerle ayrılırsınız."
   }
 }

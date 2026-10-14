@@ -4,6 +4,7 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { RehabSection } from "@/components/sections/RehabSection";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { JourneySection } from "@/components/sections/JourneySection";
 import { RecentArticlesStrip } from "@/components/sections/RecentArticlesStrip";
 import { CTASection } from "@/components/sections/CTASection";
 import { fetchGooglePlaceData } from "@/lib/googlePlaces";
@@ -20,11 +21,12 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroSection />
+      <HeroSection googleData={googleData} />
       <StatsSection googleData={googleData} />
       <ServicesSection />
       <RehabSection />
       <TeamSection />
+      <JourneySection />
       <RecentArticlesStrip />
       <CTASection />
     </>
