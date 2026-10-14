@@ -21,7 +21,19 @@
     "title2": "i Terapii Manualnej w Eupen.",
     "subtitle": "Nowoczesne metody leczenia i indywidualna opieka dla bezpiecznego powrotu do codzienności bez bólu.",
     "cta": "Umów wizytę",
-    "ctaSecondary": "Nasze usługi"
+    "ctaSecondary": "Nasze usługi",
+    "card": {
+      "infoTitle": "Informacje praktyczne",
+      "hours": "Pn–pt 07:30–20:30 · weekend nieczynne",
+      "languages": "Mówimy po",
+      "homeVisits": "Wizyty domowe możliwe",
+      "googleReviews": "opinii Google",
+      "reviewsLink": "Zobacz opinie w Google",
+      "call": "Zadzwoń",
+      "directions": "Dojazd",
+      "chooseTherapist": "Wybierz terapeutę",
+      "eyebrow": "Fizjoterapia w Eupen"
+    }
   },
   "stats": {
     "therapists": "Terapeutów",

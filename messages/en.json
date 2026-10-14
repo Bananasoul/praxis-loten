@@ -21,7 +21,19 @@
     "title2": "and Manual Therapy in Eupen.",
     "subtitle": "Modern treatment methods and personalised care for a safe return to a pain-free daily life.",
     "cta": "Book Appointment",
-    "ctaSecondary": "Our Services"
+    "ctaSecondary": "Our Services",
+    "card": {
+      "infoTitle": "Practical info",
+      "hours": "Mon–Fri 07:30–20:30 · closed weekends",
+      "languages": "We speak",
+      "homeVisits": "Home visits available",
+      "googleReviews": "Google reviews",
+      "reviewsLink": "See reviews on Google",
+      "call": "Call",
+      "directions": "Directions",
+      "chooseTherapist": "Choose a therapist",
+      "eyebrow": "Physiotherapy in Eupen"
+    }
   },
   "stats": {
     "therapists": "Therapists",

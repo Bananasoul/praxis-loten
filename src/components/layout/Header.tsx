@@ -82,47 +82,15 @@ export function Header() {
         <div className="flex items-center justify-between gap-4 h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group shrink-0">
-            {/* Logo on white header (scrolled) */}
-            <div
-              className={cn(
-                "transition-all duration-300",
-                isTransparent ? "opacity-0 absolute" : "opacity-100"
-              )}
-            >
-              <Image
-                src="/logos/logo-full.png"
-                alt="Praxis Loten"
-                width={160}
-                height={52}
-                className="h-12 w-auto object-contain"
-                priority
-              />
-            </div>
-            {/* Logo on dark hero (not scrolled): icon + text */}
-            <div
-              className={cn(
-                "flex items-center gap-2 transition-all duration-300",
-                isTransparent ? "opacity-100" : "opacity-0 absolute"
-              )}
-            >
-              <Image
-                src="/logos/logo-icon.png"
-                alt="Praxis Loten"
-                width={44}
-                height={44}
-                className="h-11 w-11 object-contain rounded-full"
-                priority
-              />
-              <div className="hidden sm:block">
-                <span className="font-extrabold text-xl text-white leading-none">
-                  PRAXIS
-                </span>
-                <br />
-                <span className="font-bold text-base leading-none" style={{ color: "#93ce2a" }}>
-                  Loten
-                </span>
-              </div>
-            </div>
+            {/* Un seul logo, celui de la charte (fond clair) : l'accueil a un hero clair depuis le 14/10/2026 */}
+            <Image
+              src="/logos/logo-full.png"
+              alt="Praxis Loten"
+              width={160}
+              height={52}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -134,11 +102,7 @@ export function Header() {
                 className={cn(
                   "px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-200",
                   pathname === link.href
-                    ? isTransparent
-                      ? "text-white bg-white/10"
-                      : "text-[#76b82a] bg-[#76b82a]/10 font-semibold"
-                    : isTransparent
-                    ? "text-white/90 hover:text-white hover:bg-white/10"
+                    ? "text-[#76b82a] bg-[#76b82a]/10 font-semibold"
                     : "text-neutral-700 hover:bg-[#76b82a]/10 hover:text-[#5c9120]"
                 )}
               >
@@ -155,9 +119,7 @@ export function Header() {
                 onClick={() => setLangOpenPath(langOpen ? null : pathname)}
                 className={cn(
                   "flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all",
-                  isTransparent
-                    ? "text-white/90 hover:bg-white/10"
-                    : "text-neutral-700 hover:bg-neutral-100"
+                  "text-neutral-700 hover:bg-neutral-100"
                 )}
               >
                 <Globe className="w-4 h-4" />
@@ -213,9 +175,7 @@ export function Header() {
               onClick={() => setMobileOpenPath(mobileOpen ? null : pathname)}
               className={cn(
                 "lg:hidden p-2 rounded-lg transition-colors",
-                isTransparent
-                  ? "text-white hover:bg-white/10"
-                  : "text-neutral-700 hover:bg-neutral-100"
+                "text-neutral-700 hover:bg-neutral-100"
               )}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

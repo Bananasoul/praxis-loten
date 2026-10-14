@@ -2,100 +2,177 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { CalendarPlus, ArrowRight } from "lucide-react";
+import {
+  CalendarPlus,
+  Phone,
+  MapPin,
+  Clock,
+  Languages,
+  Home,
+  Star,
+  Navigation,
+  ArrowRight,
+} from "lucide-react";
+import type { GooglePlaceData } from "@/lib/googlePlaces";
+import { SERVICE_KEYS } from "@/content/team";
 
-export function HeroSection() {
+const PHONE_DISPLAY = "087 55 56 70";
+const PHONE_HREF = "tel:+3287555670";
+const MAPS_DIRECTIONS =
+  "https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI";
+const GOOGLE_REVIEWS = "https://search.google.com/local/reviews?placeid=ChIJwVa0rTSEwEcRJC82kAPG_CI";
+const SPOKEN_LANGUAGES = "DE · FR · EN · PL";
+
+/**
+ * Hero clair (14/10/2026) : texte à gauche, « carte pratique » à droite à la place d'une photo.
+ * Pas d'avis nominatif : seulement la note agrégée Google, quand l'API la fournit.
+ */
+export function HeroSection({ googleData }: { googleData?: GooglePlaceData | null }) {
   const t = useTranslations("hero");
+  const tc = useTranslations("hero.card");
+  const ts = useTranslations("services");
+  const tr = useTranslations("rehab");
+
+  const chips = [
+    ...Object.entries(SERVICE_KEYS).map(([slug, key]) => ({
+      href: `/leistungen/${slug}`,
+      label: ts(`${key}.title`),
+    })),
+    { href: "/rehabilitation", label: tr("sectionTitle") },
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-bg">
-      {/* Gradient background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1f52] via-[#0d1120] to-[#0f1c04] opacity-95" />
-        {/* Decorative orbs — static on mobile, subtle pulse only on desktop */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-[#76b82a]/10 rounded-full blur-[60px] md:blur-[100px] md:animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#2b3186]/20 rounded-full blur-[50px] md:blur-[80px] md:animate-pulse" style={{ animationDelay: "1s" }} />
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f4f6fc] via-[#f8faf4] to-white pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+        {/* Texte */}
+        <div>
+          <p className="hero-rise hero-d1 inline-flex items-center gap-2 text-sm font-medium text-[#5c9120] mb-5">
+            <MapPin className="w-4 h-4" />
+            {tc("eyebrow")}
+          </p>
 
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+          <h1 className="hero-rise hero-d2 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1c2060] leading-[1.08] tracking-tight text-balance">
+            {t("title1")}{" "}
+            <span className="text-[#76b82a]">{t("title2")}</span>
+          </h1>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Tagline badge */}
-        <div className="hero-rise hero-d1 inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-          <div className="w-2 h-2 bg-[#76b82a] rounded-full animate-pulse" />
-          <span className="text-sm text-white/80 font-medium">
-            Moderne Physical Therapy &amp; more...
-          </span>
+          <p className="hero-rise hero-d3 mt-6 max-w-xl text-lg text-neutral-600 leading-relaxed text-balance">
+            {t("subtitle")}
+          </p>
+
+          <div className="hero-rise hero-d4 mt-8 flex flex-col sm:flex-row gap-3">
+            <Link
+              href="/termin"
+              className="flex items-center justify-center gap-2 px-7 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#76b82a]/25"
+            >
+              <CalendarPlus className="w-5 h-5" />
+              {t("cta")}
+            </Link>
+            <a
+              href={PHONE_HREF}
+              className="flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-lg font-semibold text-[#2b3186] border border-[#2b3186]/25 hover:bg-[#2b3186]/5 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span dir="ltr">{PHONE_DISPLAY}</span>
+            </a>
+          </div>
+
+          <ul className="hero-fade hero-d5 mt-8 flex flex-wrap gap-2">
+            {chips.map((c) => (
+              <li key={c.href}>
+                <Link
+                  href={c.href}
+                  className="inline-block px-3 py-1.5 rounded-full text-sm bg-[#2b3186]/[0.06] text-[#2b3186] hover:bg-[#2b3186]/[0.12] transition-colors"
+                >
+                  {c.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Main title — primary message */}
-        <h1 className="hero-rise hero-d2 mb-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] tracking-tight text-balance">
-          {t("title1")}
-        </h1>
-        {/* Secondary line — specialty + geo (highlighted, smaller) */}
-        <p className="hero-rise hero-d3 mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight text-balance">
-          <span className="bg-gradient-to-r from-[#93ce2a] via-[#76b82a] to-[#b2e258] bg-clip-text text-transparent">
-            {t("title2")}
-          </span>
-        </p>
-
-        {/* Subtitle */}
-        <p className="hero-rise hero-d4 max-w-2xl mx-auto text-lg sm:text-xl text-white/70 leading-relaxed mb-12 text-balance">
-          {t("subtitle")}
-        </p>
-
-        {/* CTAs */}
-        <div className="hero-rise hero-d5 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/termin"
-            className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-[#76b82a] hover:bg-[#5c9120] text-white rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-2xl shadow-[#76b82a]/30"
-          >
-            <CalendarPlus className="w-5 h-5" />
-            {t("cta")}
-          </Link>
-          <Link
-            href="/leistungen"
-            className="group flex w-full sm:w-auto items-center justify-center sm:min-w-[14rem] gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-2xl text-lg font-semibold transition-all duration-300 border border-white/20"
-          >
-            {t("ctaSecondary")}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-
-        {/* Location badge */}
-        <div className="hero-fade hero-d6 mt-16 flex items-center justify-center">
+        {/* Carte pratique */}
+        <aside
+          aria-label={tc("infoTitle")}
+          className="hero-rise hero-d5 rounded-3xl bg-white border border-neutral-200/80 shadow-xl shadow-[#2b3186]/5 p-6 sm:p-8"
+        >
           <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Praxis+Loten+Eupen&destination_place_id=ChIJwVa0rTSEwEcRJC82kAPG_CI"
+            href={GOOGLE_REVIEWS}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors duration-300"
+            className="group flex items-center gap-3 pb-5 border-b border-neutral-100"
           >
-            <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-            </svg>
-            <span className="group-hover:underline underline-offset-2">
-              Loten 1, B-4700 Eupen, Belgium
-            </span>
-            <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            {googleData ? (
+              <>
+                <span className="text-4xl font-extrabold text-[#1c2060]">
+                  {googleData.rating.toFixed(1).replace(".", ",")}
+                </span>
+                <span>
+                  <span className="flex text-amber-400" aria-hidden="true">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </span>
+                  <span className="text-sm text-neutral-500 group-hover:underline">
+                    {googleData.reviewCount} {tc("googleReviews")}
+                  </span>
+                </span>
+              </>
+            ) : (
+              <span className="flex items-center gap-2 text-sm font-medium text-[#2b3186] group-hover:underline">
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                {tc("reviewsLink")}
+              </span>
+            )}
           </a>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="hero-fade hero-d6 absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center pt-2">
-          <div className="hero-scroll-dot w-1.5 h-1.5 bg-white/60 rounded-full" />
-        </div>
+          <ul className="mt-5 space-y-3 text-neutral-700">
+            <li className="flex items-start gap-3">
+              <Clock className="w-5 h-5 mt-0.5 shrink-0 text-[#76b82a]" />
+              {tc("hours")}
+            </li>
+            <li className="flex items-start gap-3">
+              <Languages className="w-5 h-5 mt-0.5 shrink-0 text-[#76b82a]" />
+              <span>
+                {tc("languages")} <strong className="font-semibold text-[#1c2060]">{SPOKEN_LANGUAGES}</strong>
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Home className="w-5 h-5 mt-0.5 shrink-0 text-[#76b82a]" />
+              {tc("homeVisits")}
+            </li>
+            <li className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-[#76b82a]" />
+              Loten 1, 4700 Eupen
+            </li>
+          </ul>
+
+          <div className="mt-6 grid grid-cols-2 gap-2">
+            <a
+              href={PHONE_HREF}
+              className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#2b3186]/[0.06] text-[#2b3186] hover:bg-[#2b3186]/[0.12] transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              {tc("call")}
+            </a>
+            <a
+              href={MAPS_DIRECTIONS}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#2b3186]/[0.06] text-[#2b3186] hover:bg-[#2b3186]/[0.12] transition-colors"
+            >
+              <Navigation className="w-4 h-4" />
+              {tc("directions")}
+            </a>
+            <Link
+              href="/team"
+              className="col-span-2 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-[#76b82a]/10 text-[#3f6b12] hover:bg-[#76b82a]/20 transition-colors"
+            >
+              {tc("chooseTherapist")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </aside>
       </div>
     </section>
   );

@@ -21,7 +21,19 @@
     "title2": "en Manuele Therapie in Eupen.",
     "subtitle": "Moderne behandelmethoden en persoonlijke zorg voor een veilige terugkeer naar een pijnvrij dagelijks leven.",
     "cta": "Afspraak maken",
-    "ctaSecondary": "Onze diensten"
+    "ctaSecondary": "Onze diensten",
+    "card": {
+      "infoTitle": "Praktische info",
+      "hours": "Ma–vr 07:30–20:30 · weekend gesloten",
+      "languages": "Wij spreken",
+      "homeVisits": "Huisbezoeken mogelijk",
+      "googleReviews": "Google-reviews",
+      "reviewsLink": "Bekijk de reviews op Google",
+      "call": "Bellen",
+      "directions": "Route",
+      "chooseTherapist": "Kies een therapeut",
+      "eyebrow": "Kinesitherapie in Eupen"
+    }
   },
   "stats": {
     "therapists": "Therapeuten",

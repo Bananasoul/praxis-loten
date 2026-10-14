@@ -21,7 +21,19 @@
     "title2": "und Manuelle Therapie in Eupen.",
     "subtitle": "Moderne Behandlungsmethoden und individuelle Betreuung für eine sichere Rückkehr in einen schmerzfreien Alltag.",
     "cta": "Termin vereinbaren",
-    "ctaSecondary": "Unsere Leistungen"
+    "ctaSecondary": "Unsere Leistungen",
+    "card": {
+      "infoTitle": "Praktische Infos",
+      "hours": "Mo–Fr 07:30–20:30 · Wochenende geschlossen",
+      "languages": "Wir sprechen",
+      "homeVisits": "Hausbesuche möglich",
+      "googleReviews": "Google-Bewertungen",
+      "reviewsLink": "Bewertungen auf Google ansehen",
+      "call": "Anrufen",
+      "directions": "Route",
+      "chooseTherapist": "Therapeut wählen",
+      "eyebrow": "Physiotherapie in Eupen"
+    }
   },
   "stats": {
     "therapists": "Therapeuten",

@@ -21,7 +21,19 @@
     "title2": "û Terapiya Destî de li Eupenê.",
     "subtitle": "Rêbazên nûjen ên dermankirinê û lênihêrîna kesane ji bo vegera ewledar a jiyaneke rojane ya bê êş.",
     "cta": "Randevû bigire",
-    "ctaSecondary": "Xizmetên me"
+    "ctaSecondary": "Xizmetên me",
+    "card": {
+      "infoTitle": "Agahiyên pratîkî",
+      "hours": "Duş–În 07:30–20:30 · dawiya hefteyê girtî",
+      "languages": "Em diaxivin",
+      "homeVisits": "Serdana malê gengaz e",
+      "googleReviews": "nirxandinên Google",
+      "reviewsLink": "Nirxandinan li Google bibîne",
+      "call": "Telefon bike",
+      "directions": "Rêwerz",
+      "chooseTherapist": "Terapîstekî hilbijêre",
+      "eyebrow": "Fîzyoterapî li Eupen"
+    }
   },
   "stats": {
     "therapists": "Terapîst",

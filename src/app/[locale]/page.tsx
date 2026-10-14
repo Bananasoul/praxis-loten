@@ -20,7 +20,7 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroSection />
+      <HeroSection googleData={googleData} />
       <StatsSection googleData={googleData} />
       <ServicesSection />
       <RehabSection />
