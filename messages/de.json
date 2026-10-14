@@ -126,7 +126,9 @@
     "speaks": "Sprachen",
     "hoursTitle": "In der Praxis",
     "hoursNote": "Richtzeiten, außer Urlaub.",
-    "hoursOnRequest": "Zeiten auf Anfrage"
+    "hoursOnRequest": "Zeiten auf Anfrage",
+    "notBooking": "Nimmt derzeit keine Termine an.",
+    "seeColleagues": "Andere Therapeuten ansehen"
   },
   "cabinet": {
     "sectionTitle": "Unsere Praxis",

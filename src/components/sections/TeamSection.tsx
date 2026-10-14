@@ -8,7 +8,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import Image from "next/image";
 import { CalendarPlus, ArrowRight, Home, Languages } from "lucide-react";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
-import { THERAPISTS } from "@/content/team";
+import { THERAPISTS, NOT_BOOKING } from "@/content/team";
 import { WeekHours } from "@/components/ui/WeekHours";
 
 const LANG_FILTERS = ["DE", "FR", "EN", "PL"];
@@ -113,10 +113,12 @@ export function TeamSection() {
                           {t("viewProfile")}
                           <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                         </span>
-                        <span className="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-50 text-accent-600 rounded-lg text-xs font-semibold hover:bg-accent-100 transition-colors">
-                          <CalendarPlus className="w-3 h-3" />
-                          {t("bookAppointment")}
-                        </span>
+                        {!NOT_BOOKING.has(member.slug) && (
+                          <span className="inline-flex items-center gap-1 px-3 py-1.5 bg-accent-50 text-accent-600 rounded-lg text-xs font-semibold hover:bg-accent-100 transition-colors">
+                            <CalendarPlus className="w-3 h-3" />
+                            {t("bookAppointment")}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>

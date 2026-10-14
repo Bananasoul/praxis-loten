@@ -22,12 +22,16 @@ export const SERVICE_KEYS: Record<string, string> = {
 /**
  * Présence au cabinet, lundi → vendredi (null = absent), reprise de la fiche Drive
  * « Occupation des cabinets Loten », onglet « Occupation cabinet » (modifiée le 28/09/2026, lue le 14/10/2026).
- * Thom Petit n'apparaît pas dans cette fiche : pas d'horaire affiché pour lui.
+ * Exception : Philippe, horaires de sa fiche Google (décision du 14/10/2026).
  */
 export const WEEK_HOURS: Record<string, (string | null)[]> = {
-  "philippe-banaszak": ["13:00–19:00", "14:30–19:00", "13:00–19:00", "14:30–19:00", "13:00–19:00"],
+  // Philippe : horaires de sa fiche Google perso (décision du 14/10/2026), pas ceux de la fiche Drive.
+  "philippe-banaszak": ["13:30–17:30", "15:00–17:30", "13:30–17:30", "15:00–17:30", "13:30–17:30"],
   "felix-esser": ["08:00–12:30 · 14:00–19:30", "08:00–12:30 · 14:00–19:30", "08:00–12:30 · 14:00–19:30", "08:00–12:30 · 14:00–19:30", "08:00–12:30 · 14:00–19:30"],
   "fabienne-dormann": ["12:00–16:00", "12:00–16:00", null, "12:00–16:00", null],
   "loic-meunier": ["13:00–20:30", "08:00–20:30", null, "08:00–12:00 · 12:30–20:30", "13:30–20:30"],
   "noe-meyer": ["16:00–20:30", "17:00–20:30", "08:00–19:30", "17:00–20:30", "08:00–19:30"],
 };
+
+/** Thérapeutes qui ne prennent pas de rendez-vous pour le moment (Thom, 14/10/2026) : pas de bouton de contact, renvoi vers les collègues. */
+export const NOT_BOOKING = new Set<string>(["thom-petit"]);

@@ -126,7 +126,9 @@
     "speaks": "Мови",
     "hoursTitle": "Присутність у кабінеті",
     "hoursNote": "Орієнтовні години, крім відпусток.",
-    "hoursOnRequest": "Години за запитом"
+    "hoursOnRequest": "Години за запитом",
+    "notBooking": "Наразі не приймає записів.",
+    "seeColleagues": "Оберіть колегу"
   },
   "cabinet": {
     "sectionTitle": "Наш кабінет",

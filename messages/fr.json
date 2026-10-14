@@ -126,7 +126,9 @@
     "speaks": "Langues",
     "hoursTitle": "Présence au cabinet",
     "hoursNote": "Horaires indicatifs, hors congés.",
-    "hoursOnRequest": "Horaires sur demande"
+    "hoursOnRequest": "Horaires sur demande",
+    "notBooking": "Ne prend pas de rendez-vous pour le moment.",
+    "seeColleagues": "Choisir un collègue"
   },
   "cabinet": {
     "sectionTitle": "Notre Cabinet",

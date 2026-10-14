@@ -2,7 +2,8 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Clock } from "lucide-react";
-import { WEEK_HOURS } from "@/content/team";
+import { WEEK_HOURS, NOT_BOOKING } from "@/content/team";
+import { NotBookingNotice } from "@/components/ui/NotBookingNotice";
 
 /** Jours lun → ven, écrits en dur : Intl peut différer entre serveur et navigateur (erreur d'hydratation). */
 const DAYS: Record<string, string[]> = {
@@ -27,6 +28,8 @@ export function WeekHours({ slug, compact = false }: { slug: string; compact?: b
   const locale = useLocale();
   const hours = WEEK_HOURS[slug];
   const days = DAYS[locale] ?? DAYS.en;
+
+  if (NOT_BOOKING.has(slug)) return <NotBookingNotice withLink={!compact} />;
 
   if (!hours) {
     return (

@@ -13,6 +13,7 @@ import { SafeEmail } from "@/components/ui/SafeEmail";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 import { WeekHours } from "@/components/ui/WeekHours";
+import { NOT_BOOKING } from "@/content/team";
 
 type LangKey = "de" | "fr" | "en" | "nl" | "tr" | "ar" | "pl" | "uk" | "es" | "ku";
 
@@ -196,7 +197,8 @@ export function TerminPageContent() {
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, []);
 
-  const ordered = order.map((s) => THERAPISTS.find((t) => t.slug === s)).filter(Boolean) as typeof THERAPISTS;
+  const ordered = (order.map((s) => THERAPISTS.find((t) => t.slug === s)).filter(Boolean) as typeof THERAPISTS)
+    .sort((a, b) => Number(NOT_BOOKING.has(a.slug)) - Number(NOT_BOOKING.has(b.slug)));
   const langList = ordered.filter((t) => !langF || t.langs.includes(langF));
 
   function fireConfetti() {
@@ -229,7 +231,7 @@ export function TerminPageContent() {
 
   function startSpin() {
     if (spinning) return;
-    const pool = langList;
+    const pool = langList.filter((t) => !NOT_BOOKING.has(t.slug));
     if (!pool.length) return;
     setWinner(null);
     setSpinning(true);
@@ -430,7 +432,7 @@ export function TerminPageContent() {
                       <WeekHours slug={t.slug} />
                     </div>
 
-                    <ContactButtons t={t} x={x} />
+                    {!NOT_BOOKING.has(t.slug) && <ContactButtons t={t} x={x} />}
                     <div className="flex items-center justify-end mt-3">
                       <Link href={`/team/${t.slug}`} className="inline-flex items-center gap-1 text-[12px] text-neutral-500 hover:text-[#5c9120] transition-colors">
                         {x.profileBtn} <ArrowRight className="w-3 h-3" />

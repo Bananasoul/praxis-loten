@@ -126,7 +126,9 @@
     "speaks": "Języki",
     "hoursTitle": "Obecność w gabinecie",
     "hoursNote": "Godziny orientacyjne, poza urlopami.",
-    "hoursOnRequest": "Godziny na zapytanie"
+    "hoursOnRequest": "Godziny na zapytanie",
+    "notBooking": "Obecnie nie przyjmuje wizyt.",
+    "seeColleagues": "Wybierz innego terapeutę"
   },
   "cabinet": {
     "sectionTitle": "Nasza Praktyka",

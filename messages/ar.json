@@ -126,7 +126,9 @@
     "speaks": "اللغات",
     "hoursTitle": "التواجد في العيادة",
     "hoursNote": "ساعات تقريبية، باستثناء العطل.",
-    "hoursOnRequest": "المواعيد عند الطلب"
+    "hoursOnRequest": "المواعيد عند الطلب",
+    "notBooking": "لا يستقبل مواعيد في الوقت الحالي.",
+    "seeColleagues": "اختر زميلًا"
   },
   "cabinet": {
     "sectionTitle": "عيادتنا",

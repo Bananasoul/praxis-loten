@@ -126,7 +126,9 @@
     "speaks": "Idiomas",
     "hoursTitle": "Presencia en la consulta",
     "hoursNote": "Horario orientativo, salvo vacaciones.",
-    "hoursOnRequest": "Horario a consultar"
+    "hoursOnRequest": "Horario a consultar",
+    "notBooking": "No acepta citas por el momento.",
+    "seeColleagues": "Elegir a un colega"
   },
   "cabinet": {
     "sectionTitle": "La consulta",

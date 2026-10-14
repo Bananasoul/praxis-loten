@@ -126,7 +126,9 @@
     "speaks": "Languages",
     "hoursTitle": "At the practice",
     "hoursNote": "Indicative hours, excluding holidays.",
-    "hoursOnRequest": "Hours on request"
+    "hoursOnRequest": "Hours on request",
+    "notBooking": "Not taking appointments at the moment.",
+    "seeColleagues": "Choose a colleague"
   },
   "cabinet": {
     "sectionTitle": "Our Practice",

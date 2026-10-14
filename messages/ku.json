@@ -126,7 +126,9 @@
     "speaks": "Ziman",
     "hoursTitle": "Li kabîneyê",
     "hoursNote": "Demên texmînî, ji bilî betlaneyan.",
-    "hoursOnRequest": "Dem li ser daxwazê"
+    "hoursOnRequest": "Dem li ser daxwazê",
+    "notBooking": "Niha randevû nagire.",
+    "seeColleagues": "Hevkarekî hilbijêre"
   },
   "cabinet": {
     "sectionTitle": "Kabîneya me",

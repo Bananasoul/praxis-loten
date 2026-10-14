@@ -126,7 +126,9 @@
     "speaks": "Talen",
     "hoursTitle": "Aanwezig in de praktijk",
     "hoursNote": "Indicatieve uren, behalve verlof.",
-    "hoursOnRequest": "Uren op aanvraag"
+    "hoursOnRequest": "Uren op aanvraag",
+    "notBooking": "Neemt momenteel geen afspraken aan.",
+    "seeColleagues": "Kies een collega"
   },
   "cabinet": {
     "sectionTitle": "Onze Praktijk",

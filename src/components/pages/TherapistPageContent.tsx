@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { SafeEmail } from "@/components/ui/SafeEmail";
+import { NOT_BOOKING } from "@/content/team";
+import { NotBookingNotice } from "@/components/ui/NotBookingNotice";
+import { WeekHours } from "@/components/ui/WeekHours";
 import { getTherapistPortrait } from "@/lib/therapistPortraits";
 import { NON_CONV_HREF, NON_CONV_LABEL } from "@/lib/convention";
 
@@ -384,6 +387,13 @@ export function TherapistPageContent({ slug }: { slug: string }) {
               </div>
 
               {/* Booking */}
+              {NOT_BOOKING.has(therapist.slug) ? (
+                <NotBookingNotice />
+              ) : (
+              <>
+              <div className="bg-white rounded-2xl p-5 border border-neutral-200">
+                <WeekHours slug={therapist.slug} />
+              </div>
               <div className="bg-gradient-to-br from-[#2b3186] to-[#0d1120] rounded-2xl p-5 text-white">
                 <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
                   <CalendarPlus className="w-4 h-4" /> {ui.bookTitle}
@@ -452,6 +462,8 @@ export function TherapistPageContent({ slug }: { slug: string }) {
                   )}
                 </div>
               </div>
+              </>
+              )}
 
             </div>
           </AnimatedSection>

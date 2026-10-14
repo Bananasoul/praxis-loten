@@ -126,7 +126,9 @@
     "speaks": "Diller",
     "hoursTitle": "Muayenehanede",
     "hoursNote": "Tatiller hariç, yaklaşık saatler.",
-    "hoursOnRequest": "Saatler talep üzerine"
+    "hoursOnRequest": "Saatler talep üzerine",
+    "notBooking": "Şu anda randevu almıyor.",
+    "seeColleagues": "Bir meslektaş seçin"
   },
   "cabinet": {
     "sectionTitle": "Kliniğimiz",
