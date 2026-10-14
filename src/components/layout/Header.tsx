@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const LOCALE_LABELS: Record<string, { flag: string; name: string }> = {
+export const LOCALE_LABELS: Record<string, { flag: string; name: string }> = {
   de: { flag: "🇩🇪", name: "Deutsch" },
   fr: { flag: "🇫🇷", name: "Français" },
   en: { flag: "🇬🇧", name: "English" },
