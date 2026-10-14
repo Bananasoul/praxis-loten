@@ -120,7 +120,10 @@
     "noe": {
       "role": "Kinesitherapeut — Huisbezoeken",
       "quote": "Voor mij zijn beweging en levenskwaliteit nauw met elkaar verbonden. Daarom staan de persoonlijke doelen van elke patiënt centraal in mijn praktijk."
-    }
+    },
+    "filterAll": "Alle",
+    "filterHome": "Huisbezoek",
+    "speaks": "Talen"
   },
   "cabinet": {
     "sectionTitle": "Onze Praktijk",
@@ -152,7 +155,8 @@
     "allRights": "Alle rechten voorbehouden.",
     "followUs": "Volg ons",
     "getDirections": "Route plannen",
-    "hours": "Ma – Vr: 07:30 – 20:30\nWeekend gesloten"
+    "hours": "Ma – Vr: 07:30 – 20:30\nWeekend gesloten",
+    "siteLanguages": "Talen van de site"
   },
   "common": {
     "learnMore": "Meer info",
@@ -174,5 +178,17 @@
   "cancellation": {
     "title": "Annulering",
     "text": "24 uur op voorhand. Niet-geannuleerde afspraken worden gefactureerd."
+  },
+  "journey": {
+    "title": "Hoe verloopt het?",
+    "subtitle": "Van voorschrift tot zelfstandigheid, in vier stappen.",
+    "s1t": "Voorschrift",
+    "s1d": "Uw arts schrijft kinesitherapie voor. Met dit voorschrift worden de sessies deels terugbetaald door uw ziekenfonds.",
+    "s2t": "Eerste afspraak",
+    "s2d": "We nemen de tijd om naar u te luisteren en u te onderzoeken, en bepalen samen uw doelen.",
+    "s3t": "Sessies",
+    "s3d": "Manuele behandeling en aangepaste oefeningen, bij elke sessie afgestemd op uw vooruitgang.",
+    "s4t": "Zelfstandigheid",
+    "s4d": "U vertrekt met oefeningen voor thuis, zodat het resultaat blijft."
   }
 }

@@ -120,7 +120,10 @@
     "noe": {
       "role": "Fizyoterapîst — Serdanên malê",
       "quote": "Ji bo min, tevger û kalîteya jiyanê ji hev nayên veqetandin. Ji ber vê yekê armancên kesane yên her nexweşî di navenda karê min de ne."
-    }
+    },
+    "filterAll": "Hemû",
+    "filterHome": "Serdana malê",
+    "speaks": "Ziman"
   },
   "cabinet": {
     "sectionTitle": "Kabîneya me",
@@ -152,7 +155,8 @@
     "allRights": "Hemû maf parastî ne.",
     "followUs": "Me bişopînin",
     "getDirections": "Rê nîşan bide",
-    "hours": "Duş – În: 07:30 – 20:30\nDawiya hefteyê girtî ye"
+    "hours": "Duş – În: 07:30 – 20:30\nDawiya hefteyê girtî ye",
+    "siteLanguages": "Zimanên malperê"
   },
   "common": {
     "learnMore": "Bêtir fêr bibe",
@@ -174,5 +178,17 @@
   "cancellation": {
     "title": "Betalkirin",
     "text": "24 saet berê. Her danişîna ku di vê demê de neyê betalkirin wê were hesibandin."
+  },
+  "journey": {
+    "title": "Çawa dimeşe?",
+    "subtitle": "Ji reçeteyê heta serxwebûnê, di çar gavan de.",
+    "s1t": "Reçete",
+    "s1d": "Bijîjkê we seansên fîzyoterapiyê dinivîse. Bi vê reçeteyê, sîgorteya we ya tenduristiyê beşek ji wan vedigerîne.",
+    "s2t": "Randevûya yekem",
+    "s2d": "Em wext digirin ku guh bidin we û we muayene bikin, paşê bi hev re armancên we diyar dikin.",
+    "s3t": "Seans",
+    "s3d": "Dermankirina destî û werzîşên guncav, di her seansê de li gorî pêşketina we têne sererastkirin.",
+    "s4t": "Serxwebûn",
+    "s4d": "Hûn bi werzîşên ji bo malê derdikevin, da ku encam dom bike."
   }
 }
